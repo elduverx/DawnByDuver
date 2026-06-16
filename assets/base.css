@@ -3664,3 +3664,41 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5 {
   padding-top: 10rem;
   padding-bottom: 10rem;
 }
+
+/* --- VIOLETA MARTINEZ CUSTOM STYLES --- */
+.card--card .card__inner .card__media img {
+  transition: transform var(--duration-long) ease;
+}
+
+.card--card:hover .card__inner .card__media img {
+  transform: scale(1.05);
+}
+
+.button, .shopify-challenge__button, .customer button {
+  border-radius: 0 !important;
+  text-transform: uppercase !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15rem !important;
+}
+
+.announcement-bar__message {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+}
+
+.header__menu-item {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.footer-block__heading {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.rich-text__blocks * {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
