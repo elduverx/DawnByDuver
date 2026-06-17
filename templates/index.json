@@ -149,9 +149,11 @@
         "ai_gen_block_f79e452_bGqxCR": {
           "type": "ai_gen_block_f79e452",
           "settings": {
+            "image_left": "shopify://shop_images/SECCION_HOMBRE.png",
             "image_left_url": "",
             "image_left_title": "Hombre",
             "image_left_subtitle": "Descubrir coleccion",
+            "image_right": "shopify://shop_images/SECCION_MUJER.png",
             "image_right_url": "",
             "image_right_title": "Mujer",
             "image_right_subtitle": "Descubrir coleccion",
