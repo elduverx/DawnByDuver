@@ -3773,6 +3773,6 @@ body.template-index .header__icons {
   max-width: 600px !important;
   margin: 0 auto;
 }
-.rich-text__caption {
-  color: #7a1818ff !important;
+.rich-text__text p {
+  color: #bbb !important;
 }
