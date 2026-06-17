@@ -3708,27 +3708,20 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5 {
   width: 100%;
   z-index: 10;
 }
-
 .header--middle-left {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex !important;
+  justify-content: space-between;
   align-items: center;
 }
 
 .header--middle-left .header__inline-menu {
-  grid-column: 1;
-  width: 100%;
-}
-
-.header--middle-left .header__heading {
-  grid-column: 2;
+  flex: 1;
 }
 
 .list-menu--inline {
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-between;
 }
 
 .list-menu--inline > li:nth-child(3) {
