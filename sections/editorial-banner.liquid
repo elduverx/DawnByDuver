@@ -1,0 +1,48 @@
+{%- style -%}
+  .editorial-banner {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .editorial-banner__image {
+    width: 900px;
+    max-width: calc(100% - 80px);
+    height: 480px;
+    object-fit: cover;
+    display: block;
+  }
+  @media screen and (max-width: 749px) {
+    .editorial-banner__image {
+      max-width: calc(100% - 32px);
+      height: 220px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="editorial-banner">
+  {%- if section.settings.image != blank -%}
+    {{
+      section.settings.image
+      | image_url: width: 1200
+      | image_tag: class: 'editorial-banner__image', loading: 'lazy'
+    }}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Banner editorial",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header", "footer"] },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen"
+    }
+  ],
+  "presets": [{ "name": "Banner editorial" }]
+}
+{% endschema %}
