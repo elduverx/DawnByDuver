@@ -3794,3 +3794,10 @@ body.template-index .header__icons {
     font-size: 24px !important;
   }
 }
+.rich-text__wrapper::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: #e0e0e0;
+  margin-top: 48px;
+}
