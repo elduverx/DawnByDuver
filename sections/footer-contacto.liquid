@@ -1,0 +1,94 @@
+<div class="footer-contacto">
+  <div class="footer-contacto__item">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
+    <div>
+      <span class="footer-contacto__label">EMAIL</span>
+      <a href="mailto:{{ section.settings.email }}" class="footer-contacto__value">{{ section.settings.email }}</a>
+    </div>
+  </div>
+  <div class="footer-contacto__item">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+    <div>
+      <span class="footer-contacto__label">HORARIO DE ATENCIÓN</span>
+      <p class="footer-contacto__value footer-contacto__horario">{{ section.settings.horario }}</p>
+      <p class="footer-contacto__sub">{{ section.settings.respuesta }}</p>
+    </div>
+  </div>
+</div>
+
+{%- style -%}
+  .footer-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .footer-contacto__item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: #fff;
+  }
+  .footer-contacto__item svg {
+    margin-top: 2px;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+  .footer-contacto__label {
+    display: block;
+    font-family: 'Assistant', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .footer-contacto__value {
+    font-family: 'Assistant', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer-contacto__horario {
+    font-weight: 500;
+    margin: 0 0 4px;
+  }
+  .footer-contacto__sub {
+    font-family: 'Assistant', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: #888;
+    margin: 0;
+  }
+{%- endstyle -%}
+
+{% schema %}
+{
+  "name": "Footer contacto",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": { "groups": ["header"] },
+  "settings": [
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email de contacto",
+      "default": "info@velamadrid.com"
+    },
+    {
+      "type": "text",
+      "id": "horario",
+      "label": "Horario",
+      "default": "Lunes a viernes de 09:00 a 15:00."
+    },
+    {
+      "type": "text",
+      "id": "respuesta",
+      "label": "Tiempo de respuesta",
+      "default": "Respondemos en menos de 24h."
+    }
+  ],
+  "presets": [{ "name": "Footer contacto" }]
+}
+{% endschema %}
