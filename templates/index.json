@@ -52,10 +52,12 @@
     "philosophy": {
       "type": "rich-text",
       "blocks": {
-        "text_WGLLbi": {
-          "type": "text",
+        "caption_PhV8Kc": {
+          "type": "caption",
           "settings": {
-            "text": "<p>Vela Madrid</p>"
+            "caption": "VELA MADRID",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
           }
         },
         "heading": {
@@ -83,7 +85,7 @@
         }
       },
       "block_order": [
-        "text_WGLLbi",
+        "caption_PhV8Kc",
         "heading",
         "text",
         "discount_box_CQmTq4",
