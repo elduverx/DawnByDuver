@@ -165,9 +165,10 @@
         "collection_3RQxbP": {
           "type": "collection",
           "settings": {
-            "title": "Nombre colección",
+            "image": "shopify://shop_images/O1CN011Esv3a1UCo5ZBPmvg__2218386332482-0-cib_1800x1800_3b02498e-7b93-4938-a89b-892b1c093f48.webp",
+            "title": "Pantalones",
             "link_label": "DESCUBRIR",
-            "link": ""
+            "link": "shopify://collections/pantalones"
           }
         },
         "collection_4WLEUJ": {
