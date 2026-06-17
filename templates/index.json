@@ -52,11 +52,17 @@
     "philosophy": {
       "type": "rich-text",
       "blocks": {
+        "text_WGLLbi": {
+          "type": "text",
+          "settings": {
+            "text": "<p>VELA MADRID</p>"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
             "heading": "ÚLTIMA OPORTUNIDAD",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text": {
@@ -67,6 +73,7 @@
         }
       },
       "block_order": [
+        "text_WGLLbi",
         "heading",
         "text"
       ],
