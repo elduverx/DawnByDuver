@@ -3776,3 +3776,21 @@ body.template-index .header__icons {
 .rich-text__caption {
   color: #AAAAAA !important;
 }
+@media screen and (max-width: 750px) {
+  .rich-text__wrapper {
+    max-width: 90% !important;
+  }
+  
+  .rich-text__blocks p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  
+  .rich-text__blocks .rte p {
+    margin-bottom: 12px !important;
+  }
+  
+  .rich-text__heading {
+    font-size: 24px !important;
+  }
+}
