@@ -27,11 +27,27 @@
             "text": "GARANTÍA DE DEVOLUCIÓN EN 30 DÍAS",
             "link": ""
           }
+        },
+        "announcement_N349Qa": {
+          "type": "announcement",
+          "settings": {
+            "text": "NUEVA COLECCIÓN VERANO 2026",
+            "link": ""
+          }
+        },
+        "announcement_FFT7Fr": {
+          "type": "announcement",
+          "settings": {
+            "text": "+10.000 clientes satisfechos",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "announcement-bar-0",
-        "announcement_Q4fMKa"
+        "announcement_Q4fMKa",
+        "announcement_N349Qa",
+        "announcement_FFT7Fr"
       ],
       "settings": {
         "auto_rotate": true,
