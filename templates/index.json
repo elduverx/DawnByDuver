@@ -77,10 +77,10 @@
           "type": "discount_box",
           "settings": {}
         },
-        "text_rUNHy4": {
+        "text_yNreBd": {
           "type": "text",
           "settings": {
-            "text": "<p>Con estilo,<br/>Vela Madrid</p>"
+            "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
           }
         }
       },
@@ -89,7 +89,7 @@
         "heading",
         "text",
         "discount_box_CQmTq4",
-        "text_rUNHy4"
+        "text_yNreBd"
       ],
       "custom_css": [
         ".rich-text__wrapper p {color: #444 !important;}"
