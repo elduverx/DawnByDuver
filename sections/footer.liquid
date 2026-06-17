@@ -368,19 +368,37 @@
       "name": "t:sections.footer.blocks.text.name",
       "settings": [
         {
-          "type": "inline_richtext",
-          "id": "heading",
-          "default": "t:sections.footer.blocks.text.settings.heading.default",
-          "label": "t:sections.footer.blocks.text.settings.heading.label"
-        },
-        {
-          "type": "richtext",
-          "id": "subtext",
-          "default": "t:sections.footer.blocks.text.settings.subtext.default",
-          "label": "t:sections.footer.blocks.text.settings.subtext.label"
-        }
-      ]
+      "type": "richtext",
+      "id": "subtext",
+      "default": "t:sections.footer.blocks.text.settings.subtext.default",
+      "label": "t:sections.footer.blocks.text.settings.subtext.label"
     },
+    {
+      "type": "checkbox",
+      "id": "is_contact",
+      "label": "Bloque de contacto",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "info@velamadrid.com"
+    },
+    {
+      "type": "text",
+      "id": "horario",
+      "label": "Horario",
+      "default": "Lunes a viernes de 09:00 a 15:00."
+    },
+    {
+      "type": "text",
+      "id": "respuesta",
+      "label": "Tiempo de respuesta",
+      "default": "Respondemos en menos de 24h."
+    }
+  ]
+},
     {
       "type": "image",
       "name": "Image",
