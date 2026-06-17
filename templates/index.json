@@ -110,6 +110,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/SECCION_HOMBRE.png",
+            "eyebrow": "COLECCIÓN",
             "title": "HOMBRE",
             "link_label": "DESCUBRIR",
             "link": "shopify://collections/all"
@@ -119,6 +120,7 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/SECCION_MUJER.png",
+            "eyebrow": "COLECCIÓN",
             "title": "MUJER",
             "link_label": "DESCUBRIR",
             "link": "shopify://collections/all"
@@ -129,13 +131,19 @@
         "men",
         "women"
       ],
+      "custom_css": [
+        ".multicolumn-list {gap: 0px !important;}",
+        ".multicolumn-list__item {padding: 0px !important; border: none !important;}"
+      ],
       "settings": {
+        "eyebrow": "EXPLORA LA COLECCIÓN",
         "title": "Hecho para todos",
+        "subtitle": "Descubre las piezas esenciales de la temporada.",
         "columns_desktop": 2,
         "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "padding_top": 40,
         "padding_bottom": 40
       }
@@ -204,6 +212,7 @@
         "shipping": {
           "type": "column",
           "settings": {
+            "eyebrow": "COLECCIÓN",
             "title": "ENVÍO GRATUITO",
             "link_label": "",
             "link": ""
@@ -212,6 +221,7 @@
         "returns": {
           "type": "column",
           "settings": {
+            "eyebrow": "COLECCIÓN",
             "title": "DEVOLUCIONES",
             "link_label": "",
             "link": ""
@@ -220,6 +230,7 @@
         "secure": {
           "type": "column",
           "settings": {
+            "eyebrow": "COLECCIÓN",
             "title": "PAGO SEGURO",
             "link_label": "",
             "link": ""
@@ -232,7 +243,9 @@
         "secure"
       ],
       "settings": {
+        "eyebrow": "EXPLORA LA COLECCIÓN",
         "title": "COMPRA CON CONFIANZA",
+        "subtitle": "Descubre las piezas esenciales de la temporada.",
         "columns_desktop": 3,
         "background_style": "none",
         "color_scheme": "scheme-1",
