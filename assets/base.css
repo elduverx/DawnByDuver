@@ -3801,3 +3801,15 @@ body.template-index .header__icons {
   background: #e0e0e0;
   margin-top: 48px;
 }
+/* ===== FIX COOKIE BANNER ===== */
+#shopify-pc__banner {
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+#shopify-pc__banner button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  position: relative !important;
+  z-index: 99999 !important;
+}
