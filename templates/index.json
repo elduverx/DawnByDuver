@@ -68,14 +68,26 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Moda con carácter y lujo accesible. Una selección pensada para quienes buscan destacar con elegancia y sencillez.</p>"
+            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. </p><p>Desde el primer día hemos trabajado para traerte prendas con personalidad, diseñadas para quienes saben lo que quieren.<br/></p><p>Este verano queremos celebrarlo contigo con nuestro mayor descuento hasta la fecha: </p><p>50% en toda la web.<br/></p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotras. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
+          }
+        },
+        "discount_box_CQmTq4": {
+          "type": "discount_box",
+          "settings": {}
+        },
+        "text_rUNHy4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Con estilo,<br/>Vela Madrid</p>"
           }
         }
       },
       "block_order": [
         "text_WGLLbi",
         "heading",
-        "text"
+        "text",
+        "discount_box_CQmTq4",
+        "text_rUNHy4"
       ],
       "settings": {
         "desktop_content_position": "center",
