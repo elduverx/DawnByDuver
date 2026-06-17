@@ -216,32 +216,6 @@
       "type": "garantias",
       "name": "Garantías",
       "settings": {}
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "ÚNETE A NUESTRA COMUNIDAD",
-            "heading_size": "h2"
-          }
-        },
-        "email_form": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "heading",
-        "email_form"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
     }
   },
   "order": [
@@ -250,7 +224,6 @@
     "categories",
     "featured_collection",
     "editorial_banner_g9Wq7H",
-    "garantias_FMf9m7",
-    "newsletter"
+    "garantias_FMf9m7"
   ]
 }
