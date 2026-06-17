@@ -212,64 +212,10 @@
         "image": "shopify://shop_images/ChatGPT_Image_17_jun_2026_21_23_45.png"
       }
     },
-    "guarantees": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_BAFxk6": {
-          "type": "column",
-          "settings": {
-            "eyebrow": "Envío Gratuito",
-            "title": "Columna",
-            "link_label": "DESCUBRIR",
-            "link": ""
-          }
-        },
-        "column_H94nmg": {
-          "type": "column",
-          "settings": {
-            "eyebrow": "COLECCIÓN",
-            "title": "Columna",
-            "link_label": "DESCUBRIR",
-            "link": ""
-          }
-        },
-        "column_BaELzP": {
-          "type": "column",
-          "settings": {
-            "eyebrow": "COLECCIÓN",
-            "title": "Columna",
-            "link_label": "DESCUBRIR",
-            "link": ""
-          }
-        },
-        "column_XRrJhD": {
-          "type": "column",
-          "settings": {
-            "eyebrow": "COLECCIÓN",
-            "title": "Columna",
-            "link_label": "DESCUBRIR",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column_BAFxk6",
-        "column_H94nmg",
-        "column_BaELzP",
-        "column_XRrJhD"
-      ],
-      "settings": {
-        "eyebrow": "GARANTÍAS",
-        "title": "COMPRA CON CONFIANZA",
-        "subtitle": "Una experiencia de compra cuidada, clara y pensada para ti.",
-        "columns_desktop": 3,
-        "background_style": "none",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 40,
-        "padding_bottom": 40
-      }
+    "garantias_FMf9m7": {
+      "type": "garantias",
+      "name": "Garantías",
+      "settings": {}
     },
     "newsletter": {
       "type": "newsletter",
@@ -304,7 +250,7 @@
     "categories",
     "featured_collection",
     "editorial_banner_g9Wq7H",
-    "guarantees",
+    "garantias_FMf9m7",
     "newsletter"
   ]
 }
