@@ -152,28 +152,52 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "blocks": {
+        "collection_Jg3E6H": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_17_jun_2026_20_49_51.png",
+            "title": "Camisas",
+            "link_label": "DESCUBRIR",
+            "link": "shopify://collections/camisas"
+          }
+        },
+        "collection_3RQxbP": {
+          "type": "collection",
+          "settings": {
+            "title": "Nombre colección",
+            "link_label": "DESCUBRIR",
+            "link": ""
+          }
+        },
+        "collection_4WLEUJ": {
+          "type": "collection",
+          "settings": {
+            "title": "Nombre colección",
+            "link_label": "DESCUBRIR",
+            "link": ""
+          }
+        },
+        "collection_rFjK3T": {
+          "type": "collection",
+          "settings": {
+            "title": "Nombre colección",
+            "link_label": "DESCUBRIR",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_Jg3E6H",
+        "collection_3RQxbP",
+        "collection_4WLEUJ",
+        "collection_rFjK3T"
+      ],
       "settings": {
-        "collection": "all",
-        "products_to_show": 4,
-        "title": "SELECCIÓN DESTACADA",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
+        "eyebrow": "SELECCIÓN",
+        "title": "COLECCIONES DESTACADAS",
+        "subtitle": "Descubre las categorías más queridas de nuestra tienda.",
         "color_scheme": "scheme-1",
-        "image_ratio": "portrait",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
         "padding_top": 40,
         "padding_bottom": 40
       }
