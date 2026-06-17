@@ -65,7 +65,7 @@
         ".header-wrapper {background: transparent !important; position: absolute; width: 100%; z-index: 10;}",
         ".list-menu--inline {display: flex; align-items: center; width: 100%;}",
         ".list-menu--inline > li:nth-child(3) {margin-left: auto;}",
-        ".template-index .header__icon {display: none;}"
+        ".template-index .header__icons {display: none;}"
       ],
       "settings": {
         "logo_position": "middle-left",
