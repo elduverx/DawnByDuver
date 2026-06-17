@@ -3748,7 +3748,7 @@ body.template-index .header__icons {
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #999;
+  color: #666;
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -3766,6 +3766,6 @@ body.template-index .header__icons {
 .vela-discount-box__sub {
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: #999;
+  color: #555;
   margin-top: 0;
 }
