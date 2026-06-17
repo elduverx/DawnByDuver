@@ -89,7 +89,9 @@
         "discount_box_CQmTq4",
         "text_rUNHy4"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".rich-text__wrapper p {color: #444 !important;}"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
