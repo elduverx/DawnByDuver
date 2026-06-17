@@ -70,7 +70,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad, diseñadas para quienes saben lo que quieren.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
+            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
           }
         },
         "discount_box_CQmTq4": {
@@ -109,8 +109,8 @@
         "men": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/SECCION_HOMBRE.png",
             "title": "HOMBRE",
-            "text": "<p>Descubre lo nuevo para él.</p>",
             "link_label": "DESCUBRIR",
             "link": "shopify://collections/all"
           }
@@ -118,8 +118,8 @@
         "women": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/SECCION_MUJER.png",
             "title": "MUJER",
-            "text": "<p>Elegancia en cada detalle.</p>",
             "link_label": "DESCUBRIR",
             "link": "shopify://collections/all"
           }
@@ -130,14 +130,8 @@
         "women"
       ],
       "settings": {
-        "title": "HECHO PARA TODOS",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "portrait",
-        "button_label": "",
-        "button_link": "",
+        "title": "Hecho para todos",
         "columns_desktop": 2,
-        "column_alignment": "center",
         "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
@@ -211,7 +205,6 @@
           "type": "column",
           "settings": {
             "title": "ENVÍO GRATUITO",
-            "text": "<p>En todos los pedidos a España peninsular.</p>",
             "link_label": "",
             "link": ""
           }
@@ -220,7 +213,6 @@
           "type": "column",
           "settings": {
             "title": "DEVOLUCIONES",
-            "text": "<p>Garantizadas durante 14 días.</p>",
             "link_label": "",
             "link": ""
           }
@@ -229,7 +221,6 @@
           "type": "column",
           "settings": {
             "title": "PAGO SEGURO",
-            "text": "<p>Múltiples métodos de pago protegidos.</p>",
             "link_label": "",
             "link": ""
           }
@@ -242,13 +233,7 @@
       ],
       "settings": {
         "title": "COMPRA CON CONFIANZA",
-        "heading_size": "h3",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "button_label": "Etiqueta de botón",
-        "button_link": "",
         "columns_desktop": 3,
-        "column_alignment": "center",
         "background_style": "none",
         "color_scheme": "scheme-1",
         "columns_mobile": "1",
