@@ -37,7 +37,7 @@
       ],
       "settings": {
         "image": "shopify://shop_images/BANNER_VELA_MADRID_2_LOGO_PEQUENO.png",
-        "image_overlay_opacity": 20,
+        "image_overlay_opacity": 30,
         "image_height": "large",
         "image_behavior": "none",
         "desktop_content_position": "middle-center",
@@ -98,83 +98,153 @@
         "desktop_content_position": "center",
         "content_alignment": "center",
         "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 60,
-        "padding_bottom": 60
+        "full_width": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
-    "categories": {
-      "type": "multicolumn",
+    "rich_text_Wtkhik": {
+      "type": "rich-text",
       "blocks": {
-        "men": {
-          "type": "column",
+        "caption_bf8y8K": {
+          "type": "caption",
           "settings": {
-            "image": "shopify://shop_images/SECCION_HOMBRE.png",
-            "eyebrow": "COLECCIÓN",
-            "title": "HOMBRE",
-            "link_label": "DESCUBRIR",
-            "link": "shopify://collections/all"
+            "caption": "EXPLORA LA COLECCION",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
           }
         },
-        "women": {
-          "type": "column",
+        "heading_zzk9ma": {
+          "type": "heading",
           "settings": {
-            "image": "shopify://shop_images/SECCION_MUJER.png",
-            "eyebrow": "COLECCIÓN",
-            "title": "MUJER",
-            "link_label": "DESCUBRIR",
-            "link": "shopify://collections/all"
+            "heading": "Hecho para todos",
+            "heading_size": "h1"
+          }
+        },
+        "text_4hTXLC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Descubre las piezas esenciales de la temporada.</p>"
           }
         }
       },
       "block_order": [
-        "men",
-        "women"
+        "caption_bf8y8K",
+        "heading_zzk9ma",
+        "text_4hTXLC"
       ],
-      "custom_css": [
-        ".multicolumn-list {gap: 0px !important;}",
-        "/* Para el subtítulo superior (EXPLORA LA COLECCIÓN) */.multicolumn .caption-with-letter-spacing {font-weight: 600 !important; /* Más grueso (puedes probar con 700 o bold) */ color: #121212 !important; /* Cambia este código por el color que quieras (ej. negro oscuro) */}",
-        "/* Para el texto inferior (Descubre las piezas esenciales...) */.multicolumn .rich-text__text {font-weight: 500 !important; /* Un poco más de grosor */ color: #333333 !important; /* Color del texto inferior */}"
-      ],
+      "name": "t:sections.rich-text.presets.name",
       "settings": {
-        "eyebrow": "EXPLORA LA COLECCIÓN",
-        "title": "Hecho para todos",
-        "subtitle": "Descubre las piezas esenciales de la temporada.",
-        "columns_desktop": 2,
-        "background_style": "none",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 40,
-        "padding_bottom": 40
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 8,
+        "padding_bottom": 0
       }
+    },
+    "178170564443659aba": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f79e452_bGqxCR": {
+          "type": "ai_gen_block_f79e452",
+          "settings": {
+            "image_left_url": "",
+            "image_left_title": "Hombre",
+            "image_left_subtitle": "Descubrir coleccion",
+            "image_right_url": "",
+            "image_right_title": "Mujer",
+            "image_right_subtitle": "Descubrir coleccion",
+            "desktop_width_percent": 100,
+            "image_aspect_ratio": "3 / 4",
+            "gap": 0,
+            "gap_mobile": 0,
+            "border_radius": 0,
+            "title_size": 28,
+            "subtitle_size": 20,
+            "text_color": "#ffffff",
+            "text_horizontal_alignment": "flex-start",
+            "text_vertical_alignment": "flex-end",
+            "overlay_padding": 28,
+            "overlay_opacity": 0.2
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f79e452_bGqxCR"
+      ],
+      "settings": {}
+    },
+    "1781705196c5a09260": {
+      "type": "_blocks",
+      "settings": {}
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "all",
+        "collection": "conjuntos",
         "products_to_show": 4,
-        "title": "SELECCIÓN DESTACADA",
-        "heading_size": "h2",
-        "description": "",
+        "title": "COLECCIONES DESTACADAS",
+        "heading_size": "h1",
+        "description": "<p>Descubre las categorias mas queridas de nuestra tienda</p>",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
+        "enable_desktop_slider": true,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
         "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": true,
-        "show_vendor": false,
+        "show_vendor": true,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 40,
         "padding_bottom": 40
+      }
+    },
+    "image_with_text_bA9zdk": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_tttnVY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Imagen con texto",
+            "heading_size": "h1"
+          }
+        },
+        "text_xTwi9r": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Vincula un texto con una imagen para atraer la atención hacia tu producto, colección o artículo de blog seleccionados. Agrega detalles sobre disponibilidad y estilo, o incluso ofrece una reseña.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tttnVY",
+        "text_xTwi9r"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/BANNER_COMING_SOON_VELA_MADRID.png",
+        "height": "large",
+        "desktop_image_width": "large",
+        "layout": "image_first",
+        "image_behavior": "zoom-in",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "community": {
@@ -213,7 +283,6 @@
         "shipping": {
           "type": "column",
           "settings": {
-            "eyebrow": "COLECCIÓN",
             "title": "ENVÍO GRATUITO",
             "link_label": "",
             "link": ""
@@ -222,7 +291,6 @@
         "returns": {
           "type": "column",
           "settings": {
-            "eyebrow": "COLECCIÓN",
             "title": "DEVOLUCIONES",
             "link_label": "",
             "link": ""
@@ -231,7 +299,6 @@
         "secure": {
           "type": "column",
           "settings": {
-            "eyebrow": "COLECCIÓN",
             "title": "PAGO SEGURO",
             "link_label": "",
             "link": ""
@@ -244,9 +311,7 @@
         "secure"
       ],
       "settings": {
-        "eyebrow": "EXPLORA LA COLECCIÓN",
         "title": "COMPRA CON CONFIANZA",
-        "subtitle": "Descubre las piezas esenciales de la temporada.",
         "columns_desktop": 3,
         "background_style": "none",
         "color_scheme": "scheme-1",
@@ -286,8 +351,11 @@
   "order": [
     "image_banner",
     "philosophy",
-    "categories",
+    "rich_text_Wtkhik",
+    "178170564443659aba",
+    "1781705196c5a09260",
     "featured_collection",
+    "image_with_text_bA9zdk",
     "community",
     "guarantees",
     "newsletter"
