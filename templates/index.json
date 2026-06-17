@@ -209,9 +209,8 @@
       "type": "image-banner",
       "custom_css": [
         ".banner {margin-left: 40px; margin-right: 40px;}",
-        ".banner {margin-left: 120px; margin-right: 120px;}",
-        ".banner .banner__media {height: 350px !important;}",
-        "@media screen and (max-width: 749px) {.banner {margin-left: 16px; margin-right: 16px; } .banner .banner__media {height: 220px !important; }}"
+        ".banner__media {height: 320px !important; margin-left: 120px; margin-right: 120px;}",
+        "@media screen and (max-width: 749px) {.banner__media {height: 220px !important; margin-left: 20px; margin-right: 20px; }}"
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
