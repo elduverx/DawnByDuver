@@ -3769,3 +3769,7 @@ body.template-index .header__icons {
   color: #555;
   margin-top: 0;
 }
+.rich-text__wrapper {
+  max-width: 600px !important;
+  margin: 0 auto;
+}
