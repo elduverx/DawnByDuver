@@ -133,7 +133,8 @@
       ],
       "custom_css": [
         ".multicolumn-list {gap: 0px !important;}",
-        ".multicolumn-list__item {padding: 0px !important; border: none !important;}"
+        "/* Para el subtítulo superior (EXPLORA LA COLECCIÓN) */.multicolumn .caption-with-letter-spacing {font-weight: 600 !important; /* Más grueso (puedes probar con 700 o bold) */ color: #121212 !important; /* Cambia este código por el color que quieras (ej. negro oscuro) */}",
+        "/* Para el texto inferior (Descubre las piezas esenciales...) */.multicolumn .rich-text__text {font-weight: 500 !important; /* Un poco más de grosor */ color: #333333 !important; /* Color del texto inferior */}"
       ],
       "settings": {
         "eyebrow": "EXPLORA LA COLECCIÓN",
