@@ -3801,12 +3801,3 @@ body.template-index .header__icons {
   background: #e0e0e0;
   margin-top: 48px;
 }
-/* Footer newsletter título en minúsculas */
-.footer__newsletter .newsletter__subheading,
-.footer__newsletter h2,
-.footer__newsletter .title {
-  text-transform: none !important;
-  font-family: 'Playfair Display', Georgia, serif !important;
-  font-weight: 400 !important;
-  font-size: clamp(1.8rem, 3vw, 2.5rem) !important;
-}
