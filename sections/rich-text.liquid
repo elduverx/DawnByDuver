@@ -87,6 +87,12 @@
                   </a>
                 {%- endif -%}
               </div>
+              {%- when 'discount_box' -%}
+  <div class="vela-discount-box">
+    <p class="vela-discount-box__label">SOLO POR TIEMPO LIMITADO</p>
+    <p class="vela-discount-box__number">50%</p>
+    <p class="vela-discount-box__sub">en toda la web · Oferta válida hasta fin de existencias</p>
+  </div>
           {%- endcase -%}
         {%- endfor -%}
       </div>
@@ -334,6 +340,12 @@
         }
       ]
     }
+    ,{
+  "type": "discount_box",
+  "name": "Caja de descuento",
+  "limit": 1,
+  "settings": []
+}
   ],
   "presets": [
     {
