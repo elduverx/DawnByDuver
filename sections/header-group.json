@@ -61,9 +61,7 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [
-        ".header-wrapper {background: transparent !important; position: absolute; width: 100%; z-index: 10;}"
-      ],
+      "custom_css": [],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
