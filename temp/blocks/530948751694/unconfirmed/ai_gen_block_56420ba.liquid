@@ -1,6 +1,276 @@
+{% doc %}
+  @prompt
+    Create a two-image side-by-side layout section with the following requirements:
+    - On desktop: two images displayed side by side, each taking exactly 50% of the width, with no gaps, no borders, no padding, no margins between them
+    - On mobile: two images stacked vertically, each taking 100% of the width, with no gaps, no borders, no padding, no margins between them
+    - Both images must have the exact same height and width
+    - Images should use object-fit: cover to fill their containers completely
+    - No spacing, no borders, no box shadows anywhere
+    - The section should be fully responsive
+    - Allow the merchant to set each image independently via theme settings
+    - The images should be full bleed with zero whitespace between them, haz que una ponga coleccion hombre descubrir y la otra coleccion mujer descubrir y manden a los catalogos correspodientes
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-dual-image-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-dual-image-container-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    gap: 0;
+  }
+
+  .ai-dual-image-item-{{ ai_gen_id }} {
+    flex: 0 0 50%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-dual-image-link-{{ ai_gen_id }} {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-bottom: {{ block.settings.image_aspect_ratio }}%;
+    margin: 0;
+    overflow: hidden;
+    text-decoration: none;
+  }
+
+  .ai-dual-image-link-{{ ai_gen_id }} img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-dual-image-link-{{ ai_gen_id }}:hover img {
+    transform: scale(1.05);
+  }
+
+  .ai-dual-image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ai-dual-image-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .ai-dual-image-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: #ffffff;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .ai-dual-image-title-{{ ai_gen_id }} {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .ai-dual-image-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ffffff;
+    color: #121212;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .ai-dual-image-link-{{ ai_gen_id }}:hover .ai-dual-image-button-{{ ai_gen_id }} {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-dual-image-item-{{ ai_gen_id }} {
+      flex: 0 0 100%;
+    }
+
+    .ai-dual-image-title-{{ ai_gen_id }} {
+      font-size: 22px;
+    }
+
+    .ai-dual-image-overlay-{{ ai_gen_id }} {
+      padding: 20px;
+    }
+  }
+{% endstyle %}
+
+<dual-images-{{ ai_gen_id }} class="ai-dual-image-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-dual-image-container-{{ ai_gen_id }}">
+    <div class="ai-dual-image-item-{{ ai_gen_id }}">
+      {% if block.settings.collection_left %}
+        <a href="{{ block.settings.collection_left.url }}" class="ai-dual-image-link-{{ ai_gen_id }}">
+          {% if block.settings.collection_left.featured_image %}
+            <img
+              src="{{ block.settings.collection_left.featured_image | image_url: width: 1500 }}"
+              alt="{{ block.settings.collection_left.featured_image.alt | default: block.settings.collection_left.title | escape }}"
+              loading="lazy"
+              width="{{ block.settings.collection_left.featured_image.width }}"
+              height="{{ block.settings.collection_left.featured_image.height }}"
+            >
+          {% else %}
+            <div class="ai-dual-image-placeholder-{{ ai_gen_id }}">
+              {{ 'collection-1' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+          {% if block.settings.show_overlay %}
+            <div class="ai-dual-image-overlay-{{ ai_gen_id }}">
+              <h2 class="ai-dual-image-title-{{ ai_gen_id }}">{{ block.settings.collection_left.title }}</h2>
+              <span class="ai-dual-image-button-{{ ai_gen_id }}">{{ block.settings.button_text }}</span>
+            </div>
+          {% endif %}
+        </a>
+      {% else %}
+        <div class="ai-dual-image-link-{{ ai_gen_id }}">
+          <div class="ai-dual-image-placeholder-{{ ai_gen_id }}">
+            {{ 'collection-1' | placeholder_svg_tag }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-dual-image-item-{{ ai_gen_id }}">
+      {% if block.settings.collection_right %}
+        <a href="{{ block.settings.collection_right.url }}" class="ai-dual-image-link-{{ ai_gen_id }}">
+          {% if block.settings.collection_right.featured_image %}
+            <img
+              src="{{ block.settings.collection_right.featured_image | image_url: width: 1500 }}"
+              alt="{{ block.settings.collection_right.featured_image.alt | default: block.settings.collection_right.title | escape }}"
+              loading="lazy"
+              width="{{ block.settings.collection_right.featured_image.width }}"
+              height="{{ block.settings.collection_right.featured_image.height }}"
+            >
+          {% else %}
+            <div class="ai-dual-image-placeholder-{{ ai_gen_id }}">
+              {{ 'collection-1' | placeholder_svg_tag }}
+            </div>
+          {% endif %}
+          {% if block.settings.show_overlay %}
+            <div class="ai-dual-image-overlay-{{ ai_gen_id }}">
+              <h2 class="ai-dual-image-title-{{ ai_gen_id }}">{{ block.settings.collection_right.title }}</h2>
+              <span class="ai-dual-image-button-{{ ai_gen_id }}">{{ block.settings.button_text }}</span>
+            </div>
+          {% endif %}
+        </a>
+      {% else %}
+        <div class="ai-dual-image-link-{{ ai_gen_id }}">
+          <div class="ai-dual-image-placeholder-{{ ai_gen_id }}">
+            {{ 'collection-1' | placeholder_svg_tag }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</dual-images-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class DualImages{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+      }
+    }
+
+    customElements.define('dual-images-{{ ai_gen_id }}', DualImages{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Colecciones duales",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colecciones"
+    },
+    {
+      "type": "collection",
+      "id": "collection_left",
+      "label": "Colección izquierda"
+    },
+    {
+      "type": "collection",
+      "id": "collection_right",
+      "label": "Colección derecha"
+    },
+    {
+      "type": "header",
+      "content": "Diseño"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Mostrar título y botón",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto del botón",
+      "default": "Descubrir"
+    },
+    {
+      "type": "range",
+      "id": "image_aspect_ratio",
+      "min": 50,
+      "max": 150,
+      "step": 10,
+      "unit": "%",
+      "label": "Altura de imagen",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "Colecciones duales"
+    }
+  ]
+}
 {% endschema %}
