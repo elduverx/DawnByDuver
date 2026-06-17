@@ -212,76 +212,56 @@
         "image": "shopify://shop_images/ChatGPT_Image_17_jun_2026_21_23_45.png"
       }
     },
-    "community": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "LOS CLIENTES DE NUESTRA COMUNIDAD CAMBIA TU LOOK",
-            "heading_size": "h2"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Etiquétanos en tus fotos para formar parte de nuestro universo visual.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-2",
-        "full_width": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "guarantees": {
       "type": "multicolumn",
       "blocks": {
-        "shipping": {
+        "column_BAFxk6": {
           "type": "column",
           "settings": {
-            "eyebrow": "COLECCIÓN",
-            "title": "ENVÍO GRATUITO",
-            "link_label": "",
+            "eyebrow": "Envío Gratuito",
+            "title": "Columna",
+            "link_label": "DESCUBRIR",
             "link": ""
           }
         },
-        "returns": {
+        "column_H94nmg": {
           "type": "column",
           "settings": {
             "eyebrow": "COLECCIÓN",
-            "title": "DEVOLUCIONES",
-            "link_label": "",
+            "title": "Columna",
+            "link_label": "DESCUBRIR",
             "link": ""
           }
         },
-        "secure": {
+        "column_BaELzP": {
           "type": "column",
           "settings": {
             "eyebrow": "COLECCIÓN",
-            "title": "PAGO SEGURO",
-            "link_label": "",
+            "title": "Columna",
+            "link_label": "DESCUBRIR",
+            "link": ""
+          }
+        },
+        "column_XRrJhD": {
+          "type": "column",
+          "settings": {
+            "eyebrow": "COLECCIÓN",
+            "title": "Columna",
+            "link_label": "DESCUBRIR",
             "link": ""
           }
         }
       },
       "block_order": [
-        "shipping",
-        "returns",
-        "secure"
+        "column_BAFxk6",
+        "column_H94nmg",
+        "column_BaELzP",
+        "column_XRrJhD"
       ],
       "settings": {
-        "eyebrow": "EXPLORA LA COLECCIÓN",
+        "eyebrow": "GARANTÍAS",
         "title": "COMPRA CON CONFIANZA",
-        "subtitle": "Descubre las piezas esenciales de la temporada.",
+        "subtitle": "Una experiencia de compra cuidada, clara y pensada para ti.",
         "columns_desktop": 3,
         "background_style": "none",
         "color_scheme": "scheme-1",
@@ -324,7 +304,6 @@
     "categories",
     "featured_collection",
     "editorial_banner_g9Wq7H",
-    "community",
     "guarantees",
     "newsletter"
   ]
