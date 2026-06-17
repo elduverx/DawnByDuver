@@ -61,9 +61,7 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [
-        ".header__menu-item {font-size: 16px !important;}"
-      ],
+      "custom_css": [],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
