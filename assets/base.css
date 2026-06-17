@@ -3801,15 +3801,3 @@ body.template-index .header__icons {
   background: #e0e0e0;
   margin-top: 48px;
 }
-/* Banner imagen editorial */
-.banner .banner__media {
-  height: 320px !important;
-  width: 70% !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block !important;
-}
-
-.banner {
-  overflow: hidden;
-}
