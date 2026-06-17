@@ -3801,17 +3801,26 @@ body.template-index .header__icons {
   background: #e0e0e0;
   margin-top: 48px;
 }
-/* ===== FIX BANNER COOKIES NATIVO ===== */
+/* ===== FIX COOKIE BANNER - VELA MADRID ===== */
+#shopify-pc__banner,
 .shopify-pc__banner {
-  z-index: 99999 !important;
+  z-index: 2147483647 !important;
   pointer-events: all !important;
+  position: fixed !important;
 }
 
-.shopify-pc__banner__btn-group button,
-.shopify-pc__banner__btn {
+#shopify-pc__banner *,
+.shopify-pc__banner * {
   pointer-events: all !important;
   cursor: pointer !important;
-  position: relative !important;
-  z-index: 100000 !important;
+}
+
+#shopify-pc__banner button,
+.shopify-pc__banner button,
+[id*="shopify-pc"] button {
+  pointer-events: all !important;
+  cursor: pointer !important;
   opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 2147483647 !important;
 }
