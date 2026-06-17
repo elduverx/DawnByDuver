@@ -12,14 +12,6 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "REBAJAS HASTA -50%",
-            "heading_size": "h0"
-          }
-        },
         "text": {
           "type": "text",
           "settings": {
@@ -30,17 +22,16 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "VER REBAJAS",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": false,
-            "button_label_2": "Etiqueta de botón",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_label_1": "HOMBRE",
+            "button_link_1": "shopify://collections",
+            "button_style_secondary_1": true,
+            "button_label_2": "MUJER",
+            "button_link_2": "shopify://collections",
+            "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
-        "heading",
         "text",
         "button"
       ],
