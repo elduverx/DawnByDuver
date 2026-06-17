@@ -3738,10 +3738,10 @@ body.template-index .header__icons {
 .vela-discount-box {
   background: #f5f2ed;
   border-radius: 8px;
-  padding: 20px 32px;
+  padding: 16px 48px;
   text-align: center;
   margin: 24px auto;
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .vela-discount-box__label {
@@ -3749,20 +3749,19 @@ body.template-index .header__icons {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #888;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .vela-discount-box__number {
-  font-size: 48px;
-  font-weight: 500;
+  font-size: 52px;
+  font-weight: 600;
   color: #1a1a1a;
-  line-height: 1;
-  margin-bottom: 8px;
+  line-height: 1.1;
+  margin-bottom: 4px;
 }
 
 .vela-discount-box__sub {
   font-size: 12px;
   letter-spacing: 0.06em;
   color: #888;
-  text-transform: lowercase;
 }
