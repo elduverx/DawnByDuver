@@ -3801,15 +3801,17 @@ body.template-index .header__icons {
   background: #e0e0e0;
   margin-top: 48px;
 }
-/* ===== FIX COOKIE BANNER ===== */
-#shopify-pc__banner {
+/* ===== FIX BANNER COOKIES NATIVO ===== */
+.shopify-pc__banner {
   z-index: 99999 !important;
-  pointer-events: auto !important;
+  pointer-events: all !important;
 }
 
-#shopify-pc__banner button {
-  pointer-events: auto !important;
+.shopify-pc__banner__btn-group button,
+.shopify-pc__banner__btn {
+  pointer-events: all !important;
   cursor: pointer !important;
   position: relative !important;
-  z-index: 99999 !important;
+  z-index: 100000 !important;
+  opacity: 1 !important;
 }
