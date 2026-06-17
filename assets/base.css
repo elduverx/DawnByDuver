@@ -3824,3 +3824,10 @@ body.template-index .header__icons {
   visibility: visible !important;
   z-index: 2147483647 !important;
 }
+footer-block__newsletter .footer-block__heading {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 400 !important;
+  font-size: clamp(1.8rem, 3vw, 2.5rem) !important;
+}
