@@ -134,6 +134,7 @@
             <div
               class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}"
               {{ block.shopify_attributes }}
+               style="display:flex; flex-direction:row; gap:1rem; justify-content:center; align-items:center;"
             >
               {%- if block.settings.button_label_1 != blank -%}
                 <a
