@@ -3874,3 +3874,14 @@ footer-block__newsletter .footer-block__heading {
 .footer-block--newsletter .field:before {
   display: none !important;
 }
+.footer-block--newsletter .footer-block__heading::after {
+  content: "Acceso anticipado a nuevas colecciones, descuentos exclusivos e historias de la marca.";
+  display: block;
+  font-size: 14px;
+  font-family: var(--font-body-family), sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: 10px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
