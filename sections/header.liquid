@@ -172,7 +172,7 @@
     {%- endif -%}
 {%- liquid
   if request.page_type == 'index'
-    assign menu_handle = section.settings.menu
+    assign menu_handle = linklists['main-menu']
   else
     assign menu_handle = linklists['menu-sobre-nosotros-izquierda']
   endif
