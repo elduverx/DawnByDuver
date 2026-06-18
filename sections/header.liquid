@@ -171,6 +171,23 @@
       {%- endif -%}
     {%- endif -%}
 {%- if request.page_type == 'index' -%}
+  <style>
+  .template-index .header__inline-menu {
+    max-width: none !important;
+    width: 100% !important;
+    position: absolute !important;
+    left: 0 !important;
+    padding: 0 5rem !important;
+  }
+  .template-index .header__inline-menu > ul {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+  .template-index .header__inline-menu > ul > li:nth-child(3) {
+    margin-left: auto !important;
+  }
+</style>
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
     {%- render 'header-dropdown-menu', menu: linklists['main-menu'] -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
