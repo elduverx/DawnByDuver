@@ -67,7 +67,7 @@
         "mobile_logo_position": "center",
         "menu": "main-menu",
         "menu_type_desktop": "mega-menu",
-        "sticky_header_type": "always",
+        "sticky_header_type": "none",
         "show_line_separator": false,
         "color_scheme": "scheme-3",
         "menu_color_scheme": "scheme-1",
