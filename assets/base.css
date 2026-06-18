@@ -4022,10 +4022,15 @@ footer-block__newsletter .footer-block__heading {
     align-items: center;
     justify-content: flex-start !important;
   }
-}@media screen and (min-width: 990px) {
+@media screen and (min-width: 990px) {
   .header--middle-center .header__inline-menu .list-menu--inline {
     width: auto !important;
     justify-content: flex-start !important;
+  }
+  
+  .header-wrapper--homepage .header__inline-menu .list-menu--inline {
+    justify-content: flex-end !important;
+    width: 100% !important;
   }
 }
 @media screen and (min-width: 990px) {
