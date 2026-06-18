@@ -62,9 +62,9 @@
     "header": {
       "type": "header",
       "custom_css": [
-        "/* Forzar al contenedor del menú a ocupar todo el espacio disponible */.header__inline-menu {flex-grow: 1 !important; max-width: none !important;}",
-        "/* Asegurar que la lista use flexbox a lo ancho */.header__inline-menu > ul {display: flex !important; width: 100% !important;}",
-        "/* Empujar el tercer elemento (SEGUIMIENTO) y los siguientes a la derecha */.header__inline-menu > ul > li:nth-of-type(3) {margin-left: auto !important;}"
+        ".template-index .header__inline-menu {max-width: none !important; width: 100% !important; position: absolute !important; left: 0 !important; padding: 0 5rem !important;}",
+        ".template-index .header__inline-menu > ul {display: flex !important; justify-content: space-between !important; width: 100% !important;}",
+        ".template-index .header__inline-menu > ul > li:nth-child(3) {margin-left: auto !important;}"
       ],
       "settings": {
         "logo_position": "middle-center",
