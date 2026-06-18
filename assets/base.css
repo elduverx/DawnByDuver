@@ -3705,7 +3705,7 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5 {
   margin-left: auto;
   margin-right: auto;
 }
-.header-wrapper {
+.header-wrapper--homepage {
   background: transparent !important;
   position: absolute;
   width: 100%;
