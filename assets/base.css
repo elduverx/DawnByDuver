@@ -3990,3 +3990,7 @@ footer-block__newsletter .footer-block__heading {
 .header--middle-left .header__inline-menu {
   margin-left: auto !important;
 }
+/* Reducir espacio entre menú derecho e iconos */
+.header--middle-left .header__icons {
+  margin-left: 1rem !important;
+}
