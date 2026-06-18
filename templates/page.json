@@ -13,7 +13,8 @@
       "type": "main-page",
       "custom_css": [
         ".main-page-title {display: none !important;}",
-        ".page-width p {color: #1a1a1a !important; font-size: 15px !important; font-weight: 400 !important; line-height: 1.7 !important; margin-bottom: 16px !important;}"
+        ".page-width p {color: #1a1a1a !important; font-size: 15px !important; font-weight: 400 !important; line-height: 1.7 !important; margin-bottom: 16px !important;}",
+        ".page-width h1 + p {color: #888 !important; font-size: 12px !important; font-weight: 300 !important; letter-spacing: 0.15em !important;}"
       ],
       "settings": {
         "padding_top": 28,
