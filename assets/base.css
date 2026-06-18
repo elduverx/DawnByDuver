@@ -3986,12 +3986,14 @@ footer-block__newsletter .footer-block__heading {
   color: #ffffff !important;
   fill: #ffffff !important;
 }
-/* Menú derecho e iconos juntos a la derecha */
+/* Menú derecho e iconos pegados */
 .header--middle-left .header__inline-menu {
   margin-left: auto !important;
+  margin-right: 0 !important;
 }
 
 .header--middle-left .header__icons {
-  margin-left: 0 !important;
   justify-self: auto !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
 }
