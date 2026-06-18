@@ -3997,3 +3997,11 @@ footer-block__newsletter .footer-block__heading {
   margin-left: 0 !important;
   padding-right: 0 !important;
 }
+/* Seguimiento derecha */
+.header--middle-center .header__inline-menu-right {
+  grid-area: icons;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: flex-end;
+}
