@@ -14,7 +14,14 @@
     assign links_to_render = linklists['hombres-sobre-nosotros'].links
   endif
 -%}
-{%- for link in links_to_render -%}
+{%- liquid
+  if request.page_type == 'index'
+    assign left_links = linklists['menu-home-izquierda'].links
+  else
+    assign left_links = linklists['hombres-sobre-nosotros'].links
+  endif
+-%}
+{%- for link in left_links -%}
       <li>
         {%- if link.links != blank -%}
           <header-menu>
