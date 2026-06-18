@@ -4005,3 +4005,11 @@ footer-block__newsletter .footer-block__heading {
   gap: 2rem;
   justify-content: flex-end;
 }
+/* Reordenar iconos a la derecha de Seguimiento */
+.header--middle-center .header__inline-menu-right {
+  order: 1;
+}
+
+.header--middle-center .header__icons {
+  order: 2;
+}
