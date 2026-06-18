@@ -3887,3 +3887,18 @@ footer-block__newsletter .footer-block__heading {
   max-width: 450px; /* Fuerza al texto a saltar en dos líneas de forma limpia */
   line-height: 1.4;
 }
+/* Oculta el texto antiguo que bloquea el nuevo placeholder */
+.footer-block--newsletter .field__label {
+  display: none !important;
+}
+
+/* Fuerza a que el navegador muestre siempre 'Tu correo electrónico' */
+.footer-block--newsletter .field__input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1 !important;
+}
+
+/* Ajuste visual para que el texto se posicione correctamente */
+.footer-block--newsletter .field__input {
+  padding-top: 1rem !important;
+}
