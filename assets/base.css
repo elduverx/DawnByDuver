@@ -3974,3 +3974,13 @@ body:not(.template-index) .header__icon svg {
   color: #1a1a1a !important;
   fill: #1a1a1a !important;
 }
+/* Header letras blancas en homepage */
+.template-index .header__menu-item,
+.template-index .header__menu-item a,
+.template-index .list-menu__item,
+.template-index .list-menu__item--link,
+.template-index .header__icon,
+.template-index .header__icon svg {
+  color: #fff !important;
+  fill: #fff !important;
+}
