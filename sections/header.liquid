@@ -105,8 +105,13 @@
     endif
   endfor
 -%}
-
-{% liquid
+  {% liquid
+  if request.page_type == 'index'
+    assign menu_handle = 'main-menu'
+  else
+    assign menu_handle = 'hombres-sobre-nosotros'
+  endif
+%}
   assign header_tag = 'div'
 
   if section.settings.sticky_header_type != 'none'
