@@ -170,7 +170,25 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
-
+{%- if request.page_type == 'index' -%}
+  <style>
+    .header__inline-menu {
+      max-width: none !important;
+      width: 100% !important;
+      position: absolute !important;
+      left: 0 !important;
+      padding: 0 5rem !important;
+    }
+    .header__inline-menu > ul {
+      display: flex !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+    }
+    .header__inline-menu > ul > li:nth-child(3) {
+      margin-left: auto !important;
+    }
+  </style>
+{%- endif -%}
     {%- liquid
       if menu_handle != blank
      if request.page_type == 'index'
@@ -185,7 +203,7 @@ else
   elsif section.settings.menu_type_desktop != 'drawer'
     render 'header-mega-menu', menu: section.settings.menu_secundario
   endif
-endif
+endif<>
       endif
     %}
 
