@@ -4022,4 +4022,9 @@ footer-block__newsletter .footer-block__heading {
     align-items: center;
     justify-content: flex-start !important;
   }
+}@media screen and (min-width: 990px) {
+  .header--middle-center .header__inline-menu .list-menu--inline {
+    width: auto !important;
+    justify-content: flex-start !important;
+  }
 }
