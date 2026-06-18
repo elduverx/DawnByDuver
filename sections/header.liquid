@@ -172,9 +172,9 @@
     {%- endif -%}
 {%- if request.page_type == 'index' -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: section.settings.menu -%}
+    {%- render 'header-dropdown-menu', menu: linklists['main-menu'] -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: section.settings.menu -%}
+    {%- render 'header-mega-menu', menu: linklists['main-menu'] -%}
   {%- endif -%}
 {%- else -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
