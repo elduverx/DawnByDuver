@@ -4038,15 +4038,3 @@ footer-block__newsletter .footer-block__heading {
 .header-wrapper:not(.header-wrapper--homepage) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-/* ===== HOMEPAGE: header transparente ===== */
-.header-wrapper--homepage {
-  background: transparent !important;
-  position: absolute !important;
-  width: 100% !important;
-  z-index: 10 !important;
-}
-
-/* ===== HOMEPAGE: ocultar logo ===== */
-.header-wrapper--homepage .header__heading-link {
-  display: none !important;
-}
