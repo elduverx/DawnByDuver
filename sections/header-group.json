@@ -61,7 +61,11 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [],
+      "custom_css": [
+        ".header__inline-menu {max-width: none !important; width: 100% !important; position: absolute !important; left: 0 !important; padding: 0 5rem !important;}",
+        ".header__inline-menu > ul {display: flex !important; justify-content: space-between !important; width: 100% !important;}",
+        ".header__inline-menu > ul > li:nth-child(3) {margin-left: auto !important;}"
+      ],
       "settings": {
         "logo_position": "middle-center",
         "mobile_logo_position": "center",
