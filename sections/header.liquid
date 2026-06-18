@@ -170,6 +170,14 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
+{%- liquid
+  if request.page_type == 'index'
+    assign section_settings_menu = linklists['main-menu']
+  else
+    assign section_settings_menu = linklists['hombres-sobre-nosotros']
+  endif
+-%}
+
 {%- if request.page_type == 'index' -%}
   <style>
     .menu-home-derecha .header__inline-menu {
@@ -191,16 +199,16 @@
 
   <div class="menu-home-derecha">
     {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-      {%- render 'header-dropdown-menu', menu: linklists['main-menu'] -%}
+      {%- render 'header-dropdown-menu', menu: section_settings_menu -%}
     {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-      {%- render 'header-mega-menu', menu: linklists['main-menu'] -%}
+      {%- render 'header-mega-menu', menu: section_settings_menu -%}
     {%- endif -%}
   </div>
 {%- else -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: linklists['hombres-sobre-nosotros'] -%}
+    {%- render 'header-dropdown-menu', menu: section_settings_menu -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: linklists['hombres-sobre-nosotros'] -%}
+    {%- render 'header-mega-menu', menu: section_settings_menu -%}
   {%- endif -%}
 {%- endif -%}
     {%- if section.settings.logo_position == 'middle-center' -%}
