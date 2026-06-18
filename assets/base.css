@@ -3965,12 +3965,12 @@ footer-block__newsletter .footer-block__heading {
   height: auto;
 }
 /* Header letras negras en páginas interiores */
-body:not(.template-index) .header__menu-item,
-body:not(.template-index) .header__menu-item a,
-body:not(.template-index) .list-menu__item,
-body:not(.template-index) .list-menu__item--link,
-body:not(.template-index) .header__icon,
-body:not(.template-index) .header__icon svg {
+.section-header:not(.header-wrapper--homepage) .header__menu-item,
+.section-header:not(.header-wrapper--homepage) .header__menu-item a,
+.section-header:not(.header-wrapper--homepage) .list-menu__item,
+.section-header:not(.header-wrapper--homepage) .list-menu__item--link,
+.section-header:not(.header-wrapper--homepage) .header__icon,
+.section-header:not(.header-wrapper--homepage) .header__icon svg {
   color: #1a1a1a !important;
   fill: #1a1a1a !important;
 }
