@@ -24,7 +24,11 @@
         "footer-2": {
           "type": "text",
           "settings": {
-            "subtext": "<p> EMAIL<br/>info@velamadrid.com</p><p> HORARIO DE ATENCIÓN<br/><strong>Lunes a viernes de 09:00 a 15:00.</strong><br/>Respondemos en menos de 24h.</p>"
+            "subtext": "<p> EMAIL<br/>info@velamadrid.com</p><p> HORARIO DE ATENCIÓN<br/><strong>Lunes a viernes de 09:00 a 15:00.</strong><br/>Respondemos en menos de 24h.</p>",
+            "is_contact": false,
+            "email": "info@velamadrid.com",
+            "horario": "Lunes a viernes de 09:00 a 15:00.",
+            "respuesta": "Respondemos en menos de 24h."
           }
         },
         "footer-1": {
@@ -40,7 +44,12 @@
         "footer-2",
         "footer-1"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".footer__content-top {display: flex !important; flex-direction: column !important;}",
+        ".footer-block--newsletter {order: -1 !important; margin-bottom: 2rem !important; width: 100% !important; max-width: 100% !important; text-align: center !important;}",
+        ".footer-block--newsletter .footer-block__heading {justify-content: center !important;}",
+        ".footer-block--newsletter form {margin: 0 auto !important; max-width: 36rem !important;}"
+      ],
       "settings": {
         "color_scheme": "scheme-4",
         "newsletter_enable": true,
