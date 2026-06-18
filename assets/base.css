@@ -3932,7 +3932,6 @@ footer-block__newsletter .footer-block__heading {
   max-width: 160px; /* Tamaño ideal para el logo del pie de página */
   height: auto;
   margin-bottom: 2.5rem;
-  filter: brightness(0) invert(1); /* Convierte tu logo en blanco si es de color negro */
 }
 
 /* Sección de pagos */
