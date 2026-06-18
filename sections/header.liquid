@@ -199,16 +199,16 @@
 
   <div class="menu-home-derecha">
     {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-      {%- render 'header-dropdown-menu', menu: section_settings_menu -%}
+      {%- render 'header-dropdown-menu', menu: linklists['main-menu'] -%}
     {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-      {%- render 'header-mega-menu', menu: section_settings_menu -%}
+      {%- render 'header-mega-menu', menu: linklists['main-menu'] -%}
     {%- endif -%}
   </div>
 {%- else -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: section_settings_menu -%}
+    {%- render 'header-dropdown-menu', menu: linklists['hombres-sobre-nosotros'] -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: section_settings_menu -%}
+    {%- render 'header-mega-menu', menu: linklists['hombres-sobre-nosotros'] -%}
   {%- endif -%}
 {%- endif -%}
     {%- if section.settings.logo_position == 'middle-center' -%}
