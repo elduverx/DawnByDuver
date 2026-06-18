@@ -4042,3 +4042,7 @@ footer-block__newsletter .footer-block__heading {
 .header-wrapper--homepage .header__heading-logo-wrapper {
   display: none !important;
 }
+/* Homepage: eliminar espacio bajo header */
+.shopify-section-group-header-group:has(.header-wrapper--homepage) {
+  margin-bottom: 0 !important;
+}
