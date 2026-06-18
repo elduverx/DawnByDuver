@@ -62,8 +62,9 @@
     "header": {
       "type": "header",
       "custom_css": [
-        ".header__inline-menu .list-menu {display: flex; width: 100%;}",
-        ".header__inline-menu .list-menu > li:nth-child(3) {margin-left: auto;}"
+        "/* Forzar al contenedor del menú a ocupar todo el espacio disponible */.header__inline-menu {flex-grow: 1 !important; max-width: none !important;}",
+        "/* Asegurar que la lista use flexbox a lo ancho */.header__inline-menu > ul {display: flex !important; width: 100% !important;}",
+        "/* Empujar el tercer elemento (SEGUIMIENTO) y los siguientes a la derecha */.header__inline-menu > ul > li:nth-of-type(3) {margin-left: auto !important;}"
       ],
       "settings": {
         "logo_position": "middle-center",
