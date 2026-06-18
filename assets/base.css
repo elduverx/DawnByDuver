@@ -2339,11 +2339,14 @@ input[type='checkbox'] {
   z-index: initial;
 }
 
-/* Main Header Layout */
 .header-wrapper {
   display: block;
   position: relative;
   background-color: rgb(var(--color-background));
+}
+
+.header-wrapper--homepage {
+  position: absolute !important;
 }
 
 .header-wrapper--border-bottom {
