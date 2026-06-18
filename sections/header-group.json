@@ -61,11 +61,13 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [],
+      "custom_css": [
+        "/* Header texto negro en páginas interiores */.header:not(.header--transparent) .header__menu-item,.header:not(.header--transparent) .header__menu-item a,.header:not(.header--transparent) .list-menu__item {color: #1a1a1a !important;}"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
-        "menu": "main-menu",
+        "menu": "men-sobre-nosotros",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "none",
         "show_line_separator": false,
