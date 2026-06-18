@@ -3986,3 +3986,7 @@ footer-block__newsletter .footer-block__heading {
   color: #ffffff !important;
   fill: #ffffff !important;
 }
+/* Menú derecho pegado a los iconos en páginas interiores */
+.header--middle-left .header__inline-menu {
+  margin-left: auto !important;
+}
