@@ -4046,3 +4046,8 @@ footer-block__newsletter .footer-block__heading {
 .shopify-section-group-header-group:has(.header-wrapper--homepage) {
   margin-bottom: 0 !important;
 }
+/* Homepage: menú a la derecha */
+.header-wrapper--homepage .header__inline-menu .list-menu--inline {
+  justify-content: flex-end !important;
+  width: 100% !important;
+}
