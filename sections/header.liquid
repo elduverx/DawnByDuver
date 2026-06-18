@@ -189,23 +189,19 @@
     }
   </style>
 {%- endif -%}
-    {%- liquid
-      if menu_handle != blank
-     if request.page_type == 'index'
-  if section.settings.menu_type_desktop == 'dropdown'
-    render 'header-dropdown-menu'
-  elsif section.settings.menu_type_desktop != 'drawer'
-    render 'header-mega-menu'
-  endif
-else
-  if section.settings.menu_type_desktop == 'dropdown'
-    render 'header-dropdown-menu', menu: section.settings.menu_secundario
-  elsif section.settings.menu_type_desktop != 'drawer'
-    render 'header-mega-menu', menu: section.settings.menu_secundario
-  endif
-endif<>
-      endif
-    %}
+    {%- if request.page_type == 'index' -%}
+  {%- if section.settings.menu_type_desktop == 'dropdown' -%}
+    {%- render 'header-dropdown-menu' -%}
+  {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
+    {%- render 'header-mega-menu' -%}
+  {%- endif -%}
+{%- else -%}
+  {%- if section.settings.menu_type_desktop == 'dropdown' -%}
+    {%- render 'header-dropdown-menu', menu: linklists['menu-sobre-nosotros-derecha'] -%}
+  {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
+    {%- render 'header-mega-menu', menu: linklists['menu-sobre-nosotros-derecha'] -%}
+  {%- endif -%}
+{%- endif -%}
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
