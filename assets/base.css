@@ -3997,19 +3997,17 @@ footer-block__newsletter .footer-block__heading {
   margin-left: 0 !important;
   padding-right: 0 !important;
 }
-/* Seguimiento derecha */
+/* Seguimiento + iconos juntos a la derecha */
 .header--middle-center .header__inline-menu-right {
+  display: contents;
+}
+
+.header--middle-center .header__inline-menu-right a {
   grid-area: icons;
   display: flex;
   align-items: center;
-  gap: 2rem;
   justify-content: flex-end;
-}
-/* Reordenar iconos a la derecha de Seguimiento */
-.header--middle-center .header__inline-menu-right {
-  order: 1;
-}
-
-.header--middle-center .header__icons {
-  order: 2;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-size: 1.2rem;
 }
