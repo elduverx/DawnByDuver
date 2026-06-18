@@ -170,14 +170,6 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
-{%- liquid
-  if request.page_type == 'index'
-    assign section_settings_menu = linklists['main-menu']
-  else
-    assign section_settings_menu = linklists['hombres-sobre-nosotros']
-  endif
--%}
-
 {%- if request.page_type == 'index' -%}
   <style>
     .header__inline-menu {
@@ -198,17 +190,12 @@
   </style>
 
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: linklists['main-menu'] -%}
+    {%- render 'header-dropdown-menu' -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: linklists['main-menu'] -%}
+    {%- render 'header-mega-menu' -%}
   {%- endif -%}
-
 {%- else -%}
-  {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: linklists['hombres-sobre-nosotros'] -%}
-  {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: linklists['hombres-sobre-nosotros'] -%}
-  {%- endif -%}
+  {%- render 'header-sobre-nosotros-menu' -%}
 {%- endif -%}
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
