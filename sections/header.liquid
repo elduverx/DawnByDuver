@@ -170,39 +170,27 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
+{%- liquid
+  if request.page_type == 'index'
+    assign menu_handle = section.settings.menu
+  else
+    assign menu_handle = linklists['menu-sobre-nosotros-izquierda']
+  endif
+-%}
+
 {%- if request.page_type == 'index' -%}
-  <style>
-    .header__inline-menu {
-      max-width: none !important;
-      width: 100% !important;
-      position: absolute !important;
-      left: 0 !important;
-      padding: 0 5rem !important;
-    }
-    .header__inline-menu > ul {
-      display: flex !important;
-      justify-content: space-between !important;
-      width: 100% !important;
-    }
-    .header__inline-menu > ul > li:nth-child(3) {
-      margin-left: auto !important;
-    }
-  </style>
-{%- endif -%}
-    {%- if request.page_type == 'index' -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu' -%}
+    {%- render 'header-dropdown-menu', menu: menu_handle -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu' -%}
+    {%- render 'header-mega-menu', menu: menu_handle -%}
   {%- endif -%}
 {%- else -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: linklists['menu-sobre-nosotros-izquierda'] -%}
+    {%- render 'header-dropdown-menu', menu: menu_handle -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: linklists['menu-sobre-nosotros-izquierda'] -%}
+    {%- render 'header-mega-menu', menu: menu_handle -%}
   {%- endif -%}
 {%- endif -%}
-
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
