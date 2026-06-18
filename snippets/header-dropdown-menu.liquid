@@ -16,7 +16,7 @@
 -%}
 {%- liquid
   if request.page_type == 'index'
-assign left_links = linklists['menu-home-izquierda'].links
+assign left_links = linklists['main-menu'].links
   else
     assign left_links = linklists['hombres-sobre-nosotros'].links
   endif
