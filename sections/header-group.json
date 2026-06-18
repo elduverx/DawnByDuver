@@ -61,9 +61,7 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [
-        "/* Header texto negro en páginas interiores */.header:not(.header--transparent) .header__menu-item,.header:not(.header--transparent) .header__menu-item a,.header:not(.header--transparent) .list-menu__item {color: #1a1a1a !important;}"
-      ],
+      "custom_css": [],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
