@@ -4051,3 +4051,12 @@ footer-block__newsletter .footer-block__heading {
   justify-content: flex-end !important;
   width: 100% !important;
 }
+/* Homepage: menú a la derecha */
+.header-wrapper--homepage .header__inline-menu {
+  margin-left: auto !important;
+}
+
+.header-wrapper--homepage .header__inline-menu .list-menu--inline {
+  justify-content: flex-end !important;
+  width: 100% !important;
+}
