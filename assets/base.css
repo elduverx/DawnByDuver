@@ -4038,3 +4038,9 @@ footer-block__newsletter .footer-block__heading {
 .header-wrapper:not(.header-wrapper--homepage) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+/* Ocultar logo en homepage - middle center */
+.header-wrapper--homepage .header__heading-logo,
+.header-wrapper--homepage .header__heading-logo-wrapper,
+.header-wrapper--homepage .header__heading {
+  display: none !important;
+}
