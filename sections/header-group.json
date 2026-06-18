@@ -61,7 +61,9 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [],
+      "custom_css": [
+        "/* Ocultar logo en homepage */.header-wrapper--homepage .header__heading-logo-wrapper {display: none !important;}"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
