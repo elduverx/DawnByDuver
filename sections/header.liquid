@@ -207,15 +207,6 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
-<nav class="header__inline-menu-right">
-  <ul class="list-menu list-menu--inline">
-    <li>
-      <a href="/pages/seguimiento" class="header__menu-item list-menu__item link link--text focus-inset">
-        <span>Seguimiento</span>
-      </a>
-    </li>
-  </ul>
-</nav>
     {%- unless request.page_type == 'index' -%}
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <div class="desktop-localization-wrapper">

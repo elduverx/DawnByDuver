@@ -65,7 +65,7 @@
         "/* Ocultar logo en homepage */.header-wrapper--homepage .header__heading-logo-wrapper {display: none !important;}"
       ],
       "settings": {
-        "logo_position": "middle-left",
+        "logo_position": "middle-center",
         "mobile_logo_position": "center",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
