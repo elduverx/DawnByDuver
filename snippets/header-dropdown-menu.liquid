@@ -1,8 +1,8 @@
 {%- liquid
   if request.page_type == 'index'
-    assign menu_links = linklists['main-menu'].links
+    assign menu_handle = 'main-menu'
   else
-    assign menu_links = linklists['hombres-sobre-nosotros'].links
+    assign menu_handle = 'hombres-sobre-nosotros'
   endif
 -%}
 {% comment %}
