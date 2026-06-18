@@ -317,46 +317,36 @@
         {%- endif -%}
       </div>
     </div>
-    <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption">
-        <small class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
-        </small>
-        <small class="copyright__content">. Todos los derechos reservados.</small>
-        {%- if section.settings.show_policy -%}
-          <ul class="policies list-unstyled">
-            {%- for policy in shop.policies -%}
-              {%- if policy != blank -%}
-                <li>
-                  <small class="copyright__content"
-                    ><a href="{{ policy.url }}">{{ policy.title | escape }}</a></small
-                  >
-                </li>
-              {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        {%- endif -%}
-        <div class="footer-custom-bottom">
-  <div class="footer-custom-bottom">
-  <div class="footer-logo-centered">
-    <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/LOGO_VELA_MADRID_3_EN_BLANCO.png?v=1781769289" alt="Vela Madrid Logo">
+<div class="footer__content-bottom-wrapper page-width">
+    <div class="footer__column footer__localization isolate">
+    </div>
   </div>
 
-  <div class="footer-payment-section">
-    <span class="payment-text">PAGOS SEGUROS CON</span>
-    <div class="footer__payment">
-      <ul class="list list-payment" role="list">
-        {%- for type in shop.enabled_payment_types -%}
-          <li class="list-payment__item">
-            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
+  <div class="footer__copyright caption" style="text-align: center; margin-top: 3rem; margin-bottom: 1.5rem;">
+    <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}. Todos los derechos reservados.</small>
   </div>
-</div>
+
+  <hr style="border: 0; border-top: 1px solid rgba(255, 255, 255, 0.08); margin: 0;">
+
+  <div class="footer-custom-bottom" style="text-align: center; padding-top: 2.5rem; padding-bottom: 3rem;">
+    
+    <div class="footer-logo-centered" style="margin-bottom: 2rem;">
+      <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/LOGO_VELA_MADRID_3_EN_BLANCO.png?v=1781769289" alt="Vela Madrid Logo" style="max-width: 160px; height: auto;">
+    </div>
+
+    <div class="footer-payment-section">
+      <span class="payment-text">PAGOS SEGUROS CON</span>
+      <div class="footer__payment">
+        <ul class="list list-payment" role="list" style="justify-content: center; display: flex; flex-wrap: wrap; gap: 0.8rem; padding: 0; list-style: none;">
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="list-payment__item">
+              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+            </li>
+          {%- endfor -%}
+        </ul>
       </div>
     </div>
+
   </div>
 </footer>
 
