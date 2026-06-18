@@ -3964,7 +3964,3 @@ footer-block__newsletter .footer-block__heading {
   width: 38px;
   height: auto;
 }
-/* Ocultar el texto de pagos seguros */
-.footer-payment-section .payment-text {
-  display: none !important;
-}
