@@ -4011,3 +4011,8 @@ footer-block__newsletter .footer-block__heading {
   letter-spacing: .1rem;
   font-size: 1.2rem;
 }
+/* Menú izquierda sin expansión */
+.header--middle-center .header__inline-menu {
+  justify-content: flex-start !important;
+  width: auto !important;
+}
