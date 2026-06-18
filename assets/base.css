@@ -4034,3 +4034,7 @@ footer-block__newsletter .footer-block__heading {
     margin-left: auto !important;
   }
 }
+/* Línea separadora bajo el header en páginas interiores */
+.header-wrapper:not(.header-wrapper--homepage) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
