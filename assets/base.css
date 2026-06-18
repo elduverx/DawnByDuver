@@ -3831,3 +3831,46 @@ footer-block__newsletter .footer-block__heading {
   font-weight: 400 !important;
   font-size: clamp(1.8rem, 3vw, 2.5rem) !important;
 }
+/* Footer idéntico al competidor */
+.footer__content-top {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.footer-block--newsletter {
+  order: -1 !important;
+  margin-bottom: 3rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+}
+.footer-block--newsletter .footer-block__heading {
+  justify-content: center !important;
+  text-transform: none !important;
+  font-family: var(--font-heading-family), serif !important;
+  font-size: 32px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  margin-bottom: 1.5rem !important;
+}
+.footer-block--newsletter form {
+  margin: 0 auto !important;
+  max-width: 32rem !important;
+}
+.footer-block--newsletter .field {
+  background: transparent !important;
+}
+.footer-block--newsletter .field__input {
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-left: 0 !important;
+}
+.footer-block--newsletter .field__button {
+  right: 0 !important;
+  background: transparent !important;
+}
+.footer-block--newsletter .field:after, 
+.footer-block--newsletter .field:before {
+  display: none !important;
+}
