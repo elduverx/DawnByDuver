@@ -3887,3 +3887,17 @@ footer-block__newsletter .footer-block__heading {
   max-width: 450px; /* Fuerza al texto a saltar en dos líneas de forma limpia */
   line-height: 1.4;
 }
+/* Cambia el texto del buscador de correo a 'Tu correo electrónico' */
+.footer-block--newsletter .field__label {
+  display: none !important;
+}
+
+.footer-block--newsletter .field__input::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  opacity: 1 !important;
+}
+
+/* Modifica el texto en navegadores modernos */
+.footer-block--newsletter .field__input {
+  content: "" !important;
+}

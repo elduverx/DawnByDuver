@@ -24,7 +24,7 @@
         "footer-2": {
           "type": "text",
           "settings": {
-            "subtext": "<p> EMAIL<br/>contacto@velamadrid.com</p><p> HORARIO DE ATENCIÓN<br/><strong>Lunes a viernes de 09:00 a 15:00.</strong><br/>Respondemos en menos de 24h.</p>",
+            "subtext": "<p><br/>✉ EMAIL<br/>contacto@velamadrid.com<br/><br/>◷ HORARIO DE ATENCIÓN<br/><strong>Lunes a viernes de 09:00 a 15:00.</strong><br/>Respondemos en menos de 24h.</p>",
             "is_contact": false,
             "email": "info@velamadrid.com",
             "horario": "Lunes a viernes de 09:00 a 15:00.",
