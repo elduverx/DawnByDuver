@@ -7,7 +7,14 @@
 
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
-    {%- for link in section.settings.menu.links -%}
+    {%- liquid
+  if request.page_type == 'index'
+    assign links_to_render = linklists['main-menu'].links
+  else
+    assign links_to_render = linklists['hombres-sobre-nosotros'].links
+  endif
+-%}
+{%- for link in links_to_render -%}
       <li>
         {%- if link.links != blank -%}
           <header-menu>
