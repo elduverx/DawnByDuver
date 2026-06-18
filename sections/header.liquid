@@ -173,11 +173,19 @@
 
     {%- liquid
       if menu_handle != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
+     if request.page_type == 'index'
+  if section.settings.menu_type_desktop == 'dropdown'
+    render 'header-dropdown-menu'
+  elsif section.settings.menu_type_desktop != 'drawer'
+    render 'header-mega-menu'
+  endif
+else
+  if section.settings.menu_type_desktop == 'dropdown'
+    render 'header-dropdown-menu', menu: section.settings.menu_secundario
+  elsif section.settings.menu_type_desktop != 'drawer'
+    render 'header-mega-menu', menu: section.settings.menu_secundario
+  endif
+endif
       endif
     %}
 
