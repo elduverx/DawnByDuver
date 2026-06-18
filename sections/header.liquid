@@ -170,25 +170,17 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
-{%- liquid
-  if request.page_type == 'index'
-    assign menu_handle = linklists['main-menu']
-  else
-    assign menu_handle = linklists['menu-sobre-nosotros-izquierda']
-  endif
--%}
-
 {%- if request.page_type == 'index' -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: menu_handle -%}
+    {%- render 'header-dropdown-menu', menu: section.settings.menu -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: menu_handle -%}
+    {%- render 'header-mega-menu', menu: section.settings.menu -%}
   {%- endif -%}
 {%- else -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: menu_handle -%}
+    {%- render 'header-dropdown-menu', menu: linklists['menu-sobre-nosotros-izquierda'] -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: menu_handle -%}
+    {%- render 'header-mega-menu', menu: linklists['menu-sobre-nosotros-izquierda'] -%}
   {%- endif -%}
 {%- endif -%}
     {%- if section.settings.logo_position == 'middle-center' -%}
