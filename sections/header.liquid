@@ -197,9 +197,9 @@
   {%- endif -%}
 {%- else -%}
   {%- if section.settings.menu_type_desktop == 'dropdown' -%}
-    {%- render 'header-dropdown-menu', menu: linklists['menu-sobre-nosotros-derecha'] -%}
+    {%- render 'header-dropdown-menu', menu: linklists['menu-sobre-nosotros-izquierda'] -%}
   {%- elsif section.settings.menu_type_desktop != 'drawer' -%}
-    {%- render 'header-mega-menu', menu: linklists['menu-sobre-nosotros-derecha'] -%}
+    {%- render 'header-mega-menu', menu: linklists['menu-sobre-nosotros-izquierda'] -%}
   {%- endif -%}
 {%- endif -%}
 
