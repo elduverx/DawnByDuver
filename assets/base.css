@@ -4151,17 +4151,18 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- LIMPIEZA ABSOLUTA ENCABEZADO MÓVIL --- */
+/* --- CORRECCIÓN RADICAL ENCABEZADO MÓVIL VELA MADRID --- */
 @media screen and (max-width: 749px) {
-  /* 1. Oculta de raíz la lista de navegación horizontal en móviles */
-  .header__menu-item,
+  /* Oculta de forma masiva cualquier enlace de texto horizontal en móviles */
   .header__inline-menu,
-  [class*="inline-menu"] {
+  nav.header__inline-menu,
+  .header__inline-menu *,
+  header [class*="menu"] li a:not(.menu-drawer__menu-item) {
     display: none !important;
   }
 
-  /* 2. Alinea las 3 líneas, la lupa, el logo y el carro en una sola fila compacta */
-  .header--mobile-layout-logo-center {
+  /* Fuerza a los elementos correctos (3 líneas, logo e iconos) a quedarse en una sola fila */
+  .header-wrapper header.header {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
@@ -4169,19 +4170,13 @@ footer-block__newsletter .footer-block__heading {
     flex-wrap: nowrap !important;
   }
 
-  /* 3. Evita saltos de línea recolocando los botones laterales */
-  .header__icon--menu,
+  /* Asegura que el botón de las 3 líneas y la lupa se queden arriba a la izquierda */
+  .header__icon--menu, 
   .header__search {
     display: inline-flex !important;
-    margin: 0 !important;
   }
 
-  /* 4. Mantiene el logotipo exactamente centrado en su sitio */
-  .header__heading {
-    margin: 0 auto !important;
-  }
-
-  /* 5. Asegura textos negros legibles dentro del menú desplegable */
+  /* Asegura que los textos sigan siendo negros dentro del desplegable cuando se abra */
   .menu-drawer__menu-item,
   #menu-drawer * {
     color: #000000 !important;
