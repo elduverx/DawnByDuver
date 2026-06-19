@@ -4181,7 +4181,9 @@ footer-block__newsletter .footer-block__heading {
 .menu-drawer__utility-links {
   display: none !important;
 }
-/* Elimina por completo el bloque de Iniciar Sesión del desplegable móvil */
-.menu-drawer__utility-links {
+/* --- ELIMINAR BLOQUE INFERIOR DE CUENTA EN MENÚ MÓVIL --- */
+.menu-drawer__utility-links,
+.menu-drawer__localization,
+header .menu-drawer__inner-container div:last-child a[href*="/account"] {
   display: none !important;
 }
