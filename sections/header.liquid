@@ -208,6 +208,13 @@
         </h1>
       {%- endif -%}
     {%- endif -%}
+    {%- if request.page_type == 'index' -%}
+<div class="header__icons" style="justify-content: flex-end; gap: 2rem; text-transform: uppercase;">
+  <a href="/pages/seguimiento" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Seguimiento</a>
+  <a href="/pages/contacto" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Contacto</a>
+  <a href="/pages/sobre-nosotros" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Sobre nosotros</a>
+</div>
+{%- endif -%}
     {%- unless request.page_type == 'index' -%}
       <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
     <style>
