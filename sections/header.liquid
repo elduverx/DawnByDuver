@@ -255,7 +255,16 @@
         {%- endif -%}
       </div>
      {% comment %}{% render 'header-search', input_id: 'Search-In-Modal' %}{% endcomment %}
-
+<div style="display: flex; align-items: center; gap: 2rem; text-transform: uppercase; margin-right: 1.5rem;" class="small-hide">
+  {%- if request.page_type == 'index' -%}
+    <a href="/pages/seguimiento" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Seguimiento</a>
+    <a href="/pages/contacto" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Contacto</a>
+    <a href="/pages/sobre-nosotros" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Sobre nosotros</a>
+  {%- else -%}
+    <a href="/pages/seguimiento" style="color: #000000; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Seguimiento</a>
+    <a href="/pages/sobre-nosotros" style="color: #000000; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Sobre nosotros</a>
+  {%- endif -%}
+</div>
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
