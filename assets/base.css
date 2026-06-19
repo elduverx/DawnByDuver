@@ -4151,34 +4151,3 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- CORRECCIÓN RADICAL ENCABEZADO MÓVIL VELA MADRID --- */
-@media screen and (max-width: 749px) {
-  /* Oculta de forma masiva cualquier enlace de texto horizontal en móviles */
-  .header__inline-menu,
-  nav.header__inline-menu,
-  .header__inline-menu *,
-  header [class*="menu"] li a:not(.menu-drawer__menu-item) {
-    display: none !important;
-  }
-
-  /* Fuerza a los elementos correctos (3 líneas, logo e iconos) a quedarse en una sola fila */
-  .header-wrapper header.header {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important;
-  }
-
-  /* Asegura que el botón de las 3 líneas y la lupa se queden arriba a la izquierda */
-  .header__icon--menu, 
-  .header__search {
-    display: inline-flex !important;
-  }
-
-  /* Asegura que los textos sigan siendo negros dentro del desplegable cuando se abra */
-  .menu-drawer__menu-item,
-  #menu-drawer * {
-    color: #000000 !important;
-  }
-}
