@@ -4197,24 +4197,22 @@ footer-block__newsletter .footer-block__heading {
     overflow: hidden !important;
   }
 }
-/* --- TRATAMIENTO INTEGRAL MENÚ DESPLEGABLE VELA MADRID --- */
+/* --- OPTIMIZACIÓN DE MENÚ DESPLEGABLE MÓVIL VELA MADRID --- */
 @media screen and (max-width: 749px) {
-  /* 1. Resetear contenedor principal a una columna limpia */
+  /* 1. Limpieza y estructura base del contenedor */
   .menu-drawer__menu {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding: 3rem 2rem !important;
+    padding: 2rem !important;
   }
 
   .menu-drawer__menu li {
-    display: block !important;
     width: 100% !important;
-    margin-bottom: 0.5rem !important;
     position: relative !important;
   }
 
-  /* 2. Ajuste estricto del enlace (Texto e Icono separados) */
+  /* 2. Enlaces principales: separa el texto de los iconos */
   .menu-drawer__menu-item {
     display: flex !important;
     align-items: center !important;
@@ -4222,52 +4220,41 @@ footer-block__newsletter .footer-block__heading {
     font-size: 2rem !important;
     text-transform: uppercase !important;
     letter-spacing: 0.15rem !important;
-    padding: 1.2rem 0 !important;
+    padding: 1.5rem 0 !important;
     width: 100% !important;
-    position: relative !important;
+    color: #000000 !important;
   }
 
-  /* 3. FULMINAR CUALQUIER ICONO QUE SE META DENTRO DEL TEXTO */
-  .menu-drawer__menu-item svg,
+  /* 3. FULMINAR LOS ICONOS PEQUEÑOS EN MEDIO DE LAS LETRAS */
   .menu-drawer__menu-item .icon-caret,
-  .menu-drawer__menu-item summary svg {
+  .menu-drawer__menu-item summary .icon-caret,
+  .menu-drawer__menu-item > svg:not(.icon-arrow) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 4. Colocar la flecha correcta alineada al extremo derecho */
+  .menu-drawer__menu-item .icon-arrow,
+  .menu-drawer__menu-item > svg.icon-arrow {
+    display: inline-block !important;
     position: absolute !important;
     right: 0 !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+    left: auto !important;
     width: 1.5rem !important;
     height: 1.5rem !important;
-    margin: 0 !important;
-    left: auto !important; /* Evita que se mueva al centro */
   }
 
-  /* 4. FORZAR LOS SUBMENÚS A ABRIRSE HACIA ABAJO (NO HACIA LA DERECHA) */
-  .menu-drawer__submenu,
-  #shopify-section-header .menu-drawer__submenu,
-  div[id^="Details-Menu-Drawer-"] ul {
-    position: relative !important;
-    display: block !important;
-    transform: none !important;
-    visibility: visible !important;
+  /* 5. Asegurar que cuando se abra un submenú, el panel cubra la zona limpiamente */
+  .menu-drawer__submenu {
+    background-color: #ffffff !important;
+    transform: translateX(0) !important;
     width: 100% !important;
-    padding-left: 1.5rem !important; /* Sangría hacia la derecha para los hijos */
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-    background: transparent !important;
-    box-shadow: none !important;
   }
 
-  /* Oculta los botones de "Volver" hacia atrás que ya no hacen falta al abrirse abajo */
-  .menu-drawer__inner-submenu .menu-drawer__close-button,
-  .menu-drawer__submenu .menu-drawer__close-button {
-    display: none !important;
-  }
-
-  /* Ajuste de los textos internos de las subcategorías */
+  /* Ajustar los enlaces de las subcategorías internas */
   .menu-drawer__submenu .menu-drawer__menu-item {
-    font-size: 1.6rem !important;
-    text-transform: capitalize !important; /* Primera letra en mayúscula */
-    padding: 0.8rem 0 !important;
-    opacity: 0.8 !important;
+    font-size: 1.8rem !important;
+    text-transform: uppercase !important;
+    padding: 1.2rem 0 !important;
   }
 }
