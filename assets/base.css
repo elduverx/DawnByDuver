@@ -4151,38 +4151,29 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- BLOQUEO ABSOLUTO DE ENLACES EXTERNOS EN MÓVIL --- */
+/* --- SOLUCIÓN DE RAÍZ EN MÓVIL VELA MADRID --- */
 @media screen and (max-width: 749px) {
-  /* 1. Oculta el contenedor horizontal principal de la cabecera */
-  .header__inline-menu,
-  nav.header__inline-menu,
-  #shopify-section-header header ul.list-menu--inline {
+  /* 1. Oculta quirúrgicamente solo los enlaces de texto metidos en la caja de iconos */
+  .header__icons a[href*="/pages/"] {
     display: none !important;
   }
 
-  /* 2. Oculta de forma quirúrgica los enlaces sueltos dentro de la barra */
-  header.header > a,
-  header.header .header__menu-item,
-  header.header [role="navigation"] li {
-    display: none !important;
-  }
-
-  /* 3. Evita que la orden anterior rompa el interior del menú desplegable */
-  .menu-drawer,
-  .menu-drawer__inner-container,
-  .menu-drawer__navigation,
-  .menu-drawer__menu,
-  .menu-drawer__menu-item {
+  /* 2. Reestablece la fila limpia de cabecera: 3 líneas, lupa, logo e iconos */
+  .header-wrapper header.header {
     display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
   }
 
-  /* 4. Asegura que los textos reales del menú móvil salgan legibles en negro */
+  /* 3. Asegura que los textos del menú desplegable SÍ se vean y salgan en negro */
   .menu-drawer__menu-item,
   .menu-drawer__menu-item *,
-  #menu-drawer a {
+  #menu-drawer * {
     display: flex !important;
     color: #000000 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
