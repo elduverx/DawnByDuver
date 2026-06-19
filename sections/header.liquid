@@ -210,7 +210,16 @@
     {%- endif -%}
     {%- unless request.page_type == 'index' -%}
       <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
-      <a href="/pages/seguimiento" class="header__menu-item list-menu__item link link--text focus-inset small-hide medium-hide"><span>SEGUIMIENTO</span></a>
+      <style>
+  @media screen and (max-width: 989px) {
+    .header__right-links { display: none !important; }
+  }
+</style>
+<div class="header__right-links" style="display: flex; align-items: center; gap: 2rem; text-transform: uppercase;">
+  <a href="/pages/seguimiento" class="header__menu-item link link--text focus-inset">Seguimiento</a>
+  <a href="/pages/contacto" class="header__menu-item link link--text focus-inset">Contacto</a>
+  <a href="/pages/sobre-nosotros" class="header__menu-item link link--text focus-inset">Sobre nosotros</a>
+</div>
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form class="small-hide medium-hide" data-prevent-hide>
