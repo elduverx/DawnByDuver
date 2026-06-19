@@ -4091,3 +4091,23 @@ footer-block__newsletter .footer-block__heading {
     padding: 0 1.5rem !important;
   }
 }
+/* --- CORRECCIÓN ENCABEZADO MÓVIL --- */
+@media screen and (max-width: 749px) {
+  /* Obliga al menú de tres líneas y la lupa a estar en la misma línea que el logo */
+  .header--mobile-layout-logo-center {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr 1fr !important;
+    align-items: center !important;
+  }
+
+  /* Reduce un poco el tamaño del logo en móviles si fuera necesario para que quepa todo */
+  .header__heading-logo {
+    max-width: 80px !important;
+    height: auto !important;
+  }
+  
+  /* Asegura que el menú flotante se alinee perfectamente a la izquierda de la lupa */
+  .header__icon--menu {
+    margin-right: 0.5rem !important;
+  }
+}
