@@ -4075,7 +4075,7 @@ footer-block__newsletter .footer-block__heading {
 /* En móviles: Baja la palabra HOMBRE para que no choque con los iconos */
 @media screen and (max-width: 749px) {
   .collection-hero {
-    margin-top: 8rem !important; /* Empuja todo hacia abajo en teléfonos */
+    margin-top: 10rem !important; /* Empuja todo hacia abajo en teléfonos */
     padding-top: 1rem !important;
     padding-bottom: 0.5rem !important;
   }
