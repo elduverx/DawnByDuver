@@ -4197,3 +4197,55 @@ footer-block__newsletter .footer-block__heading {
     overflow: hidden !important;
   }
 }
+/* --- MENÚ DESPLEGABLE CON MÁS (+) A LA DERECHA VELA MADRID --- */
+@media screen and (max-width: 749px) {
+  /* 1. Estructura de la lista principal hacia abajo */
+  .menu-drawer__menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 3rem 2rem !important;
+  }
+
+  .menu-drawer__menu li {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* 2. Alineación del texto a la izquierda y el contenedor del "+" a la derecha */
+  .menu-drawer__menu-item,
+  .menu-drawer__menu-item--has-submenu {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    font-size: 2rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15rem !important;
+    padding: 1.2rem 0 !important;
+    position: relative !important;
+    color: #000000 !important;
+  }
+
+  /* 3. Asegurar que el signo "+" o flecha nativa se coloque al extremo derecho */
+  .menu-drawer__menu-item svg,
+  .menu-drawer__menu-item .icon,
+  .menu-drawer__menu-item summary .icon-caret,
+  .menu-drawer__menu-item .icon-arrow {
+    position: relative !important;
+    display: inline-block !important;
+    margin: 0 !important;
+    right: 0 !important;
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+  }
+
+  /* 4. En caso de que tu tema use el elemento nativo 'summary' de Shopify, lo alineamos igual */
+  .menu-drawer__menu-item summary {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+}
