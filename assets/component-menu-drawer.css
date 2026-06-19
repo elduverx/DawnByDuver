@@ -241,3 +241,35 @@ details[open].menu-opening > .menu-drawer__submenu {
     transition: none !important;
   }
 }
+/* --- CORRECCIÓN FORZADA ACORDEÓN VELA MADRID --- */
+@media screen and (max-width: 749px) {
+  /* Anula el desplazamiento lateral y coloca el submenú debajo */
+  .menu-drawer__submenu {
+    transform: none !important;
+    position: relative !important;
+    visibility: visible !important;
+    display: none !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+  }
+
+  /* Muestra el submenú solo cuando el bloque padre está abierto */
+  details[open] .menu-drawer__submenu {
+    display: block !important;
+  }
+
+  /* Evita que los otros menús se oculten al abrir uno */
+  .menu-drawer__menu-list li {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Oculta los botones nativos de volver atrás */
+  .menu-drawer__close-button, 
+  .menu-drawer__submenu .menu-drawer__close-button {
+    display: none !important;
+  }
+}
