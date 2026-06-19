@@ -4263,3 +4263,18 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
+/* --- APAGAR DESPLAZAMIENTO HORIZONTAL MÓVIL --- */
+@media screen and (max-width: 749px) {
+  .menu-drawer__submenu {
+    transform: none !important;
+    position: relative !important;
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+    padding-left: 20px !important;
+    background: transparent !important;
+  }
+  .menu-drawer__close-button {
+    display: none !important;
+  }
+}
