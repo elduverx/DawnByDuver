@@ -4055,3 +4055,39 @@ footer-block__newsletter .footer-block__heading {
 .header-wrapper--homepage .header__inline-menu .list-menu--inline {
   justify-content: flex-end !important;
 }
+/* --- ARREGLO DE COLECCIONES VELA MADRID --- */
+
+/* En ordenadores: Separa del menú superior y ajusta distancias */
+@media screen and (min-width: 750px) {
+  .collection-hero {
+    margin-top: 6rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 0rem !important;
+  }
+  .collection-hero__title {
+    margin-bottom: 0rem !important;
+  }
+  .facets-wrapper, #ProductGridContainer {
+    margin-top: 1rem !important;
+  }
+}
+
+/* En móviles: Baja la palabra HOMBRE para que no choque con los iconos */
+@media screen and (max-width: 749px) {
+  .collection-hero {
+    margin-top: 8rem !important; /* Empuja todo hacia abajo en teléfonos */
+    padding-top: 1rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+  .collection-hero__title {
+    font-size: 2.4rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.1rem !important;
+    margin-bottom: 0.5rem !important;
+    margin-left: 1.5rem !important; /* Desplaza el título a la derecha */
+  }
+  .facets-wrapper {
+    margin-top: 0.5rem !important;
+    padding: 0 1.5rem !important;
+  }
+}
