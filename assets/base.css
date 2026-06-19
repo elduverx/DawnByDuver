@@ -4205,3 +4205,19 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
+/* --- COMPATIBILIDAD DE TÍTULOS SIEMPRE VISIBLES --- */
+@media screen and (max-width: 749px) {
+  /* Evita que Shopify esconda el elemento principal cuando está abierto */
+  details[open] > summary.menu-drawer__menu-item {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+
+  /* Asegura que el contenedor nativo no desplace el título hacia fuera de la pantalla */
+  .menu-drawer__navigation details[open] {
+    display: block !important;
+    width: 100% !important;
+  }
+}
