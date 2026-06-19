@@ -4091,23 +4091,33 @@ footer-block__newsletter .footer-block__heading {
     padding: 0 1.5rem !important;
   }
 }
-/* --- CORRECCIÓN ENCABEZADO MÓVIL --- */
+/* --- CORRECCIÓN ENCABEZADO MÓVIL REVISADO --- */
 @media screen and (max-width: 749px) {
-  /* Obliga al menú de tres líneas y la lupa a estar en la misma línea que el logo */
-  .header--mobile-layout-logo-center {
-    display: grid !important;
-    grid-template-columns: 1fr 2fr 1fr !important;
+  /* Forzamos al contenedor del menú, logo e iconos a usar Flexbox en una sola línea */
+  header.header, .header-wrapper header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
     align-items: center !important;
+    flex-wrap: nowrap !important;
   }
 
-  /* Reduce un poco el tamaño del logo en móviles si fuera necesario para que quepa todo */
+  /* Evita que el logo o las cajas empujen elementos hacia abajo */
+  .header__heading, .header__heading-link {
+    flex-shrink: 1 !important;
+    margin: 0 auto !important;
+  }
+
+  /* Asegura que el logo tenga un tamaño compacto en móvil para que deje sitio */
   .header__heading-logo {
-    max-width: 80px !important;
+    max-width: 90px !important;
+    width: 90px !important;
     height: auto !important;
   }
-  
-  /* Asegura que el menú flotante se alinee perfectamente a la izquierda de la lupa */
-  .header__icon--menu {
-    margin-right: 0.5rem !important;
+
+  /* Agrupa el botón de menú y la lupa para que se queden juntos a la izquierda */
+  header .header__icon--menu, header .header__search {
+    display: inline-flex !important;
+    vertical-align: middle !important;
   }
 }
