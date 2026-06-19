@@ -4221,3 +4221,34 @@ footer-block__newsletter .footer-block__heading {
     width: 100% !important;
   }
 }
+/* --- ACCESIBILIDAD Y CIERRE DE ACORDEÓN COMPLETO --- */
+@media screen and (max-width: 749px) {
+  /* 1. Evita que Shopify oculte los menús hermanos cuando uno está abierto */
+  .menu-drawer__menu-list li {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* 2. Permite que el contenedor nativo de los submenús se pliegue si se cierra el tag details */
+  details:not([open]) .menu-drawer__submenu {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* 3. Asegura que al estar abierto se muestre en bloque justo debajo sin alterar el flujo */
+  details[open] .menu-drawer__submenu {
+    display: block !important;
+    visibility: visible !important;
+    height: auto !important;
+  }
+
+  /* 4. Hack para que el área del título permita que el click nativo de HTML cierre el menú */
+  .menu-drawer__menu-item summary {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+}
