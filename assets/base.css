@@ -4205,24 +4205,15 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
-/* --- VISIBILIDAD DE SUBMENÚ EN ESCRITORIO --- */
+/* --- LETRAS NEGRAS DESPLEGABLES HOME PAGE --- */
 @media screen and (min-width: 750px) {
-  /* 1. Obliga al contenedor flotante a ser blanco y visible */
-  .header__inline-menu .header__submenu.list-menu--disclosure {
-    background-color: #ffffff !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  /* 2. Fuerza a todos los enlaces de texto internos a ponerse en color negro */
-  .header__inline-menu .header__submenu a.list-menu__item,
-  .header__inline-menu .header__submenu .list-menu__item,
-  #HeaderMenu-MenuList-1 a,
-  #HeaderMenu-MenuList-2 a {
+  /* Ataca los enlaces internos dentro de los submenús de escritorio en la página de inicio */
+  .header-wrapper--homepage .header__submenu a,
+  .header-wrapper--homepage .header__submenu .list-menu__item,
+  .header-wrapper--homepage #HeaderMenu-MenuList-1 a,
+  .header-wrapper--homepage #HeaderMenu-MenuList-2 a {
     color: #000000 !important;
-    display: block !important;
-    visibility: visible !important;
     opacity: 1 !important;
+    visibility: visible !important;
   }
 }
