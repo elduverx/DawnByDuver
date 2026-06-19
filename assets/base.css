@@ -4151,30 +4151,32 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- OCULTAR ENLACES EXTRAS EN ENCABEZADO MÓVIL --- */
+/* --- LIMPIEZA TOTAL EN MÓVIL (VELA MADRID) --- */
 @media screen and (max-width: 749px) {
-  /* Oculta los enlaces sueltos horizontales que flotan en la barra superior */
+  /* 1. Esconde de raíz cualquier menú horizontal o texto suelto que no sea un icono */
   .header__inline-menu,
   .header__menu-item,
-  header > a[href*="contacto"], 
-  header > a[href*="seguimiento"], 
-  header > a[href*="sobre-nosotros"] {
+  header [role="navigation"],
+  [class*="inline-menu"],
+  header a[href*="contacto"],
+  header a[href*="seguimiento"],
+  header a[href*="sobre-nosotros"] {
     display: none !important;
   }
 
-  /* --- FUERZA LA VISIBILIDAD DEL CONTENIDO DEL DESPLEGABLE --- */
-  .menu-drawer,
-  .menu-drawer__menu,
-  .menu-drawer__menu-item,
-  .menu-drawer * {
-    display: flex !important;
+  /* 2. Asegura que el contenedor nativo del menú desplegable SÍ se pinte */
+  .menu-drawer {
+    display: block !important;
     visibility: visible !important;
-    color: #000000 !important; /* Letras negras */
+    transform: none !important;
   }
 
-  /* Si el botón de cerrar (X) se descuadra, lo fijamos en su sitio */
-  .menu-drawer__close-button {
-    display: inline-flex !important;
+  /* 3. Fuerza a las listas internas del menú a mostrarse en vertical y con letras negras */
+  .menu-drawer__menu, 
+  .menu-drawer__menu-item,
+  .menu-drawer__menu * {
+    display: flex !important;
     color: #000000 !important;
+    visibility: visible !important;
   }
 }
