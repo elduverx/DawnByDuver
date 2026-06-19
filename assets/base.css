@@ -4151,3 +4151,32 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
+/* --- REPARACIÓN ABSOLUTA ENCABEZADO MÓVIL --- */
+@media screen and (max-width: 749px) {
+  /* Oculta por completo el menú de letras de ordenador en el móvil */
+  .header__inline-menu, 
+  header nav.header__inline-menu {
+    display: none !important;
+  }
+
+  /* Fuerza a que el botón de menú (3 líneas), el logo y los iconos se queden en una única línea limpia */
+  .header-wrapper header.header {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
+  /* Agrupa el botón del menú de tres líneas y la lupa a la izquierda del todo */
+  .header__icon--menu, 
+  details-modal.header__search {
+    display: inline-flex !important;
+  }
+
+  /* Asegura que los textos que salgan DENTRO del menú desplegable cuando se abra sean negros */
+  .menu-drawer__menu-item,
+  .menu-drawer__menu-item *,
+  #menu-drawer * {
+    color: #000000 !important;
+  }
+}
