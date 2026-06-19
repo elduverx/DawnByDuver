@@ -4121,3 +4121,33 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
+/* --- CORRECCIÓN ENCABEZADO MÓVIL REVISADO --- */
+@media screen and (max-width: 749px) {
+  /* Forzamos al contenedor del menú, logo e iconos a usar Flexbox en una sola línea */
+  header.header, .header-wrapper header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Evita que el logo o las cajas empujen elementos hacia abajo */
+  .header__heading, .header__heading-link {
+    flex-shrink: 1 !important;
+    margin: 0 auto !important;
+  }
+
+  /* Asegura que el logo tenga un tamaño compacto en móvil para que deje sitio */
+  .header__heading-logo {
+    max-width: 90px !important;
+    width: 90px !important;
+    height: auto !important;
+  }
+
+  /* Agrupa el botón de menú y la lupa para que se queden juntos a la izquierda */
+  header .header__icon--menu, header .header__search {
+    display: inline-flex !important;
+    vertical-align: middle !important;
+  }
+}
