@@ -285,52 +285,55 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 /* --- OPTIMIZACIÓN DE PÁGINAS DE CONTENIDO VELA MADRID --- */
 
-/* 1. Limpieza y centrado del título principal de la página */
+/* 1. Limpieza, centrado y EMPUJE hacia abajo del título principal */
 .main-page-title, 
 h1.page-title,
-.shopify-policy__title h1 {
-  font-size: 3.6rem !important;
+.shopify-policy__title h1,
+.shopify-policy__title {
+  font-size: 3rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.2rem !important;
   text-align: center !important;
-  margin: 4rem auto 3rem auto !important;
+  margin-top: 14rem !important; /* <--- Esto empuja el título hacia abajo para que no lo tape el menú */
+  margin-bottom: 4rem !important;
   width: 100% !important;
   display: block !important;
   line-height: 1.2 !important;
 }
 
-/* 2. Contenedor de texto con márgenes limpios para que no toque los bordes */
+/* 2. Contenedor de texto estrecho y centrado tipo blog (como el competidor) */
 .page-width .rte,
-.shopify-policy__body {
-  max-width: 800px !important;
+.shopify-policy__body,
+.shopify-policy__container {
+  max-width: 750px !important; /* Lo estrechamos un poco más para que quede estilizado */
   margin: 0 auto !important;
   padding: 0 2rem !important;
 }
 
-/* 3. Ajuste de encabezados internos (Preguntas, secciones) */
+/* 3. Ajuste de subtítulos (Secciones internas) */
 .rte h2, 
 .shopify-policy__body h2 {
-  font-size: 2rem !important;
+  font-size: 1.8rem !important;
   text-transform: uppercase !important;
   letter-spacing: 0.1rem !important;
-  margin-top: 3.5rem !important;
+  margin-top: 4rem !important;
   margin-bottom: 1.5rem !important;
   color: #000000 !important;
 }
 
-/* 4. Arreglo definitivo para las listas con puntos separados */
+/* 4. Arreglo definitivo para las listas y viñetas */
 .rte ul, 
 .shopify-policy__body ul {
   list-style-position: inside !important;
   padding-left: 0 !important;
-  margin-top: 1rem !important;
-  margin-bottom: 2rem !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 2.5rem !important;
 }
 
 .rte li, 
 .shopify-policy__body li {
   margin-bottom: 1.2rem !important;
-  line-height: 1.6 !important;
+  line-height: 1.7 !important;
   list-style-type: disc !important;
   display: list-item !important;
 }
