@@ -17,8 +17,8 @@
         ".page-width h1 + p {color: #888 !important; font-size: 12px !important; font-weight: 400 !important; letter-spacing: 0.15em !important;}"
       ],
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 40,
+        "padding_bottom": 0
       }
     }
   },
