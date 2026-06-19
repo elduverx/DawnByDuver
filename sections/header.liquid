@@ -210,16 +210,14 @@
     {%- endif -%}
     {%- unless request.page_type == 'index' -%}
       <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
-      <style>
-  @media screen and (max-width: 989px) {
+    <style>
     .header__right-links { display: none !important; }
-  }
-</style>
-<div class="header__right-links" style="display: flex; align-items: center; gap: 2rem; text-transform: uppercase; margin-right: 2rem;">
-  <a href="/pages/seguimiento" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Seguimiento</a>
-  <a href="/pages/contacto" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Contacto</a>
-  <a href="/pages/sobre-nosotros" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Sobre nosotros</a>
-</div>
+  </style>
+  <div class="header__right-links" style="display: flex; align-items: center; gap: 2rem; text-transform: uppercase;">
+    <a href="/pages/seguimiento" class="header__menu-item link link--text focus-inset" style="color: rgb(var(--color-foreground)); text-decoration: none; font-size: 1.3rem;">Seguimiento</a>
+    <a href="/pages/contacto" class="header__menu-item link link--text focus-inset" style="color: rgb(var(--color-foreground)); text-decoration: none; font-size: 1.3rem;">Contacto</a>
+    <a href="/pages/sobre-nosotros" class="header__menu-item link link--text focus-inset" style="color: rgb(var(--color-foreground)); text-decoration: none; font-size: 1.3rem;">Sobre nosotros</a>
+  </div>
       <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form class="small-hide medium-hide" data-prevent-hide>
