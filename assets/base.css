@@ -4205,26 +4205,3 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
-/* --- CORRECCIÓN DESPLEGABLE ESCRITORIO VELA MADRID --- */
-@media screen and (min-width: 750px) {
-  /* 1. Asegura que el contenedor del submenú sea visible y tenga fondo blanco */
-  .header__inline-menu details[open] .menu-drawer__submenu,
-  .header__inline-menu .list-menu--disclosure,
-  .header__inline-menu .mega-menu__content {
-    background-color: #ffffff !important;
-    visibility: visible !important;
-    display: block !important;
-    opacity: 1 !important;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05) !important;
-  }
-
-  /* 2. Fuerza a que los enlaces internos heredan el color negro para que no se camuflen */
-  .header__inline-menu .menu-drawer__menu-item,
-  .header__inline-menu .list-menu__item,
-  .header__inline-menu .mega-menu__link {
-    color: #000000 !important;
-    display: block !important;
-    opacity: 1 !important;
-    font-size: 1.4rem !important;
-  }
-}
