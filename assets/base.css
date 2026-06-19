@@ -4151,31 +4151,30 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- TRATAMIENTO EXCLUSIVO ENCABEZADO MÓVIL --- */
+/* --- SOLUCIÓN DE RAÍZ ENCABEZADO MÓVIL --- */
 @media screen and (max-width: 749px) {
-  /* Oculta ÚNICAMENTE el menú de texto horizontal de la barra principal */
-  .header__inline-menu,
-  header > nav.header__inline-menu,
-  header .header__inline-menu {
+  /* Oculta de forma estricta los enlaces horizontales de la barra superior */
+  .header-wrapper header > nav.header__inline-menu,
+  .header-wrapper header > .header__inline-menu,
+  .header-wrapper header > ul,
+  .header-wrapper header > li {
     display: none !important;
   }
 
-  /* --- RECONSTRUCCIÓN DEL MENÚ DESPLEGABLE INTERNO --- */
-  /* Forzamos a que el contenedor del menú móvil se abra y use su diseño nativo */
-  .menu-drawer {
+  /* Mantiene los iconos esenciales (3 líneas, lupa, logo, carrito) en su sitio */
+  .header-wrapper header.header {
     display: flex !important;
-    visibility: visible !important;
-    transform: translateX(0) !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
   }
 
-  /* Obligamos a todas las listas y enlaces internos del desplegable a mostrarse */
-  .menu-drawer__menu,
-  .menu-drawer__menu li,
+  /* Asegura que los textos dentro del desplegable móvil se pinten en negro */
   .menu-drawer__menu-item,
-  .menu-drawer__menu-item * {
-    display: flex !important;
-    visibility: visible !important;
-    color: #000000 !important; /* Texto en negro */
-    opacity: 1 !important;
+  .menu-drawer__menu-item *,
+  .menu-drawer__navigation *,
+  .menu-drawer__inner-container * {
+    color: #000000 !important;
   }
 }
