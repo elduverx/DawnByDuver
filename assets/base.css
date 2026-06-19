@@ -4219,10 +4219,13 @@ footer-block__newsletter .footer-block__heading {
     color: #000000 !important;
   }
 }
-/* --- CORRECCIÓN INTEGRAL DE COLOR DESPLEGABLE ESCRITORIO --- */
+/* --- PARCHE MAESTRO DESPLEGABLE ESCRITORIO VELA --- */
 @media screen and (min-width: 750px) {
-  .header-wrapper--homepage .header__submenu a.header__menu-item.list-menu__item,
-  .header-wrapper--homepage .header__submenu a.header__menu-item.list-menu__item * {
+  .header-wrapper--homepage .header__submenu,
+  .header-wrapper--homepage .header__submenu *,
+  .header-wrapper--homepage .header__submenu a.list-menu__item {
+    --color-foreground: 0, 0, 0 !important;
     color: #000000 !important;
+    opacity: 1 !important;
   }
 }
