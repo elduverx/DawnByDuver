@@ -4210,3 +4210,9 @@ footer-block__newsletter .footer-block__heading {
 ... {
   color: #ffffff !important;
 }
+/* --- CORRECCIÓN INTEGRAL DE COLOR DESPLEGABLE ESCRITORIO --- */
+@media screen and (min-width: 750px) {
+  a.header__menu-item.list-menu__item.link {
+    color: #000000 !important;
+  }
+}
