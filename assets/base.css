@@ -4091,84 +4091,164 @@ footer-block__newsletter .footer-block__heading {
     padding: 0 1.5rem !important;
   }
 }
-/* --- TRATAMIENTO ACORDEÓN ULTRA DEFINITIVO VELA MADRID --- */
+/* --- CORRECCIÓN ENCABEZADO MÓVIL REVISADO --- */
 @media screen and (max-width: 749px) {
-  /* 1. Mantiene visibles todos los menús padres a la vez en vertical */
-  .menu-drawer__menu-list li,
-  .menu-drawer__menu-item,
-  details {
+  /* Forzamos al contenedor del menú, logo e iconos a usar Flexbox en una sola línea */
+  header.header, .header-wrapper header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Evita que el logo o las cajas empujen elementos hacia abajo */
+  .header__heading, .header__heading-link {
+    flex-shrink: 1 !important;
+    margin: 0 auto !important;
+  }
+
+  /* Asegura que el logo tenga un tamaño compacto en móvil para que deje sitio */
+  .header__heading-logo {
+    max-width: 90px !important;
+    width: 90px !important;
+    height: auto !important;
+  }
+
+  /* Agrupa el botón de menú y la lupa para que se queden juntos a la izquierda */
+  header .header__icon--menu, header .header__search {
+    display: inline-flex !important;
+    vertical-align: middle !important;
+  }
+}
+/* --- CORRECCIÓN ENCABEZADO MÓVIL REVISADO --- */
+@media screen and (max-width: 749px) {
+  /* Forzamos al contenedor del menú, logo e iconos a usar Flexbox en una sola línea */
+  header.header, .header-wrapper header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* Evita que el logo o las cajas empujen elementos hacia abajo */
+  .header__heading, .header__heading-link {
+    flex-shrink: 1 !important;
+    margin: 0 auto !important;
+  }
+
+  /* Asegura que el logo tenga un tamaño compacto en móvil para que deje sitio */
+  .header__heading-logo {
+    max-width: 90px !important;
+    width: 90px !important;
+    height: auto !important;
+  }
+
+  /* Agrupa el botón de menú y la lupa para que se queden juntos a la izquierda */
+  header .header__icon--menu, header .header__search {
+    display: inline-flex !important;
+    vertical-align: middle !important;
+  }
+}
+/* --- SOLUCIÓN DE RAÍZ EN MÓVIL VELA MADRID --- */
+@media screen and (max-width: 749px) {
+  /* 1. Oculta quirúrgicamente solo los enlaces de texto metidos en la caja de iconos */
+  .header__icons a[href*="/pages/"] {
+    display: none !important;
+  }
+
+  /* 2. Reestablece la fila limpia de cabecera: 3 líneas, lupa, logo e iconos */
+  .header-wrapper header.header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+/* --- ACORDEÓN VERTICAL INTEGRAL VELA MADRID --- */
+@media screen and (max-width: 749px) {
+  /* 1. Mantiene el contenedor del submenú en formato bloque para que empuje hacia abajo */
+  .menu-drawer__submenu.has-submenu {
+    position: relative !important;
+    transform: none !important;
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* 2. Evita que la animación oculte el menú principal (Padre) */
+  .menu-drawer__inner-container {
+    position: relative !important;
+    overflow-y: auto !important;
+  }
+
+  /* 3. Estructura interna de los submenús limpios y con sangría */
+  .menu-drawer__submenu ul.menu-drawer__menu-list {
+    display: flex !important;
+    flex-direction: column !important;
+    padding-left: 2.5rem !important; /* Espacio a la izquierda */
+  }
+
+  /* Oculta los botones nativos de "Volver" que ya no pintan nada */
+  .menu-drawer__submenu .menu-drawer__close-button,
+  .menu-drawer__close-button {
+    display: none !important;
+  }
+
+  /* 4. Estilo de los submenús (Vestidos, Conjuntos...) sin el símbolo + */
+  .menu-drawer__submenu .menu-drawer__menu-item::after {
+    content: "" !important;
+    display: none !important;
+  }
+}
+/* --- COMPATIBILIDAD DE TÍTULOS SIEMPRE VISIBLES --- */
+@media screen and (max-width: 749px) {
+  /* Evita que Shopify esconda el elemento principal cuando está abierto */
+  details[open] > summary.menu-drawer__menu-item {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+
+  /* Asegura que el contenedor nativo no desplace el título hacia fuera de la pantalla */
+  .menu-drawer__navigation details[open] {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+/* --- ACCESIBILIDAD Y CIERRE DE ACORDEÓN COMPLETO --- */
+@media screen and (max-width: 749px) {
+  /* 1. Evita que Shopify oculte los menús hermanos cuando uno está abierto */
+  .menu-drawer__menu-list li {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
     transform: none !important;
   }
 
-  /* 2. Formato de las categorías principales */
-  .menu-drawer__menu-item {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    font-size: 2rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.15rem !important;
-    padding: 1.5rem 0 !important;
-    color: #000000 !important;
-    width: 100% !important;
-  }
-
-  /* 3. Exterminar las flechas nativas del tema */
-  .menu-drawer__menu-item svg, 
-  .menu-drawer__menu-item .icon-caret,
-  .menu-drawer__menu-item .svg-wrapper {
+  /* 2. Permite que el contenedor nativo de los submenús se pliegue si se cierra el tag details */
+  details:not([open]) .menu-drawer__submenu {
     display: none !important;
     visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
   }
 
-  /* 4. Colocar el signo "+" en las categorías con submenú */
-  details .menu-drawer__menu-item::after {
-    content: "+" !important;
-    font-size: 2.4rem !important;
-    font-weight: 300 !important;
-    color: #000000 !important;
-    position: absolute !important;
-    right: 1rem !important;
-  }
-
-  /* 5. Cambiar el "+" por un "-" real al abrir */
-  details[open] > .menu-drawer__menu-item::after {
-    content: "—" !important;
-    font-size: 1.8rem !important;
-  }
-
-  /* 6. Forzar apertura hacia abajo sin alterar el fondo */
-  .menu-drawer__submenu,
-  .menu-drawer__submenu.has-submenu {
-    position: relative !important;
-    display: none !important;
-    transform: none !important;
-    visibility: visible !important;
-    width: 100% !important;
-    height: auto !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    padding-left: 2rem !important; /* Sangría limpia para los hijos */
-  }
-
+  /* 3. Asegura que al estar abierto se muestre en bloque justo debajo sin alterar el flujo */
   details[open] .menu-drawer__submenu {
     display: block !important;
+    visibility: visible !important;
+    height: auto !important;
   }
 
-  /* 7. Limpiar los submenús de duplicados y botones nativos */
-  .menu-drawer__submenu .menu-drawer__close-button,
-  .menu-drawer__inner-submenu li:first-child,
-  .menu-drawer__submenu .menu-drawer__menu-item::after {
-    display: none !important;
-  }
-
-  /* Formato para subcategorías (vestidos, conjuntos...) */
-  .menu-drawer__submenu .menu-drawer__menu-item {
-    font-size: 1.6rem !important;
-    color: #333333 !important;
-    padding: 0.8rem 0 !important;
+  /* 4. Hack para que el área del título permita que el click nativo de HTML cierre el menú */
+  .menu-drawer__menu-item summary {
+    pointer-events: auto !important;
+    cursor: pointer !important;
   }
 }
