@@ -273,3 +273,13 @@ details[open].menu-opening > .menu-drawer__submenu {
     display: none !important;
   }
 }
+/* --- ARREGLO TEXTOS ESCRITORIO VELA MADRID --- */
+@media screen and (min-width: 750px) {
+  .header-wrapper--homepage .header__submenu a.header__menu-item.list-menu__item,
+  .header-wrapper--homepage .header__submenu .list-menu__item,
+  .header-wrapper--homepage .header__submenu a {
+    color: #000000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
