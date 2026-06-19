@@ -4151,3 +4151,31 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
+/* --- COLOR DE TEXTO EN MENÚ DESPLEGABLE MÓVIL (MÉTODO VARIABLES) --- */
+@media screen and (max-width: 749px) {
+  /* Cambia las variables de color internas del menú de Shopify a negro */
+  .menu-drawer,
+  .menu-drawer__menu,
+  #menu-drawer,
+  .js-menu-drawer {
+    --color-foreground: 0, 0, 0 !important;
+    --color-button: 0, 0, 0 !important;
+    color: #000000 !important;
+  }
+
+  /* Fuerza el color negro en todos los enlaces y textos dentro del contenedor del menú */
+  .menu-drawer a, 
+  .menu-drawer span, 
+  .menu-drawer summary, 
+  .menu-drawer details,
+  .menu-drawer__close-button {
+    color: #000000 !important;
+  }
+
+  /* Cambia los iconos (lupa, cerrar, flechas) a negro */
+  .menu-drawer svg,
+  .menu-drawer svg path {
+    stroke: #000000 !important;
+    fill: transparent !important;
+  }
+}
