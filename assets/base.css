@@ -4151,41 +4151,38 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- REPARACIÓN DEFINITIVA ENCABEZADO MÓVIL VELA MADRID --- */
+/* --- LIMPIEZA ABSOLUTA ENCABEZADO MÓVIL --- */
 @media screen and (max-width: 749px) {
-  /* 1. Ocultar el menú de texto horizontal de escritorio en pantallas móviles */
+  /* 1. Oculta de raíz la lista de navegación horizontal en móviles */
+  .header__menu-item,
   .header__inline-menu,
-  nav.header__inline-menu,
-  .header__inline-menu ul {
+  [class*="inline-menu"] {
     display: none !important;
   }
 
-  /* 2. Forzar al botón de menú, la lupa y los iconos a alinearse en una única fila limpia */
-  .header {
+  /* 2. Alinea las 3 líneas, la lupa, el logo y el carro en una sola fila compacta */
+  .header--mobile-layout-logo-center {
     display: flex !important;
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
     flex-wrap: nowrap !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
   }
 
-  /* 3. Agrupar correctamente el botón de hamburguesa y la lupa a la izquierda */
+  /* 3. Evita saltos de línea recolocando los botones laterales */
   .header__icon--menu,
   .header__search {
     display: inline-flex !important;
-    align-items: center !important;
+    margin: 0 !important;
   }
 
-  /* 4. Asegurar que el logo se mantenga centrado en su espacio sin ser empujado */
+  /* 4. Mantiene el logotipo exactamente centrado en su sitio */
   .header__heading {
     margin: 0 auto !important;
   }
 
-  /* 5. Asegurar textos negros legibles dentro del menú desplegable */
+  /* 5. Asegura textos negros legibles dentro del menú desplegable */
   .menu-drawer__menu-item,
-  .menu-drawer__menu-item *,
   #menu-drawer * {
     color: #000000 !important;
   }
