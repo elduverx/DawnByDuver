@@ -23,10 +23,10 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "HOMBRE",
-            "button_link_1": "shopify://collections",
+            "button_link_1": "shopify://collections/hombre",
             "button_style_secondary_1": true,
             "button_label_2": "MUJER",
-            "button_link_2": "shopify://collections",
+            "button_link_2": "shopify://collections/mujer",
             "button_style_secondary_2": true
           }
         }
