@@ -4151,31 +4151,41 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- COLOR DE TEXTO EN MENÚ DESPLEGABLE MÓVIL (MÉTODO VARIABLES) --- */
+/* --- ENCABEZADO MÓVIL CORRECTO CON MENÚ FUNCIONAL --- */
 @media screen and (max-width: 749px) {
-  /* Cambia las variables de color internas del menú de Shopify a negro */
-  .menu-drawer,
-  .menu-drawer__menu,
-  #menu-drawer,
-  .js-menu-drawer {
-    --color-foreground: 0, 0, 0 !important;
-    --color-button: 0, 0, 0 !important;
+  /* Mantiene los elementos principales en una fila sin romper el menú desplegable */
+  .header-wrapper header.header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    position: relative !important;
+  }
+
+  /* Asegura que el contenedor del menú se despliegue hacia abajo y sea visible */
+  .menu-drawer {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background-color: #ffffff !important; /* Fondo blanco */
+    display: flex !important;
+    flex-direction: column !important;
+    visibility: visible !important;
+    transform: translateX(0) !important;
+    z-index: 100 !important;
+  }
+
+  /* Fuerza que todos los textos dentro del menú sean negros obligatoriamente */
+  .menu-drawer__menu *, .menu-drawer * {
     color: #000000 !important;
   }
 
-  /* Fuerza el color negro en todos los enlaces y textos dentro del contenedor del menú */
-  .menu-drawer a, 
-  .menu-drawer span, 
-  .menu-drawer summary, 
-  .menu-drawer details,
-  .menu-drawer__close-button {
-    color: #000000 !important;
-  }
-
-  /* Cambia los iconos (lupa, cerrar, flechas) a negro */
-  .menu-drawer svg,
-  .menu-drawer svg path {
-    stroke: #000000 !important;
-    fill: transparent !important;
+  /* Ajuste rápido del tamaño del logotipo */
+  .header__heading-logo {
+    max-width: 90px !important;
+    height: auto !important;
   }
 }
