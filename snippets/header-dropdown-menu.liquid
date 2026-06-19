@@ -11,7 +11,7 @@
   if request.page_type == 'index'
     assign links_to_render = linklists['main-menu'].links
   else
-    assign links_to_render = linklists['men-sobre-nosotros'].links
+    assign links_to_render = linklists['menu-definitivo'].links
   endif
 -%}
 {%- for link in links_to_render -%}
