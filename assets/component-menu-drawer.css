@@ -338,3 +338,14 @@ h1.page-title,
   display: list-item !important;
   text-align: left !important;            /* Asegura que el texto no se centre de forma extraña */
 }
+/* --- AJUSTE DE TÍTULO EN UNA LÍNEA PARA MÓVIL --- */
+@media screen and (max-width: 749px) {
+  .main-page-title, 
+  h1.page-title,
+  .shopify-policy__title h1,
+  .shopify-policy__title {
+    font-size: 2.2rem !important; /* Reduce el tamaño lo justo para que no se parta */
+    margin-top: 10rem !important;  /* Ajusta el espacio superior en móvil */
+    white-space: nowrap !important; /* Fuerza a que se mantenga en una sola línea */
+  }
+}
