@@ -4252,84 +4252,62 @@ footer-block__newsletter .footer-block__heading {
     cursor: pointer !important;
   }
 }
-/* --- TRATAMIENTO ACORDEÓN ULTRA DEFINITIVO VELA MADRID --- */
+/* --- CIERRE DE LLAVE PENDIENTE Y PARCHE DEFINITIVO ACORDEÓN --- */
+} /* <--- Esta llave cierra el bloque colgado de tu código anterior */
+
 @media screen and (max-width: 749px) {
-  /* 1. Mantiene visibles todos los menús padres a la vez en vertical */
-  .menu-drawer__menu-list li,
-  .menu-drawer__menu-item,
-  details {
+  /* 1. Muestra todos los elementos principales juntos sin ocultar los hermanos */
+  .menu-drawer__menu-list > li {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    transform: none !important;
   }
 
-  /* 2. Formato de las categorías principales */
+  /* 2. Forzar apertura y cierre nativo al hacer clic en el mismo menú */
+  details:not([open]) .menu-drawer__submenu {
+    display: none !important;
+  }
+  details[open] .menu-drawer__submenu {
+    display: block !important;
+  }
+
+  /* 3. Reestablece los títulos principales alineados */
   .menu-drawer__menu-item {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
+    width: 100% !important;
     font-size: 2rem !important;
     text-transform: uppercase !important;
     letter-spacing: 0.15rem !important;
     padding: 1.5rem 0 !important;
     color: #000000 !important;
-    width: 100% !important;
   }
 
-  /* 3. Exterminar las flechas nativas del tema */
-  .menu-drawer__menu-item svg, 
+  /* 4. Oculta las flechas nativas cruzadas */
+  .menu-drawer__menu-item svg,
   .menu-drawer__menu-item .icon-caret,
   .menu-drawer__menu-item .svg-wrapper {
     display: none !important;
-    visibility: hidden !important;
   }
 
-  /* 4. Colocar el signo "+" en las categorías con submenú */
+  /* 5. Inyecta el símbolo "+" en la derecha en menús con hijos */
   details .menu-drawer__menu-item::after {
     content: "+" !important;
     font-size: 2.4rem !important;
     font-weight: 300 !important;
     color: #000000 !important;
-    position: absolute !important;
-    right: 1rem !important;
   }
 
-  /* 5. Cambiar el "+" por un "-" real al abrir */
+  /* 6. Cambia a "—" cuando se despliega */
   details[open] > .menu-drawer__menu-item::after {
     content: "—" !important;
     font-size: 1.8rem !important;
   }
 
-  /* 6. Forzar apertura hacia abajo sin alterar el fondo */
-  .menu-drawer__submenu,
-  .menu-drawer__submenu.has-submenu {
-    position: relative !important;
-    display: none !important;
-    transform: none !important;
-    visibility: visible !important;
-    width: 100% !important;
-    height: auto !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    padding-left: 2rem !important; /* Sangría limpia para los hijos */
-  }
-
-  details[open] .menu-drawer__submenu {
-    display: block !important;
-  }
-
-  /* 7. Limpiar los submenús de duplicados y botones nativos */
-  .menu-drawer__submenu .menu-drawer__close-button,
-  .menu-drawer__inner-submenu li:first-child,
+  /* 7. Elimina el símbolo "+" en las subcategorías interiores */
   .menu-drawer__submenu .menu-drawer__menu-item::after {
+    content: "" !important;
     display: none !important;
-  }
-
-  /* Formato para subcategorías (vestidos, conjuntos...) */
-  .menu-drawer__submenu .menu-drawer__menu-item {
-    font-size: 1.6rem !important;
-    color: #333333 !important;
-    padding: 0.8rem 0 !important;
   }
 }
