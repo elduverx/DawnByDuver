@@ -4181,3 +4181,7 @@ footer-block__newsletter .footer-block__heading {
 .menu-drawer__utility-links {
   display: none !important;
 }
+/* Elimina por completo el bloque de Iniciar Sesión del desplegable móvil */
+.menu-drawer__utility-links {
+  display: none !important;
+}
