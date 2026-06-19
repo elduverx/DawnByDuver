@@ -209,33 +209,7 @@
       {%- endif -%}
     {%- endif -%}
     {%- unless request.page_type == 'index' -%}
-    <style>
-  @media screen and (max-width: 989px) {
-    .header__right-links { display: none !important; }
-  }
-  .header__right-links a {
-    text-decoration: none;
-    color: rgb(var(--color-foreground));
-    font-size: 1.3rem;
-    letter-spacing: 0.1rem;
-    margin-right: 1.5rem;
-  }
-  .header__right-links a:hover {
-    text-decoration: underline;
-    text-underline-offset: 0.3rem;
-  }
-</style>
-
-<div class="header__right-links" style="display: flex; align-items: center; gap: 2rem; text-transform: uppercase;">
-  {%- if request.page_type == 'index' -%}
-    <a href="/pages/seguimiento">Seguimiento</a>
-    <a href="/pages/contacto">Contacto</a>
-    <a href="/pages/sobre-nosotros">Sobre nosotros</a>
-  {%- else -%}
-    <a href="/pages/seguimiento">Seguir pedido</a>
-    <a href="/pages/sobre-nosotros">Sobre nosotros</a>
-  {%- endif -%}
-</div>
+   
       <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
       <a href="/pages/seguimiento" class="header__menu-item list-menu__item link link--text focus-inset small-hide medium-hide"><span>SEGUIMIENTO</span></a>
       <div class="desktop-localization-wrapper">
