@@ -4151,3 +4151,23 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
+/* --- COLOR DE TEXTO EN MENÚ DESPLEGABLE MÓVIL REVISADO --- */
+@media screen and (max-width: 749px) {
+  /* Ataca a cualquier texto, enlace o lista dentro del contenedor del menú móvil */
+  .menu-drawer *, 
+  [id^="Details-menu-drawer"] *,
+  .menu-drawer__menu *,
+  header summary,
+  .header__menu-get-relative * {
+    color: #000000 !important;
+  }
+
+  /* Asegura que los iconos y flechas del desplegable también pasen a negro */
+  .menu-drawer icon,
+  .menu-drawer svg,
+  .menu-drawer path {
+    stroke: #000000 !important;
+    fill: #000000 /deep/ !important;
+    color: #000000 !important;
+  }
+}
