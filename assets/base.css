@@ -4181,12 +4181,9 @@ footer-block__newsletter .footer-block__heading {
 .menu-drawer__utility-links {
   display: none !important;
 }
-/* --- OCULTAR INICIAR SESIÓN EN EL DESPLEGABLE MÓVIL (DEFINITIVO) --- */
-.menu-drawer a[href*="/account"],
-.menu-drawer .account-none,
+/* --- OCULTAR INICIAR SESIÓN COMPLETO DEL MENÚ MÓVIL --- */
 .menu-drawer__utility-links,
-.menu-drawer fieldset,
-.menu-drawer .header__icon--account,
-.menu-drawer [href="/account/login"] {
+.menu-drawer__account,
+a.menu-drawer__account {
   display: none !important;
 }
