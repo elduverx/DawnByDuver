@@ -4205,12 +4205,17 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
-/* --- CAMBIO DE VARIABLE TEXTO DESPLEGABLES HOME --- */
+/* --- FORZADO VISUAL DE TEXTOS EN DESPLEGABLE DESKTOP --- */
 @media screen and (min-width: 750px) {
-  .header-wrapper--homepage .header__submenu,
-  .header-wrapper--homepage .header__submenu * {
-    --color-foreground: 0, 0, 0 !important; /* Fuerza el color negro puro en el sistema de Dawn */
-    color: rgb(0, 0, 0) !important;
+  /* Apunta a los enlaces reales dentro del submenú de la home page */
+  .header-wrapper--homepage .header__submenu .list-menu__item {
+    color: #000000 !important;
     opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Por si acaso el tema usa un estado de enlace heredado */
+  .header-wrapper--homepage .header__submenu .list-menu__item * {
+    color: #000000 !important;
   }
 }
