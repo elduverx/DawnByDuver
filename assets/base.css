@@ -4278,3 +4278,26 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
+/* --- FORZAR VISIBILIDAD DE PADRES E HIJOS A LA VEZ --- */
+@media screen and (max-width: 749px) {
+  /* Convierte el contenedor nativo oculto en un bloque relativo que empuja hacia abajo */
+  .menu-drawer__inner-submenu {
+    position: relative !important;
+    height: auto !important;
+    background: transparent !important;
+  }
+
+  /* Evita que el submenú se posicione arriba del todo tapando a los padres */
+  .menu-drawer__navigation .menu-drawer__submenu {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    display: block !important;
+  }
+
+  /* Da un pequeño margen extra a las subcategorías para que se note la jerarquía */
+  .menu-drawer__inner-submenu .menu-drawer__menu {
+    padding: 0 0 0 2.5rem !important; /* Sangría a la derecha */
+    margin-top: 0.5rem !important;
+  }
+}
