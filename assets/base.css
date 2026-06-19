@@ -4263,41 +4263,42 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
-/* --- APAGAR DESPLAZAMIENTO HORIZONTAL MÓVIL --- */
+/* --- ACORDEÓN VERTICAL INTEGRAL VELA MADRID --- */
 @media screen and (max-width: 749px) {
-  .menu-drawer__submenu {
-    transform: none !important;
+  /* 1. Mantiene el contenedor del submenú en formato bloque para que empuje hacia abajo */
+  .menu-drawer__submenu.has-submenu {
     position: relative !important;
+    transform: none !important;
     visibility: visible !important;
     display: block !important;
     width: 100% !important;
-    padding-left: 20px !important;
+    height: auto !important;
     background: transparent !important;
+    box-shadow: none !important;
   }
+
+  /* 2. Evita que la animación oculte el menú principal (Padre) */
+  .menu-drawer__inner-container {
+    position: relative !important;
+    overflow-y: auto !important;
+  }
+
+  /* 3. Estructura interna de los submenús limpios y con sangría */
+  .menu-drawer__submenu ul.menu-drawer__menu-list {
+    display: flex !important;
+    flex-direction: column !important;
+    padding-left: 2.5rem !important; /* Espacio a la izquierda */
+  }
+
+  /* Oculta los botones nativos de "Volver" que ya no pintan nada */
+  .menu-drawer__submenu .menu-drawer__close-button,
   .menu-drawer__close-button {
     display: none !important;
   }
-}
-/* --- FORZAR VISIBILIDAD DE PADRES E HIJOS A LA VEZ --- */
-@media screen and (max-width: 749px) {
-  /* Convierte el contenedor nativo oculto en un bloque relativo que empuja hacia abajo */
-  .menu-drawer__inner-submenu {
-    position: relative !important;
-    height: auto !important;
-    background: transparent !important;
-  }
 
-  /* Evita que el submenú se posicione arriba del todo tapando a los padres */
-  .menu-drawer__navigation .menu-drawer__submenu {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    display: block !important;
-  }
-
-  /* Da un pequeño margen extra a las subcategorías para que se note la jerarquía */
-  .menu-drawer__inner-submenu .menu-drawer__menu {
-    padding: 0 0 0 2.5rem !important; /* Sangría a la derecha */
-    margin-top: 0.5rem !important;
+  /* 4. Estilo de los submenús (Vestidos, Conjuntos...) sin el símbolo + */
+  .menu-drawer__submenu .menu-drawer__menu-item::after {
+    content: "" !important;
+    display: none !important;
   }
 }
