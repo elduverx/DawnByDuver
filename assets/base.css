@@ -4151,3 +4151,13 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
+/* --- OCULTAR ENLACES EXTRAS EN VERSIÓN MÓVIL --- */
+@media screen and (max-width: 749px) {
+  /* Oculta los enlaces que apunten a contacto, seguimiento o sobre nosotros en la barra superior */
+  header a[href*="contacto"], 
+  header a[href*="seguimiento"], 
+  header a[href*="sobre-nosotros"],
+  header a[href*="pages"] {
+    display: none !important;
+  }
+}
