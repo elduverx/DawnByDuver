@@ -4151,13 +4151,30 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- OCULTAR ENLACES EXTRAS EN VERSIÓN MÓVIL --- */
+/* --- OCULTAR ENLACES EXTRAS EN ENCABEZADO MÓVIL --- */
 @media screen and (max-width: 749px) {
-  /* Oculta los enlaces que apunten a contacto, seguimiento o sobre nosotros en la barra superior */
-  header a[href*="contacto"], 
-  header a[href*="seguimiento"], 
-  header a[href*="sobre-nosotros"],
-  header a[href*="pages"] {
+  /* Oculta los enlaces sueltos horizontales que flotan en la barra superior */
+  .header__inline-menu,
+  .header__menu-item,
+  header > a[href*="contacto"], 
+  header > a[href*="seguimiento"], 
+  header > a[href*="sobre-nosotros"] {
     display: none !important;
+  }
+
+  /* --- FUERZA LA VISIBILIDAD DEL CONTENIDO DEL DESPLEGABLE --- */
+  .menu-drawer,
+  .menu-drawer__menu,
+  .menu-drawer__menu-item,
+  .menu-drawer * {
+    display: flex !important;
+    visibility: visible !important;
+    color: #000000 !important; /* Letras negras */
+  }
+
+  /* Si el botón de cerrar (X) se descuadra, lo fijamos en su sitio */
+  .menu-drawer__close-button {
+    display: inline-flex !important;
+    color: #000000 !important;
   }
 }
