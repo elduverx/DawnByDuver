@@ -4205,3 +4205,67 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
+/* --- ARREGLO TOTAL DESPLEGABLE ESCRITORIO --- */
+@media screen and (min-width: 750px) {
+  /* 1. Fuerza a que la caja del submenú tenga fondo blanco y sea visible */
+  .header__submenu.list-menu--disclosure {
+    background-color: #ffffff !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    padding: 2rem !important;
+    min-width: 20rem !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    z-index: 100 !important;
+  }
+
+  /* 2. Devuelve los elementos del submenú a su comportamiento de fila/bloque limpio en escritorio */
+  .header__submenu .list-menu__item {
+    color: #000000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    font-size: 1.4rem !important;
+    padding: 1rem 0 !important;
+    opacity: 1 !important;
+    text-transform: uppercase !important;
+  }
+
+  /* 3. Asegura que los enlaces principales mantengan su color original */
+  .header__menu-item {
+    color: #ffffff !important; /* Cambia a #000000 si tu texto del menú principal es negro */
+  }
+}
+/* --- ARREGLO TOTAL DESPLEGABLE ESCRITORIO --- */
+@media screen and (min-width: 750px) {
+  /* 1. Fuerza a que la caja del submenú tenga fondo blanco y sea visible */
+  .header__submenu.list-menu--disclosure {
+    background-color: #ffffff !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: absolute !important;
+    padding: 2rem !important;
+    min-width: 20rem !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    z-index: 100 !important;
+  }
+
+  /* 2. Devuelve los elementos del submenú a su comportamiento de fila/bloque limpio en escritorio */
+  .header__submenu .list-menu__item {
+    color: #000000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    font-size: 1.4rem !important;
+    padding: 1rem 0 !important;
+    opacity: 1 !important;
+    text-transform: uppercase !important;
+  }
+
+  /* 3. Asegura que los enlaces principales mantengan su color original */
+  .header__menu-item {
+    color: #ffffff !important; /* Cambia a #000000 si tu texto del menú principal es negro */
+  }
+}
