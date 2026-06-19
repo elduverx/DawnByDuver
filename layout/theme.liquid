@@ -296,6 +296,50 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+ <style>
+@media screen and (max-width: 749px) {
+  /* 1. Desaparecer por completo el menú de letras horizontal de escritorio en móviles */
+  .header__inline-menu,
+  nav.header__inline-menu,
+  .header__inline-menu *,
+  header [class*="menu"] li a:not(.menu-drawer__menu-item),
+  .header__menu-item,
+  [class*="inline-menu"] {
+    display: none !important;
+  }
+
+  /* 2. Forzar la fila única: 3 líneas, lupa, logo y carrito */
+  .header--mobile-layout-logo-center, 
+  .header-wrapper header.header,
+  header.header {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  /* 3. Asegurar los botones de hamburguesa y lupa juntos a la izquierda */
+  .header__icon--menu, 
+  .header__search,
+  header .header__icon--menu, 
+  header .header__search {
+    display: inline-flex !important;
+  }
+
+  /* 4. Logotipo centrado */
+  .header__heading {
+    margin: 0 auto !important;
+  }
+
+  /* 5. Asegurar textos legibles (negros) en el menú lateral */
+  .menu-drawer__menu-item,
+  #menu-drawer *,
+  .menu-drawer * {
+    color: #000000 !important;
+  }
+}
+</style>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
