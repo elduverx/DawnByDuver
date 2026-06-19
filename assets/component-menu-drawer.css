@@ -349,3 +349,24 @@ h1.page-title,
     white-space: nowrap !important; /* Fuerza a que se mantenga en una sola línea */
   }
 }
+/* --- CAMBIO DE COLORES DE PRECIOS EN OFERTA --- */
+
+/* 1. Cambia el precio rebajado actual a color ROJO y lo hace un poco más grueso */
+.price--on-sale .price-item--sale {
+  color: #ff0000 !important; /* Color rojo de oferta */
+  font-weight: 600 !important;
+}
+
+/* 2. Ajusta el precio original tachado para que sea gris oscuro y más legible */
+.price--on-sale .price-item--regular {
+  color: #777777 !important; /* Gris un poco más oscuro para que se note el tachado */
+  text-decoration: line-through !important;
+  margin-left: 1rem !important; /* Espaciado entre los dos precios */
+}
+
+/* 3. Opcional: Si quieres cambiar el color de fondo de la etiqueta flotante de "Oferta" (Sale) */
+.badge.price__badge-sale {
+  background-color: #ff0000 !important; /* Fondo rojo para la etiqueta */
+  color: #ffffff !important;            /* Texto blanco */
+  border: none !important;
+}
