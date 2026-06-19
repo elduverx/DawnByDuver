@@ -4151,32 +4151,31 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- LIMPIEZA TOTAL EN MÓVIL (VELA MADRID) --- */
+/* --- TRATAMIENTO EXCLUSIVO ENCABEZADO MÓVIL --- */
 @media screen and (max-width: 749px) {
-  /* 1. Esconde de raíz cualquier menú horizontal o texto suelto que no sea un icono */
+  /* Oculta ÚNICAMENTE el menú de texto horizontal de la barra principal */
   .header__inline-menu,
-  .header__menu-item,
-  header [role="navigation"],
-  [class*="inline-menu"],
-  header a[href*="contacto"],
-  header a[href*="seguimiento"],
-  header a[href*="sobre-nosotros"] {
+  header > nav.header__inline-menu,
+  header .header__inline-menu {
     display: none !important;
   }
 
-  /* 2. Asegura que el contenedor nativo del menú desplegable SÍ se pinte */
+  /* --- RECONSTRUCCIÓN DEL MENÚ DESPLEGABLE INTERNO --- */
+  /* Forzamos a que el contenedor del menú móvil se abra y use su diseño nativo */
   .menu-drawer {
-    display: block !important;
+    display: flex !important;
     visibility: visible !important;
-    transform: none !important;
+    transform: translateX(0) !important;
   }
 
-  /* 3. Fuerza a las listas internas del menú a mostrarse en vertical y con letras negras */
-  .menu-drawer__menu, 
+  /* Obligamos a todas las listas y enlaces internos del desplegable a mostrarse */
+  .menu-drawer__menu,
+  .menu-drawer__menu li,
   .menu-drawer__menu-item,
-  .menu-drawer__menu * {
+  .menu-drawer__menu-item * {
     display: flex !important;
-    color: #000000 !important;
     visibility: visible !important;
+    color: #000000 !important; /* Texto en negro */
+    opacity: 1 !important;
   }
 }
