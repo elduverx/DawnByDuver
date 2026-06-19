@@ -4151,30 +4151,38 @@ footer-block__newsletter .footer-block__heading {
     vertical-align: middle !important;
   }
 }
-/* --- SOLUCIÓN DE RAÍZ ENCABEZADO MÓVIL --- */
+/* --- BLOQUEO ABSOLUTO DE ENLACES EXTERNOS EN MÓVIL --- */
 @media screen and (max-width: 749px) {
-  /* Oculta de forma estricta los enlaces horizontales de la barra superior */
-  .header-wrapper header > nav.header__inline-menu,
-  .header-wrapper header > .header__inline-menu,
-  .header-wrapper header > ul,
-  .header-wrapper header > li {
+  /* 1. Oculta el contenedor horizontal principal de la cabecera */
+  .header__inline-menu,
+  nav.header__inline-menu,
+  #shopify-section-header header ul.list-menu--inline {
     display: none !important;
   }
 
-  /* Mantiene los iconos esenciales (3 líneas, lupa, logo, carrito) en su sitio */
-  .header-wrapper header.header {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important;
+  /* 2. Oculta de forma quirúrgica los enlaces sueltos dentro de la barra */
+  header.header > a,
+  header.header .header__menu-item,
+  header.header [role="navigation"] li {
+    display: none !important;
   }
 
-  /* Asegura que los textos dentro del desplegable móvil se pinten en negro */
+  /* 3. Evita que la orden anterior rompa el interior del menú desplegable */
+  .menu-drawer,
+  .menu-drawer__inner-container,
+  .menu-drawer__navigation,
+  .menu-drawer__menu,
+  .menu-drawer__menu-item {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* 4. Asegura que los textos reales del menú móvil salgan legibles en negro */
   .menu-drawer__menu-item,
   .menu-drawer__menu-item *,
-  .menu-drawer__navigation *,
-  .menu-drawer__inner-container * {
+  #menu-drawer a {
+    display: flex !important;
     color: #000000 !important;
   }
 }
