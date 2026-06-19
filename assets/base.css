@@ -4197,31 +4197,43 @@ footer-block__newsletter .footer-block__heading {
     overflow: hidden !important;
   }
 }
-/* --- DISEÑO VERTICAL IDÉNTICO AL COMPETIDOR --- */
+/* --- DISEÑO VERTICAL LIMPIO VELA MADRID --- */
 @media screen and (max-width: 749px) {
-  /* 1. Fuerza a los enlaces a ponerse en fila vertical (uno debajo de otro) */
+  /* 1. Ordena los elementos en vertical de forma limpia */
   .menu-drawer__menu {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
-    padding: 2rem !important;
+    padding: 3rem 2rem !important;
   }
 
-  /* 2. Ajusta el tamaño de la letra y el espaciado para que se vea grande y limpio */
+  .menu-drawer__menu li {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* 2. Ajusta el enlace para corregir el solapamiento de textos y flechas */
   .menu-drawer__menu-item {
-    font-size: 2.2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    font-size: 2rem !important;
     text-transform: uppercase !important;
     letter-spacing: 0.15rem !important;
-    padding: 1.5rem 0 !important;
+    padding: 1rem 0 !important;
     width: 100% !important;
-    justify-content: space-between !important;
+    height: auto !important;
+    line-height: normal !important;
   }
 
-  /* 3. Estiliza las flechas de despliegue para que sean sutiles como las de la competencia */
+  /* 3. Controla el tamaño de la flecha pequeña lateral */
   .menu-drawer__menu-item .icon-arrow,
   .menu-drawer__menu-item svg {
-    transform: none !important;
-    width: 1.5rem !important;
-    height: 1.5rem !important;
+    position: relative !important;
+    display: inline-block !important;
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+    margin: 0 !important;
   }
 }
