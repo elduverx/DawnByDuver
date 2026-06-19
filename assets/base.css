@@ -4167,34 +4167,45 @@ footer-block__newsletter .footer-block__heading {
     flex-wrap: nowrap !important;
   }
 
-  /* 3. Asegura que los textos del menú desplegable SÍ se vean y salgan en negro */
-  .menu-drawer__menu-item,
-  .menu-drawer__menu-item *,
-  #menu-drawer * {
-    display: flex !important;
-    color: #000000 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-}
-/* Quita el botón de iniciar sesión dentro del menú desplegable móvil */
-.menu-drawer__utility-links {
-  display: none !important;
-}
-/* --- OCULTAR INICIAR SESIÓN VERTICAL EN MÓVIL --- */
+ /* --- CORRECCIÓN VERTICAL DESPLEGABLE VELA MADRID --- */
 @media screen and (max-width: 749px) {
-  .menu-drawer__utility-links,
-  .menu-drawer__utility-links *,
-  .menu-drawer__account,
-  .menu-drawer__account *,
-  a[href*="/customer_authentication"],
-  a[href*="/account"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
-    overflow: hidden !important;
+  /* Fuerza a la lista principal a ir hacia abajo */
+  .menu-drawer__menu,
+  ul.menu-drawer__menu {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 2rem !important;
+  }
+
+  .menu-drawer__menu li {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Alinea el texto e iconos correctamente */
+  .menu-drawer__menu-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    font-size: 2rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15rem !important;
+    padding: 1.2rem 0 !important;
+    color: #000000 !important;
+  }
+
+  /* Mueve los iconos o flechas de expansión al extremo derecho */
+  .menu-drawer__menu-item svg,
+  .menu-drawer__menu-item .icon,
+  .menu-drawer__menu-item .icon-caret {
+    position: relative !important;
+    display: inline-block !important;
+    margin: 0 !important;
+    width: 1.4rem !important;
+    height: 1.4rem !important;
   }
 }
 /* --- CORRECCIÓN VERTICAL DESPLEGABLE VELA MADRID --- */
