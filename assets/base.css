@@ -4205,15 +4205,12 @@ footer-block__newsletter .footer-block__heading {
     display: none !important;
   }
 }
-/* --- LETRAS NEGRAS DESPLEGABLES HOME PAGE --- */
+/* --- CAMBIO DE VARIABLE TEXTO DESPLEGABLES HOME --- */
 @media screen and (min-width: 750px) {
-  /* Ataca los enlaces internos dentro de los submenús de escritorio en la página de inicio */
-  .header-wrapper--homepage .header__submenu a,
-  .header-wrapper--homepage .header__submenu .list-menu__item,
-  .header-wrapper--homepage #HeaderMenu-MenuList-1 a,
-  .header-wrapper--homepage #HeaderMenu-MenuList-2 a {
-    color: #000000 !important;
+  .header-wrapper--homepage .header__submenu,
+  .header-wrapper--homepage .header__submenu * {
+    --color-foreground: 0, 0, 0 !important; /* Fuerza el color negro puro en el sistema de Dawn */
+    color: rgb(0, 0, 0) !important;
     opacity: 1 !important;
-    visibility: visible !important;
   }
 }
