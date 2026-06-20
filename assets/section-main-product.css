@@ -1612,30 +1612,43 @@ a.product__text {
 .product .price-item {
   position: relative !important;
 }
-/* --- ELIMINACIÓN FORCE DE 'EUR' EN PRECIOS DAWN --- */
+/* --- LIMPIEZA ABSOLUTA DE PRECIOS DUPLICADOS VELA --- */
 
-/* 1. Modificamos el precio rebajado para ocultar su texto real y meter el € limpio */
+/* 1. Precio rebajado actual (49,99 €) */
 .product .price-item--sale {
-  font-size: 0 !important; /* Esconde el número original y el EUR */
+  visibility: hidden !important;
+  position: relative !important;
+  display: inline-block !important;
+  font-size: 2.4rem !important;
 }
 
 .product .price-item--sale::before {
-  /* Cogemos el valor visualmente y le clavamos el formato limpio */
-  content: "49,99 €" !important; 
+  content: "49,99 €" !important;
+  visibility: visible !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
   color: #000000 !important;
-  font-size: 2.4rem !important; /* Le devolvemos el tamaño grande */
   font-weight: 600 !important;
+  white-space: nowrap !important;
 }
 
-/* 2. Modificamos el precio antiguo para ocultar su EUR */
+/* 2. Precio antiguo tachado (79,99 €) */
 .product .price-item--regular {
-  font-size: 0 !important; /* Esconde el número antiguo y el EUR */
+  visibility: hidden !important;
+  position: relative !important;
+  display: inline-block !important;
+  font-size: 1.5rem !important;
 }
 
 .product .price-item--regular::before {
   content: "79,99 €" !important;
+  visibility: visible !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
   color: #999999 !important;
-  font-size: 1.5rem !important; /* Tamaño pequeño */
   font-weight: 400 !important;
-  text-decoration: line-through !important; /* Mantiene el tachado */
+  text-decoration: line-through !important;
+  white-space: nowrap !important;
 }
