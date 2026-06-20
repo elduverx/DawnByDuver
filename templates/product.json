@@ -117,7 +117,7 @@
       "custom_css": [
         "/* --- ENCAJE PERFECTO BAJO LÍNEA SEPARADORA --- */:host,.product {padding-top: 55px !important; /* Reduce el espacio para que la foto suba hasta rozar la línea */}",
         ".product.page-width {max-width: 1300px !important; padding-left: 4rem !important; padding-right: 4rem !important; margin: 0 auto !important;}",
-        "/* Ajuste automático para pantallas móviles */@media screen and (max-width: 749px) {:host, .product {padding-top: 10px !important; /* Clava la imagen al menú en móviles */ } .product.page-width {padding-left: 2rem !important; padding-right: 2rem !important; }}"
+        " /* Ajuste automático para pantallas móviles */@media screen and (max-width: 749px) {:host, .product {padding-top: 10px !important; /* Clava la imagen al menú en móviles */ } .product.page-width {padding-left: 2rem !important; padding-right: 2rem !important; }}"
       ],
       "settings": {
         "enable_sticky_info": true,
