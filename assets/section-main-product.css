@@ -1612,3 +1612,30 @@ a.product__text {
 .product .price-item {
   position: relative !important;
 }
+/* --- ELIMINACIÓN FORCE DE 'EUR' EN PRECIOS DAWN --- */
+
+/* 1. Modificamos el precio rebajado para ocultar su texto real y meter el € limpio */
+.product .price-item--sale {
+  font-size: 0 !important; /* Esconde el número original y el EUR */
+}
+
+.product .price-item--sale::before {
+  /* Cogemos el valor visualmente y le clavamos el formato limpio */
+  content: "49,99 €" !important; 
+  color: #000000 !important;
+  font-size: 2.4rem !important; /* Le devolvemos el tamaño grande */
+  font-weight: 600 !important;
+}
+
+/* 2. Modificamos el precio antiguo para ocultar su EUR */
+.product .price-item--regular {
+  font-size: 0 !important; /* Esconde el número antiguo y el EUR */
+}
+
+.product .price-item--regular::before {
+  content: "79,99 €" !important;
+  color: #999999 !important;
+  font-size: 1.5rem !important; /* Tamaño pequeño */
+  font-weight: 400 !important;
+  text-decoration: line-through !important; /* Mantiene el tachado */
+}
