@@ -4278,17 +4278,3 @@ footer-block__newsletter .footer-block__heading {
 .product .price__badge-sale {
   display: none !important;
 }
-/* --- TRANSFORMAR EL CARTEL DE OFERTA EN RECUADRO GRIS --- */
-.product .badge.price__badge-sale {
-  background-color: #f2f2f2 !important;
-  color: #444444 !important;
-  border: none !important;
-  font-size: 1.2rem !important;
-  font-weight: 500 !important;
-  padding: 0.4rem 0.8rem !important;
-  border-radius: 4px !important;
-  margin-left: 0.5rem !important;
-  text-transform: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-}
