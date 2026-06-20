@@ -1531,38 +1531,50 @@ a.product__text {
   font-weight: 500 !important;
   text-transform: none !important;
 }
-/* --- ALINEACIÓN, ORDEN Y TAMAÑOS ESTILO COMPETIDOR --- */
+/* --- REDISTRIBUCIÓN ULTRA DEFECTO DAWN: PRECIO REBAJADO IZQUIERDA --- */
 
-/* Forzamos a que el contenedor ordene los elementos en línea recta y centrados */
-.product .price--on-sale .price__container {
-  display: inline-flex !important;
-  flex-direction: row !important;
+/* Forzamos a todo el bloque a ordenarse en línea y activamos la reordenación interna */
+.product .price .price__container,
+.product .price--on-sale .price__container,
+.product .price__container .price-item {
+  display: flex !important;
   align-items: center !important;
-  gap: 1rem !important; /* Espacio uniforme entre los tres elementos */
-  flex-wrap: nowrap !important;
 }
 
-/* 1. Precio de oferta (el que paga el cliente) - Va a la izquierda y más grande */
+/* El contenedor principal de precios se vuelve la fila maestra */
+.product .price--on-sale .price__container {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1.2rem !important; /* Espacio limpio entre los 3 elementos */
+}
+
+/* Forzamos a que la cajita nativa de precios se comporte como un sub-contenedor flexible */
+.product .price__sale {
+  display: flex !important;
+  flex-direction: row-reverse !important; /* <--- TRUCO MAGICO: Invierte el precio de oferta y el tachado */
+  align-items: center !important;
+  gap: 1.2rem !important;
+}
+
+/* 1. Precio rebajado (El que paga el cliente): Ahora se moverá a la izquierda del todo */
 .product .price-item--sale {
   color: #000000 !important;
   font-weight: 600 !important;
-  font-size: 2.4rem !important; /* Aumenta el tamaño del precio actual */
-  order: 1 !important;
+  font-size: 2.4rem !important; /* Grande e impactante */
+  margin: 0 !important;
 }
 
-/* 2. Precio antiguo (el que costaba antes) - Va en medio y más pequeño */
+/* 2. Precio antiguo (El que costaba antes): Se moverá al centro, justo a la derecha del rebajado */
 .product .price__container .price-item--regular,
 .product .price-item--regular {
   color: #999999 !important;
   text-decoration: line-through !important;
-  font-size: 1.5rem !important; /* Tamaño más pequeño e idéntico al competidor */
+  font-size: 1.5rem !important; /* Pequeño y discreto */
   font-weight: 400 !important;
   margin: 0 !important;
-  display: inline-block !important;
-  order: 2 !important;
 }
 
-/* 3. Cartelito Gris de Ahorro - Va a la derecha del todo */
+/* 3. Cartelito Gris de Ahorro: Se queda a la derecha del todo */
 .product .price__badge-sale, 
 .product .badge.price__badge-sale {
   background-color: #f2f2f2 !important;
@@ -1571,10 +1583,9 @@ a.product__text {
   border-radius: 4px !important;
   display: inline-flex !important;
   align-items: center !important;
-  font-size: 0 !important; /* Esconde el texto original */
+  font-size: 0 !important;
   margin: 0 !important;
   height: auto !important;
-  order: 3 !important;
 }
 
 /* Texto interno del cartelito gris */
