@@ -4248,29 +4248,3 @@ footer-block__newsletter .footer-block__heading {
   text-decoration: line-through !important;
   font-size: 1.8rem !important;
 }
-/* --- CORRECCIÓN DE COLORES EN NEGRO (MÁXIMA PRIORIDAD) --- */
-
-/* 1. Forzar precio de oferta actual a NEGRO e intenso */
-.product .price--on-sale .price-item--sale,
-main .product .price__container .price-item--sale,
-span.price-item.price-item--sale {
-  color: #000000 !important;
-  font-weight: 600 !important;
-  font-size: 2.2rem !important;
-}
-
-/* 2. Forzar precio original antiguo a GRIS con tachado */
-.product .price--on-sale .price-item--regular,
-main .product .price__container .price-item--regular,
-span.price-item.price-item--regular {
-  color: #8c8c8c !important;
-  text-decoration: line-through !important;
-  font-size: 1.8rem !important;
-  font-weight: 400 !important;
-}
-
-/* 3. Asegurar que la etiqueta nativa de "Oferta" desaparezca */
-.product .price__badge-sale,
-.product .badge.price__badge-sale {
-  display: none !important;
-}
