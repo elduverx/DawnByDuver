@@ -416,39 +416,36 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script>
+ <script>
 document.addEventListener("DOMContentLoaded", function() {
   function calcularAhorroProducto() {
-    // Buscamos los elementos de precio en la página
-    var precioOriginalEl = document.querySelector('.product .price-item--regular');
-    var precioOfertaEl = document.querySelector('.product .price-item--sale');
-    var etiquetaOfertaEl = document.querySelector('.product .badge.price__badge-sale');
+    // Selectores mejorados para detectar los precios exactos de Dawn
+    var precioOriginalEl = document.querySelector('.price__container .price-item--regular') || document.querySelector('.price-item--regular');
+    var precioOfertaEl = document.querySelector('.price__container .price-item--sale') || document.querySelector('.price-item--sale');
+    var etiquetaOfertaEl = document.querySelector('.badge.price__badge-sale') || document.querySelector('.price__badge-sale');
 
     if (precioOriginalEl && precioOfertaEl && etiquetaOfertaEl) {
-      // Extraemos los números limpiando el texto (€, EUR, espacios...)
-      var precioOriginal = parseFloat(precioOriginalEl.innerText.replace(/[^0-9.,]/g, '').replace(',', '.'));
-      var precioOferta = parseFloat(precioOfertaEl.innerText.replace(/[^0-9.,]/g, '').replace(',', '.'));
+      // Extraemos los números limpiando cualquier símbolo de moneda
+      var precioOriginal = parseFloat(precioOriginalEl.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
+      var precioOferta = parseFloat(precioOfertaEl.textContent.replace(/[^0-9.,]/g, '').replace(',', '.'));
 
-      if (precioOriginal > precioOferta) {
-        // Calculamos la resta exacta
+      if (!isNaN(precioOriginal) && !isNaN(precioOferta) && precioOriginal > precioOferta) {
         var ahorro = precioOriginal - precioOferta;
-        
-        // Formateamos el resultado con dos decimales y el símbolo €
         var ahorroFormateado = ahorro.toFixed(2).replace('.', ',') + ' €';
         
-        // Cambiamos el texto "Oferta" por "Ahorras X,XX €"
-        etiquetaOfertaEl.innerText = 'Ahorras ' + ahorroFormateado;
+        // Inyectamos el texto dinámico dentro del recuadro gris
+        etiquetaOfertaEl.textContent = 'Ahorras ' + ahorroFormateado;
       }
     }
   }
 
-  // Ejecutar al cargar la página
+  // Se ejecuta de inmediato al cargar la web
   calcularAhorroProducto();
   
-  // Ejecutar también si el usuario cambia de variante (talla/color)
-  const targetNode = document.querySelector('.product');
+  // Observa si el usuario cambia de talla o color para recalcular el descuento
+  var targetNode = document.querySelector('.product') || document.querySelector('#MainProduct-image-gallery');
   if (targetNode) {
-    const observer = new MutationObserver(calcularAhorroProducto);
+    var observer = new MutationObserver(calcularAhorroProducto);
     observer.observe(targetNode, { subtree: true, characterData: true, childList: true });
   }
 });
