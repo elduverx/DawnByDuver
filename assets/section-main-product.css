@@ -1652,3 +1652,30 @@ a.product__text {
   text-decoration: line-through !important;
   white-space: nowrap !important;
 }
+/* --- ALINEACIÓN FINAL EN UNA SOLA LÍNEA Y MENOS ESPACIADO --- */
+
+/* Forzamos a todo el bloque contenedor a ponerse en línea recta sin saltos */
+.product .price--on-sale .price__container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 1.5rem !important; /* Reduce el espacio entre elementos a la medida justa */
+  flex-wrap: nowrap !important; /* <--- Prohíbe terminantemente que el cartel se baje de línea */
+  width: 100% !important;
+}
+
+/* Forzamos a la subcaja de precios a ajustarse a su contenido real */
+.product .price__sale {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+  gap: 1.5rem !important; /* Espacio estrecho entre el precio de 49€ y el de 79€ */
+  margin: 0 !important;
+}
+
+/* Le damos un ancho reservado a los textos ocultos para que no pisen al cartel gris */
+.product .price-item--sale,
+.product .price-item--regular {
+  min-width: 75px !important;
+}
