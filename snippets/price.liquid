@@ -90,28 +90,31 @@
           </span>
         {%- endif -%}
       </div>
-      <div class="price__sale">
-        {%- unless product.price_varies == false and product.compare_at_price_varies %}
-          <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-          <span>
-            <s class="price-item price-item--regular">
-              {% if settings.currency_code_enabled %}
-                {{ compare_at_price | money_with_currency }}
-              {% else %}
-                {{ compare_at_price | money }}
-              {% endif %}
-            </s>
-          </span>
-        {%- endunless -%}
-        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-        <span class="price-item price-item--sale price-item--last">
-          {{ money_price }}
+     <div class="price__sale" style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
+      
+      <span class="price-item price-item--sale" style="color: #356333 !important; font-size: 2.4rem !important; font-weight: 700 !important; margin: 0 !important;">
+        {{ money_price | remove: ' EUR' | remove: 'EUR' | replace: '€', '' }}€
+      </span>
+
+      {%- unless product.price_varies == false and product.compare_at_price_varies %}
+        <span style="display: flex; align-items: center;">
+          <s class="price-item price-item--regular" style="color: #999999 !important; font-size: 1.5rem !important; margin: 0 !important;">
+            {{ compare_at_price | money | remove: ' EUR' | remove: 'EUR' | replace: '€', '' }}€
+          </s>
         </span>
-      </div>
-      {%- if product.selected_or_first_available_variant.unit_price_measurement -%}
-        {% render 'unit-price', price: product.selected_or_first_available_variant.unit_price, measurement: product.selected_or_first_available_variant.unit_price_measurement %}
+      {%- endunless -%}
+
+      {%- if compare_at_price > price -%}
+        {%- assign porcentaje = compare_at_price | minus: price | times: 100.0 | divided_by: compare_at_price | round -%}
+        <span class="badge" style="background-color: #356333 !important; color: #ffffff !important; border: none !important; padding: 4px 8px !important; border-radius: 4px !important; font-size: 1.3rem !important; font-weight: bold !important; text-transform: none !important; letter-spacing: 0 !important; margin: 0 !important;">
+          Ahorras {{ compare_at_price | minus: price | money | remove: ' EUR' | remove: 'EUR' | replace: '€', '' }}€ ({{ porcentaje }}%)
+        </span>
       {%- endif -%}
     </div>
+    
+    <style>
+      .price__badge-sale { display: none !important; }
+    </style>
     {%- if show_badges -%}
       <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
         {{ 'products.product.on_sale' | t }}
