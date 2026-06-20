@@ -416,5 +416,42 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  function calcularAhorroProducto() {
+    // Buscamos los elementos de precio en la página
+    var precioOriginalEl = document.querySelector('.product .price-item--regular');
+    var precioOfertaEl = document.querySelector('.product .price-item--sale');
+    var etiquetaOfertaEl = document.querySelector('.product .badge.price__badge-sale');
+
+    if (precioOriginalEl && precioOfertaEl && etiquetaOfertaEl) {
+      // Extraemos los números limpiando el texto (€, EUR, espacios...)
+      var precioOriginal = parseFloat(precioOriginalEl.innerText.replace(/[^0-9.,]/g, '').replace(',', '.'));
+      var precioOferta = parseFloat(precioOfertaEl.innerText.replace(/[^0-9.,]/g, '').replace(',', '.'));
+
+      if (precioOriginal > precioOferta) {
+        // Calculamos la resta exacta
+        var ahorro = precioOriginal - precioOferta;
+        
+        // Formateamos el resultado con dos decimales y el símbolo €
+        var ahorroFormateado = ahorro.toFixed(2).replace('.', ',') + ' €';
+        
+        // Cambiamos el texto "Oferta" por "Ahorras X,XX €"
+        etiquetaOfertaEl.innerText = 'Ahorras ' + ahorroFormateado;
+      }
+    }
+  }
+
+  // Ejecutar al cargar la página
+  calcularAhorroProducto();
+  
+  // Ejecutar también si el usuario cambia de variante (talla/color)
+  const targetNode = document.querySelector('.product');
+  if (targetNode) {
+    const observer = new MutationObserver(calcularAhorroProducto);
+    observer.observe(targetNode, { subtree: true, characterData: true, childList: true });
+  }
+});
+</script>
   </body>
 </html>
