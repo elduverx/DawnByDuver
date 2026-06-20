@@ -370,3 +370,26 @@ h1.page-title,
   color: #ffffff !important;            /* Texto blanco */
   border: none !important;
 }
+/* --- AJUSTE DE MÁRGENES Y ALTURA EN PÁGINA DE PRODUCTO --- */
+
+/* 1. Despegar la galería de imágenes para que el logo no la tape */
+.product__media-list {
+  margin-top: 12rem !important; /* Empuja las fotos hacia abajo en ordenadores */
+}
+
+/* 2. Ajustar los márgenes laterales del contenedor de producto (estilo competidor) */
+.product .grid {
+  max-width: 1300px !important;
+  margin: 0 auto !important;
+  padding: 0 4rem !important; /* Añade los mismos márgenes limpios en los lados */
+}
+
+/* 3. Ajuste específico para dispositivos móviles */
+@media screen and (max-width: 749px) {
+  .product__media-list {
+    margin-top: 8rem !important; /* Empuja las fotos lo justo en móviles */
+  }
+  .product .grid {
+    padding: 0 2rem !important; /* Margen adaptado para pantallas pequeñas */
+  }
+}
