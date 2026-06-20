@@ -1531,3 +1531,23 @@ a.product__text {
   font-weight: 500 !important;
   text-transform: none !important;
 }
+/* --- CARTEL GRIS COMPLETO CON PORCENTAJE VELA --- */
+.product .price__badge-sale, 
+.product .badge.price__badge-sale {
+  background-color: #f2f2f2 !important;
+  border: none !important;
+  padding: 0.4rem 0.8rem !important;
+  border-radius: 4px !important;
+  display: inline-flex !important;
+  font-size: 0 !important; /* Oculta la palabra Oferta original */
+}
+
+.product .price__badge-sale::before, 
+.product .badge.price__badge-sale::before {
+  content: "Ahorras 30,00 € (50%)" !important;
+  color: #444444 !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
+}
