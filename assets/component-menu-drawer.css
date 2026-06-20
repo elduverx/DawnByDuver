@@ -370,34 +370,3 @@ h1.page-title,
   color: #ffffff !important;            /* Texto blanco */
   border: none !important;
 }
-/* --- EMPUJE INTEGRAL DE LA FICHA DE PRODUCTO VELA MADRID --- */
-
-/* Forzar a que la sección del producto empiece debajo del encabezado fijo */
-.main-product-wrapper,
-main #MainProduct-template--* ,
-section[id^="MainProduct-"],
-.section-template--198756696398__main-padding,
-div[data-section-type="product"] {
-  padding-top: 130px !important; /* El grosor exacto para salvar tu cabecera */
-}
-
-/* Ajuste de márgenes laterales simétricos estilo competidor */
-.product.page-width {
-  max-width: 1300px !important;
-  padding-left: 4rem !important;
-  padding-right: 4rem !important;
-  margin: 0 auto !important;
-}
-
-/* Adaptación para pantallas móviles */
-@media screen and (max-width: 749px) {
-  .main-product-wrapper,
-  section[id^="MainProduct-"],
-  div[data-section-type="product"] {
-    padding-top: 90px !important; /* Espacio adaptado al menú móvil */
-  }
-  .product.page-width {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-}
