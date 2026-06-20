@@ -115,9 +115,9 @@
         "share"
       ],
       "custom_css": [
-        "/* --- EMPUJE INTEGRAL BAJO LA LÍNEA DEL ENCABEZADO --- */:host, .product {padding-top: 130px !important; /* Baja la imagen y el texto debajo de la línea gris */}",
+        "/* --- ENCAJE PERFECTO BAJO LÍNEA SEPARADORA --- */:host,.product {padding-top: 55px !important; /* Reduce el espacio para que la foto suba hasta rozar la línea */}",
         ".product.page-width {max-width: 1300px !important; padding-left: 4rem !important; padding-right: 4rem !important; margin: 0 auto !important;}",
-        "/* Ajuste automático para pantallas móviles */@media screen and (max-width: 749px) {:host, .product {padding-top: 80px !important; } .product.page-width {padding-left: 2rem !important; padding-right: 2rem !important; }}"
+        "/* Ajuste automático para pantallas móviles */@media screen and (max-width: 749px) {:host, .product {padding-top: 10px !important; /* Clava la imagen al menú en móviles */ } .product.page-width {padding-left: 2rem !important; padding-right: 2rem !important; }}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -131,7 +131,7 @@
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 36,
+        "padding_top": 28,
         "padding_bottom": 12
       }
     },
