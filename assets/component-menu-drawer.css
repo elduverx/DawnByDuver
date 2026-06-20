@@ -370,35 +370,34 @@ h1.page-title,
   color: #ffffff !important;            /* Texto blanco */
   border: none !important;
 }
-/* --- EMPUJE INTEGRAL DE FICHA DE PRODUCTO VELA --- */
-.shopify-section-header-sticky {
-  position: sticky !important;
+/* --- EMPUJE INTEGRAL DE LA FICHA DE PRODUCTO VELA MADRID --- */
+
+/* Forzar a que la sección del producto empiece debajo del encabezado fijo */
+.main-product-wrapper,
+main #MainProduct-template--* ,
+section[id^="MainProduct-"],
+.section-template--198756696398__main-padding,
+div[data-section-type="product"] {
+  padding-top: 130px !important; /* El grosor exacto para salvar tu cabecera */
 }
 
-/* Empuja toda la sección del producto hacia abajo para sacarla de debajo del logo */
-#MainProduct-template--198756696398__main,
-.product-section,
-.section-product {
-  padding-top: 14rem !important; /* Espacio extra arriba para despejar el menú */
-}
-
-/* Ajusta el ancho y los márgenes de la página igual que el competidor */
+/* Ajuste de márgenes laterales simétricos estilo competidor */
 .product.page-width {
   max-width: 1300px !important;
-  padding-left: 5rem !important;
-  padding-right: 5rem !important;
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
   margin: 0 auto !important;
 }
 
-/* Ajuste fino para pantallas móviles */
+/* Adaptación para pantallas móviles */
 @media screen and (max-width: 749px) {
-  #MainProduct-template--198756696398__main,
-  .product-section {
-    padding-top: 9rem !important;
+  .main-product-wrapper,
+  section[id^="MainProduct-"],
+  div[data-section-type="product"] {
+    padding-top: 90px !important; /* Espacio adaptado al menú móvil */
   }
   .product.page-width {
     padding-left: 2rem !important;
     padding-right: 2rem !important;
   }
-}
 }
