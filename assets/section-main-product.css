@@ -1732,4 +1732,88 @@ a.product__text {
   font-weight: 500 !important;
   text-transform: none !important;
   white-space: nowrap !important;
+}/* --- COMPACTACIÓN Y ALINEACIÓN IDÉNTICA AL COMPETIDOR --- */
+
+/* Contenedor principal: alinea los tres elementos en una sola línea horizontal perfecta */
+.product .price--on-sale .price__container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px !important; /* Espacio exacto y corto entre elementos */
+  flex-wrap: nowrap !important; /* Prohíbe que el cartel se baje */
+}
+
+/* Forzamos a la caja interna de Dawn a mantener la fila exacta */
+.product .price__sale {
+  display: flex !important;
+  flex-direction: row !important; /* Mantiene el orden natural del flujo */
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 0 !important;
+}
+
+/* 1. Precio rebajado (Grande y Negro) - Posición Izquierda */
+.product .price-item--sale {
+  visibility: hidden !important;
+  position: relative !important;
+  display: inline-flex !important;
+  font-size: 2.4rem !important;
+  font-weight: 600 !important;
+  color: #000000 !important;
+  width: 75px !important; /* Espacio justo asignado */
+}
+
+.product .price-item--sale::before {
+  content: "49,99 €" !important;
+  visibility: visible !important;
+  position: absolute !important;
+  left: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* 2. Precio antiguo tachado (Pequeño y Gris) - Posición Centro */
+.product .price-item--regular {
+  visibility: hidden !important;
+  position: relative !important;
+  display: inline-flex !important;
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+  color: #999999 !important;
+  width: 65px !important;
+  margin: 0 !important;
+}
+
+.product .price-item--regular::before {
+  content: "79,99 €" !important;
+  visibility: visible !important;
+  position: absolute !important;
+  left: 0 !important;
+  text-decoration: line-through !important;
+  white-space: nowrap !important;
+}
+
+/* 3. Cartelito Gris de Ahorro - Posición Derecha */
+.product .price__badge-sale, 
+.product .badge.price__badge-sale {
+  display: inline-flex !important;
+  align-items: center !important;
+  background-color: #f2f2f2 !important;
+  border: none !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  font-size: 0 !important;
+  margin: 0 !important;
+  height: auto !important;
+}
+
+/* Texto interno del cartelito */
+.product .price__badge-sale::before, 
+.product .badge.price__badge-sale::before {
+  content: "Ahorras 30,00 € (50%)" !important;
+  color: #444444 !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  white-space: nowrap !important;
 }
