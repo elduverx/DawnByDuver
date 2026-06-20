@@ -1732,7 +1732,8 @@ a.product__text {
   font-weight: 500 !important;
   text-transform: none !important;
   white-space: nowrap !important;
-}/* --- COMPACTACIÓN Y ALINEACIÓN IDÉNTICA AL COMPETIDOR --- */
+}
+/* --- COMPACTACIÓN Y ALINEACIÓN IDÉNTICA AL COMPETIDOR --- */
 
 /* Contenedor principal: alinea los tres elementos en una sola línea horizontal perfecta */
 .product .price--on-sale .price__container {
