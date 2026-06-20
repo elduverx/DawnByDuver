@@ -416,52 +416,5 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  function calcularAhorroProducto() {
-    // Buscamos la etiqueta gris (probamos varios selectores por si acaso)
-    var etiqueta = document.querySelector('.badge.price__badge-sale') || 
-                   document.querySelector('.price__badge-sale') || 
-                   document.querySelector('.price .badge');
-    
-    // Buscamos el precio original tachado
-    var precioOriginalEl = document.querySelector('.price-item--regular') || 
-                           document.querySelector('.price__container .price-item--regular');
-    
-    // Buscamos el precio en oferta actual
-    var precioOfertaEl = document.querySelector('.price-item--sale') || 
-                         document.querySelector('.price__container .price-item--sale');
-
-    if (etiqueta && precioOriginalEl && precioOfertaEl) {
-      // Limpiamos los textos para quedarnos solo con los números decimales
-      var textoOriginal = precioOriginalEl.innerText || precioOriginalEl.textContent;
-      var textoOferta = precioOfertaEl.innerText || precioOfertaEl.textContent;
-
-      var precioOriginal = parseFloat(textoOriginal.replace(/[^0-9.,]/g, '').replace(',', '.'));
-      var precioOferta = parseFloat(textoOferta.replace(/[^0-9.,]/g, '').replace(',', '.'));
-
-      if (!isNaN(precioOriginal) && !isNaN(precioOferta) && precioOriginal > precioOferta) {
-        var ahorro = precioOriginal - precioOferta;
-        var ahorroFormateado = ahorro.toFixed(2).replace('.', ',') + ' €';
-        
-        // Cambiamos el texto "Oferta" por el cálculo matemático
-        etiqueta.innerHTML = 'Ahorras ' + ahorroFormateado;
-      }
-    }
-  }
-
-  // Lo ejecutamos inmediatamente al cargar
-  calcularAhorroProducto();
-
-  // Lo ejecutamos un pelín más tarde (por si el tema tarda en cargar los precios)
-  setTimeout(calcularAhorroProducto, 500);
-  setTimeout(calcularAhorroProducto, 1500);
-
-  // Escuchamos si cambia la variante (talla, color, etc.) para recalcular
-  var contenedorProducto = document.querySelector('.product') || document.body;
-  var observer = new MutationObserver(calcularAhorroProducto);
-  observer.observe(contenedorProducto, { subtree: true, characterData: true, childList: true });
-});
-</script>
   </body>
 </html>
