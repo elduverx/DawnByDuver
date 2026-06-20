@@ -1598,3 +1598,17 @@ a.product__text {
   text-transform: none !important;
   white-space: nowrap !important;
 }
+/* --- LIMPIEZA DE DIVISAS: QUITAR EUR Y DEJAR SOLO € --- */
+
+/* Ocultamos las letras EUR que añade el tema Dawn al lado de los precios */
+.product .price__container .price-item .currency,
+.product .price .price-item::after,
+.product .price__container span[class*="currency"] {
+  display: none !important;
+}
+
+/* En caso de que tu tema Dawn pinte el "EUR" dentro del propio texto del precio, 
+   usamos este truco para recortar esas letras visualmente */
+.product .price-item {
+  position: relative !important;
+}
