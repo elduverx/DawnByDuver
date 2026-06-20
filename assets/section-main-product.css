@@ -1531,7 +1531,38 @@ a.product__text {
   font-weight: 500 !important;
   text-transform: none !important;
 }
-/* --- CARTEL GRIS COMPLETO CON PORCENTAJE VELA --- */
+/* --- ALINEACIÓN, ORDEN Y TAMAÑOS ESTILO COMPETIDOR --- */
+
+/* Forzamos a que el contenedor ordene los elementos en línea recta y centrados */
+.product .price--on-sale .price__container {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 1rem !important; /* Espacio uniforme entre los tres elementos */
+  flex-wrap: nowrap !important;
+}
+
+/* 1. Precio de oferta (el que paga el cliente) - Va a la izquierda y más grande */
+.product .price-item--sale {
+  color: #000000 !important;
+  font-weight: 600 !important;
+  font-size: 2.4rem !important; /* Aumenta el tamaño del precio actual */
+  order: 1 !important;
+}
+
+/* 2. Precio antiguo (el que costaba antes) - Va en medio y más pequeño */
+.product .price__container .price-item--regular,
+.product .price-item--regular {
+  color: #999999 !important;
+  text-decoration: line-through !important;
+  font-size: 1.5rem !important; /* Tamaño más pequeño e idéntico al competidor */
+  font-weight: 400 !important;
+  margin: 0 !important;
+  display: inline-block !important;
+  order: 2 !important;
+}
+
+/* 3. Cartelito Gris de Ahorro - Va a la derecha del todo */
 .product .price__badge-sale, 
 .product .badge.price__badge-sale {
   background-color: #f2f2f2 !important;
@@ -1539,9 +1570,14 @@ a.product__text {
   padding: 0.4rem 0.8rem !important;
   border-radius: 4px !important;
   display: inline-flex !important;
-  font-size: 0 !important; /* Oculta la palabra Oferta original */
+  align-items: center !important;
+  font-size: 0 !important; /* Esconde el texto original */
+  margin: 0 !important;
+  height: auto !important;
+  order: 3 !important;
 }
 
+/* Texto interno del cartelito gris */
 .product .price__badge-sale::before, 
 .product .badge.price__badge-sale::before {
   content: "Ahorras 30,00 € (50%)" !important;
