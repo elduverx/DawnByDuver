@@ -1652,73 +1652,75 @@ a.product__text {
   text-decoration: line-through !important;
   white-space: nowrap !important;
 }
-/* --- TRUCO MAESTRO: ESTRUCTURA EN LINEA IDÉNTICA AL COMPETIDOR --- */
+/* --- CONFIGURACIÓN DEFINITIVA EN LÍNEA ESTILO COMPETIDOR --- */
 
-/* 1. Obligamos a que el contenedor principal de Dawn alinee todo en una única fila horizontal */
-.product .price,
-.product .price--on-sale,
-.product .price__container,
+/* 1. Forzamos la fila maestra horizontal sin saltos de línea */
+.product .price--on-sale .price__container,
 .product .price__sale {
-  display: inline-flex !important;
+  display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
   justify-content: flex-start !important;
-  gap: 0.8rem !important; /* Espacio exacto y corto entre los 3 elementos */
-  margin: 0 !important;
-  padding: 0 !important;
+  gap: 0.8rem !important; /* Espacio corto y exacto entre los tres elementos */
   flex-wrap: nowrap !important;
+  width: auto !important;
 }
 
-/* 2. Precio rebajado (El que paga el cliente - Negro y grande) */
+/* 2. Precio rebajado (El que paga el cliente - Negro y Grande) */
 .product .price-item--sale {
   visibility: hidden !important;
   position: relative !important;
   display: inline-flex !important;
   font-size: 2.4rem !important;
-  width: auto !important;
-  margin-right: 0.8rem !important; /* Separación con el precio tachado */
+  order: 1 !important; /* Obliga a posicionarse a la izquierda del todo */
+  width: 75px !important; /* Espacio reservado para evitar solapamientos */
 }
 
 .product .price-item--sale::before {
   content: "49,99 €" !important;
   visibility: visible !important;
+  position: absolute !important;
+  left: 0 !important;
   color: #000000 !important;
   font-weight: 600 !important;
   white-space: nowrap !important;
 }
 
-/* 3. Precio antiguo (El que costaba antes - Gris y pequeño) */
+/* 3. Precio antiguo tachado (Gris y Pequeño) */
 .product .price-item--regular {
   visibility: hidden !important;
   position: relative !important;
   display: inline-flex !important;
   font-size: 1.5rem !important;
-  width: auto !important;
-  margin-right: 0.8rem !important; /* Separación con el cartel de ahorro */
+  order: 2 !important; /* Obliga a posicionarse en el centro */
+  width: 65px !important;
+  margin: 0 !important;
 }
 
 .product .price-item--regular::before {
   content: "79,99 €" !important;
   visibility: visible !important;
+  position: absolute !important;
+  left: 0 !important;
   color: #999999 !important;
   font-weight: 400 !important;
   text-decoration: line-through !important;
   white-space: nowrap !important;
 }
 
-/* 4. Cartelito Gris de Ahorro (A la derecha en la misma línea) */
+/* 4. Cartelito Gris de Ahorro */
 .product .price__badge-sale, 
 .product .badge.price__badge-sale {
+  display: inline-flex !important;
+  align-items: center !important;
   background-color: #f2f2f2 !important;
   border: none !important;
   padding: 0.4rem 0.8rem !important;
   border-radius: 4px !important;
-  display: inline-flex !important;
-  align-items: center !important;
   font-size: 0 !important;
   margin: 0 !important;
   height: auto !important;
-  vertical-align: middle !important;
+  order: 3 !important; /* Obliga a posicionarse a la derecha del todo */
 }
 
 /* Texto interno del cartelito gris */
