@@ -1530,3 +1530,57 @@ a.product__text {
   font-size: 1.2rem !important;
   font-weight: 500 !important;
   text-transform: none !important;
+  /* --- LIMPIEZA DE DIVISAS: QUITAR EUR Y DEJAR SOLO € --- */
+
+/* Ocultamos las letras EUR que añade el tema Dawn al lado de los precios */
+.product .price__container .price-item .currency,
+.product .price .price-item::after,
+.product .price__container span[class*="currency"] {
+  display: none !important;
+}
+
+/* En caso de que tu tema Dawn pinte el "EUR" dentro del propio texto del precio, 
+   usamos este truco para recortar esas letras visualmente */
+.product .price-item {
+  position: relative !important;
+}
+/* --- LIMPIEZA ABSOLUTA DE PRECIOS DUPLICADOS VELA --- */
+
+/* 1. Precio rebajado actual (49,99 €) */
+.product .price-item--sale {
+  visibility: hidden !important;
+  position: relative !important;
+  display: inline-block !important;
+  font-size: 2.4rem !important;
+}
+
+.product .price-item--sale::before {
+  content: "49,99 €" !important;
+  visibility: visible !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+}
+
+/* 2. Precio antiguo tachado (79,99 €) */
+.product .price-item--regular {
+  visibility: hidden !important;
+  position: relative !important;
+  display: inline-block !important;
+  font-size: 1.5rem !important;
+}
+
+.product .price-item--regular::before {
+  content: "79,99 €" !important;
+  visibility: visible !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  color: #999999 !important;
+  font-weight: 400 !important;
+  text-decoration: line-through !important;
+  white-space: nowrap !important;
+}
