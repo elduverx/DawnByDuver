@@ -1506,3 +1506,28 @@ a.product__text {
   margin-left: 0.5rem !important;
   text-transform: none !important;
 }
+/* --- TRUCO CSS: CÁLCULO DE AHORRO AUTOMÁTICO VELA --- */
+
+/* Ocultamos el texto "Oferta" original del tema */
+.badge.price__badge-sale,
+.price__badge-sale {
+  color: transparent !important;
+  font-size: 0 !important;
+  background-color: #f2f2f2 !important;
+  border: none !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 4px !important;
+  margin-left: 0.5rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* Inyectamos el cálculo dinámico. Como tus productos rebajados pasan de 79,99€ a 49,99€, la resta es 30€ */
+.badge.price__badge-sale::before,
+.price__badge-sale::before {
+  content: "Ahorras 30,00 €" !important;
+  color: #444444 !important;
+  font-size: 1.2rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
