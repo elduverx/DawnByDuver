@@ -94,10 +94,48 @@
       {% endif %}
       {{ input_dataset }}
     >
-    <label for="{{ input_id }}">
-      {{ value -}}
-      {{ label_unavailable }}
-    </label>
+   {%- liquid
+  assign is_color = false
+  assign option_name_downcase = option.name | downcase
+  if option_name_downcase contains 'color' or option_name_downcase contains 'colour'
+    assign is_color = true
+  endif
+
+  assign variant_image_url = null
+  if is_color
+    for variant in product.variants
+      if variant.options contains value and variant.image
+        assign variant_image_url = variant.image | image_url: width: 100
+        break
+      endif
+    endfor
+  endif
+-%}
+
+<label for="{{ input_id }}"
+  {% if is_color and variant_image_url %}
+    style="
+      background-image: url('{{ variant_image_url }}') !important;
+      background-size: cover !important;
+      background-position: center !important;
+      width: 54px !important;
+      height: 54px !important;
+      border-radius: 8px !important; /* Bordes suaves estilo competidor */
+      text-indent: -9999px !important;
+      overflow: hidden !important;
+      display: inline-block !important;
+      border: 1.5px solid #e2e8f0 !important;
+      cursor: pointer !important;
+      margin: 4px !important;
+      padding: 0 !important;
+    "
+  {% endif %}>
+  {% if is_color and variant_image_url %}
+    <span class="visually-hidden">{{ value -}} {{ label_unavailable }}</span>
+  {% else %}
+    {{ value -}} {{ label_unavailable }}
+  {% endif %}
+</label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       id="{{ input_id }}"
