@@ -54,9 +54,44 @@
         </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
-          </label>
+         {%- liquid
+  assign is_color = false
+  assign option_name_downcase = option.name | downcase
+  if option_name_downcase contains 'color' or option_name_downcase contains 'colour'
+    assign is_color = true
+  endif
+
+  assign variant_image_url = null
+  if is_color
+    for variant in product.variants
+      if variant.options contains value and variant.image
+        assign variant_image_url = variant.image | image_url: width: 80
+        break
+      endif
+    endfor
+  endif
+-%}
+
+<label for="{{ section.id }}-{{ option.id }}-{{ forloop.index0 }}"
+  {% if is_color and variant_image_url %}
+    style="
+      background-image: url('{{ variant_image_url }}') !important;
+      background-size: cover !important;
+      background-position: center !important;
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 8px !important; /* Cuadrado con bordes suaves estilo competidor */
+      text-indent: -9999px !important;
+      overflow: hidden !important;
+      display: inline-block !important;
+      border: 2px solid #e2e8f0 !important;
+      cursor: pointer !important;
+      margin: 4px !important;
+      padding: 0 !important;
+    "
+  {% endif %}>
+  <span class="visually-hidden">{{ value }}</span>
+</label>
           <div class="select">
             {%- if picker_type == 'swatch_dropdown' -%}
               <span
