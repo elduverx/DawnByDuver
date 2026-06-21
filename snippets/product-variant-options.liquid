@@ -1,5 +1,5 @@
 {% comment %}
-  Renders product variant options con imágenes reales de prendas e interactividad 100% nativa de Dawn
+  Renders product variant options reinstaurando la estructura e interactividad nativa de Dawn
 {% endcomment %}
 
 {%- liquid
@@ -8,30 +8,14 @@
 
 {%- for value in option.values -%}
   {%- liquid
-    # 1. Buscamos la imagen real de la variante para este valor
+    # 1. Buscamos la foto de la variante real para este valor de color
     assign variant_image_url = null
-    assign current_variant = null
-    
     for variant in product.variants
-      if variant.options contains value
-        assign current_variant = variant
-        if variant.image
-          assign variant_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
-          break
-        endif
+      if variant.options contains value and variant.image
+        assign variant_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
+        break
       endif
     endfor
-
-    # 2. Asignamos el valor de fondo (tu imagen o el swatch nativo)
-    assign swatch_value = null
-    if variant_image_url
-      assign swatch_value = 'url(' | append: variant_image_url | append: ')'
-    elsif value.swatch.image
-      assign image_url = value.swatch.image | image_url: width: 50
-      assign swatch_value = 'url(' | append: image_url | append: ')'
-    elsif value.swatch.color
-      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
-    endif
 
     assign option_disabled = true
     if value.available
@@ -39,58 +23,44 @@
     endif
   -%}
 
-  {%- if picker_type == 'button' -%}
-    <input
-      type="radio"
-      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-      name="{{ option.name }}"
-      value="{{ value | escape }}"
-      form="{{ product_form_id }}"
-      {% if value.selected %}
-        checked
+  <input
+    type="radio"
+    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    name="{{ option.name }}"
+    value="{{ value | escape }}"
+    form="{{ product_form_id }}"
+    {% if value.selected %}
+      checked
+    {% endif %}
+    {% if option_disabled %}
+      class="disabled"
+    {% endif %}
+    class="product-form__input-filter"
+    style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; z-index: -1 !important;"
+  >
+  
+  <label
+    for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    style="
+      {% if variant_image_url %}
+        background-image: url('{{ variant_image_url }}') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        width: 54px !important;
+        height: 54px !important;
+        text-indent: -9999px !important;
+        overflow: hidden !important;
+      {% else %}
+        padding: 10px 20px !important;
       {% endif %}
-      {% if option_disabled %}
-        class="disabled"
-      {% endif %}
-    >
-    <label 
-      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-      style="
-        {% if swatch_value %}
-          background: {{ swatch_value }} !important;
-          background-size: cover !important;
-          background-position: center !important;
-          width: 54px !important;
-          height: 54px !important;
-          border-radius: 8px !important;
-          text-indent: -9999px !important;
-          overflow: hidden !important;
-        {% else %}
-          padding: 10px 20px !important;
-          border-radius: 8px !important;
-        {% endif %}
-        display: inline-block !important;
-        border: 1.5px solid #e2e8f0 !important;
-        cursor: pointer !important;
-        margin: 4px !important;
-        transition: border-color 0.2s ease;
-      "
-    >
-      {{ value -}}
-      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
-    </label>
-  {%- else -%}
-    <option
-      value="{{ value | escape }}"
-      {% if value.selected %}
-        selected="selected"
-      {% endif %}
-    >
-      {% if option_disabled -%}
-        {{- 'products.product.value_unavailable' | t: value: value -}}
-      {%- else -%}
-        {{- value -}}
-      {%- endif %}
-    </option>
-  {%- endif -%}
+      display: inline-block !important;
+      border: 1.5px solid #e2e8f0 !important;
+      border-radius: 8px !important;
+      cursor: pointer !important;
+      margin: 5px !important;
+    "
+  >
+    {{ value }}
+  </label>
 {%- endfor -%}
