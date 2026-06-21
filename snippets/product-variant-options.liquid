@@ -1,5 +1,5 @@
 {% comment %}
-  Renders product variant options reinstaurando la estructura e interactividad nativa de Dawn
+  Renders product variant options respetando las muestras nativas de Dawn para no romper el JS
 {% endcomment %}
 
 {%- liquid
@@ -17,50 +17,67 @@
       endif
     endfor
 
+    # 2. Respetamos las variables nativas del tema Dawn para que funcione el JavaScript
+    assign swatch_value = null
+    if variant_image_url
+      assign swatch_value = 'url(' | append: variant_image_url | append: ')'
+    elsif value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    endif
+
     assign option_disabled = true
     if value.available
       assign option_disabled = false
     endif
   -%}
 
-  <input
-    type="radio"
-    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-    name="{{ option.name }}"
-    value="{{ value | escape }}"
-    form="{{ product_form_id }}"
-    {% if value.selected %}
-      checked
-    {% endif %}
-    {% if option_disabled %}
-      class="disabled"
-    {% endif %}
-    class="product-form__input-filter"
-    style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; z-index: -1 !important;"
-  >
-  
-  <label
-    for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-    style="
-      {% if variant_image_url %}
-        background-image: url('{{ variant_image_url }}') !important;
-        background-size: cover !important;
-        background-position: center !important;
-        background-repeat: no-repeat !important;
+  {%- if block.settings.picker_type == 'button' and value.swatch != null -%}
+    <input
+      type="radio"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+    <label
+      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      class="product-form__swatch"
+      style="
+        {% if swatch_value %}
+          --swatch-background: {{ swatch_value }} !important;
+        {% endif %}
         width: 54px !important;
         height: 54px !important;
-        text-indent: -9999px !important;
-        overflow: hidden !important;
-      {% else %}
-        padding: 10px 20px !important;
+        border-radius: 8px !important; /* Cuadrados del competidor */
+      "
+    >
+      <span class="visually-hidden">{{ value }}</span>
+    </label>
+  {%- else -%}
+    <input
+      type="radio"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      name="{{ option.name }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      {% if value.selected %}
+        checked
       {% endif %}
-      display: inline-block !important;
-      border: 1.5px solid #e2e8f0 !important;
-      border-radius: 8px !important;
-      cursor: pointer !important;
-      margin: 5px !important;
-    "
-  >
-    {{ value }}
-  </label>
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+      {{ value -}}
+    </label>
+  {%- endif -%}
 {%- endfor -%}
