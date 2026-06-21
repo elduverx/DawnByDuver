@@ -1,5 +1,5 @@
 {% comment %}
-  Renders product variant options (Estructura nativa limpia de Dawn)
+  Renders product variant options manteniendo la interactividad nativa y forzando imágenes cuadradas
 {% endcomment %}
 
 {%- liquid
@@ -8,49 +8,69 @@
 
 {%- for value in option.values -%}
   {%- liquid
+    # 1. Buscamos la foto de la variante real para este valor de color
+    assign variant_image_url = null
+    for variant in product.variants
+      if variant.options contains value and variant.image
+        assign variant_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
+        break
+      endif
+    endfor
+
+    # 2. Asignamos el fondo
+    assign swatch_value = null
+    if variant_image_url
+      assign swatch_value = 'url(' | append: variant_image_url | append: ')'
+    elsif value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    endif
+
     assign option_disabled = true
     if value.available
       assign option_disabled = false
     endif
   -%}
 
-  {%- if block.settings.picker_type == 'button' and value.swatch != null -%}
-    <input
-      type="radio"
-      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-      name="{{ option.name }}"
-      value="{{ value | escape }}"
-      form="{{ product_form_id }}"
-      {% if value.selected %}
-        checked
+  <input
+    type="radio"
+    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    name="{{ option.name }}"
+    value="{{ value | escape }}"
+    form="{{ product_form_id }}"
+    {% if value.selected %}
+      checked
+    {% endif %}
+    {% if option_disabled %}
+      class="disabled"
+    {% endif %}
+    class="swatch-input__input"
+  >
+  
+  <label
+    for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    class="swatch-input__label"
+    style="
+      {% if swatch_value %}
+        background: {{ swatch_value }} !important;
+        background-size: cover !important;
+        background-position: center !important;
+        width: 54px !important;
+        height: 54px !important;
+        text-indent: -9999px !important;
+        overflow: hidden !important;
+      {% else %}
+        padding: 10px 20px !important;
       {% endif %}
-      {% if option_disabled %}
-        class="disabled"
-      {% endif %}
-    >
-    <label
-      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-      class="product-form__swatch"
-    >
- {% render 'swatch', swatch: value.swatch, shape: block.settings.swatch_shape, product: product, value: value %}
-      <span class="visually-hidden">{{ value }}</span>
-    </label>
-  {%- else -%}
-    <input
-      type="radio"
-      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-      name="{{ option.name }}"
-      value="{{ value | escape }}"
-      form="{{ product_form_id }}"
-      {% if value.selected %}
-        checked
-      {% endif %}
-      {% if option_disabled %}
-        class="disabled"
-      {% endif %}
-    >
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-      {{ value -}}
-    </label>
-  {%- endif -%}
+      display: inline-block !important;
+      border: 1.5px solid #e2e8f0 !important;
+      border-radius: 8px !important;
+      cursor: pointer !important;
+      margin: 4px !important;
+    "
+  >
+    {{ value }}
+  </label>
 {%- endfor -%}
