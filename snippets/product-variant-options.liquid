@@ -1,5 +1,5 @@
 {% comment %}
-  Renders product variant options manteniendo la interactividad nativa y forzando imágenes cuadradas
+  Renders product variant options con interactividad 100% nativa de Dawn e imágenes de variantes
 {% endcomment %}
 
 {%- liquid
@@ -16,17 +16,6 @@
         break
       endif
     endfor
-
-    # 2. Asignamos el fondo
-    assign swatch_value = null
-    if variant_image_url
-      assign swatch_value = 'url(' | append: variant_image_url | append: ')'
-    elsif value.swatch.image
-      assign image_url = value.swatch.image | image_url: width: 50
-      assign swatch_value = 'url(' | append: image_url | append: ')'
-    elsif value.swatch.color
-      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
-    endif
 
     assign option_disabled = true
     if value.available
@@ -46,17 +35,16 @@
     {% if option_disabled %}
       class="disabled"
     {% endif %}
-    class="swatch-input__input"
   >
   
   <label
     for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-    class="swatch-input__label"
     style="
-      {% if swatch_value %}
-        background: {{ swatch_value }} !important;
+      {% if variant_image_url %}
+        background-image: url('{{ variant_image_url }}') !important;
         background-size: cover !important;
         background-position: center !important;
+        background-repeat: no-repeat !important;
         width: 54px !important;
         height: 54px !important;
         text-indent: -9999px !important;
