@@ -1,5 +1,5 @@
 {% comment %}
-  Renders product variant options con imágenes reales e interactividad nativa de Dawn
+  Renders product variant options con imágenes reales e interactividad 100% nativa de Dawn
 {% endcomment %}
 
 {%- liquid
@@ -10,10 +10,15 @@
   {%- liquid
     # 1. Buscamos la imagen real de la variante para este valor
     assign variant_image_url = null
+    assign current_variant = null
+    
     for variant in product.variants
-      if variant.options contains value and variant.image
-        assign variant_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
-        break
+      if variant.options contains value
+        assign current_variant = variant
+        if variant.image
+          assign variant_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
+          break
+        endif
       endif
     endfor
 
@@ -46,10 +51,10 @@
     {% if option_disabled %}
       class="disabled"
     {% endif %}
+    {% if current_variant %}
+      data-variant-id="{{ current_variant.id }}"
+    {% endif %}
     style="clip: rect(0 0 0 0); overflow: hidden; position: absolute; height: 1px; width: 1px;"
-    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
-    class="{% if option_disabled %}disabled{% endif %}"
-    {{ block.shopify_attributes }}
   >
   
   <label
