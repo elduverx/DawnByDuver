@@ -178,3 +178,21 @@
 
 </div>
 {% endunless %}
+<style>
+  /* Fuerza a que los contenedores de las muestras sean cuadrados con bordes redondeados */
+  .product-form__swatch, 
+  .swatch,
+  .swatch-input__label {
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 8px !important;
+    border: 1.5px solid #e2e8f0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Oculta los estilos circulares por defecto de Dawn */
+  .swatch--circle, 
+  .swatch-component {
+    border-radius: 8px !important;
+  }
+</style>
