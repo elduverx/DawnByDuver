@@ -111,7 +111,7 @@ endif
     endif
   endfor
 -%}
-
+TEST-AQUI
 <label for="{{ section.id }}-{{ option.id }}-{{ forloop.index0 }}"
   style="
     {% if variant_image_url %}
@@ -136,7 +136,6 @@ endif
   {% else %}
     {{ value }}
   {% endif %}
-  TEST AQUI
 </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
