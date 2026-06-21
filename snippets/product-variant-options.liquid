@@ -1,5 +1,5 @@
 {% comment %}
-  Renders product variant options con interactividad 100% nativa de Dawn e imágenes de variantes
+  Renders product variant options con clases estructurales de Dawn para activar el JavaScript
 {% endcomment %}
 
 {%- liquid
@@ -32,9 +32,8 @@
     {% if value.selected %}
       checked
     {% endif %}
-    {% if option_disabled %}
-      class="disabled"
-    {% endif %}
+    class="{% if option_disabled %}disabled{% endif %} product-form__input"
+    style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; z-index: -1 !important;"
   >
   
   <label
@@ -57,6 +56,7 @@
       border-radius: 8px !important;
       cursor: pointer !important;
       margin: 4px !important;
+      transition: border-color 0.15s ease;
     "
   >
     {{ value }}
