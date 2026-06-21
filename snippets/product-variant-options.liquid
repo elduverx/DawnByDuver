@@ -1,45 +1,31 @@
 {% comment %}
-  Renders product variant options
-
-  Accepts:
-  - product: {Object} product object.
-  - option: {Object} current product_option object.
-  - block: {Object} block object.
-  - picker_type: {String} type of picker to dispay
-
-
-  Usage:
-  {% render 'product-variant-options',
-    product: product,
-    option: option,
-    block: block
-    picker_type: picker_type
-  %}
+  Renders product variant options de forma optimizada para mostrar imágenes reales
 {% endcomment %}
+
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
 -%}
 
 {%- for value in option.values -%}
   {%- liquid
-   assign swatch_image_url = null
-for variant in product.variants
-  if variant.options contains value and variant.image
-    assign swatch_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
-    break
-  endif
-endfor
+    # Buscamos la imagen de la variante real para este valor
+    assign variant_image_url = null
+    for variant in product.variants
+      if variant.options contains value and variant.image
+        assign variant_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
+        break
+      endif
+    endfor
 
-if swatch_image_url
-  assign swatch_value = 'url(' | append: swatch_image_url | append: ')'
-elsif value.swatch.image
-  assign image_url = value.swatch.image | image_url: width: 50
-  assign swatch_value = 'url(' | append: image_url | append: ')'
-elsif value.swatch.color
-  assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
-else
-  assign swatch_value = null
-endif
+    assign swatch_value = null
+    if variant_image_url
+      assign swatch_value = 'url(' | append: variant_image_url | append: ')'
+    elsif value.swatch.image
+      assign image_url = value.swatch.image | image_url: width: 50
+      assign swatch_value = 'url(' | append: image_url | append: ')'
+    elsif value.swatch.color
+      assign swatch_value = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+    endif
 
     assign option_disabled = true
     if value.available
@@ -47,116 +33,43 @@ endif
     endif
   -%}
 
-  {%- capture input_id -%}
-    {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
-  {%- endcapture -%}
-
-  {%- capture input_name -%}
-    {{ option.name }}-{{ option.position }}
-  {%- endcapture -%}
-
-  {%- capture input_dataset -%}
-    data-product-url="{{ value.product_url }}"
-    data-option-value-id="{{ value.id }}"
-  {%- endcapture -%}
-
-  {%- capture label_unavailable -%}
-    <span class="visually-hidden label-unavailable">
-      {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
-    </span>
-  {%- endcapture -%}
-
-  {% assign escaped_value = value | escape %}
-
-  {%- if picker_type == 'swatch' -%}
-    {%- capture help_text -%}
-      <span class="visually-hidden">{{ escaped_value }}</span>
-      {{ label_unavailable }}
-    {%- endcapture -%}
-
-    {%
-      render 'swatch-input',
-      id: input_id,
-      name: input_name,
-      value: escaped_value,
-      swatch: value.swatch,
-      product_form_id: product_form_id,
-      checked: value.selected,
-      visually_disabled: option_disabled,
-      shape: block.settings.swatch_shape,
-      help_text: help_text,
-      additional_props: input_dataset
-    %}
-  {%- elsif picker_type == 'button' -%}
-    <input
-      type="radio"
-      id="{{ input_id }}"
-      name="{{ input_name | escape }}"
-      value="{{ escaped_value }}"
-      form="{{ product_form_id }}"
-      {% if value.selected %}
-        checked
+  <input
+    type="radio"
+    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    name="{{ option.name }}"
+    value="{{ value | escape }}"
+    form="{{ product_form_id }}"
+    {% if value.selected %}
+      checked
+    {% endif %}
+    {% if option_disabled %}
+      class="disabled"
+    {% endif %}
+    style="clip: rect(0 0 0 0); overflow: hidden; position: absolute; height: 1px; width: 1px;"
+  >
+  
+  <label
+    for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    style="
+      {% if swatch_value %}
+        background: {{ swatch_value }} !important;
+        background-size: cover !important;
+        background-position: center !important;
+        width: 54px !important;
+        height: 54px !important;
+        border-radius: 8px !important;
+        text-indent: -9999px !important;
+        overflow: hidden !important;
+      {% else %}
+        padding: 10px 20px !important;
+        border-radius: 8px !important;
       {% endif %}
-      {% if option_disabled %}
-        class="disabled"
-      {% endif %}
-      {{ input_dataset }}
-    >
-   {%- liquid
-  assign variant_image_url = null
-  for variant in product.variants
-    if variant.options contains value and variant.image
-      assign variant_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
-      break
-    endif
-  endfor
--%}
-TEST-AQUI
-<label for="{{ section.id }}-{{ option.id }}-{{ forloop.index0 }}"
-  style="
-    {% if variant_image_url %}
-      background-image: url('{{ variant_image_url }}') !important;
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      width: 54px !important;
-      height: 54px !important;
-      border-radius: 8px !important;
-      text-indent: -9999px !important;
-      overflow: hidden !important;
       display: inline-block !important;
       border: 1.5px solid #e2e8f0 !important;
       cursor: pointer !important;
       margin: 4px !important;
-      padding: 0 !important;
-    {% endif %}
-  ">
-  {% if variant_image_url %}
-    <span class="visually-hidden">{{ value }}</span>
-  {% else %}
+    "
+  >
     {{ value }}
-  {% endif %}
-</label>
-  {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
-    <option
-      id="{{ input_id }}"
-      value="{{ escaped_value }}"
-      {% if value.selected %}
-        selected="selected"
-      {% endif %}
-      {% if swatch_value and picker_type == 'swatch_dropdown' %}
-        data-option-swatch-value="{{ swatch_value }}"
-        {% if swatch_focal_point %}
-          data-option-swatch-focal-point="{{ swatch_focal_point }}"
-        {% endif %}
-      {% endif %}
-      {{ input_dataset }}
-    >
-      {% if option_disabled -%}
-        {{- 'products.product.value_unavailable' | t: option_value: value -}}
-      {%- else -%}
-        {{- value -}}
-      {%- endif %}
-    </option>
-  {%- endif -%}
+  </label>
 {%- endfor -%}
