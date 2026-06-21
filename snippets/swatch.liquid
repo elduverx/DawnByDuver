@@ -1,20 +1,17 @@
 {%- liquid
   assign swatch_value = null
   
-  # Buscamos en el producto la variante que coincida con el valor actual
-  for variant in product.variants
-    for option in variant.options
-      if option == value and variant.image
+  # Buscamos en el producto global la variante que coincida con el valor actual de este color
+  if product
+    for variant in product.variants
+      if variant.options contains value and variant.image
         assign swatch_value = variant.image | image_url: width: 120, height: 120, crop: 'center'
         break
       endif
     endfor
-    if swatch_value != null
-      break
-    endif
-  endfor
+  endif
 
-  # Si no encuentra foto de variante, usa el color plano nativo por defecto
+  # Si por algún motivo no encuentra foto de ropa, usa el sistema nativo de color plano
   if swatch_value == null
     if swatch.image
       assign swatch_value = swatch.image | image_url: width: 50
@@ -35,10 +32,8 @@
     {% else %}
       background-color: {{ swatch_value }} !important;
     {% endif %}
-    width: 54px !important;
-    height: 54px !important;
-    border-radius: 8px !important;
+    width: 100% !important;
+    height: 100% !important;
     display: inline-block !important;
-    border: 1.5px solid #e2e8f0 !important;
   "
 ></span>
