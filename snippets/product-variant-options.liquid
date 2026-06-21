@@ -32,7 +32,7 @@
       for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
       class="product-form__swatch"
     >
-      {% render 'swatch', swatch: value.swatch, shape: block.settings.swatch_shape %}
+ {% render 'swatch', swatch: value.swatch, shape: block.settings.swatch_shape, product: product, value: value %}
       <span class="visually-hidden">{{ value }}</span>
     </label>
   {%- else -%}
