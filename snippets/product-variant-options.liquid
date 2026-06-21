@@ -104,23 +104,26 @@
   assign variant_image_url = null
   if is_color
     for variant in product.variants
-      if variant.options contains value and variant.image
-        assign variant_image_url = variant.image | image_url: width: 100
-        break
+      if variant.options contains value
+        if variant.image
+          assign variant_image_url = variant.image | image_url: width: 120, height: 120, crop: 'center'
+          break
+        endif
       endif
     endfor
   endif
 -%}
 
-<label for="{{ input_id }}"
-  {% if is_color and variant_image_url %}
-    style="
+<label for="{{ section.id }}-{{ option.id }}-{{ forloop.index0 }}"
+  style="
+    {% if is_color and variant_image_url %}
       background-image: url('{{ variant_image_url }}') !important;
       background-size: cover !important;
       background-position: center !important;
+      background-repeat: no-repeat !important;
       width: 54px !important;
       height: 54px !important;
-      border-radius: 8px !important; /* Bordes suaves estilo competidor */
+      border-radius: 8px !important;
       text-indent: -9999px !important;
       overflow: hidden !important;
       display: inline-block !important;
@@ -128,12 +131,12 @@
       cursor: pointer !important;
       margin: 4px !important;
       padding: 0 !important;
-    "
-  {% endif %}>
+    {% endif %}
+  ">
   {% if is_color and variant_image_url %}
-    <span class="visually-hidden">{{ value -}} {{ label_unavailable }}</span>
+    <span class="visually-hidden">{{ value }}</span>
   {% else %}
-    {{ value -}} {{ label_unavailable }}
+    {{ value }}
   {% endif %}
 </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
