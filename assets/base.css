@@ -4278,3 +4278,23 @@ footer-block__newsletter .footer-block__heading {
 .product .price__badge-sale {
   display: none !important;
 }
+/* Convierte las muestras en los cuadrados del competidor con esquinas de 8px */
+.product-form__swatch, 
+.swatch,
+.swatch-input__label,
+.swatch-input__input + label {
+  width: 54px !important;
+  height: 54px !important;
+  border-radius: 8px !important;
+  border: 1.5px solid #e2e8f0 !important;
+  overflow: hidden !important;
+  display: inline-block !important;
+  object-fit: cover !important;
+}
+
+/* Fuerza a que los elementos internos circulares de Dawn hereden la forma cuadrada */
+.swatch--circle, 
+.swatch-component,
+.swatch-input__label::after {
+  border-radius: 8px !important;
+}
