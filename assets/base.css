@@ -4294,54 +4294,45 @@ fieldset.product-form__input .form__label::before {
   color: #121212;
   margin-left: 4px;
 }
-/* --- DISEÑO DE BOTONES DE TALLA OPTIMIZADOS --- */
-.size-swatch-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px; /* Espacio más pequeño entre cajas */
-  max-width: 260px; /* Ancho total más reducido */
+/* --- BOTONES DE TALLA COMPETIDOR PARA DAWN --- */
+.product-form__input--size-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 8px !important;
+  max-width: 280px !important;
+  margin-bottom: 20px !important;
+}
+
+.product-form__input--size-grid input[type="radio"] + label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 38px !important; /* Altura más pequeña y estilizada */
+  border: 1px solid #D3D3D3 !important;
+  border-radius: 4px !important;
+  background-color: #FFFFFF !important;
+  color: #222222 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* Estado seleccionado (Negro) */
+.product-form__input--size-grid input[type="radio"]:checked + label {
+  background-color: #222222 !important;
+  border-color: #222222 !important;
+  color: #FFFFFF !important;
+}
+
+/* Enlace ver tabla de tallas */
+.dawn-size-chart-link {
+  display: block;
   margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-.size-swatch-input {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.size-swatch-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 38px; /* Altura más baja y estilizada */
-  border: 1px solid #D3D3D3;
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  color: #222222;
-  font-size: 13px; /* Letra un poco más pequeña */
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.size-swatch-input:checked + .size-swatch-label {
-  background-color: #222222;
-  border-color: #222222;
-  color: #FFFFFF;
-}
-
-.size-chart-link-container {
-  margin-top: 10px;
-  margin-bottom: 15px;
-}
-
-.size-chart-link {
   font-size: 14px;
   color: #222222;
   text-decoration: underline;
   text-underline-offset: 4px;
-  cursor: pointer;
 }

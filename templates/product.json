@@ -41,6 +41,12 @@
             "swatch_shape": "none"
           }
         },
+        "custom_liquid_8qANKn": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{%- if product.options_with_values.size > 1 -%}\n  {%- assign option = product.options_with_values[1] -%}\n  <div class=\"product-form__input\">\n    <div class=\"size-swatch-container\">\n      {%- for value in option.values -%}\n        <input type=\"radio\" \n               id=\"size-{{ section.id }}-{{ forloop.index }}\" \n               name=\"talla-dinamica-{{ section.id }}\" \n               value=\"{{ value | escape }}\" \n               {% if option.selected_value == value %}checked{% endif %} \n               class=\"size-swatch-input\">\n        <label for=\"size-{{ section.id }}-{{ forloop.index }}\" class=\"size-swatch-label\">\n          {{ value }}\n        </label>\n      {%- endfor -%}\n    </div>\n    \n    <div class=\"size-chart-link-container\">\n      <a href=\"#\" class=\"size-chart-link\">Ver tabla de tallas</a>\n    </div>\n  </div>\n{%- endif -%}"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -105,6 +111,7 @@
         "caption",
         "price",
         "variant_picker",
+        "custom_liquid_8qANKn",
         "quantity_selector",
         "buy_buttons",
         "description",
