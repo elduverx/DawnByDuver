@@ -1346,4 +1346,4 @@ document.addEventListener('variant:changed', function(event) {
       }
     });
   }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
-});
+})
