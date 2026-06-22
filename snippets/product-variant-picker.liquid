@@ -29,9 +29,7 @@
       -%}
       {%- if picker_type == 'swatch' -%}
         <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label">
-  {{ option.name }}: <span class="selected-variant-value">{{ option.selected_value }}</span>
-          </legend>
+         <legend class="form__label">{{ option.name }}: <span id="current-color-text">{{ option.selected_value }}</span></legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
