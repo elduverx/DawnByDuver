@@ -80,8 +80,8 @@
       additional_props: input_dataset
     %}
   {%- elsif picker_type == 'button' -%}
-   {%- liquid
-    # Buscamos de forma automática la foto de la variante que corresponda a este color
+  {%- liquid
+    # Buscamos de forma automática la foto de la variante que corresponda a este valor de color
     assign automatic_variant_image = null
     for variant in product.variants
       if variant.options contains value and variant.image
@@ -93,9 +93,9 @@
 
   <input
     type="radio"
-    id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    id="{{ input_id }}"
     name="{{ option.name }}"
-    value="{{ value | escape }}"
+    value="{{ escaped_value }}"
     form="{{ product_form_id }}"
     {% if value.selected %}
       checked
@@ -103,9 +103,10 @@
     {% if option_disabled %}
       class="disabled"
     {% endif %}
+    {{ input_dataset }}
   >
   <label 
-    for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    for="{{ input_id }}"
     style="
       {% if automatic_variant_image %}
         background-image: url('{{ automatic_variant_image }}') !important;
@@ -124,7 +125,7 @@
     "
   >
     {{ value -}}
-    <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+    {{ label_unavailable }}
   </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
