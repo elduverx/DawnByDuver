@@ -27,36 +27,19 @@
           endif
         endif
       -%}
-      
       {%- if picker_type == 'swatch' -%}
-        {% comment %} BLOQUE EXCLUSIVO DE COLOR {% endcomment %}
         <fieldset class="js product-form__input product-form__input--swatch">
-          <legend class="form__label">{{ option.name }}</legend>
+         <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
             block: block,
-            picker_type: 'button'
+            picker_type: button
           %}
         </fieldset>
-        
       {%- elsif picker_type == 'button' -%}
-        {% comment %} BLOQUE EXCLUSIVO DE TALLAS {% endcomment %}
         <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-            <span>{{ option.name }}</span>
-            
-            {%- if option.name == 'Talla' or option.name == 'talla' or option.name == 'Size' or option.name == 'size' -%}
-              <a href="#tabla-tallas-modal" class="size-chart-link" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <line x1="9" y1="12" x2="9" y2="15"></line>
-                  <line x1="14" y1="12" x2="14" y2="15"></line>
-                </svg>
-                Tabla de tallas
-              </a>
-            {%- endif -%}
-          </legend>
+        <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
@@ -64,7 +47,6 @@
             picker_type: picker_type
           %}
         </fieldset>
-        
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
@@ -105,8 +87,22 @@
     </script>
   </variant-selects>
 {%- endunless -%}
-
 <div style="display:none;">
   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
     (function(img){
-      var container = img.closest('variant-radios') || img.
+      var container = img.closest('variant-radios') || img.closest('variant-selects') || document.querySelector('variant-radios') || document.querySelector('variant-selects');
+      if (container) {
+        var checkedInput = container.querySelector('input[type=&quot;radio&quot;]:checked');
+        if (checkedInput) {
+          var labels = container.querySelectorAll('.form__label') || document.querySelectorAll('.form__label');
+          labels.forEach(function(label) {
+            if (label.textContent.includes('Color') || label.textContent.includes('color')) {
+              label.textContent = 'Color: ' + checkedInput.value;
+            }
+          });
+        }
+      }
+      img.remove();
+    })(this);
+  ">
+</div>
