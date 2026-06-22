@@ -1347,9 +1347,9 @@ document.addEventListener('variant:changed', function(event) {
     });
   }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
 });
-// Forzador definitivo contra el amago de Dawn
-document.addEventListener('DOMContentLoaded', () => {
-  const asegurarTextoColor = () => {
+// Sincronizador global e indestructible para el texto de color en Dawn
+(function() {
+  const forzarTextoColorGlobal = () => {
     const picker = document.querySelector('variant-radios') || document.querySelector('variant-selects');
     if (!picker) return;
 
@@ -1364,22 +1364,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // 1. Ejecuta al cargar la página
-  asegurarTextoColor();
-
-  // 2. Al hacer clic, revisa y clava el texto repetidamente para ganarle a la recarga de Dawn
-  const mainContainer = document.querySelector('variant-radios') || document.querySelector('variant-selects');
-  if (mainContainer) {
-    mainContainer.addEventListener('change', () => {
-      let intentos = 0;
-      // Revisa y reescribe el texto cada 50 milisegundos durante 1 segundo entero
-      const forzadorContinuo = setInterval(() => {
-        asegurarTextoColor();
-        intentos++;
-        if (intentos > 20) { // Tras 1 segundo, se apaga solo de forma segura
-          clearInterval(forzadorContinuo);
-        }
-      }, 50);
-    });
+  // 1. Ejecutar al cargar la página
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', forzarTextoColorGlobal);
+  } else {
+    forzarTextoColorGlobal();
   }
-});
+
+  // 2. Vigilante maestro: vigila los cambios de toda la página para ganarle a cualquier recarga AJAX
+  const observer = new MutationObserver(() => {
+    forzarTextoColorGlobal();
+  });
+
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+})();
