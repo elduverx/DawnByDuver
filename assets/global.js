@@ -1347,39 +1347,31 @@ document.addEventListener('variant:changed', function(event) {
     });
   }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
 });
-// Forzador definitivo contra el amago de Dawn
+// Forzador permanente por ID nativo
 document.addEventListener('DOMContentLoaded', () => {
-  const asegurarTextoColor = () => {
-    const picker = document.querySelector('variant-radios') || document.querySelector('variant-selects');
-    if (!picker) return;
+  const container = document.querySelector('variant-radios') || document.querySelector('variant-selects');
+  if (!container) return;
 
-    const checkedInput = picker.querySelector('input[type="radio"]:checked');
-    if (!checkedInput) return;
-
-    const labels = document.querySelectorAll('.form__label');
-    labels.forEach(label => {
-      if (label.textContent.includes('Color') || label.textContent.includes('color')) {
-        label.textContent = `Color: ${checkedInput.value}`;
-      }
-    });
+  const fijarColorSiempre = () => {
+    const checkedInput = container.querySelector('input[type="radio"]:checked');
+    const colorSpan = document.getElementById('current-color-text');
+    if (checkedInput && colorSpan) {
+      colorSpan.textContent = checkedInput.value;
+    }
   };
 
-  // 1. Ejecuta al cargar la página
-  asegurarTextoColor();
-
-  // 2. Al hacer clic, revisa y clava el texto repetidamente para ganarle a la recarga de Dawn
-  const mainContainer = document.querySelector('variant-radios') || document.querySelector('variant-selects');
-  if (mainContainer) {
-    mainContainer.addEventListener('change', () => {
-      let intentos = 0;
-      // Revisa y reescribe el texto cada 50 milisegundos durante 1 segundo entero
-      const forzadorContinuo = setInterval(() => {
-        asegurarTextoColor();
-        intentos++;
-        if (intentos > 20) { // Tras 1 segundo, se apaga solo de forma segura
-          clearInterval(forzadorContinuo);
-        }
-      }, 50);
-    });
+  // Vigilante permanente: si Dawn borra el texto, el navegador lo vuelve a poner al instante
+  const observer = new MutationObserver(fijarColorSiempre);
+  const targetSpan = document.getElementById('current-color-text');
+  
+  if (targetSpan) {
+    observer.observe(targetSpan, { childList: true, characterData: true, subtree: true });
   }
+
+  // También lo disparamos en cada clic por seguridad
+  container.addEventListener('change', () => {
+    setTimeout(fijarColorSiempre, 50);
+    setTimeout(fijarColorSiempre, 200);
+    setTimeout(fijarColorSiempre, 500);
+  });
 });
