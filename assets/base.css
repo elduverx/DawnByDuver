@@ -4294,3 +4294,13 @@ fieldset.product-form__input .form__label::before {
   color: #121212;
   margin-left: 4px;
 }
+/* ===== PUNTO PARPADEANTE ===== */
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.punto-urgencia {
+  animation: parpadeo 1.2s ease-in-out infinite;
+}
+/* ===== FIN PUNTO PARPADEANTE ===== */
