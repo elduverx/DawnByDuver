@@ -26,53 +26,62 @@
             assign picker_type = 'swatch'
           endif
         endif
-        
-        assign name_downcase = option.name | downcase
       -%}
-      
       {%- if picker_type == 'swatch' -%}
-        {% comment %} BLOQUE NATIVO DE COLOR: Mantiene tus imágenes intactas {% endcomment %}
         <fieldset class="js product-form__input product-form__input--swatch">
          <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
             option: option,
             block: block,
-            picker_type: 'button'
+            picker_type: button
           %}
         </fieldset>
-        
-     {%- elsif name_downcase contains 'talla' or name_downcase contains 'size' -%}
-        {% comment %} BLOQUE FORZADO PARA TALLAS: Rompe la caja gris y las muestra como botones cuadrados del competidor {% endcomment %}
-        <fieldset class="js product-form__input product-form__input--pill">
-          <legend class="form__label" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-            <span>{{ option.name }}</span>
-            <a href="#tabla-tallas-modal" class="size-chart-link" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <line x1="9" y1="12" x2="9" y2="15"></line>
-                <line x1="14" y1="12" x2="14" y2="15"></line>
-              </svg>
-              Tabla de tallas
-            </a>
-          </legend>
-          {% render 'product-variant-options',
-            product: product,
-            option: option,
-            block: block,
-            picker_type: 'button'
-          %}
-        </fieldset>
-
+     {%- elsif picker_type == 'button' or picker_type == 'dropdown' -%}
+<fieldset class="js product-form__input product-form__input--pill">
+<legend class="form__label" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+<span>{{ option.name }}</span>
+{%- assign name_downcase = option.name | downcase -%}
+{%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
+<a href="#tabla-tallas-modal" class="size-chart-link" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
+<line x1="5" y1="12" x2="19" y2="12"></line>
+<line x1="9" y1="12" x2="9" y2="15"></line>
+<line x1="14" y1="12" x2="14" y2="15"></line>
+</svg>
+Tabla de tallas
+</a>
+{%- endif -%}
+</legend>
+{% render 'product-variant-options',
+product: product,
+option: option,
+block: block,
+picker_type: picker_type
+%}
+</fieldset>
       {%- else -%}
-        {% comment %} CUALQUIER OTRA VARIANTE EXTRANA SE QUEDA EN DESPLEGABLE {% endcomment %}
         <div class="product-form__input product-form__input--dropdown">
-          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}">
-            {{ option.name }}
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span>{{ option.name }}</span>
+            {%- assign name_downcase = option.name | downcase -%}
+            {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
+              <a href="#tabla-tallas-modal" class="size-chart-link" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <line x1="9" y1="12" x2="9" y2="15"></line>
+                  <line x1="14" y1="12" x2="14" y2="15"></line>
+                </svg>
+                Tabla de tallas
+              </a>
+            {%- endif -%}
           </label>
           <div class="select">
             {%- if picker_type == 'swatch_dropdown' -%}
-              <span data-selected-value class="dropdown-swatch">
+              <span
+                data-selected-value
+                class="dropdown-swatch"
+              >
                 {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
               </span>
             {%- endif -%}
@@ -102,8 +111,6 @@
     </script>
   </variant-selects>
 {%- endunless -%}
-
-{% comment %} Mantiene tu pixel invisible original intacto abajo para fijar el texto del color {% endcomment %}
 <div style="display:none;">
   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
     (function(img){
