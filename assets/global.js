@@ -1347,9 +1347,9 @@ document.addEventListener('variant:changed', function(event) {
     });
   }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
 });
-// Forzar la actualización del texto del color de forma nativa en Dawn
+// Forzador definitivo contra el amago de Dawn
 document.addEventListener('DOMContentLoaded', () => {
-  const reescribirTextoColor = () => {
+  const asegurarTextoColor = () => {
     const picker = document.querySelector('variant-radios') || document.querySelector('variant-selects');
     if (!picker) return;
 
@@ -1364,18 +1364,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Ejecuta el cambio la primera vez que carga la página
-  reescribirTextoColor();
+  // 1. Ejecuta al cargar la página
+  asegurarTextoColor();
 
-  // Escucha el evento global de Shopify cada vez que la sección del producto se actualiza
-  document.addEventListener('shopify:section:load', reescribirTextoColor);
-  
-  // Intercepta de forma segura el cambio de variante del tema
+  // 2. Al hacer clic, revisa y clava el texto repetidamente para ganarle a la recarga de Dawn
   const mainContainer = document.querySelector('variant-radios') || document.querySelector('variant-selects');
   if (mainContainer) {
     mainContainer.addEventListener('change', () => {
-      setTimeout(reescribirTextoColor, 100);
-      setTimeout(reescribirTextoColor, 300); // Doble verificación por el retraso del servidor
+      let intentos = 0;
+      // Revisa y reescribe el texto cada 50 milisegundos durante 1 segundo entero
+      const forzadorContinuo = setInterval(() => {
+        asegurarTextoColor();
+        intentos++;
+        if (intentos > 20) { // Tras 1 segundo, se apaga solo de forma segura
+          clearInterval(forzadorContinuo);
+        }
+      }, 50);
     });
   }
 });
