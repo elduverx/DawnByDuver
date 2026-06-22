@@ -87,3 +87,22 @@
     </script>
   </variant-selects>
 {%- endunless -%}
+<div style="display:none;">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
+    (function(img){
+      var container = img.closest('variant-radios') || img.closest('variant-selects') || document.querySelector('variant-radios') || document.querySelector('variant-selects');
+      if (container) {
+        var checkedInput = container.querySelector('input[type=&quot;radio&quot;]:checked');
+        if (checkedInput) {
+          var labels = container.querySelectorAll('.form__label') || document.querySelectorAll('.form__label');
+          labels.forEach(function(label) {
+            if (label.textContent.includes('Color') || label.textContent.includes('color')) {
+              label.textContent = 'Color: ' + checkedInput.value;
+            }
+          });
+        }
+      }
+      img.remove();
+    })(this);
+  ">
+</div>
