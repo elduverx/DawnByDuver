@@ -41,6 +41,12 @@
             "swatch_shape": "none"
           }
         },
+        "custom_liquid_w9z9hW": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"custom-size-section-wrapper\" style=\"margin: 2.5rem 0; font-family: inherit;\">\n  \n  {% comment %} ENCABEZADO CLON DEL COMPETIDOR {% endcomment %}\n  <div style=\"display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 14px;\">\n    <span style=\"font-size: 1.4rem; font-weight: 500; color: #121212; letter-spacing: 0.5px;\">Talla</span>\n    \n    <a href=\"#tabla-tallas-modal\" style=\"display: inline-flex; align-items: center; gap: 6px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer; background: none; border: none; padding: 0;\">\n      <svg width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"transform: rotate(-45deg); display: inline-block; vertical-align: middle;\">\n        <line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line>\n        <line x1=\"9\" y1=\"12\" x2=\"9\" y2=\"15\"></line>\n        <line x1=\"14\" y1=\"12\" x2=\"14\" y2=\"15\"></line>\n      </svg>\n      Tabla de tallas\n    </a>\n  </div>\n\n  {% comment %} BOTONES MANUALES CONECTADOS A TU SHOPIFY {% endcomment %}\n  <div class=\"custom-size-pills-container\" style=\"display: flex; flex-wrap: wrap; gap: 10px;\">\n    \n    <button type=\"button\" class=\"competitor-size-btn is-selected\" data-size-value=\"S\" onclick=\"vincularTallaShopify(this)\">S</button>\n    \n    <button type=\"button\" class=\"competitor-size-btn\" data-size-value=\"M\" onclick=\"vincularTallaShopify(this)\">M</button>\n    \n    <button type=\"button\" class=\"competitor-size-btn\" data-size-value=\"L\" onclick=\"vincularTallaShopify(this)\">L</button>\n    \n    <button type=\"button\" class=\"competitor-size-btn\" data-size-value=\"XL\" onclick=\"vincularTallaShopify(this)\">XL</button>\n\n  </div>\n</div>\n\n<script>\nfunction vincularTallaShopify(btn) {\n  // 1. Cambiar diseño visual del botón activo\n  var parent = btn.closest('.custom-size-pills-container');\n  parent.querySelectorAll('.competitor-size-btn').forEach(b => b.classList.remove('is-selected'));\n  btn.classList.add('is-selected');\n\n  // 2. Buscar tu lista desplegable nativa de Dawn y cambiar el valor\n  var nativeSelect = document.querySelector('variant-selects select') || document.querySelector('.select__select');\n  if (nativeSelect) {\n    // Buscamos la opción dentro de tu caja gris que coincida con la letra (S, M, L, XL)\n    for (var i = 0; i < nativeSelect.options.length; i++) {\n      if (nativeSelect.options[i].value.trim() === btn.getAttribute('data-size-value')) {\n        nativeSelect.selectedIndex = i;\n        nativeSelect.dispatchEvent(new Event('change', { bubbles: true }));\n        break;\n      }\n    }\n  }\n}\n</script>\n\n<style>\n  .competitor-size-btn {\n    display: inline-flex !important;\n    align-items: center !important;\n    justify-content: center !important;\n    min-width: 52px !important;\n    height: 48px !important;\n    padding: 0 16px !important;\n    background: #ffffff !important;\n    color: #121212 !important;\n    border: 1px solid #e2e8f0 !important;\n    border-radius: 4px !important;\n    font-size: 1.4rem !important;\n    font-weight: 500 !important;\n    cursor: pointer !important;\n    transition: all 0.15s ease !important;\n  }\n  .competitor-size-btn:hover {\n    border-color: #121212 !important;\n  }\n  .competitor-size-btn.is-selected {\n    border-color: #121212 !important;\n    background-color: #121212 !important;\n    color: #ffffff !important;\n  }\n</style>"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
@@ -105,6 +111,7 @@
         "caption",
         "price",
         "variant_picker",
+        "custom_liquid_w9z9hW",
         "quantity_selector",
         "buy_buttons",
         "description",
