@@ -79,9 +79,8 @@
       help_text: help_text,
       additional_props: input_dataset
     %}
- {%- elsif picker_type == 'button' -%}
+{%- elsif picker_type == 'button' -%}
   {%- liquid
-    # Buscamos de forma automática la foto de la variante que corresponda a este valor de color
     assign automatic_variant_image = null
     for variant in product.variants
       if variant.options contains value and variant.image
@@ -95,7 +94,8 @@
     type="radio"
     id="{{ input_id }}"
     name="{{ option.name }}"
-    value="{{ escaped_value }}"
+    value="{{ value | escape }}"
+    data-color-name="{{ value | escape }}"
     form="{{ product_form_id }}"
     {% if value.selected %}
       checked
@@ -107,18 +107,7 @@
   >
   <label 
     for="{{ input_id }}"
-    onclick="
-      (function() {
-        setTimeout(function() {
-          var labels = document.querySelectorAll('.form__label');
-          labels.forEach(function(l) {
-            if (l.textContent.toLowerCase().includes('color')) {
-              l.textContent = 'Color: {{ value | escape }}';
-            }
-          });
-        }, 150);
-      })();
-    "
+    data-color-title="{{ value | escape }}"
     style="
       {% if automatic_variant_image %}
         background-image: url('{{ automatic_variant_image }}') !important;
@@ -127,12 +116,13 @@
         background-repeat: no-repeat !important;
         width: 54px !important;
         height: 54px !important;
-        text-indent: -9999px !important;
         overflow: hidden !important;
         border-radius: 8px !important;
         display: inline-block !important;
         border: 1.5px solid #e2e8f0 !important;
         margin: 4px !important;
+        font-size: 0 !important;
+        color: transparent !important;
       {% endif %}
     "
   >
