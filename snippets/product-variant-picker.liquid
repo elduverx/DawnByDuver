@@ -40,16 +40,6 @@
      {%- elsif picker_type == 'button' or picker_type == 'dropdown' -%}
 <fieldset class="js product-form__input product-form__input--pill">
 <legend class="form__label" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-  <span>Talla</span>
-  <a href="#tabla-tallas-modal" class="size-chart-link" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
-      <line x1="5" y1="12" x2="19" y2="12"></line>
-      <line x1="9" y1="12" x2="9" y2="15"></line>
-      <line x1="14" y1="12" x2="14" y2="15"></line>
-    </svg>
-    Tabla de tallas
-  </a>
-</legend>
 <span>{{ option.name }}</span>
 {%- assign name_downcase = option.name | downcase -%}
 {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
@@ -67,7 +57,7 @@ Tabla de tallas
 product: product,
 option: option,
 block: block,
-picker_type: 'button'
+picker_type: picker_type
 %}
 </fieldset>
       {%- else -%}
