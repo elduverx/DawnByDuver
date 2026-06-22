@@ -91,11 +91,11 @@
     endfor
   -%}
 
-  <input
+<input
     type="radio"
     id="{{ input_id }}"
     name="{{ option.name }}"
-    value="{{ escaped_value }}"
+    value="{{ value | escape }}"
     form="{{ product_form_id }}"
     {% if value.selected %}
       checked
