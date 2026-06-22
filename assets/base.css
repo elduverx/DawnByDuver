@@ -4336,3 +4336,65 @@ fieldset.product-form__input .form__label::before {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+/* ===== SELECTOR DE TALLAS - ESTILO CUADRÍCULA ===== */
+
+/* Contenedor en cuadrícula */
+.product-form__input--pill .product-form__input {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 8px !important;
+}
+
+/* Ocultar los radio inputs nativos */
+.product-form__input--pill input[type="radio"] {
+  display: none !important;
+}
+
+/* Estilo de cada etiqueta (botón de talla) */
+.product-form__input--pill label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid #d1d5db !important;
+  background: #ffffff !important;
+  color: #121212 !important;
+  font-size: 1.3rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.05em !important;
+  cursor: pointer !important;
+  min-height: 46px !important;
+  padding: 8px 4px !important;
+  transition: all 0.15s ease !important;
+  border-radius: 0 !important;
+  text-align: center !important;
+}
+
+/* Hover */
+.product-form__input--pill label:hover {
+  border-color: #121212 !important;
+}
+
+/* Seleccionado: negro sólido */
+.product-form__input--pill input[type="radio"]:checked + label {
+  background: #121212 !important;
+  color: #ffffff !important;
+  border-color: #121212 !important;
+}
+
+/* Agotado: gris con tachado */
+.product-form__input--pill input[type="radio"].disabled + label {
+  color: #9ca3af !important;
+  border-color: #e5e7eb !important;
+  background: #f9fafb !important;
+  text-decoration: line-through !important;
+  cursor: not-allowed !important;
+}
+
+/* Label de la opción (ej: "Talla") */
+.product-form__input--pill .form__label {
+  font-size: 1.4rem !important;
+  font-weight: 500 !important;
+  margin-bottom: 10px !important;
+  color: #121212 !important;
+}
+/* ===== FIN SELECTOR DE TALLAS ===== */
