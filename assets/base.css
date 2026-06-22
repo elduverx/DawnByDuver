@@ -4321,3 +4321,13 @@ fieldset.product-form__input .form__label::before {
   color: #ffffff !important;
 }
 /* ===== FIN BOTÓN AGREGAR AL CARRITO ===== */
+/* ===== ENVÍO ESTIMADO ===== */
+.envio-estimado {
+  overflow: visible !important;
+}
+
+.envio-estimado > div > div > div > div:first-child > div {
+  background: #ffffff !important;
+  border: 1.5px solid #121212 !important;
+}
+/* ===== FIN ENVÍO ESTIMADO ===== */
