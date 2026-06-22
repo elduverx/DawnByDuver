@@ -4294,3 +4294,51 @@ fieldset.product-form__input .form__label::before {
   color: #121212;
   margin-left: 4px;
 }
+/* --- DISEÑO DE BOTONES DE TALLA COMPETIDOR --- */
+.size-swatch-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.size-swatch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.size-swatch-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  border: 1px solid #D3D3D3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #555555;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.size-swatch-input:checked + .size-swatch-label {
+  background-color: #222222;
+  border-color: #222222;
+  color: #FFFFFF;
+}
+
+.size-chart-link-container {
+  margin-top: 15px;
+}
+
+.size-chart-link {
+  font-size: 15px;
+  color: #222222;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+}
