@@ -105,11 +105,12 @@
     {% endif %}
     {{ input_dataset }}
   >
+  {%- assign option_name_down = option.name | downcase -%}
   <label 
     for="{{ input_id }}"
     data-color-title="{{ value | escape }}"
     style="
-      {% if automatic_variant_image %}
+      {% if automatic_variant_image and option_name_down != 'talla' and option_name_down != 'size' %}
         background-image: url('{{ automatic_variant_image }}') !important;
         background-size: cover !important;
         background-position: center !important;
