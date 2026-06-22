@@ -1,1 +1,36 @@
-<p style="color: red; font-size: 20px;">PRUEBA SNIPPET</p>
+<div style="margin-top: 16px; padding: 16px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
+  <div style="display: flex; justify-content: space-between; text-align: center; position: relative;">
+    
+    <div style="position: absolute; top: 5px; left: 16%; right: 16%; height: 1.5px; background: #121212;"></div>
+
+    <div style="flex: 1;">
+      <div style="width: 11px; height: 11px; border: 1.5px solid #121212; border-radius: 50%; background: white; margin: 0 auto 10px auto;"></div>
+      <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">COMPRADO</p>
+      <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;" class="fecha-comprado"></p>
+    </div>
+
+    <div style="flex: 1;">
+      <div style="width: 11px; height: 11px; border: 1.5px solid #121212; border-radius: 50%; background: white; margin: 0 auto 10px auto;"></div>
+      <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">PROCESADO</p>
+      <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;" class="fecha-procesado"></p>
+    </div>
+
+    <div style="flex: 1;">
+      <div style="width: 11px; height: 11px; border: 1.5px solid #121212; border-radius: 50%; background: white; margin: 0 auto 10px auto;"></div>
+      <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">ENVIADO</p>
+      <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;" class="fecha-enviado"></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  var hoy = new Date();
+  var manana = new Date(hoy); manana.setDate(hoy.getDate() + 1);
+  var enviado = new Date(hoy); enviado.setDate(hoy.getDate() + 2);
+  function fmt(d) { return d.getDate() + ' ' + meses[d.getMonth()]; }
+  document.querySelector('.fecha-comprado').textContent = fmt(hoy);
+  document.querySelector('.fecha-procesado').textContent = fmt(hoy) + ' / ' + fmt(manana);
+  document.querySelector('.fecha-enviado').textContent = fmt(enviado);
+</script>
