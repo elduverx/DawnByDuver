@@ -416,5 +416,18 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script>
+  (function() {
+    if (!document.getElementById('fecha-comprado')) return;
+    const meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    const hoy = new Date();
+    const manana = new Date(hoy); manana.setDate(hoy.getDate() + 1);
+    const enviado = new Date(hoy); enviado.setDate(hoy.getDate() + 2);
+    function fmt(d) { return d.getDate() + ' ' + meses[d.getMonth()]; }
+    document.getElementById('fecha-comprado').textContent = fmt(hoy);
+    document.getElementById('fecha-procesado').textContent = fmt(hoy) + ' / ' + fmt(manana);
+    document.getElementById('fecha-enviado').textContent = fmt(enviado);
+  })();
+</script>
   </body>
 </html>
