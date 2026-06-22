@@ -1330,3 +1330,20 @@ class CartPerformance {
     );
   }
 }
+// Forzar la actualización del texto del color tras la recarga de variantes en Dawn
+document.addEventListener('variant:changed', function(event) {
+  setTimeout(() => {
+    const variantPicker = document.querySelector('variant-radios') || document.querySelector('variant-selects');
+    if (!variantPicker) return;
+
+    const checkedInput = variantPicker.querySelector('input[type="radio"]:checked');
+    if (!checkedInput) return;
+
+    const labels = document.querySelectorAll('.form__label');
+    labels.forEach(label => {
+      if (label.textContent.includes('Color') || label.textContent.includes('color')) {
+        label.textContent = `Color: ${checkedInput.value}`;
+      }
+    });
+  }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
+});
