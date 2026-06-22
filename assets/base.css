@@ -4278,23 +4278,31 @@ footer-block__newsletter .footer-block__heading {
 .product .price__badge-sale {
   display: none !important;
 }
-/* Convierte las muestras en los cuadrados del competidor con esquinas de 8px */
-.product-form__swatch, 
-.swatch,
-.swatch-input__label,
-.swatch-input__input + label {
+/* Oculta el texto de los botones de variante de color para que no se pise con la imagen */
+.product-form__input-filter + label,
+input[type="radio"] + label {
+  position: relative !important;
   width: 54px !important;
   height: 54px !important;
   border-radius: 8px !important;
   border: 1.5px solid #e2e8f0 !important;
   overflow: hidden !important;
   display: inline-block !important;
-  object-fit: cover !important;
+  font-size: 0 !important; /* Esconde el texto de forma segura */
+  text-indent: -9999px !important;
+  margin: 4px !important;
+  cursor: pointer !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
 }
 
-/* Fuerza a que los elementos internos circulares de Dawn hereden la forma cuadrada */
-.swatch--circle, 
-.swatch-component,
-.swatch-input__label::after {
-  border-radius: 8px !important;
+/* Evita que las celdas de Tallas (S, M, L) se vuelvan locas y las mantiene normales */
+fieldset:not([data-product-attribute="Color"]) input[type="radio"] + label,
+fieldset:not([data-product-attribute="color"]) input[type="radio"] + label {
+  width: auto !important;
+  height: auto !important;
+  font-size: 1.4rem !important;
+  text-indent: 0 !important;
+  padding: 10px 20px !important;
 }
