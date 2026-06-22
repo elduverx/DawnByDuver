@@ -152,31 +152,41 @@
 {%- endfor -%}
 <script>
   (function() {
-    const actualizarColorFijo = () => {
-      const container = document.querySelector('variant-radios') || document.querySelector('variant-selects');
-      if (!container) return;
-      
-      const checkedInput = container.querySelector('input[type="radio"]:checked');
+    const forzarTextoColor = () => {
+      const variantPicker = document.querySelector('variant-radios') || document.querySelector('variant-selects');
+      if (!variantPicker) return;
+
+      const checkedInput = variantPicker.querySelector('input[type="radio"]:checked');
       if (!checkedInput) return;
 
-      const labels = document.querySelectorAll('.form__label');
-      labels.forEach(label => {
-        if (label.textContent.includes('Color') || label.textContent.includes('color')) {
-          // Usamos textContent limpio para evitar activar cambios en bucle
-          label.textContent = `Color: ${checkedInput.value}`;
+      // Buscamos la etiqueta del título (legend)
+      const label = variantPicker.querySelector('.form__label') || document.querySelector('.form__label');
+      if (label) {
+        // Separamos por si ya tiene dos puntos, para que no se dupliquen
+        const baseText = label.textContent.split(':')[0].trim();
+        if (baseText.toLowerCase().includes('color')) {
+          label.textContent = `${baseText}: ${checkedInput.value}`;
         }
-      });
+      }
     };
 
-    // Escuchamos el clic directamente en el contenedor sin vigilar todo el sistema
-    document.addEventListener('DOMContentLoaded', () => {
-      actualizarColorFijo();
-      const element = document.querySelector('variant-radios') || document.querySelector('variant-selects');
-      if (element) {
-        element.addEventListener('click', () => {
-          setTimeout(actualizarColorFijo, 100);
-        });
-      }
-    });
+    // 1. Se ejecuta al cargar la página
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', forzarTextoColor);
+    } else {
+      forzarTextoColor();
+    }
+
+    // 2. EL TRUCO MAESTRO: Escuchamos el evento nativo de Dawn cuando termina de renderizar la sección
+    document.addEventListener('variant:changed', forzarTextoColor);
+    
+    // Por seguridad en algunas versiones de Dawn, también escuchamos el cambio general
+    const picker = document.querySelector('variant-radios') || document.querySelector('variant-selects');
+    if (picker) {
+      picker.addEventListener('change', () => {
+        setTimeout(forzarTextoColor, 50);
+        setTimeout(forzarTextoColor, 150); // Doble comprobación por el retraso del servidor
+      });
+    }
   })();
 </script>
