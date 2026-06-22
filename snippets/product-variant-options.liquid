@@ -91,11 +91,11 @@
     endfor
   -%}
 
-<input
+  <input
     type="radio"
     id="{{ input_id }}"
     name="{{ option.name }}"
-    value="{{ value | escape }}"
+    value="{{ escaped_value }}"
     form="{{ product_form_id }}"
     {% if value.selected %}
       checked
@@ -107,6 +107,18 @@
   >
   <label 
     for="{{ input_id }}"
+    onclick="
+      (function() {
+        setTimeout(function() {
+          var labels = document.querySelectorAll('.form__label');
+          labels.forEach(function(l) {
+            if (l.textContent.toLowerCase().includes('color')) {
+              l.textContent = 'Color: {{ value | escape }}';
+            }
+          });
+        }, 150);
+      })();
+    "
     style="
       {% if automatic_variant_image %}
         background-image: url('{{ automatic_variant_image }}') !important;
