@@ -150,3 +150,20 @@
     </option>
   {%- endif -%}
 {%- endfor -%}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('variant-radios') || document.querySelector('variant-selects') || document.body;
+    
+    container.addEventListener('change', (event) => {
+      if (event.target.matches('input[type="radio"][name="Color"]')) {
+        // Buscamos el texto que indica el color (arriba)
+        const labels = document.querySelectorAll('.form__label');
+        labels.forEach(label => {
+          if (label.textContent.includes('Color')) {
+            label.innerHTML = `Color: <span class="selected-variant-value">${event.target.value}</span>`;
+          }
+        });
+      }
+    });
+  });
+</script>
