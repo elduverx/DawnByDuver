@@ -37,7 +37,7 @@
             picker_type: button
           %}
         </fieldset>
-     {%- elsif picker_type == 'button' -%}
+     {%- elsif picker_type == 'button' or picker_type == 'dropdown' -%}
 <fieldset class="js product-form__input product-form__input--pill">
 <legend class="form__label" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
 <span>{{ option.name }}</span>
