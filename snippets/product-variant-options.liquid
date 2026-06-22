@@ -152,7 +152,7 @@
 {%- endfor -%}
 <script>
   (function() {
-    const actualizarTextoColor = () => {
+    const actualizarColorFijo = () => {
       const container = document.querySelector('variant-radios') || document.querySelector('variant-selects');
       if (!container) return;
       
@@ -162,24 +162,21 @@
       const labels = document.querySelectorAll('.form__label');
       labels.forEach(label => {
         if (label.textContent.includes('Color') || label.textContent.includes('color')) {
-          label.innerHTML = `Color: <span class="selected-variant-value">${checkedInput.value}</span>`;
+          // Usamos textContent limpio para evitar activar cambios en bucle
+          label.textContent = `Color: ${checkedInput.value}`;
         }
       });
     };
 
-    // 1. Lo ejecutamos al cargar la página por primera vez
-    document.addEventListener('DOMContentLoaded', actualizarTextoColor);
-
-    // 2. Creamos un observador que vigila si Dawn vuelve a dibujar los botones
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach(() => {
-        actualizarTextoColor();
-      });
+    // Escuchamos el clic directamente en el contenedor sin vigilar todo el sistema
+    document.addEventListener('DOMContentLoaded', () => {
+      actualizarColorFijo();
+      const element = document.querySelector('variant-radios') || document.querySelector('variant-selects');
+      if (element) {
+        element.addEventListener('click', () => {
+          setTimeout(actualizarColorFijo, 100);
+        });
+      }
     });
-
-    const targetNode = document.querySelector('variant-radios') || document.querySelector('variant-selects');
-    if (targetNode) {
-      observer.observe(targetNode, { childList: true, subtree: true });
-    }
   })();
 </script>
