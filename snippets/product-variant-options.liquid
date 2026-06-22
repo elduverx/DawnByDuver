@@ -154,16 +154,22 @@
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('variant-radios') || document.querySelector('variant-selects') || document.body;
     
-    container.addEventListener('change', (event) => {
-      if (event.target.matches('input[type="radio"][name="Color"]')) {
-        // Buscamos el texto que indica el color (arriba)
-        const labels = document.querySelectorAll('.form__label');
-        labels.forEach(label => {
-          if (label.textContent.includes('Color')) {
-            label.innerHTML = `Color: <span class="selected-variant-value">${event.target.value}</span>`;
+    if (container) {
+      container.addEventListener('change', () => {
+        // Le damos 50 milisegundos a Dawn para que termine de recargar su código
+        setTimeout(() => {
+          const checkedInput = container.querySelector('input[type="radio"]:checked');
+          if (checkedInput) {
+            const labels = document.querySelectorAll('.form__label');
+            labels.forEach(label => {
+              // Si el texto contiene "Color", le clavamos el valor seleccionado de forma fija
+              if (label.textContent.includes('Color') || label.textContent.includes('color')) {
+                label.innerHTML = `Color: <span class="selected-variant-value">${checkedInput.value}</span>`;
+              }
+            });
           }
-        });
-      }
-    });
+        }, 50);
+      });
+    }
   });
 </script>
