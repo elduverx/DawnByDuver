@@ -4294,13 +4294,14 @@ fieldset.product-form__input .form__label::before {
   color: #121212;
   margin-left: 4px;
 }
-/* --- DISEÑO DE BOTONES DE TALLA COMPETIDOR --- */
+/* --- DISEÑO DE BOTONES DE TALLA OPTIMIZADOS --- */
 .size-swatch-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  max-width: 320px;
-  margin-bottom: 20px;
+  gap: 8px; /* Espacio más pequeño entre cajas */
+  max-width: 260px; /* Ancho total más reducido */
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .size-swatch-input {
@@ -4314,12 +4315,13 @@ fieldset.product-form__input .form__label::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 48px;
+  height: 38px; /* Altura más baja y estilizada */
   border: 1px solid #D3D3D3;
   border-radius: 4px;
   background-color: #FFFFFF;
-  color: #555555;
-  font-size: 14px;
+  color: #222222;
+  font-size: 13px; /* Letra un poco más pequeña */
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   user-select: none;
@@ -4332,11 +4334,12 @@ fieldset.product-form__input .form__label::before {
 }
 
 .size-chart-link-container {
-  margin-top: 15px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .size-chart-link {
-  font-size: 15px;
+  font-size: 14px;
   color: #222222;
   text-decoration: underline;
   text-underline-offset: 4px;
