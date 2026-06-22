@@ -1347,37 +1347,3 @@ document.addEventListener('variant:changed', function(event) {
     });
   }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
 });
-// Sincronizador global e indestructible para el texto de color en Dawn
-(function() {
-  const forzarTextoColorGlobal = () => {
-    const picker = document.querySelector('variant-radios') || document.querySelector('variant-selects');
-    if (!picker) return;
-
-    const checkedInput = picker.querySelector('input[type="radio"]:checked');
-    if (!checkedInput) return;
-
-    const labels = document.querySelectorAll('.form__label');
-    labels.forEach(label => {
-      if (label.textContent.includes('Color') || label.textContent.includes('color')) {
-        label.textContent = `Color: ${checkedInput.value}`;
-      }
-    });
-  };
-
-  // 1. Ejecutar al cargar la página
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', forzarTextoColorGlobal);
-  } else {
-    forzarTextoColorGlobal();
-  }
-
-  // 2. Vigilante maestro: vigila los cambios de toda la página para ganarle a cualquier recarga AJAX
-  const observer = new MutationObserver(() => {
-    forzarTextoColorGlobal();
-  });
-
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  });
-})();
