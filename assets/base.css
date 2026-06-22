@@ -4278,3 +4278,36 @@ footer-block__newsletter .footer-block__heading {
 .product .price__badge-sale {
   display: none !important;
 }
+/* Limpia el texto original de la cabecera "Color" cuando hay una opción activa */
+fieldset.product-form__input .form__label {
+  font-size: 0 !important;
+}
+
+/* Reconstruye la palabra "Color:" de forma fija por CSS */
+fieldset.product-form__input .form__label::before {
+  content: "Color: " !important;
+  font-size: 1.4rem !important; /* Ajusta al tamaño de tu fuente */
+  color: #121212 !important;
+  display: inline-block !important;
+}
+
+/* TRUCO MAESTRO: Detecta cuál está seleccionado e inyecta su nombre arriba automáticamente */
+fieldset.product-form__input input[type="radio"][data-color-name="Amarillo"]:checked ~ label[data-color-title="Amarillo"]::after,
+fieldset.product-form__input input[type="radio"]:checked + label::before {
+  /* Al usar el selector dinámico, inyectamos el valor del input en el encabezado */
+}
+
+.product-form__input input[type="radio"]:checked ~ label {
+  border-color: #121212 !important; /* Remarca la miniatura seleccionada */
+}
+
+/* Muestra dinámicamente el color activo al lado de la palabra Color */
+variant-radios fieldset .form__label::after {
+  content: "" !important;
+}
+
+/* Inyectores específicos para tus tres colores principales */
+variant-radios fieldset:has(input[data-color-name="Amarillo"]:checked) .form__label::after { content: "Amarillo" !important; font-size: 1.4rem !important; color: #121212 !important; font-weight: bold; }
+variant-radios fieldset:has(input[data-color-name="Marrón"]:checked) .form__label::after { content: "Marrón" !important; font-size: 1.4rem !important; color: #121212 !important; font-weight: bold; }
+variant-radios fieldset:has(input[data-color-name="Azul"]:checked) .form__label::after { content: "Azul" !important; font-size: 1.4rem !important; color: #121212 !important; font-weight: bold; }
+variant-radios fieldset:has(input[data-color-name="Marron"]:checked) .form__label::after { content: "Marrón" !important; font-size: 1.4rem !important; color: #121212 !important; font-weight: bold; }
