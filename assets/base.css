@@ -4309,3 +4309,15 @@ fieldset.product-form__input .form__label::before {
   display: none !important;
 }
 /* ===== FIN OCULTAR COMPRAR AHORA ===== */
+/* ===== BOTÓN AGREGAR AL CARRITO ===== */
+.product-form__submit {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+  border-color: #121212 !important;
+}
+
+.product-form__submit:hover {
+  background-color: #333333 !important;
+  color: #ffffff !important;
+}
+/* ===== FIN BOTÓN AGREGAR AL CARRITO ===== */
