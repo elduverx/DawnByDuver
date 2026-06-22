@@ -487,8 +487,7 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-                {%- when 'buy_buttons' -%}
-  {%- render 'buy-buttons',
+                {%- render 'buy-buttons',
     block: block,
     product: product,
     product_form_id: product_form_id,
@@ -498,25 +497,14 @@
   <div class="envio-estimado" style="margin-top: 16px; padding: 16px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; text-align: center;">
       <div style="flex: 1;">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px;">
-          <div style="width: 10px; height: 10px; border: 1.5px solid #121212; border-radius: 50;"></div>
-        </div>
-        <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;" id="label-comprado">COMPRADO</p>
+        <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">COMPRADO</p>
         <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;" id="fecha-comprado"></p>
       </div>
-      <div style="flex: 1; position: relative;">
-        <div style="position: absolute; top: 5px; left: 0; right: 0; height: 1.5px; background: #121212; z-index: 0;"></div>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; position: relative; z-index: 1;">
-          <div style="width: 10px; height: 10px; border: 1.5px solid #121212; border-radius: 50%; background: #fff;"></div>
-        </div>
+      <div style="flex: 1;">
         <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">PROCESADO</p>
         <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;" id="fecha-procesado"></p>
       </div>
-      <div style="flex: 1; position: relative;">
-        <div style="position: absolute; top: 5px; left: 0; right: 50%; height: 1.5px; background: #121212; z-index: 0;"></div>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 8px; position: relative; z-index: 1;">
-          <div style="width: 10px; height: 10px; border: 1.5px solid #121212; border-radius: 50%; background: #fff;"></div>
-        </div>
+      <div style="flex: 1;">
         <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">ENVIADO</p>
         <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;" id="fecha-enviado"></p>
       </div>
@@ -528,11 +516,7 @@
       const hoy = new Date();
       const manana = new Date(hoy); manana.setDate(hoy.getDate() + 1);
       const enviado = new Date(hoy); enviado.setDate(hoy.getDate() + 2);
-
-      function fmt(d) {
-        return d.getDate() + ' ' + meses[d.getMonth()];
-      }
-
+      function fmt(d) { return d.getDate() + ' ' + meses[d.getMonth()]; }
       document.getElementById('fecha-comprado').textContent = fmt(hoy);
       document.getElementById('fecha-procesado').textContent = fmt(hoy) + ' / ' + fmt(manana);
       document.getElementById('fecha-enviado').textContent = fmt(enviado);
