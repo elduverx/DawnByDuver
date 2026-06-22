@@ -1346,4 +1346,36 @@ document.addEventListener('variant:changed', function(event) {
       }
     });
   }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
-})
+});
+// Forzar la actualización del texto del color de forma nativa en Dawn
+document.addEventListener('DOMContentLoaded', () => {
+  const reescribirTextoColor = () => {
+    const picker = document.querySelector('variant-radios') || document.querySelector('variant-selects');
+    if (!picker) return;
+
+    const checkedInput = picker.querySelector('input[type="radio"]:checked');
+    if (!checkedInput) return;
+
+    const labels = document.querySelectorAll('.form__label');
+    labels.forEach(label => {
+      if (label.textContent.includes('Color') || label.textContent.includes('color')) {
+        label.textContent = `Color: ${checkedInput.value}`;
+      }
+    });
+  };
+
+  // Ejecuta el cambio la primera vez que carga la página
+  reescribirTextoColor();
+
+  // Escucha el evento global de Shopify cada vez que la sección del producto se actualiza
+  document.addEventListener('shopify:section:load', reescribirTextoColor);
+  
+  // Intercepta de forma segura el cambio de variante del tema
+  const mainContainer = document.querySelector('variant-radios') || document.querySelector('variant-selects');
+  if (mainContainer) {
+    mainContainer.addEventListener('change', () => {
+      setTimeout(reescribirTextoColor, 100);
+      setTimeout(reescribirTextoColor, 300); // Doble verificación por el retraso del servidor
+    });
+  }
+});
