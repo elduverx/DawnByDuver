@@ -1,92 +1,132 @@
 {% comment %}
-Renders product variant-picker
+  Renders product variant-picker
 
-Accepts:
-- product: {Object} product object.
-- block: {Object} passing the block information.
-- product_form_id: {String} Id of the product form to which the variant picker is associated.
-Usage:
-{% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
 {%- unless product.has_only_default_variant -%}
-<variant-selects
-id="variant-selects-{{ section.id }}"
-data-section="{{ section.id }}"
-{{ block.shopify_attributes }}
->
-{%- for option in product.options_with_values -%}
-{%- liquid
-assign swatch_count = option.values | map: 'swatch' | compact | size
-assign picker_type = block.settings.picker_type
+  <variant-selects
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign swatch_count = option.values | map: 'swatch' | compact | size
+        assign picker_type = block.settings.picker_type
 
-if swatch_count > 0 and block.settings.swatch_shape != 'none'
-if block.settings.picker_type == 'dropdown'
-assign picker_type = 'swatch_dropdown'
-else
-assign picker_type = 'swatch'
-endif
-endif
--%}
-
-{%- if picker_type == 'swatch' -%}
-  {% comment %} BLOQUE EXCLUSIVO PARA TUS COLORES {% endcomment %}
-  <fieldset class="js product-form__input product-form__input--swatch">
-    <legend class="form__label">{{ option.name }}</legend>
-    {% render 'product-variant-options',
-      product: product,
-      option: option,
-      block: block,
-      picker_type: 'button'
-    %}
-  </fieldset>
-{%- else -%}
-  {% comment %} BLOQUE OPTIMIZADO PARA LAS TALLAS (Obliga a mostrar botones estilo competidor) {% endcomment %}
-  <fieldset class="js product-form__input product-form__input--pill">
-    <legend class="form__label" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-      <span>Talla</span>
-      <a href="#tabla-tallas-modal" class="size-chart-link" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <line x1="9" y1="12" x2="9" y2="15"></line>
-          <line x1="14" y1="12" x2="14" y2="15"></line>
-        </svg>
-        Tabla de tallas
-      </a>
-    </legend>
-    {% render 'product-variant-options',
-      product: product,
-      option: option,
-      block: block,
-      picker_type: 'button'
-    %}
-  </fieldset>
+        if swatch_count > 0 and block.settings.swatch_shape != 'none'
+          if block.settings.picker_type == 'dropdown'
+            assign picker_type = 'swatch_dropdown'
+          else
+            assign picker_type = 'swatch'
+          endif
+        endif
+      -%}
+      {%- if picker_type == 'swatch' -%}
+        <fieldset class="js product-form__input product-form__input--swatch">
+         <legend class="form__label">{{ option.name }}</legend>
+          {% render 'product-variant-options',
+            product: product,
+            option: option,
+            block: block,
+            picker_type: button
+          %}
+        </fieldset>
+     {%- elsif picker_type == 'button' -%}
+<fieldset class="js product-form__input product-form__input--pill">
+<legend class="form__label" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+<span>{{ option.name }}</span>
+{%- assign name_downcase = option.name | downcase -%}
+{%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
+<a href="#tabla-tallas-modal" class="size-chart-link" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer;">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
+<line x1="5" y1="12" x2="19" y2="12"></line>
+<line x1="9" y1="12" x2="9" y2="15"></line>
+<line x1="14" y1="12" x2="14" y2="15"></line>
+</svg>
+Tabla de tallas
+</a>
 {%- endif -%}
+</legend>
+{% render 'product-variant-options',
+product: product,
+option: option,
+block: block,
+picker_type: picker_type
+%}
+</fieldset>
+      {%- else -%}
+        <div class="product-form__input product-form__input--dropdown">
+          <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <span>{{ option.name }}</span>
+            {%- assign name_downcase = option.name | downcase -%}
+            {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
+              <a href="#tabla-tallas-modal" class="size-chart-link" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <line x1="9" y1="12" x2="9" y2="15"></line>
+                  <line x1="14" y1="12" x2="14" y2="15"></line>
+                </svg>
+                Tabla de tallas
+              </a>
+            {%- endif -%}
+          </label>
+          <div class="select">
+            {%- if picker_type == 'swatch_dropdown' -%}
+              <span
+                data-selected-value
+                class="dropdown-swatch"
+              >
+                {% render 'swatch', swatch: option.selected_value.swatch, shape: block.settings.swatch_shape %}
+              </span>
+            {%- endif -%}
+            <select
+              id="Option-{{ section.id }}-{{ forloop.index0 }}"
+              class="select__select"
+              name="options[{{ option.name | escape }}]"
+              form="{{ product_form_id }}"
+            >
+              {% render 'product-variant-options',
+                product: product,
+                option: option,
+                block: block,
+                picker_type: picker_type
+              %}
+            </select>
+            <span class="svg-wrapper">
+              {{- 'icon-caret.svg' | inline_asset_content -}}
+            </span>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
 
-{%- endfor -%}
-
-<script type="application/json" data-selected-variant>
-{{ product.selected_or_first_available_variant | json }}
-</script>
-</variant-selects>
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
 {%- endunless -%}
-
-{% comment %} Mantiene tu pixel invisible intacto abajo para fijar el texto del color {% endcomment %}
 <div style="display:none;">
-<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
-(function(img){
-var container = img.closest('variant-radios') || img.closest('variant-selects') || document.querySelector('variant-radios') || document.querySelector('variant-selects');
-if (container) {
-var checkedInput = container.querySelector('input[type=&quot;radio&quot;]:checked');
-if (checkedInput) {
-var labels = container.querySelectorAll('.form__label') || document.querySelectorAll('.form__label');
-labels.forEach(function(label) {
-if (label.textContent.includes('Color') || label.textContent.includes('color')) {
-label.textContent = 'Color: ' + checkedInput.value;
-}
-});
-}
-}
-img.remove();
-})(this);
-">
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
+    (function(img){
+      var container = img.closest('variant-radios') || img.closest('variant-selects') || document.querySelector('variant-radios') || document.querySelector('variant-selects');
+      if (container) {
+        var checkedInput = container.querySelector('input[type=&quot;radio&quot;]:checked');
+        if (checkedInput) {
+          var labels = container.querySelectorAll('.form__label') || document.querySelectorAll('.form__label');
+          labels.forEach(function(label) {
+            if (label.textContent.includes('Color') || label.textContent.includes('color')) {
+              label.textContent = 'Color: ' + checkedInput.value;
+            }
+          });
+        }
+      }
+      img.remove();
+    })(this);
+  ">
 </div>
