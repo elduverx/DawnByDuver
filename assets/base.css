@@ -4321,8 +4321,8 @@ fieldset.product-form__input .form__label::before {
   color: #ffffff !important;
 }
 /* ===== FIN BOTÓN AGREGAR AL CARRITO ===== */
-</* ===== OCULTAR STICKY BAR ===== */
-.product-form--sticky {
+/* ===== OCULTAR SEGUNDO AGREGAR AL CARRITO ===== */
+.product-form__submit.button--secondary {
   display: none !important;
 }
-/* ===== FIN STICKY BAR ===== */
+/* ===== FIN SEGUNDO AGREGAR AL CARRITO ===== */
