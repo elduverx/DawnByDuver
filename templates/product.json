@@ -41,10 +41,10 @@
             "swatch_shape": "none"
           }
         },
-        "buy_buttons_M9EYVe": {
+        "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -101,7 +101,6 @@
         "caption",
         "price",
         "variant_picker",
-        "buy_buttons_M9EYVe",
         "description",
         "collapsible-row-0",
         "collapsible-row-1",
