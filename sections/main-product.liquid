@@ -520,11 +520,13 @@
     </div>
   </div>
   <script>
-    (function() {
-      const meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-      const hoy = new Date();
-      const manana = new Date(hoy); manana.setDate(hoy.getDate() + 1);
-      const enviado = new Date(hoy); enviado.setDate(hoy.getDate() + 2);
+    (function waitForDates() {
+      var el = document.getElementById('fecha-comprado');
+      if (!el) { setTimeout(waitForDates, 50); return; }
+      var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+      var hoy = new Date();
+      var manana = new Date(hoy); manana.setDate(hoy.getDate() + 1);
+      var enviado = new Date(hoy); enviado.setDate(hoy.getDate() + 2);
       function fmt(d) { return d.getDate() + ' ' + meses[d.getMonth()]; }
       document.getElementById('fecha-comprado').textContent = fmt(hoy);
       document.getElementById('fecha-procesado').textContent = fmt(hoy) + ' / ' + fmt(manana);
