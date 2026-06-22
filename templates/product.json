@@ -41,7 +41,7 @@
             "swatch_shape": "none"
           }
         },
-        "buy_buttons": {
+        "buy_buttons_M9EYVe": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
@@ -101,7 +101,7 @@
         "caption",
         "price",
         "variant_picker",
-        "buy_buttons",
+        "buy_buttons_M9EYVe",
         "description",
         "collapsible-row-0",
         "collapsible-row-1",
