@@ -80,13 +80,15 @@
       additional_props: input_dataset
     %}
 {%- elsif picker_type == 'button' -%}
-  <label 
-  for="{{ input_id }}"
-  data-color-title="{{ value | escape }}"
->
-  {{ value -}}
-  {{ label_unavailable }}
-</label>
+  {%- liquid
+    assign automatic_variant_image = null
+    for variant in product.variants
+      if variant.options contains value and variant.image
+        assign automatic_variant_image = variant.image | image_url: width: 120, height: 120, crop: 'center'
+        break
+      endif
+    endfor
+  -%}
 
   <input
     type="radio"
