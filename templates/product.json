@@ -269,8 +269,13 @@
         "color_scheme": "",
         "full_width": false,
         "padding_top": 60,
-        "padding_bottom": 60
+        "padding_bottom": 0
       }
+    },
+    "garantias_AkQQfV": {
+      "type": "garantias",
+      "name": "Garantías",
+      "settings": {}
     }
   },
   "order": [
@@ -278,6 +283,7 @@
     "clientes_comunidad_P7VGmC",
     "combina_look_heaitB",
     "related-products",
-    "rich_text_zH8Ky6"
+    "rich_text_zH8Ky6",
+    "garantias_AkQQfV"
   ]
 }
