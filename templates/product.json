@@ -193,7 +193,7 @@
       "name": "Combina tu look",
       "settings": {
         "eyebrow": "TAMBIÉN TE PUEDE INTERESAR",
-        "titulo": "Combina tu look",
+        "titulo": "COMBINA TU LOOK",
         "texto_boton": "Ver todo",
         "url_ver_todo": "shopify://collections/all"
       }
@@ -280,66 +280,47 @@
         "padding_bottom": 28
       }
     },
-    "collapsible_content_43wVk3": {
-      "type": "collapsible-content",
+    "faq_vela_YhBhPV": {
+      "type": "faq-vela",
       "blocks": {
-        "collapsible_row_LGEyp6": {
-          "type": "collapsible_row",
+        "pregunta_f47GGL": {
+          "type": "pregunta",
           "settings": {
-            "heading": "Fila desplegable",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
+            "pregunta": "¿Puedo devolver mi pedido?",
+            "respuesta": "<p>Escribe aquí la respuesta.</p>"
           }
         },
-        "collapsible_row_tzAH4J": {
-          "type": "collapsible_row",
+        "pregunta_TWqRdx": {
+          "type": "pregunta",
           "settings": {
-            "heading": "Fila desplegable",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
+            "pregunta": "¿Puedo devolver mi pedido?",
+            "respuesta": "<p>Escribe aquí la respuesta.</p>"
           }
         },
-        "collapsible_row_cqBbLh": {
-          "type": "collapsible_row",
+        "pregunta_RRM6Ni": {
+          "type": "pregunta",
           "settings": {
-            "heading": "Fila desplegable",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
+            "pregunta": "¿Puedo devolver mi pedido?",
+            "respuesta": "<p>Escribe aquí la respuesta.</p>"
           }
         },
-        "collapsible_row_aRkiMr": {
-          "type": "collapsible_row",
+        "pregunta_naFrgL": {
+          "type": "pregunta",
           "settings": {
-            "heading": "Fila desplegable",
-            "icon": "check_mark",
-            "row_content": "",
-            "page": ""
+            "pregunta": "¿Puedo devolver mi pedido?",
+            "respuesta": "<p>Escribe aquí la respuesta.</p>"
           }
         }
       },
       "block_order": [
-        "collapsible_row_LGEyp6",
-        "collapsible_row_tzAH4J",
-        "collapsible_row_cqBbLh",
-        "collapsible_row_aRkiMr"
+        "pregunta_f47GGL",
+        "pregunta_TWqRdx",
+        "pregunta_RRM6Ni",
+        "pregunta_naFrgL"
       ],
-      "name": "t:sections.collapsible_content.presets.name",
+      "name": "FAQ",
       "settings": {
-        "caption": "",
-        "heading": "Contenido desplegable",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
-        "container_color_scheme": "",
-        "color_scheme": "",
-        "open_first_collapsible_row": false,
-        "image_ratio": "adapt",
-        "desktop_layout": "image_second",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "titulo": "Preguntas Frecuentes"
       }
     }
   },
@@ -350,6 +331,6 @@
     "rich_text_zH8Ky6",
     "garantias_AkQQfV",
     "related-products",
-    "collapsible_content_43wVk3"
+    "faq_vela_YhBhPV"
   ]
 }
