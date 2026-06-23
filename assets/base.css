@@ -4368,10 +4368,3 @@ html body .faq-vela p {
   font-size: 1.3rem !important;
 }
 /* ===== FIN FAQ RESPUESTA ===== */
-/* ===== MARGEN PRECIO MÓVIL ===== */
-@media screen and (max-width: 749px) {
-  .price--large {
-    margin-bottom: 8px !important;
-  }
-}
-/* ===== FIN MARGEN PRECIO MÓVIL ===== */
