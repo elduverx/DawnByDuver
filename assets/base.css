@@ -4385,6 +4385,7 @@ html body .faq-vela p {
     font-size: 1.8rem !important;
   }
 }
+
 /* ANIMACIÓN ESTILO VIOLETA MARTÍNEZ UNIVERSAL */
 @keyframes entradaPremiumUniversal {
   0% {
@@ -4400,7 +4401,8 @@ html body .faq-vela p {
 /* Apuntamos directamente a los elementos visuales de la cuadrícula */
 .grid__item > *, 
 .product-grid .grid__item, 
-[class*="product-card"] {
+[class*="product-card"],
+.card-wrapper {
   opacity: 0;
   animation: entradaPremiumUniversal 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards !important;
   will-change: opacity, transform;
