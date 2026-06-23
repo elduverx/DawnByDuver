@@ -437,7 +437,7 @@ document.addEventListener('change', function(e) {
   }, 1200);
 </script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const style = document.createElement("style");
     style.textContent = `
       @keyframes slideInFromLeft {
@@ -451,14 +451,21 @@ document.addEventListener('change', function(e) {
     `;
     document.head.appendChild(style);
 
-    // Busca la sección de colecciones destacadas automáticamente
+    // Selector robusto para Dawn: cubre el ID real que genera Shopify
     const section = document.querySelector(
-      'section[class*="featured"], section[id*="featured"], .featured-collection, #featured-collection'
+      '[id*="featured-collection"], [id*="featured_collection"], section[class*="featured"], .featured-collection'
     );
 
     if (section) {
-      const items = section.querySelectorAll("li, .card-wrapper, .grid__item");
+      const items = section.querySelectorAll("li.grid__item, .card-wrapper, .grid__item");
       items.forEach((item, i) => {
+        item.style.animationDelay = (i * 0.1) + "s";
+        item.classList.add("slide-in-left");
+      });
+    } else {
+      // Fallback: si aún no lo encuentra, aplica a todos los grid__item de la página
+      console.warn("Sección featured no encontrada, aplicando a todos los grid__item");
+      document.querySelectorAll(".grid__item").forEach((item, i) => {
         item.style.animationDelay = (i * 0.1) + "s";
         item.classList.add("slide-in-left");
       });
