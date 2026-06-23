@@ -4363,3 +4363,17 @@ div.rich-text__blocks.center {
   margin-right: auto !important;
 }
 /* ===== FIN ANCHO TEXTO ENRIQUECIDO ===== */
+/* ===== FAQ ===== */
+.faq__title,
+.collapsible-content__title {
+  font-family: Georgia, serif !important;
+  font-weight: 400 !important;
+}
+
+.faq__question,
+details summary {
+  font-family: 'Assistant', sans-serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+}
+/* ===== FIN FAQ ===== */
