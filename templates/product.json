@@ -301,14 +301,14 @@
           "type": "pregunta",
           "settings": {
             "pregunta": "¿Puedo devolver mi pedido?",
-            "respuesta": "<p>Escribe aquí la respuesta.</p>"
+            "respuesta": "<p>Nuestras prendas tallan de forma estándar. Puedes consultar la guía de tallas en cada producto para asegurarte de elegir la medida perfecta.</p>"
           }
         },
         "pregunta_naFrgL": {
           "type": "pregunta",
           "settings": {
             "pregunta": "¿Puedo devolver mi pedido?",
-            "respuesta": "<p>Escribe aquí la respuesta.</p>"
+            "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br/><br/></p>"
           }
         }
       },
