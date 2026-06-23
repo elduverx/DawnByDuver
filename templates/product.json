@@ -255,6 +255,9 @@
     },
     "garantias_AkQQfV": {
       "type": "garantias",
+      "custom_css": [
+        "* {padding-top: 0px !important;}"
+      ],
       "name": "Garantías",
       "settings": {}
     },
