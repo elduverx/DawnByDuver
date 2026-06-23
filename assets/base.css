@@ -4362,6 +4362,9 @@ div.rich-text__blocks.center {
   margin-left: auto !important;
   margin-right: auto !important;
 }
-.shopify-section .faq-vela__respuesta p {
+/* ===== FAQ RESPUESTA ===== */
+html body .faq-vela__respuesta p,
+html body .faq-vela p {
   font-size: 1.3rem !important;
 }
+/* ===== FIN FAQ RESPUESTA ===== */
