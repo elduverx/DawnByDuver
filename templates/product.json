@@ -156,6 +156,12 @@
         "subtitulo": "Las prendas cobran vida cuando las llevan personas reales. Si quieres aparecer aquí, escríbenos a"
       }
     },
+    "combina_look_heaitB": {
+      "type": "combina-look",
+      "disabled": true,
+      "name": "Combina tu look",
+      "settings": {}
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -174,54 +180,12 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "combina_look_heaitB": {
-      "type": "combina-look",
-      "blocks": {
-        "producto_aE7pdJ": {
-          "type": "producto",
-          "settings": {
-            "producto": "vestido-mujer"
-          }
-        },
-        "producto_9ww9VH": {
-          "type": "producto",
-          "settings": {
-            "producto": "pantalon-oversize"
-          }
-        },
-        "producto_Mj9cFP": {
-          "type": "producto",
-          "settings": {
-            "producto": "vestido-mujer"
-          }
-        },
-        "producto_zyUH3N": {
-          "type": "producto",
-          "settings": {
-            "producto": "pantalon-oversize"
-          }
-        }
-      },
-      "block_order": [
-        "producto_aE7pdJ",
-        "producto_9ww9VH",
-        "producto_Mj9cFP",
-        "producto_zyUH3N"
-      ],
-      "name": "Combina tu look",
-      "settings": {
-        "eyebrow": "TAMBIÉN TE PUEDE INTERESAR",
-        "titulo": "Combina tu look",
-        "texto_boton": "Ver todo",
-        "url_ver_todo": "shopify://collections/all"
-      }
     }
   },
   "order": [
     "main",
     "clientes_comunidad_P7VGmC",
-    "related-products",
-    "combina_look_heaitB"
+    "combina_look_heaitB",
+    "related-products"
   ]
 }
