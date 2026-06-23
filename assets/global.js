@@ -1347,3 +1347,23 @@ document.addEventListener('variant:changed', function(event) {
     });
   }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
 });
+document.addEventListener("DOMContentLoaded", function() {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1 // Se activa cuando se ve el 10% del producto
+  };
+
+  const observer = new Intersection Observer((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target); // Deja de vigilarlo una vez ya ha hecho la transición
+      }
+    });
+  }, observerOptions);
+
+  // Seleccionamos todos los productos de las rejillas
+  const productos = document.querySelectorAll('.grid__item');
+  productos.forEach(producto => observer.observe(producto));
+});

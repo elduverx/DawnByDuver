@@ -4385,16 +4385,3 @@ html body .faq-vela p {
     font-size: 1.8rem !important;
   }
 }
-/* 1. Definimos el estado inicial oculto y desplazado hacia abajo */
-.grid__item {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: opacity, transform;
-}
-
-/* 2. Clase que se activará cuando el producto aparezca en pantalla */
-.grid__item.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
