@@ -4385,33 +4385,3 @@ html body .faq-vela p {
     font-size: 1.8rem !important;
   }
 }
-
-/* ANIMACIÓN ESTILO VIOLETA MARTÍNEZ UNIVERSAL */
-@keyframes entradaPremiumUniversal {
-  0% {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Apuntamos directamente a los elementos visuales de la cuadrícula */
-.grid__item > *, 
-.product-grid .grid__item, 
-[class*="product-card"],
-.card-wrapper {
-  opacity: 0;
-  animation: entradaPremiumUniversal 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards !important;
-  will-change: opacity, transform;
-}
-
-/* Efecto cascada escalonado */
-.grid__item:nth-child(1) { animation-delay: 0.05s !important; }
-.grid__item:nth-child(2) { animation-delay: 0.12s !important; }
-.grid__item:nth-child(3) { animation-delay: 0.19s !important; }
-.grid__item:nth-child(4) { animation-delay: 0.26s !important; }
-.grid__item:nth-child(5) { animation-delay: 0.33s !important; }
-.grid__item:nth-child(6) { animation-delay: 0.40s !important; }
