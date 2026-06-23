@@ -216,12 +216,68 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "rich_text_zH8Ky6": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_FxrE8g": {
+          "type": "caption",
+          "settings": {
+            "caption": "VELA MADRID",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_nzERWn": {
+          "type": "heading",
+          "settings": {
+            "heading": "ÚLTIMA OPORTUNIDAD",
+            "heading_size": "h1"
+          }
+        },
+        "text_7VAp87": {
+          "type": "text",
+          "settings": {
+            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
+          }
+        },
+        "discount_box_jwymXf": {
+          "type": "discount_box",
+          "settings": {}
+        },
+        "text_gw79bY": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_FxrE8g",
+        "heading_nzERWn",
+        "text_7VAp87",
+        "discount_box_jwymXf",
+        "text_gw79bY"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper p {color: #444 !important;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
     "clientes_comunidad_P7VGmC",
     "combina_look_heaitB",
-    "related-products"
+    "related-products",
+    "rich_text_zH8Ky6"
   ]
 }
