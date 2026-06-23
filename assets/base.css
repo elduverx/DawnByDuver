@@ -4368,3 +4368,14 @@ html body .faq-vela p {
   font-size: 1.3rem !important;
 }
 /* ===== FIN FAQ RESPUESTA ===== */
+/* ===== IMAGEN PRODUCTO MÓVIL ===== */
+@media screen and (max-width: 749px) {
+  .product__media-wrapper {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .product__media img {
+    width: 100% !important;
+  }
+}
+/* ===== FIN IMAGEN PRODUCTO MÓVIL ===== */
