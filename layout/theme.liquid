@@ -416,5 +416,18 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script>
+document.addEventListener('change', function(e) {
+  if (e.target.matches('.product-form__input input[type="radio"]')) {
+    var fieldset = e.target.closest('fieldset');
+    if (!fieldset) return;
+    var display = fieldset.querySelector('.selected-value');
+    if (display) {
+      var label = fieldset.querySelector('input[type="radio"]:checked + label');
+      if (label) display.textContent = label.getAttribute('data-color-title') || label.textContent.trim();
+    }
+  }
+});
+</script>
   </body>
 </html>
