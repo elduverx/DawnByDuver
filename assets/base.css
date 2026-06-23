@@ -4283,11 +4283,13 @@ fieldset.product-form__input .form__label {
   font-size: 0 !important;
 }
 @media screen and (max-width: 749px) {
+  fieldset.product-form__input .form__label {
+    display: flex !important;
+    gap: 6px !important;
+  }
+  
   fieldset.product-form__input .form__label:before {
-    content: "Color: " !important;
-    font-size: 1.4rem !important;
-    color: #121212 !important;
-    display: inline-block !important;
+    display: none !important;
   }
 }
 }
