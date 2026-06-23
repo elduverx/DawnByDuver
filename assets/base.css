@@ -4371,17 +4371,18 @@ html body .faq-vela p {
 /* ===== IMÁGENES PRODUCTO MÓVIL ===== */
 @media screen and (max-width: 749px) {
   .product__media-item {
-    padding: 5.25px 0 !important;
-    margin: 0 15.75px !important;
+    padding: 0 !important;
+    margin: 0 0 10px 0 !important;
   }
   .product-media-container,
   .product__media {
-    aspect-ratio: 1/1 !important;
+    aspect-ratio: 342/318 !important;
   }
   .product__media img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    object-position: top !important;
   }
 }
 /* ===== FIN IMÁGENES PRODUCTO MÓVIL ===== */
