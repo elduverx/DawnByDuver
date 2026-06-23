@@ -81,8 +81,7 @@
         "variant_picker",
         "buy_buttons_ndCrai",
         "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "collapsible-row-3"
       ],
       "custom_css": [
         "/* --- ENCAJE PERFECTO BAJO LÍNEA SEPARADORA --- */:host,.product {padding-top: 55px !important; /* Reduce el espacio para que la foto suba hasta rozar la línea */}",
