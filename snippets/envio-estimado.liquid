@@ -1,14 +1,20 @@
 {%- assign mes_num = 'now' | date: '%-m' | plus: 0 -%}
-{%- assign dia_hoy = 'now' | date: '%-d' -%}
-{%- assign dia_manana = 'now' | date: '%s' | plus: 86400 | date: '%-d' -%}
 {%- assign mes_manana_num = 'now' | date: '%s' | plus: 86400 | date: '%-m' | plus: 0 -%}
-{%- assign dia_enviado = 'now' | date: '%s' | plus: 172800 | date: '%-d' -%}
 {%- assign mes_enviado_num = 'now' | date: '%s' | plus: 172800 | date: '%-m' | plus: 0 -%}
 
+{%- assign dia_hoy = 'now' | date: '%-d' -%}
+{%- assign dia_manana = 'now' | date: '%s' | plus: 86400 | date: '%-d' -%}
+{%- assign dia_enviado = 'now' | date: '%s' | plus: 172800 | date: '%-d' -%}
+
 {%- assign meses = 'Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic' | split: ',' -%}
-{%- assign mes_hoy = meses[mes_num | minus: 1] -%}
-{%- assign mes_manana = meses[mes_manana_num | minus: 1] -%}
-{%- assign mes_enviado = meses[mes_enviado_num | minus: 1] -%}
+
+{%- assign idx_hoy = mes_num | minus: 1 -%}
+{%- assign idx_manana = mes_manana_num | minus: 1 -%}
+{%- assign idx_enviado = mes_enviado_num | minus: 1 -%}
+
+{%- assign mes_hoy = meses[idx_hoy] -%}
+{%- assign mes_manana = meses[idx_manana] -%}
+{%- assign mes_enviado = meses[idx_enviado] -%}
 
 <div style="margin-top: 16px; padding: 20px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
   <svg width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="xMidYMid meet">
