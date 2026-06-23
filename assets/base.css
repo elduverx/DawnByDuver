@@ -4351,3 +4351,8 @@ fieldset.product-form__input .form__label {
   font-size: 1.2rem !important;
 }
 /* ===== FIN TEXTO DESPLEGABLES ===== */
+/* ===== TÍTULOS DESPLEGABLES NEGRITA ===== */
+.product__accordion .accordion__title {
+  font-weight: 700 !important;
+}
+/* ===== FIN TÍTULOS DESPLEGABLES ===== */
