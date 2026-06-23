@@ -1348,22 +1348,31 @@ document.addEventListener('variant:changed', function(event) {
   }, 100); // Pequeño retraso de 100ms para asegurar que el servidor ya envió el nuevo diseño
 });
 document.addEventListener("DOMContentLoaded", function() {
-  const observerOptions = {
+  const opciones = {
     root: null,
-    rootMargin: "0px",
-    threshold: 0.1 // Se activa cuando se ve el 10% del producto
+    rootMargin: "0px 0px -50px 0px", // Se activa un poco antes de que el producto entre del todo en pantalla
+    threshold: 0.05
   };
 
-  const observer = new Intersection Observer((entries, observer) => {
+  const observarProductos = new Intersection Observer((entries, observer) => {
+    let retraso = 0;
+
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target); // Deja de vigilarlo una vez ya ha hecho la transición
+        const tarjeta = entry.target;
+        
+        // Aplicamos un pequeño desfase de tiempo (100ms) por cada producto que aparece a la vez
+        setTimeout(() => {
+          tarjeta.classList.add('entrar-suave');
+        }, retraso);
+
+        retraso += 100; 
+        observer.unobserve(tarjeta); // Dejamos de vigilarlo para que la animación solo se ejecute una vez
       }
     });
-  }, observerOptions);
+  }, opciones);
 
-  // Seleccionamos todos los productos de las rejillas
-  const productos = document.querySelectorAll('.grid__item');
-  productos.forEach(producto => observer.observe(producto));
+  // Seleccionamos las tarjetas de producto de Dawn
+  const listaTarjetas = document.querySelectorAll('.card-wrapper');
+  listaTarjetas.forEach(tarjeta => observarProductos.observe(tarjeta));
 });
