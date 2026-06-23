@@ -4340,3 +4340,14 @@ fieldset.product-form__input .form__label {
   border: 1.5px solid #121212 !important;
 }
 /* ===== FIN ENVÍO ESTIMADO ===== */
+/* ===== TEXTO DESPLEGABLES PRODUCTO ===== */
+.product__accordion .accordion__content {
+  font-size: 1.2rem !important;
+  line-height: 1.6 !important;
+}
+
+.product__accordion .accordion__content p,
+.product__accordion .accordion__content strong {
+  font-size: 1.2rem !important;
+}
+/* ===== FIN TEXTO DESPLEGABLES ===== */
