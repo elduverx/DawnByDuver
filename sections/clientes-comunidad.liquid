@@ -1,0 +1,183 @@
+<style>
+  .clientes-section {
+    padding: 60px 0 0 0;
+    text-align: center;
+  }
+  .clientes-eyebrow {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: #9ca3af;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .clientes-titulo {
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: Georgia, serif;
+    margin-bottom: 12px;
+    color: #121212;
+  }
+  .clientes-subtitulo {
+    font-size: 1.3rem;
+    color: #6b7280;
+    margin-bottom: 40px;
+  }
+  .clientes-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  .clientes-slider {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+  .cliente-card {
+    min-width: 25%;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+  .cliente-card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+  }
+  .cliente-info {
+    text-align: left;
+    padding: 10px 4px;
+  }
+  .cliente-nombre {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #121212;
+    margin: 0 0 2px 0;
+  }
+  .cliente-ciudad {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    margin: 0;
+  }
+  .clientes-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: white;
+    border: 1px solid #e5e7eb;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 1.4rem;
+  }
+  .clientes-btn--prev { left: 8px; }
+  .clientes-btn--next { right: 8px; }
+
+  @media screen and (max-width: 749px) {
+    .cliente-card { min-width: 80%; }
+    .clientes-titulo { font-size: 2rem; }
+  }
+</style>
+
+<div class="clientes-section">
+  <p class="clientes-eyebrow">{{ section.settings.eyebrow }}</p>
+  <h2 class="clientes-titulo">{{ section.settings.titulo }}</h2>
+  <p class="clientes-subtitulo">{{ section.settings.subtitulo }}</p>
+
+  <div class="clientes-slider-wrapper">
+    <button class="clientes-btn clientes-btn--prev" onclick="moverSlider(-1)">&#8249;</button>
+    <div class="clientes-slider" id="clientesSlider">
+      {%- for block in section.blocks -%}
+        <div class="cliente-card">
+          {%- if block.settings.imagen != blank -%}
+            <img src="{{ block.settings.imagen | image_url: width: 600 }}" alt="{{ block.settings.nombre }}">
+          {%- else -%}
+            <div style="width:100%;aspect-ratio:3/4;background:#f3f3f3;"></div>
+          {%- endif -%}
+          <div class="cliente-info">
+            <p class="cliente-nombre">{{ block.settings.nombre }}</p>
+            <p class="cliente-ciudad">{{ block.settings.ciudad }}</p>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <button class="clientes-btn clientes-btn--next" onclick="moverSlider(1)">&#8250;</button>
+  </div>
+</div>
+
+<script>
+  var currentSlide = 0;
+  function moverSlider(dir) {
+    var slider = document.getElementById('clientesSlider');
+    var cards = slider.querySelectorAll('.cliente-card');
+    var visible = window.innerWidth < 750 ? 1 : 4;
+    var max = cards.length - visible;
+    currentSlide = Math.max(0, Math.min(currentSlide + dir, max));
+    var pct = (100 / cards.length) * currentSlide;
+    slider.style.transform = 'translateX(-' + pct + '%)';
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Clientes comunidad",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto superior",
+      "default": "VELA MADRID"
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Clientes de nuestra comunidad"
+    },
+    {
+      "type": "text",
+      "id": "subtitulo",
+      "label": "Subtítulo",
+      "default": "Las prendas cobran vida cuando las llevan personas reales."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cliente",
+      "name": "Cliente",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imagen",
+          "label": "Foto"
+        },
+        {
+          "type": "text",
+          "id": "nombre",
+          "label": "Nombre",
+          "default": "María G."
+        },
+        {
+          "type": "text",
+          "id": "ciudad",
+          "label": "Ciudad",
+          "default": "Madrid"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clientes comunidad",
+      "blocks": [
+        { "type": "cliente" },
+        { "type": "cliente" },
+        { "type": "cliente" },
+        { "type": "cliente" },
+        { "type": "cliente" }
+      ]
+    }
+  ]
+}
+{% endschema %}
