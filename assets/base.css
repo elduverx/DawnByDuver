@@ -4338,3 +4338,7 @@ fieldset.product-form__input .form__label {
   border: 1.5px solid #121212 !important;
 }
 /* ===== FIN ENVÍO ESTIMADO ===== */
+.punto-urgencia {
+  animation: parpadeo 1.2s ease-in-out infinite !important;
+  display: inline-block !important;
+}
