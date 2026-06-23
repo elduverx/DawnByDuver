@@ -4368,11 +4368,10 @@ html body .faq-vela p {
   font-size: 1.3rem !important;
 }
 /* ===== FIN FAQ RESPUESTA ===== */
-/* ===== MARGEN ENVÍO GRATIS MÓVIL ===== */
+/* ===== MARGEN PRECIO MÓVIL ===== */
 @media screen and (max-width: 749px) {
-  .product__info-container .icon-with-text {
-    margin-top: 8px !important;
+  .price--large {
     margin-bottom: 8px !important;
   }
 }
-/* ===== FIN MARGEN ENVÍO GRATIS ===== */
+/* ===== FIN MARGEN PRECIO MÓVIL ===== */
