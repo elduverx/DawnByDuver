@@ -4375,3 +4375,13 @@ html body .faq-vela p {
     line-height: 1.2 !important;
   }
 }
+/* Reducir el tamaño del título del producto globalmente */
+.product__title h1 {
+  font-size: 2.8rem !important;
+}
+
+@media screen and (max-width: 749px) {
+  .product__title h1 {
+    font-size: 2.2rem !important;
+  }
+}
