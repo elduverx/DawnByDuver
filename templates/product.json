@@ -56,15 +56,6 @@
             "content": "<p>El <strong>modelo Bruno</strong> está confeccionado en un <strong>tejido elástico ultrasuave</strong> que se adapta naturalmente a cada movimiento. <strong>Transpirable</strong>, <strong>ligero</strong> y pensado para el <strong>uso diario</strong>, ofrece una sensación de comodidad continua sin renunciar al estilo.</p><p>Ya sea para un día activo o para momentos de relax, <strong>Bruno</strong> se convertirá rápidamente en tu <strong>prenda imprescindible</strong> para un look cómodo, moderno y sin esfuerzo.</p>",
             "page": ""
           }
-        },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "ENVÍO Y DEVOLUCIONES",
-            "icon": "none",
-            "content": "<p><strong>Envío gratuito</strong></p><p>Ofrecemos envío gratuito en todos los pedidos para que disfrutes de tu compra sin costes adicionales.</p><p><strong>Seguimiento incluido</strong></p><p>Recibirás un número de seguimiento para que puedas controlar tu envío en todo momento con total tranquilidad.</p><p><strong>Devoluciones en 30 días</strong></p><p>Si no estás completamente satisfecho con tu compra, puedes solicitar un cambio o devolución dentro de los 30 días posteriores a la recepción. Queremos que compres con confianza y sin preocupaciones.</p>",
-            "page": ""
-          }
         }
       },
       "block_order": [
@@ -74,8 +65,7 @@
         "price",
         "variant_picker",
         "buy_buttons_ndCrai",
-        "collapsible-row-2",
-        "collapsible-row-3"
+        "collapsible-row-2"
       ],
       "custom_css": [
         "/* --- ENCAJE PERFECTO BAJO LÍNEA SEPARADORA --- */:host,.product {padding-top: 55px !important; /* Reduce el espacio para que la foto suba hasta rozar la línea */}",
