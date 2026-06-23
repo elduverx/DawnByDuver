@@ -4385,29 +4385,3 @@ html body .faq-vela p {
     font-size: 1.8rem !important;
   }
 }
-/* 1. Creamos el efecto de entrada suave subiendo un pelín */
-@keyframes entradaPremiumCompetidor {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 2. Aplicamos la animación directamente a todas las tarjetas de producto al cargar */
-.card-wrapper {
-  opacity: 0;
-  animation: entradaPremiumCompetidor 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards !important;
-  will-change: opacity, transform;
-}
-
-/* 3. Efecto cascada (retraso escalonado de izquierda a derecha) */
-.grid__item:nth-child(1) .card-wrapper { animation-delay: 0.05s !important; }
-.grid__item:nth-child(2) .card-wrapper { animation-delay: 0.12s !important; }
-.grid__item:nth-child(3) .card-wrapper { animation-delay: 0.19s !important; }
-.grid__item:nth-child(4) .card-wrapper { animation-delay: 0.26s !important; }
-.grid__item:nth-child(5) .card-wrapper { animation-delay: 0.33s !important; }
-.grid__item:nth-child(6) .card-wrapper { animation-delay: 0.40s !important; }
