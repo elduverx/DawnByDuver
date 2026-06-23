@@ -158,9 +158,45 @@
     },
     "combina_look_heaitB": {
       "type": "combina-look",
-      "disabled": true,
+      "blocks": {
+        "producto_M6qLVP": {
+          "type": "producto",
+          "settings": {
+            "producto": "pantalon-oversize"
+          }
+        },
+        "producto_jgaJmn": {
+          "type": "producto",
+          "settings": {
+            "producto": "vestido-mujer"
+          }
+        },
+        "producto_KzVjEb": {
+          "type": "producto",
+          "settings": {
+            "producto": "pantalon-oversize"
+          }
+        },
+        "producto_LQMgHw": {
+          "type": "producto",
+          "settings": {
+            "producto": "vestido-mujer"
+          }
+        }
+      },
+      "block_order": [
+        "producto_M6qLVP",
+        "producto_jgaJmn",
+        "producto_KzVjEb",
+        "producto_LQMgHw"
+      ],
       "name": "Combina tu look",
-      "settings": {}
+      "settings": {
+        "eyebrow": "TAMBIÉN TE PUEDE INTERESAR",
+        "titulo": "Combina tu look",
+        "texto_boton": "Ver todo",
+        "url_ver_todo": "shopify://collections/all"
+      }
     },
     "related-products": {
       "type": "related-products",
