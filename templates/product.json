@@ -293,7 +293,7 @@
         "pregunta_TWqRdx": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Puedo devolver mi pedido?",
+            "pregunta": "¿El pago es seguro?",
             "respuesta": "<p>Todos los pagos se procesan mediante conexión SSL cifrada. Tu información está completamente protegida y nunca compartimos datos bancarios.</p>"
           }
         },
