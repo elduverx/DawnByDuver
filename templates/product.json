@@ -65,12 +65,6 @@
             "content": "<p><strong>Envío gratuito</strong></p><p>Ofrecemos envío gratuito en todos los pedidos para que disfrutes de tu compra sin costes adicionales.</p><p><strong>Seguimiento incluido</strong></p><p>Recibirás un número de seguimiento para que puedas controlar tu envío en todo momento con total tranquilidad.</p><p><strong>Devoluciones en 30 días</strong></p><p>Si no estás completamente satisfecho con tu compra, puedes solicitar un cambio o devolución dentro de los 30 días posteriores a la recepción. Queremos que compres con confianza y sin preocupaciones.</p>",
             "page": ""
           }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
         }
       },
       "block_order": [
@@ -104,80 +98,58 @@
         "padding_bottom": 12
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
+    "clientes_comunidad_P7VGmC": {
+      "type": "clientes-comunidad",
       "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
+        "cliente_LqF9cL": {
+          "type": "cliente",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "imagen": "shopify://shop_images/SECCIONMUJER.png",
+            "nombre": "Marina P",
+            "ciudad": "Madrid"
           }
         },
-        "image-with-text-1": {
-          "type": "text",
+        "cliente_HYxrTi": {
+          "type": "cliente",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
+            "nombre": "María G.",
+            "ciudad": "Madrid"
+          }
+        },
+        "cliente_L4yRqD": {
+          "type": "cliente",
+          "settings": {
+            "nombre": "María G.",
+            "ciudad": "Madrid"
+          }
+        },
+        "cliente_mDUC9K": {
+          "type": "cliente",
+          "settings": {
+            "nombre": "María G.",
+            "ciudad": "Madrid"
+          }
+        },
+        "cliente_rfypcq": {
+          "type": "cliente",
+          "settings": {
+            "nombre": "María G.",
+            "ciudad": "Madrid"
           }
         }
       },
       "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
+        "cliente_LqF9cL",
+        "cliente_HYxrTi",
+        "cliente_L4yRqD",
+        "cliente_mDUC9K",
+        "cliente_rfypcq"
       ],
+      "name": "Clientes comunidad",
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "scheme-2",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "eyebrow": "COLECCIÓN",
-            "title": "Free Shipping",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "eyebrow": "COLECCIÓN",
-            "title": "Hassle-Free Exchanges",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
-      "settings": {
-        "eyebrow": "EXPLORA LA COLECCIÓN",
-        "title": "",
-        "subtitle": "Descubre las piezas esenciales de la temporada.",
-        "columns_desktop": 2,
-        "background_style": "none",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "eyebrow": "VELA MADRID",
+        "titulo": "Clientes de nuestra comunidad",
+        "subtitulo": "Las prendas cobran vida cuando las llevan personas reales."
       }
     },
     "related-products": {
@@ -201,8 +173,7 @@
   },
   "order": [
     "main",
-    "image-with-text",
-    "multicolumn",
+    "clientes_comunidad_P7VGmC",
     "related-products"
   ]
 }
