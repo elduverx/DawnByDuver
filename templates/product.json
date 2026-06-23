@@ -259,9 +259,7 @@
         "discount_box_jwymXf",
         "text_gw79bY"
       ],
-      "custom_css": [
-        ".rich-text__wrapper p {color: #444 !important;}"
-      ],
+      "custom_css": [],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",

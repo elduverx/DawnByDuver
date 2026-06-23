@@ -4356,3 +4356,10 @@ fieldset.product-form__input .form__label {
   font-weight: 700 !important;
 }
 /* ===== FIN TÍTULOS DESPLEGABLES ===== */
+/* ===== TEXTO ENRIQUECIDO PRODUCTO ===== */
+.rich-text__wrapper--center .rich-text__blocks {
+  max-width: 650px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/* ===== FIN TEXTO ENRIQUECIDO ===== */
