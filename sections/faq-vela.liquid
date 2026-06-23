@@ -1,0 +1,108 @@
+<style>
+  .faq-vela {
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .faq-vela__titulo {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #121212;
+  }
+  .faq-vela__item {
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .faq-vela__pregunta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #121212;
+    list-style: none;
+    user-select: none;
+  }
+  .faq-vela__pregunta::-webkit-details-marker { display: none; }
+  .faq-vela__icono {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  details[open] .faq-vela__icono {
+    transform: rotate(45deg);
+  }
+  .faq-vela__respuesta {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.3rem;
+    color: #6b7280;
+    padding: 0 0 20px 0;
+    line-height: 1.7;
+  }
+</style>
+
+<div class="faq-vela">
+  <h2 class="faq-vela__titulo">{{ section.settings.titulo }}</h2>
+
+  {%- for block in section.blocks -%}
+    <details class="faq-vela__item">
+      <summary class="faq-vela__pregunta">
+        <span>{{ block.settings.pregunta }}</span>
+        <span class="faq-vela__icono">+</span>
+      </summary>
+      <p class="faq-vela__respuesta">{{ block.settings.respuesta }}</p>
+    </details>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Preguntas Frecuentes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pregunta",
+      "name": "Pregunta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "pregunta",
+          "label": "Pregunta",
+          "default": "¿Puedo devolver mi pedido?"
+        },
+        {
+          "type": "richtext",
+          "id": "respuesta",
+          "label": "Respuesta",
+          "default": "<p>Escribe aquí la respuesta.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        { "type": "pregunta" },
+        { "type": "pregunta" },
+        { "type": "pregunta" },
+        { "type": "pregunta" }
+      ]
+    }
+  ]
+}
+{% endschema %}
