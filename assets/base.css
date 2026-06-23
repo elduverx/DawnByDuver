@@ -4286,6 +4286,10 @@ fieldset.product-form__input .form__label {
   fieldset.product-form__input .form__label {
     display: flex !important;
     gap: 6px !important;
+    visibility: visible !important;
+    font-size: 1.4rem !important;
+    color: #121212 !important;
+    margin-bottom: 8px !important;
   }
   
   fieldset.product-form__input .form__label:before {
