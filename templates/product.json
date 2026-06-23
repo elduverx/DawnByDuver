@@ -307,7 +307,7 @@
         "pregunta_naFrgL": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Puedo devolver mi pedido?",
+            "pregunta": "¿Dónde se fabrican los productos?",
             "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br/><br/></p>"
           }
         }
