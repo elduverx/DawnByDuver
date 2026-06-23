@@ -451,21 +451,11 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
     document.head.appendChild(style);
 
-    // Selector robusto para Dawn: cubre el ID real que genera Shopify
-    const section = document.querySelector(
-      '[id*="featured-collection"], [id*="featured_collection"], section[class*="featured"], .featured-collection'
-    );
+    const section = document.getElementById("shopify-section-template--29804020433230__featured_collection");
 
     if (section) {
       const items = section.querySelectorAll("li.grid__item, .card-wrapper, .grid__item");
       items.forEach((item, i) => {
-        item.style.animationDelay = (i * 0.1) + "s";
-        item.classList.add("slide-in-left");
-      });
-    } else {
-      // Fallback: si aún no lo encuentra, aplica a todos los grid__item de la página
-      console.warn("Sección featured no encontrada, aplicando a todos los grid__item");
-      document.querySelectorAll(".grid__item").forEach((item, i) => {
         item.style.animationDelay = (i * 0.1) + "s";
         item.classList.add("slide-in-left");
       });
