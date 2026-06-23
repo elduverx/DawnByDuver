@@ -112,6 +112,7 @@
         "cliente_HYxrTi": {
           "type": "cliente",
           "settings": {
+            "imagen": "shopify://shop_images/SECCIONHOMBRE_ddc0301e-a9b9-4654-9974-e28b92fa61e0.png",
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
@@ -119,6 +120,7 @@
         "cliente_L4yRqD": {
           "type": "cliente",
           "settings": {
+            "imagen": "shopify://shop_images/SECCIONMUJER.png",
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
@@ -126,6 +128,7 @@
         "cliente_mDUC9K": {
           "type": "cliente",
           "settings": {
+            "imagen": "shopify://shop_images/SECCIONHOMBRE_ddc0301e-a9b9-4654-9974-e28b92fa61e0.png",
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
@@ -133,6 +136,7 @@
         "cliente_rfypcq": {
           "type": "cliente",
           "settings": {
+            "imagen": "shopify://shop_images/SECCIONMUJER.png",
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
