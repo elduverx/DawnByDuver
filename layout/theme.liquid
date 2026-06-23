@@ -428,30 +428,5 @@ document.addEventListener('change', function(e) {
   }
 });
 </script>
-<script>
-function rellenarFechas() {
-  var fc = document.querySelector('.fecha-comprado');
-  var fp = document.querySelector('.fecha-procesado');
-  var fe = document.querySelector('.fecha-enviado');
-  if (!fc || !fp || !fe) return;
-  // sin esta condición
-  var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-  var hoy = new Date();
-  var manana = new Date(hoy); manana.setDate(hoy.getDate() + 1);
-  var enviado = new Date(hoy); enviado.setDate(hoy.getDate() + 2);
-  function fmt(d) { return d.getDate() + ' ' + meses[d.getMonth()]; }
-  fc.textContent = fmt(hoy);
-  fp.textContent = fmt(hoy) + ' / ' + fmt(manana);
-  fe.textContent = fmt(enviado);
-}
-
-document.addEventListener('DOMContentLoaded', rellenarFechas);
-
-document.addEventListener('change', function(e) {
-  if (e.target.matches('.product-form__input input[type="radio"]')) {
-    setTimeout(rellenarFechas, 100);
-  }
-});
-</script>
   </body>
 </html>
