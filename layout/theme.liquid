@@ -428,5 +428,12 @@ document.addEventListener('change', function(e) {
   }
 });
 </script>
+<script>
+  setInterval(function() {
+    var punto = document.querySelector('.punto-urgencia');
+    if (!punto) return;
+    punto.style.opacity = punto.style.opacity === '0' ? '1' : '0';
+  }, 600);
+</script>
   </body>
 </html>
