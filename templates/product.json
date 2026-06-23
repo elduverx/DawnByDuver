@@ -85,16 +85,16 @@
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
-        "media_fit": "contain",
+        "media_fit": "cover",
         "gallery_layout": "stacked",
         "mobile_thumbnails": "hide",
         "media_position": "left",
         "image_zoom": "lightbox",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 28,
+        "padding_top": 44,
         "padding_bottom": 12
       }
     },
@@ -308,7 +308,7 @@
           "type": "pregunta",
           "settings": {
             "pregunta": "¿Dónde se fabrican los productos?",
-            "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br/><br/></p>"
+            "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br><br></p>"
           }
         }
       },
