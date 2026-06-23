@@ -436,35 +436,5 @@ document.addEventListener('change', function(e) {
     punto.style.opacity = punto.style.opacity === '0' ? '1' : '0';
   }, 1200);
 </script>
-<style>
-  @keyframes entradaPremiumUniversal {
-    0% {
-      opacity: 0;
-      transform: translateX(-40px) !important; /* Viene desde 40px a la izquierda */
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0) !important; /* Llega a su posición original */
-    }
-  }
-
-  /* Forzamos la animación apuntando a todos los contenedores de producto */
-  .grid__item > *, 
-  .product-grid .grid__item, 
-  .card-wrapper,
-  [class*="product-card"] {
-    opacity: 0;
-    animation: entradaPremiumUniversal 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) forwards !important;
-    will-change: opacity, transform;
-  }
-
-  /* Efecto cascada escalonado */
-  .grid__item:nth-child(1) { animation-delay: 0.05s !important; }
-  .grid__item:nth-child(2) { animation-delay: 0.12s !important; }
-  .grid__item:nth-child(3) { animation-delay: 0.19s !important; }
-  .grid__item:nth-child(4) { animation-delay: 0.26s !important; }
-  .grid__item:nth-child(5) { animation-delay: 0.33s !important; }
-  .grid__item:nth-child(6) { animation-delay: 0.40s !important; }
-</style>
   </body>
 </html>
