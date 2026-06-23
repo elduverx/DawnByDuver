@@ -4385,16 +4385,28 @@ html body .faq-vela p {
     font-size: 1.8rem !important;
   }
 }
-/* Estado inicial: oculto y desplazado 40px a la izquierda */
+/* 1. Creamos la animación de barrido desde la izquierda */
+@keyframes entrarDesdeIzquierda {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 2. Se la aplicamos a las tarjetas de producto cuando la página se abre */
 .card-wrapper {
-  opacity: 0 !important;
-  transform: translateX(-40px) !important;
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  animation: entrarDesdeIzquierda 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: opacity, transform;
 }
 
-/* Estado final: aparece en su posición original */
-.card-wrapper.entrar-suave {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-}
+/* 3. Efecto cascada opcional: las tarjetas se cargan con un ligero desfase */
+.grid__item:nth-child(1) .card-wrapper { animation-delay: 0.05s; }
+.grid__item:nth-child(2) .card-wrapper { animation-delay: 0.1s; }
+.grid__item:nth-child(3) .card-wrapper { animation-delay: 0.15s; }
+.grid__item:nth-child(4) .card-wrapper { animation-delay: 0.2s; }
+.grid__item:nth-child(5) .card-wrapper { animation-delay: 0.25s; }
+.grid__item:nth-child(6) .card-wrapper { animation-delay: 0.3s; }
