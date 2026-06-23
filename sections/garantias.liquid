@@ -1,3 +1,6 @@
+{% unless request.page_type == 'product' %}
+  {% comment %}No mostrar garantías fuera de la página de producto{% endcomment %}
+{% endunless %}
 {%- style -%}
   .garantias {
     padding: 80px 0;
