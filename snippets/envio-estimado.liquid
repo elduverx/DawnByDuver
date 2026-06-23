@@ -1,17 +1,13 @@
 {%- assign mes_num = 'now' | date: '%-m' | plus: 0 -%}
 {%- assign mes_manana_num = 'now' | date: '%s' | plus: 86400 | date: '%-m' | plus: 0 -%}
 {%- assign mes_enviado_num = 'now' | date: '%s' | plus: 172800 | date: '%-m' | plus: 0 -%}
-
 {%- assign dia_hoy = 'now' | date: '%-d' -%}
 {%- assign dia_manana = 'now' | date: '%s' | plus: 86400 | date: '%-d' -%}
 {%- assign dia_enviado = 'now' | date: '%s' | plus: 172800 | date: '%-d' -%}
-
 {%- assign meses = 'Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic' | split: ',' -%}
-
 {%- assign idx_hoy = mes_num | minus: 1 -%}
 {%- assign idx_manana = mes_manana_num | minus: 1 -%}
 {%- assign idx_enviado = mes_enviado_num | minus: 1 -%}
-
 {%- assign mes_hoy = meses[idx_hoy] -%}
 {%- assign mes_manana = meses[idx_manana] -%}
 {%- assign mes_enviado = meses[idx_enviado] -%}
@@ -54,4 +50,14 @@
       <p style="font-size: 1.2rem; color: #121212; margin: 0 0 4px 0;">3</p>
       <p style="font-size: 1.2rem; letter-spacing: 0.1em; color: #121212; margin: 0 0 12px 0;">UNIDADES</p>
       <p style="font-size: 2.4rem; font-weight: 400; font-family: Georgia, serif; margin: 0 0 8px 0;">−15%</p>
+      <p style="font-size: 1.3rem; color: #121212; margin: 0;">Descuento</p>
+    </div>
+    <div style="flex: 1; border: 1px solid #e5e7eb; padding: 16px;">
+      <p style="font-size: 1.2rem; color: #121212; margin: 0 0 4px 0;">5 O MÁS</p>
+      <p style="font-size: 1.2rem; letter-spacing: 0.1em; color: #121212; margin: 0 0 12px 0;">UNIDADES</p>
+      <p style="font-size: 2.4rem; font-weight: 400; font-family: Georgia, serif; margin: 0 0 8px 0;">−25%</p>
+      <p style="font-size: 1.3rem; color: #121212; margin: 0;">Descuento</p>
+    </div>
+  </div>
+  <p style="font-size: 1.3rem; color: #121212; margin: 0;">Descuento por cantidad válido en todos los productos de la web. Se excluyen accesorios y complementos. Se aplica automáticamente en el carrito.</p>
 </div>
