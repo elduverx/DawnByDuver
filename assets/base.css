@@ -4363,3 +4363,7 @@ div.rich-text__blocks.center {
   margin-right: auto !important;
 }
 /* ===== FIN ANCHO TEXTO ENRIQUECIDO ===== */
+.faq-vela__respuesta p {
+  font-size: 1.4rem !important;
+  margin: 0 !important;
+}
