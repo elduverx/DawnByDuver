@@ -4282,14 +4282,6 @@ footer-block__newsletter .footer-block__heading {
 fieldset.product-form__input .form__label {
   font-size: 0 !important;
 }
-
-/* Reconstruye la palabra "Color:" de forma fija por CSS */
-fieldset.product-form__input .form__label::before {
-  content: "Color: " !important;
-  font-size: 1.4rem !important; /* Ajusta al tamaño de tu fuente */
-  color: #121212 !important;
-  display: inline-block !important;
-}
   font-weight: bold;
   color: #121212;
   margin-left: 4px;
