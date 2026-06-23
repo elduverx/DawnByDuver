@@ -4368,3 +4368,8 @@ html body .faq-vela p {
   font-size: 1.3rem !important;
 }
 /* ===== FIN FAQ RESPUESTA ===== */
+@media screen and (max-width: 749px) {
+  .vela-discount-box__number {
+    font-size: 2.5rem !important;
+  }
+}
