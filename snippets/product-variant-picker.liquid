@@ -37,11 +37,11 @@
             picker_type: button
           %}
         </fieldset>
-     {%- elsif picker_type == 'button' or picker_type == 'dropdown' -%}
+    {%- elsif picker_type == 'button' or picker_type == 'dropdown' -%}
 <fieldset class="js product-form__input product-form__input--pill">
 <legend class="form__label" style="display: flex; gap: 6px;">
   <span>{{ option.name }}:</span>
-  <span class="selected-value--{{ option.position }}">{{ option.selected_value }}</span>
+  <span class="selected-value" data-option-index="{{ option.position }}">{{ option.selected_value }}</span>
 </legend>
 {% render 'product-variant-options',
 product: product,
