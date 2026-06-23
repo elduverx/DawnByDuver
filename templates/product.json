@@ -318,6 +318,9 @@
         "pregunta_RRM6Ni",
         "pregunta_naFrgL"
       ],
+      "custom_css": [
+        ".faq-vela__respuesta p {font-size: 1.4rem !important;}"
+      ],
       "name": "FAQ",
       "settings": {
         "titulo": "Preguntas Frecuentes"
