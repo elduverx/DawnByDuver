@@ -1,0 +1,154 @@
+<style>
+  .combina-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .combina-eyebrow {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: #c9b99a;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .combina-titulo {
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: Georgia, serif;
+    margin-bottom: 40px;
+    color: #121212;
+  }
+  .combina-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .combina-card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+  }
+  .combina-card-info {
+    text-align: left;
+    padding: 10px 0;
+  }
+  .combina-card-titulo {
+    font-size: 1.2rem;
+    color: #121212;
+    margin: 0 0 6px 0;
+  }
+  .combina-card-precio {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #121212;
+    margin: 0;
+  }
+  .combina-card-precio-original {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+    margin-right: 6px;
+  }
+  .combina-btn {
+    display: inline-block;
+    background: #121212;
+    color: #ffffff;
+    padding: 14px 40px;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 749px) {
+    .combina-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .combina-titulo { font-size: 2rem; }
+  }
+</style>
+
+<div class="combina-section">
+  <p class="combina-eyebrow">{{ section.settings.eyebrow }}</p>
+  <h2 class="combina-titulo">{{ section.settings.titulo }}</h2>
+
+  <div class="combina-grid">
+    {%- for block in section.blocks -%}
+      {%- assign prod = block.settings.producto -%}
+      {%- if prod != blank -%}
+        <div class="combina-card">
+          <a href="{{ prod.url }}">
+            <img src="{{ prod.featured_image | image_url: width: 600 }}" alt="{{ prod.title }}">
+          </a>
+          <div class="combina-card-info">
+            <p class="combina-card-titulo">{{ prod.title | upcase }}</p>
+            <p class="combina-card-precio">
+              {%- if prod.compare_at_price > prod.price -%}
+                <span class="combina-card-precio-original">{{ prod.compare_at_price | money }}</span>
+              {%- endif -%}
+              {{ prod.price | money }}
+            </p>
+          </div>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <a href="{{ section.settings.url_ver_todo }}" class="combina-btn">{{ section.settings.texto_boton }}</a>
+</div>
+
+{% schema %}
+{
+  "name": "Combina tu look",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto superior",
+      "default": "TAMBIÉN TE PUEDE INTERESAR"
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Combina tu look"
+    },
+    {
+      "type": "text",
+      "id": "texto_boton",
+      "label": "Texto botón",
+      "default": "Ver todo"
+    },
+    {
+      "type": "url",
+      "id": "url_ver_todo",
+      "label": "Enlace botón Ver todo",
+      "default": "/collections/all"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "producto",
+      "name": "Producto",
+      "settings": [
+        {
+          "type": "product",
+          "id": "producto",
+          "label": "Producto"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Combina tu look",
+      "blocks": [
+        { "type": "producto" },
+        { "type": "producto" },
+        { "type": "producto" },
+        { "type": "producto" }
+      ]
+    }
+  ]
+}
+{% endschema %}
