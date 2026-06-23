@@ -434,7 +434,7 @@ function rellenarFechas() {
   var fp = document.querySelector('.fecha-procesado');
   var fe = document.querySelector('.fecha-enviado');
   if (!fc || !fp || !fe) return;
-  if (fc.textContent !== '') return;
+  // sin esta condición
   var meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
   var hoy = new Date();
   var manana = new Date(hoy); manana.setDate(hoy.getDate() + 1);
