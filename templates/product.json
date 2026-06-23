@@ -300,7 +300,7 @@
         "pregunta_RRM6Ni": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Puedo devolver mi pedido?",
+            "pregunta": "¿Cómo tallan las prendas?",
             "respuesta": "<p>Nuestras prendas tallan de forma estándar. Puedes consultar la guía de tallas en cada producto para asegurarte de elegir la medida perfecta.</p>"
           }
         },
