@@ -416,6 +416,17 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-   
+   <script>
+document.addEventListener('change', function(e) {
+  if (!e.target.matches('[name^="Color"], [name^="Talla"], [name^="Size"]')) return;
+  var name = e.target.name;
+  var value = e.target.value;
+  var label = document.querySelector('label[for="' + e.target.id + '"]');
+  var display = e.target.closest('fieldset').querySelector('[class^="selected-option-"]');
+  if (display && label) {
+    display.textContent = label.getAttribute('data-color-title') || value;
+  }
+});
+</script>
   </body>
 </html>
