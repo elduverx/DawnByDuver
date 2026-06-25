@@ -4471,3 +4471,8 @@ html body .faq-vela p {
   width: auto;
   border-radius: 3px;
 }
+/* Ocultar botón Seguir en Shop */
+shop-follow-button,
+.shop-follow-button {
+  display: none !important;
+}
