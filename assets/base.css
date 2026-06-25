@@ -4426,3 +4426,19 @@ html body .faq-vela p {
 .card-color-swatch {
   pointer-events: all;
 }
+/* === VELA: Métodos de pago producto === */
+.vela-payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 0 4px;
+}
+
+.vela-payment-icons svg {
+  height: 24px;
+  width: auto;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+}
