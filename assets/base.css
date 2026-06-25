@@ -4385,3 +4385,28 @@ html body .faq-vela p {
     font-size: 1.8rem !important;
   }
 }
+/* ── Color swatches en card de producto ── */
+.card-color-swatches {
+  display: flex;
+  gap: 6px;
+  padding: 8px 0 4px 0;
+  flex-wrap: wrap;
+}
+
+.card-color-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.card-color-swatch:hover,
+.card-color-swatch.active {
+  border-color: #121212;
+}

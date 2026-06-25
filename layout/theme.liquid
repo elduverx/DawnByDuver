@@ -436,5 +436,24 @@ document.addEventListener('change', function(e) {
     punto.style.opacity = punto.style.opacity === '0' ? '1' : '0';
   }, 1200);
 </script>
+<script>
+  document.addEventListener('click', function(e) {
+    var swatch = e.target.closest('.card-color-swatch');
+    if (!swatch) return;
+    var cardId = swatch.dataset.cardId;
+    var newSrc = swatch.dataset.imageSrc;
+    var wrapper = swatch.closest('.card-wrapper');
+    if (!wrapper) return;
+    var mainImg = wrapper.querySelector('.card__media img');
+    if (mainImg) {
+      mainImg.src = newSrc;
+      mainImg.srcset = newSrc;
+    }
+    wrapper.querySelectorAll('.card-color-swatch').forEach(function(s) {
+      s.classList.remove('active');
+    });
+    swatch.classList.add('active');
+  });
+</script>
   </body>
 </html>
