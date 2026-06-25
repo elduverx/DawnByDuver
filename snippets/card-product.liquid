@@ -164,7 +164,7 @@
                   {%- if variant.featured_media -%}
                    <button
                       class="card-color-swatch"
-                      data-image-src="{{ variant.featured_media | image_url: width: 533 }}"
+                      data-image-src='{{ variant.featured_media | image_url: width: 533 }}'
                       data-card-id="{{ card_product.id }}"
                       title="{{ this_color }}"
                       aria-label="{{ this_color }}"
