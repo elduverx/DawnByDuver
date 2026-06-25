@@ -4480,11 +4480,11 @@ shop-follow-button,
 @media screen and (max-width: 749px) {
   .banner__media,
   .banner__media.media {
-    height: 100svh !important;
-    min-height: 600px !important;
+    height: 75svh !important;
+    min-height: 500px !important;
   }
 
   .banner {
-    min-height: 100svh !important;
+    min-height: 75svh !important;
   }
 }
