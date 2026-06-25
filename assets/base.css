@@ -4476,15 +4476,3 @@ shop-follow-button,
 .shop-follow-button {
   display: none !important;
 }
-/* === VELA: Hero más alto en móvil === */
-@media screen and (max-width: 749px) {
-  .banner__media,
-  .banner__media.media {
-    height: 75svh !important;
-    min-height: 500px !important;
-  }
-
-  .banner {
-    min-height: 75svh !important;
-  }
-}
