@@ -155,7 +155,7 @@
 
           {%- if color_option_index != nil -%}
             {%- assign seen_colors = '' -%}
-            <div class="card-color-swatches" data-card-id="{{ card_product.id }}" onclick="event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation();" velaSwatchClick(event, this);">
+            <div class="card-color-swatches" data-card-id="{{ card_product.id }}" onclick="event.preventDefault(); event.stopPropagation(); event.stopImmediatePropagation();">
               {%- for variant in card_product.variants -%}
                 {%- assign this_color = variant.options[color_option_index] -%}
                 {%- assign seen_check = seen_colors | append: '|' | append: this_color -%}
