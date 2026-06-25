@@ -4411,3 +4411,10 @@ html body .faq-vela p {
 .card-color-swatch.active {
   border-color: #121212;
 }
+.card-color-swatches {
+  pointer-events: none;
+}
+
+.card-color-swatch {
+  pointer-events: all;
+}
