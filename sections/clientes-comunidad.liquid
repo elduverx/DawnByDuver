@@ -107,7 +107,6 @@
     <button class="clientes-btn clientes-btn--next" onclick="moverSlider(1)">&#8250;</button>
   </div>
 </div>
-
 <script>
   var currentSlide = 0;
   function moverSlider(dir) {
@@ -117,7 +116,9 @@
     var cardWidth = window.innerWidth < 750 ? 80 : 25;
     var max = cards.length - visible;
     currentSlide = Math.max(0, Math.min(currentSlide + dir, max));
-    slider.style.transform = 'translateX(-' + (cardWidth * currentSlide) + '%)';
+    var maxOffset = cardWidth * max;
+    var offset = Math.min(cardWidth * currentSlide, maxOffset);
+    slider.style.transform = 'translateX(-' + offset + '%)';
   }
 </script>
 {% schema %}
