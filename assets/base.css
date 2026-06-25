@@ -4396,7 +4396,7 @@ html body .faq-vela p {
 .card-color-swatch {
   width: 28px;
   height: 28px;
-  border-radius: 4px;
+  border-radius: 50%;
   border: 2px solid transparent;
   background-size: cover;
   background-position: center;
