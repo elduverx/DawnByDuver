@@ -162,13 +162,14 @@
                 {%- unless seen_colors contains this_color -%}
                   {%- assign seen_colors = seen_check -%}
                   {%- if variant.featured_media -%}
-                    <button
+                   <button
                       class="card-color-swatch"
                       data-image-src="{{ variant.featured_media | image_url: width: 533 }}"
                       data-card-id="{{ card_product.id }}"
                       title="{{ this_color }}"
                       aria-label="{{ this_color }}"
                       style="background-image: url('{{ variant.featured_media | image_url: width: 80 }}');"
+                      onclick="velaSwatchClick(event, this)"
                     ></button>
                   {%- endif -%}
                 {%- endunless -%}
