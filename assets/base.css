@@ -4393,17 +4393,18 @@ html body .faq-vela p {
   flex-wrap: wrap;
 }
 
+.card-color-swatches {
+  display: flex;
+  gap: 6px;
+  padding: 8px 0 4px 0;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
+}
+
 .card-color-swatch {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  padding: 0;
-  transition: border-color 0.2s;
-  outline: none;
+  position: relative;
+  z-index: 11;
 }
 
 .card-color-swatch:hover,
