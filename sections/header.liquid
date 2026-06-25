@@ -215,10 +215,45 @@
       {%- endif -%}
     {%- endif -%}
     {%- if request.page_type == 'index' -%}
-<div class="header__icons" style="justify-content: flex-end; gap: 2rem; text-transform: uppercase;">
-  <a href="/pages/seguimiento" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Seguimiento</a>
-  <a href="/pages/contacto" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Contacto</a>
-  <a href="/pages/sobre-nosotros" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Sobre nosotros</a>
+<div class="header__icons header__icons--homepage" style="justify-content: flex-end; gap: 2rem; text-transform: uppercase;">
+  <a href="/pages/seguimiento" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;" class="large-up-show">Seguimiento</a>
+  <a href="/pages/contacto" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;" class="large-up-show">Contacto</a>
+  <a href="/pages/sobre-nosotros" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;" class="large-up-show">Sobre nosotros</a>
+
+  {{- 'icon-search.svg' | inline_asset_content -}}
+  <a href="/pages/seguimiento" class="header__icon link focus-inset small-hide medium-hide" style="display: none;">
+    <span class="svg-wrapper">{{- 'icon-account.svg' | inline_asset_content -}}</span>
+  </a>
+
+  <!-- Lupa móvil -->
+  <details-modal class="header__search small-up-show">
+    <details>
+      <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
+        <span class="svg-wrapper">{{- 'icon-search.svg' | inline_asset_content -}}</span>
+      </summary>
+    </details>
+  </details-modal>
+
+  <!-- Caja seguimiento móvil -->
+  <a href="/pages/seguimiento" class="header__icon link focus-inset vela-mobile-only" aria-label="Seguimiento">
+    <span class="svg-wrapper">{{- 'icon-package.svg' | inline_asset_content -}}</span>
+  </a>
+
+  <!-- Carrito móvil -->
+  <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset vela-mobile-only" aria-label="Carrito">
+    {% if cart == empty %}
+      <span class="svg-wrapper">{{- 'icon-cart-empty.svg' | inline_asset_content -}}</span>
+    {% else %}
+      <span class="svg-wrapper">{{- 'icon-cart.svg' | inline_asset_content -}}</span>
+    {% endif %}
+    {%- if cart != empty -%}
+      <div class="cart-count-bubble">
+        {%- if cart.item_count < 100 -%}
+          <span aria-hidden="true">{{ cart.item_count }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </a>
 </div>
 {%- endif -%}
     {%- unless request.page_type == 'index' -%}
