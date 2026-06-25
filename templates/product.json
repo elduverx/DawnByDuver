@@ -104,7 +104,7 @@
         "cliente_LqF9cL": {
           "type": "cliente",
           "settings": {
-            "imagen": "shopify://shop_images/SECCIONMUJER.png",
+            "imagen": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg",
             "nombre": "Marina P",
             "ciudad": "Madrid"
           }
@@ -112,7 +112,7 @@
         "cliente_HYxrTi": {
           "type": "cliente",
           "settings": {
-            "imagen": "shopify://shop_images/SECCIONHOMBRE_ddc0301e-a9b9-4654-9974-e28b92fa61e0.png",
+            "imagen": "shopify://shop_images/man-in-suit-on-stairs.jpg",
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
@@ -120,7 +120,7 @@
         "cliente_L4yRqD": {
           "type": "cliente",
           "settings": {
-            "imagen": "shopify://shop_images/SECCIONMUJER.png",
+            "imagen": "shopify://shop_images/woman-infront-of-tree-with-berries.jpeg",
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
@@ -128,7 +128,7 @@
         "cliente_mDUC9K": {
           "type": "cliente",
           "settings": {
-            "imagen": "shopify://shop_images/SECCIONHOMBRE_ddc0301e-a9b9-4654-9974-e28b92fa61e0.png",
+            "imagen": "shopify://shop_images/mens-fashion-close-up-shirt-tucked-in-leaning.jpg",
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
@@ -136,7 +136,7 @@
         "cliente_rfypcq": {
           "type": "cliente",
           "settings": {
-            "imagen": "shopify://shop_images/SECCIONMUJER.png",
+            "imagen": "shopify://shop_images/fashion-portrait.jpg",
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
