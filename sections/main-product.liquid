@@ -487,9 +487,11 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-             {% render 'envio-estimado' %}
+         <div class="vela-payment-icons">
+                {{ shop.enabled_payment_types | payment_type_svg_tag: scale: 1.5 }}
+              </div>
 
-              <div class="vela-payment-icons">
+              {% render 'envio-estimado' %}
                 <span class="vela-payment-icons__label">Pago seguro garantizado</span>
                 <div class="vela-payment-icons__list">
                   <!-- Visa -->
