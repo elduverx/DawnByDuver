@@ -109,17 +109,13 @@
   </div>
 </div>
 <script>
-  var currentSlide = 0;
   function moverSlider(dir) {
     var slider = document.getElementById('clientesSlider');
-    var cards = slider.querySelectorAll('.cliente-card');
-    var visible = window.innerWidth < 750 ? 1 : 4;
-    var cardWidth = window.innerWidth < 750 ? 80 : 25;
-    var max = cards.length - visible;
-    currentSlide = Math.max(0, Math.min(currentSlide + dir, max));
-    var maxOffset = cardWidth * max;
-    var offset = Math.min(cardWidth * currentSlide, maxOffset);
-    slider.style.transform = 'translateX(-' + offset + '%)';
+    var card = slider.querySelector('.cliente-card');
+    var cardWidth = card.offsetWidth;
+    var maxScroll = slider.scrollWidth - slider.clientWidth;
+    var newScroll = slider.scrollLeft + (dir * cardWidth);
+    slider.scrollLeft = Math.max(0, Math.min(newScroll, maxScroll));
   }
 </script>
 {% schema %}
