@@ -145,6 +145,36 @@
       </div>
       <div class="card__content">
         <div class="card__information">
+          {%- assign color_option_index = nil -%}
+          {%- for option in card_product.options -%}
+            {%- assign option_downcase = option | downcase -%}
+            {%- if option_downcase == 'color' or option_downcase == 'color' or option_downcase == 'colour' or option_downcase == 'colore' -%}
+              {%- assign color_option_index = forloop.index0 -%}
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if color_option_index != nil -%}
+            {%- assign seen_colors = '' -%}
+            <div class="card-color-swatches" data-card-id="{{ card_product.id }}">
+              {%- for variant in card_product.variants -%}
+                {%- assign this_color = variant.options[color_option_index] -%}
+                {%- assign seen_check = seen_colors | append: '|' | append: this_color -%}
+                {%- unless seen_colors contains this_color -%}
+                  {%- assign seen_colors = seen_check -%}
+                  {%- if variant.featured_media -%}
+                    <button
+                      class="card-color-swatch"
+                      data-image-src="{{ variant.featured_media | image_url: width: 533 }}"
+                      data-card-id="{{ card_product.id }}"
+                      title="{{ this_color }}"
+                      aria-label="{{ this_color }}"
+                      style="background-image: url('{{ variant.featured_media | image_url: width: 80 }}');"
+                    ></button>
+                  {%- endif -%}
+                {%- endunless -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
