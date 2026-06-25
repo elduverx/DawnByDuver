@@ -5,9 +5,9 @@
   {% render 'header-drawer' %}
 {% endcomment %}
 
-<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+<div data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
- <summary
+    <summary
       class="header__icon header__icon--menu header__icon--summary link focus-inset"
       aria-label="{{ 'sections.header.menu' | t }}"
     >
@@ -16,11 +16,6 @@
         {{- 'icon-close.svg' | inline_asset_content -}}
       </span>
     </summary>
-    </details>
-    <a href="{{ routes.search_url }}" class="header__icon header__icon--search link focus-inset vela-mobile-only" aria-label="Buscar" style="color: white;">
-      <span class="svg-wrapper">{{- 'icon-search.svg' | inline_asset_content -}}</span>
-    </a>
-    <details id="Details-menu-drawer-container" class="menu-drawer-container" style="display:none;">
     <div id="menu-drawer" class="gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}">
       <div class="menu-drawer__inner-container">
         <div class="menu-drawer__navigation-container">
@@ -297,4 +292,4 @@
       </div>
     </div>
   </details>
-</header-drawer>
+</div>
