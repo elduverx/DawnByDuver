@@ -440,11 +440,14 @@ document.addEventListener('change', function(e) {
   document.addEventListener('click', function(e) {
     var swatch = e.target.closest('.card-color-swatch');
     if (!swatch) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
     var newSrc = swatch.dataset.imageSrc;
     var wrapper = swatch.closest('.card-wrapper');
     if (!wrapper) return;
 
-    // Busca la imagen principal por varios selectores posibles
     var mainImg = wrapper.querySelector('.card__media .media img')
                 || wrapper.querySelector('.card__media img')
                 || wrapper.querySelector('.card__inner img');
@@ -458,7 +461,7 @@ document.addEventListener('change', function(e) {
       s.classList.remove('active');
     });
     swatch.classList.add('active');
-  });
+  }, true);
 </script>
   </body>
 </html>
