@@ -708,17 +708,18 @@
 </style>
 <style>
 <style>
+<style>
 @media screen and (max-width: 749px) {
-  /* 1. LUPA: Forzada a la izquierda en páginas interiores */
+  /* 1. CORRECCIÓN DE LA LUPA: Forzada más a la izquierda (de 45px a 25px) */
   body:not(.template-index) .header__search {
     position: absolute !important;
-    left: 25px !important; 
+    left: 25px !important; /* Si necesitas pegarla aún más, bájalo a 20px */
     right: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
   }
 
-  /* 2. CONTENEDOR DEL LOGO: Solo en páginas interiores */
+  /* 2. Mantener el tamaño de logo que te gustó (60px) */
   body:not(.template-index) .header__heading-link,
   body:not(.template-index) .header__heading-logo,
   body:not(.template-index) .header__heading {
@@ -730,18 +731,16 @@
     width: auto !important;
   }
 
-  /* 3. IMAGEN DEL LOGO: Ahora sí, blindada para que NO toque la Home Page */
   body:not(.template-index) .header__heading-logo img,
-  body:not(.template-index) .header__heading-link img,
-  body:not(.template-index) [class*="header__heading"] img {
-    height: 60px !important; /* Altura intermedia que te gustó */
+  body:not(.template-index) .header__heading-link img {
+    height: 60px !important;
     max-height: 60px !important;
     width: auto !important;
     max-width: 170px !important; 
     object-fit: contain !important;
   }
 
-  /* 4. LÍNEA SEPARADORA: Solo en páginas interiores */
+  /* 3. Mantener la línea separadora en su sitio abajo */
   body:not(.template-index) .header,
   body:not(.template-index) .header-wrapper,
   body:not(.template-index) .site-header {
