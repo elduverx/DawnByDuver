@@ -4563,22 +4563,49 @@ shop-follow-button,
 }
 /* === HEADER MÓVIL HOMEPAGE === */
 @media screen and (max-width: 749px) {
+  /* Convertir header a flexbox */
+  .header-wrapper--homepage .header {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
   /* Logo blanco y centrado */
   .header-wrapper--homepage .header__heading {
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     margin-top: 2rem !important;
+    order: 5 !important;
   }
   .header-wrapper--homepage .header__heading-logo {
     filter: brightness(0) invert(1) !important;
   }
 
-  /* Lupa junto al hamburguesa */
+  /* Hamburguesa */
+  .header-wrapper--homepage header-drawer {
+    order: 1 !important;
+  }
+
+  /* Lupa */
   menu-drawer + .header__search {
     display: inline-flex !important;
     align-self: center !important;
     order: 2 !important;
+  }
+
+  /* Espaciador */
+  .header-wrapper--homepage .header__heading {
+    flex: 1 !important;
+  }
+
+  /* Caja seguimiento */
+  .header-wrapper--homepage a.header__icon.large-up-hide {
+    align-self: center !important;
+    background: transparent !important;
+    order: 9 !important;
+    grid-area: unset !important;
   }
 
   /* Carrito */
@@ -4590,15 +4617,5 @@ shop-follow-button,
     order: 10 !important;
     width: 44px !important;
     height: 44px !important;
-  }
-
-  /* Caja seguimiento - esquina derecha */
-  .header-wrapper--homepage a.header__icon.large-up-hide {
-    align-self: center !important;
-    background: transparent !important;
-    order: 9 !important;
-    margin-left: auto !important;
-    grid-area: unset !important;
-    position: relative !important;
   }
 }
