@@ -751,3 +751,29 @@
   }
 }
 </style>
+<style>
+@media screen and (max-width: 749px) {
+  /* 1. MANTENEMOS LA LÍNEA BORRADA */
+  div.header-wrapper--homepage::after,
+  .header-wrapper--homepage::after,
+  body.template-index .header-wrapper::after {
+    background-color: rgba(0,0,0,0) !important;
+    background: transparent !important;
+    color: transparent !important;
+    top: -9999px !important;
+    opacity: 0 !important;
+    height: 0px !important;
+    display: none !important;
+  }
+
+  /* 2. SUBIR LA HAMBURGUESA Y LA LUPA SÓLO EN LA HOME */
+  .header-wrapper--homepage .header__icon--menu,
+  .header-wrapper--homepage .header__icon span.icon-hamburger,
+  .header-wrapper--homepage summary.header__icon--menu,
+  .header-wrapper--homepage .header__search,
+  .header-wrapper--homepage details-modal.header__search {
+    position: relative !important;
+    top: -6px !important; /* El número negativo las empuja HACIA ARRIBA */
+  }
+}
+</style>
