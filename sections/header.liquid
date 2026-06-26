@@ -676,8 +676,9 @@
 header-drawer { 
   order: 1 !important; 
   display: block !important; 
-  margin-left: 20px !important; /* Aumenta este número si la quieres más a la derecha */
-  z-index: 99999 !important; /* Capa altísima para asegurar el clic */
+  margin: 0 !important;
+  transform: translateX(15px) !important; /* Sube a 20px o 25px para moverla más a la derecha */
+  z-index: 99999 !important; 
 }
   
   header-drawer summary.header__icon--menu { 
