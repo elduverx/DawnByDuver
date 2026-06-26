@@ -662,6 +662,7 @@
 {% endschema %}
 <style>
 <style>
+<style>
 @media screen and (max-width: 749px) {
   /* ==========================================
      1. LUPA (Para páginas interiores)
@@ -675,16 +676,16 @@
   }
 
   /* ==========================================
-     2. TAMAÑO DE LOS LOGOS (Para toda la web)
+     2. TAMAÑO DE LOS LOGOS: Más pequeños (62px)
      ========================================== */
   body:not(.template-index) .header__heading-logo img,
   body:not(.template-index) .header__heading-link img,
   .template-index .vela-logo-mobile img,
   .vela-logo-mobile img {
-    height: 65px !important; 
-    max-height: 65px !important;
+    height: 62px !important; 
+    max-height: 62px !important;
     width: auto !important;
-    max-width: 200px !important;
+    max-width: 170px !important;
     object-fit: contain !important;
   }
 
@@ -697,25 +698,25 @@
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-top: 15px !important; 
-    height: 75px !important;
+    margin-top: 10px !important; 
+    height: 62px !important;
     width: auto !important;
   }
 
   body:not(.template-index) .header,
   body:not(.template-index) .header-wrapper,
   body:not(.template-index) .site-header {
-    padding-bottom: 15px !important; 
+    padding-bottom: 12px !important; 
     height: auto !important;
   }
 
   /* ==========================================
-     4. CORRECCIÓN: SUBIR LOGO MUCHO MÁS EN LA HOME
+     4. HOME PAGE: Echar el logo un poco más abajo
      ========================================== */
-  /* Cambiado de -42px a -65px para obligarlo a subir de forma notable */
+  /* Bajado a -38px para que no quede tan pegado al techo y se alinee */
   .template-index .vela-logo-mobile,
   .vela-logo-mobile {
-    margin-top: -35px !important; 
+    margin-top: -38px !important; 
     margin-bottom: 0 !important;
     display: inline-flex !important;
     align-items: center !important;
