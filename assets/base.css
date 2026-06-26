@@ -4042,9 +4042,9 @@ footer-block__newsletter .footer-block__heading {
   }
 }
 /* Línea separadora bajo el header en páginas interiores */
-@media screen and (max-width: 749px) {
-  .header-wrapper:not(.header-wrapper--homepage) {
-    padding-bottom: 0 !important;
+.header-wrapper:not(.header-wrapper--homepage) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
   }
 }
 /* Ocultar logo en homepage solo en desktop */
