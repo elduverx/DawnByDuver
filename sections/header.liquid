@@ -316,7 +316,10 @@
           <line x1="12" y1="22.08" x2="12" y2="12" style="stroke: #1a1a1a !important;"/>
         </svg>
       </a>
-    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon link focus-inset" rel="nofollow">
+   </div>
+    {%- endunless -%}
+    {%- unless request.page_type == 'index' -%}
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon link focus-inset" rel="nofollow">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
           <circle cx="12" cy="7" r="4"/>
