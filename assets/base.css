@@ -4932,13 +4932,13 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. Mover la lupa hacia la izquierda */
+  /* Mover la lupa hacia la izquierda */
   .header__search {
     position: relative !important;
     right: 15px !important;
   }
 
-  /* 2. Ocultar por completo el formulario interno que causa el recuadro y la cruz */
+  /* Ocultar el formulario y la caja blanca */
   .header__search details-modal,
   .header__search .search-modal,
   .header__search form,
@@ -4949,7 +4949,19 @@ shop-follow-button,
     height: 0 !important;
   }
 
-  /* 3. Asegurar que el botón del icono de la lupa se quede visible */
+  /* Fulminar la cruz (icono de cerrar) */
+  .header__search .icon-close,
+  .header__search svg.icon-close,
+  .header__search summary .icon-close,
+  .header__search [class*="close"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  /* Asegurar que el icono de la lupa permanezca visible */
   .header__search summary {
     display: flex !important;
     visibility: visible !important;
