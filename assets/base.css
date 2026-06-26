@@ -5178,32 +5178,3 @@ shop-follow-button,
     background-color: transparent !important;
   }
 }
-@media screen and (max-width: 749px) {
-  /* 1. LIMPIEZA ABSOLUTA DE CONTENEDORES (Fondo y bordes invisibles) */
-  .search-modal,
-  .search-modal__content,
-  .search-modal__form,
-  .search-modal__content-wrapper {
-    background: transparent !important;
-    border: none !important;
-    border-top: none !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
-  }
-
-  /* 2. ELIMINAR CUALQUIER LÍNEA PARÁSITA ALREDEDOR */
-  .search-modal *, 
-  .search-modal__content * {
-    border-top: none !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
-  }
-
-  /* 3. AISLAR EL CUADRO BLANCO (Solo él mantiene su estructura) */
-  .search-modal .field,
-  .search-modal__box {
-    background: #ffffff !important;
-    border: 1px solid #000000 !important; /* Mantiene su recuadro negro original */
-    box-shadow: none !important;
-  }
-}
