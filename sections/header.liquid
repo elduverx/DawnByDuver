@@ -660,3 +660,18 @@
   ]
 }
 {% endschema %}
+<style>
+@media screen and (max-width: 749px) {
+  .header-wrapper header.header { display: flex !important; flex-direction: row !important; justify-content: space-between !important; align-items: center !important; padding: 10px 15px !important; gap: 0 !important; }
+  header-drawer { order: 1 !important; display: block !important; margin: 0 !important; padding-left: 12px !important; z-index: 99 !important; }
+  header-drawer summary.header__icon--menu { display: flex !important; pointer-events: auto !important; cursor: pointer !important; }
+  details-modal.header__search, .header__search { order: 2 !important; margin: 0 0 0 10px !important; z-index: 99 !important; }
+  .header__heading, .header__heading-link { order: 3 !important; margin: -8px auto 0 auto !important; text-align: center !important; }
+  .header__icons, .header-wrapper--homepage .header__icons { order: 4 !important; display: flex !important; flex-direction: row !important; align-items: center !important; gap: 12px !important; margin: 0 !important; padding: 0 !important; z-index: 99 !important; }
+  .header-wrapper a.vela-account, .header-wrapper a.vela-box-interior, .header-wrapper a.large-up-hide[href*="cart"], .header__icon { display: inline-flex !important; visibility: visible !important; opacity: 1 !important; }
+  .menu-drawer { width: 100% !important; max-width: 100% !important; background-color: rgba(0, 0, 0, 0.15) !important; z-index: 99999 !important; }
+  .menu-drawer__inner-container { width: 75% !important; max-width: 320px !important; background-color: #ffffff !important; }
+  .menu-drawer__inner-submenu { background-color: #ffffff !important; }
+  .menu-drawer::before, .menu-drawer::after, .header__icon--menu[aria-expanded='true']::before { display: none !important; content: none !important; }
+}
+</style>
