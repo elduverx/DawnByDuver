@@ -5217,16 +5217,17 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* RESTAURAMOS LA CABECERA ORIGINAL */
-  .header-wrapper, .header {
-    border-bottom: 1px solid #e5e5e5 !important;
-  }
-
-  /* CREAMOS EL ESPACIO JUSTO DEBAJO DE LA LÍNEA EN LAS INTERNAS */
+  /* 1. SEPARAMOS EL CONTENIDO MUCHO MÁS HACIA ABAJO */
   #shopify-section-template--main-collection-banner,
   #shopify-section-template--main-product,
   .main-page-title {
-    margin-top: 30px !important; /* Ajusta este número para dar más o menos separación */
+    margin-top: 55px !important; /* Aumentamos el espacio para tirarlo más abajo */
     display: block !important;
+  }
+
+  /* 2. OCULTAMOS LA LÍNEA QUE SOBRA SI QUEDAN DOS */
+  .header-wrapper {
+    border-bottom: none !important;
+    box-shadow: none !important;
   }
 }
