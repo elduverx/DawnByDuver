@@ -5179,20 +5179,16 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ELIMINAR EL BORDE DE LA CABECERA QUE SE QUEDA ARRIBA */
-  .header-wrapper, 
-  .header,
-  .search-modal__content-wrapper {
-    border-bottom: none !important;
-    box-shadow: none !important;
+  /* OBLIGAMOS A QUE NADA SE SALGA DEL CUADRO BLANCO */
+  .search-modal__form .field::before,
+  .search-modal__form .field::after {
+    display: none !important;
   }
-}
-@media screen and (max-width: 749px) {
-  /* ELIMINAR EL BORDE DE LA CABECERA QUE SE QUEDA ARRIBA */
-  .header-wrapper, 
-  .header,
-  .search-modal__content-wrapper {
-    border-bottom: none !important;
+
+  /* RESETEAMOS CUALQUIER BORDE EXPANSIBLE DEL INPUT */
+  .search__input.field__input,
+  .search-modal__form input {
     box-shadow: none !important;
+    border-top: none !important;
   }
 }
