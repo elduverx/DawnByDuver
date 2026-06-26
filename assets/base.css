@@ -4915,7 +4915,7 @@ shop-follow-button,
 
  /* 2. Mover la hamburguesa a la derecha de forma segura sin romper el clic */
   .header-wrapper--homepage header-drawer {
-    margin-left: 0 !important; /* Limpiamos el margen que rompía el clic */
+    margin-left: 10 !important; /* Limpiamos el margen que rompía el clic */
     transform: translateX(10px) !important; /* La desplaza horizontalmente manteniendo el botón activo */
     position: relative !important;
     z-index: 9999px !important; /* Prioridad máxima de capa táctil */
