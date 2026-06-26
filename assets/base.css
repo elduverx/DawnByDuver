@@ -4931,4 +4931,26 @@ shop-follow-button,
     right: 25px !important; /* Aumenta este número (a 20px o 25px) si quieres que se mueva más a la izquierda */
   }
 }
+@media screen and (max-width: 749px) {
+  /* 1. Mover la lupa de forma segura hacia la izquierda */
+  .header__search {
+    position: relative !important;
+    right: 15px !important; /* Ajusta los píxeles a tu gusto */
+  }
 
+  /* 2. Ocultar o encoger el cuadro blanco de texto ("Búsqueda") para que no tape la hamburguesa */
+  .header__search .search-modal,
+  .header__search input.search__input,
+  .header__search .search-modal__form {
+    display: none !important; /* Oculta el bloque blanco invasivo en el estado inicial */
+  }
+
+  /* 3. Si tu tema despliega la búsqueda al hacer clic, aseguramos que el icono sea el único visible */
+  .header__search details[open] .search-modal {
+    display: flex !important; /* Solo se muestra cuando se abre activamente */
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100vw !important;
+  }
+}
