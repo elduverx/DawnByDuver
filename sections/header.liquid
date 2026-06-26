@@ -747,3 +747,23 @@
   }
 }
 </style>
+<style>
+@media screen and (max-width: 749px) {
+  /* ESCUDO EXCLUSIVO PARA LA HOME PAGE (.template-index) */
+  
+  /* 1. Subir el logo un poco en la Home para alinearlo horizontalmente con los iconos */
+  .template-index .header__heading-link,
+  .template-index .header__heading-logo,
+  .template-index .header__heading {
+    margin-top: -5px !important; /* Ajusta este número si necesitas subirlo más o menos */
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  /* 2. Asegurar que el contenedor general en la Home mantenga el alineamiento centrado */
+  .template-index .header {
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+</style>
