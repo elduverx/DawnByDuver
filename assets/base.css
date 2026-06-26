@@ -4735,3 +4735,12 @@ shop-follow-button,
     margin: 0 !important;
   }
 }
+/* Corregir posición del carrito en móvil */
+@media screen and (max-width: 989px) {
+  #cart-icon-bubble {
+    position: relative !important;
+    transform: none !important;
+    left: auto !important;
+    z-index: auto !important;
+  }
+}
