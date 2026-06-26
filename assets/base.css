@@ -4686,21 +4686,22 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* Forzamos a que el contenedor se desplace hacia la izquierda */
+  /* Controlamos el contenedor para que no corte nada y se mueva a la izquierda */
   .header__icons, 
   .header-wrapper--homepage .header__icons {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-end !important;
-    gap: 12px !important;
-    
-    /* Ajusta este número: a mayor porcentaje, más hacia la izquierda irán */
-    margin-right: 8% !important; 
+    gap: 10px !important; /* Un pelín más juntos para que quepan mejor */
+    margin-right: 0 !important; /* Quitamos el margen que los cortaba */
     padding-right: 0 !important;
+    
+    /* Con esto los empujamos hacia la izquierda de forma segura */
+    transform: translateX(-35px) !important; 
   }
 
-  /* Mantenemos los iconos estables en su fila */
+  /* Aseguramos que los iconos se mantengan alineados y visibles */
   .header__icon--account,
   .vela-box-interior,
   .header__icon--cart,
@@ -4708,7 +4709,6 @@ shop-follow-button,
     position: relative !important;
     display: inline-flex !important;
     margin: 0 !important;
-    transform: none !important;
     left: auto !important;
     right: auto !important;
   }
