@@ -4561,20 +4561,6 @@ shop-follow-button,
     margin-top: 2rem !important;
   }
 }
-/* Lupa y caja móvil homepage */
-@media screen and (max-width: 749px) {
-  menu-drawer + .header__search {
-    display: inline-flex !important;
-    grid-area: left-icons !important;
-    margin-left: 3.5rem !important;
-  }
-  .header-wrapper--homepage a.header__icon.large-up-hide {
-    grid-area: left-icons !important;
-    justify-self: start !important;
-    margin-left: 7rem !important;
-    background: transparent !important;
-  }
-}
 /* Iconos móvil homepage - alineación */
 @media screen and (max-width: 749px) {
   /* Lupa - junto al hamburguesa */
