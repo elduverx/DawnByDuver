@@ -4590,6 +4590,7 @@ shop-follow-button,
     order: 3 !important;
     width: 44px !important;
     height: 44px !important;
+    margin-left: auto !important;
   }
 
   /* Espaciador entre carrito y caja */
@@ -4597,10 +4598,10 @@ shop-follow-button,
     margin-left: auto !important;
   }
 
-  /* Caja seguimiento - esquina derecha */
+ /* Caja seguimiento - esquina derecha */
   .header-wrapper--homepage a.header__icon.large-up-hide {
     align-self: center !important;
     background: transparent !important;
-    order: 10 !important;
+    order: 4 !important;
   }
 }
