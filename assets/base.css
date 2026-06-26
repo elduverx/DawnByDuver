@@ -4502,6 +4502,13 @@ shop-follow-button,
     display: none !important;
   }
 }
+@media screen and (min-width: 750px) {
+  .header-wrapper--homepage a.vela-seguimiento,
+  .header-wrapper--homepage a.vela-carrito,
+  .header-wrapper--homepage .header__search {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 749px) {
   .banner__media--desktop {
     display: none;
@@ -4636,9 +4643,3 @@ shop-follow-button,
   }
 } 
 
-@media screen and (min-width: 750px) {
-  a.vela-seguimiento,
-  a.vela-carrito {
-    display: none !important;
-  }
-}
