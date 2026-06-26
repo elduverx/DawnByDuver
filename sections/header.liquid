@@ -724,9 +724,14 @@
 </style>
 <style>
 @media screen and (max-width: 749px) {
-  /* ESCUDO EXCLUSIVO HOME PAGE: Mover los píxeles del logo hacia arriba */
-  .template-index .vela-logo-mobile img {
-    transform: translateY(-20px) !important; /* Levanta el dibujo del logo */
+  /* ESCUDO EXCLUSIVO HOME PAGE: Liberar el logo del contenedor Flexbox */
+  .template-index .vela-logo-mobile {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -85%) !important; /* El -85% lo empuja hacia arriba con fuerza */
+    margin: 0 !important;
+    display: block !important;
   }
 }
 </style>
