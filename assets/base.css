@@ -5187,20 +5187,19 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* Forzamos a que el buscador se solape 2 píxeles hacia arriba para tapar cualquier línea fantasma */
-  .search-modal {
-    margin-top: -2px !important;
+  /* ELIMINAR EL RECUADRO SUPERIOR DEL FORMULARIO DESCOLOCADO */
+  .search-modal form.search,
+  .header__search form.search,
+  .search-modal__form,
+  .search-modal__content form {
+    border: none !important;
     border-top: none !important;
     box-shadow: none !important;
   }
 
-  /* Eliminamos el borde de cualquier elemento que actúe como fondo del header */
-  .header-wrapper, 
-  .header, 
-  #shopify-section-header,
-  .shopify-section-header-sticky {
-    border-bottom: none !important;
-    border-bottom-width: 0px !important;
-    box-shadow: none !important;
+  /* ASEGURAR QUE EL CUADRO DE TEXTO INTERNO CONSERVE SU BORDE CORRECTO */
+  .search-modal .field__input,
+  .search-modal input {
+    border: 1px solid #000000 !important; /* Mantiene la cajita blanca perfecta */
   }
 }
