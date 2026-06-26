@@ -4580,7 +4580,7 @@ shop-follow-button,
   .header-wrapper--homepage a.large-up-hide[href*="cart"] {
     grid-area: left-icons !important;
     justify-self: start !important;
-    margin-left: 7rem !important;
+    margin-left: 17rem !important;
     align-self: center !important;
     margin-top: 0.8rem !important;
   }
