@@ -4913,11 +4913,25 @@ shop-follow-button,
     margin-top: 3px !important; /* Ajusta este número (más negativo sube más el logo) */
   }
 
- /* 2. Mover la hamburguesa a la derecha de forma segura sin romper el clic */
+ @media screen and (max-width: 749px) {
+  /* --- AJUSTE EXCLUSIVO PARA LA HAMBURGUESA --- */
+  
+  /* 1. Mover el botón hacia la derecha usando padding seguro */
   .header-wrapper--homepage header-drawer {
-    margin-left: 10 !important; /* Limpiamos el margen que rompía el clic */
-    transform: translateX(10px) !important; /* La desplaza horizontalmente manteniendo el botón activo */
     position: relative !important;
-    z-index: 9999px !important; /* Prioridad máxima de capa táctil */
+    display: inline-flex !important;
+    padding-left: 12px !important; /* Ajusta este número para moverla más o menos a la derecha */
+    margin: 0 !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+    z-index: 99999 !important; /* Capa máxima para asegurar el clic */
+  }
+
+  /* 2. Asegurar que el botón interno reciba el toque del dedo */
+  .header-wrapper--homepage .header__icon--menu,
+  .header-wrapper--homepage .header__icon--menu * {
+    pointer-events: auto !important;
+    cursor: pointer !important;
   }
 }
