@@ -4494,11 +4494,6 @@ shop-follow-button,
     display: none !important;
   }
 }
-/* Banner imagen móvil/desktop */
-.banner__media--mobile {
-  display: none;
-}
-
 @media screen and (max-width: 749px) {
   .banner__media--desktop {
     display: none;
@@ -4511,6 +4506,20 @@ shop-follow-button,
 /* Banner desktop - bajar imagen para ver cabeza completa */
 @media screen and (min-width: 990px) {
   .banner__media--desktop img {
-    object-position: center -10% !important;
+    object-position: center 0% !important;
+  }
+}
+/* Banner móvil */
+.banner__media--mobile {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .banner__media--mobile {
+    display: block !important;
+    height: 90vh;
+  }
+  .banner__media--desktop {
+    display: none !important;
   }
 }
