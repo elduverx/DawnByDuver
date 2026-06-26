@@ -4720,18 +4720,50 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* Permitir que el logo se mueva libremente */
-  .header__heading {
-    position: static !important;
+  /* 1. Forzar al contenedor del header a distribuir el espacio en 3 columnas iguales */
+  .header-wrapper header.header {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr !important;
+    grid-template-areas: 'left-icons heading icons' !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
   }
 
-  /* Centrar el enlace/imagen del logo en el medio de la pantalla */
+  /* 2. Mantener el logo centrado en su propio espacio sin pisar nada */
+  .header__heading,
   .header__heading-link {
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    grid-area: heading !important;
+    margin: 0 auto !important;
+    display: block !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* 3. Evitar que el bloque de iconos derechos use transformaciones extrañas */
+  .header__icons, 
+  .header-wrapper--homepage .header__icons {
+    grid-area: icons !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important; /* Los alinea a la derecha de la pantalla */
+    align-items: center !important;
+    transform: none !important; /* Limpiamos el translateX que causaba el choque */
     margin: 0 !important;
-    z-index: 9 !important;
+    padding: 0 !important;
+    gap: 0px !important; /* Control total desde aquí */
+  }
+
+  /* 4. Separación individual de los iconos de la derecha */
+  /* Personita pegada a la cajita */
+  .header-wrapper a.vela-account,
+  .header__icon--account {
+    margin-right: 4px !important; 
+  }
+
+  /* Cajita pegada al carrito */
+  .header-wrapper a.vela-box-interior,
+  .vela-box-interior {
+    margin-right: 4px !important;
   }
 }
