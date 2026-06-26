@@ -5186,3 +5186,21 @@ shop-follow-button,
     display: none !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* Forzamos a que el buscador se solape 2 píxeles hacia arriba para tapar cualquier línea fantasma */
+  .search-modal {
+    margin-top: -2px !important;
+    border-top: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Eliminamos el borde de cualquier elemento que actúe como fondo del header */
+  .header-wrapper, 
+  .header, 
+  #shopify-section-header,
+  .shopify-section-header-sticky {
+    border-bottom: none !important;
+    border-bottom-width: 0px !important;
+    box-shadow: none !important;
+  }
+}
