@@ -4686,38 +4686,6 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 989px) {
-  /* 1. Quitamos la posición absoluta del carrito para que no flote */
-  .header__icon--cart, 
-  #cart-icon-bubble,
-  .header__icon--account {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-    display: inline-flex !important;
-  }
-
-  /* 2. TIRAMOS LOS ICONOS HACIA LA IZQUIERDA */
-  .header__icons {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    /* Cambiamos de flex-end a flex-start para obligarlos a ir a la izquierda */
-    justify-content: flex-start !important; 
-    gap: 8px !important; /* Espacio estrecho entre ellos para que quepan */
-    
-    /* Con este margen negativo los arrastramos hacia el centro/izquierda */
-    margin-left: -35px !important; 
-    padding: 0 !important;
-  }
-
-  /* 3. Ordenamos visualmente la fila de iconos de izquierda a derecha */
-  .vela-box-interior { order: 1 !important; }
-  .header__icon--cart { order: 2 !important; }
-  .header__icon--account { order: 3 !important; }
-}
-@media screen and (max-width: 989px) {
   /* 1. Aseguramos que el contenedor de los iconos los maneje en fila */
   .header__icons {
     display: flex !important;
