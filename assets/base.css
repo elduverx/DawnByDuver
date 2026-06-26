@@ -5255,16 +5255,20 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* BAJAR ICONOS DE LA CABECERA MANTENIENDO EL LOGO ESTÁTICO */
+  /* ALINEAR TODOS LOS ICONOS DE LA CABECERA POR IGUAL */
   .header__heading-link, 
   .header__heading {
-    margin-bottom: 0 !important; /* Mantiene el logo en su sitio */
+    margin-bottom: 0 !important;
   }
 
   .header__icon,
   .header__search,
   .header__menu-item,
-  a[class*="header__icon"] {
-    transform: translateY(8px) !important; /* Empuja los iconos hacia abajo en línea recta */
+  .header__cart-icon,
+  [class*="header__icon"],
+  [id*="cart"],
+  .header__icons a,
+  .header__icons span {
+    transform: translateY(8px) !important; /* Ajusta este número si quieres subirlos o bajarlos todos juntos */
   }
 }
