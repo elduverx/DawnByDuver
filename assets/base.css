@@ -5217,11 +5217,9 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* SEPARAR LA LÍNEA GRIS DEL CONTENIDO (SOLO EN PÁGINAS INTERNAS) */
-  .template-product .header-wrapper,
-  .template-collection .header-wrapper,
-  .template-product .header,
-  .template-collection .header {
-    padding-bottom: 20px !important; /* Genera espacio limpio hacia abajo */
+  /* SEPARAR LA LÍNEA DEL CONTENIDO EXCLUYENDO LA HOME PAGE */
+  body:not(.template-index) .header-wrapper,
+  body:not(.template-index) .header {
+    padding-bottom: 25px !important; /* Genera el espacio hacia abajo */
   }
 }
