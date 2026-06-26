@@ -4666,3 +4666,8 @@ shop-follow-button,
     height: 44px !important;
   }
 }
+/* Carrito páginas interiores - sin relleno */
+.header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble svg {
+  fill: none !important;
+  stroke: #1a1a1a !important;
+}
