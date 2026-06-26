@@ -4713,3 +4713,35 @@ shop-follow-button,
     right: auto !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* Controlamos el contenedor para agruparlos y pegarlos a la derecha */
+  .header__icons, 
+  .header-wrapper--homepage .header__icons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    
+    /* 1. Reducimos el espacio entre los iconos (de 10px a 4px) */
+    gap: 4px !important; 
+    
+    /* 2. Reseteamos el transform para que vuelvan de forma natural a la esquina */
+    transform: translateX(0) !important; 
+    
+    /* Ajuste fino por si quieres separarlo un pelín del borde de la pantalla */
+    padding-right: 5px !important;
+    margin-right: 0 !important;
+  }
+
+  /* Aseguramos que los iconos mantengan su tamaño nativo sin deformarse */
+  .header__icon--account,
+  .vela-box-interior,
+  .header__icon--cart,
+  #cart-icon-bubble {
+    position: relative !important;
+    display: inline-flex !important;
+    margin: 0 !important;
+    left: auto !important;
+    right: auto !important;
+  }
+}
