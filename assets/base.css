@@ -4729,23 +4729,22 @@ shop-follow-button,
     z-index: auto !important;
   }
 }
-/* FIX hamburguesa */
-@media screen and (max-width: 749px) {
-  .header__icon--cart,
-  #cart-icon-bubble {
-    position: static !important;
-    transform: none !important;
-    z-index: 1 !important;
-    left: auto !important;
+/* Asegurar que el bloque de la izquierda no se encime con los clics */
+  header-drawer,
+  .header__icon--menu,
+  details-modal.header__search {
+    grid-area: left-icons !important;
+    position: relative !important;
+    z-index: 10 !important; /* Lo pone por encima para que sea cliqueable */
   }
-}
-/* FIX carrito no tape hamburguesa */
-@media screen and (max-width: 989px) {
-  .header__icon--cart,
-  #cart-icon-bubble {
-    position: static !important;
-    transform: none !important;
-    left: auto !important;
-    z-index: 1 !important;
+
+  /* Evitar que el enlace del carrito o los iconos derechos invadan el resto de la pantalla */
+  .header__icons {
+    position: relative !important;
+    z-index: 5 !important;
   }
-}
+  
+  .header__icon--cart, 
+  #cart-icon-bubble {
+    pointer-events: auto !important; /* Asegura que solo su propia cajita sea cliqueable */
+  }
