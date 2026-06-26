@@ -4893,17 +4893,16 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* Eliminar los fondos opacos secundarios del menú desplegable */
-  .menu-drawer__inner-submenu,
-  .menu-drawer__navigation,
-  .menu-drawer__utility-links {
-    background-color: transparent !important;
-    background: transparent !important;
+  /* 1. Suavizar el oscurecimiento del fondo del menú */
+  .menu-drawer {
+    background-color: rgba(0, 0, 0, 0.15) !important; /* Bajamos la opacidad al mínimo para que la tienda sea muy visible */
   }
 
-  /* Asegurar que el fondo del cajón principal no sea negro sólido */
-  #menu-drawer,
-  .menu-drawer {
-    background: rgba(0, 0, 0, 0.3) !important; /* Capa traslúcida muy fina */
+  /* 2. Desactivar filtros de color que oscurezcan la tienda por debajo */
+  .menu-drawer::before,
+  .menu-drawer::after,
+  .header__icon--menu[aria-expanded='true']::before {
+    display: none !important; /* Apaga las capas opacas nativas que añade Shopify al abrir el menú */
+    content: none !important;
   }
 }
