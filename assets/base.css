@@ -4802,34 +4802,37 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. Asegurar que el contenedor del menú hamburguesa sea el rey de la capa izquierda */
-  .header-wrapper header-drawer {
-    position: relative !important;
-    z-index: 100 !important; /* Capa máxima para que reciba el clic primero */
-    width: 44px !important;  /* Delimitamos su ancho real */
-    pointer-events: auto !important;
+  /* 1. Evitamos que los contenedores grandes bloqueen la pantalla */
+  .header-wrapper header.header {
+    pointer-events: none !important; /* El fondo no roba clics */
   }
 
-  .header-wrapper .header__icon--menu {
-    position: relative !important;
-    z-index: 100 !important;
-    pointer-events: auto !important;
+  /* 2. Activamos los clics estrictamente en los botones reales */
+  header-drawer,
+  .header__icon--menu,
+  .header__icon--menu *,
+  summary.header__icon,
+  details-modal.header__search,
+  .header__search button,
+  .header__heading-link,
+  .header__icons,
+  .header__icons * {
+    pointer-events: auto !important; /* Solo responde el icono real */
   }
 
-  /* 2. Aislar la lupa para que su caja invisible no se extienda hacia la izquierda */
-  .header-wrapper details-modal.header__search,
-  .header-wrapper--homepage details-modal.header__search {
+  /* 3. Aseguramos prioridades de capa para que el menú gane a la lupa */
+  header-drawer {
     position: relative !important;
-    z-index: 90 !important; /* Un escalón por debajo del menú */
-    width: 44px !important;  /* Delimitamos su ancho real */
-    pointer-events: auto !important;
+    z-index: 999 !important;
+  }
+  
+  .header__icon--menu {
+    position: relative !important;
+    z-index: 999 !important;
   }
 
-  /* 3. Asegurar que el logo flotante no expanda su zona cliqueable a los lados */
-  .header__heading,
-  .header__heading-link {
-    z-index: 10 !important; /* Capa baja para que no tape los botones laterales */
-    max-width: 120px !important; /* Ajusta este ancho según el tamaño de tu logo */
-    pointer-events: auto !important;
+  details-modal.header__search {
+    position: relative !important;
+    z-index: 900 !important;
   }
 }
