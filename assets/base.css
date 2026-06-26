@@ -4634,9 +4634,9 @@ shop-follow-button,
     order: 2 !important;
     margin-left: -3.5rem !important;
   }
- } 
- /* Ocultar caja y lupa custom en desktop */
-@media screen and (min-width: 990px) {
+} 
+
+@media screen and (min-width: 750px) {
   a.vela-seguimiento,
   a.vela-carrito {
     display: none !important;
