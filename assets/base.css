@@ -4720,7 +4720,7 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. Forzar al contenedor del header a distribuir el espacio en 3 columnas iguales */
+  /* 1. Aseguramos el grid de 3 columnas pero añadimos padding para que nada se corte */
   .header-wrapper header.header {
     display: grid !important;
     grid-template-columns: 1fr auto 1fr !important;
@@ -4728,9 +4728,11 @@ shop-follow-button,
     align-items: center !important;
     justify-content: space-between !important;
     gap: 0 !important;
+    padding-left: 10px !important;
+    padding-right: 15px !important; /* Margen de seguridad para que el carrito no se salga */
   }
 
-  /* 2. Mantener el logo centrado en su propio espacio sin pisar nada */
+  /* 2. El logo se queda fijo en su sitio central */
   .header__heading,
   .header__heading-link {
     grid-area: heading !important;
@@ -4740,30 +4742,33 @@ shop-follow-button,
     transform: none !important;
   }
 
-  /* 3. Evitar que el bloque de iconos derechos use transformaciones extrañas */
+  /* 3. Contenedor de iconos derechos: Controlamos su espacio interno */
   .header__icons, 
   .header-wrapper--homepage .header__icons {
     grid-area: icons !important;
     display: flex !important;
     flex-direction: row !important;
-    justify-content: flex-end !important; /* Los alinea a la derecha de la pantalla */
+    justify-content: flex-end !important;
     align-items: center !important;
-    transform: none !important; /* Limpiamos el translateX que causaba el choque */
+    transform: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    gap: 0px !important; /* Control total desde aquí */
+    gap: 8px !important; /* Separación inicial entre los tres iconos */
   }
 
-  /* 4. Separación individual de los iconos de la derecha */
-  /* Personita pegada a la cajita */
+  /* 4. Forzamos a que el carrito y los demás iconos tengan un tamaño fijo y no se aplasten */
   .header-wrapper a.vela-account,
-  .header__icon--account {
-    margin-right: 4px !important; 
-  }
-
-  /* Cajita pegada al carrito */
+  .header__icon--account,
   .header-wrapper a.vela-box-interior,
-  .vela-box-interior {
-    margin-right: 4px !important;
+  .vela-box-interior,
+  .header-wrapper a.large-up-hide[href*="cart"],
+  .header__icon--cart,
+  #cart-icon-bubble {
+    display: inline-flex !important;
+    width: 35px !important; /* Reducimos ligeramente el ancho invisible para que entren mejor */
+    height: 44px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
   }
 }
