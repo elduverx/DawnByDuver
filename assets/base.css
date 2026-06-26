@@ -4875,3 +4875,20 @@ shop-follow-button,
     z-index: 9999 !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* 1. Hace que el contenedor del menú ocupe el 100% de la pantalla de forma transparente */
+  .menu-drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.4) !important; /* Capa oscura transparente para el fondo derecho */
+  }
+
+  /* 2. Aplica el fondo blanco únicamente al bloque interior que contiene los textos */
+  .menu-drawer__inner-container {
+    width: 75% !important; /* Controla qué tan ancho quieres el bloque blanco (ej. 75% u 80%) */
+    max-width: 320px !important; /* Ancho máximo estándar para menús móviles */
+    height: 100% !important;
+    background-color: #ffffff !important; /* Mantiene tus textos legibles sobre fondo blanco */
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1) !important; /* Sombra sutil divisoria */
+  }
+}
