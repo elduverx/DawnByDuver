@@ -4932,32 +4932,59 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. Al pulsar (cuando details tiene el atributo open), rompemos la caja padre */
+  /* 1. Evitar que el contenedor intermedio interfiera */
   .header__search details[open] {
     position: static !important;
   }
 
-  /* 2. Forzamos al cuadro blanco a salir de ahí y ocupar TODA la pantalla */
+  /* 2. PANTALLA COMPLETA ARRIBA: Llevar la barra blanca justo debajo del encabezado */
   .header__search details[open] .search-modal {
-    display: flex !important;
+    display: block !important; /* Cambiado a block para que los resultados fluyan hacia abajo */
     position: fixed !important;
-    top: 60px !important; /* Coloca la barra justo debajo de tu cabecera */
+    top: 50px !important; /* Lo pega arriba de la pantalla. Ajusta si tu cabecera es más alta */
     left: 0 !important;
-    width: 100vw !important; /* Ancho completo de la pantalla de lado a lado */
-    height: 70px !important; /* Altura ideal para que el cliente escriba cómodo */
+    width: 100vw !important;
+    height: 100vh !important; /* Ocupa toda la pantalla hacia abajo para los resultados */
     background-color: #ffffff !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     z-index: 999999 !important;
-    padding: 10px 20px !important;
+    padding: 20px 15px !important;
     box-sizing: border-box !important;
   }
 
-  /* 3. Aseguramos que el formulario y el buscador interno se estiren al 100% */
+  /* 3. ALINEAR EL BUSCADOR: El cuadro de "Búsqueda" arriba centrado */
   .header__search details[open] .search-modal__form,
   .header__search details[open] form {
     display: flex !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    width: calc(100% - 40px) !important; /* Deja espacio para la cruz de la derecha */
+    margin: 0 !important;
     align-items: center !important;
+  }
+
+  /* 4. ELIMINAR LA CRUZ DUPLICADA DE ARRIBA (La del summary) */
+  .header__search details[open] summary .icon-close,
+  .header__search details[open] summary svg.icon-close,
+  .header__search details[open] summary .svg-wrapper.header__icon-close {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* 5. MANTENER SOLO LA CRUZ DE ABAJO (La del formulario) Y POSICIONARLA BIEN */
+  .header__search details[open] .search-modal__close-button,
+  .header__search details[open] form + button {
+    display: inline-flex !important;
+    position: absolute !important;
+    right: 15px !important;
+    top: 25px !important; /* Alineada a la altura de la caja de texto */
+    z-index: 9999999 !important;
+  }
+
+  /* 6. CONTROL DE RESULTADOS: Forzar que los productos sugeridos salgan abajo de la barra */
+  .header__search details[open] .predictive-search,
+  .header__search details[open] #predictive-search-results {
+    display: block !important;
+    margin-top: 20px !important;
+    width: 100% !important;
+    max-height: calc(100vh - 120px) !important;
+    overflow-y: auto !important;
   }
 }
