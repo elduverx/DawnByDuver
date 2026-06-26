@@ -4533,3 +4533,14 @@ shop-follow-button,
     filter: brightness(0) invert(1);
   }
 }
+/* Logo homepage móvil - centrado y blanco */
+@media screen and (max-width: 749px) {
+  .header-wrapper--homepage .header__heading {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .header-wrapper--homepage .header__heading-logo {
+    filter: brightness(0) invert(1);
+  }
+}
