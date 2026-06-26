@@ -766,14 +766,19 @@
     display: none !important;
   }
 
-  /* 2. SUBIR LA HAMBURGUESA Y LA LUPA SÓLO EN LA HOME */
+  /* 2. LA HAMBURGUESA SE QUEDA CLAVADA COMO YA TE GUSTABA */
   .header-wrapper--homepage .header__icon--menu,
   .header-wrapper--homepage .header__icon span.icon-hamburger,
-  .header-wrapper--homepage summary.header__icon--menu,
+  .header-wrapper--homepage summary.header__icon--menu {
+    position: relative !important;
+    top: -6px !important; 
+  }
+
+  /* 3. CONTROL INDEPENDIENTE PARA LA LUPA (La bajamos de Cuenca) */
   .header-wrapper--homepage .header__search,
   .header-wrapper--homepage details-modal.header__search {
     position: relative !important;
-    top: -6px !important; /* El número negativo las empuja HACIA ARRIBA */
+    top: 4px !important; /* Probamos con un número positivo para bajarla a su sitio */
   }
 }
 </style>
