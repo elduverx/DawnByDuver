@@ -5147,3 +5147,26 @@ shop-follow-button,
     border: none !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* 1. Mover la lupa a la izquierda, pegada a la hamburguesa */
+  .template-product .header__search,
+  .template-collection .header__search,
+  .template-page .header__search {
+    position: absolute !important;
+    left: 65px !important; /* Desplazamiento ideal para ponerse al lado de las 3 barras */
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  /* 2. Bajar el logo para que se vea entero y centrado */
+  .template-product .header__heading-logo,
+  .template-collection .header__heading-logo,
+  .template-page .header__heading-logo,
+  .template-product .header__heading,
+  .template-collection .header__heading,
+  .template-page .header__heading {
+    margin-top: 8px !important; /* Empuja el logo hacia abajo para evitar el corte superior */
+    display: inline-block !important;
+  }
+}
