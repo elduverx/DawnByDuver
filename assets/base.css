@@ -5164,17 +5164,26 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ELIMINAR BARRAS NEGRAS DEL BUSCADOR */
-  .search-modal__content, 
+  /* ELIMINAR POR COMPLETO LAS LÍNEAS NEGRAS DEL BUSCADOR */
+  .search-modal__content,
   .search-modal,
-  div[class*="search"]::before,
-  div[class*="search"]::after {
-    background: transparent !important;
+  .search-modal__form,
+  predictive-search {
     border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
     box-shadow: none !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+  }
+
+  /* Ocultar cualquier línea divisoria física (etiquetas HR o pseudo-elementos) */
+  .search-modal hr,
+  .search-modal__content hr,
+  .search-modal__content::before,
+  .search-modal__content::after,
+  .search-modal__form::before,
+  .search-modal__form::after {
+    display: none !important;
+    background: transparent !important;
+    height: 0 !important;
   }
 }
