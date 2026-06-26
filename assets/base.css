@@ -4494,3 +4494,26 @@ shop-follow-button,
     display: none !important;
   }
 }
+/* Alinear SEGUIMIENTO con el menú principal */
+@media screen and (min-width: 990px) {
+  .header__icons .small-hide a[href="/pages/seguimiento"] {
+    font-size: var(--font-body-size) !important;
+    letter-spacing: 0.1rem;
+    font-family: var(--font-body-family) !important;
+    font-weight: var(--font-body-weight) !important;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  /* Alinear verticalmente iconos con el texto */
+  .header__icons {
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+
+  .header__icon--account,
+  .header__icon--cart {
+    display: flex !important;
+    align-items: center !important;
+  }
+}
