@@ -5299,14 +5299,12 @@ shop-follow-button,
     top: 10px !important; /* Ajusta este número para alinearlo con la cajita */
   }
 }
-@media screen and (max-width: 749px) {
-  /* ELIMINAR EXCLUSIVAMENTE LA LÍNEA SEPARADORA DE LA CABECERA EN LA HOME */
-  body.template-index .header-wrapper, 
-  body.template-index .header, 
-  body.template-index #shopify-section-header, 
-  body.template-index .section-header {
-    border-bottom: none !important;
-    border-bottom-width: 0px !important;
-    box-shadow: none !important;
-  }
+/* ELIMINAR LÍNEA SEPARADORA SÓLO EN LA PORTADA */
+body.template-index .header-wrapper,
+body.template-index .header-wrapper--border-bottom,
+body.template-index #shopify-section-header,
+body.template-index .header {
+  border-bottom: 0px solid transparent !important;
+  border-bottom-width: 0px !important;
+  box-shadow: none !important;
 }
