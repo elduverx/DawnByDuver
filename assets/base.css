@@ -5217,16 +5217,23 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. ASEGURAMOS QUE EL MENÚ NO TENGA LA LÍNEA VIEJA PEGADA */
+  /* 1. LIMPIAMOS BORDES VIEJOS POR SI ACASO */
   .header-wrapper, .header {
     border-bottom: none !important;
     box-shadow: none !important;
   }
 
-  /* 2. PINTAMOS LA LÍNEA BIEN ABAJO EN LAS INTERNAS (EVITANDO LA HOME) */
-  body:not(.template-index) main#MainContent,
-  body:not([id*="template--"]) main#MainContent {
-    border-top: 1px solid #e5e5e5 !important; /* Volvemos a pintar la línea */
-    padding-top: 55px !important;              /* La empujamos bien abajo */
+  /* 2. CREAMOS UNA LÍNEA FLOTANTE ARTIFICIAL (EXCLUYENDO LA HOME) */
+  body:not(.template-index) .header-wrapper::after {
+    content: "" !important;
+    display: block !important;
+    width: 100% !important;
+    height: 1px !important;
+    background-color: #e5e5e5 !important; /* El color gris de la línea */
+    position: absolute !important;
+    left: 0 !important;
+    
+    /* CONTROL DE ALTURA: Aquí es donde la tiramos hacia abajo */
+    top: 130px !important; /* Sube o baja este número para mover la línea a tu gusto */
   }
 }
