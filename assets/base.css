@@ -4801,3 +4801,35 @@ shop-follow-button,
     height: auto !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* 1. Asegurar que el contenedor del menú hamburguesa sea el rey de la capa izquierda */
+  .header-wrapper header-drawer {
+    position: relative !important;
+    z-index: 100 !important; /* Capa máxima para que reciba el clic primero */
+    width: 44px !important;  /* Delimitamos su ancho real */
+    pointer-events: auto !important;
+  }
+
+  .header-wrapper .header__icon--menu {
+    position: relative !important;
+    z-index: 100 !important;
+    pointer-events: auto !important;
+  }
+
+  /* 2. Aislar la lupa para que su caja invisible no se extienda hacia la izquierda */
+  .header-wrapper details-modal.header__search,
+  .header-wrapper--homepage details-modal.header__search {
+    position: relative !important;
+    z-index: 90 !important; /* Un escalón por debajo del menú */
+    width: 44px !important;  /* Delimitamos su ancho real */
+    pointer-events: auto !important;
+  }
+
+  /* 3. Asegurar que el logo flotante no expanda su zona cliqueable a los lados */
+  .header__heading,
+  .header__heading-link {
+    z-index: 10 !important; /* Capa baja para que no tape los botones laterales */
+    max-width: 120px !important; /* Ajusta este ancho según el tamaño de tu logo */
+    pointer-events: auto !important;
+  }
+}
