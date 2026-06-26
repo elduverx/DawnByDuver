@@ -4693,7 +4693,7 @@ shop-follow-button,
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-end !important;
-    gap: 10px !important; /* Un pelín más juntos para que quepan mejor */
+    gap: 6px !important; /* Un pelín más juntos para que quepan mejor */
     margin-right: 0 !important; /* Quitamos el margen que los cortaba */
     padding-right: 0 !important;
     
