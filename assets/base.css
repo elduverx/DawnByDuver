@@ -4601,11 +4601,11 @@ shop-follow-button,
   }
 
   /* Lupa */
-  menu-drawer + .header__search {
+  .header-wrapper--homepage details-modal.header__search {
     display: inline-flex !important;
     align-self: center !important;
     order: 2 !important;
-    margin-left: -3rem !important;
+    margin-left: 3 !important;
   }
 
   /* Espaciador */
