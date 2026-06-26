@@ -5255,20 +5255,34 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ALINEAR TODOS LOS ICONOS DE LA CABECERA POR IGUAL */
-  .header__heading-link, 
-  .header__heading {
+  /* 1. EVITAR QUE EL LOGO SE MUEVA */
+  .header__heading-link, .header__heading {
     margin-bottom: 0 !important;
   }
 
-  .header__icon,
-  .header__search,
-  .header__menu-item,
-  .header__cart-icon,
-  [class*="header__icon"],
-  [id*="cart"],
-  .header__icons a,
-  .header__icons span {
-    transform: translateY(8px) !important; /* Ajusta este número si quieres subirlos o bajarlos todos juntos */
+  /* 2. ICONOS DE LA IZQUIERDA (Menú hamburguesa y Lupa) */
+  .header__icon--menu,
+  .header__search {
+    transform: translateY(8px) !important; 
+  }
+
+  /* 3. ICONO DE LA PERSONITA (Cuenta/Usuario) */
+  .header__icons .icon-account,
+  .header__icons a[href*="account"] {
+    transform: translateY(8px) !important;
+  }
+
+  /* 4. ICONO DE LA CAJITA (Seguimiento/Pedidos) */
+  .header__icons .icon-box,
+  .header__icons a[href*="apps"],
+  .header__icons .header__icon:not(.header__icon--cart):not(.header__icon--menu) {
+    transform: translateY(8px) !important;
+  }
+
+  /* 5. ICONO DEL CARRITO */
+  #cart-icon-bubble,
+  .header__icon--cart,
+  .header__cart-icon {
+    transform: translateY(8px) !important;
   }
 }
