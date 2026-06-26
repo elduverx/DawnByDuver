@@ -5255,31 +5255,38 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. EVITAR QUE EL LOGO SE MUEVA */
+  /* 1. MANTENER EL LOGO ESTÁTICO */
   .header__heading-link, .header__heading {
     margin-bottom: 0 !important;
   }
 
-  /* 2. ICONOS DE LA IZQUIERDA (Menú hamburguesa y Lupa) */
+  /* 2. MENÚ HAMBURGUESA (IZQUIERDA) */
   .header__icon--menu,
-  .header__search {
+  .header__icon span.icon-hamburger,
+  summary.header__icon--menu {
+    transform: translateY(12px) !important; /* Ajusta este número para nivelar las 3 líneas */
+  }
+
+  /* 3. LUPA (BÚSQUEDA) */
+  .header__search,
+  details-modal.header__search {
     transform: translateY(8px) !important; 
   }
 
-  /* 3. ICONO DE LA PERSONITA (Cuenta/Usuario) */
-  .header__icons .icon-account,
-  .header__icons a[href*="account"] {
+  /* 4. PERSONITA (CUENTA) */
+  .header__icons a[href*="account"],
+  .header__icons .icon-account {
     transform: translateY(8px) !important;
   }
 
-  /* 4. ICONO DE LA CAJITA (Seguimiento/Pedidos) */
-  .header__icons .icon-box,
+  /* 5. CAJITA DE PEDIDOS */
   .header__icons a[href*="apps"],
+  .header__icons svg.icon-box,
   .header__icons .header__icon:not(.header__icon--cart):not(.header__icon--menu) {
-    transform: translateY(8px) !important;
+    transform: translateY(12px) !important; /* Ajusta este número para bajar la cajita */
   }
 
-  /* 5. ICONO DEL CARRITO */
+  /* 6. CARRITO (DERECHA) */
   #cart-icon-bubble,
   .header__icon--cart,
   .header__cart-icon {
