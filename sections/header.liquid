@@ -729,9 +729,23 @@
     position: absolute !important;
     top: 50% !important;
     left: 50% !important;
-    transform: translate(-95%) !important; /* El -85% lo empuja hacia arriba con fuerza */
+    transform: translate(-205%) !important; /* El -85% lo empuja hacia arriba con fuerza */
     margin: 0 !important;
     display: block !important;
+  }
+}
+</style>
+<style>
+@media screen and (max-width: 749px) {
+  /* ELIMINACIÓN DIRECTA DESDE EL HTML DE LA PORTADA */
+  .header-wrapper--homepage::after, 
+  div.header-wrapper--homepage::after,
+  .header-wrapper--homepage {
+    display: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
   }
 }
 </style>
