@@ -4932,12 +4932,6 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* Mover la lupa hacia la izquierda */
-  .header__search {
-    position: relative !important;
-    right: 15px !important;
-  }
-
   /* Ocultar el formulario y la caja blanca */
   .header__search details-modal,
   .header__search .search-modal,
