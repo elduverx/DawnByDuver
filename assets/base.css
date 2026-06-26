@@ -5156,9 +5156,10 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* EMPUJAR EL BLOQUE ENTERO DEL LOGO EN LA PORTADA */
-  .template-index .header__heading-link {
+  /* FILTRO DE EXCLUSIÓN: Si NO es una página interna, aplica la subida */
+  body:not(.template-product):not(.template-collection):not(.template-page) .vela-logo-mobile {
     display: inline-flex !important;
-    transform: translateY(-25px) !important; /* Fuerza la subida del conjunto */
+    transform: translateY(-25px) !important; /* El empujón hacia arriba */
+    margin-top: 0 !important;
   }
 }
