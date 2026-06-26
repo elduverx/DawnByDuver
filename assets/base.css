@@ -4678,3 +4678,13 @@ shop-follow-button,
     margin-right: -0.5rem !important;
   }
 }
+/* Carrito páginas interiores - forzar visible en móvil */
+@media screen and (max-width: 749px) {
+  .header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
