@@ -5169,3 +5169,29 @@ shop-follow-button,
     transform: translateY(30px) !important; /* Lo bajamos primero para asegurarnos de que se ve */
   }
 }
+@media screen and (max-width: 749px) {
+  /* 1. OCULTAR EL LOGO NEGRO DUPLICADO EN LA HOME (MÓVIL) */
+  .template-index .header__heading-logo-wrapper,
+  .template-index .header__heading-logo {
+    display: none !important;
+  }
+
+  /* 2. CENTRAR Y CORREGIR EL LOGO BLANCO DE LA PORTADA */
+  .template-index .vela-logo-mobile {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative !important;
+    /* Juega con este número para subirlo o bajarlo a tu gusto */
+    transform: translateY(-5px) !important; 
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  /* 3. ASEGURAR EL TAMAÑO DE LA IMAGEN DEL LOGO BLANCO */
+  .template-index .vela-logo-mobile img {
+    height: auto !important;
+    width: 115px !important; /* Cambia este número si lo quieres más grande o pequeño */
+    max-width: 115px !important;
+  }
+}
