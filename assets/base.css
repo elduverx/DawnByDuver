@@ -4677,7 +4677,7 @@ shop-follow-button,
 }
 /* Personita páginas interiores móvil */
 @media screen and (max-width: 749px) {
-  .header-wrapper:not(.header-wrapper--homepage) a.header__icon.large-up-hide {
+  .header-wrapper:not(.header-wrapper--homepage) a.vela-account {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
