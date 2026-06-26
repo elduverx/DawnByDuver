@@ -316,10 +316,9 @@
           <line x1="12" y1="22.08" x2="12" y2="12" style="stroke: #1a1a1a !important;"/>
         </svg>
       </a>
-    {%- if shop.customer_accounts_enabled -%}
-  <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 4rem !important; height: 4rem !important; color: rgb(var(--color-foreground)) !important; padding: 0 !important; margin: 0 2px !important; flex-shrink: 0 !important;">
-    {% comment %} Icono de la personita (SVG optimizado en tamaño) {% endcomment %}
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block; width: 1.8rem; height: 1.8rem;">
+      {%- if shop.customer_accounts_enabled -%}
+  <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; width: 4.4rem !important; height: 4.4rem !important; color: rgb(var(--color-foreground)) !important; margin-right: 2px !important; flex-shrink: 0 !important;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block; width: 2rem; height: 2rem;">
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
       <circle cx="12" cy="7" r="4"></circle>
     </svg>
