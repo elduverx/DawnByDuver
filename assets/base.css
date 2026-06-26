@@ -5217,20 +5217,16 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. MANTENEMOS LA LÍNEA VIEJA OCULTA */
-  .header-wrapper, 
-  .header, 
-  .shopify-section-header-sticky {
-    border-bottom: none !important;
-    box-shadow: none !important;
+  /* RESTAURAMOS LA CABECERA ORIGINAL */
+  .header-wrapper, .header {
+    border-bottom: 1px solid #e5e5e5 !important;
   }
 
-  /* 2. PINTAMOS LA LÍNEA NUEVA CON EL ESPACIO DEBAJO (SOLO EN INTERNAS) */
-  .main-collection-banner,
-  .product,
+  /* CREAMOS EL ESPACIO JUSTO DEBAJO DE LA LÍNEA EN LAS INTERNAS */
+  #shopify-section-template--main-collection-banner,
+  #shopify-section-template--main-product,
   .main-page-title {
-    border-top: 1px solid #e5e5e5 !important; /* La línea gris perfecta */
-    padding-top: 25px !important; /* El espacio de separación que querías */
-    margin-top: 10px !important;
+    margin-top: 30px !important; /* Ajusta este número para dar más o menos separación */
+    display: block !important;
   }
 }
