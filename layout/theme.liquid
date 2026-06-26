@@ -463,33 +463,37 @@ document.addEventListener('change', function(e) {
 </script>
 <style>
   @media screen and (max-width: 989px) {
-    /* 1. Liberamos el centro de la pantalla para el logotipo */
+    /* 1. Añadimos un pequeño margen a los lados de la cabecera para que nada se corte */
+    .header {
+      display: grid !important;
+      grid-template-columns: auto 1fr auto !important;
+      align-items: center !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+
+    /* 2. Forzamos a todos los iconos del grupo derecho a mantenerse visibles y juntos */
+    .header__icons {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 6px !important; /* Reducimos ligeramente el espacio para que quepan holgadamente */
+      padding-right: 5px !important;
+    }
+
+    /* 3. Aseguramos que el carrito y los demás iconos no floten ni se salgan del borde */
     .header__icon--cart, 
     #cart-icon-bubble,
-    .header__icons .header__icon--cart {
+    .header__icon--account,
+    .header__icons > * {
       position: relative !important;
       left: auto !important;
       right: auto !important;
       transform: none !important;
       margin: 0 !important;
       display: inline-flex !important;
-    }
-
-    /* 2. Forzamos a que todos los iconos de la derecha (personita, caja, carrito) se queden en su esquina */
-    .header__icons {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      gap: 12px !important; /* Espacio de separación entre los iconos de la derecha */
-    }
-
-    /* 3. Limpiamos la personita por si tenía algún desvío guardado */
-    .header__icon--account {
-      position: relative !important;
-      left: auto !important;
-      right: auto !important;
-      margin: 0 !important;
+      flex-shrink: 0 !important; /* Prohibimos que los iconos se encojan o se corten */
     }
   }
 </style>
