@@ -5217,12 +5217,23 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* SEPARAR EL CONTENIDO SOLAMENTE EN LAS PÁGINAS INTERNAS */
-  .main-collection-banner,
-  .section-template--products,
-  .product,
-  .collection,
-  .main-page-title {
-    margin-top: 35px !important; /* Empuja el contenido hacia abajo alejándolo de la línea */
+  /* 1. ELIMINAMOS LA LÍNEA GRIS DEL HEADER EN TODA LA WEB */
+  .header-wrapper, 
+  .header, 
+  .shopify-section-header-sticky {
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 2. RECREAMOS LA LÍNEA SOLO EN LAS INTERNAS DEJANDO UN ESPACIO */
+  .main-collection-banner::before,
+  .product::before,
+  .main-page-title::before {
+    content: "" !important;
+    display: block !important;
+    width: 100% !important;
+    height: 1px !important;
+    background-color: #e5e5e5 !important; /* El color gris de la línea original */
+    margin-bottom: 30px !important; /* El espacio de separación que buscas */
   }
 }
