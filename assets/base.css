@@ -5269,18 +5269,15 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* CONTROL EXCLUSIVO PARA LA CAJITA */
-  .header__icons a[href*="apps"],
-  .header__icons svg.icon-box,
-  .header__icons .header__icon:not(.header__icon--cart):not(.header__icon--menu):not(.header__search) {
-    transform: translateY(14px) !important; /* Ajusta este número para graduar la cajita */
+  /* BAJAR EXCLUSIVAMENTE EL CUARTO ICONO (LA CAJITA) */
+  .header__icons a:nth-last-child(2),
+  .header__icons div:nth-last-child(2) a {
+    transform: translateY(-15px) !important;
   }
 
-  /* CONTROL EXCLUSIVO PARA EL CARRITO */
-  #cart-icon-bubble,
-  .header__icon--cart,
-  .header__cart-icon,
-  .header__icons a[href*="cart"] {
-    transform: translateY(14px) !important; /* Ajusta este número para graduar el carrito */
+  /* BAJAR EXCLUSIVAMENTE EL QUINTO ICONO (EL CARRITO) */
+  .header__icons a:nth-last-child(1),
+  #cart-icon-bubble {
+    transform: translateY(15px) !important;
   }
 }
