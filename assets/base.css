@@ -4670,8 +4670,8 @@ shop-follow-button,
 }
 /* Adelgazar hamburguesa y lupa en páginas interiores móvil */
 @media screen and (max-width: 749px) {
-  .header-wrapper:not(.header-wrapper--homepage) .header__icon--menu .icon,
-  .header-wrapper:not(.header-wrapper--homepage) details-modal.header__search .icon {
-    stroke-width: 1.5 !important;
+  .header-wrapper:not(.header-wrapper--homepage) .header__icon--menu svg,
+  .header-wrapper:not(.header-wrapper--homepage) details-modal.header__search svg {
+    transform: scale(0.8) !important;
   }
 }
