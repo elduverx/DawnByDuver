@@ -4593,6 +4593,7 @@ shop-follow-button,
     display: inline-flex !important;
     align-self: center !important;
     order: 2 !important;
+    margin-left: -1rem !important;
   }
 
   /* Espaciador */
