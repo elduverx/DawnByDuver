@@ -5237,3 +5237,11 @@ shop-follow-button,
     top: 70px !important; /* Sube o baja este número para mover la línea a tu gusto */
   }
 }
+@media screen and (max-width: 749px) {
+  /* ELIMINAR EL ESPACIO SUPERIOR DEL TÍTULO EN LAS PÁGINAS INTERNAS */
+  .main-page-title,
+  .collection-hero__title {
+    margin-top: 5px !important;    /* Reduce el espacio exterior por arriba */
+    padding-top: 0px !important;   /* Elimina cualquier relleno interno superior */
+  }
+}
