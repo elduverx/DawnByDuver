@@ -5150,7 +5150,7 @@ shop-follow-button,
 @media screen and (max-width: 749px) {
   /* ATACAMOS ÚNICAMENTE AL LOGO EXCLUSIVO DE LA PORTADA */
   .vela-logo-mobile img {
-    transform: translateY(-95px) !important; /* Sube solo el logo de la Home */
+    transform: translateY(-55px) !important; /* Sube solo el logo de la Home */
   }
 
   /* ESCUDO TOTAL: Reseteamos cualquier movimiento en los logos de páginas interiores */
