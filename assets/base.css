@@ -4729,3 +4729,13 @@ shop-follow-button,
     z-index: auto !important;
   }
 }
+/* FIX hamburguesa */
+@media screen and (max-width: 749px) {
+  .header__icon--cart,
+  #cart-icon-bubble {
+    position: static !important;
+    transform: none !important;
+    z-index: 1 !important;
+    left: auto !important;
+  }
+}
