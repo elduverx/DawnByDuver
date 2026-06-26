@@ -5221,6 +5221,6 @@ shop-follow-button,
   .template-product main#MainContent,
   .template-collection main#MainContent,
   .template-page main#MainContent {
-    margin-top: 20px !important; /* Ajusta este número para las páginas internas */
+    margin-top: 30px !important; /* Ajusta este número para las páginas internas */
   }
 }
