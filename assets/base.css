@@ -4857,3 +4857,21 @@ shop-follow-button,
     opacity: 1 !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* Forzar a que el panel del menú desplegable se ponga por encima del fondo oscuro */
+  .menu-drawer,
+  #menu-drawer,
+  .header__icon--menu[aria-expanded='true'] + .menu-drawer {
+    z-index: 99999 !important;
+    visibility: visible !important;
+    display: flex !important; /* O cambia a block si tu tema lo requiere */
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Asegurar que el contenedor del menú móvil tenga prioridad alta */
+  header-drawer {
+    position: relative !important;
+    z-index: 9999 !important;
+  }
+}
