@@ -5246,10 +5246,11 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* REDUCIR ESPACIO ENTRE EL TÍTULO Y LOS FILTROS */
-  .main-collection-product-grid,
-  .collection-counter,
-  #ProductGridContainer {
-    margin-top: -40px !important; /* Ajusta este valor negativo para subir el bloque */
+  /* SUBIR FILTROS Y PRODUCTOS DE MANERA CONJUNTA */
+  .facets-vertical,
+  .facets-wrapper,
+  .collection-facets {
+    margin-top: -20px !important; /* Mueve todo el bloque hacia arriba a la vez */
+    padding-top: 0px !important;
   }
 }
