@@ -4494,3 +4494,9 @@ shop-follow-button,
     display: none !important;
   }
 }
+/* Hero banner desktop - cintura hacia arriba sin cortar cabeza */
+@media screen and (min-width: 990px) {
+  .banner__media img {
+    object-position: center 20% !important;
+  }
+}
