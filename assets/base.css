@@ -3977,9 +3977,11 @@ footer-block__newsletter .footer-block__heading {
 .header-wrapper:not(.header-wrapper--homepage) .list-menu__item,
 .header-wrapper:not(.header-wrapper--homepage) .list-menu__item--link,
 .header-wrapper:not(.header-wrapper--homepage) .header__icon,
+.header-wrapper:not(.header-wrapper--homepage) .header__icon,
 .header-wrapper:not(.header-wrapper--homepage) .header__icon svg {
   color: #1a1a1a !important;
-  fill: #1a1a1a !important;
+  fill: none !important;
+  stroke: #1a1a1a !important;
 }
 
 /* Header letras blancas en homepage */
@@ -4666,36 +4668,10 @@ shop-follow-button,
     height: 44px !important;
   }
 }
-/* Carrito páginas interiores - sin relleno */
-.header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble svg {
-  fill: none !important;
-  stroke: #1a1a1a !important;
-}
-/* Corrección definitiva para que la personita y el carrito no se tapen */
-.header__icons .header__icon--account {
-  position: relative !important;
-  display: inline-flex !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 40px !important;
-  height: 40px !important;
-}
-
-.header__icons .header__icon--cart {
-  position: relative !important;
-  display: inline-flex !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 40px !important;
-  height: 40px !important;
-}
-
-/* Forzamos al contenedor de Dawn a colocarlos uno al lado del otro sin excepción */
-.header__icons {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  flex-wrap: nowrap !important;
-  gap: 8px !important; /* Espacio fijo de separación entre la cajita, la personita y el carrito */
+/* Adelgazar hamburguesa y lupa en páginas interiores móvil */
+@media screen and (max-width: 749px) {
+  .header-wrapper:not(.header-wrapper--homepage) .header__icon--menu svg,
+  .header-wrapper:not(.header-wrapper--homepage) details-modal.header__search svg {
+    transform: scale(0.8) !important;
+  }
 }
