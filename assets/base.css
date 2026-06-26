@@ -5179,19 +5179,31 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ANULAR CUALQUIER ELEMENTO O SOMBRA EN LA PARTE SUPERIOR DEL BUSCADOR */
-  .search-modal__content {
-    box-shadow: none !important;
+  /* 1. LIMPIEZA ABSOLUTA DE CONTENEDORES (Fondo y bordes invisibles) */
+  .search-modal,
+  .search-modal__content,
+  .search-modal__form,
+  .search-modal__content-wrapper {
     background: transparent !important;
+    border: none !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
   }
-  
-  /* Forzamos a desaparecer cualquier línea o pseudo-elemento superior */
-  .search-modal__content-wrapper::before,
-  .search-modal__content-wrapper::after,
-  .search-modal__form::before,
-  .search-modal__form::after {
-    display: none !important;
-    content: none !important;
-    opacity: 0 !important;
+
+  /* 2. ELIMINAR CUALQUIER LÍNEA PARÁSITA ALREDEDOR */
+  .search-modal *, 
+  .search-modal__content * {
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 3. AISLAR EL CUADRO BLANCO (Solo él mantiene su estructura) */
+  .search-modal .field,
+  .search-modal__box {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important; /* Mantiene su recuadro negro original */
+    box-shadow: none !important;
   }
 }
