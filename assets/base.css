@@ -5164,26 +5164,17 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ELIMINAR POR COMPLETO LAS LÍNEAS NEGRAS DEL BUSCADOR */
-  .search-modal__content,
-  .search-modal,
-  .search-modal__form,
-  predictive-search {
+  /* FILTRO RADICAL: Ocultar cualquier elemento lineal suelto dentro del buscador */
+  .search-modal__content *, 
+  .search-modal * {
     border: none !important;
     border-top: none !important;
     border-bottom: none !important;
-    box-shadow: none !important;
   }
 
-  /* Ocultar cualquier línea divisoria física (etiquetas HR o pseudo-elementos) */
-  .search-modal hr,
-  .search-modal__content hr,
-  .search-modal__content::before,
-  .search-modal__content::after,
-  .search-modal__form::before,
-  .search-modal__form::after {
-    display: none !important;
-    background: transparent !important;
-    height: 0 !important;
+  /* Si las líneas son capas DIV independientes, las fulminamos dejando solo la barra blanca */
+  .search-modal__content div:not(.search-modal__form):not(.search-modal__box):not(.field) {
+    border: none !important;
+    background-color: transparent !important;
   }
 }
