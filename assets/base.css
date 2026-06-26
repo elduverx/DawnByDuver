@@ -5245,3 +5245,11 @@ shop-follow-button,
     padding-top: 0px !important;   /* Elimina cualquier relleno interno superior */
   }
 }
+@media screen and (max-width: 749px) {
+  /* REDUCIR ESPACIO ENTRE EL TÍTULO Y LOS FILTROS */
+  .main-collection-product-grid,
+  .collection-counter,
+  #ProductGridContainer {
+    margin-top: -40px !important; /* Ajusta este valor negativo para subir el bloque */
+  }
+}
