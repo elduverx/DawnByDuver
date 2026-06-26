@@ -461,21 +461,45 @@ document.addEventListener('change', function(e) {
     swatch.classList.add('active');
   }
 </script>
-/* Forzar que el menú de navegación se pegue al logotipo a la izquierda */
-.header--has-menu {
-  grid-template-columns: auto 1fr auto !important;
-  column-gap: 20px !important; /* Espacio de separación entre el logo y el menú */
-}
+<style>
+  @media screen and (max-width: 989px) {
+    /* 1. Modificamos el contenedor padre para distribuir el espacio */
+    .header {
+      display: grid !important;
+      grid-template-columns: 1fr auto 1fr !important;
+      align-items: center !important;
+      width: 100% !important;
+    }
 
-.header__inline-menu {
-  margin-left: 0 !important;
-  justify-content: flex-start !important;
-}
+    /* 2. El bloque de la izquierda (menú/hamburguesa y logo) */
+    .header__heading {
+      grid-column: 1 !important;
+      justify-self: start !important;
+    }
 
-/* Opcional: Asegura que el logo no tenga márgenes raros que lo separen */
-.header__heading-link {
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-}
+    /* 3. Forzamos al carrito a ponerse estrictamente en el centro de la pantalla */
+    .header__icon--cart, 
+    #cart-icon-bubble {
+      position: absolute !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      margin: 0 !important;
+      z-index: 10 !important;
+    }
+
+    /* 4. Los demás iconos (buscar, etc.) se quedan alineados a la derecha */
+    .header__icons {
+      grid-column: 3 !important;
+      justify-self: end !important;
+      display: flex !important;
+      gap: 10px !important;
+    }
+    
+    /* Ocultamos duplicados si el tema tiene comportamiento extraño */
+    .header__icons .header__icon--cart {
+      position: absolute !important;
+    }
+  }
+</style>
   </body>
 </html>
