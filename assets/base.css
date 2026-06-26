@@ -4591,12 +4591,14 @@ shop-follow-button,
     width: 44px !important;
     height: 44px !important;
   }
-  
+
   /* Caja seguimiento - esquina derecha */
   .header-wrapper--homepage a.header__icon.large-up-hide {
     align-self: center !important;
     background: transparent !important;
     order: 9 !important;
     margin-left: auto !important;
+    grid-area: unset !important;
+    position: relative !important;
   }
 }
