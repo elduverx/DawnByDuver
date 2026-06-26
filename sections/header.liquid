@@ -724,10 +724,11 @@
 </style>
 <style>
 @media screen and (max-width: 749px) {
-  /* SUBIR EL LOGO DE LA HOME PAGE UN POCO MÁS */
+  /* FORZAR LA SUBIDA DEL LOGO EN LA HOME CON POSICIÓN RELATIVA */
   .template-index .vela-logo-mobile {
-    margin-top: -75px !important;
-    margin-bottom: 0 !important;
+    position: relative !important;
+    top: -20px !important; /* Esto lo desliza hacia arriba directamente */
+    margin-top: 0 !important;
     display: inline-flex !important;
   }
 }
