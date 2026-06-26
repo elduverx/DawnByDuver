@@ -461,13 +461,25 @@ document.addEventListener('change', function(e) {
     swatch.classList.add('active');
   }
 </script>
+/* Forzar que los tres iconos quepan juntos en móviles y pantallas interiores */
 .header__icons {
   display: flex !important;
   align-items: center !important;
+  justify-content: flex-end !important;
   flex-wrap: nowrap !important;
-  gap: 2px !important;
+  gap: 5px !important; /* Estrecha el espacio entre iconos para que quepan todos */
 }
-.header__icon--cart {
+
+/* Evitar que el icono de cuenta se oculte en móvil */
+.header__icon--account {
+  display: inline-flex !important;
+  flex-shrink: 0 !important;
+}
+
+/* Evitar que el carrito se desplace o desaparezca */
+.header__icon--cart,
+#cart-icon-bubble {
+  display: inline-flex !important;
   flex-shrink: 0 !important;
 }
   </body>
