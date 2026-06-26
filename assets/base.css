@@ -5155,3 +5155,13 @@ shop-follow-button,
     transform: translateY(-20px) !important; /* Desplaza el dibujo hacia arriba */
   }
 }
+@media screen and (max-width: 749px) {
+  /* SUBIR ÚNICAMENTE EL LOGO BLANCO EN LA HOME PAGE */
+  .template-index .vela-logo-mobile {
+    display: inline-flex !important;
+    position: relative !important;
+    transform: translateY(-22px) !important; /* Ajusta este número si quieres afinar más */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
