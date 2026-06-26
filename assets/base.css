@@ -4722,22 +4722,21 @@ shop-follow-button,
 
   /* 3. ASIGNACIÓN MATEMÁTICA DEL ORDEN (IZQUIERDA A DERECHA) */
   
-  /* 👤 LA PERSONITA (Tanto la nativa como tu clase personalizada) */
+  /* 👤 1º: LA PERSONITA se queda a la izquierda */
   .header__icon--account, 
   .vela-account {
     order: 1 !important;
   }
 
-  /* 📦 LA CAJITA DE SEGUIMIENTO (Tanto en la home como en interiores) */
+  /* 📦 2º: LA CAJITA DE SEGUIMIENTO pasa al centro de la fila */
   .vela-box-interior, 
   a.vela-seguimiento {
     order: 2 !important;
   }
 
-  /* 🛒 EL CARRITO DE COMPRA (Nativo y selectores alternativos) */
+  /* 🛒 3º: EL CARRITO DE COMPRA pasa a la derecha del todo */
   .header__icon--cart, 
   #cart-icon-bubble, 
   a.large-up-hide[href*="cart"] {
     order: 3 !important;
   }
-}
