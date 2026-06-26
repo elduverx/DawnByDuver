@@ -4932,44 +4932,24 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. Mover el icono de la lupa de forma limpia hacia la izquierda */
+  /* 1. Mover la lupa de forma limpia hacia la izquierda */
   .header__search {
     position: relative !important;
-    right: 15px !important; /* Calibra este número si quieres centrarla más */
+    right: 15px !important; /* Ajusta los píxeles a tu gusto */
   }
 
-  /* 2. Pulverizar la barra blanca de fondo y la cruz flotante en el estado cerrado */
-  .header__search .search-modal,
-  .header__search .search-modal__form,
-  .header__search summary .icon-close {
-    display: none !important; /* Desaparece por completo el bloque blanco y la cruz sobrante */
+  /* 2. Forzar que CUALQUIER caja blanca o texto de esa zona desaparezca por completo */
+  .header__search *:not(summary):not(.icon-search):not(svg) {
+    display: none !important;
     background: transparent !important;
     box-shadow: none !important;
-    height: auto !important;
+    height: 0 !important;
+    border: none !important;
   }
 
-  /* 3. Asegurar que solo el icono de la lupa (search) sea visible originalmente */
-  .header__search summary .icon-search {
+  /* 3. Asegurar que el icono de la lupa se quede visible y limpio */
+  .header__search .icon-search,
+  .header__search summary svg {
     display: inline-block !important;
-  }
-
-  /* 4. SI EL USUARIO ABRE LA BÚSQUEDA: Se despliega de forma correcta abajo del header */
-  .header__search details[open] .search-modal {
-    display: flex !important;
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    width: 100vw !important;
-    background-color: #ffffff !important;
-    padding: 10px !important;
-    z-index: 99999 !important;
-  }
-
-  /* Mostrar la cruz de cerrar SOLO cuando la búsqueda esté abierta activamente */
-  .header__search details[open] summary .icon-close {
-    display: inline-block !important;
-  }
-  .header__search details[open] summary .icon-search {
-    display: none !important;
   }
 }
