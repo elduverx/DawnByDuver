@@ -4511,7 +4511,7 @@ shop-follow-button,
 /* Banner desktop */
 @media screen and (min-width: 990px) {
   .banner__media--desktop img {
-    object-position: center 45% !important;
+    object-position: center 20% !important;
   }
   .banner__media {
     height: 85vh !important;
