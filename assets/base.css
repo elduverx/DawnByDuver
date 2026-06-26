@@ -4592,10 +4592,11 @@ shop-follow-button,
     height: 44px !important;
   }
 
-  /* Caja seguimiento - esquina derecha */
+/* Caja seguimiento - esquina derecha */
   .header-wrapper--homepage a.header__icon.large-up-hide {
     align-self: center !important;
     background: transparent !important;
-    order: 0 !important;
+    order: 10 !important;
+    margin-left: auto !important;
   }
 }
