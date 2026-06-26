@@ -4531,16 +4531,7 @@ shop-follow-button,
     display: none !important;
   }
 }
-/* Logo móvil homepage - centrado y blanco */
-@media screen and (max-width: 749px) {
-  .header-wrapper--homepage .header__heading-link {
-    display: flex;
-    justify-content: center;
-  }
-  .header-wrapper--homepage .header__heading-logo {
-    filter: brightness(0) invert(1);
-  }
-}
+
 /* Logo móvil homepage - centrado */
 @media screen and (max-width: 749px) {
   .header-wrapper--homepage .header__heading {
@@ -4559,6 +4550,20 @@ shop-follow-button,
 @media screen and (max-width: 749px) {
   .header-wrapper--homepage .header__heading {
     margin-top: 2rem !important;
+  }
+}
+/* Lupa y caja móvil homepage */
+@media screen and (max-width: 749px) {
+  menu-drawer + .header__search {
+    display: inline-flex !important;
+    grid-area: left-icons !important;
+    margin-left: 3.5rem !important;
+  }
+  .header-wrapper--homepage a.header__icon.large-up-hide {
+    grid-area: left-icons !important;
+    justify-self: start !important;
+    margin-left: 7rem !important;
+    background: transparent !important;
   }
 }
 /* Iconos móvil homepage - alineación */
