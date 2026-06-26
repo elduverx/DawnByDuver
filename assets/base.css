@@ -4686,34 +4686,28 @@ shop-follow-button,
   }
 }
 /* =======================================================
-   💥 REORDENACIÓN TOTAL: PERSONA -> CAJITA -> CARRITO
+   💥 PARCHE DE INTERCAMBIO: CAJITA AL CENTRO
    ======================================================= */
 @media screen and (max-width: 749px) {
-  /* Forzamos el orden usando las clases exactas de tu Home y de las páginas interiores */
-  
-  /* 1º PUNTO: La personita se queda en su sitio */
-  .header__icon--account,
-  .header-wrapper--homepage a.vela-account,
-  .header-wrapper:not(.header-wrapper--homepage) a.vela-account {
-    order: 1 !important;
+  /* Separamos los iconos lo justo para que no se pisen */
+  .header__icons, 
+  .header-wrapper--homepage .header__icons {
+    gap: 15px !important;
   }
 
-  /* 2º PUNTO: La cajita pasa al centro de la fila */
+  /* Desplazamos la cajita hacia la izquierda colocándola en el centro */
   .vela-box-interior,
   .header-wrapper--homepage a.vela-seguimiento,
   .header-wrapper:not(.header-wrapper--homepage) a.vela-box-interior {
-    order: 2 !important;
-    position: static !important;
-    display: inline-flex !important;
+    position: relative !important;
+    left: -50px !important; /* La empuja hacia la izquierda */
   }
 
-  /* 3º PUNTO: El carrito pasa a la derecha del todo */
+  /* Desplazamos el carrito hacia la derecha para que ocupe el extremo */
   .header__icon--cart,
   #cart-icon-bubble,
-  .header-wrapper--homepage a.large-up-hide[href*="cart"],
-  .header-wrapper:not(.header-wrapper--homepage) a.large-up-hide[href*="cart"] {
-    order: 3 !important;
-    position: static !important;
-    display: inline-flex !important;
+  .header-wrapper--homepage a.large-up-hide[href*="cart"] {
+    position: relative !important;
+    left: 45px !important; /* Lo empuja hacia la derecha */
   }
 }
