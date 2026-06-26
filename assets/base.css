@@ -4044,12 +4044,6 @@ footer-block__newsletter .footer-block__heading {
   display: none !important;
 }
 
-@media screen and (max-width: 749px) {
-  .header-wrapper--homepage .large-up-hide .header__heading-logo-wrapper,
-  .header-wrapper--homepage .large-up-hide {
-    display: block !important;
-  }
-}
 /* Homepage: eliminar espacio bajo header */
 .shopify-section-group-header-group:has(.header-wrapper--homepage) {
   margin-bottom: 0 !important;
