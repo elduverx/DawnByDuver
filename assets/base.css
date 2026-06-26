@@ -5119,3 +5119,15 @@ shop-follow-button,
     z-index: 99999999 !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* Forzar que el campo de texto sea interactivo y despierte la búsqueda predictiva */
+  .header__search input.search__input,
+  .header__search .search__input {
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: auto !important; /* Permite que el teclado del móvil interactúe al 100% */
+    position: relative !important;
+    z-index: 99999999 !important;
+    width: 100% !important;
+  }
+}
