@@ -4718,37 +4718,24 @@ shop-follow-button,
   .header__icon--account { order: 3 !important; }
 }
 @media screen and (max-width: 989px) {
-  /* 1. Quitamos por completo el centrado absoluto del carrito */
-  .header__icon--cart, 
-  #cart-icon-bubble,
-  .header__icons .header__icon--cart {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-    margin: 0 !important;
-    display: inline-flex !important;
-  }
-
-  /* 2. Forzamos a que el contenedor de la derecha use flexbox ordenado */
+  /* Forzamos a que los tres iconos quepan juntos en fila limpia a la derecha */
   .header__icons {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-end !important;
-    gap: 12px !important; /* Espacio de separación entre los iconos */
+    gap: 8px !important; /* Espacio perfecto de separación entre ellos */
+    padding-right: 10px !important;
   }
 
-  /* 3. Colocamos el carrito a la derecha de la personita usando el orden numérico */
-  .header__icon--account { 
-    order: 1 !important; /* La personita va primero */
-  }
-  
-  .header__icon--cart { 
-    order: 2 !important; /* El carrito va a su derecha */
-  }
-  
-  .vela-box-interior { 
-    order: 3 !important; /* La cajita va al final del todo */
+  /* Evitamos que ningún icono se deforme o se salga de la pantalla */
+  .header__icon--account,
+  .header__icon--cart,
+  #cart-icon-bubble,
+  .vela-box-interior {
+    position: relative !important;
+    display: inline-flex !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
   }
 }
