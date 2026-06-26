@@ -4561,10 +4561,15 @@ shop-follow-button,
     margin-top: 2rem !important;
   }
 }
-/* Lupa móvil - mover a la izquierda junto al hamburguesa */
+/* Forzar lupa visible en móvil junto al hamburguesa */
 @media screen and (max-width: 749px) {
+  menu-drawer + .header__search {
+    display: inline-flex !important;
+  }
   .header__search {
     grid-area: left-icons !important;
     justify-self: start !important;
+    order: 2 !important;
   }
+} }
 }
