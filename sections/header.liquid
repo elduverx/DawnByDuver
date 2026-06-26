@@ -156,7 +156,7 @@
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
       {%- endif -%}
-          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">text
+          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
             {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
@@ -662,62 +662,17 @@
 {% endschema %}
 <style>
 @media screen and (max-width: 749px) {
-  /* SOLO PARA MÓVIL EN PÁGINAS INTERIORES (Excluye la Home) */
+  /* ==========================================
+     1. PÁGINAS INTERIORES (Mantenemos tus ajustes)
+     ========================================== */
   body:not(.template-index) .header__search {
     position: absolute !important;
-    left: 15px !important; /* Mueve la lupa a la izquierda, al lado de la hamburguesa */
+    left: 25px !important;
     right: auto !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
   }
 
-  body:not(.template-index) .header__heading-logo,
-  body:not(.template-index) .header__heading {
-    margin-top: 10px !important; /* Baja el logo un poco para que no se corte por arriba */
-    display: inline-block !important;
-  }
-}
-</style>
-<style>
-@media screen and (max-width: 749px) {
-  /* Mantener la lupa en la posición perfecta que ya conseguimos */
-  body:not(.template-index) .header__search {
-    position: absolute !important;
-    left: 45px !important;
-    right: auto !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-  }
-
-  /* BAJAR EL LOGO: Aumentamos el margen superior para que baje y se vea completo */
-  body:not(.template-index) .header__heading-logo,
-  body:not(.template-index) .header__heading,
-  body:not(.template-index) .header__heading-link {
-    margin-top: 18px !important; /* Subido de 10px a 18px para empujarlo más abajo */
-    padding-top: 5px !important;
-    display: inline-block !important;
-    height: auto !important; /* Evita que el contenedor lo corte por abajo al bajar */
-  }
-
-  /* Asegurar que la imagen del logo dentro del contenedor no tenga límites estrictos */
-  body:not(.template-index) .header__heading-logo img {
-    max-height: 100% !important;
-    object-fit: contain !important;
-  }
-}
-</style>
-<style>
-@media screen and (max-width: 749px) {
-  /* 1. CORRECCIÓN DE LA LUPA: Forzada más a la izquierda (de 45px a 25px) */
-  body:not(.template-index) .header__search {
-    position: absolute !important;
-    left: 15px !important; /* Si necesitas pegarla aún más, bájalo a 20px */
-    right: auto !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-  }
-
-  /* 2. Mantener el tamaño de logo que te gustó (60px) */
   body:not(.template-index) .header__heading-link,
   body:not(.template-index) .header__heading-logo,
   body:not(.template-index) .header__heading {
@@ -725,7 +680,7 @@
     justify-content: center !important;
     align-items: center !important;
     margin-top: 10px !important;
-    height: 60px !important; 
+    height: 60px !important;
     width: auto !important;
   }
 
@@ -734,42 +689,30 @@
     height: 60px !important;
     max-height: 60px !important;
     width: auto !important;
-    max-width: 170px !important; 
+    max-width: 170px !important;
     object-fit: contain !important;
   }
 
-  /* 3. Mantener la línea separadora en su sitio abajo */
   body:not(.template-index) .header,
   body:not(.template-index) .header-wrapper,
   body:not(.template-index) .site-header {
-    padding-bottom: 12px !important; 
+    padding-bottom: 12px !important;
     height: auto !important;
   }
-}
-</style>
-<style>
-@media screen and (max-width: 749px) {
-  /* ESCUDO EXCLUSIVO PARA LA HOME PAGE */
 
-  /* 1. Forzar a la cabecera completa a alinear todos sus iconos y logo al centro horizontal */
-  .template-index .header,
-  .template-index .header-wrapper,
-  .template-index .site-header {
-    display: flex !important;
-    align-items: center !important; /* Centra todo en la misma línea visual */
-    justify-content: space-between !important;
+  /* ==========================================
+     2. HOME PAGE (Alineación perfecta del Logo)
+     ========================================== */
+  /* Forzamos a la caja del logo de la Home a subirse para alinearse con los iconos */
+  .template-index .vela-logo-mobile {
+    margin-top: -16px !important; /* El empujón hacia arriba que necesitabas */
+    margin-bottom: 0 !important;
+    display: block !important;
   }
 
-  /* 2. Liberar el logo de cualquier restricción de altura o posición fija que lo tire hacia abajo */
-  .template-index .vela-logo-mobile,
-  .template-index .header__heading,
-  .template-index .header__heading-link {
-    margin: 0 !important;
-    padding: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    align-self: center !important; /* Se auto-alinea al centro con los iconos */
-    height: auto !important;
+  /* Alineamos la imagen interna del logo en el centro de su eje */
+  .template-index .vela-logo-mobile img {
+    vertical-align: middle !important;
   }
 }
 </style>
