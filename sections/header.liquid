@@ -660,3 +660,21 @@
   ]
 }
 {% endschema %}
+<style>
+@media screen and (max-width: 749px) {
+  /* SOLO PARA MÓVIL EN PÁGINAS INTERIORES (Excluye la Home) */
+  body:not(.template-index) .header__search {
+    position: absolute !important;
+    left: 65px !important; /* Mueve la lupa a la izquierda, al lado de la hamburguesa */
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  body:not(.template-index) .header__heading-logo,
+  body:not(.template-index) .header__heading {
+    margin-top: 10px !important; /* Baja el logo un poco para que no se corte por arriba */
+    display: inline-block !important;
+  }
+}
+</style>
