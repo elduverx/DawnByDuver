@@ -4561,27 +4561,40 @@ shop-follow-button,
     margin-top: 2rem !important;
   }
 }
-/* Lupa y caja móvil homepage */
+/* === HEADER MÓVIL HOMEPAGE === */
 @media screen and (max-width: 749px) {
+  /* Logo blanco y centrado */
+  .header-wrapper--homepage .header__heading {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-top: 2rem !important;
+  }
+  .header-wrapper--homepage .header__heading-logo {
+    filter: brightness(0) invert(1) !important;
+  }
+
+  /* Lupa junto al hamburguesa */
   menu-drawer + .header__search {
     display: inline-flex !important;
     grid-area: left-icons !important;
     margin-left: 3.5rem !important;
+    align-self: center !important;
   }
-  .header-wrapper--homepage a.header__icon.large-up-hide {
-    grid-area: left-icons !important;
-    justify-self: start !important;
-    margin-left: 7rem !important;
-    background: transparent !important;
-  }
-}
-/* Carrito móvil homepage - posición */
-@media screen and (max-width: 749px) {
+
+  /* Carrito a la derecha de la lupa */
   .header-wrapper--homepage a.large-up-hide[href*="cart"] {
     grid-area: left-icons !important;
     justify-self: start !important;
-    margin-left: 10rem !important;
+    margin-left: 7rem !important;
     align-self: center !important;
-    margin-top: 0.8rem !important;
+  }
+
+  /* Caja seguimiento - esquina derecha */
+  .header-wrapper--homepage a.header__icon.large-up-hide {
+    grid-area: icons !important;
+    justify-self: end !important;
+    align-self: center !important;
+    background: transparent !important;
   }
 }
