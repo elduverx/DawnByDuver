@@ -5269,15 +5269,19 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* BAJAR EXCLUSIVAMENTE EL CUARTO ICONO (LA CAJITA) */
-  .header__icons a:nth-last-child(2),
-  .header__icons div:nth-last-child(2) a {
-    transform: translateY(-15px) !important;
+  /* SEPARAR Y BAJAR LA CAJITA POR MARGEN */
+  .header__icons a[href*="apps"],
+  .header__icons .icon-box,
+  .header__icons a:nth-last-child(2) {
+    margin-top: 10px !important; /* Ajusta este número para bajar la cajita */
+    display: inline-block !important;
   }
 
-  /* BAJAR EXCLUSIVAMENTE EL QUINTO ICONO (EL CARRITO) */
-  .header__icons a:nth-last-child(1),
-  #cart-icon-bubble {
-    transform: translateY(-15px) !important;
+  /* SEPARAR Y BAJAR EL CARRITO POR MARGEN */
+  #cart-icon-bubble,
+  .header__icon--cart,
+  .header__icons a:nth-last-child(1) {
+    margin-top: 10px !important; /* Ajusta este número para bajar el carrito */
+    display: inline-block !important;
   }
 }
