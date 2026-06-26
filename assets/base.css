@@ -4541,4 +4541,17 @@ shop-follow-button,
     filter: brightness(0) invert(1);
   }
 }
+/* Logo móvil homepage - centrado */
+@media screen and (max-width: 749px) {
+  .header-wrapper--homepage .header__heading {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
 
+  /* Hamburguesa móvil homepage - subir */
+  .header-wrapper--homepage header-drawer {
+    align-self: flex-start !important;
+    margin-top: -0.5rem !important;
+  }
+}
