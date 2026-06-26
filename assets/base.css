@@ -5217,7 +5217,7 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. ELIMINAMOS LA LÍNEA GRIS DEL HEADER EN TODA LA WEB */
+  /* 1. MANTENEMOS LA LÍNEA VIEJA OCULTA */
   .header-wrapper, 
   .header, 
   .shopify-section-header-sticky {
@@ -5225,15 +5225,12 @@ shop-follow-button,
     box-shadow: none !important;
   }
 
-  /* 2. RECREAMOS LA LÍNEA SOLO EN LAS INTERNAS DEJANDO UN ESPACIO */
-  .main-collection-banner::before,
-  .product::before,
-  .main-page-title::before {
-    content: "" !important;
-    display: block !important;
-    width: 100% !important;
-    height: 1px !important;
-    background-color: #e5e5e5 !important; /* El color gris de la línea original */
-    margin-bottom: 30px !important; /* El espacio de separación que buscas */
+  /* 2. PINTAMOS LA LÍNEA NUEVA CON EL ESPACIO DEBAJO (SOLO EN INTERNAS) */
+  .main-collection-banner,
+  .product,
+  .main-page-title {
+    border-top: 1px solid #e5e5e5 !important; /* La línea gris perfecta */
+    padding-top: 25px !important; /* El espacio de separación que querías */
+    margin-top: 10px !important;
   }
 }
