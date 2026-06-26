@@ -4490,7 +4490,7 @@ shop-follow-button,
 }
 /* Ocultar hamburguesa en desktop */
 @media screen and (min-width: 990px) {
-  header-drawer {
+  .header__icon--menu {
     display: none !important;
   }
 }
