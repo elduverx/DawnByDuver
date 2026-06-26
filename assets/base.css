@@ -4552,3 +4552,10 @@ shop-follow-button,
     display: block !important;
   }
 }
+/* Header móvil homepage - transparente */
+@media screen and (max-width: 749px) {
+  .header-wrapper--homepage {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+}
