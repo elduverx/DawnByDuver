@@ -4686,28 +4686,42 @@ shop-follow-button,
   }
 }
 /* =======================================================
-   💥 PARCHE DE INTERCAMBIO: CAJITA AL CENTRO
+   🎯 ORDENACIÓN DE RAÍZ EN MÓVIL (PERSONA -> CAJITA -> CARRITO)
    ======================================================= */
 @media screen and (max-width: 749px) {
-  /* Separamos los iconos lo justo para que no se pisen */
-  .header__icons, 
-  .header-wrapper--homepage .header__icons {
-    gap: 15px !important;
-  }
-
-  /* Desplazamos la cajita hacia la izquierda colocándola en el centro */
+  /* 1. Resetear cualquier margen o posición extraña de los intentos anteriores */
+  .header__icon--account,
+  .header-wrapper--homepage a.vela-account,
   .vela-box-interior,
   .header-wrapper--homepage a.vela-seguimiento,
-  .header-wrapper:not(.header-wrapper--homepage) a.vela-box-interior {
-    position: relative !important;
-    left: -50px !important; /* La empuja hacia la izquierda */
-  }
-
-  /* Desplazamos el carrito hacia la derecha para que ocupe el extremo */
   .header__icon--cart,
   #cart-icon-bubble,
   .header-wrapper--homepage a.large-up-hide[href*="cart"] {
-    position: relative !important;
-    left: 45px !important; /* Lo empuja hacia la derecha */
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+  }
+
+  /* 2. Asignamos la escala real de la fila (de menor a mayor) */
+  
+  /* La personita va primero */
+  .header-wrapper--homepage a.vela-account,
+  .header__icon--account {
+    order: 7 !important;
+  }
+
+  /* La cajita va en el centro */
+  .header-wrapper--homepage a.vela-seguimiento,
+  .header-wrapper:not(.header-wrapper--homepage) a.vela-box-interior,
+  .vela-box-interior {
+    order: 8 !important;
+  }
+
+  /* El carrito va a la derecha del todo */
+  .header-wrapper--homepage a.large-up-hide[href*="cart"],
+  .header__icon--cart,
+  #cart-icon-bubble {
+    order: 9 !important;
   }
 }
