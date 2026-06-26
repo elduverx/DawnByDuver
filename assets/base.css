@@ -5291,12 +5291,11 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ATAQUE DIRECTO AL GRÁFICO DEL CARRITO EN LA CABECERA */
-  [class*="cart"] svg, 
-  [class*="icon-cart"], 
-  [id*="cart"] svg,
-  .header__icon--cart * {
+  /* CONTROL ABSOLUTO Y EXCLUSIVO PARA EL CARRITO */
+  div.header__icons + svg,
+  header > svg,
+  svg[viewBox="0 0 24 24"]:has(+ span.visually-hidden) {
     position: relative !important;
-    top: 10px !important; /* Ajusta este número para bajarlo */
+    top: 10px !important; /* Ajusta este número para alinearlo con la cajita */
   }
 }
