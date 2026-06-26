@@ -5160,3 +5160,12 @@ shop-follow-button,
     transform: translateY(0px) !important; /* Se quedan fijas en su sitio original */
   }
 }
+@media screen and (max-width: 749px) {
+  /* RESCATE Y CONTROL DEL LOGO DE LA HOME PAGE */
+  .vela-logo-mobile {
+    display: block !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    transform: translateY(30px) !important; /* Lo bajamos primero para asegurarnos de que se ve */
+  }
+}
