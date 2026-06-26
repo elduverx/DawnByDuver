@@ -751,14 +751,24 @@
 @media screen and (max-width: 749px) {
   /* ESCUDO EXCLUSIVO PARA LA HOME PAGE */
   
-  /* Forzar al logo de la portada a desplazarse hacia arriba visualmente */
-  .template-index .header__heading-link,
-  .template-index .header__heading-logo,
+  /* 1. Atacar directamente al bloque móvil de Vela para subirlo */
+  .template-index .vela-logo-mobile,
   .template-index .header__heading,
-  .template-index .header__heading img {
-    transform: translateY(-8px) !important; /* Muve el logo hacia arriba. Si necesitas más, prueba con -12px */
+  .template-index .header__heading-link {
     position: relative !important;
+    top: -25px !important; /* Lo desplaza hacia arriba con fuerza */
+    margin-bottom: -25px !important; /* Evita que deje un hueco vacío abajo */
     display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 9999 !important;
+  }
+
+  /* 2. Asegurar que la imagen dentro del bloque responda a la subida */
+  .template-index .vela-logo-mobile img,
+  .template-index .header__heading-link img {
+    position: relative !important;
+    top: 0 !important;
   }
 }
 </style>
