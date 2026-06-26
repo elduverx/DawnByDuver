@@ -4685,3 +4685,59 @@ shop-follow-button,
     height: 44px !important;
   }
 }
+/* =======================================================
+   💥 PARCHE DEFINITIVO: ORDEN EN MÓVIL (PERSONA - CAJA - CARRITO) 
+   ======================================================= */
+@media screen and (max-width: 749px) {
+  /* 1. Nos aseguramos de que el contenedor de iconos use Flexbox en fila */
+  .header__icons, 
+  .header-wrapper:not(.header-wrapper--homepage) .header__icons,
+  .header-wrapper--homepage .header__icons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 10px !important; /* Espaciado uniforme entre los tres */
+    padding-right: 5px !important;
+  }
+
+  /* 2. Reseteamos posiciones flotantes de todos los elementos hermanos */
+  .header__icon--account,
+  .vela-account,
+  .vela-box-interior,
+  a.vela-seguimiento,
+  .header__icon--cart,
+  #cart-icon-bubble,
+  .header-wrapper--homepage a.large-up-hide[href*="cart"] {
+    position: relative !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important; /* Evitamos que se aplasten entre sí */
+    margin: 0 !important;
+    transform: none !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+  /* 3. ASIGNACIÓN MATEMÁTICA DEL ORDEN (IZQUIERDA A DERECHA) */
+  
+  /* 👤 LA PERSONITA (Tanto la nativa como tu clase personalizada) */
+  .header__icon--account, 
+  .vela-account {
+    order: 1 !important;
+  }
+
+  /* 📦 LA CAJITA DE SEGUIMIENTO (Tanto en la home como en interiores) */
+  .vela-box-interior, 
+  a.vela-seguimiento {
+    order: 2 !important;
+  }
+
+  /* 🛒 EL CARRITO DE COMPRA (Nativo y selectores alternativos) */
+  .header__icon--cart, 
+  #cart-icon-bubble, 
+  a.large-up-hide[href*="cart"] {
+    order: 3 !important;
+  }
+}
