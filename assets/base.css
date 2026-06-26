@@ -4575,12 +4575,29 @@ shop-follow-button,
     background: transparent !important;
   }
 }
-/* Carrito móvil homepage - posición */
+/* Iconos móvil homepage - alineación */
 @media screen and (max-width: 749px) {
+  /* Lupa - junto al hamburguesa */
+  menu-drawer + .header__search {
+    display: inline-flex !important;
+    grid-area: left-icons !important;
+    margin-left: 3.5rem !important;
+    align-self: center !important;
+  }
+
+  /* Carrito - a la derecha de la lupa */
   .header-wrapper--homepage a.large-up-hide[href*="cart"] {
-    grid-area: icons !important;
+    grid-area: left-icons !important;
     justify-self: start !important;
-    margin-left: 0 !important;
+    margin-left: 7rem !important;
+    align-self: center !important;
+    margin-top: 0 !important;
+  }
+
+  /* Caja seguimiento - esquina derecha */
+  .header-wrapper--homepage a.header__icon.large-up-hide {
+    grid-area: icons !important;
+    justify-self: end !important;
     align-self: center !important;
     margin-top: 0 !important;
   }
