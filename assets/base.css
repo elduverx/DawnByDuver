@@ -5269,20 +5269,22 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ATACAMOS DIRECTAMENTE AL DIBUJO DE LA CAJITA */
+  /* AGARRAMOS EL DIBUJO DE LA CAJITA Y LO MOVEMOS DESDE EL TECHO */
   .header__icons a[href*="apps"] svg,
   .header__icons a:nth-last-child(2) svg,
-  .header__icons .icon-box {
-    margin-top: 12px !important; /* Ajusta este número para bajar la cajita */
+  .header__icons .icon-box,
+  .header__icons [class*="box"] svg {
     position: relative !important;
+    top: 10px !important; /* Ajusta este número para bajar la cajita */
   }
 
-  /* ATACAMOS DIRECTAMENTE AL DIBUJO DEL CARRITO */
+  /* AGARRAMOS EL DIBUJO DEL CARRITO Y LO MOVEMOS DESDE EL TECHO */
   .header__icons a[href*="cart"] svg,
   .header__icons a:nth-last-child(1) svg,
   .header__icon--cart svg,
-  #cart-icon-bubble svg {
-    margin-top: 12px !important; /* Ajusta este número para bajar el carrito */
+  #cart-icon-bubble svg,
+  .header__icons [class*="cart"] svg {
     position: relative !important;
+    top: 10px !important; /* Ajusta este número para bajar el carrito */
   }
 }
