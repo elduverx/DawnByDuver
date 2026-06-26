@@ -5299,3 +5299,50 @@ shop-follow-button,
     top: 10px !important; /* Ajusta este número para alinearlo con la cajita */
   }
 }
+@media screen and (max-width: 749px) {
+  /* ESTE FILTRO `:not(.template-index)` PROHÍBE QUE EL CÓDIGO ACTÚE EN LA HOME */
+  body:not(.template-index) {
+    
+    /* 1. MANTENER EL LOGO ESTÁTICO EN INTERNAS */
+    .header__heading-link, .header__heading {
+      margin-bottom: 0 !important;
+    }
+
+    /* 2. MENÚ HAMBURGUESA */
+    .header__icon--menu,
+    .header__icon span.icon-hamburger,
+    summary.header__icon--menu {
+      transform: translateY(12px) !important; /* Ajusta a tu gusto */
+    }
+
+    /* 3. LUPA */
+    .header__search,
+    details-modal.header__search {
+      transform: translateY(8px) !important; /* Ajusta a tu gusto */
+    }
+
+    /* 4. PERSONITA */
+    .header__icons a[href*="account"],
+    .header__icons .icon-account {
+      transform: translateY(8px) !important; /* Ajusta a tu gusto */
+    }
+
+    /* 5. CAJITA DE PEDIDOS */
+    .header__icons a[href*="apps"] svg,
+    .header__icons a:nth-last-child(2) svg,
+    .header__icons .icon-box,
+    .header__icons [class*="box"] svg {
+      position: relative !important;
+      top: 10px !important; /* Ajusta a tu gusto */
+    }
+
+    /* 6. EL CARRITO (REBELDE) */
+    div.header__icons + svg,
+    header > svg,
+    svg[viewBox="0 0 24 24"]:has(+ span.visually-hidden) {
+      position: relative !important;
+      top: 14px !important; /* Ajusta a tu gusto */
+    }
+    
+  }
+}
