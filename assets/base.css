@@ -5299,13 +5299,13 @@ shop-follow-button,
     top: 10px !important; /* Ajusta este número para alinearlo con la cajita */
   }
 }
-/* BORRADO RADICAL DE LA LÍNEA SÓLO EN LA HOME */
-[data-template="index"] header,
-.template-index header,
-body.template-index #shopify-section-header *,
-body:not(.template-product):not(.template-collection) #shopify-section-header * {
-  border-bottom: none !important;
-  border-bottom-width: 0px !important;
-  box-shadow: none !important;
-  outline: none !important;
+@media screen and (max-width: 749px) {
+  /* ELIMINAR EL COLOR DE LA LÍNEA EN LA HOME */
+  .header-wrapper--homepage::after,
+  div.header-wrapper--homepage::after {
+    background-color: transparent !important;
+    background: none !important;
+    display: none !important;
+    height: 0px !important;
+  }
 }
