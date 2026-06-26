@@ -5234,6 +5234,6 @@ shop-follow-button,
     left: 0 !important;
     
     /* CONTROL DE ALTURA: Aquí es donde la tiramos hacia abajo */
-    top: 90px !important; /* Sube o baja este número para mover la línea a tu gusto */
+    top: 70px !important; /* Sube o baja este número para mover la línea a tu gusto */
   }
 }
