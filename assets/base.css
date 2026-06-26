@@ -5217,10 +5217,10 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* SEPARAR EL CONTENIDO SOLO EN PRODUCTOS Y COLECCIONES (DEJA LA HOME INTACTA) */
-  .template-product main#MainContent,
-  .template-collection main#MainContent,
-  .template-page main#MainContent {
-    margin-top: 40px !important; /* Ajusta este número para las páginas internas */
+  /* SEPARAR SOLO EN PÁGINAS INTERNAS (A TRAVÉS DE SUS CONTENEDORES PROPIOS) */
+  .product .product__info-wrapper,
+  .collection .collection-grid,
+  .main-page-title {
+    margin-top: 25px !important; /* Baja el contenido interno */
   }
 }
