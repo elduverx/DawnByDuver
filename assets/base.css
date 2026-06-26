@@ -4713,3 +4713,40 @@ shop-follow-button,
     right: auto !important;
   }
 }
+/* Contenedor principal del encabezado */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Separa los 3 bloques principales */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+
+/* --- LADO IZQUIERDO --- */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Controla la distancia entre el menú y la lupa (reduce este número si quieres la lupa aún más a la izquierda) */
+}
+
+/* --- LADO CENTRO (LOGO) --- */
+.header-center {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- LADO DERECHO --- */
+.header-right {
+  display: flex;
+  align-items: center;
+  /* Al usar un "gap" pequeño, logramos que la cajita se pegue al carrito y la personita a la cajita */
+  gap: 12px; 
+}
+
+/* Estilo opcional para que los iconos no tengan bordes ni fondos raros */
+.header-left button, .header-right button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
