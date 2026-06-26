@@ -3977,9 +3977,11 @@ footer-block__newsletter .footer-block__heading {
 .header-wrapper:not(.header-wrapper--homepage) .list-menu__item,
 .header-wrapper:not(.header-wrapper--homepage) .list-menu__item--link,
 .header-wrapper:not(.header-wrapper--homepage) .header__icon,
+.header-wrapper:not(.header-wrapper--homepage) .header__icon,
 .header-wrapper:not(.header-wrapper--homepage) .header__icon svg {
   color: #1a1a1a !important;
-  fill: #1a1a1a !important;
+  fill: none !important;
+  stroke: #1a1a1a !important;
 }
 
 /* Header letras blancas en homepage */
@@ -4656,19 +4658,13 @@ shop-follow-button,
     padding-bottom: 0.5rem !important;
   }
 }
-/* Caja seguimiento páginas interiores */
-.vela-box-interior {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: transparent !important;
-  color: #1a1a1a !important;
-}
-.vela-box-interior svg {
-  stroke: #1a1a1a !important;
-}
-.vela-box-interior svg * {
-  stroke: #1a1a1a !important;
+/* Caja seguimiento páginas interiores móvil */
+@media screen and (max-width: 749px) {
+  .header-wrapper:not(.header-wrapper--homepage) a.vela-box-interior {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
 }
