@@ -4713,47 +4713,10 @@ shop-follow-button,
     right: auto !important;
   }
 }
-/* ==========================================================================
-   AJUSTES DE ICONOS EN CABECERA MÓVIL (VELA MADRID)
-   ========================================================================== */
-@media screen and (max-width: 749px) {
-
-  /* 1. LUPA: La empujamos más hacia la izquierda (pegada al menú hamburguesa) */
-  .header-wrapper details-modal.header__search,
-  .header-wrapper .header__search {
-    margin-left: -4.5rem !important; /* Incrementado para jalarla más a la izquierda */
-    margin-right: auto !important;
-  }
-
-  /* 2. CONTENEDOR DE ICONOS DERECHOS: Ajustamos la posición general de este bloque */
-  .header__icons, 
-  .header-wrapper--homepage .header__icons {
-    display: flex !important;
-    gap: 2px !important; /* Espaciado ultra compacto para que se peguen entre sí */
-    
-    /* Aumentamos el desplazamiento hacia la izquierda para que todo el bloque se mueva */
-    transform: translateX(-100px) !important; 
-  }
-
-  /* 3. ORDEN REQUERIDO (Personita -> Cajita -> Carrito) */
-  /* Personita más a la izquierda pegada a la cajita */
-  .header-wrapper a.vela-account,
-  .header__icon--account {
-    order: 1 !important;
-    margin-right: -2px !important; /* Ajuste milimétrico hacia la derecha/cajita */
-  }
-
-  /* Cajita más a la izquierda pegada al carrito */
-  .header-wrapper a.vela-box-interior,
-  .vela-box-interior {
-    order: 2 !important;
-    margin-right: 10px !important; /* Ajuste milimétrico hacia el carrito */
-  }
-
-  /* Carrito al extremo derecho del bloque */
-  .header-wrapper a.large-up-hide[href*="cart"],
-  .header__icon--cart,
-  #cart-icon-bubble {
-    order: 6 !important;
-  }
+/* Lupa */
+.header-wrapper--homepage details-modal.header__search {
+  display: inline-flex !important;
+  align-self: center !important;
+  order: 2 !important;
+  margin-left: -3.5rem !important; /* <--- Esto es lo que vamos a cambiar */
 }
