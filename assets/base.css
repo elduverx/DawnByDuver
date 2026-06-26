@@ -4716,7 +4716,7 @@ shop-follow-button,
 @media screen and (max-width: 749px) {
   .header-wrapper details-modal.header__search,
   .header-wrapper--homepage details-modal.header__search {
-    margin-left: -5rem !important; /* Cambiado de -3.5rem a -5rem */
+    margin-left: -4rem !important; /* Cambiado de -3.5rem a -5rem */
   }
 }
 /* Lupa */
