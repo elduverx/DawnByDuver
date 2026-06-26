@@ -3977,9 +3977,11 @@ footer-block__newsletter .footer-block__heading {
 .header-wrapper:not(.header-wrapper--homepage) .list-menu__item,
 .header-wrapper:not(.header-wrapper--homepage) .list-menu__item--link,
 .header-wrapper:not(.header-wrapper--homepage) .header__icon,
+.header-wrapper:not(.header-wrapper--homepage) .header__icon,
 .header-wrapper:not(.header-wrapper--homepage) .header__icon svg {
   color: #1a1a1a !important;
-  fill: #1a1a1a !important;
+  fill: none !important;
+  stroke: #1a1a1a !important;
 }
 
 /* Header letras blancas en homepage */
