@@ -4494,23 +4494,3 @@ shop-follow-button,
     display: none !important;
   }
 }
-/* Banner desktop - acercar a cintura arriba */
-@media screen and (min-width: 990px) {
-  .banner__media {
-    height: 100vh !important;
-  }
-  .banner__media img {
-    object-position: center 35% !important;
-  }
-}
-
-/* Banner móvil - figura completa */
-@media screen and (max-width: 749px) {
-  .banner__media {
-    height: 90vh !important;
-  }
-  .banner__media img {
-    object-fit: cover !important;
-    object-position: center 10% !important;
-  }
-}
