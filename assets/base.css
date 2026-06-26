@@ -4675,3 +4675,13 @@ shop-follow-button,
     transform: scale(0.8) !important;
   }
 }
+/* Personita páginas interiores móvil */
+@media screen and (max-width: 749px) {
+  .header-wrapper:not(.header-wrapper--homepage) a.header__icon.large-up-hide {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
