@@ -4508,3 +4508,9 @@ shop-follow-button,
     height: 90vh;
   }
 }
+/* Banner desktop - bajar imagen para ver cabeza completa */
+@media screen and (min-width: 990px) {
+  .banner__media--desktop img {
+    object-position: center 30% !important;
+  }
+}
