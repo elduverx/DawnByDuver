@@ -5217,10 +5217,8 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* PLAN B: Empujar el bloque interno sin tocar la cabecera global */
-  .main-page-title, 
-  .collection-grid, 
-  .product__info-wrapper {
-    margin-top: 25px !important;
+  /* EMPUJAR EL CONTENIDO DE LAS PÁGINAS INTERNAS HACIA ABAJO */
+  body:not(.template-index) main#MainContent {
+    padding-top: 35px !important; /* Crea el espacio justo debajo de la línea gris */
   }
 }
