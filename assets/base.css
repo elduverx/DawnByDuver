@@ -5179,20 +5179,10 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* QUITAMOS EL BORDE DE LA BARRA DE ANUNCIOS Y DEL MENÚ SUPERIOR */
-  .utility-bar,
-  .announcement-bar,
-  .header-wrapper,
-  .header,
-  #shopify-section-header {
-    border-bottom: 0 !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
-  }
-
-  /* REFUERZO: Eliminamos cualquier sombra o línea superior del modal */
-  .search-modal {
-    margin-top: 0 !important;
-    border-top: none !important;
+  /* FULMINAR CUALQUIER DIV QUE ACTÚE COMO LÍNEA EN LA CABECERA */
+  .search-modal div[style*="height: 1px"],
+  .search-modal div[style*="height: 2px"],
+  .header-wrapper div[style*="height: 1px"] {
+    display: none !important;
   }
 }
