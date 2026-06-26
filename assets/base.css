@@ -4488,3 +4488,9 @@ shop-follow-button,
     min-height: 75svh !important;
   }
 }
+/* Ocultar hamburguesa en desktop */
+@media screen and (min-width: 990px) {
+  header-drawer {
+    display: none !important;
+  }
+}
