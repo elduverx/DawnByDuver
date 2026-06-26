@@ -36,7 +36,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/BANNER_VELA_MADRID_2_LOGO_PEQUENO.png",
+        "image": "shopify://shop_images/banner_vela_madrid_cuerpo_entero.png",
         "image_overlay_opacity": 20,
         "image_height": "large",
         "image_behavior": "none",
@@ -123,7 +123,7 @@
             "eyebrow": "COLECCIÓN",
             "title": "MUJER",
             "link_label": "DESCUBRIR",
-            "link": "shopify://collections/all"
+            "link": "shopify://collections/mujer"
           }
         }
       },
