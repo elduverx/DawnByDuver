@@ -5250,7 +5250,21 @@ shop-follow-button,
   .facets-vertical,
   .facets-wrapper,
   .collection-facets {
-    margin-top: -20px !important; /* Mueve todo el bloque hacia arriba a la vez */
+    margin-top: -50px !important; /* Mueve todo el bloque hacia arriba a la vez */
     padding-top: 0px !important;
+  }
+}
+@media screen and (max-width: 749px) {
+  /* BAJAR ICONOS DE LA CABECERA MANTENIENDO EL LOGO ESTÁTICO */
+  .header__heading-link, 
+  .header__heading {
+    margin-bottom: 0 !important; /* Mantiene el logo en su sitio */
+  }
+
+  .header__icon,
+  .header__search,
+  .header__menu-item,
+  a[class*="header__icon"] {
+    transform: translateY(8px) !important; /* Empuja los iconos hacia abajo en línea recta */
   }
 }
