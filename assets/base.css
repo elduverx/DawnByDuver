@@ -4711,15 +4711,17 @@ shop-follow-button,
     grid-area: icons !important;
     display: flex !important;
     flex-direction: row !important;
-    justify-content: flex-end !important; /* Alineación total a la derecha */
+    justify-content: flex-end !important;
     align-items: center !important;
     transform: none !important;
     margin: 0 !important;
     padding: 0 !important;
-    gap: 12px !important; /* Esta es la separación exacta que se ve en la foto */
+    gap: 12px !important;
   }
+}
+
 /* Corregir posición del carrito en móvil */
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 749px) {
   #cart-icon-bubble {
     position: relative !important;
     transform: none !important;
