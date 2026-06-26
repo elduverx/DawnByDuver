@@ -5217,8 +5217,12 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* EMPUJAR EL CONTENIDO DE LAS PÁGINAS INTERNAS HACIA ABAJO */
-  body:not(.template-index) main#MainContent {
-    padding-top: 35px !important; /* Crea el espacio justo debajo de la línea gris */
+  /* SEPARAR EL CONTENIDO SOLAMENTE EN LAS PÁGINAS INTERNAS */
+  .main-collection-banner,
+  .section-template--products,
+  .product,
+  .collection,
+  .main-page-title {
+    margin-top: 35px !important; /* Empuja el contenido hacia abajo alejándolo de la línea */
   }
 }
