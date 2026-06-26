@@ -4718,23 +4718,6 @@ shop-follow-button,
     padding: 0 !important;
     gap: 12px !important; /* Esta es la separación exacta que se ve en la foto */
   }
-
-  /* 4. Homogeneizar tamaños para que tengan el mismo peso visual */
-  .header-wrapper a.vela-account,
-  .header__icon--account,
-  .header-wrapper a.vela-box-interior,
-  .vela-box-interior,
-  .header-wrapper a.large-up-hide[href*="cart"],
-  .header__icon--cart,
-  #cart-icon-bubble {
-    display: inline-flex !important;
-    width: 28px !important; /* Ancho ajustado para que no ocupen espacio de más */
-    height: 44px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 0 !important;
-  }
-}
 /* Corregir posición del carrito en móvil */
 @media screen and (max-width: 989px) {
   #cart-icon-bubble {
