@@ -514,6 +514,41 @@ document.addEventListener('change', function(e) {
       gap: 0 !important;
     }
   }
+  @media screen and (max-width: 989px) {
+  /* 1. Nos aseguramos de que el carrito no flote sobre el logo */
+  .header__icon--cart, 
+  #cart-icon-bubble {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+  }
+
+  /* 2. Convertimos el contenedor de la derecha en una fila limpia */
+  .header__icons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 12px !important; /* Espacio de separación entre ellos */
+  }
+
+  /* 3. CAMBIAMOS EL ORDEN VISUAL: */
+  /* La cajita de seguimiento va primero (izquierda) */
+  .vela-box-interior { 
+    order: 1 !important; 
+  }
+  
+  /* El carrito va segundo (centro de la fila) */
+  .header__icon--cart { 
+    order: 2 !important; 
+  }
+  
+  /* La personita va tercera (derecha) */
+  .header__icon--account { 
+    order: 3 !important; 
+  }
+}
 </style>
   </body>
 </html>
