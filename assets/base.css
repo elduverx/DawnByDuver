@@ -5178,3 +5178,21 @@ shop-follow-button,
     background-color: transparent !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* QUITAMOS EL BORDE DE LA BARRA DE ANUNCIOS Y DEL MENÚ SUPERIOR */
+  .utility-bar,
+  .announcement-bar,
+  .header-wrapper,
+  .header,
+  #shopify-section-header {
+    border-bottom: 0 !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  /* REFUERZO: Eliminamos cualquier sombra o línea superior del modal */
+  .search-modal {
+    margin-top: 0 !important;
+    border-top: none !important;
+  }
+}
