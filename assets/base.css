@@ -5163,3 +5163,18 @@ shop-follow-button,
     margin-top: 0 !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* ELIMINAR BARRAS NEGRAS DEL BUSCADOR */
+  .search-modal__content, 
+  .search-modal,
+  div[class*="search"]::before,
+  div[class*="search"]::after {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
