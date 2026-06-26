@@ -4698,7 +4698,7 @@ shop-follow-button,
     padding-right: 0 !important;
     
     /* Con esto los empujamos hacia la izquierda de forma segura */
-    transform: translateX(-35px) !important; 
+    transform: translateX(-75px) !important; 
   }
 
   /* Aseguramos que los iconos se mantengan alineados y visibles */
