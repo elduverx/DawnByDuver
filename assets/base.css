@@ -5148,9 +5148,15 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* FILTRO MAESTRO: Si no es una página interior, es la Home. ¡Sube el logo! */
-  body:not([class*="template-"]):not(.template-product):not(.template-collection):not(.template-page) .vela-logo-mobile img,
-  body:not([class*="template-"]):not(.template-product):not(.template-collection):not(.template-page) .header__heading-link img {
-    transform: translateY(-25px) !important; /* Empujón directo a los píxeles */
+  /* ATACAMOS ÚNICAMENTE AL LOGO EXCLUSIVO DE LA PORTADA */
+  .vela-logo-mobile img {
+    transform: translateY(-25px) !important; /* Sube solo el logo de la Home */
+  }
+
+  /* ESCUDO TOTAL: Reseteamos cualquier movimiento en los logos de páginas interiores */
+  .header__heading-link img,
+  .header__heading-logo img,
+  .header__heading img {
+    transform: translateY(0px) !important; /* Se quedan fijas en su sitio original */
   }
 }
