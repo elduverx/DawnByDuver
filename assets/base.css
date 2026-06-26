@@ -4713,40 +4713,47 @@ shop-follow-button,
     right: auto !important;
   }
 }
-/* Contenedor principal del encabezado */
-.header-container {
-  display: flex;
-  justify-content: space-between; /* Separa los 3 bloques principales */
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #ffffff;
-}
+/* ==========================================================================
+   AJUSTES DE ICONOS EN CABECERA MÓVIL (VELA MADRID)
+   ========================================================================== */
+@media screen and (max-width: 749px) {
 
-/* --- LADO IZQUIERDO --- */
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* Controla la distancia entre el menú y la lupa (reduce este número si quieres la lupa aún más a la izquierda) */
-}
+  /* 1. LUPA: La empujamos más hacia la izquierda (pegada al menú hamburguesa) */
+  .header-wrapper details-modal.header__search,
+  .header-wrapper .header__search {
+    margin-left: -4.5rem !important; /* Incrementado para jalarla más a la izquierda */
+    margin-right: auto !important;
+  }
 
-/* --- LADO CENTRO (LOGO) --- */
-.header-center {
-  display: flex;
-  justify-content: center;
-}
+  /* 2. CONTENEDOR DE ICONOS DERECHOS: Ajustamos la posición general de este bloque */
+  .header__icons, 
+  .header-wrapper--homepage .header__icons {
+    display: flex !important;
+    gap: 2px !important; /* Espaciado ultra compacto para que se peguen entre sí */
+    
+    /* Aumentamos el desplazamiento hacia la izquierda para que todo el bloque se mueva */
+    transform: translateX(-100px) !important; 
+  }
 
-/* --- LADO DERECHO --- */
-.header-right {
-  display: flex;
-  align-items: center;
-  /* Al usar un "gap" pequeño, logramos que la cajita se pegue al carrito y la personita a la cajita */
-  gap: 12px; 
-}
+  /* 3. ORDEN REQUERIDO (Personita -> Cajita -> Carrito) */
+  /* Personita más a la izquierda pegada a la cajita */
+  .header-wrapper a.vela-account,
+  .header__icon--account {
+    order: 1 !important;
+    margin-right: -2px !important; /* Ajuste milimétrico hacia la derecha/cajita */
+  }
 
-/* Estilo opcional para que los iconos no tengan bordes ni fondos raros */
-.header-left button, .header-right button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
+  /* Cajita más a la izquierda pegada al carrito */
+  .header-wrapper a.vela-box-interior,
+  .vela-box-interior {
+    order: 2 !important;
+    margin-right: -2px !important; /* Ajuste milimétrico hacia el carrito */
+  }
+
+  /* Carrito al extremo derecho del bloque */
+  .header-wrapper a.large-up-hide[href*="cart"],
+  .header__icon--cart,
+  #cart-icon-bubble {
+    order: 3 !important;
+  }
 }
