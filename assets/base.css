@@ -4686,17 +4686,21 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* Forzamos a que el contenedor de la derecha alinee los tres elementos en fila */
+  /* Forzamos a que el contenedor se desplace hacia la izquierda */
   .header__icons, 
   .header-wrapper--homepage .header__icons {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-end !important;
-    gap: 12px !important; /* Espacio limpio entre ellos */
+    gap: 12px !important;
+    
+    /* Ajusta este número: a mayor porcentaje, más hacia la izquierda irán */
+    margin-right: 8% !important; 
+    padding-right: 0 !important;
   }
 
-  /* Nos aseguramos de que no tengan posiciones absolutas heredadas */
+  /* Mantenemos los iconos estables en su fila */
   .header__icon--account,
   .vela-box-interior,
   .header__icon--cart,
