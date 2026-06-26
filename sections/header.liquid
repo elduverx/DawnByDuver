@@ -737,14 +737,17 @@
 </style>
 <style>
 @media screen and (max-width: 749px) {
-  /* ESTO SOLO BORRA LA LÍNEA BLANCA, SIN TOCAR EL RESTO DEL ENCABEZADO */
+  /* MODIFICACIÓN INVISIBILIZADORA AGRESIVA */
   div.header-wrapper--homepage::after,
-  .header-wrapper--homepage::after {
-    display: none !important;
-    content: none !important;
-    height: 0px !important;
+  .header-wrapper--homepage::after,
+  body.template-index .header-wrapper::after {
+    background-color: rgba(0,0,0,0) !important;
     background: transparent !important;
-    background-color: transparent !important;
+    color: transparent !important;
+    top: -9999px !important; /* Lo mandamos arriba del todo fuera de la pantalla */
+    opacity: 0 !important;
+    height: 0px !important;
+    display: none !important;
   }
 }
 </style>
