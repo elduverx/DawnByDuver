@@ -5270,7 +5270,7 @@ shop-follow-button,
   /* 3. LUPA (BÚSQUEDA) */
   .header__search,
   details-modal.header__search {
-    transform: translateY(8px) !important; 
+    transform: translateY(5px) !important; 
   }
 
   /* 4. PERSONITA (CUENTA) */
