@@ -4686,42 +4686,41 @@ shop-follow-button,
   }
 }
 /* =======================================================
-   🎯 ORDENACIÓN DE RAÍZ EN MÓVIL (PERSONA -> CAJITA -> CARRITO)
+   🎯 ORDENACIÓN INFA_LIBLE EN MÓVIL: PERSONITA -> CAJITA -> CARRITO
    ======================================================= */
 @media screen and (max-width: 749px) {
-  /* 1. Resetear cualquier margen o posición extraña de los intentos anteriores */
-  .header__icon--account,
-  .header-wrapper--homepage a.vela-account,
+  /* 1. Limpiamos cualquier posición extraña que los mueva de la fila */
+  .header__icons a,
+  header.header a,
   .vela-box-interior,
-  .header-wrapper--homepage a.vela-seguimiento,
-  .header__icon--cart,
-  #cart-icon-bubble,
-  .header-wrapper--homepage a.large-up-hide[href*="cart"] {
+  .header__icon--account,
+  .header__icon--cart {
     position: static !important;
     transform: none !important;
     margin: 0 !important;
     display: inline-flex !important;
   }
 
-  /* 2. Asignamos la escala real de la fila (de menor a mayor) */
-  
-  /* La personita va primero */
-  .header-wrapper--homepage a.vela-account,
-  .header__icon--account {
-    order: 7 !important;
+  /* 2. FORZAMOS EL ORDEN POR URL (Da igual la clase que tengan) */
+
+  /* 👤 1º POSICIÓN: PERSONITA (Cualquier enlace que lleve a la cuenta) */
+  a[href*="account"],
+  .header__icon--account,
+  .vela-account {
+    order: 20 !important;
   }
 
-  /* La cajita va en el centro */
-  .header-wrapper--homepage a.vela-seguimiento,
-  .header-wrapper:not(.header-wrapper--homepage) a.vela-box-interior,
-  .vela-box-interior {
-    order: 8 !important;
+  /* 📦 2º POSICIÓN: CAJITA DE SEGUIMIENTO (Cualquier enlace que vaya a seguimiento) */
+  a[href*="seguimiento"],
+  .vela-box-interior,
+  .vela-seguimiento {
+    order: 30 !important;
   }
 
-  /* El carrito va a la derecha del todo */
-  .header-wrapper--homepage a.large-up-hide[href*="cart"],
+  /* 🛒 3º POSICIÓN: CARRITO DE COMPRA (Cualquier enlace que vaya al carrito) */
+  a[href*="cart"],
   .header__icon--cart,
   #cart-icon-bubble {
-    order: 9 !important;
+    order: 40 !important;
   }
 }
