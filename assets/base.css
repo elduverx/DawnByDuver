@@ -4747,7 +4747,7 @@ shop-follow-button,
   .header-wrapper a.vela-box-interior,
   .vela-box-interior {
     order: 2 !important;
-    margin-right: -2px !important; /* Ajuste milimétrico hacia el carrito */
+    margin-right: 10px !important; /* Ajuste milimétrico hacia el carrito */
   }
 
   /* Carrito al extremo derecho del bloque */
