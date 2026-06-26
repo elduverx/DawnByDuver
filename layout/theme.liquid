@@ -461,26 +461,21 @@ document.addEventListener('change', function(e) {
     swatch.classList.add('active');
   }
 </script>
-/* Forzar que los tres iconos quepan juntos en móviles y pantallas interiores */
-.header__icons {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-end !important;
-  flex-wrap: nowrap !important;
-  gap: 5px !important; /* Estrecha el espacio entre iconos para que quepan todos */
+/* Forzar que el menú de navegación se pegue al logotipo a la izquierda */
+.header--has-menu {
+  grid-template-columns: auto 1fr auto !important;
+  column-gap: 20px !important; /* Espacio de separación entre el logo y el menú */
 }
 
-/* Evitar que el icono de cuenta se oculte en móvil */
-.header__icon--account {
-  display: inline-flex !important;
-  flex-shrink: 0 !important;
+.header__inline-menu {
+  margin-left: 0 !important;
+  justify-content: flex-start !important;
 }
 
-/* Evitar que el carrito se desplace o desaparezca */
-.header__icon--cart,
-#cart-icon-bubble {
-  display: inline-flex !important;
-  flex-shrink: 0 !important;
+/* Opcional: Asegura que el logo no tenga márgenes raros que lo separen */
+.header__heading-link {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
   </body>
 </html>
