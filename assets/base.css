@@ -4590,7 +4590,7 @@ shop-follow-button,
     order: 3 !important;
     width: 44px !important;
     height: 44px !important;
-    margin-right: -30rem !important;
+    margin-right: auto !important;
   }
 
 /* Caja seguimiento - esquina derecha */
@@ -4598,6 +4598,6 @@ shop-follow-button,
     align-self: center !important;
     background: transparent !important;
     order: 10 !important;
-    margin-left: auto !important;
+    margin-left: -6rem !important;
   }
 }
