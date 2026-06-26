@@ -4754,6 +4754,6 @@ shop-follow-button,
   .header-wrapper a.large-up-hide[href*="cart"],
   .header__icon--cart,
   #cart-icon-bubble {
-    order: 3 !important;
+    order: 6 !important;
   }
 }
