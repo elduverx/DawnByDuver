@@ -5178,3 +5178,13 @@ shop-follow-button,
     background-color: transparent !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* FULMINAR LA LÍNEA NEGRA SUPERIOR */
+  .search-modal,
+  #SearchModal,
+  .search-modal__content {
+    border-top: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+}
