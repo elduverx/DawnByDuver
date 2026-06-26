@@ -5187,19 +5187,21 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ELIMINAR EL RECUADRO SUPERIOR DEL FORMULARIO DESCOLOCADO */
-  .search-modal form.search,
-  .header__search form.search,
-  .search-modal__form,
-  .search-modal__content form {
+  /* MACHACAR EL BORDE NEGRO DEL FORMULARIO COPIANDO SU CLASE EXACTA */
+  .header__search form.search, 
+  .header__search .search-modal__form, 
+  .search-modal.modal__content form,
+  .search-modal__content search-form form {
     border: none !important;
-    border-top: none !important;
+    border-top: 0px solid transparent !important;
     box-shadow: none !important;
   }
 
-  /* ASEGURAR QUE EL CUADRO DE TEXTO INTERNO CONSERVE SU BORDE CORRECTO */
-  .search-modal .field__input,
-  .search-modal input {
-    border: 1px solid #000000 !important; /* Mantiene la cajita blanca perfecta */
+  /* FORZAMOS A QUE SOLO LA CAJITA INTERNA SE VEA BIEN */
+  .search-modal .field,
+  .search-modal__box,
+  .search__input {
+    border: 1px solid #000000 !important;
+    background-color: #ffffff !important;
   }
 }
