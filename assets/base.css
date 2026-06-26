@@ -4913,8 +4913,11 @@ shop-follow-button,
     margin-top: 3px !important; /* Ajusta este número (más negativo sube más el logo) */
   }
 
-  /* 2. Mover la hamburguesa (menú) un poco más hacia la derecha */
+ /* 2. Mover la hamburguesa a la derecha de forma segura sin romper el clic */
   .header-wrapper--homepage header-drawer {
-    margin-left: 20px !important; /* Sube este valor si quieres empujarla aún más a la derecha */
+    margin-left: 0 !important; /* Limpiamos el margen que rompía el clic */
+    transform: translateX(10px) !important; /* La desplaza horizontalmente manteniendo el botón activo */
+    position: relative !important;
+    z-index: 9999px !important; /* Prioridad máxima de capa táctil */
   }
 }
