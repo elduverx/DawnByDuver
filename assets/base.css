@@ -4175,7 +4175,6 @@ footer-block__newsletter .footer-block__heading {
   }
 
   /* 2. Reestablece la fila limpia de cabecera: 3 líneas, lupa, logo e iconos */
- }
   .header-wrapper header.header {
     display: flex !important;
     flex-direction: row !important;
