@@ -4630,6 +4630,15 @@ shop-follow-button,
     width: 44px !important;
     height: 44px !important;
   }
+  /* Caja seguimiento - posición correcta */
+  .header-wrapper--homepage a.vela-seguimiento {
+    order: 9 !important;
+    margin-left: auto !important;
+    align-self: center !important;
+    grid-area: unset !important;
+    position: static !important;
+    display: inline-flex !important;
+  }
 }
 
 
