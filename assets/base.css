@@ -5241,7 +5241,7 @@ shop-follow-button,
   /* ELIMINAR EL ESPACIO SUPERIOR DEL TÍTULO EN LAS PÁGINAS INTERNAS */
   .main-page-title,
   .collection-hero__title {
-    margin-top: -20px !important;    /* Reduce el espacio exterior por arriba */
+    margin-top: -30px !important;    /* Reduce el espacio exterior por arriba */
     padding-top: 0px !important;   /* Elimina cualquier relleno interno superior */
   }
 }
