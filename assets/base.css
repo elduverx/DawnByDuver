@@ -5275,7 +5275,7 @@ shop-follow-button,
   .header__icons .icon-box,
   .header__icons [class*="box"] svg {
     position: relative !important;
-    top: 10px !important; /* Ajusta este número para bajar la cajita */
+    top: 9px !important; /* Ajusta este número para bajar la cajita */
   }
 
   /* AGARRAMOS EL DIBUJO DEL CARRITO Y LO MOVEMOS DESDE EL TECHO */
