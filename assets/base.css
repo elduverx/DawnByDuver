@@ -5179,11 +5179,10 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* FULMINAR LA LÍNEA NEGRA SUPERIOR */
-  .search-modal,
-  #SearchModal,
-  .search-modal__content {
-    border-top: none !important;
+  /* ELIMINAR EL BORDE DE LA CABECERA QUE SE QUEDA ARRIBA */
+  .header-wrapper, 
+  .header,
+  .search-modal__content-wrapper {
     border-bottom: none !important;
     box-shadow: none !important;
   }
