@@ -5148,10 +5148,10 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ESCUDO EXCLUSIVO HOME PAGE EN BASE.CSS */
-  .template-index .header__heading,
-  .template-index .header__heading-link,
-  .template-index .vela-logo-mobile {
-    transform: translateY(-18px) !important; /* Prueba con este empujón hacia arriba */
+  /* TU ESCUDO DE LA HOME PAGE: Atacando directamente al dibujo del logo */
+  .template-index .vela-logo-mobile img,
+  .template-index .header__heading-link img,
+  .template-index .header__heading img {
+    transform: translateY(-20px) !important; /* Desplaza el dibujo hacia arriba */
   }
 }
