@@ -5187,3 +5187,12 @@ shop-follow-button,
     box-shadow: none !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* ELIMINAR EL BORDE DE LA CABECERA QUE SE QUEDA ARRIBA */
+  .header-wrapper, 
+  .header,
+  .search-modal__content-wrapper {
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+}
