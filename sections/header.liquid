@@ -737,15 +737,14 @@
 </style>
 <style>
 @media screen and (max-width: 749px) {
-  /* ELIMINACIÓN DIRECTA DESDE EL HTML DE LA PORTADA */
-  .header-wrapper--homepage::after, 
+  /* ESTO SOLO BORRA LA LÍNEA BLANCA, SIN TOCAR EL RESTO DEL ENCABEZADO */
   div.header-wrapper--homepage::after,
-  .header-wrapper--homepage {
+  .header-wrapper--homepage::after {
     display: none !important;
+    content: none !important;
+    height: 0px !important;
     background: transparent !important;
     background-color: transparent !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
   }
 }
 </style>
