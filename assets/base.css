@@ -4975,3 +4975,75 @@ shop-follow-button,
     display: none !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* 1. Romper contenedor del tema */
+  .header__search details[open] {
+    position: static !important;
+  }
+
+  /* 2. COMPLETAMENTE TRANSPARENTE: El fondo de la pantalla ya no es blanco */
+  .header__search details[open] .search-modal,
+  details-modal .search-modal,
+  .search-modal.modal__content {
+    position: fixed !important;
+    top: 55px !important; /* Altura justo debajo del encabezado */
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: transparent !important; /* Quitamos el fondo blanco de toda la pantalla */
+    background-color: transparent !important;
+    display: block !important;
+    z-index: 999999 !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 3. ALINEACIÓN PERFECTA DE LA BARRA: Ahora tiene fondo blanco propio */
+  .header__search form.search,
+  .header__search .search-modal__form,
+  .search-modal.modal__content form {
+    position: absolute !important;
+    top: 15px !important; /* Altura exacta ajustada con la cruz */
+    left: 15px !important;
+    width: calc(100% - 75px) !important; /* Espacio ideal para no pisar la cruz */
+    margin: 0 !important;
+    display: flex !important;
+    background: #ffffff !important; /* Blanco solo para la cajita de búsqueda */
+    border: 1px solid #000000 !important; /* Mantiene el borde negro de tu diseño */
+    box-sizing: border-box !important;
+  }
+
+  /* 4. ALINEACIÓN DE LA CRUZ: Clavada en su sitio a la derecha de la barra */
+  .search-modal__close-button,
+  .header__search .search-modal__close-button {
+    display: block !important;
+    position: absolute !important;
+    right: 15px !important;
+    top: 15px !important; /* Misma altura exacta que la barra para alinear */
+    z-index: 9999999 !important;
+    background: transparent !important;
+  }
+
+  /* Ocultar cruz sobrante del botón de arriba */
+  .header__search summary .header__icon-close,
+  .header__search summary .icon-close {
+    display: none !important;
+  }
+
+  /* 5. EL DESPLEGABLE DE PRODUCTOS: Conserva su fondo blanco nítido para leer bien */
+  .predictive-search, 
+  #predictive-search-results,
+  .search-modal__content .predictive-search {
+    display: block !important;
+    position: absolute !important;
+    top: 70px !important; /* Aparece justo abajo de la barra de búsqueda */
+    left: 15px !important;
+    width: calc(100% - 30px) !important; /* Centrado y estético */
+    background: #ffffff !important; /* Fondo blanco exclusivo para leer los resultados */
+    background-color: #ffffff !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+    max-height: calc(100vh - 150px) !important;
+    overflow-y: auto !important;
+    z-index: 99999999 !important;
+  }
+}
