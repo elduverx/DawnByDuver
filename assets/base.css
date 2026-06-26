@@ -4914,21 +4914,26 @@ shop-follow-button,
   }
 
  @media screen and (max-width: 749px) {
-  /* --- AJUSTE EXCLUSIVO PARA LA HAMBURGUESA --- */
-  
-  /* 1. Mover el botón hacia la derecha usando padding seguro */
-  .header-wrapper--homepage header-drawer {
+  /* 1. Forzar a la lupa a ocupar SOLO su espacio real (evita que se estire a la izquierda) */
+  .header-wrapper--homepage details-modal.header__search,
+  .header-wrapper--homepage .header__search {
+    max-width: 44px !important;
+    width: 44px !important;
     position: relative !important;
-    display: inline-flex !important;
-    padding-left: 12px !important; /* Ajusta este número para moverla más o menos a la derecha */
-    margin: 0 !important;
-    transform: none !important;
-    width: auto !important;
-    height: auto !important;
-    z-index: 99999 !important; /* Capa máxima para asegurar el clic */
+    z-index: 10 !important; /* Capa inferior a la hamburguesa */
   }
 
-  /* 2. Asegurar que el botón interno reciba el toque del dedo */
+  /* 2. Dejar la hamburguesa en prioridad máxima y moverla con padding */
+  .header-wrapper--homepage header-drawer {
+    position: relative !important;
+    z-index: 99999 !important; /* Capa máxima absoluta */
+    padding-left: 12px !important;
+    margin: 0 !important;
+    display: inline-flex !important;
+  }
+
+  /* 3. Forzar al navegador a que el dedo active el menú al tocar cualquier parte de la hamburguesa */
+  .header-wrapper--homepage header-drawer summary,
   .header-wrapper--homepage .header__icon--menu,
   .header-wrapper--homepage .header__icon--menu * {
     pointer-events: auto !important;
