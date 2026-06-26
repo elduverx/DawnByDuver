@@ -4913,30 +4913,30 @@ shop-follow-button,
     margin-top: 3px !important; /* Ajusta este número (más negativo sube más el logo) */
   }
 
- @media screen and (max-width: 749px) {
-  /* 1. Forzar a la lupa a ocupar SOLO su espacio real (evita que se estire a la izquierda) */
-  .header-wrapper--homepage details-modal.header__search,
-  .header-wrapper--homepage .header__search {
-    max-width: 44px !important;
-    width: 44px !important;
-    position: relative !important;
-    z-index: 10 !important; /* Capa inferior a la hamburguesa */
-  }
-
-  /* 2. Dejar la hamburguesa en prioridad máxima y moverla con padding */
+@media screen and (max-width: 749px) {
+  /* 1. Asegurar que el contenedor nativo del menú no esté bloqueado ni colapsado */
   .header-wrapper--homepage header-drawer {
     position: relative !important;
-    z-index: 99999 !important; /* Capa máxima absoluta */
-    padding-left: 12px !important;
+    display: block !important; /* Volvemos a block para que el JS de Shopify lo reconozca */
+    padding-left: 12px !important; /* Mantiene el desplazamiento a la derecha que querías */
     margin: 0 !important;
-    display: inline-flex !important;
+    z-index: 99999 !important;
+    width: auto !important;
+    height: auto !important;
   }
 
-  /* 3. Forzar al navegador a que el dedo active el menú al tocar cualquier parte de la hamburguesa */
-  .header-wrapper--homepage header-drawer summary,
-  .header-wrapper--homepage .header__icon--menu,
-  .header-wrapper--homepage .header__icon--menu * {
+  /* 2. Forzar al botón 'summary' (el activador real en temas Dawn) a ser cliqueable */
+  .header-wrapper--homepage header-drawer summary.header__icon--menu {
+    display: flex !important;
+    position: relative !important;
+    z-index: 99999 !important;
     pointer-events: auto !important;
     cursor: pointer !important;
+  }
+
+  /* 3. Evitar que cualquier otro elemento interfiera en la zona izquierda */
+  .header-wrapper--homepage details-modal.header__search {
+    pointer-events: auto !important;
+    z-index: 1000 !important; /* Capa inferior a la hamburguesa */
   }
 }
