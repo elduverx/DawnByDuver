@@ -5290,15 +5290,14 @@ shop-follow-button,
     top: 10px !important; /* Pon aquí el mismo número que a la cajita para alinearlos */
   }
 }
-/* DESPLAZAMIENTO FORZADO POR TRASLACIÓN EN MATRIZ PARA EL CARRITO */
+@media screen and (max-width: 749px) {
+  /* CONTROL EXCLUSIVO PARA EL CARRITO */
   .header__icons a:last-child,
   .header__icons a[href*="cart"],
   #cart-icon-bubble,
   .header__icon--cart {
     position: relative !important;
     display: inline-flex !important;
-    margin-top: 0 !important;
-    /* Movemos el contenedor entero usando coordenadas brutas */
     transform: translate(0px, 10px) !important; 
   }
 }
