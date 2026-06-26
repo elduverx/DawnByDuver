@@ -4656,4 +4656,7 @@ shop-follow-button,
     padding-bottom: 0.5rem !important;
   }
 }
-
+/* Caja seguimiento páginas interiores - negro */
+.header-wrapper:not(.header-wrapper--homepage) .header__icon svg {
+  stroke: #1a1a1a !important;
+}
