@@ -5148,16 +5148,10 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ATACAMOS ÚNICAMENTE AL LOGO EXCLUSIVO DE LA PORTADA */
-  .vela-logo-mobile img {
-    transform: translateY(-55px) !important; /* Sube solo el logo de la Home */
-  }
-
-  /* ESCUDO TOTAL: Reseteamos cualquier movimiento en los logos de páginas interiores */
-  .header__heading-link img,
-  .header__heading-logo img,
-  .header__heading img {
-    transform: translateY(0px) !important; /* Se quedan fijas en su sitio original */
+  /* TU ESCUDO DE LA HOME PAGE: Atacando directamente al dibujo del logo */
+  .template-index .vela-logo-mobile img,
+  .template-index .header__heading-link img,
+  .template-index .header__heading img {
+    transform: translateY(-20px) !important; /* Desplaza el dibujo hacia arriba */
   }
 }
-

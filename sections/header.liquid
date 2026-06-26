@@ -190,24 +190,28 @@
 {%- else -%}
   {%- render 'header-dropdown-menu' -%}
 {%- endif -%}
-    {%- if request.page_type == 'index' -%}
-  <h1 class="header__heading">
-{%- endif -%}
-    <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-      <div class="vela-logo-mobile large-up-hide">
-        <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/Logo_Vela_Madrid_transparente.png?v=1782458880" alt="VELA MADRID" style="width: 115px !important; height: auto !important;">
-      </div>
-      {%- if settings.logo != blank -%}
-        <div class="header__heading-logo-wrapper">
-          <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/Logo_negro_Vela_madrid_transparente.png?v=1782466407" alt="{{ shop.name }}" style="width: {{ settings.logo_width }}px; height: auto;">
-        </div>
-      {%- else -%}
-        <span class="h2">{{ shop.name }}</span>
+    {%- if section.settings.logo_position == 'middle-center' -%}
+      {%- if request.page_type == 'index' -%}
+        <h1 class="header__heading">
       {%- endif -%}
-    </a>
-{%- if request.page_type == 'index' -%}
-  </h1>
-{%- endif -%}
+          <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+            {%- if request.page_type == 'index' -%}
+              <div class="vela-logo-mobile large-up-hide" style="margin-top: -80px !important; display: block !important; position: relative !important; z-index: 9999 !important; height: 70px !important; max-width: 180px !important;">
+                <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/Logo_Vela_Madrid_transparente.png?v=1782458880" alt="{{shop.name}}" style="width: 115px !important; height: auto !important;">
+              </div>
+            {%- endif -%}
+            {%- if settings.logo != blank -%}
+              <div class="header__heading-logo-wrapper">
+                <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/Logo_negro_Vela_madrid_transparente.png?v=1782466407" alt="{{ shop.name }}" style="width: {{ settings.logo_width }}px; height: auto;">
+              </div>
+            {%- else -%}
+              <span class="h2">{{ shop.name }}</span>
+            {%- endif -%}
+          </a>
+      {%- if request.page_type == 'index' -%}
+        </h1>
+      {%- endif -%}
+    {%- endif -%}
     <a href="/pages/seguimiento" class="large-up-hide vela-seguimiento" style="background: transparent !important; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
@@ -715,6 +719,19 @@
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+}
+</style>
+<style>
+@media screen and (max-width: 749px) {
+  /* ESCUDO EXCLUSIVO HOME PAGE: Liberar el logo del contenedor Flexbox */
+  .template-index .vela-logo-mobile {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -85%) !important; /* El -85% lo empuja hacia arriba con fuerza */
+    margin: 0 !important;
+    display: block !important;
   }
 }
 </style>
