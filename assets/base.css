@@ -5278,13 +5278,15 @@ shop-follow-button,
     top: 9px !important; /* Ajusta este número para bajar la cajita */
   }
 
-  /* AGARRAMOS EL DIBUJO DEL CARRITO Y LO MOVEMOS DESDE EL TECHO */
+  /* REFUERZO TOTAL PARA EL CARRITO */
   .header__icons a[href*="cart"] svg,
   .header__icons a:nth-last-child(1) svg,
   .header__icon--cart svg,
   #cart-icon-bubble svg,
-  .header__icons [class*="cart"] svg {
+  .header__icons [class*="cart"] svg,
+  #cart-icon-bubble,
+  .header__icon--cart {
     position: relative !important;
-    top: 10px !important; /* Ajusta este número para bajar el carrito */
+    top: 10px !important; /* Pon aquí el mismo número que a la cajita para alinearlos */
   }
 }
