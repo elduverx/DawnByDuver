@@ -4713,6 +4713,12 @@ shop-follow-button,
     right: auto !important;
   }
 }
+@media screen and (max-width: 749px) {
+  .header-wrapper details-modal.header__search,
+  .header-wrapper--homepage details-modal.header__search {
+    margin-left: -5rem !important; /* Cambiado de -3.5rem a -5rem */
+  }
+}
 /* Lupa */
 .header-wrapper--homepage details-modal.header__search {
   display: inline-flex !important;
