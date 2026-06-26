@@ -4575,3 +4575,15 @@ shop-follow-button,
     background: transparent !important;
   }
 }
+/* Carrito móvil homepage - sin fondo */
+@media screen and (max-width: 749px) {
+  .header-wrapper--homepage a.header__icon.large-up-hide {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+  .header-wrapper--homepage a.header__icon.large-up-hide::before,
+  .header-wrapper--homepage a.header__icon.large-up-hide::after {
+    display: none !important;
+    box-shadow: none !important;
+  }
+}
