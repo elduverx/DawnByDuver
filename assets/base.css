@@ -4935,37 +4935,6 @@ shop-follow-button,
   /* 1. Mover la lupa hacia la izquierda */
   .header__search {
     position: relative !important;
-    right: 15px !important; /* Ajusta los píxeles si quieres moverla más */
-  }
-
-  /* 2. Hacer que el fondo blanco invasivo sea invisible */
-  .header__search details-modal,
-  .header__search .search-modal,
-  .header__search .search-modal__content {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    border: none !important;
-  }
-
-  /* 3. Ocultar la cruz flotante (el botón de cerrar) */
-  .header__search .modal__close-button,
-  .header__search .search-modal__close-button,
-  .header__search button[type="button"] {
-    display: none !important;
-  }
-
-  /* 4. Asegurar que el icono de la lupa se pinte al 100% */
-  .header__search summary {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-}
-@media screen and (max-width: 749px) {
-  /* 1. Mover la lupa hacia la izquierda */
-  .header__search {
-    position: relative !important;
     right: 15px !important;
   }
 
