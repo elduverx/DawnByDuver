@@ -5205,3 +5205,15 @@ shop-follow-button,
     background-color: #ffffff !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* CENTRAR LA BARRA DE BÚSQUEDA BLANCA */
+  .header__search form.search, 
+  .header__search .search-modal__form, 
+  .search-modal.modal__content form {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: calc(100% - 30px) !important; /* Mantiene un margen estético a los lados de la pantalla */
+  }
+}
