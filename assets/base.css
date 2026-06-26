@@ -5300,15 +5300,17 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ESTO SOLO CORRE EN LA HOMEPAGE */
-  body.template-index {
+  /* FILTRO DIRECTO PARA LA PÁGINA DE INICIO (HOME) */
+  .template-index, [data-template="index"], body#web-index, .index {
 
-    /* 1. ELIMINAR LA LÍNEA SEPARADORA BLANCA DE LA CABECERA */
+    /* 1. ELIMINAR POR COMPLETO LA LÍNEA BLANCA EN LA HOME */
     .header-wrapper, 
     .header, 
-    #shopify-section-header,
-    .section-header {
-      border-bottom: none !important;
+    #shopify-section-header, 
+    .section-header,
+    [class*="header"] {
+      border-bottom: 0px solid transparent !important;
+      border: none !important;
       box-shadow: none !important;
     }
 
@@ -5317,8 +5319,10 @@ shop-follow-button,
     .header__icon span.icon-hamburger,
     summary.header__icon--menu,
     .header__search,
-    details-modal.header__search {
-      transform: translateY(-5px) !important; /* El número negativo las mueve HACIA ARRIBA */
+    details-modal.header__search,
+    .header__heading-link + .header__icon {
+      position: relative !important;
+      top: -6px !important; /* El valor negativo empuja físicamente hacia arriba */
     }
 
   }
