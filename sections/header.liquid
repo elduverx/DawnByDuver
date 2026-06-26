@@ -678,3 +678,31 @@
   }
 }
 </style>
+<style>
+@media screen and (max-width: 749px) {
+  /* Mantener la lupa en la posición perfecta que ya conseguimos */
+  body:not(.template-index) .header__search {
+    position: absolute !important;
+    left: 45px !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  /* BAJAR EL LOGO: Aumentamos el margen superior para que baje y se vea completo */
+  body:not(.template-index) .header__heading-logo,
+  body:not(.template-index) .header__heading,
+  body:not(.template-index) .header__heading-link {
+    margin-top: 18px !important; /* Subido de 10px a 18px para empujarlo más abajo */
+    padding-top: 5px !important;
+    display: inline-block !important;
+    height: auto !important; /* Evita que el contenedor lo corte por abajo al bajar */
+  }
+
+  /* Asegurar que la imagen del logo dentro del contenedor no tenga límites estrictos */
+  body:not(.template-index) .header__heading-logo img {
+    max-height: 100% !important;
+    object-fit: contain !important;
+  }
+}
+</style>
