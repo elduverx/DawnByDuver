@@ -4656,9 +4656,19 @@ shop-follow-button,
     padding-bottom: 0.5rem !important;
   }
 }
-/* Caja seguimiento páginas interiores - forzar negro */
-.header-wrapper:not(.header-wrapper--homepage) a.header__icon[href*="seguimiento"] svg path,
-.header-wrapper:not(.header-wrapper--homepage) a.header__icon[href*="seguimiento"] svg polyline,
-.header-wrapper:not(.header-wrapper--homepage) a.header__icon[href*="seguimiento"] svg line {
+/* Caja seguimiento páginas interiores */
+.vela-box-interior {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent !important;
+  color: #1a1a1a !important;
+}
+.vela-box-interior svg {
+  stroke: #1a1a1a !important;
+}
+.vela-box-interior svg * {
   stroke: #1a1a1a !important;
 }
