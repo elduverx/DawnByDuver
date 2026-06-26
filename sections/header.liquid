@@ -316,24 +316,12 @@
           <line x1="12" y1="22.08" x2="12" y2="12" style="stroke: #1a1a1a !important;"/>
         </svg>
       </a>
-    {%- if shop.customer_accounts_enabled -%}
-  <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset" style="display: inline-flex; align-items: center; justify-content: center; width: 4.4rem; height: 4.4rem; color: rgb(var(--color-foreground)); padding: 0; margin-right: 5px;">
-    {% comment %} Icono de la personita (SVG nativo de Dawn estilizado) {% endcomment %}
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block; width: 2rem; height: 2rem;">
-      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-      <circle cx="12" cy="7" r="4"></circle>
-    </svg>
-    <span class="visually-hidden">
-      {%- liquid
-        if customer
-          echo 'customer.account_fallback' | t
-        else
-          echo 'customer.log_in' | t
-        endif
-      -%}
-    </span>
-  </a>
-{%- endif -%}
+    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon link focus-inset" rel="nofollow">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="9" cy="21" r="1"/>
