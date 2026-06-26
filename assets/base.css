@@ -5148,10 +5148,9 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* TU ESCUDO DE LA HOME PAGE: Atacando directamente al dibujo del logo */
-  .template-index .vela-logo-mobile img,
-  .template-index .header__heading-link img,
-  .template-index .header__heading img {
-    transform: translateY(-100px) !important; /* Desplaza el dibujo hacia arriba */
+  /* FILTRO MAESTRO: Si no es una página interior, es la Home. ¡Sube el logo! */
+  body:not([class*="template-"]):not(.template-product):not(.template-collection):not(.template-page) .vela-logo-mobile img,
+  body:not([class*="template-"]):not(.template-product):not(.template-collection):not(.template-page) .header__heading-link img {
+    transform: translateY(-25px) !important; /* Empujón directo a los píxeles */
   }
 }
