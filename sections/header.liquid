@@ -724,12 +724,10 @@
 </style>
 <style>
 @media screen and (max-width: 749px) {
-  /* FORZAR LA SUBIDA DEL LOGO EN LA HOME CON POSICIÓN RELATIVA */
-  .template-index .vela-logo-mobile {
+  /* ESCUDO EXCLUSIVO HOME PAGE: Desplazar la imagen del logo hacia arriba */
+  .template-index .vela-logo-mobile img {
     position: relative !important;
-    top: -20px !important; /* Esto lo desliza hacia arriba directamente */
-    margin-top: 0 !important;
-    display: inline-flex !important;
+    top: -15px !important; /* Desliza la imagen hacia arriba saltándose el Flexbox */
   }
 }
 </style>
