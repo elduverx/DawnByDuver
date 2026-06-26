@@ -5264,7 +5264,7 @@ shop-follow-button,
   .header__icon--menu,
   .header__icon span.icon-hamburger,
   summary.header__icon--menu {
-    transform: translateY(12px) !important; /* Ajusta este número para nivelar las 3 líneas */
+    transform: translateY(10px) !important; /* Ajusta este número para nivelar las 3 líneas */
   }
 
   /* 3. LUPA (BÚSQUEDA) */
