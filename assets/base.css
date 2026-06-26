@@ -4932,22 +4932,29 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* Fulminar la cruz (icono de cerrar) */
-  .header__search .icon-close,
-  .header__search svg.icon-close,
-  .header__search summary .icon-close,
-  .header__search [class*="close"] {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
-  }
-
-  /* Asegurar que el icono de la lupa permanezca visible */
-  .header__search summary {
+  /* Al pulsar (cuando el contenedor se abre), forzar la pantalla completa */
+  .header__search[open] .search-modal,
+  details[open].header__search .search-modal {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
+    position: fixed !important;
+    top: 50px !important; /* Ajusta la altura para que encaje justo debajo de tu cabecera */
+    left: 0 !important;
+    width: 100vw !important; /* Ocupa el 100% del ancho de la pantalla */
+    height: auto !important;
+    background-color: #ffffff !important; /* Fondo blanco para la zona de escritura */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+    z-index: 999999 !important;
+    padding: 15px !important;
+  }
+
+  /* Forzar al formulario y al campo de texto a estirarse por completo */
+  .header__search[open] form,
+  .header__search[open] .search-modal__form,
+  .header__search[open] input.search__input {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
   }
 }
