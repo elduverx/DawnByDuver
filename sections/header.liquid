@@ -673,13 +673,12 @@
   }
 
   /* 2. HAMBURGUESA: Desplazarla y asegurar que funcione el clic */
-  header-drawer { 
-    order: 1 !important; 
-    display: block !important; 
-    margin: 0 !important; 
-    padding-left: 12px !important; 
-    z-index: 99 !important; 
-  }
+header-drawer { 
+  order: 1 !important; 
+  display: block !important; 
+  margin-left: 20px !important; /* Aumenta este número si la quieres más a la derecha */
+  z-index: 99999 !important; /* Capa altísima para asegurar el clic */
+}
   
   header-drawer summary.header__icon--menu { 
     display: flex !important; 
