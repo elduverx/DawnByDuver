@@ -4718,5 +4718,5 @@ shop-follow-button,
   display: inline-flex !important;
   align-self: center !important;
   order: 2 !important;
-  margin-left: -3.5rem !important; /* <--- Esto es lo que vamos a cambiar */
+  margin-left: -15.5rem !important; /* <--- Esto es lo que vamos a cambiar */
 }
