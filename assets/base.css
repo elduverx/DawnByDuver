@@ -5147,3 +5147,11 @@ shop-follow-button,
     border: none !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* ESCUDO EXCLUSIVO HOME PAGE EN BASE.CSS */
+  .template-index .header__heading,
+  .template-index .header__heading-link,
+  .template-index .vela-logo-mobile {
+    transform: translateY(-18px) !important; /* Prueba con este empujón hacia arriba */
+  }
+}
