@@ -5269,19 +5269,17 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* SEPARAR Y BAJAR LA CAJITA POR MARGEN */
+  /* FORZAR BAJADA DE LA CAJITA POR RELLENO */
   .header__icons a[href*="apps"],
-  .header__icons .icon-box,
   .header__icons a:nth-last-child(2) {
-    margin-top: 10px !important; /* Ajusta este número para bajar la cajita */
-    display: inline-block !important;
+    padding-top: 12px !important; /* Ajusta este número para graduar la cajita */
   }
 
-  /* SEPARAR Y BAJAR EL CARRITO POR MARGEN */
+  /* FORZAR BAJADA DEL CARRITO POR RELLENO */
   #cart-icon-bubble,
   .header__icon--cart,
-  .header__icons a:nth-last-child(1) {
-    margin-top: 10px !important; /* Ajusta este número para bajar el carrito */
-    display: inline-block !important;
+  .header__icons a:nth-last-child(1),
+  .header__icons a[href*="cart"] {
+    padding-top: 12px !important; /* Ajusta este número para graduar el carrito */
   }
 }
