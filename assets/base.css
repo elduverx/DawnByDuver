@@ -4657,8 +4657,8 @@ shop-follow-button,
   }
 }
 /* Caja seguimiento páginas interiores - forzar negro */
-.header-wrapper:not(.header-wrapper--homepage) a.header__icon svg path,
-.header-wrapper:not(.header-wrapper--homepage) a.header__icon svg polyline,
-.header-wrapper:not(.header-wrapper--homepage) a.header__icon svg line {
+.header-wrapper:not(.header-wrapper--homepage) a.header__icon[href*="seguimiento"] svg path,
+.header-wrapper:not(.header-wrapper--homepage) a.header__icon[href*="seguimiento"] svg polyline,
+.header-wrapper:not(.header-wrapper--homepage) a.header__icon[href*="seguimiento"] svg line {
   stroke: #1a1a1a !important;
 }
