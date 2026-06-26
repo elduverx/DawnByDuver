@@ -4685,34 +4685,7 @@ shop-follow-button,
     height: 44px !important;
   }
 }
-@media screen and (max-width: 749px) {
-  /* Controlamos el contenedor para que no corte nada y se mueva a la izquierda */
-  .header__icons, 
-  .header-wrapper--homepage .header__icons {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-end !important;
-    gap: 10px !important; /* Un pelín más juntos para que quepan mejor */
-    margin-right: 0 !important; /* Quitamos el margen que los cortaba */
-    padding-right: 0 !important;
-    
-    /* Con esto los empujamos hacia la izquierda de forma segura */
-    transform: translateX(-75px) !important; 
-  }
 
-  /* Aseguramos que los iconos se mantengan alineados y visibles */
-  .header__icon--account,
-  .vela-box-interior,
-  .header__icon--cart,
-  #cart-icon-bubble {
-    position: relative !important;
-    display: inline-flex !important;
-    margin: 0 !important;
-    left: auto !important;
-    right: auto !important;
-  }
-}
 @media screen and (max-width: 749px) {
   /* Controlamos el contenedor para agruparlos y pegarlos a la derecha */
   .header__icons, 
