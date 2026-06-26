@@ -5217,19 +5217,16 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. LIMPIAMOS CUALQUIER LÍNEA PEGADA AL MENÚ */
+  /* 1. ASEGURAMOS QUE EL MENÚ NO TENGA LA LÍNEA VIEJA PEGADA */
   .header-wrapper, .header {
     border-bottom: none !important;
     box-shadow: none !important;
   }
 
-  /* 2. CREAMOS LA LÍNEA MÁS ABAJO EN LAS PÁGINAS INTERNAS */
-  #shopify-section-template--main-collection-banner,
-  #shopify-section-template--main-product,
-  .main-page-title {
-    border-top: 1px solid #e5e5e5 !important; /* Aquí pintamos la línea gris */
-    margin-top: 60px !important;              /* La tiramos bien abajo desde el menú */
-    padding-top: 20px !important;             /* Espacio libre por debajo de la línea */
-    display: block !important;
+  /* 2. PINTAMOS LA LÍNEA BIEN ABAJO EN LAS INTERNAS (EVITANDO LA HOME) */
+  body:not(.template-index) main#MainContent,
+  body:not([id*="template--"]) main#MainContent {
+    border-top: 1px solid #e5e5e5 !important; /* Volvemos a pintar la línea */
+    padding-top: 55px !important;              /* La empujamos bien abajo */
   }
 }
