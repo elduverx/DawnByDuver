@@ -5238,72 +5238,10 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* ELIMINAR EL ESPACIO SUPERIOR DEL TÍTULO EN LAS PÁGINAS INTERNAS */
-  .main-page-title,
-  .collection-hero__title {
-    margin-top: -30px !important;    /* Reduce el espacio exterior por arriba */
-    padding-top: 0px !important;   /* Elimina cualquier relleno interno superior */
-  }
-}
-@media screen and (max-width: 749px) {
-  /* SUBIR FILTROS Y PRODUCTOS DE MANERA CONJUNTA */
-  .facets-vertical,
-  .facets-wrapper,
-  .collection-facets {
-    margin-top: -50px !important; /* Mueve todo el bloque hacia arriba a la vez */
-    padding-top: 0px !important;
-  }
-}
-@media screen and (max-width: 749px) {
-  /* BAJAR ICONOS DE LA CABECERA MANTENIENDO EL LOGO ESTÁTICO */
-  .header__heading-link, 
-  .header__heading {
-    margin-bottom: 0 !important; /* Mantiene el logo en su sitio */
-  }
-
-  .header__icon,
-  .header__search,
-  .header__menu-item,
-  a[class*="header__icon"] {
-    transform: translateY(8px) !important; /* Empuja los iconos hacia abajo en línea recta */
-  }
-}
-@media screen and (max-width: 749px) {
-  /* AGARRAMOS EL DIBUJO DE LA CAJITA Y LO MOVEMOS DESDE EL TECHO */
-  .header__icons a[href*="apps"] svg,
-  .header__icons a:nth-last-child(2) svg,
-  .header__icons .icon-box,
-  .header__icons [class*="box"] svg {
-    position: relative !important;
-    top: 9px !important; /* Ajusta este número para bajar la cajita */
-  }
-
-  /* REFUERZO TOTAL PARA EL CARRITO */
-  .header__icons a[href*="cart"] svg,
-  .header__icons a:nth-last-child(1) svg,
-  .header__icon--cart svg,
-  #cart-icon-bubble svg,
-  .header__icons [class*="cart"] svg,
-  #cart-icon-bubble,
-  .header__icon--cart {
-    position: relative !important;
-    top: 10px !important; /* Pon aquí el mismo número que a la cajita para alinearlos */
-  }
-}
-@media screen and (max-width: 749px) {
-  /* CONTROL ABSOLUTO Y EXCLUSIVO PARA EL CARRITO */
-  div.header__icons + svg,
-  header > svg,
-  svg[viewBox="0 0 24 24"]:has(+ span.visually-hidden) {
-    position: relative !important;
-    top: 10px !important; /* Ajusta este número para alinearlo con la cajita */
-  }
-}
-@media screen and (max-width: 749px) {
-  /* ESTE FILTRO `:not(.template-index)` PROHÍBE QUE EL CÓDIGO ACTÚE EN LA HOME */
+  /* ESTE FILTRO EVITA QUE EL CÓDIGO AFECTE A LA HOME */
   body:not(.template-index) {
     
-    /* 1. MANTENER EL LOGO ESTÁTICO EN INTERNAS */
+    /* 1. LOGO ESTÁTICO EN PÁGINAS INTERNAS */
     .header__heading-link, .header__heading {
       margin-bottom: 0 !important;
     }
@@ -5312,19 +5250,19 @@ shop-follow-button,
     .header__icon--menu,
     .header__icon span.icon-hamburger,
     summary.header__icon--menu {
-      transform: translateY(12px) !important; /* Ajusta a tu gusto */
+      transform: translateY(12px) !important;
     }
 
     /* 3. LUPA */
     .header__search,
     details-modal.header__search {
-      transform: translateY(8px) !important; /* Ajusta a tu gusto */
+      transform: translateY(8px) !important;
     }
 
     /* 4. PERSONITA */
     .header__icons a[href*="account"],
     .header__icons .icon-account {
-      transform: translateY(8px) !important; /* Ajusta a tu gusto */
+      transform: translateY(8px) !important;
     }
 
     /* 5. CAJITA DE PEDIDOS */
@@ -5333,15 +5271,15 @@ shop-follow-button,
     .header__icons .icon-box,
     .header__icons [class*="box"] svg {
       position: relative !important;
-      top: 10px !important; /* Ajusta a tu gusto */
+      top: 10px !important;
     }
 
-    /* 6. EL CARRITO (REBELDE) */
+    /* 6. EL CARRITO */
     div.header__icons + svg,
     header > svg,
     svg[viewBox="0 0 24 24"]:has(+ span.visually-hidden) {
       position: relative !important;
-      top: 14px !important; /* Ajusta a tu gusto */
+      top: 14px !important;
     }
     
   }
