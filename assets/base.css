@@ -5255,34 +5255,32 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. EVITAR QUE EL LOGO SE MUEVA */
-  .header__heading-link, .header__heading {
-    margin-bottom: 0 !important;
+  /* BAJAR ICONOS DE LA CABECERA MANTENIENDO EL LOGO ESTÁTICO */
+  .header__heading-link, 
+  .header__heading {
+    margin-bottom: 0 !important; /* Mantiene el logo en su sitio */
   }
 
-  /* 2. ICONOS DE LA IZQUIERDA (Menú hamburguesa y Lupa) */
-  .header__icon--menu,
-  .header__search {
-    transform: translateY(8px) !important; 
+  .header__icon,
+  .header__search,
+  .header__menu-item,
+  a[class*="header__icon"] {
+    transform: translateY(8px) !important; /* Empuja los iconos hacia abajo en línea recta */
   }
-
-  /* 3. ICONO DE LA PERSONITA (Cuenta/Usuario) */
-  .header__icons .icon-account,
-  .header__icons a[href*="account"] {
-    transform: translateY(8px) !important;
-  }
-
-  /* 4. ICONO DE LA CAJITA (Seguimiento/Pedidos) */
-  .header__icons .icon-box,
+}
+@media screen and (max-width: 749px) {
+  /* CONTROL EXCLUSIVO PARA LA CAJITA */
   .header__icons a[href*="apps"],
-  .header__icons .header__icon:not(.header__icon--cart):not(.header__icon--menu) {
-    transform: translateY(8px) !important;
+  .header__icons svg.icon-box,
+  .header__icons .header__icon:not(.header__icon--cart):not(.header__icon--menu):not(.header__search) {
+    transform: translateY(14px) !important; /* Ajusta este número para graduar la cajita */
   }
 
-  /* 5. ICONO DEL CARRITO */
+  /* CONTROL EXCLUSIVO PARA EL CARRITO */
   #cart-icon-bubble,
   .header__icon--cart,
-  .header__cart-icon {
-    transform: translateY(8px) !important;
+  .header__cart-icon,
+  .header__icons a[href*="cart"] {
+    transform: translateY(14px) !important; /* Ajusta este número para graduar el carrito */
   }
 }
