@@ -4932,24 +4932,33 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. Mover la lupa de forma limpia hacia la izquierda */
+  /* 1. Mover la lupa hacia la izquierda */
   .header__search {
     position: relative !important;
-    right: 15px !important; /* Ajusta los píxeles a tu gusto */
+    right: 15px !important; /* Ajusta los píxeles si quieres moverla más */
   }
 
-  /* 2. Forzar que CUALQUIER caja blanca o texto de esa zona desaparezca por completo */
-  .header__search *:not(summary):not(.icon-search):not(svg) {
-    display: none !important;
+  /* 2. Hacer que el fondo blanco invasivo sea invisible */
+  .header__search details-modal,
+  .header__search .search-modal,
+  .header__search .search-modal__content {
     background: transparent !important;
+    background-color: transparent !important;
     box-shadow: none !important;
-    height: 0 !important;
     border: none !important;
   }
 
-  /* 3. Asegurar que el icono de la lupa se quede visible y limpio */
-  .header__search .icon-search,
-  .header__search summary svg {
-    display: inline-block !important;
+  /* 3. Ocultar la cruz flotante (el botón de cerrar) */
+  .header__search .modal__close-button,
+  .header__search .search-modal__close-button,
+  .header__search button[type="button"] {
+    display: none !important;
+  }
+
+  /* 4. Asegurar que el icono de la lupa se pinte al 100% */
+  .header__search summary {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
