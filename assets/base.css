@@ -4685,9 +4685,9 @@ shop-follow-button,
     height: 44px !important;
   }
 }
-/* Carrito páginas interiores - forzar visible en móvil */
+/* Carrito páginas interiores móvil */
 @media screen and (max-width: 749px) {
-  .header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble {
+  .header-wrapper:not(.header-wrapper--homepage) a.vela-cart-interior {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
