@@ -5217,9 +5217,10 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* SEPARAR LA LÍNEA DEL CONTENIDO EXCLUYENDO LA HOME PAGE */
-  body:not(.template-index) .header-wrapper,
-  body:not(.template-index) .header {
-    padding-bottom: 25px !important; /* Genera el espacio hacia abajo */
+  /* PLAN B: Empujar el bloque interno sin tocar la cabecera global */
+  .main-page-title, 
+  .collection-grid, 
+  .product__info-wrapper {
+    margin-top: 25px !important;
   }
 }
