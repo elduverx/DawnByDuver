@@ -4675,6 +4675,6 @@ shop-follow-button,
 @media screen and (max-width: 749px) {
   .header-wrapper:not(.header-wrapper--homepage) .header__icon[rel="nofollow"],
   .header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble {
-    margin-right: -1rem !important;
+    margin-right: -0.5rem !important;
   }
 }
