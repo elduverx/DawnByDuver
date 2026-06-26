@@ -4962,3 +4962,28 @@ shop-follow-button,
     opacity: 1 !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* 1. Mover la lupa hacia la izquierda */
+  .header__search {
+    position: relative !important;
+    right: 15px !important;
+  }
+
+  /* 2. Ocultar por completo el formulario interno que causa el recuadro y la cruz */
+  .header__search details-modal,
+  .header__search .search-modal,
+  .header__search form,
+  .header__search .search-modal__close-button {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+  }
+
+  /* 3. Asegurar que el botón del icono de la lupa se quede visible */
+  .header__search summary {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
