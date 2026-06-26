@@ -4912,4 +4912,16 @@ shop-follow-button,
   .header-wrapper--homepage .header__heading-link {
     margin-top: 3px !important; /* Ajusta este número (más negativo sube más el logo) */
   }
+  @media screen and (max-width: 749px) {
+  /* Forzar el desplazamiento directo del icono SVG de la hamburguesa */
+  .header__icon--menu .icon-hamburger {
+    position: relative !important;
+    left: 15px !important; /* El número mágico: súbelo a 20px o 25px si quieres que ruede más a la derecha */
+  }
+
+  /* Asegurar que el área de clic acompañe al icono y no se rompa */
+  .header__icon--menu {
+    overflow: visible !important;
+  }
+}
 
