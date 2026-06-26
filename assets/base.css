@@ -5152,6 +5152,6 @@ shop-follow-button,
   .template-index .vela-logo-mobile img,
   .template-index .header__heading-link img,
   .template-index .header__heading img {
-    transform: translateY(-20px) !important; /* Desplaza el dibujo hacia arriba */
+    transform: translateY(-100px) !important; /* Desplaza el dibujo hacia arriba */
   }
 }
