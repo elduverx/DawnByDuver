@@ -706,3 +706,44 @@
   }
 }
 </style>
+<style>
+@media screen and (max-width: 749px) {
+  /* 1. Mantener la lupa en su sitio */
+  body:not(.template-index) .header__search {
+    position: absolute !important;
+    left: 45px !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  /* 2. ENCOGER EL LOGO A LA FUERZA: Reducimos el contenedor y la imagen */
+  body:not(.template-index) .header__heading-link,
+  body:not(.template-index) .header__heading-logo,
+  body:not(.template-index) .header__heading {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 15px !important; /* Lo baja un poco para alejarlo del techo */
+    height: 35px !important; /* Altura máxima estricta para que sea pequeño */
+    width: auto !important;
+  }
+
+  body:not(.template-index) .header__heading-logo img,
+  body:not(.template-index) .header__heading-link img {
+    height: 35px !important; /* Encoge la imagen directamente */
+    max-height: 35px !important;
+    width: auto !important;
+    max-width: 120px !important; /* Limita el ancho para que no se estire */
+    object-fit: contain !important;
+  }
+
+  /* 3. Ajustar el encabezado y la línea separadora al nuevo tamaño mini */
+  body:not(.template-index) .header,
+  body:not(.template-index) .header-wrapper,
+  body:not(.template-index) .site-header {
+    padding-bottom: 12px !important; 
+    height: auto !important;
+  }
+}
+</style>
