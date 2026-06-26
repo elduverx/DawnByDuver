@@ -4726,3 +4726,15 @@ shop-follow-button,
   order: 2 !important;
   margin-left: -15.5rem !important; /* <--- Esto es lo que vamos a cambiar */
 }
+@media screen and (max-width: 749px) {
+  /* Forzar al logo a estar exactamente en el centro de la pantalla */
+  .header-wrapper .header__heading,
+  .header-wrapper--homepage .header__heading {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1 !important;
+  }
+}
