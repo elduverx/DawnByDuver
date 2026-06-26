@@ -4910,11 +4910,11 @@ shop-follow-button,
   /* 1. Subir un poco el logo en la Home Page */
   .header-wrapper--homepage .header__heading,
   .header-wrapper--homepage .header__heading-link {
-    margin-top: 2px !important; /* Ajusta este número (más negativo sube más el logo) */
+    margin-top: 3px !important; /* Ajusta este número (más negativo sube más el logo) */
   }
 
   /* 2. Mover la hamburguesa (menú) un poco más hacia la derecha */
   .header-wrapper--homepage header-drawer {
-    margin-left: 10px !important; /* Sube este valor si quieres empujarla aún más a la derecha */
+    margin-left: 20px !important; /* Sube este valor si quieres empujarla aún más a la derecha */
   }
 }
