@@ -4598,6 +4598,6 @@ shop-follow-button,
     align-self: center !important;
     background: transparent !important;
     order: 10 !important;
-    margin-left: 0rem !important;
+    margin-left: -6rem !important;
   }
 }
