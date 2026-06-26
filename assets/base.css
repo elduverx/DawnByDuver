@@ -4511,6 +4511,6 @@ shop-follow-button,
 /* Banner desktop - bajar imagen para ver cabeza completa */
 @media screen and (min-width: 990px) {
   .banner__media--desktop img {
-    object-position: center 40% !important;
+    object-position: center 50% !important;
   }
 }
