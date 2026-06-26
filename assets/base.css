@@ -4558,6 +4558,6 @@ shop-follow-button,
 /* Logo móvil homepage - bajar */
 @media screen and (max-width: 749px) {
   .header-wrapper--homepage .header__heading {
-    margin-top: 1rem !important;
+    margin-top: 2rem !important;
   }
 }
