@@ -4596,6 +4596,6 @@ shop-follow-button,
   .header-wrapper--homepage a.header__icon.large-up-hide {
     align-self: center !important;
     background: transparent !important;
-    order: 10 !important;
+    order: 0 !important;
   }
 }
