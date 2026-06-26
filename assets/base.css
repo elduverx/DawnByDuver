@@ -4932,29 +4932,32 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* Al pulsar (cuando el contenedor se abre), forzar la pantalla completa */
-  .header__search[open] .search-modal,
-  details[open].header__search .search-modal {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    position: fixed !important;
-    top: 50px !important; /* Ajusta la altura para que encaje justo debajo de tu cabecera */
-    left: 0 !important;
-    width: 100vw !important; /* Ocupa el 100% del ancho de la pantalla */
-    height: auto !important;
-    background-color: #ffffff !important; /* Fondo blanco para la zona de escritura */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
-    z-index: 999999 !important;
-    padding: 15px !important;
+  /* 1. Al pulsar (cuando details tiene el atributo open), rompemos la caja padre */
+  .header__search details[open] {
+    position: static !important;
   }
 
-  /* Forzar al formulario y al campo de texto a estirarse por completo */
-  .header__search[open] form,
-  .header__search[open] .search-modal__form,
-  .header__search[open] input.search__input {
+  /* 2. Forzamos al cuadro blanco a salir de ahí y ocupar TODA la pantalla */
+  .header__search details[open] .search-modal {
+    display: flex !important;
+    position: fixed !important;
+    top: 60px !important; /* Coloca la barra justo debajo de tu cabecera */
+    left: 0 !important;
+    width: 100vw !important; /* Ancho completo de la pantalla de lado a lado */
+    height: 70px !important; /* Altura ideal para que el cliente escriba cómodo */
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    z-index: 999999 !important;
+    padding: 10px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. Aseguramos que el formulario y el buscador interno se estiren al 100% */
+  .header__search details[open] .search-modal__form,
+  .header__search details[open] form {
+    display: flex !important;
     width: 100% !important;
     max-width: 100% !important;
-    display: flex !important;
+    align-items: center !important;
   }
 }
