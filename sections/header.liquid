@@ -717,28 +717,28 @@
     transform: translateY(-50%) !important;
   }
 
-  /* 2. ENCOGER EL LOGO A LA FUERZA: Reducimos el contenedor y la imagen */
+  /* 2. TAMAÑO INTERMEDIO: Ajustado a 50px de alto */
   body:not(.template-index) .header__heading-link,
   body:not(.template-index) .header__heading-logo,
   body:not(.template-index) .header__heading {
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-top: 15px !important; /* Lo baja un poco para alejarlo del techo */
-    height: 50px !important; /* Altura máxima estricta para que sea pequeño */
+    margin-top: 12px !important; /* Separación sutil del techo */
+    height: 50px !important; 
     width: auto !important;
   }
 
   body:not(.template-index) .header__heading-logo img,
   body:not(.template-index) .header__heading-link img {
-    height: 35px !important; /* Encoge la imagen directamente */
-    max-height: 35px !important;
+    height: 50px !important; /* Forzar el tamaño intermedio */
+    max-height: 50px !important;
     width: auto !important;
-    max-width: 120px !important; /* Limita el ancho para que no se estire */
+    max-width: 150px !important; 
     object-fit: contain !important;
   }
 
-  /* 3. Ajustar el encabezado y la línea separadora al nuevo tamaño mini */
+  /* 3. Ajustar la línea separadora abajo */
   body:not(.template-index) .header,
   body:not(.template-index) .header-wrapper,
   body:not(.template-index) .site-header {
