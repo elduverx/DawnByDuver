@@ -5210,7 +5210,7 @@ shop-follow-button,
   .header__search form.search, 
   .header__search .search-modal__form, 
   .search-modal.modal__content form {
-    left: -15px !important; /* Controla la distancia desde el borde izquierdo */
+    left: -20px !important; /* Controla la distancia desde el borde izquierdo */
     right: auto !important;
     margin: 0 auto !important;
     width: calc(100% - 30px) !important;
