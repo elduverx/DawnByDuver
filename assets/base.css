@@ -4719,22 +4719,19 @@ shop-follow-button,
     margin-left: -4rem !important; /* Cambiado de -3.5rem a -5rem */
   }
 }
-/* Lupa */
-.header-wrapper--homepage details-modal.header__search {
-  display: inline-flex !important;
-  align-self: center !important;
-  order: 2 !important;
-  margin-left: -15.5rem !important; /* <--- Esto es lo que vamos a cambiar */
-}
 @media screen and (max-width: 749px) {
-  /* Forzar al logo a estar exactamente en el centro de la pantalla */
-  .header-wrapper .header__heading,
-  .header-wrapper--homepage .header__heading {
+  /* Permitir que el logo se mueva libremente */
+  .header__heading {
+    position: static !important;
+  }
+
+  /* Centrar el enlace/imagen del logo en el medio de la pantalla */
+  .header__heading-link {
     position: absolute !important;
     left: 50% !important;
-    transform: translateX(-50%) !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
     margin: 0 !important;
-    padding: 0 !important;
-    z-index: 1 !important;
+    z-index: 9 !important;
   }
 }
