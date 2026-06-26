@@ -4739,3 +4739,13 @@ shop-follow-button,
     left: auto !important;
   }
 }
+/* FIX carrito no tape hamburguesa */
+@media screen and (max-width: 989px) {
+  .header__icon--cart,
+  #cart-icon-bubble {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    z-index: 1 !important;
+  }
+}
