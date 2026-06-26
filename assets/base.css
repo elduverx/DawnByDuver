@@ -4572,6 +4572,6 @@ shop-follow-button,
   .header__search {
     grid-area: left-icons !important;
     justify-self: start !important;
-    margin-left: -33rem !important;
+    margin-left: -25rem !important;
   }
 }
