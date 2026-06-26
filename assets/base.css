@@ -4619,3 +4619,11 @@ shop-follow-button,
     height: 44px !important;
   }
 }
+.header-wrapper--homepage a.vela-seguimiento {
+    order: 9 !important;
+    margin-left: auto !important;
+    align-self: center !important;
+    grid-area: unset !important;
+    position: static !important;
+    display: inline-flex !important;
+  }
