@@ -5217,17 +5217,19 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. SEPARAMOS EL CONTENIDO MUCHO MÁS HACIA ABAJO */
+  /* 1. LIMPIAMOS CUALQUIER LÍNEA PEGADA AL MENÚ */
+  .header-wrapper, .header {
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 2. CREAMOS LA LÍNEA MÁS ABAJO EN LAS PÁGINAS INTERNAS */
   #shopify-section-template--main-collection-banner,
   #shopify-section-template--main-product,
   .main-page-title {
-    margin-top: 55px !important; /* Aumentamos el espacio para tirarlo más abajo */
+    border-top: 1px solid #e5e5e5 !important; /* Aquí pintamos la línea gris */
+    margin-top: 60px !important;              /* La tiramos bien abajo desde el menú */
+    padding-top: 20px !important;             /* Espacio libre por debajo de la línea */
     display: block !important;
-  }
-
-  /* 2. OCULTAMOS LA LÍNEA QUE SOBRA SI QUEDAN DOS */
-  .header-wrapper {
-    border-bottom: none !important;
-    box-shadow: none !important;
   }
 }
