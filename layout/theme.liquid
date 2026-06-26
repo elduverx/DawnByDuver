@@ -437,30 +437,45 @@ document.addEventListener('change', function(e) {
   }, 1200);
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const style = document.createElement("style");
-    style.textContent = `
-      @keyframes slideInFromLeft {
-        0%   { opacity: 0; transform: translateX(-80px); }
-        100% { opacity: 1; transform: translateX(0); }
-      }
-      .slide-in-left {
-        opacity: 0;
-        animation: slideInFromLeft 0.6s ease-out forwards;
-      }
-    `;
-    document.head.appendChild(style);
+  function velaSwatchClick(e, swatch) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
 
-    const section = document.getElementById("shopify-section-template--29804020433230__featured_collection");
+    var newSrc = swatch.getAttribute('data-image-src');
+    var wrapper = swatch.closest('.card-wrapper');
+    if (!wrapper) return;
 
-    if (section) {
-      const items = section.querySelectorAll("li");
-      items.forEach((item, i) => {
-        item.style.animationDelay = (i * 0.1) + "s";
-        item.classList.add("slide-in-left");
-      });
+    var mainImg = wrapper.querySelector('.card__media .media img')
+                || wrapper.querySelector('.card__media img')
+                || wrapper.querySelector('.card__inner img');
+
+    if (mainImg) {
+      mainImg.srcset = '';
+      mainImg.src = newSrc;
     }
-  });
-  </script>
+
+    wrapper.querySelectorAll('.card-color-swatch').forEach(function(s) {
+      s.classList.remove('active');
+    });
+    swatch.classList.add('active');
+  }
+</script>
+/* Forzar que el menú de navegación se pegue al logotipo a la izquierda */
+.header--has-menu {
+  grid-template-columns: auto 1fr auto !important;
+  column-gap: 20px !important; /* Espacio de separación entre el logo y el menú */
+}
+
+.header__inline-menu {
+  margin-left: 0 !important;
+  justify-content: flex-start !important;
+}
+
+/* Opcional: Asegura que el logo no tenga márgenes raros que lo separen */
+.header__heading-link {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
   </body>
 </html>
