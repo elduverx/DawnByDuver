@@ -4656,14 +4656,9 @@ shop-follow-button,
     padding-bottom: 0.5rem !important;
   }
 }
-/* Header letras blancas en homepage */
-.header-wrapper--homepage .header__menu-item,
-.header-wrapper--homepage .header__menu-item a,
-.header-wrapper--homepage .header__menu-item span,
-.header-wrapper--homepage .list-menu__item,
-.header-wrapper--homepage .list-menu__item--link,
-.header-wrapper--homepage .header__icon,
-.header-wrapper--homepage .header__icon svg {
-  color: #ffffff !important;
-  fill: #ffffff !important;
+/* Caja seguimiento páginas interiores - forzar negro */
+.header-wrapper:not(.header-wrapper--homepage) a.header__icon svg path,
+.header-wrapper:not(.header-wrapper--homepage) a.header__icon svg polyline,
+.header-wrapper:not(.header-wrapper--homepage) a.header__icon svg line {
+  stroke: #1a1a1a !important;
 }
