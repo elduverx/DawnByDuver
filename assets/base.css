@@ -4575,3 +4575,16 @@ shop-follow-button,
     background: transparent !important;
   }
 }
+/* Quitar fondo del icono caja */
+@media screen and (max-width: 749px) {
+  a.header__icon.large-up-hide {
+    background: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  a.header__icon.large-up-hide::before,
+  a.header__icon.large-up-hide::after {
+    display: none !important;
+  }
+}
