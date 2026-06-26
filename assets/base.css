@@ -5216,3 +5216,9 @@ shop-follow-button,
     width: calc(100% - 30px) !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* SEPARAR EL CONTENIDO DEL ENCABEZADO EN PÁGINAS INTERNAS */
+  body:not(.template-index) main#MainContent {
+    margin-top: 20px !important; /* Ajusta este número para bajarlo más o menos */
+  }
+}
