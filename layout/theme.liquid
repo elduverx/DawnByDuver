@@ -461,21 +461,23 @@ document.addEventListener('change', function(e) {
     swatch.classList.add('active');
   }
 </script>
-/* Forzar que el menú de navegación se pegue al logotipo a la izquierda */
-.header--has-menu {
-  grid-template-columns: auto 1fr auto !important;
-  column-gap: 20px !important; /* Espacio de separación entre el logo y el menú */
-}
+/* Forzar que el menú se pegue al logotipo ÚNICAMENTE EN VERSIÓN MÓVIL */
+@media screen and (max-width: 989px) {
+  .header--has-menu {
+    grid-template-columns: auto 1fr auto !important;
+    column-gap: 15px !important; /* Espacio entre el logo y el menú en móvil */
+  }
 
-.header__inline-menu {
-  margin-left: 0 !important;
-  justify-content: flex-start !important;
-}
+  .header__inline-menu {
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+    display: block !important; /* Asegura que no se esconda si el tema intenta ocultarlo */
+  }
 
-/* Opcional: Asegura que el logo no tenga márgenes raros que lo separen */
-.header__heading-link {
-  margin-right: 0 !important;
-  padding-right: 0 !important;
+  .header__heading-link {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
 }
   </body>
 </html>
