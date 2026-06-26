@@ -4581,7 +4581,7 @@ shop-follow-button,
     order: 2 !important;
   }
 
-  /* Carrito a la derecha de la lupa */
+  /* Carrito */
   .header-wrapper--homepage a.large-up-hide[href*="cart"] {
     display: inline-flex !important;
     align-items: center !important;
@@ -4590,14 +4590,17 @@ shop-follow-button,
     order: 3 !important;
     width: 44px !important;
     height: 44px !important;
-    margin-right: auto !important;
   }
 
-/* Caja seguimiento - esquina derecha */
+  /* Espaciador entre carrito y caja */
+  .header-wrapper--homepage a.large-up-hide[href*="cart"] ~ a.header__icon.large-up-hide {
+    margin-left: auto !important;
+  }
+
+  /* Caja seguimiento - esquina derecha */
   .header-wrapper--homepage a.header__icon.large-up-hide {
     align-self: center !important;
     background: transparent !important;
     order: 10 !important;
-    margin-left: -6rem !important;
   }
 }
