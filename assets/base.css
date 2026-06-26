@@ -4892,3 +4892,18 @@ shop-follow-button,
     box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1) !important; /* Sombra sutil divisoria */
   }
 }
+@media screen and (max-width: 749px) {
+  /* Eliminar los fondos opacos secundarios del menú desplegable */
+  .menu-drawer__inner-submenu,
+  .menu-drawer__navigation,
+  .menu-drawer__utility-links {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  /* Asegurar que el fondo del cajón principal no sea negro sólido */
+  #menu-drawer,
+  .menu-drawer {
+    background: rgba(0, 0, 0, 0.3) !important; /* Capa traslúcida muy fina */
+  }
+}
