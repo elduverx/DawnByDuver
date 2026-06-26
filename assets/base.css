@@ -4043,7 +4043,11 @@ footer-block__newsletter .footer-block__heading {
 .header-wrapper--homepage .header__heading-logo-wrapper {
   display: none !important;
 }
-
+@media screen and (max-width: 749px) {
+  .header-wrapper--homepage .header__heading-logo-wrapper {
+    display: block !important;
+  }
+}
 /* Homepage: eliminar espacio bajo header */
 .shopify-section-group-header-group:has(.header-wrapper--homepage) {
   margin-bottom: 0 !important;
