@@ -3628,9 +3628,8 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5 {
 
 /* Header Refinements */
 .header {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
+    padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
+  }
 
 @media screen and (max-width: 749px) {
   .header-wrapper:not(.header-wrapper--homepage) .header {
