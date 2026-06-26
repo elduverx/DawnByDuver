@@ -4575,3 +4575,13 @@ shop-follow-button,
     margin-left: -33rem !important;
   }
 }
+/* Icono caja seguimiento móvil */
+@media screen and (max-width: 749px) {
+  .header-wrapper--homepage a.header__icon.large-up-hide {
+    background: transparent !important;
+    background-color: transparent !important;
+  }
+  .header-wrapper--homepage a.header__icon.large-up-hide svg {
+    background: transparent !important;
+  }
+}
