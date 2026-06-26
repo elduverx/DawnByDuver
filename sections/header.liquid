@@ -676,7 +676,6 @@
   /* ==========================================
      2. TAMAÑO DE LOS LOGOS (Para toda la web)
      ========================================== */
-  /* Forzamos a que las imágenes de ambos logos midan 75px de alto (más grandes) */
   body:not(.template-index) .header__heading-logo img,
   body:not(.template-index) .header__heading-link img,
   .template-index .vela-logo-mobile img,
@@ -697,7 +696,7 @@
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-top: 15px !important; /* Ajustado para el nuevo tamaño grande */
+    margin-top: 15px !important; 
     height: 75px !important;
     width: auto !important;
   }
@@ -705,17 +704,17 @@
   body:not(.template-index) .header,
   body:not(.template-index) .header-wrapper,
   body:not(.template-index) .site-header {
-    padding-bottom: 15px !important; /* Espacio para que respire la línea de abajo */
+    padding-bottom: 15px !important; 
     height: auto !important;
   }
 
   /* ==========================================
-     4. AJUSTE DE POSICIÓN EN LA HOME PAGE
+     4. CORRECCIÓN: SUBIR LOGO EN LA HOME PAGE 
      ========================================== */
-  /* Como el logo ahora es más grande, necesita un empujón negativo mayor para alinearse */
+  /* Hemos cambiado -26px por -42px para obligarlo a subir y alinearse */
   .template-index .vela-logo-mobile,
   .vela-logo-mobile {
-    margin-top: -26px !important; 
+    margin-top: -42px !important; 
     margin-bottom: 0 !important;
     display: inline-flex !important;
     align-items: center !important;
