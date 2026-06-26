@@ -4932,43 +4932,46 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. Forzar al contenedor del buscador a desengancharse e ir arriba */
+  /* 1. Asegurar que la pantalla completa se fije arriba */
   .header__search details[open] .search-modal,
   details-modal .search-modal,
   .search-modal.modal__content {
     position: fixed !important;
-    top: 60px !important; /* Lo clava arriba del todo, debajo del menú negro */
+    top: 55px !important; /* Justo debajo de tu encabezado */
     left: 0 !important;
-    width: 100vw !important; /* Ancho completo */
-    height: 100vh !important; /* Alto completo para que los resultados caigan abajo */
+    width: 100vw !important;
+    height: 100vh !important;
     background-color: #ffffff !important;
     display: block !important;
-    transform: none !important;
     z-index: 999999 !important;
+    transform: none !important;
   }
 
-  /* 2. Llevar el cuadro de texto arriba y darle el ancho de la pantalla */
-  .search-modal__form,
-  .header__search form {
+  /* 2. FORZAR LA BARRA DE BÚSQUEDA ARRIBA: Subir el formulario al lado de la cruz */
+  .header__search form.search,
+  .header__search .search-modal__form,
+  .search-modal.modal__content form {
+    position: absolute !important;
+    top: 15px !important; /* Lo pega arriba dentro de la caja blanca */
+    left: 15px !important;
+    width: calc(100% - 70px) !important; /* Deja el espacio exacto para la cruz a la derecha */
+    margin: 0 !important;
     display: flex !important;
-    width: 85% !important;
-    margin: 15px auto 0 15px !important;
   }
 
-  /* 3. Borrar la cruz repetida que se queda flotando arriba a la izquierda */
-  .header__search details[open] summary .header__icon-close,
-  .header__search details[open] summary .icon-close,
-  .header__search details[open] summary svg:nth-child(2) {
-    display: none !important;
-    visibility: hidden !important;
-  }
-
-  /* 4. Dejar solo la cruz de la derecha del cuadro de búsqueda */
-  .search-modal__close-button {
+  /* 3. Asegurar que la cruz se quede fija arriba a la derecha de la barra */
+  .search-modal__close-button,
+  .header__search .search-modal__close-button {
     display: block !important;
     position: absolute !important;
     right: 15px !important;
-    top: 20px !important;
+    top: 15px !important; /* Misma altura que la barra para que queden alineados */
     z-index: 9999999 !important;
+  }
+
+  /* 4. Ocultar la otra cruz duplicada */
+  .header__search summary .header__icon-close,
+  .header__search summary .icon-close {
+    display: none !important;
   }
 }
