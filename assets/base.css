@@ -4578,10 +4578,10 @@ shop-follow-button,
 /* Carrito móvil homepage - posición */
 @media screen and (max-width: 749px) {
   .header-wrapper--homepage a.large-up-hide[href*="cart"] {
-    grid-area: left-icons !important;
+    grid-area: icons !important;
     justify-self: start !important;
-    margin-left: 10rem !important;
+    margin-left: 0 !important;
     align-self: center !important;
-    margin-top: 0.8rem !important;
+    margin-top: 0 !important;
   }
 }
