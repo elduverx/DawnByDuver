@@ -5156,12 +5156,9 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* SUBIR ÚNICAMENTE EL LOGO BLANCO EN LA HOME PAGE */
-  .template-index .vela-logo-mobile {
+  /* EMPUJAR EL BLOQUE ENTERO DEL LOGO EN LA PORTADA */
+  .template-index .header__heading-link {
     display: inline-flex !important;
-    position: relative !important;
-    transform: translateY(-22px) !important; /* Ajusta este número si quieres afinar más */
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    transform: translateY(-25px) !important; /* Fuerza la subida del conjunto */
   }
 }
