@@ -463,40 +463,57 @@ document.addEventListener('change', function(e) {
 </script>
 <style>
   @media screen and (max-width: 989px) {
-    /* 1. Añadimos un pequeño margen a los lados de la cabecera para que nada se corte */
+    /* 1. Modificamos el contenedor padre para distribuir el espacio */
     .header {
       display: grid !important;
-      grid-template-columns: auto 1fr auto !important;
+      grid-template-columns: 1fr auto 1fr !important;
       align-items: center !important;
-      padding-left: 15px !important;
-      padding-right: 15px !important;
+      width: 100% !important;
     }
 
-    /* 2. Forzamos a todos los iconos del grupo derecho a mantenerse visibles y juntos */
-    .header__icons {
-      display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      gap: 6px !important; /* Reducimos ligeramente el espacio para que quepan holgadamente */
-      padding-right: 5px !important;
+    /* 2. El bloque de la izquierda (menú/hamburguesa y logo) */
+    .header__heading {
+      grid-column: 1 !important;
+      justify-self: start !important;
     }
 
-    /* 3. Aseguramos que el carrito y los demás iconos no floten ni se salgan del borde */
+    /* 3. Forzamos al carrito a ponerse estrictamente en el centro de la pantalla */
     .header__icon--cart, 
-    #cart-icon-bubble,
-    .header__icon--account,
-    .header__icons > * {
-      position: relative !important;
-      left: auto !important;
-      right: auto !important;
-      transform: none !important;
+    #cart-icon-bubble {
+      position: absolute !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
       margin: 0 !important;
-      display: inline-flex !important;
-      flex-shrink: 0 !important; /* Prohibimos que los iconos se encojan o se corten */
+      z-index: 10 !important;
+    }
+
+    /* 4. Los demás iconos (buscar, etc.) se quedan alineados a la derecha */
+    .header__icons {
+      grid-column: 3 !important;
+      justify-self: end !important;
+      display: flex !important;
+      gap: 10px !important;
+    }
+    
+    /* Ocultamos duplicados si el tema tiene comportamiento extraño */
+    .header__icons .header__icon--cart {
+      position: absolute !important;
     }
   }
-</style>
+  @media screen and (max-width: 989px) {
+    /* Desplazamos la personita hacia la izquierda para pegarla al carrito */
+    .header__icon--account {
+      position: relative !important;
+      right: 42px !important; /* Ajusta este número si quieres que se acerque más o menos */
+      margin: 0 !important;
+      z-index: 11 !important;
+    }
+    
+    /* Aseguramos que los iconos mantengan el orden correcto en fila */
+    .header__icons {
+      gap: 0 !important;
+    }
+  }
 </style>
   </body>
 </html>
