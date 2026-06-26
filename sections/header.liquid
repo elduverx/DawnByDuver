@@ -750,25 +750,26 @@
 <style>
 @media screen and (max-width: 749px) {
   /* ESCUDO EXCLUSIVO PARA LA HOME PAGE */
-  
-  /* 1. Atacar directamente al bloque móvil de Vela para subirlo */
+
+  /* 1. Forzar a la cabecera completa a alinear todos sus iconos y logo al centro horizontal */
+  .template-index .header,
+  .template-index .header-wrapper,
+  .template-index .site-header {
+    display: flex !important;
+    align-items: center !important; /* Centra todo en la misma línea visual */
+    justify-content: space-between !important;
+  }
+
+  /* 2. Liberar el logo de cualquier restricción de altura o posición fija que lo tire hacia abajo */
   .template-index .vela-logo-mobile,
   .template-index .header__heading,
   .template-index .header__heading-link {
-    position: relative !important;
-    top: -25px !important; /* Lo desplaza hacia arriba con fuerza */
-    margin-bottom: -25px !important; /* Evita que deje un hueco vacío abajo */
+    margin: 0 !important;
+    padding: 0 !important;
     display: inline-flex !important;
     align-items: center !important;
-    justify-content: center !important;
-    z-index: 9999 !important;
-  }
-
-  /* 2. Asegurar que la imagen dentro del bloque responda a la subida */
-  .template-index .vela-logo-mobile img,
-  .template-index .header__heading-link img {
-    position: relative !important;
-    top: 0 !important;
+    align-self: center !important; /* Se auto-alinea al centro con los iconos */
+    height: auto !important;
   }
 }
 </style>
