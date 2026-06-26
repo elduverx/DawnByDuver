@@ -4928,7 +4928,7 @@ shop-follow-button,
   /* Forzar el desplazamiento directo de la lupa hacia la izquierda */
   .header__search {
     position: relative !important;
-    right: 15px !important; /* Aumenta este número (a 20px o 25px) si quieres que se mueva más a la izquierda */
+    right: 25px !important; /* Aumenta este número (a 20px o 25px) si quieres que se mueva más a la izquierda */
   }
 }
 
