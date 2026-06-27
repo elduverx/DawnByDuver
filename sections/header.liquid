@@ -774,3 +774,16 @@
   }
 }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Buscamos el carrito de la derecha en las páginas internas
+  var carritoInterno = document.querySelector('.header__icons a[href*="cart"], #cart-icon-bubble, .header__icons svg');
+  
+  if (carritoInterno) {
+    // Le añadimos la propiedad de clic para que redirija sí o sí
+    carritoInterno.addEventListener("click", function(e) {
+      window.location.href = "/cart";
+    });
+  }
+});
+</script>
