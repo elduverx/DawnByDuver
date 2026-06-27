@@ -5309,3 +5309,11 @@ shop-follow-button,
     height: 0px !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* FUERZA BRUTA PARA MOVER LA CAJITA DESDE EL CSS PRINCIPAL */
+  html body.template-index .vela-seguimiento,
+  html body.template-index a[href*="seguimiento"] {
+    transform: translateX(-35px) !important;
+    display: inline-flex !important;
+  }
+}
