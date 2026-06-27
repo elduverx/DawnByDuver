@@ -5309,13 +5309,3 @@ shop-follow-button,
     height: 0px !important;
   }
 }
-@media screen and (max-width: 749px) {
-  /* HABILITA EL CLIC EN EL CARRITO DE LAS PÁGINAS INTERNAS */
-  .header__icons a[href*="cart"], 
-  #cart-icon-bubble, 
-  .header__icon--cart {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-    z-index: 9999 !important; /* Lo pone por encima de cualquier capa invisible que lo esté bloqueando */
-  }
-}
