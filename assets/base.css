@@ -5310,16 +5310,12 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. ELIMINAMOS POR COMPLETO EL CARRITO DUPLICADO FEO DE LA IZQUIERDA (En todas partes) */
-  .large-up-hide.vela-carrito,
-  .header__icon--cart:first-of-type:not(#cart-icon-bubble) {
-    display: none !important;
-  }
-
-  /* 2. FORZAMOS A QUE EL CARRITO REAL DE LA DERECHA REDIRIGA Y FUNCIONE */
-  #cart-icon-bubble,
-  .header__icons a[href*="cart"] {
+  /* HABILITA EL CLIC EN EL CARRITO DE LAS PÁGINAS INTERNAS */
+  .header__icons a[href*="cart"], 
+  #cart-icon-bubble, 
+  .header__icon--cart {
     pointer-events: auto !important;
     cursor: pointer !important;
+    z-index: 9999 !important; /* Lo pone por encima de cualquier capa invisible que lo esté bloqueando */
   }
 }
