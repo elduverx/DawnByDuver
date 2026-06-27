@@ -775,15 +775,19 @@
 }
 </style>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Buscamos el carrito de la derecha en las páginas internas
-  var carritoInterno = document.querySelector('.header__icons a[href*="cart"], #cart-icon-bubble, .header__icons svg');
+// Forzar redirección al carrito al hacer clic en su zona
+document.addEventListener("click", function(event) {
+  // Comprobamos si lo que has tocado es el carrito o está dentro del área del carrito
+  var elemento = event.target;
   
-  if (carritoInterno) {
-    // Le añadimos la propiedad de clic para que redirija sí o sí
-    carritoInterno.addEventListener("click", function(e) {
-      window.location.href = "/cart";
-    });
+  if (elemento.closest('#cart-icon-bubble') || 
+      elemento.closest('.header__icon--cart') || 
+      elemento.closest('.vela-carrito') ||
+      (elemento.tagName === 'svg' && elemento.innerHTML.includes('21'))) {
+    
+    event.preventDefault();
+    event.stopPropagation();
+    window.location.href = "/cart";
   }
-});
+}, true); // El "true" hace que este script tenga prioridad absoluta ante cualquier bloqueo
 </script>
