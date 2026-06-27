@@ -785,12 +785,10 @@
 </style>
 <style>
 @media screen and (max-width: 749px) {
-  /* FUERZA EL EMPUJE CON MARGEN EN LA HOME MÓVIL */
-  body.template-index .header__icons a:nth-last-child(2),
-  body.template-index .header__icons .vela-carrito - 1,
-  body.template-index .header__icons a[href*="apps"] {
-    margin-right: 30px !important; /* Empuja el carrito a la derecha, alejando la caja hacia la izquierda */
-    display: inline-block !important;
+  /* SEPARAR LA CAJITA DE SEGUIMIENTO HACIA LA IZQUIERDA EN LA HOME MÓVIL */
+  body.template-index .vela-seguimiento,
+  body.template-index a.large-up-hide.vela-seguimiento {
+    transform: translateX(-25px) !important; /* Desplazamiento directo hacia la izquierda */
   }
 }
 </style>
