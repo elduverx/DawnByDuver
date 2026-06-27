@@ -774,20 +774,22 @@
   }
 }
 </style>
+
 <script>
 // Forzar redirección al carrito al hacer clic en su zona
 document.addEventListener("click", function(event) {
-  // Comprobamos si lo que has tocado es el carrito o está dentro del área del carrito
   var elemento = event.target;
   
+  // Captura el clic si es el link, el contenedor o el propio icono SVG del carrito
   if (elemento.closest('#cart-icon-bubble') || 
       elemento.closest('.header__icon--cart') || 
       elemento.closest('.vela-carrito') ||
+      elemento.closest('a[href*="cart"]') ||
       (elemento.tagName === 'svg' && elemento.innerHTML.includes('21'))) {
     
     event.preventDefault();
     event.stopPropagation();
     window.location.href = "/cart";
   }
-}, true); // El "true" hace que este script tenga prioridad absoluta ante cualquier bloqueo
+}, true);
 </script>
