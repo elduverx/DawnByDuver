@@ -783,3 +783,14 @@
   }
 }
 </style>
+<style>
+@media screen and (max-width: 749px) {
+  /* SOLO CORRE EN LA PORTADA (HOME PAGE) */
+  .header-wrapper--homepage .header__icons a[href*="apps"],
+  .header-wrapper--homepage .header__icons .icon-box,
+  .header-wrapper--homepage .header__icons [class*="box"] {
+    position: relative !important;
+    left: -20px !important; /* El número negativo empuja la cajita hacia la IZQUIERDA */
+  }
+}
+</style>
