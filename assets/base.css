@@ -5411,3 +5411,10 @@ summary.header__icon--menu {
     opacity: 1 !important;
     visibility: visible !important;
 }
+/* --- ALINEACIÓN DE LA HAMBURGUESA --- */
+
+.header__icon--menu,
+.menu-drawer-container,
+summary.header__icon--menu {
+    margin-top: 5px !important; /* La empuja un poquito hacia abajo */
+}
