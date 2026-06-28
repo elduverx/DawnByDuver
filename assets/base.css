@@ -5410,23 +5410,6 @@ div[class*="menu"] + a[href="/cart"],
     visibility: hidden !important;
     pointer-events: none !important;
 }
-
-/* --- ELIMINACIÓN ABSOLUTA POR CLASES CONTENEDORAS --- */
-
-/* Oculta cualquier elemento de carrito, bolsa o burbuja que viva dentro del bloque izquierdo */
-.header__icon--menu *, 
-.menu-drawer-container *,
-header-drawer * {
-    /* Si el elemento contiene clases o nombres relacionados con "cart", "bag" o "icon", lo fulminamos */
-    &[class*="cart"], 
-    &[class*="bag"], 
-    &[class*="icon"]:not([class*="menu"]):not([class*="hamburger"]) {
-        display: none !important;
-        opacity: 0 !important;
-        visibility: hidden !important;
-    }
-}
-
 /* Fuerza a que el botón de menú SOLO muestre las tres líneas originales */
 .header__icon--menu svg:not(.icon-hamburger),
 summary.header__icon--menu svg:not(.icon-summary) {
