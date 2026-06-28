@@ -5319,8 +5319,8 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* REDUCIR EL ESPACIO ENTRE TODOS LOS ICONOS EN LA HOME MÓVIL */
+  /* EMPUJAR TODOS LOS ICONOS UN POQUITO A LA IZQUIERDA EN LA HOME MÓVIL */
   body.template-index .header__icons {
-    gap: 1rem !important; /* Bajamos de 2rem a 1rem para juntar los iconos hacia la izquierda */
+    padding-right: 15px !important; /* Añade un colchón de espacio en el borde derecho */
   }
 }
