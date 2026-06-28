@@ -5418,38 +5418,47 @@ summary.header__icon--menu {
 summary.header__icon--menu {
     margin-top: 5px !important; /* La empuja un poquito hacia abajo */
 }
-/* --- COMPACTAR BLOQUE DE DESCUENTOS EN MÓVIL --- */
+/* --- COMPACTAR BLOQUE DE DESCUENTOS EN MÓVIL (MÉTODO ULTRA ESPECÍFICO) --- */
 @media screen and (max-width: 749px) {
-    /* 1. Reduce el tamaño del título principal y del texto superior */
-    .product__offers-title,
-    [class*="promocion"] h2,
-    [class*="offers"] h2 {
+    /* 1. Encoge el contenedor principal que tiene los estilos inline */
+    .product__column-sticky div[style*="border: 1px solid"] {
+        padding: 12px !important;
+        margin-top: 15px !important;
+    }
+
+    /* 2. Reduce el título ("Descuento por cantidad...") */
+    .product__column-sticky div[style*="border: 1px solid"] h2,
+    .product__column-sticky div[style*="border: 1px solid"] [class*="title"] {
+        font-size: 1.6rem !important;
+        margin-bottom: 4px !important;
+    }
+
+    /* Subtítulo ("Combina tus productos...") */
+    .product__column-sticky div[style*="border: 1px solid"] p:first-of-type {
+        font-size: 1.1rem !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* 3. Compacta las 3 columnas de las tarjetas */
+    .product__column-sticky div[style*="border: 1px solid"] .grid,
+    .product__column-sticky div[style*="border: 1px solid"] [class*="grid"] {
+        gap: 6px !important; /* Junta más las tarjetas entre sí */
+    }
+
+    /* Ajusta el relleno interno de cada tarjeta y sus textos */
+    .product__column-sticky div[style*="border: 1px solid"] [class*="item"],
+    .product__column-sticky div[style*="border: 1px solid"] div[style*="border"] div {
+        padding: 8px 4px !important;
+    }
+
+    /* Los porcentajes grandes (-10%, -15%, -25%) */
+    .product__column-sticky div[style*="border: 1px solid"] h3,
+    .product__column-sticky div[style*="border: 1px solid"] [class*="price"] {
         font-size: 1.8rem !important;
-        margin-bottom: 5px !important;
-    }
-    
-    [class*="promocion"] p,
-    [class*="offers"] p {
-        font-size: 1.2rem !important;
     }
 
-    /* 2. Compacta las 3 tarjetas de unidades (menos relleno y letras más pequeñas) */
-    .grid-offers-item,
-    [class*="unidades"] {
-        padding: 10px 5px !important;
-    }
-
-    /* Ajusta los números grandes del porcentaje (-10%, -15%, etc.) */
-    [class*="unidades"] span,
-    [class*="offers"] .price,
-    [class*="offers"] h3 {
-        font-size: 2rem !important;
-    }
-
-    /* 3. Reduce el texto legal o aclaratorio de la parte inferior */
-    .product__offers-disclaimer,
-    [class*="promocion"] .text-muted,
-    .product__offers + p {
+    /* 4. Reduce el texto aclaratorio inferior ("Descuento por cantidad válido...") */
+    .product__column-sticky div[style*="border: 1px solid"] p:last-of-type {
         font-size: 1.1rem !important;
         line-height: 1.3 !important;
         margin-top: 10px !important;
