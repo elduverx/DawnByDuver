@@ -5398,25 +5398,12 @@ div[class*="menu"] + a[href="/cart"],
     visibility: hidden !important;
     pointer-events: none !important;
 }
-/* 1. DEVOLVER LA HAMBURGUESA A SU SITIO (Fuerza a que se muestre siempre) */
-.header__icon--menu,
-.menu-drawer-container,
-.icon-hamburger,
-summary.header__icon--menu {
-    display: inline-flex !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
 
-/* 2. OCULTAR LA BOLSA QUE INYECTA EL JAVASCRIPT A LA IZQUIERDA */
-/* Atacamos directamente al primer icono de bolsa que aparece en el header */
-.header__heading-link + a,
-.header__icon--menu + a,
-.header__wrapper > a:first-of-type,
-.header > a[href="/cart"]:first-of-type {
+/* Si tu plantilla inyecta la bolsa suelta al principio del encabezado, la fulminamos */
+.header > a[href="/cart"]:first-of-type,
+.header__wrapper > a[href="/cart"]:not(:last-child),
+.header__icon--menu + a {
     display: none !important;
     width: 0 !important;
     opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
 }
