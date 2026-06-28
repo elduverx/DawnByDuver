@@ -5330,3 +5330,14 @@ shop-follow-button,
 .payment-text {
     color: #777777 !important;
 }
+/* Forzar reducción de espacio entre el texto y los logos de pago */
+.footer-payment-section span,
+.footer-payment-section .texto-gris-real {
+    margin-bottom: 6px !important;
+}
+
+.footer__payment-clon,
+.vela-payment-icons {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
