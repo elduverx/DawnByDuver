@@ -5318,3 +5318,9 @@ shop-follow-button,
     margin-right: 15px !important; /* Compensa el hueco en el borde derecho */
   }
 }
+@media screen and (max-width: 749px) {
+  /* REDUCIR EL ESPACIO ENTRE TODOS LOS ICONOS EN LA HOME MÓVIL */
+  body.template-index .header__icons {
+    gap: 1rem !important; /* Bajamos de 2rem a 1rem para juntar los iconos hacia la izquierda */
+  }
+}
