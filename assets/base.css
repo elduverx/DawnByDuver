@@ -5362,12 +5362,27 @@ shop-follow-button,
 .footer-block {
     margin-bottom: 15px !important;
 }
-/* --- CORRECCIÓN DEFECTO CONTADOR EN HAMBURGUESA --- */
+/* --- LIMPIEZA DE ICONOS DUPLICADOS EN EL HEADER --- */
 
-/* Oculta de forma absoluta el círculo del número si se cuela en el botón del menú de tres rayas */
+/* 1. Fulmina los números flotantes y el icono fantasma del lado izquierdo (hamburguesa) */
 .header__icon--menu .cart-count-bubble,
-summary.header__icon--menu .cart-count-bubble,
-.header__icon--menu span[class*="count"],
-summary.header__icon--menu span[class*="count"] {
+.header__icon--menu + .cart-count-bubble,
+summary.header__icon--menu ~ span,
+.menu-drawer-container .cart-count-bubble,
+[class*="menu"] [class*="count"] {
     display: none !important;
+}
+
+/* 2. Si hay un icono de bolsa de compra duplicado pisando la hamburguesa, lo ocultamos */
+.header__icon--menu svg + svg,
+.header__icon--menu + a[href="/cart"] {
+    display: none !important;
+}
+
+/* 3. Asegura que el botón del carrito de la derecha tenga espacio relativo para albergar el número */
+a.header__icon--cart,
+.header__wrapper a[href="/cart"],
+[class*="icon-cart"] {
+    position: relative !important;
+    display: inline-flex !important;
 }
