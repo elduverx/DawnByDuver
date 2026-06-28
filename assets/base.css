@@ -5398,3 +5398,21 @@ div[class*="menu"] + a[href="/cart"],
     visibility: hidden !important;
     pointer-events: none !important;
 }
+/* --- BORRADO ABSOLUTO DE ICONOS DE COMPRA EN EL LADO IZQUIERDO --- */
+
+/* Oculta cualquier elemento con icono de bolsa/carrito que esté dentro o al lado del botón de menú */
+.menu-drawer-container a,
+.header__icon--menu a,
+[class*="menu-drawer"] a[href="/cart"],
+[class*="menu-drawer"] svg {
+    display: none !important;
+}
+
+/* Si tu plantilla inyecta la bolsa suelta al principio del encabezado, la fulminamos */
+.header > a[href="/cart"]:first-of-type,
+.header__wrapper > a[href="/cart"]:not(:last-child),
+.header__icon--menu + a {
+    display: none !important;
+    width: 0 !important;
+    opacity: 0 !important;
+}
