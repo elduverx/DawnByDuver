@@ -5338,6 +5338,6 @@ shop-follow-button,
 
 .footer__payment-clon,
 .vela-payment-icons {
-    margin-top: 0px !important;
+    margin-top: -20px !important;
     padding-top: 0px !important;
 }
