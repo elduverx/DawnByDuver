@@ -338,16 +338,19 @@
         {%- endfor -%}
       </ul>
     </div>
- <div id="seccion-pagos-footer-unica" class="footer-payment-section" style="text-align: center; width: 100%;">
+ <div class="footer-payment-section" style="text-align: center; width: 100%;">
     
     <style>
-      /* Forzado absoluto mediante ID al texto exacto que renderice el snippet */
-      #seccion-pagos-footer-unica,
-      #seccion-pagos-footer-unica * {
-        color: #8c8c8c !important;
+      .footer-payment-section .payment-text,
+      .footer-payment-section span,
+      .vela-payment-icons span,
+      .vela-payment-icons p {
+        display: none !important;
       }
     </style>
 
+    <span style="display: block !important; font-size: 10px !important; letter-spacing: 0.2rem !important; color: #8c8c8c !important; margin-bottom: 1.5rem !important; font-weight: 500 !important; text-transform: uppercase !important;">PAGOS SEGUROS CON</span>
+    
     <div class="footer__payment-clon" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%;">
       {% render 'metodos-pago' %}
     </div>
