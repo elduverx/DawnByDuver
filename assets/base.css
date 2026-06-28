@@ -5324,10 +5324,10 @@ shop-follow-button,
     padding-right: 15px !important; /* Añade un colchón de espacio en el borde derecho */
   }
 }
-/* --- AJUSTE FINO: UN PELÍN MÁS ABAJO --- */
+/* --- AJUSTE FINO: UN PELÍN MÁS ARRIBA --- */
 
 .footer-payment-section {
-    margin-top: -10px !important; /* Reducido a -10px para bajar el bloque un poco más */
+    margin-top: -20px !important; /* Ajustado a -20px para subir el bloque un pelín */
     padding-top: 0px !important;
     display: block !important;
 }
