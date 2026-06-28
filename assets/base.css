@@ -5344,24 +5344,21 @@ shop-follow-button,
     margin-top: 0px !important;
     padding-top: 0px !important;
 }
-/* --- REDUCIR HUECO ENTRE MENÚ Y COPYRIGHT --- */
+/* --- COMPACTAR ÚNICAMENTE EL SALTO ENTRE MENÚ Y COPYRIGHT --- */
 
-/* 1. Reduce el espacio inferior de la lista de enlaces */
-.footer-block--menu,
-.footer__blocks-wrapper,
-.footer__content-top {
-    padding-bottom: 10px !important;
-    margin-bottom: 0px !important;
-}
-
+/* Restablece y limpia rellenos del bloque general inferior */
 .footer__content-bottom {
-    margin-top: -30px !important;
-    padding-top: 0px !important;
+    padding-top: 5px !important;
+    margin-top: -35px !important; /* Sube el copyright y la línea divisoria sin tocar los menús de arriba */
 }
 
-/* 3. Ajuste fino por si la plantilla tiene un separador intermedio */
-hr.footer__separation,
+/* Reduce el margen del contenedor interno para compactarlo */
 .footer__content-bottom-wrapper {
-    margin-top: 0px !important;
     padding-top: 0px !important;
+    margin-top: 0px !important;
+}
+
+/* Asegura que los bloques de los menús no se estiren de más por abajo */
+.footer__blocks-wrapper {
+    padding-bottom: 5px !important;
 }
