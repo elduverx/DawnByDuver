@@ -5330,30 +5330,26 @@ shop-follow-button,
 .payment-text {
     color: #777777 !important;
 }
-/* --- DISEÑO COMPACTO CORREGIDO PARA LOGO Y TARJETAS --- */
+/* --- SUBIR BLOQUE DE PAGOS JUSTO DEBAJO DEL LOGO --- */
 
-/* 1. Ajusta el contenedor principal y evita que se corten los elementos */
+/* 1. Sube todo el contenedor hacia el logo con un margen negativo */
 .footer-payment-section {
-    margin-top: 20px !important;
+    margin-top: -60px !important; /* Fuerza a todo el bloque a subir hacia arriba */
     padding-top: 0px !important;
-    padding-bottom: 20px !important; /* Añade espacio abajo para que no se escondan las tarjetas */
     display: block !important;
-    height: auto !important;
 }
 
-/* 2. Controla el texto "PAGOS SEGUROS CON" justo debajo del logo */
+/* 2. Pega el texto a los iconos */
 .footer-payment-section span,
 .footer-payment-section .texto-gris-real {
     margin-top: 0px !important;
-    margin-bottom: 10px !important; /* Espacio pequeño ideal con los iconos */
-    padding: 0px !important;
+    margin-bottom: 5px !important; /* Separación mínima con las tarjetas */
+    display: block !important;
 }
 
-/* 3. Sube la fila de iconos de pago para pegarla al texto */
+/* 3. Asegura que los iconos estén pegados al texto */
 .footer__payment-clon,
 .vela-payment-icons {
     margin-top: 0px !important;
     padding-top: 0px !important;
-    display: flex !important;
-    justify-content: center !important;
 }
