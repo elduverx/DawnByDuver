@@ -5362,3 +5362,12 @@ shop-follow-button,
 .footer-block {
     margin-bottom: 15px !important;
 }
+/* --- CORRECCIÓN DEFECTO CONTADOR EN HAMBURGUESA --- */
+
+/* Oculta de forma absoluta el círculo del número si se cuela en el botón del menú de tres rayas */
+.header__icon--menu .cart-count-bubble,
+summary.header__icon--menu .cart-count-bubble,
+.header__icon--menu span[class*="count"],
+summary.header__icon--menu span[class*="count"] {
+    display: none !important;
+}
