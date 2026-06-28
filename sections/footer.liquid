@@ -338,6 +338,14 @@
         {%- endfor -%}
       </ul>
     </div>
+    <div class="footer-payment-icons" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+  {%- assign payment_icons_to_show = 'bizum,visa,mastercard,maestro,american_express,apple_pay,google_pay' | split: ',' -%}
+  {%- for type in payment_icons_to_show -%}
+    <div class="payment-icon-item" style="width: 45px; height: auto; display: inline-flex; align-items: center;">
+      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+    </div>
+  {%- endfor -%}
+</div>
   </div>
 
 </div>
