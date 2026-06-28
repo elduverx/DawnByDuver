@@ -338,13 +338,20 @@
         {%- endfor -%}
       </ul>
     </div>
-    <div class="footer-payment-icons" style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
-  {%- assign payment_icons_to_show = 'bizum,visa,mastercard,maestro,american_express,apple_pay,google_pay' | split: ',' -%}
-  {%- for type in payment_icons_to_show -%}
-    <div class="payment-icon-item" style="width: 45px; height: auto; display: inline-flex; align-items: center;">
-      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+    <div class="footer-payment-section">
+    <span class="payment-text" style="display: block; font-size: 10px; letter-spacing: 0.2rem; color: #55758a !important; margin-bottom: 1.5rem; font-weight: 500; text-transform: uppercase;">PAGOS SEGUROS CON</span>
+    
+    <div class="footer__payment">
+      <ul class="list list-payment" role="list" style="justify-content: center; display: flex; flex-wrap: wrap; gap: 0.8rem; padding: 0; list-style: none;">
+        {%- assign payment_icons_to_show = 'bizum,visa,mastercard,maestro,amex,apple_pay,google_pay' | split: ',' -%}
+        {%- for type in payment_icons_to_show -%}
+          <li class="list-payment__item" style="width: 40px; height: auto; display: inline-flex; align-items: center;">
+            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+          </li>
+        {%- endfor -%}
+      </ul>
     </div>
-  {%- endfor -%}
+
 </div>
   </div>
 
