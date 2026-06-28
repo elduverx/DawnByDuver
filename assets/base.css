@@ -5324,10 +5324,10 @@ shop-follow-button,
     padding-right: 15px !important; /* Añade un colchón de espacio en el borde derecho */
   }
 }
-/* --- REGULACIÓN DE ALTURA AJUSTADA --- */
+/* --- AJUSTE FINO: UN PELÍN MÁS ABAJO --- */
 
 .footer-payment-section {
-    margin-top: -30px !important; /* Hemos bajado de -60px a -30px para que quede en el sitio justo */
+    margin-top: -10px !important; /* Reducido a -10px para bajar el bloque un poco más */
     padding-top: 0px !important;
     display: block !important;
 }
