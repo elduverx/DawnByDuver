@@ -5464,3 +5464,32 @@ summary.header__icon--menu {
         margin-top: 10px !important;
     }
 }
+/* --- EXTENDER SECCIÓN DE TEXTO Y TARJETA EN MÓVIL --- */
+@media screen and (max-width: 749px) {
+    /* 1. Amplía el contenedor principal para que aproveche más el ancho de la pantalla */
+    .rich-text,
+    .rich-text__wrapper,
+    [class*="rich-text"] {
+        max-width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* 2. Hace que la tarjeta gris del 50% sea más ancha y extensa */
+    .rich-text div[style*="background"],
+    .rich-text__blocks + div,
+    [class*="rich-text"] .color-background-1,
+    [class*="rich-text"] div:has(h3) {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* 3. Ajusta el tamaño de los textos para que no queden muy estirados */
+    .rich-text__text, 
+    [class*="rich-text"] p {
+        font-size: 1.3rem !important;
+        line-height: 1.4 !important;
+    }
+}
