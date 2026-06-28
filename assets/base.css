@@ -5386,9 +5386,23 @@ a.header__icon--cart,
     position: relative !important;
     display: inline-flex !important;
 }
-/* --- CORRECCIÓN DEFINITIVA DE LA BOLSA INTENSA DE LA IZQUIERDA --- */
+/* --- BORRADO RADICAL POR EXCLUSIÓN INVERSA --- */
 
-/* 1. Aseguramos que la hamburguesa original se vea siempre intacta */
+/* 1. Oculta absolutamente cualquier carrito con esa ID en el header... */
+.header #cart-icon-bubble,
+.header__wrapper #cart-icon-bubble,
+#cart-icon-bubble {
+    display: none !important;
+}
+
+/* 2. ...Y vuelve a activar ÚNICAMENTE el que sea el último de la lista (el de la derecha) */
+.header #cart-icon-bubble:last-of-type,
+.header__wrapper #cart-icon-bubble:last-of-type,
+.header__icons #cart-icon-bubble {
+    display: inline-flex !important;
+}
+
+/* 3. Blindaje extra para que la hamburguesa no se mueva ni se oculte jamás */
 .header__icon--menu,
 .menu-drawer-container,
 .icon-hamburger,
@@ -5396,16 +5410,4 @@ summary.header__icon--menu {
     display: inline-flex !important;
     opacity: 1 !important;
     visibility: visible !important;
-}
-
-/* 2. Ocultamos el carrito fantasma que se inyecta al principio de la cabecera */
-.header > #cart-icon-bubble:first-of-type,
-.header__wrapper > #cart-icon-bubble:first-of-type,
-.header__heading-link + #cart-icon-bubble,
-.header__icon--menu + #cart-icon-bubble {
-    display: none !important;
-    width: 0 !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
 }
