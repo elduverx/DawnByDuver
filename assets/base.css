@@ -5386,3 +5386,15 @@ a.header__icon--cart,
     position: relative !important;
     display: inline-flex !important;
 }
+/* --- ELIMINAR EL ICONO DE BOLSA TEMPORAL DE LA IZQUIERDA --- */
+
+.header__icon--menu header-drawer + a,
+.header__icon--menu + a[href="/cart"],
+.menu-drawer-container + a,
+div[class*="menu"] + a[href="/cart"],
+.header__heading-link + a[href="/cart"]:not(:last-child) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
