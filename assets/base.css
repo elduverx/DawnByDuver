@@ -5324,30 +5324,21 @@ shop-follow-button,
     padding-right: 15px !important; /* Añade un colchón de espacio en el borde derecho */
   }
 }
-/* Cambiar el color del texto de métodos de pago a gris */
-.vela-payment-icons .payment-text,
-.footer-payment-section .payment-text,
-.payment-text {
-    color: #777777 !important;
-}
-/* --- SUBIR BLOQUE DE PAGOS JUSTO DEBAJO DEL LOGO --- */
+/* --- REGULACIÓN DE ALTURA AJUSTADA --- */
 
-/* 1. Sube todo el contenedor hacia el logo con un margen negativo */
 .footer-payment-section {
-    margin-top: -60px !important; /* Fuerza a todo el bloque a subir hacia arriba */
+    margin-top: -30px !important; /* Hemos bajado de -60px a -30px para que quede en el sitio justo */
     padding-top: 0px !important;
     display: block !important;
 }
 
-/* 2. Pega el texto a los iconos */
 .footer-payment-section span,
 .footer-payment-section .texto-gris-real {
     margin-top: 0px !important;
-    margin-bottom: 5px !important; /* Separación mínima con las tarjetas */
+    margin-bottom: 5px !important;
     display: block !important;
 }
 
-/* 3. Asegura que los iconos estén pegados al texto */
 .footer__payment-clon,
 .vela-payment-icons {
     margin-top: 0px !important;
