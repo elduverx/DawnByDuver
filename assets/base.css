@@ -5309,3 +5309,12 @@ shop-follow-button,
     height: 0px !important;
   }
 }
+@media screen and (max-width: 749px) {
+  /* FUERZA AL CARRITO A MOVERSE A LA IZQUIERDA EN LA HOME MÓVIL */
+  body.template-index .header__icons a.vela-carrito,
+  body.template-index .header__icons #cart-icon-bubble {
+    position: relative !important;
+    margin-left: -15px !important; /* Lo estira hacia la izquierda */
+    margin-right: 15px !important; /* Compensa el hueco en el borde derecho */
+  }
+}
