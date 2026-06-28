@@ -5344,3 +5344,18 @@ shop-follow-button,
     margin-top: 0px !important;
     padding-top: 0px !important;
 }
+/* --- SUBIR TODO EL BLOQUE DEL COPYRIGHT Y ELEMENTOS INFERIORES --- */
+
+/* 1. Sube la fila del copyright (2026, VELA MADRID...) y todo lo que le sigue */
+.footer__copyright, 
+.footer-copyright,
+[class*="copyright"] {
+    margin-top: -40px !important; /* Fuerza a toda la zona a subir en bloque */
+    padding-top: 0px !important;
+}
+
+/* 2. Asegura que el logo de Vela Madrid se pegue bien al copyright de arriba */
+.footer-payment-section,
+#seccion-pagos-footer-unica {
+    margin-top: -10px !important; /* Mantiene la proporción perfecta con lo que acabamos de subir */
+}
