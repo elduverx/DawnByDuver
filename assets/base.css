@@ -5354,10 +5354,9 @@ shop-follow-button,
     margin-bottom: 0px !important;
 }
 
-/* 2. Sube la línea divisoria y la sección del copyright hacia arriba */
 .footer__content-bottom {
-    padding-top: 10px !important;
-    margin-top: 0px !important;
+    margin-top: -30px !important;
+    padding-top: 0px !important;
 }
 
 /* 3. Ajuste fino por si la plantilla tiene un separador intermedio */
