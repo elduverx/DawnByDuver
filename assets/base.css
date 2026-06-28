@@ -5464,42 +5464,49 @@ summary.header__icon--menu {
         margin-top: 10px !important;
     }
 }
-/* --- HACER SECCIÓN DE TEXTO Y TARJETA MÁS GRANDE Y EXTENSA EN MÓVIL --- */
+/* --- AUMENTAR TAMAÑO Y EXTENSIÓN AL MÁXIMO EN MÓVIL --- */
 @media screen and (max-width: 749px) {
-    /* 1. Estira el contenedor al máximo de la pantalla (sin márgenes ocultos) */
+    /* 1. Fuerza a la sección a expandirse a los extremos de la pantalla */
     .rich-text,
     .rich-text__wrapper,
     [class*="rich-text"] {
         max-width: 100% !important;
         width: 100% !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
     }
 
-    /* 2. Aumenta notablemente el tamaño de las letras del mensaje */
+    /* 2. Tamaño de letra del cuerpo del texto mucho más grande */
     .rich-text__text, 
     [class*="rich-text"] p {
-        font-size: 1.5.5rem !important; /* Texto bastante más grande y legible */
-        line-height: 1.5 !important;
+        font-size: 1.8rem !important; /* Letra grande, robusta y clara */
+        line-height: 1.6 !important;
     }
 
-    /* Hace los títulos principales aún más imponentes */
+    /* Título principal ("ÚLTIMA OPORTUNIDAD") gigante */
     [class*="rich-text"] h2 {
-        font-size: 2.8rem !important;
+        font-size: 3.4rem !important;
+        letter-spacing: 0.1rem !important;
     }
 
-    /* 3. Hace la tarjeta gris del 50% GIGANTE y muy extensa */
+    /* Subtítulos pequeños ("VELA MADRID") */
+    [class*="rich-text"] .rich-text__caption {
+        font-size: 1.4rem !important;
+    }
+
+    /* 3. Tarjeta del 50% súper extensa y espaciosa */
     .rich-text div[style*="background"],
     [class*="rich-text"] .color-background-1,
     .rich-text__blocks + div {
         width: 100% !important;
         max-width: 100% !important;
-        padding: 30px 20px !important; /* Más altura interna */
+        padding: 40px 25px !important; /* Más relleno para que se vea imponente */
     }
 
-    /* Agranda el número "50%" de la tarjeta */
+    /* El número "50%" enorme */
     [class*="rich-text"] h3,
     [class*="rich-text"] .h1 {
-        font-size: 4.5rem !important; /* Número bien grande e impactante */
+        font-size: 5.5rem !important; /* Protagonismo absoluto */
+        font-weight: bold !important;
     }
 }
