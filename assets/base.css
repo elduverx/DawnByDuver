@@ -5330,30 +5330,30 @@ shop-follow-button,
 .payment-text {
     color: #777777 !important;
 }
-/* Forzar reducción de espacio entre el texto y los logos de pago */
-.footer-payment-section span,
-.footer-payment-section .texto-gris-real {
-    margin-bottom: 6px !important;
-}
-/* --- DISEÑO COMPACTO PIE DE PÁGINA (ESTILO COMPETIDOR) --- */
+/* --- DISEÑO COMPACTO CORREGIDO PARA LOGO Y TARJETAS --- */
 
-/* 1. Reduce el espacio entre el Logo de la tienda y el texto "PAGOS SEGUROS CON" */
+/* 1. Ajusta el contenedor principal y evita que se corten los elementos */
 .footer-payment-section {
-    margin-top: 15px !important;
+    margin-top: 20px !important;
     padding-top: 0px !important;
+    padding-bottom: 20px !important; /* Añade espacio abajo para que no se escondan las tarjetas */
+    display: block !important;
+    height: auto !important;
 }
 
-/* 2. Reduce al mínimo el espacio entre el texto y las tarjetas */
+/* 2. Controla el texto "PAGOS SEGUROS CON" justo debajo del logo */
 .footer-payment-section span,
 .footer-payment-section .texto-gris-real {
-    margin-bottom: 8px !important;
-    padding-bottom: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 10px !important; /* Espacio pequeño ideal con los iconos */
+    padding: 0px !important;
 }
 
-/* 3. Elimina cualquier separación interna que tengan los iconos */
+/* 3. Sube la fila de iconos de pago para pegarla al texto */
 .footer__payment-clon,
-.vela-payment-icons,
-.vela-payment-icons div {
+.vela-payment-icons {
     margin-top: 0px !important;
     padding-top: 0px !important;
+    display: flex !important;
+    justify-content: center !important;
 }
