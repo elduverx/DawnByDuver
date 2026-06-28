@@ -338,11 +338,18 @@
         {%- endfor -%}
       </ul>
     </div>
-  </div>
-<div class="footer-payment-section" style="text-align: center; width: 100%;">
+ <div class="footer-payment-section" style="text-align: center; width: 100%;">
+    <style>
+      .footer-payment-section .payment-text,
+      .footer-payment-section span {
+        color: #777777 !important;
+      }
+    </style>
+
     <div class="footer__payment-clon" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%;">
       {% render 'metodos-pago' %}
     </div>
+</div>
 </div>
 </div>
 </div>
