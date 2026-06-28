@@ -5324,3 +5324,9 @@ shop-follow-button,
     padding-right: 15px !important; /* Añade un colchón de espacio en el borde derecho */
   }
 }
+/* Cambiar el color del texto de métodos de pago a gris */
+.vela-payment-icons .payment-text,
+.footer-payment-section .payment-text,
+.payment-text {
+    color: #777777 !important;
+}
