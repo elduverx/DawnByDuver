@@ -5344,21 +5344,21 @@ shop-follow-button,
     margin-top: 0px !important;
     padding-top: 0px !important;
 }
-/* --- COMPACTAR ÚNICAMENTE EL SALTO ENTRE MENÚ Y COPYRIGHT --- */
+/* --- ELIMINAR EL ESPACIO GIGANTE DEBAJO DE TÉRMINOS DEL SERVICIO --- */
 
-/* Restablece y limpia rellenos del bloque general inferior */
+/* 1. Reduce al mínimo el espacio inferior de la zona de los menús */
+.footer__content-top {
+    padding-bottom: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+/* 2. Sube la línea fina divisoria y el copyright para pegarlos al menú */
 .footer__content-bottom {
-    padding-top: 5px !important;
-    margin-top: -35px !important; /* Sube el copyright y la línea divisoria sin tocar los menús de arriba */
+    margin-top: -20px !important; /* Ajusta este número si quieres que suba aún más */
+    padding-top: 10px !important;
 }
 
-/* Reduce el margen del contenedor interno para compactarlo */
-.footer__content-bottom-wrapper {
-    padding-top: 0px !important;
-    margin-top: 0px !important;
-}
-
-/* Asegura que los bloques de los menús no se estiren de más por abajo */
-.footer__blocks-wrapper {
-    padding-bottom: 5px !important;
+/* 3. Mantiene los menús de arriba ordenados y sin alterar sus espacios internos */
+.footer-block {
+    margin-bottom: 15px !important;
 }
