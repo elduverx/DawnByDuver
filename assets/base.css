@@ -5398,20 +5398,25 @@ div[class*="menu"] + a[href="/cart"],
     visibility: hidden !important;
     pointer-events: none !important;
 }
-/* --- ELIMINAR BOLSA REBELDE DE LA IZQUIERDA (SISTEMA DEFINTIVO) --- */
+/* 1. DEVOLVER LA HAMBURGUESA A SU SITIO (Fuerza a que se muestre siempre) */
+.header__icon--menu,
+.menu-drawer-container,
+.icon-hamburger,
+summary.header__icon--menu {
+    display: inline-flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
 
-/* Oculta cualquier enlace al carrito que NO sea el último de la barra */
-.header a[href="/cart"]:not(:last-child),
-.header__wrapper a[href="/cart"]:not(:last-child),
-.header__icons a[href="/cart"]:not(:last-child) {
+/* 2. OCULTAR LA BOLSA QUE INYECTA EL JAVASCRIPT A LA IZQUIERDA */
+/* Atacamos directamente al primer icono de bolsa que aparece en el header */
+.header__heading-link + a,
+.header__icon--menu + a,
+.header__wrapper > a:first-of-type,
+.header > a[href="/cart"]:first-of-type {
     display: none !important;
     width: 0 !important;
     opacity: 0 !important;
     visibility: hidden !important;
     pointer-events: none !important;
-}
-/* Fuerza a que el botón de menú SOLO muestre las tres líneas originales */
-.header__icon--menu svg:not(.icon-hamburger),
-summary.header__icon--menu svg:not(.icon-summary) {
-    display: none !important;
 }
