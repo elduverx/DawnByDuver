@@ -5510,31 +5510,3 @@ summary.header__icon--menu {
         font-weight: bold !important;
     }
 }
-/* --- ACTIVAR Y ESTILIZAR EL CONTADOR EN EL CARRITO DE LAS PÁGINAS INTERIORES --- */
-
-/* 1. Asegura que el número del carrito de la derecha sea visible y se posicione encima */
-.header:not(.header--homepage) #cart-icon-bubble .cart-count-bubble,
-.header__wrapper:not(.header-wrapper--homepage) #cart-icon-bubble .cart-count-bubble,
-body:not(.template-index) #cart-icon-bubble [class*="count"] {
-    display: flex !important; /* Lo hace visible */
-    position: absolute !important;
-    top: -5px !important; /* Lo coloca justo encima del icono */
-    right: -8px !important;
-    background-color: #000000 !important; /* Fondo negro idéntico al que tenías */
-    color: #ffffff !important; /* Número en blanco */
-    font-size: 1.1rem !important;
-    font-weight: bold !important;
-    min-width: 18px !important;
-    height: 18px !important;
-    border-radius: 50% !important; /* Lo hace completamente redondo */
-    align-items: center !important;
-    justify-content: center !important;
-    z-index: 3 !important;
-}
-
-/* 2. Da espacio relativo al icono del carrito de la derecha para que la burbuja no flote en cualquier lado */
-.header:not(.header--homepage) #cart-icon-bubble,
-body:not(.template-index) .header__icons a[href="/cart"] {
-    position: relative !important;
-    display: inline-flex !important;
-}
