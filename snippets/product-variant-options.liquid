@@ -153,39 +153,3 @@
     </option>
   {%- endif -%}
 {%- endfor -%}
-<script>
-  document.querySelectorAll('input[type="radio"][data-color-name]').forEach(function(input) {
-    input.addEventListener('change', function() {
-      var colorName = this.value;
-      var productMedia = document.querySelector('.product__media-list') || document.querySelector('.product-media-container');
-      if (!productMedia) return;
-
-      var allMedia = productMedia.querySelectorAll('.product__media-item, li.product__media-item');
-      var matched = false;
-
-      allMedia.forEach(function(item) {
-        var img = item.querySelector('img');
-        if (!img) return;
-        var alt = (img.getAttribute('alt') || '').toLowerCase();
-        if (alt.includes(colorName.toLowerCase())) {
-          if (!matched) {
-            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-            matched = true;
-          }
-        }
-      });
-
-      // Método alternativo: buscar variante por color y usar el featured media
-      var variantInputs = document.querySelectorAll('input[data-option-value-id]');
-      variantInputs.forEach(function(vi) {
-        if (vi.value === colorName && vi.checked) {
-          var form = document.querySelector('product-info') || document.querySelector('[data-section-type="product"]');
-          if (form) {
-            var event = new Event('change', { bubbles: true });
-            vi.dispatchEvent(event);
-          }
-        }
-      });
-    });
-  });
-</script>
