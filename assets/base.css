@@ -5841,11 +5841,25 @@ cart-drawer.is-empty .vela-upsell {
 cart-drawer.is-empty .drawer__header {
   display: flex !important;
 }
+cart-drawer.is-empty .drawer__header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  order: -1 !important;
+  width: 100% !important;
+}
+
 cart-drawer.is-empty .drawer__inner {
   display: flex !important;
   flex-direction: column !important;
 }
 
-cart-drawer.is-empty .drawer__header {
-  order: -1 !important;
+cart-drawer.is-empty .drawer__inner-empty {
+  flex: 1 !important;
+  position: relative !important;
+}
+
+cart-drawer.is-empty .drawer__inner-empty p {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
 }
