@@ -5908,36 +5908,29 @@ cart-drawer.is-empty .drawer__header {
     width: 100% !important;
     box-sizing: border-box !important;
 }
-/* --- REPARACIÓN COMPLETADA: CUADRADO GRIS Y CRUZ VISIBLE --- */
+/* --- BOTÓN GRIS MÁS PEQUEÑO Y DESPLAZADO HACIA ARRIBA --- */
 cart-drawer.is-empty .drawer__close,
 cart-drawer.is-empty .drawer__header .drawer__close,
 cart-drawer.is-empty [class*="close"] {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 32px !important;              /* Tamaño exacto del cuadrado */
-    height: 32px !important;
-    min-width: 32px !important;
-    min-height: 32px !important;
-    background-color: #f3f4f6 !important; /* Fondo gris suave idéntico */
+    width: 26px !important;              /* Tamaño más pequeño del cuadrado */
+    height: 26px !important;
+    min-width: 26px !important;
+    min-height: 26px !important;
+    background-color: #f3f4f6 !important;
     border: none !important;
-    border-radius: 0px !important;        /* Cuadrado perfecto */
+    border-radius: 0px !important;
     padding: 0 !important;
     cursor: pointer !important;
-    transform: translateX(-15px) !important; /* Posición hacia la izquierda */
+    /* Ajuste de posición: translateX lo mueve a la izquierda, translateY lo sube hacia arriba */
+    transform: translate(-15px, -4px) !important; 
     position: relative !important;
     overflow: visible !important;
 }
 
-/* Ocultamos el SVG defectuoso interno */
-cart-drawer.is-empty .drawer__close svg,
-cart-drawer.is-empty .drawer__header .drawer__close svg,
-cart-drawer.is-empty [class*="close"] svg {
-    display: none !important;
-    opacity: 0 !important;
-}
-
-/* Dibujamos las dos líneas de la cruz de forma nativa y visible */
+/* Mantenemos las líneas de la cruz proporcionales al nuevo tamaño */
 cart-drawer.is-empty .drawer__close::before,
 cart-drawer.is-empty .drawer__close::after,
 cart-drawer.is-empty [class*="close"]::before,
@@ -5946,9 +5939,9 @@ cart-drawer.is-empty [class*="close"]::after {
     position: absolute !important;
     top: 50% !important;
     left: 50% !important;
-    width: 12px !important;               /* Tamaño corto de la cruz */
-    height: 2px !important;               /* Grosor fino nítido */
-    background-color: #4b5563 !important; /* Color gris oscuro como el competidor */
+    width: 10px !important;               /* Cruz interna un pelín más corta */
+    height: 1.5px !important;             /* Grosor fino y estilizado */
+    background-color: #4b5563 !important;
     display: block !important;
     z-index: 10 !important;
 }
