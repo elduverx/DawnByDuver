@@ -1,0 +1,18 @@
+{%- if recommendations.performed and recommendations.products_count > 0 -%}
+  {%- for product in recommendations.products -%}
+    <div class="vela-upsell-item">
+      <a href="{{ product.url }}">
+        <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title | escape }}">
+      </a>
+      <div class="vela-upsell-item__info">
+        <p class="vela-upsell-item__title">{{ product.title | escape }}</p>
+        <p class="vela-upsell-item__price">{{ product.price | money }}</p>
+        <a href="{{ product.url }}" class="vela-upsell-item__btn">Ver</a>
+      </div>
+    </div>
+  {%- endfor -%}
+{%- endif -%}
+
+{% schema %}
+{ "name": "Cart Upsell" }
+{% endschema %}
