@@ -5878,39 +5878,23 @@ cart-drawer.is-empty .cart-drawer__warnings,
 }
 
 
-/* --- IGUALAR DISEÑO DE CARRITO VACÍO AL COMPETIDOR --- */
-
-/* 1. Ajuste del encabezado (Espaciado de la barra superior y la cruz) */
-cart-drawer.is-empty .drawer__header {
-    padding: 24px 24px 16px 24px !important; /* Separa los elementos de los bordes del recuadro */
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    border-bottom: none !important; /* Mantiene la estética limpia sin líneas intermedias */
-}
-
-/* 2. Centrado y estructura del contenedor del mensaje */
+/* --- EMPUJAR TEXTO DE CARRITO VACÍO MÁS ABAJO --- */
 cart-drawer.is-empty .drawer__inner-empty,
 cart-drawer.is-empty .cart-drawer__warnings {
     display: flex !important;
     flex-direction: column !important;
-    justify-content: center !important; /* Centrado vertical exacto */
-    align-items: center !important;    /* Centrado horizontal exacto */
+    justify-content: flex-start !important; /* Alinea arriba para controlar el empuje */
+    align-items: center !important;
     text-align: center !important;
-    height: 65vh !important;           /* Equilibrio visual en la pantalla */
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 24px !important;
+    height: auto !important;
 }
 
-/* 3. Estilo exacto del texto "Tu carrito está vacío" */
+/* Aplica el margen superior exacto para bajar el texto */
 cart-drawer.is-empty .drawer__inner-empty p,
 cart-drawer.is-empty .cart-drawer__warnings p {
-    font-size: 1.8rem !important;
-    font-weight: 500 !important;       /* Fuerza un grosor limpio */
-    color: #000000 !important;         /* Negro intenso como el competidor */
-    letter-spacing: 0.05rem !important;
-    margin: 0 !important;
+    margin-top: 150px !important; /* Modifica este número si quieres subirlo o bajarlo más */
+    margin-bottom: 0 !important;
+    width: 100% !important;
     display: block !important;
-    width: auto !important;
 }
