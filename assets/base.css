@@ -4275,11 +4275,6 @@ fieldset.product-form__input .form__label {
     display: none !important;
   }
 }
-}
-  font-weight: bold;
-  color: #121212;
-  margin-left: 4px;
-}
 /* ===== PUNTO PARPADEANTE ===== */
 @keyframes parpadeo {
   0%, 100% { transform: scale(1); opacity: 1; }
