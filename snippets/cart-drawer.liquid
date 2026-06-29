@@ -431,7 +431,7 @@
           var cartItems = {{ cart.items | map: 'product_id' | json }};
           if (!cartItems.length) return;
           var productId = cartItems[0];
-          var url = '{{ routes.product_recommendations_url }}?section_id=cart-drawer&product_id=' + productId + '&limit=6&intent=related';
+          var url = '{{ routes.product_recommendations_url }}?section_id=cart-upsell&product_id=' + productId + '&limit=6&intent=related';
           fetch(url)
             .then(function(r) { return r.text(); })
             .then(function(html) {
