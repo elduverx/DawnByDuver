@@ -142,16 +142,16 @@
                             </div>
                           {%- endif -%}
 
-                          {%- if item.original_price != item.final_price -%}
-                            {%- assign savings = item.original_price | minus: item.final_price -%}
+                          {%- if item.variant.compare_at_price > item.variant.price -%}
+                            {%- assign savings = item.variant.compare_at_price | minus: item.variant.price -%}
                             <div class="vela-cart-prices">
-                              <s class="vela-cart-compare">{{- item.original_price | money -}}</s>
-                              <span class="vela-cart-final">{{ item.final_price | money }}</span>
+                              <s class="vela-cart-compare">{{- item.variant.compare_at_price | money -}}</s>
+                              <span class="vela-cart-final">{{ item.variant.price | money }}</span>
                               <span class="vela-cart-savings">(Ahorras {{ savings | money }})</span>
                             </div>
                           {%- else -%}
                             <div class="vela-cart-prices">
-                              <span class="vela-cart-final">{{ item.original_price | money }}</span>
+                              <span class="vela-cart-final">{{ item.variant.price | money }}</span>
                             </div>
                           {%- endif -%}
 
