@@ -5863,3 +5863,28 @@ cart-drawer.is-empty .drawer__inner-empty p {
   writing-mode: horizontal-tb !important;
   text-orientation: mixed !important;
 }
+/* --- ARREGLAR FORMATO DEL TEXTO DE CARRITO VACÍO --- */
+cart-drawer.is-empty .drawer__inner-empty,
+cart-drawer.is-empty .cart-drawer__warnings,
+[class*="inner-empty"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    min-height: 200px !important; /* Lo empuja hacia el centro vertical */
+}
+
+cart-drawer.is-empty .drawer__inner-empty p,
+cart-drawer.is-empty .cart-drawer__warnings p,
+[class*="inner-empty"] p {
+    width: 100% !important;
+    display: block !important;
+    white-space: normal !important;
+    letter-spacing: normal !important;
+    font-size: 1.6rem !important;
+    color: #121212 !important;
+    margin: 0 auto !important;
+}
