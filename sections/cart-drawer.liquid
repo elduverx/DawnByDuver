@@ -1,1 +1,14 @@
-{%- render 'cart-drawer' -%}
+{%- render 'cart-drawer', upsell_collection: section.settings.upsell_collection -%}
+
+{% schema %}
+{
+  "name": "Cart Drawer",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "upsell_collection",
+      "label": "Productos recomendados en el carrito"
+    }
+  ]
+}
+{% endschema %}
