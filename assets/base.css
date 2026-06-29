@@ -5538,8 +5538,12 @@ summary.header__icon--menu {
   width: 10% !important;
 }
 .cart-drawer .cart-item__media {
-  width: 80px !important;
+  width: 70px !important;
+  min-width: 70px !important;
+  max-width: 70px !important;
 }
+
 .cart-drawer .cart-item__image {
-  width: 80px !important;
+  width: 70px !important;
+  height: auto !important;
 }
