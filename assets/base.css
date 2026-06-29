@@ -5648,7 +5648,7 @@ summary.header__icon--menu {
 }
 
 .vela-upsell__title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin-bottom: 12px;
@@ -5662,11 +5662,83 @@ summary.header__icon--menu {
 }
 
 .vela-upsell__track {
+  flex: 1;
+  overflow: hidden;
+}
+
+.vela-upsell-item {
   display: flex;
   gap: 10px;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  align-items: center;
+}
+
+.vela-upsell-item__img img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.vela-upsell-item__info {
   flex: 1;
+}
+
+.vela-upsell-item__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.vela-upsell-item__prices {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.vela-upsell-item__compare {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 1.2rem;
+}
+
+.vela-upsell-item__price {
+  font-size: 1.3rem;
+  color: #121212;
+  font-weight: 500;
+}
+
+.vela-upsell-item__form {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.vela-upsell-select {
+  border: 1px solid #e2e2e2;
+  padding: 4px 8px;
+  font-size: 1.2rem;
+  height: 32px;
+  border-radius: 0;
+  background: white;
+}
+
+.vela-upsell-add {
+  background: #121212;
+  color: white;
+  border: none;
+  padding: 0 14px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  white-space: nowrap;
 }
 
 .vela-upsell__arrow {
@@ -5683,52 +5755,4 @@ summary.header__icon--menu {
   justify-content: center;
   padding: 0;
   line-height: 1;
-}
-
-.vela-upsell-item {
-  min-width: 130px;
-  max-width: 130px;
-  background: #f9f9f9;
-  border-radius: 4px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.vela-upsell-item img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-}
-
-.vela-upsell-item__info {
-  padding: 6px;
-}
-
-.vela-upsell-item__title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 2px;
-}
-
-.vela-upsell-item__price {
-  font-size: 1.1rem;
-  color: #121212;
-  margin-bottom: 6px;
-}
-
-.vela-upsell-item__btn {
-  display: block;
-  width: 100%;
-  background: #121212;
-  color: white;
-  border: none;
-  padding: 6px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
 }
