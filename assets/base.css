@@ -5935,4 +5935,26 @@ cart-drawer.is-empty [class*="close"] svg {
     display: none !important;
 }
 
-/* Creamos una
+/* Creamos una cruz totalmente nueva, limpia y diminuta usando CSS puro */
+cart-drawer.is-empty .drawer__close::before,
+cart-drawer.is-empty .drawer__close::after,
+cart-drawer.is-empty [class*="close"]::before,
+cart-drawer.is-empty [class*="close"]::after {
+    content: '' !important;
+    position: absolute !important;
+    width: 12px !important;               /* Longitud de las líneas de la cruz */
+    height: 1.5px !important;             /* Grosor fino de la cruz */
+    background-color: #4b5563 !important; /* Color gris oscuro de la cruz */
+    top: 50% !important;
+    left: 50% !important;
+}
+
+cart-drawer.is-empty .drawer__close::before,
+cart-drawer.is-empty [class*="close"]::before {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+cart-drawer.is-empty .drawer__close::after,
+cart-drawer.is-empty [class*="close"]::after {
+    transform: translate(-50%, -50%) rotate(-45deg) !important;
+}
