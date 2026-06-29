@@ -487,8 +487,9 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
-              {% render 'envio-estimado' %}
-              <script>
+                {% render 'metodos-pago' %}
+                {% render 'envio-estimado' %}
+                <script>
     (function() {
       const meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
       const hoy = new Date();
