@@ -410,8 +410,8 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
-      {%- if upsell_handles != blank -%}
-        <p>HANDLES: {{ upsell_handles }}</p>
+      {%- assign upsell_handles = 'pantalon-oversize,leila-vestido-ultracomodo-de-mujer' -%}
+{%- if upsell_handles != blank -%}
   {%- assign upsell_products = upsell_handles | split: ',' -%}
   <div class="vela-upsell">
     <p class="vela-upsell__title">También te puede gustar</p>
