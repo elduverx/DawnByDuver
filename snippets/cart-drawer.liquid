@@ -123,9 +123,7 @@
                             <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
                           {%- endif -%}
 
-                          <a href="{{ item.url }}" class="cart-item__name h4 break" style="font-weight: 700;">
-  {{- item.product.title | escape -}}
-</a>
+                          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
   <a href="{{ item.url }}" class="cart-item__name h4 break" style="font-weight: 700;">
     {{- item.product.title | escape -}}
   </a>
@@ -214,11 +212,8 @@
                             {%- endfor -%}
                           </ul>
                         </td>
-                        <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                          <button type="button" class="button button--tertiary cart-remove-button" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title | escape }}" data-variant-id="{{ item.variant.id }}">
-                            <span class="svg-wrapper">{{- 'icon-remove.svg' | inline_asset_content -}}</span>
-                        </button>
-                  </cart-remove-button>
+
+                        <td class="cart-item__totals right" role="cell" headers="CartDrawer-ColumnTotal">
                           {%- render 'loading-spinner' -%}
                           <div class="cart-item__price-wrapper">
                             {%- if item.original_line_price != item.final_line_price -%}
