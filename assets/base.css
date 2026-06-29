@@ -5633,3 +5633,11 @@ summary.header__icon--menu {
   color: #2e7d32;
   font-size: 1.2rem;
 }
+.cart-drawer .quantity.cart-quantity {
+  width: 100px !important;
+  min-height: 36px !important;
+}
+
+.cart-drawer .quantity__button {
+  width: 30px !important;
+}
