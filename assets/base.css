@@ -5588,7 +5588,7 @@ summary.header__icon--menu {
   -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
-  font-size: 1.3rem !important;
+  font-size: 2rem !important;
 }
 .cart-drawer .drawer__inner {
   width: 95vw !important;
