@@ -410,101 +410,134 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
-      {%- assign upsell_handles = 'pantalon-oversize,leila-vestido-ultracomodo-de-mujer' | split: ',' -%}
-{%- if upsell_handles != blank -%}
-  <div class="vela-upsell">
-    <p class="vela-upsell__title">También te puede gustar</p>
-    <div class="vela-upsell__slider-wrapper">
-      <button class="vela-upsell__arrow vela-upsell__arrow--prev" onclick="velaUpsellPrev()">&#8249;</button>
-      <div class="vela-upsell__track">
-        {%- for handle in upsell_handles -%}
-          {%- assign product = all_products[handle] -%}
-          {%- if product != blank -%}
-            <div class="vela-upsell-item" style="display: {% if forloop.first %}flex{% else %}none{% endif %};">
-              <a href="{{ product.url }}" class="vela-upsell-item__img">
-                <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title | escape }}">
-              </a>
-              <div class="vela-upsell-item__info">
-                <p class="vela-upsell-item__title">{{ product.title | escape }}</p>
-                <div class="vela-upsell-item__prices">
-                  {%- if product.compare_at_price > product.price -%}
-                    <s class="vela-upsell-item__compare">{{ product.compare_at_price | money }}</s>
-                  {%- endif -%}
-                  <span class="vela-upsell-item__price">{{ product.price | money }}</span>
-                </div>
-                <div class="vela-upsell-item__form">
-                  <select class="vela-upsell-select" data-product-id="{{ product.id }}">
-                    {%- for variant in product.variants -%}
-                      <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}>
-                        {{ variant.title }}
-                      </option>
-                    {%- endfor -%}
-                  </select>
-                  <button class="vela-upsell-add" onclick="velaAddToCart(this)">Añadir</button>
-                </div>
+      {%- if upsell_collection != blank -%}
+        {%- assign upsell_col = collections[upsell_collection] -%}
+        {%- if upsell_col.products.size > 0 -%}
+          <div class="vela-upsell">
+            <p class="vela-upsell__title">También te puede gustar</p>
+            <div class="vela-upsell__slider-wrapper">
+              <button class="vela-upsell__arrow vela-upsell__arrow--prev" onclick="this.closest('.vela-upsell__slider-wrapper').querySelector('.vela-upsell__track').scrollBy({left: -160, behavior: 'smooth'})">&#8249;</button>
+              <div class="vela-upsell__track">
+                {%- for product in upsell_col.products -%}
+                  <div class="vela-upsell-item">
+                    <a href="{{ product.url }}">
+                      <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title | escape }}">
+                    </a>
+                    <div class="vela-upsell-item__info">
+                      <p class="vela-upsell-item__title">{{ product.title | escape }}</p>
+                      <p class="vela-upsell-item__price">{{ product.price | money }}</p>
+                      <a href="{{ product.url }}" class="vela-upsell-item__btn">Ver</a>
+                    </div>
+                  </div>
+                {%- endfor -%}
               </div>
+              <button class="vela-upsell__arrow vela-upsell__arrow--next" onclick="this.closest('.vela-upsell__slider-wrapper').querySelector('.vela-upsell__track').scrollBy({left: 160, behavior: 'smooth'})">&#8250;</button>
             </div>
-          {%- endif -%}
-        {%- endfor -%}
+          </div>
+        {%- endif -%}
+      {%- endif -%}
+      <div class="drawer__footer">
+        {%- if settings.show_cart_note -%}
+          <details id="Details-CartDrawer">
+            <summary>
+              <span class="summary__title">
+                {{ 'sections.cart.note' | t }}
+                {{- 'icon-caret.svg' | inline_asset_content -}}
+              </span>
+            </summary>
+            <cart-note class="cart__note field">
+              <label class="visually-hidden" for="CartDrawer-Note">{{ 'sections.cart.note' | t }}</label>
+              <textarea
+                id="CartDrawer-Note"
+                class="text-area text-area--resize-vertical field__input"
+                name="note"
+                placeholder="{{ 'sections.cart.note' | t }}"
+              >{{ cart.note }}</textarea>
+            </cart-note>
+          </details>
+        {%- endif -%}
+
+        <!-- Start blocks -->
+        <!-- Subtotals -->
+
+        <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
+          <div>
+            {%- if cart.cart_level_discount_applications.size > 0 -%}
+              <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                {%- for discount in cart.cart_level_discount_applications -%}
+                  <li class="discounts__discount discounts__discount--end">
+                    {{- 'icon-discount.svg' | inline_asset_content -}}
+                    {{ discount.title | escape }}
+                    (-{{ discount.total_allocated_amount | money }})
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </div>
+
+          <div class="totals" role="status">
+            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
+            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+          </div>
+
+          <small class="tax-note caption-large rte">
+            {%- if cart.duties_included and cart.taxes_included -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- elsif cart.duties_included == false and cart.taxes_included -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- elsif cart.duties_included and cart.taxes_included == false -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
+              {%- if shop.shipping_policy.body == blank -%}
+                {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+              {%- else -%}
+                {{
+                  'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                  | t: link: shop.shipping_policy.url
+                }}
+              {%- endif -%}
+            {%- endif -%}
+          </small>
+        </div>
+
+        <!-- CTAs -->
+
+        <div class="cart__ctas" {{ block.shopify_attributes }}>
+          <button
+            type="submit"
+            id="CartDrawer-Checkout"
+            class="cart__checkout-button button"
+            name="checkout"
+            form="CartDrawer-Form"
+            {% if cart == empty %}
+              disabled
+            {% endif %}
+          >
+            {{ 'sections.cart.checkout' | t }}
+          </button>
+        </div>
       </div>
-      <button class="vela-upsell__arrow vela-upsell__arrow--next" onclick="velaUpsellNext()">&#8250;</button>
     </div>
   </div>
-
-  <script>
-    var velaUpsellIndex = 0;
-    var velaUpsellItems = null;
-
-    function velaGetItems() {
-      if (!velaUpsellItems) {
-        velaUpsellItems = document.querySelectorAll('.vela-upsell-item');
-      }
-      return velaUpsellItems;
-    }
-
-    function velaUpsellNext() {
-      var items = velaGetItems();
-      items[velaUpsellIndex].style.display = 'none';
-      velaUpsellIndex = (velaUpsellIndex + 1) % items.length;
-      items[velaUpsellIndex].style.display = 'flex';
-    }
-
-    function velaUpsellPrev() {
-      var items = velaGetItems();
-      items[velaUpsellIndex].style.display = 'none';
-      velaUpsellIndex = (velaUpsellIndex - 1 + items.length) % items.length;
-      items[velaUpsellIndex].style.display = 'flex';
-    }
-
-    function velaAddToCart(btn) {
-      var form = btn.closest('.vela-upsell-item__form');
-      var select = form.querySelector('.vela-upsell-select');
-      var variantId = select.value;
-      btn.textContent = '...';
-      btn.disabled = true;
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: variantId, quantity: 1 })
-      })
-      .then(function(r) { return r.json(); })
-      .then(function() {
-        btn.textContent = '✓';
-        setTimeout(function() {
-          btn.textContent = 'Añadir';
-          btn.disabled = false;
-        }, 1500);
-        fetch('/cart.js')
-          .then(function(r) { return r.json(); })
-          .then(function(cart) {
-            var bubble = document.querySelector('.cart-count-bubble span[aria-hidden]');
-            if (bubble) bubble.textContent = cart.item_count;
-          });
-      })
-      .catch(function() {
-        btn.textContent = 'Error';
-        btn.disabled = false;
-      });
-    }
-  </script>
-{%- endif -%}
+</cart-drawer>
