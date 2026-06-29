@@ -5515,3 +5515,12 @@ summary.header__icon--menu {
 .cart-drawer .cart-item__quantity-wrapper cart-remove-button {
   display: none !important;
 }
+.cart-drawer .cart-item__details > div:first-child {
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.cart-drawer .cart-item__details cart-remove-button {
+  margin-left: auto;
+  flex-shrink: 0;
+}
