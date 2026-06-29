@@ -410,33 +410,33 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
-      {%- if upsell_products != blank -%}
-        <p>DEBUG: {{ upsell_products }}</p>
-        <div class="vela-upsell">
-          <p class="vela-upsell__title">También te puede gustar</p>
-          <div class="vela-upsell__slider-wrapper">
-            <button class="vela-upsell__arrow vela-upsell__arrow--prev" onclick="this.closest('.vela-upsell__slider-wrapper').querySelector('.vela-upsell__track').scrollBy({left: -160, behavior: 'smooth'})">&#8249;</button>
-            <div class="vela-upsell__track">
-              {%- for handle in upsell_products -%}
-                {%- assign product = all_products[handle] -%}
-                {%- if product != blank -%}
-                  <div class="vela-upsell-item">
-                    <a href="{{ product.url }}">
-                      <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title | escape }}">
-                    </a>
-                    <div class="vela-upsell-item__info">
-                      <p class="vela-upsell-item__title">{{ product.title | escape }}</p>
-                      <p class="vela-upsell-item__price">{{ product.price | money }}</p>
-                      <a href="{{ product.url }}" class="vela-upsell-item__btn">Ver</a>
-                    </div>
-                  </div>
-                {%- endif -%}
-              {%- endfor -%}
+      {%- if upsell_handles != blank -%}
+  {%- assign upsell_products = upsell_handles | split: ',' -%}
+  <div class="vela-upsell">
+    <p class="vela-upsell__title">También te puede gustar</p>
+    <div class="vela-upsell__slider-wrapper">
+      <button class="vela-upsell__arrow vela-upsell__arrow--prev" onclick="this.closest('.vela-upsell__slider-wrapper').querySelector('.vela-upsell__track').scrollBy({left: -160, behavior: 'smooth'})">&#8249;</button>
+      <div class="vela-upsell__track">
+        {%- for handle in upsell_products -%}
+          {%- assign product = all_products[handle] -%}
+          {%- if product != blank -%}
+            <div class="vela-upsell-item">
+              <a href="{{ product.url }}">
+                <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title | escape }}">
+              </a>
+              <div class="vela-upsell-item__info">
+                <p class="vela-upsell-item__title">{{ product.title | escape }}</p>
+                <p class="vela-upsell-item__price">{{ product.price | money }}</p>
+                <a href="{{ product.url }}" class="vela-upsell-item__btn">Ver</a>
+              </div>
             </div>
-            <button class="vela-upsell__arrow vela-upsell__arrow--next" onclick="this.closest('.vela-upsell__slider-wrapper').querySelector('.vela-upsell__track').scrollBy({left: 160, behavior: 'smooth'})">&#8250;</button>
-          </div>
-        </div>
-      {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <button class="vela-upsell__arrow vela-upsell__arrow--next" onclick="this.closest('.vela-upsell__slider-wrapper').querySelector('.vela-upsell__track').scrollBy({left: 160, behavior: 'smooth'})">&#8250;</button>
+    </div>
+  </div>
+{%- endif -%}
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
