@@ -5893,7 +5893,7 @@ cart-drawer.is-empty .cart-drawer__warnings {
 /* Aplica el margen superior exacto para bajar el texto */
 cart-drawer.is-empty .drawer__inner-empty p,
 cart-drawer.is-empty .cart-drawer__warnings p {
-    margin-top: 250px !important; /* Modifica este número si quieres subirlo o bajarlo más */
+    margin-top: 150px !important; /* Modifica este número si quieres subirlo o bajarlo más */
     margin-bottom: 0 !important;
     width: 100% !important;
     display: block !important;
