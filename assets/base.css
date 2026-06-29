@@ -5561,6 +5561,6 @@ summary.header__icon--menu {
 }
 
 .cart-drawer .quantity.cart-quantity {
-  transform: scale(0.3) !important;
+  transform: scale(0.85) !important;
   transform-origin: left !important;
 }
