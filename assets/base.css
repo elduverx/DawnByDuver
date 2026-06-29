@@ -5564,3 +5564,15 @@ summary.header__icon--menu {
   transform: scale(0.85) !important;
   transform-origin: left !important;
 }
+.cart-drawer .cart-item {
+  grid-template-columns: 70px 1fr 44px !important;
+  grid-template-rows: auto !important;
+}
+
+.cart-drawer .cart-item__name {
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  font-size: 1.3rem !important;
+}
