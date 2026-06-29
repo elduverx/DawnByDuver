@@ -5590,3 +5590,12 @@ summary.header__icon--menu {
   overflow: hidden !important;
   font-size: 1.3rem !important;
 }
+.cart-drawer .drawer__inner {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.cart-drawer .cart-drawer {
+  width: 100% !important;
+  max-width: 100% !important;
+}
