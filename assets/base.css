@@ -5924,7 +5924,7 @@ cart-drawer.is-empty [class*="close"] {
     border-radius: 0px !important;
     padding: 0 !important;
     cursor: pointer !important;
-    transform: translate(-15px, -4px) !important; /* Posición ajustada */
+    transform: translate(-15px, -10px) !important; /* Posición ajustada */
     position: relative !important;
     overflow: hidden !important;          /* Recorta cualquier elemento que intente salirse */
 }
