@@ -5512,3 +5512,6 @@ summary.header__icon--menu {
 .cart-drawer .cart-item__totals {
   display: none !important;
 }
+.cart-drawer .cart-item__quantity-wrapper cart-remove-button {
+  display: none !important;
+}
