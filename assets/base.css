@@ -5530,6 +5530,10 @@ summary.header__icon--menu {
   overflow-wrap: normal !important;
   min-width: 140px !important;
 }
-.cart-drawer table.cart-items {
-  table-layout: auto !important;
+.cart-drawer .cart-item__details {
+  width: 75% !important;
+}
+
+.cart-drawer .cart-item__totals {
+  width: 10% !important;
 }
