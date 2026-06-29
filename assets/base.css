@@ -5642,3 +5642,93 @@ summary.header__icon--menu {
 .cart-drawer .quantity__button {
   width: 30px !important;
 }
+.vela-upsell {
+  padding: 16px 12px 8px;
+  border-top: 1px solid #e2e2e2;
+}
+
+.vela-upsell__title {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.vela-upsell__slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vela-upsell__track {
+  display: flex;
+  gap: 10px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  flex: 1;
+}
+
+.vela-upsell__arrow {
+  background: white;
+  border: 1px solid #e2e2e2;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.vela-upsell-item {
+  min-width: 130px;
+  max-width: 130px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.vela-upsell-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.vela-upsell-item__info {
+  padding: 6px;
+}
+
+.vela-upsell-item__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.vela-upsell-item__price {
+  font-size: 1.1rem;
+  color: #121212;
+  margin-bottom: 6px;
+}
+
+.vela-upsell-item__btn {
+  display: block;
+  width: 100%;
+  background: #121212;
+  color: white;
+  border: none;
+  padding: 6px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
