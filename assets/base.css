@@ -5908,29 +5908,31 @@ cart-drawer.is-empty .drawer__header {
     width: 100% !important;
     box-sizing: border-box !important;
 }
-/* --- BOTÓN DE CIERRE CUADRADO ESTILO COMPETIDOR --- */
+/* --- REPARACIÓN TOTAL BOTÓN CUADRADO ESTILO COMPETIDOR --- */
 cart-drawer.is-empty .drawer__close,
 cart-drawer.is-empty .drawer__header .drawer__close,
 cart-drawer.is-empty [class*="close"] {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 32px !important;              /* Tamaño de la caja cuadrada */
-    height: 32px !important;
-    min-width: 32px !important;
-    min-height: 32px !important;
-    background-color: transparent !important;
-    border: 1px solid #e5e7eb !important; /* Borde gris fino del contorno */
-    border-radius: 0px !important;        /* Forza a que sea completamente cuadrada */
+    width: 36px !important;              /* Tamaño de la caja */
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    background-color: #f3f4f6 !important; /* Fondo grisáceo suave igual al competidor */
+    border: none !important;              /* Quitamos bordes raros */
+    border-radius: 0px !important;        /* Cuadrado perfecto */
     padding: 0 !important;
     cursor: pointer !important;
-    transform: translateX(-15px) !important; /* La mantiene en la posición hacia la izquierda */
+    transform: translateX(-15px) !important; /* Mantiene la posición a la izquierda */
+    position: relative !important;
 }
 
-/* Hace que el icono SVG de la cruz de dentro sea pequeñito */
+/* Ocultamos por completo el SVG gigante defectuoso de tu plantilla */
 cart-drawer.is-empty .drawer__close svg,
 cart-drawer.is-empty .drawer__header .drawer__close svg,
 cart-drawer.is-empty [class*="close"] svg {
-    width: 12px !important;              /* Tamaño pequeño de la cruz interior */
-    height: 12px !important;
-    color: #4b5563
+    display: none !important;
+}
+
+/* Creamos una
