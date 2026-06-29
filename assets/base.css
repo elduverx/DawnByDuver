@@ -5547,3 +5547,20 @@ summary.header__icon--menu {
   width: 70px !important;
   height: auto !important;
 }
+.cart-drawer .cart-item {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+.cart-drawer .cart-item__name {
+  font-size: 1.2rem !important;
+}
+
+.cart-drawer .product-option {
+  font-size: 1.1rem !important;
+}
+
+.cart-drawer .quantity.cart-quantity {
+  transform: scale(0.85) !important;
+  transform-origin: left !important;
+}
