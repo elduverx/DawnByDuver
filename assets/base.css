@@ -5888,7 +5888,7 @@ cart-drawer.is-empty .cart-drawer__warnings p,
     color: #121212 !important;
     margin: 0 auto !important;
 }
-/* --- CENTRADO ABSOLUTO DEL TEXTO DE CARRITO VACÍO --- */
+/* --- AJUSTE FINO PARA CENTRARLO MÁS ABAJO --- */
 cart-drawer.is-empty .drawer__inner-empty,
 cart-drawer.is-empty .cart-drawer__warnings {
     display: flex !important;
@@ -5896,6 +5896,6 @@ cart-drawer.is-empty .cart-drawer__warnings {
     justify-content: center !important; /* Centrado vertical */
     align-items: center !important;    /* Centrado horizontal */
     text-align: center !important;
-    height: 60vh !important;           /* Ocupa el espacio central de la pantalla */
+    height: 75vh !important;           /* Aumentamos la altura para empujarlo más abajo */
     width: 100% !important;
 }
