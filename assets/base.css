@@ -5823,5 +5823,9 @@ cart-drawer.is-empty .vela-upsell {
   padding: 12px !important;
 }
 .cart-drawer .vela-payment-icons {
-  margin-top: 10px !important;
+  margin-top: 16px !important;
+}
+
+.cart-drawer .cart__ctas {
+  margin-top: 16px !important;
 }
