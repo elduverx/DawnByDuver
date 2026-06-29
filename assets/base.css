@@ -5599,3 +5599,37 @@ summary.header__icon--menu {
   width: 100% !important;
   max-width: 100% !important;
 }
+.vela-cart-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 1.2rem;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.vela-cart-prices {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+}
+
+.vela-cart-compare {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 1.2rem;
+}
+
+.vela-cart-final {
+  font-size: 1.3rem;
+  color: #121212;
+}
+
+.vela-cart-savings {
+  color: #2e7d32;
+  font-size: 1.2rem;
+}
