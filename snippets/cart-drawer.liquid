@@ -485,20 +485,38 @@
       fetch('/cart/add.js', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: variantId, quantity: 1 })
+        body: JSON.stringify({ id: parseInt(variantId), quantity: 1 })
       })
       .then(function(r) { return r.json(); })
       .then(function() {
         btn.textContent = '✓';
-        setTimeout(function() {
-          btn.textContent = 'Añadir';
-          btn.disabled = false;
-        }, 1500);
-        fetch('/cart.js')
-          .then(function(r) { return r.json(); })
-          .then(function(cart) {
-            var bubble = document.querySelector('.cart-count-bubble span[aria-hidden]');
-            if (bubble) bubble.textContent = cart.item_count;
+        btn.disabled = false;
+        fetch('/?section_id=cart-drawer')
+          .then(function(r) { return r.text(); })
+          .then(function(html) {
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, 'text/html');
+            var newDrawer = doc.querySelector('#CartDrawer-CartItems');
+            var currentDrawer = document.querySelector('#CartDrawer-CartItems');
+            if (newDrawer && currentDrawer) {
+              currentDrawer.innerHTML = newDrawer.innerHTML;
+            }
+            var newCount = doc.querySelector('.cart-count-bubble');
+            var currentCount = document.querySelector('.cart-count-bubble');
+            if (newCount && currentCount) {
+              currentCount.innerHTML = newCount.innerHTML;
+            }
+            var newTotal = doc.querySelector('.totals__total-value');
+            var currentTotal = document.querySelector('.totals__total-value');
+            if (newTotal && currentTotal) {
+              currentTotal.innerHTML = newTotal.innerHTML;
+            }
+            var newHeading = doc.querySelector('.drawer__heading');
+            var currentHeading = document.querySelector('.drawer__heading');
+            if (newHeading && currentHeading) {
+              currentHeading.innerHTML = newHeading.innerHTML;
+            }
+            setTimeout(function() { btn.textContent = 'Añadir'; }, 500);
           });
       })
       .catch(function() {
