@@ -5756,3 +5756,14 @@ summary.header__icon--menu {
   padding: 0;
   line-height: 1;
 }
+.vela-upsell {
+  padding: 12px;
+  border-top: none !important;
+  border: none !important;
+}
+
+.vela-upsell__slider-wrapper {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px;
+}
