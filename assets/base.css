@@ -5643,5 +5643,5 @@ summary.header__icon--menu {
 }
 .cart-drawer .cart-item__totals {
   vertical-align: top !important;
-  padding-top: 4px !important;
+  padding-top: -4px !important;
 }
