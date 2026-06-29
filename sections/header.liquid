@@ -786,6 +786,7 @@
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
   
+  // Detecta si tocas el carrito interno por su clase, su etiqueta o si está en esa zona
   if (objetivo.closest('.header__icons a[href*="cart"]') || 
       objetivo.closest('.vela-carrito') || 
       (objetivo.tagName === 'svg' && objetivo.closest('.header__icons') && objetivo.innerHTML.includes('21')) ||
@@ -793,12 +794,7 @@ document.addEventListener("click", function(event) {
     
     event.preventDefault();
     event.stopPropagation();
-    var drawer = document.querySelector('cart-drawer');
-    if (drawer) {
-      drawer.open();
-    } else {
-      window.location.href = "/cart";
-    }
+    window.location.href = "/cart";
   }
-}, true);
+}, true); // El 'true' rompe cualquier bloqueo o contenedor fantasma de la plantilla
 </script>
