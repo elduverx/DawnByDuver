@@ -1,14 +1,2 @@
-{%- render 'cart-drawer', upsell_collection: section.settings.upsell_collection -%}
-
-{% schema %}
-{
-  "name": "Cart Drawer",
-  "settings": [
-    {
-      "type": "collection",
-      "id": "upsell_collection",
-      "label": "Productos recomendados en el carrito"
-    }
-  ]
-}
-{% endschema %}
+{%- assign upsell_products = 'handle-producto-1,handle-producto-2' | split: ',' -%}
+{%- render 'cart-drawer', upsell_products: upsell_products -%}
