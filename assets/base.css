@@ -5908,45 +5908,49 @@ cart-drawer.is-empty .drawer__header {
     width: 100% !important;
     box-sizing: border-box !important;
 }
-/* --- REPARACIÓN TOTAL BOTÓN CUADRADO ESTILO COMPETIDOR --- */
+/* --- REPARACIÓN COMPLETADA: CUADRADO GRIS Y CRUZ VISIBLE --- */
 cart-drawer.is-empty .drawer__close,
 cart-drawer.is-empty .drawer__header .drawer__close,
 cart-drawer.is-empty [class*="close"] {
-    display: flex !important;
+    display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 36px !important;              /* Tamaño de la caja */
-    height: 36px !important;
-    min-width: 36px !important;
-    min-height: 36px !important;
-    background-color: #f3f4f6 !important; /* Fondo grisáceo suave igual al competidor */
-    border: none !important;              /* Quitamos bordes raros */
+    width: 32px !important;              /* Tamaño exacto del cuadrado */
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    background-color: #f3f4f6 !important; /* Fondo gris suave idéntico */
+    border: none !important;
     border-radius: 0px !important;        /* Cuadrado perfecto */
     padding: 0 !important;
     cursor: pointer !important;
-    transform: translateX(-15px) !important; /* Mantiene la posición a la izquierda */
+    transform: translateX(-15px) !important; /* Posición hacia la izquierda */
     position: relative !important;
+    overflow: visible !important;
 }
 
-/* Ocultamos por completo el SVG gigante defectuoso de tu plantilla */
+/* Ocultamos el SVG defectuoso interno */
 cart-drawer.is-empty .drawer__close svg,
 cart-drawer.is-empty .drawer__header .drawer__close svg,
 cart-drawer.is-empty [class*="close"] svg {
     display: none !important;
+    opacity: 0 !important;
 }
 
-/* Creamos una cruz totalmente nueva, limpia y diminuta usando CSS puro */
+/* Dibujamos las dos líneas de la cruz de forma nativa y visible */
 cart-drawer.is-empty .drawer__close::before,
 cart-drawer.is-empty .drawer__close::after,
 cart-drawer.is-empty [class*="close"]::before,
 cart-drawer.is-empty [class*="close"]::after {
-    content: '' !important;
+    content: "" !important;
     position: absolute !important;
-    width: 12px !important;               /* Longitud de las líneas de la cruz */
-    height: 1.5px !important;             /* Grosor fino de la cruz */
-    background-color: #4b5563 !important; /* Color gris oscuro de la cruz */
     top: 50% !important;
     left: 50% !important;
+    width: 12px !important;               /* Tamaño corto de la cruz */
+    height: 2px !important;               /* Grosor fino nítido */
+    background-color: #4b5563 !important; /* Color gris oscuro como el competidor */
+    display: block !important;
+    z-index: 10 !important;
 }
 
 cart-drawer.is-empty .drawer__close::before,
