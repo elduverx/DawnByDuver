@@ -5591,8 +5591,8 @@ summary.header__icon--menu {
   font-size: 1.3rem !important;
 }
 .cart-drawer .drawer__inner {
-  width: 100% !important;
-  max-width: 100% !important;
+  width: 150% !important;
+  max-width: 150% !important;
 }
 
 .cart-drawer .cart-drawer {
