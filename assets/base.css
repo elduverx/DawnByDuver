@@ -5641,7 +5641,3 @@ summary.header__icon--menu {
 .cart-drawer .quantity__button {
   width: 30px !important;
 }
-.cart-drawer .drawer__inner {
-  width: 95vw !important;
-  max-width: 560px !important;
-}
