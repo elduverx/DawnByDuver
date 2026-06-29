@@ -5537,3 +5537,9 @@ summary.header__icon--menu {
 .cart-drawer .cart-item__totals {
   width: 10% !important;
 }
+.cart-drawer .cart-item__media {
+  width: 80px !important;
+}
+.cart-drawer .cart-item__image {
+  width: 80px !important;
+}
