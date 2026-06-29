@@ -5524,3 +5524,9 @@ summary.header__icon--menu {
   margin-left: auto;
   flex-shrink: 0;
 }
+.cart-drawer .cart-item__name {
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  min-width: 140px !important;
+}
