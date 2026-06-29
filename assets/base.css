@@ -5908,3 +5908,9 @@ cart-drawer.is-empty .drawer__header {
     width: 100% !important;
     box-sizing: border-box !important;
 }
+/* --- EMPUJAR LA CRUZ MÁS HACIA LA IZQUIERDA --- */
+cart-drawer.is-empty .drawer__close,
+cart-drawer.is-empty .drawer__header .drawer__close,
+cart-drawer.is-empty [class*="close"] {
+    margin-right: 12px !important; /* Añade espacio a su derecha para obligarla a moverse a la izquierda */
+}
