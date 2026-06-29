@@ -5632,6 +5632,7 @@ summary.header__icon--menu {
 .vela-cart-savings {
   color: #2e7d32;
   font-size: 1.2rem;
+  font-weight: 700 !important;
 }
 .cart-drawer .quantity.cart-quantity {
   width: 100px !important;
