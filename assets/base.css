@@ -5528,7 +5528,7 @@ summary.header__icon--menu {
   white-space: normal !important;
   word-break: normal !important;
   overflow-wrap: normal !important;
-  min-width: 140px !important;
+  min-width: 200px !important;
 }
 .cart-drawer .cart-item__details {
   width: 75% !important;
@@ -5598,8 +5598,4 @@ summary.header__icon--menu {
 .cart-drawer .cart-drawer {
   width: 100% !important;
   max-width: 100% !important;
-}
-.cart-drawer .drawer__inner {
-  width: 90vw !important;
-  max-width: 480px !important;
 }
