@@ -5821,8 +5821,8 @@ cart-drawer.is-empty .vela-upsell {
 .cart-drawer .drawer__footer {
   background: #f5f5f5 !important;
   padding: 16px !important;
-  margin: 0 !important;
-  width: 100% !important;
+  margin: 0 -2rem !important;
+  width: calc(100% + 4rem) !important;
   box-sizing: border-box !important;
 }
 
