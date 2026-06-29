@@ -5599,3 +5599,7 @@ summary.header__icon--menu {
   width: 100% !important;
   max-width: 100% !important;
 }
+.cart-drawer .drawer__inner {
+  width: 90vw !important;
+  max-width: 480px !important;
+}
