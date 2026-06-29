@@ -62,7 +62,7 @@
         </div>
       {%- endif -%}
       <div class="drawer__header">
-        <h2 class="drawer__heading"><strong>Carrito</strong>{% if cart.item_count > 0 %} • {{ cart.item_count }}{% endif %}</h2>
+        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}</h2>
         <button
           class="drawer__close"
           type="button"
@@ -89,6 +89,11 @@
             {%- if cart != empty -%}
               <div class="drawer__cart-items-wrapper">
                 <table class="cart-items" role="table">
+                  <thead role="rowgroup">
+                    <tr role="row">
+                      <th id="CartDrawer-ColumnProductImage" role="columnheader">
+                        <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
+                      </th>
                       <th
                         id="CartDrawer-ColumnProduct"
                         class="caption-with-letter-spacing"
