@@ -5908,10 +5908,29 @@ cart-drawer.is-empty .drawer__header {
     width: 100% !important;
     box-sizing: border-box !important;
 }
-/* --- TRASLADAR LA CRUZ HACIA LA IZQUIERDA SIN DEFORMARLA --- */
+/* --- BOTÓN DE CIERRE CUADRADO ESTILO COMPETIDOR --- */
 cart-drawer.is-empty .drawer__close,
 cart-drawer.is-empty .drawer__header .drawer__close,
 cart-drawer.is-empty [class*="close"] {
-    transform: translateX(-15px) !important; /* La empuja 15 píxeles hacia la izquierda */
-    margin: 0 !important; /* Evita que otros márgenes la deformen */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;              /* Tamaño de la caja cuadrada */
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    background-color: transparent !important;
+    border: 1px solid #e5e7eb !important; /* Borde gris fino del contorno */
+    border-radius: 0px !important;        /* Forza a que sea completamente cuadrada */
+    padding: 0 !important;
+    cursor: pointer !important;
+    transform: translateX(-15px) !important; /* La mantiene en la posición hacia la izquierda */
 }
+
+/* Hace que el icono SVG de la cruz de dentro sea pequeñito */
+cart-drawer.is-empty .drawer__close svg,
+cart-drawer.is-empty .drawer__header .drawer__close svg,
+cart-drawer.is-empty [class*="close"] svg {
+    width: 12px !important;              /* Tamaño pequeño de la cruz interior */
+    height: 12px !important;
+    color: #4b5563
