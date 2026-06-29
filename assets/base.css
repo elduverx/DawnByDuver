@@ -5641,3 +5641,7 @@ summary.header__icon--menu {
 .cart-drawer .quantity__button {
   width: 30px !important;
 }
+.cart-drawer .cart-item__totals {
+  vertical-align: top !important;
+  padding-top: 4px !important;
+}
