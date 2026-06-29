@@ -5641,3 +5641,10 @@ summary.header__icon--menu {
 .cart-drawer .quantity__button {
   width: 30px !important;
 }
+.cart-drawer .cart-item__name {
+  margin-bottom: 2px !important;
+}
+
+.cart-drawer .vela-cart-options {
+  margin-top: 0 !important;
+}
