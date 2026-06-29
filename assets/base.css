@@ -5509,7 +5509,9 @@ summary.header__icon--menu {
   border-top: 1px solid #e2e2e2;
   border-bottom: 1px solid #e2e2e2;
 }
-
+.cart-drawer .cart-item__totals {
+  display: none !important;
+}
 .cart-drawer .cart-item__quantity-wrapper cart-remove-button {
   display: none !important;
 }
