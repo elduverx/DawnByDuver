@@ -5898,3 +5898,13 @@ cart-drawer.is-empty .cart-drawer__warnings p {
     width: 100% !important;
     display: block !important;
 }
+/* --- CONFIGURACIÓN DE ENCABEZADO CON MARGENES Y BARRA SEPARADORA --- */
+cart-drawer.is-empty .drawer__header {
+    padding: 24px 32px 16px 32px !important; /* Aumentamos el espacio lateral (32px) para empujar el texto a la derecha y la cruz a la izquierda */
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    border-bottom: 1px solid #e5e7eb !important; /* Barra separadora fina y gris sutil abajo */
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
