@@ -5814,3 +5814,7 @@ summary.header__icon--menu {
   color: #121212 !important;
   border-color: #121212 !important;
 }
+.cart-drawer.is-empty .drawer__footer,
+.cart-drawer.is-empty .vela-upsell {
+  display: none !important;
+}
