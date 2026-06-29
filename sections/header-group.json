@@ -61,6 +61,7 @@
     },
     "header": {
       "type": "header",
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "logo_position": "middle-center",
