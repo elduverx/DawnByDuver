@@ -5820,7 +5820,16 @@ cart-drawer.is-empty .vela-upsell {
 }
 .cart-drawer .drawer__footer {
   background: #f5f5f5 !important;
-  padding: 12px !important;
+  padding: 16px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.cart-drawer .cart-drawer__footer {
+  background: #f5f5f5 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .cart-drawer .vela-payment-icons {
   margin-top: 24px !important;
