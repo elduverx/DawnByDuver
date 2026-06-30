@@ -5966,11 +5966,11 @@ cart-drawer.is-empty [class*="close"]::after {
 }
 /* AJUSTE DESKTOP: separar el título de las páginas interiores (Hombre, Mujer, Sobre Nosotros, etc.) de la línea del header */
 @media screen and (min-width: 990px) {
-  body:not(.template-index) .collection-hero__title {
+  .collection-hero__title {
     margin-top: 5rem !important;
   }
 
-  body:not(.template-index) .main-page-title {
+  .main-page-title {
     margin-top: 5rem !important;
   }
 }
