@@ -801,6 +801,17 @@
 }
 }
 </style>
+<!-- AJUSTE DESKTOP: separar el título de las páginas interiores (Hombre, Mujer, Sobre Nosotros, etc.) de la línea del header -->
+<style>
+@media screen and (min-width: 990px) {
+  .collection-hero__title {
+    margin-top: 5rem !important;
+  }
+  .main-page-title {
+    margin-top: 5rem !important;
+  }
+}
+</style>
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
