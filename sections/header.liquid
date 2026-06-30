@@ -801,4 +801,12 @@ document.addEventListener("click", function(event) {
     }
   }
 }, true);
+<!-- AJUSTE DESKTOP: bajar el logo de la home 20px, solo en desktop (>=990px), solo en home -->
+<style>
+@media screen and (min-width: 990px) {
+  .header-wrapper--homepage .header__heading-logo-wrapper {
+    transform: translateY(20px);
+  }
+}
+</style>
 </script>
