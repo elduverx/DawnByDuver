@@ -5964,13 +5964,8 @@ cart-drawer.is-empty .drawer__close::after,
 cart-drawer.is-empty [class*="close"]::after {
     transform: translate(-50%, -50%) rotate(-45deg) !important;
 }
-/* AJUSTE DESKTOP: separar el título de las páginas interiores (Hombre, Mujer, Sobre Nosotros, etc.) de la línea del header */
+/* AJUSTE DESKTOP: separar el título de las páginas interiores... */
 @media screen and (min-width: 990px) {
-  .collection-hero__title {
-    margin-top: 5rem !important;
-  }
-
-  .main-page-title {
-    margin-top: 5rem !important;
-  }
+  .collection-hero__title { margin-top: 5rem !important; }
+  .main-page-title { margin-top: 5rem !important; }
 }
