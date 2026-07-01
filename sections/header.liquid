@@ -962,6 +962,15 @@
   }
 }
 </style>
+<!-- FIX: duplicar reglas del carrito que no propagan bien desde base.css (problema de caché conocido) -->
+<style>
+.cart-drawer .cart-item__totals {
+  display: none !important;
+}
+.cart-drawer .cart-item__quantity-wrapper cart-remove-button {
+  display: none !important;
+}
+</style>
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
