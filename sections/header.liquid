@@ -801,6 +801,16 @@
 }
 }
 </style>
+<!-- AJUSTE DESKTOP: expandir HOMBRE/MUJER y SEGUIMIENTO/CONTACTO/SOBRE NOSOTROS hacia las esquinas, solo en desktop (>=990px), solo en home -->
+<style>
+@media screen and (min-width: 990px) {
+  .header-wrapper--homepage .header.page-width {
+    max-width: 100% !important;
+    padding-left: 3.25rem !important;
+    padding-right: 3.25rem !important;
+  }
+}
+</style>
 <style>
 @media screen and (min-width: 990px) {
   .header-wrapper:not(.header-wrapper--homepage) .header {
@@ -831,18 +841,20 @@
   }
 
   .shopify-section:has(.collection-hero) + .shopify-section {
-  margin-top: 40px !important}
+    margin-top: 40px !important;
+  }
 
   div[id*="__product-grid"] > .gradient {
     padding-top: 0px !important;
   }
 
- .facets-container {
-  padding-top: 0px !important;
+  .facets-container {
+    padding-top: 0px !important;
+  }
 
-.header-wrapper:not(.header-wrapper--homepage) .header__heading-logo-wrapper {
-  transform: translateY(-40px) !important;
-}
+  .header-wrapper:not(.header-wrapper--homepage) .header__heading-logo-wrapper {
+    transform: translateY(-15px) !important;
+  }
 }
 </style>
 <!-- AJUSTE DESKTOP: ocultar la burbuja del contador del carrito (queda mal posicionada y no se quiere mostrar) -->
