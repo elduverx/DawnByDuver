@@ -962,13 +962,16 @@
   }
 }
 </style>
-<!-- FIX: duplicar reglas del carrito que no propagan bien desde base.css (problema de caché conocido) -->
+<!-- FIX: mostrar la papelera junto al nombre (como el mobile/competidor), ocultar la de cantidad -->
 <style>
 .cart-drawer .cart-item__totals {
   display: none !important;
 }
 .cart-drawer .cart-item__quantity-wrapper cart-remove-button {
   display: none !important;
+}
+.cart-drawer .cart-item__details cart-remove-button {
+  display: flex !important;
 }
 </style>
 <script>
