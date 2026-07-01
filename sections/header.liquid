@@ -821,6 +821,14 @@
   }
 }
 </style>
+<!-- AJUSTE DESKTOP: ocultar la burbuja del contador del carrito (queda mal posicionada y no se quiere mostrar) -->
+<style>
+@media screen and (min-width: 990px) {
+  .header-wrapper .cart-count-bubble {
+    display: none !important;
+  }
+}
+</style>
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
