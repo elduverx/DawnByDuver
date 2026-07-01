@@ -1103,46 +1103,23 @@
 }
 }
 </style>
-<!-- AJUSTE DESKTOP: upsell del carrito idéntico al competidor -->
+<!-- AJUSTE DESKTOP: calco exacto de los estilos del upsell que ya funcionan en mobile -->
 <style>
 @media screen and (min-width: 990px) {
-  .vela-upsell__title {
-    display: none !important;
-  }
-
   .vela-upsell {
-    padding: 12px !important;
+    padding: 12px;
     border-top: none !important;
     border: none !important;
   }
 
+  .vela-upsell__title {
+    display: none !important;
+  }
+
   .vela-upsell__slider-wrapper {
-    position: relative !important;
-    background: #f5f5f5 !important;
-    border-radius: 8px !important;
-    padding: 10px 20px !important;
-  }
-
-  .vela-upsell__arrow--prev {
-    position: absolute !important;
-    left: -14px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    background: transparent !important;
-    border: none !important;
-  }
-
-  .vela-upsell__arrow--next {
-    position: absolute !important;
-    right: -14px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    background: transparent !important;
-    border: none !important;
-  }
-
-  .vela-upsell-item {
-    background: transparent !important;
+    background: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
   }
 
   .vela-upsell-item__img img {
@@ -1159,7 +1136,6 @@
   }
 
   .vela-upsell-item__prices {
-    gap: 10px !important;
     margin-bottom: 6px !important;
   }
 
@@ -1172,21 +1148,21 @@
   }
 
   .vela-upsell-select {
-    height: 32px !important;
-    width: 90px !important;
-    flex: 0 0 auto !important;
+    height: 28px !important;
     font-size: 1.1rem !important;
     padding: 2px 6px !important;
   }
 
   .vela-upsell-add {
-    height: 32px !important;
+    height: 28px !important;
     font-size: 1.1rem !important;
-    padding: 0 14px !important;
+    padding: 0 10px !important;
     min-width: unset !important;
-    background-color: #121212 !important;
-    color: #fff !important;
-    border: none !important;
+  }
+
+  .vela-upsell__arrow {
+    color: #121212 !important;
+    border-color: #121212 !important;
   }
 }
 </style>
