@@ -962,6 +962,95 @@
   }
 }
 </style>
+<!-- AJUSTE DESKTOP: carrito - acercar al diseño del competidor (SOLO DESKTOP) -->
+<style>
+@media screen and (min-width: 990px) {
+  .cart-drawer .cart-item__totals {
+    display: none !important;
+  }
+  .cart-drawer .cart-item__quantity-wrapper cart-remove-button {
+    display: none !important;
+  }
+  .cart-drawer .cart-item__details cart-remove-button {
+    display: flex !important;
+  }
+
+  .cart-drawer .drawer__heading {
+    text-transform: none !important;
+    font-size: 1.8rem !important;
+    letter-spacing: normal !important;
+  }
+
+  .cart-drawer .cart-item__name {
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  .cart-drawer .vela-cart-options {
+    font-size: 1.1rem !important;
+    white-space: nowrap !important;
+  }
+
+  .cart-drawer .vela-cart-compare {
+    color: #999 !important;
+    text-decoration: line-through !important;
+  }
+  .cart-drawer .vela-cart-final {
+    color: #121212 !important;
+  }
+  .cart-drawer .vela-cart-savings {
+    color: #2e7d32 !important;
+    font-weight: 700 !important;
+  }
+
+  .cart-drawer .drawer__close {
+    background-color: #f0f0f0 !important;
+    border-radius: 4px !important;
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+    min-height: 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border: none !important;
+    transform: translate(-8px, 6px);
+  }
+  .cart-drawer .drawer__close svg {
+    color: #121212 !important;
+    stroke: #121212 !important;
+    width: 11px !important;
+    height: 11px !important;
+    min-width: 11px !important;
+    min-height: 11px !important;
+  }
+
+  .cart-drawer .cart-item {
+    border-top: 1px solid #e2e2e2 !important;
+    border-bottom: 1px solid #e2e2e2 !important;
+  }
+
+  .cart-drawer .cart-item__media {
+    width: 70px !important;
+    min-width: 70px !important;
+    max-width: 70px !important;
+  }
+  .cart-drawer .cart-item__details {
+    width: 82% !important;
+  }
+
+  .cart-drawer .vela-cart-prices {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    gap: 6px !important;
+    font-size: 1.1rem !important;
+  }
+}
+</style>
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
