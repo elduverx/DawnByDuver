@@ -14,7 +14,18 @@
   .collection-hero.collection-hero--with-image {
     padding: 0 !important;
     overflow: visible !important;
-    margin-top: var(--header-height, 80px) !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .collection-hero.collection-hero--with-image {
+      margin-top: 100px !important;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .collection-hero.collection-hero--with-image {
+      margin-top: 11rem !important;
+    }
   }
   .collection-hero--with-image .collection-hero__inner {
     position: relative;
