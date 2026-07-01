@@ -887,15 +887,12 @@
 @media screen and (min-width: 990px) {
   .header-wrapper:not(.header-wrapper--homepage) a.header__icon.large-up-hide {
     display: flex !important;
-    order: 2;
-  }
-
-  .header-wrapper:not(.header-wrapper--homepage) a.large-up-hide[href*="cart"] {
-    order: 3;
+    align-items: center;
+    transform: translateX(-60px);
   }
 
   .header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble {
-    order: 4;
+    transform: translate(60px, 6px);
   }
 }
 </style>
