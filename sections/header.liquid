@@ -825,13 +825,21 @@
     margin-top: 0rem !important;
   }
 
-  div[id*="__product-grid"] > .gradient {
-    padding-top: 19px !important;
-  }
-
   .collection-hero__title + .collection-hero__description {
     margin-top: 0rem !important;
     margin-bottom: 0rem !important;
+  }
+
+  .shopify-section:has(.collection-hero) + .shopify-section {
+    margin-top: -40px !important;
+  }
+
+  div[id*="__product-grid"] > .gradient {
+    padding-top: 0px !important;
+  }
+
+  .facets-container {
+    padding-top: 0px !important;
   }
 }
 </style>
