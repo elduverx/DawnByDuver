@@ -887,19 +887,27 @@
   .header-wrapper:not(.header-wrapper--homepage) a.header__icon.large-up-hide {
     display: flex !important;
     align-items: center;
-    transform: translateX(0px);
+    transform: translateX(0px) translateY(-30px);
     margin-left: -4rem;
   }
 
   .header-wrapper:not(.header-wrapper--homepage) .vela-box-interior + svg {
-    transform: translate(30px, 14px);
+    transform: translate(30px, -16px);
   }
 
   .header-wrapper:not(.header-wrapper--homepage) .header {
     padding-top: 2.5rem !important;
     padding-bottom: 0rem !important;
     height: 11rem !important;
-    transform: translateY(40px);
+  }
+
+  .header-wrapper:not(.header-wrapper--homepage) .header__inline-menu {
+    transform: translateY(-30px);
+  }
+
+  .header-wrapper:not(.header-wrapper--homepage) .small-hide a[href="/pages/seguimiento"] {
+    transform: translateY(-30px);
+    display: inline-block;
   }
 }
 </style>
