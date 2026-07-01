@@ -1101,6 +1101,69 @@
   transform: scale(0.75) !important;
   transform-origin: left !important;
 }
+<!-- AJUSTE DESKTOP: rediseñar la tarjeta de upsell del carrito (fondo gris, imagen izquierda, info derecha) -->
+<style>
+@media screen and (min-width: 990px) {
+  .vela-upsell-item {
+    background-color: #f5f5f5 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .vela-upsell-item__img {
+    flex-shrink: 0 !important;
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+  }
+  .vela-upsell-item__img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .vela-upsell-item__info {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .vela-upsell-item__title {
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 4px !important;
+  }
+
+  .vela-upsell-item__prices {
+    margin-bottom: 8px !important;
+    font-size: 1.2rem !important;
+  }
+
+  .vela-upsell-item__form {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .vela-upsell-select {
+    flex: 1 1 auto !important;
+    font-size: 1.1rem !important;
+  }
+
+  .vela-upsell-add {
+    flex-shrink: 0 !important;
+    background-color: #121212 !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 8px 14px !important;
+    border-radius: 4px !important;
+    font-size: 1.1rem !important;
+  }
+}
+</style>
 }
 </style>
 <script>
