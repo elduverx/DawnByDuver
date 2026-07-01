@@ -148,7 +148,7 @@
           {%- assign color_option_index = nil -%}
           {%- for option in card_product.options -%}
             {%- assign option_downcase = option | downcase -%}
-            {%- if option_downcase == 'color' or option_downcase == 'color' or option_downcase == 'colour' or option_downcase == 'colore' -%}
+            {%- if option_downcase contains 'color' or option_downcase contains 'colour' or option_downcase contains 'colore' -%}
               {%- assign color_option_index = forloop.index0 -%}
             {%- endif -%}
           {%- endfor -%}
