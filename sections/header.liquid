@@ -865,6 +865,40 @@
   }
 }
 </style>
+<!-- AJUSTE DESKTOP: mostrar el icono de cuenta/login entre SEGUIMIENTO y el carrito, en páginas interiores -->
+<style>
+@media screen and (min-width: 990px) {
+  .header-wrapper:not(.header-wrapper--homepage) a.header__icon.large-up-hide {
+    display: flex !important;
+    order: 2;
+  }
+
+  .header-wrapper:not(.header-wrapper--homepage) a.large-up-hide[href*="cart"] {
+    order: 3;
+  }
+
+  .header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble {
+    order: 4;
+  }
+}
+</style>
+<!-- AJUSTE DESKTOP: mostrar el icono de cuenta/login entre SEGUIMIENTO y el carrito, en páginas interiores -->
+<style>
+@media screen and (min-width: 990px) {
+  .header-wrapper:not(.header-wrapper--homepage) a.header__icon.large-up-hide {
+    display: flex !important;
+    order: 2;
+  }
+
+  .header-wrapper:not(.header-wrapper--homepage) a.large-up-hide[href*="cart"] {
+    order: 3;
+  }
+
+  .header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble {
+    order: 4;
+  }
+}
+</style>
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
