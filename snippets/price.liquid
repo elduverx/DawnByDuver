@@ -103,14 +103,15 @@
         <span class="price-item price-item--sale" style="color: #356333 !important; font-size: 2.4rem !important; font-weight: 700 !important; margin: 0 !important;">
           {{ money_price | remove: ' EUR' | remove: 'EUR' | replace: '€', '' }}€
         </span>
-
-        {%- unless product.price_varies == false and product.compare_at_price_varies %}
-          <span style="display: flex; align-items: center;">
-            <s class="price-item price-item--regular" style="color: #999999 !important; font-size: 1.5rem !important; margin: 0 !important;">
-              {{ compare_at_price | money | remove: ' EUR' | remove: 'EUR' | replace: '€', '' }}€
-            </s>
-          </span>
-        {%- endunless -%}
+        {%- if compare_at_price > price -%}
+          {%- unless product.price_varies == false and product.compare_at_price_varies %}
+            <span style="display: flex; align-items: center;">
+              <s class="price-item price-item--regular" style="color: #999999 !important; font-size: 1.5rem !important; margin: 0 !important;">
+                {{ compare_at_price | money | remove: ' EUR' | remove: 'EUR' | replace: '€', '' }}€
+              </s>
+            </span>
+          {%- endunless -%}
+        {%- endif -%}
 
         {%- if compare_at_price > price -%}
           {%- assign porcentaje = compare_at_price | minus: price | times: 100.0 | divided_by: compare_at_price | round -%}
