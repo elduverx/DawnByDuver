@@ -911,6 +911,14 @@
   }
 }
 </style>
+<!-- AJUSTE DESKTOP: bajar el contenido de la página de producto (imagen + info) para que no choque con el header -->
+<style>
+@media screen and (min-width: 990px) {
+  product-info {
+    padding-top: 6rem !important;
+  }
+}
+</style>
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
