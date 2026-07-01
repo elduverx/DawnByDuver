@@ -49,9 +49,21 @@
   .collection-hero--with-image .collection-hero__title {
     margin: 0 !important;
     color: #ffffff;
-    font-size: 2rem;
-    font-weight: 400;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 500;
     text-transform: none;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  }
+
+  .collection-hero--with-image .collection-hero__kicker {
+    display: block;
+    margin: 0 0 0.6rem;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   }
 
@@ -79,13 +91,11 @@
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
-      {%- if section.settings.show_collection_image and collection.image and section.settings.kicker_text != blank -%}
-        <span class="collection-hero__kicker">{{ section.settings.kicker_text | escape }}</span>
-      {%- endif -%}
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
       </h1>
+
       {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>
       {%- endif -%}
