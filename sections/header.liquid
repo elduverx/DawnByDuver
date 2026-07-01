@@ -962,7 +962,7 @@
   }
 }
 </style>
-<!-- FIX: mostrar la papelera junto al nombre (como el mobile/competidor), ocultar la de cantidad -->
+<!-- AJUSTE: acercar el carrito al diseño del competidor -->
 <style>
 .cart-drawer .cart-item__totals {
   display: none !important;
@@ -972,6 +972,40 @@
 }
 .cart-drawer .cart-item__details cart-remove-button {
   display: flex !important;
+}
+
+/* Título "Carrito • 1" normal, no mayúsculas, un poco más grande */
+.cart-drawer .drawer__heading {
+  text-transform: none !important;
+  font-size: 1.8rem !important;
+  letter-spacing: normal !important;
+}
+
+/* Nombre del producto en línea normal, no estirado/partido raro */
+.cart-drawer .cart-item__name {
+  min-width: 0 !important;
+  width: auto !important;
+  max-width: 100% !important;
+  white-space: normal !important;
+}
+
+/* Color/Talla más pequeño para que quepa en una línea */
+.cart-drawer .vela-cart-options {
+  font-size: 1.1rem !important;
+  white-space: nowrap !important;
+}
+
+/* Colores de precios (por si base.css no propaga en desktop) */
+.cart-drawer .vela-cart-compare {
+  color: #999 !important;
+  text-decoration: line-through !important;
+}
+.cart-drawer .vela-cart-final {
+  color: #121212 !important;
+}
+.cart-drawer .vela-cart-savings {
+  color: #2e7d32 !important;
+  font-weight: 700 !important;
 }
 </style>
 <script>
