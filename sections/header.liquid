@@ -914,17 +914,17 @@
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
-  var esIconoCuenta = objetivo.closest('a[href*="account"]');
   
-  if (esIconoCuenta) {
-    return; // No interceptar clics en el icono de cuenta/login
+  // Nunca interceptar clics en cuenta/login o en seguimiento/tracking
+  if (objetivo.closest('a[href*="account"]') || 
+      objetivo.closest('a[href*="seguimiento"]') ||
+      objetivo.closest('.vela-seguimiento') ||
+      objetivo.closest('.vela-box-interior')) {
+    return;
   }
   
-  if (objetivo.closest('.header__icons a[href*="cart"]') || 
-      objetivo.closest('.vela-carrito') || 
-      (objetivo.tagName === 'svg' && objetivo.closest('.header__icons') && objetivo.innerHTML.includes('21')) ||
-      (objetivo.tagName === 'path' && objetivo.closest('svg') && objetivo.closest('.header__icons:nth-child(2)'))) {
-    
+  // Solo interceptar clics específicamente en enlaces al carrito
+  if (objetivo.closest('a[href*="/cart"]')) {
     event.preventDefault();
     event.stopPropagation();
     var drawer = document.querySelector('cart-drawer');
