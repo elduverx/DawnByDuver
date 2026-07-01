@@ -90,7 +90,15 @@
           </span>
         {%- endif -%}
       </div>
-     {%- if es_ficha_principal -%}
+     {%- liquid
+      if id contains 'Summary' or id contains 'Card' or template.name == 'collection' or template.name == 'index'
+        assign es_ficha_principal = false
+      else
+        assign es_ficha_principal = true
+      endif
+    -%}
+
+    {%- if es_ficha_principal -%}
       {%- unless product.quantity_price_breaks_configured? -%}
         <style>
           .price__regular { display: none !important; }
