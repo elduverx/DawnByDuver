@@ -90,15 +90,12 @@
           </span>
         {%- endif -%}
       </div>
-     {%- liquid
-      if id contains 'Summary' or id contains 'Card' or template.name == 'collection' or template.name == 'index'
-        assign es_ficha_principal = false
-      else
-        assign es_ficha_principal = true
-      endif
-    -%}
-
-    {%- if es_ficha_principal -%}
+     {%- if es_ficha_principal -%}
+      {%- unless product.quantity_price_breaks_configured? -%}
+        <style>
+          .price__regular { display: none !important; }
+        </style>
+      {%- endunless -%}
       <div class="price__sale" style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
         <span class="price-item price-item--sale" style="color: #356333 !important; font-size: 2.4rem !important; font-weight: 700 !important; margin: 0 !important;">
           {{ money_price | remove: ' EUR' | remove: 'EUR' | replace: '€', '' }}€
