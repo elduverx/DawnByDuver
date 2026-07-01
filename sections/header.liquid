@@ -914,6 +914,11 @@
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
+  var esIconoCuenta = objetivo.closest('a[href*="account"]');
+  
+  if (esIconoCuenta) {
+    return; // No interceptar clics en el icono de cuenta/login
+  }
   
   if (objetivo.closest('.header__icons a[href*="cart"]') || 
       objetivo.closest('.vela-carrito') || 
