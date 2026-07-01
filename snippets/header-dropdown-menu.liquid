@@ -8,11 +8,7 @@
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
 {%- liquid
-  if request.page_type == 'index'
-    assign links_to_render = linklists['main-menu'].links
-  else
-    assign links_to_render = linklists['menu-definitivo'].links
-  endif
+  assign links_to_render = linklists['main-menu'].links
 -%}
 {%- for link in links_to_render -%}
       <li>
