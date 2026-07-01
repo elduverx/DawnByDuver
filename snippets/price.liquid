@@ -104,8 +104,13 @@
           .price__regular { display: none !important; }
         </style>
       {%- endunless -%}
+      {%- if compare_at_price > price -%}
+        {%- assign color_precio = '#356333' -%}
+      {%- else -%}
+        {%- assign color_precio = '#000000' -%}
+      {%- endif -%}
       <div class="price__sale" style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
-        <span class="price-item price-item--sale" style="color: #356333 !important; font-size: 2.4rem !important; font-weight: 700 !important; margin: 0 !important;">
+        <span class="price-item price-item--sale" style="color: {{ color_precio }} !important; font-size: 2.4rem !important; font-weight: 700 !important; margin: 0 !important;">
           {{ money_price | remove: ' EUR' | remove: 'EUR' | replace: '€', '' }}€
         </span>
         {%- if compare_at_price > price -%}
