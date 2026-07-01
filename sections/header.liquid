@@ -919,6 +919,23 @@
   }
 }
 </style>
+<!-- AJUSTE DESKTOP: mostrar las etiquetas "Color: X" y "Talla: X" en la página de producto, igual que en mobile -->
+<style>
+@media screen and (min-width: 990px) {
+  fieldset.product-form__input .form__label {
+    display: flex !important;
+    gap: 6px !important;
+    visibility: visible !important;
+    font-size: 1.4rem !important;
+    color: #121212 !important;
+    margin-bottom: 8px !important;
+  }
+
+  fieldset.product-form__input .form__label:before {
+    display: none !important;
+  }
+}
+</style>
 <script>
 document.addEventListener("click", function(event) {
   var objetivo = event.target;
