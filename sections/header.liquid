@@ -923,8 +923,14 @@ document.addEventListener("click", function(event) {
     return;
   }
   
-  // Solo interceptar clics específicamente en enlaces al carrito
-  if (objetivo.closest('a[href*="/cart"]')) {
+  // El icono del carrito en desktop es un <svg> suelto, sin enlace que lo envuelva,
+  // justo después del icono de seguimiento (.vela-box-interior)
+  var cartSvg = document.querySelector('.vela-box-interior + svg');
+  var esClicEnCartSvg = cartSvg && (objetivo === cartSvg || cartSvg.contains(objetivo));
+  
+  if (objetivo.closest('a[href*="/cart"]') || 
+      objetivo.closest('.vela-carrito') || 
+      esClicEnCartSvg) {
     event.preventDefault();
     event.stopPropagation();
     var drawer = document.querySelector('cart-drawer');
