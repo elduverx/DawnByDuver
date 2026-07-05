@@ -202,7 +202,12 @@
             {%- endif -%}
             {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
-                <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/Logo_negro_Vela_madrid_transparente.png?v=1782466407" alt="{{ shop.name }}" style="width: {{ settings.logo_width }}px; height: auto;">
+                {%- if request.page_type == 'index' -%}
+                  <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/Logo_negro_Vela_madrid_transparente.png?v=1782466407" alt="{{ shop.name }}" class="vela-logo-home-mobile-only" style="width: {{ settings.logo_width }}px; height: auto;">
+                  <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/ChatGPT_Image_5_jul_2026_18_17_24.png?v=1783268268" alt="{{ shop.name }}" class="vela-logo-home-desktop-only" style="width: 160px; height: auto;">
+                {%- else -%}
+                  <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/Logo_negro_Vela_madrid_transparente.png?v=1782466407" alt="{{ shop.name }}" style="width: {{ settings.logo_width }}px; height: auto;">
+                {%- endif -%}
               </div>
             {%- else -%}
               <span class="h2">{{ shop.name }}</span>
@@ -784,21 +789,17 @@
 </style>
 <!-- AJUSTE DESKTOP: nuevo logo SOLO en home, SOLO en desktop (>=990px). No afecta móvil ni otras páginas -->
 <style>
-@media screen and (min-width: 990px) {
-  .header-wrapper--homepage .header__heading-logo-wrapper img {
-    content: url('https://cdn.shopify.com/s/files/1/1027/0500/4878/files/ChatGPT_Image_5_jul_2026_18_17_24.png?v=1783268268') !important;
+  .vela-logo-home-desktop-only {
+    display: none;
   }
-}
-</style>
-<!-- AJUSTE DESKTOP: nuevo logo SOLO en home, SOLO en desktop (>=990px). No afecta móvil ni otras páginas -->
-<style>
-@media screen and (min-width: 990px) {
-  .header-wrapper--homepage .header__heading-logo-wrapper img {
-    content: url('https://cdn.shopify.com/s/files/1/1027/0500/4878/files/ChatGPT_Image_5_jul_2026_18_17_24.png?v=1783268268') !important;
-    width: 160px !important;
-    height: auto !important;
+  @media screen and (min-width: 990px) {
+    .vela-logo-home-mobile-only {
+      display: none !important;
+    }
+    .vela-logo-home-desktop-only {
+      display: inline-block !important;
+    }
   }
-}
 </style>
 <!-- AJUSTE DESKTOP: expandir HOMBRE/MUJER y SEGUIMIENTO/CONTACTO/SOBRE NOSOTROS hacia las esquinas, solo en desktop (>=990px), solo en home -->
 <style>
