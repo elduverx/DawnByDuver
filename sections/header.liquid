@@ -196,8 +196,8 @@
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
             {%- if request.page_type == 'index' -%}
-              <div class="vela-logo-mobile large-up-hide" style="margin-top: -80px !important; display: block !important; position: relative !important; z-index: 9999 !important; height: 120px !important; max-width: 280px !important;">
-                <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/ChatGPT_Image_5_jul_2026_18_17_24.png?v=1783268268" alt="{{shop.name}}" style="width: 200px !important; height: auto !important;">
+              <div class="vela-logo-mobile large-up-hide" style="margin-top: -80px !important; display: block !important; position: relative !important; z-index: 9999 !important; height: 70px !important; max-width: 180px !important;">
+                <img src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/Logo_Vela_Madrid_transparente.png?v=1782458880" alt="{{shop.name}}" style="width: 115px !important; height: auto !important;">
               </div>
             {%- endif -%}
             {%- if settings.logo != blank -%}
@@ -676,20 +676,13 @@
      2. TAMAÑO DE LOS LOGOS (Para toda la web)
      ========================================== */
   body:not(.template-index) .header__heading-logo img,
-  body:not(.template-index) .header__heading-link img {
+  body:not(.template-index) .header__heading-link img,
+  .template-index .vela-logo-mobile img,
+  .vela-logo-mobile img {
     height: 75px !important; 
     max-height: 75px !important;
     width: auto !important;
     max-width: 200px !important;
-    object-fit: contain !important;
-  }
-
-  .template-index .vela-logo-mobile img,
-  .vela-logo-mobile img {
-    height: 120px !important; 
-    max-height: 120px !important;
-    width: auto !important;
-    max-width: 280px !important;
     object-fit: contain !important;
   }
 
@@ -1136,7 +1129,7 @@
     top: 50% !important;
     transform: translateY(-50%) !important;
     background: #fff !important;
-    border: 1px solid #121212 !important;
+    border: 1px solid #ccc !important;
     color: #121212 !important;
     width: 20px !important;
     height: 20px !important;
