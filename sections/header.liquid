@@ -790,6 +790,16 @@
   }
 }
 </style>
+<!-- AJUSTE DESKTOP: nuevo logo SOLO en home, SOLO en desktop (>=990px). No afecta móvil ni otras páginas -->
+<style>
+@media screen and (min-width: 990px) {
+  .header-wrapper--homepage .header__heading-logo-wrapper img {
+    content: url('https://cdn.shopify.com/s/files/1/1027/0500/4878/files/ChatGPT_Image_5_jul_2026_18_17_24.png?v=1783268268') !important;
+    width: 160px !important;
+    height: auto !important;
+  }
+}
+</style>
 <!-- AJUSTE DESKTOP: expandir HOMBRE/MUJER y SEGUIMIENTO/CONTACTO/SOBRE NOSOTROS hacia las esquinas, solo en desktop (>=990px), solo en home -->
 <style>
 @media screen and (min-width: 990px) {
