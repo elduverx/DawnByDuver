@@ -676,13 +676,20 @@
      2. TAMAÑO DE LOS LOGOS (Para toda la web)
      ========================================== */
   body:not(.template-index) .header__heading-logo img,
-  body:not(.template-index) .header__heading-link img,
-  .template-index .vela-logo-mobile img,
-  .vela-logo-mobile img {
+  body:not(.template-index) .header__heading-link img {
     height: 75px !important; 
     max-height: 75px !important;
     width: auto !important;
     max-width: 200px !important;
+    object-fit: contain !important;
+  }
+
+  .template-index .vela-logo-mobile img,
+  .vela-logo-mobile img {
+    height: 120px !important; 
+    max-height: 120px !important;
+    width: auto !important;
+    max-width: 280px !important;
     object-fit: contain !important;
   }
 
