@@ -732,6 +732,33 @@
       </modal-dialog>
     {%- endfor -%}
 
+    <modal-dialog id="TablaTallasModal-{{ section.id }}" class="product-popup-modal size-chart-modal">
+      <div
+        role="dialog"
+        aria-label="Tabla de tallas"
+        aria-modal="true"
+        class="product-popup-modal__content"
+        tabindex="-1"
+      >
+        <button
+          id="ModalClose-TablaTallas-{{ section.id }}"
+          type="button"
+          class="product-popup-modal__toggle"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          {{- 'icon-close.svg' | inline_asset_content -}}
+        </button>
+        <div class="product-popup-modal__content-info">
+          <h1 class="h2">Tabla de tallas</h1>
+          {%- if product.metafields.custom.tabla_tallas.value != blank -%}
+            {{ product.metafields.custom.tabla_tallas.value | image_url: width: 900 | image_tag: loading: 'lazy', alt: 'Tabla de tallas' }}
+          {%- else -%}
+            <p>Todavía no hemos subido la tabla de tallas de este producto.</p>
+          {%- endif -%}
+        </div>
+      </div>
+    </modal-dialog>
+
     {%- if product.media.size > 0 -%}
       <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
       <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
