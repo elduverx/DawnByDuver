@@ -381,17 +381,70 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
-      {%- assign upsell_handles = 'pantalon-oversize,leila-vestido-ultracomodo-de-mujer' | split: ',' -%}
-{%- if upsell_handles != blank -%}
-  <div class="vela-upsell">
-    <p class="vela-upsell__title">También te puede gustar</p>
-    <div class="vela-upsell__slider-wrapper">
-      <button class="vela-upsell__arrow vela-upsell__arrow--prev" onclick="velaUpsellPrev()">&#8249;</button>
-      <div class="vela-upsell__track">
-        {%- for handle in upsell_handles -%}
-          {%- assign product = all_products[handle] -%}
-          {%- if product != blank -%}
-            <div class="vela-upsell-item" style="display: {% if forloop.first %}flex{% else %}none{% endif %};">
+      {%- liquid
+        assign has_mujer_ropa = false
+        assign has_hombre_ropa = false
+        assign has_gafas_hombre = false
+        assign has_gafas_mujer = false
+
+        for item in cart.items
+          assign item_tags = item.product.tags | join: ',' | downcase
+          if item_tags contains 'gafas'
+            if item_tags contains 'mujer'
+              assign has_gafas_mujer = true
+            else
+              assign has_gafas_hombre = true
+            endif
+          else
+            if item_tags contains 'mujer'
+              assign has_mujer_ropa = true
+            elsif item_tags contains 'hombre'
+              assign has_hombre_ropa = true
+            endif
+          endif
+        endfor
+
+        assign target_handles_str = ''
+        if has_mujer_ropa
+          assign target_handles_str = target_handles_str | append: 'mujer,'
+        endif
+        if has_hombre_ropa
+          assign target_handles_str = target_handles_str | append: 'hombre,'
+        endif
+        if has_gafas_mujer
+          assign target_handles_str = target_handles_str | append: 'gafas-de-sol-mujer,'
+        endif
+        if has_gafas_hombre
+          assign target_handles_str = target_handles_str | append: 'gafas-de-sol,'
+        endif
+        if target_handles_str == ''
+          assign target_handles_str = 'hombre,mujer'
+        endif
+        assign target_handles = target_handles_str | split: ','
+      -%}
+      {%- capture upsell_items_html -%}
+        {%- assign shown_ids = ',' -%}
+        {%- assign shown = 0 -%}
+        {%- for handle in target_handles -%}
+          {%- assign target_collection = collections[handle] -%}
+          {%- for product in target_collection.products limit: 50 -%}
+            {%- if shown >= 8 -%}
+              {%- break -%}
+            {%- endif -%}
+            {%- assign already_in_cart = false -%}
+            {%- for item in cart.items -%}
+              {%- if item.product.id == product.id -%}
+                {%- assign already_in_cart = true -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {%- if already_in_cart -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- assign needle = ',' | append: product.id | append: ',' -%}
+            {%- if shown_ids contains needle -%}
+              {%- continue -%}
+            {%- endif -%}
+            <div class="vela-upsell-item" style="display: {% if shown == 0 %}flex{% else %}none{% endif %};">
               <a href="{{ product.url }}" class="vela-upsell-item__img">
                 <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title | escape }}">
               </a>
@@ -415,8 +468,18 @@
                 </div>
               </div>
             </div>
-          {%- endif -%}
+            {%- assign shown_ids = shown_ids | append: product.id | append: ',' -%}
+            {%- assign shown = shown | plus: 1 -%}
+          {%- endfor -%}
         {%- endfor -%}
+      {%- endcapture -%}
+{%- if upsell_items_html != blank -%}
+  <div class="vela-upsell">
+    <p class="vela-upsell__title">También te puede gustar</p>
+    <div class="vela-upsell__slider-wrapper">
+      <button class="vela-upsell__arrow vela-upsell__arrow--prev" onclick="velaUpsellPrev()">&#8249;</button>
+      <div class="vela-upsell__track">
+        {{ upsell_items_html }}
       </div>
       <button class="vela-upsell__arrow vela-upsell__arrow--next" onclick="velaUpsellNext()">&#8250;</button>
     </div>
