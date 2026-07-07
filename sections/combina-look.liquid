@@ -77,20 +77,12 @@
     {%- liquid
       assign tags_downcase = product.tags | join: ',' | downcase
       assign es_mujer = false
-      assign es_gafas = false
       if tags_downcase contains 'mujer'
         assign es_mujer = true
       endif
-      if tags_downcase contains 'gafas'
-        assign es_gafas = true
-      endif
 
-      if es_mujer and es_gafas
-        assign target_handle = 'gafas-de-sol-mujer'
-      elsif es_mujer
+      if es_mujer
         assign target_handle = 'mujer'
-      elsif es_gafas
-        assign target_handle = 'gafas-de-sol'
       else
         assign target_handle = 'hombre'
       endif
@@ -103,7 +95,7 @@
       {%- if related.id == product.id -%}
         {%- continue -%}
       {%- endif -%}
-      {%- if es_gafas == false and related_tags contains 'gafas' -%}
+      {%- if related_tags contains 'gafas' -%}
         {%- continue -%}
       {%- endif -%}
       {%- if shown >= 4 -%}
