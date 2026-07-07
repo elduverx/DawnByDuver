@@ -529,7 +529,7 @@
       })
       .then(function (r) { return r.json(); })
       .then(function () {
-        fetch('/?section_id=cart-drawer&_=' + Date.now(), { cache: 'no-store' })
+        fetch('/?section_id=cart-drawer')
           .then(function (r) { return r.text(); })
           .then(function (html) {
             var parser = new DOMParser();
