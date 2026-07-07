@@ -150,38 +150,6 @@
     },
     "combina_look_heaitB": {
       "type": "combina-look",
-      "blocks": {
-        "producto_M6qLVP": {
-          "type": "producto",
-          "settings": {
-            "producto": "gafas-de-sol-oslo-negro-2x1"
-          }
-        },
-        "producto_jgaJmn": {
-          "type": "producto",
-          "settings": {
-            "producto": "hidalgo-bermuda-capri-waffle"
-          }
-        },
-        "producto_KzVjEb": {
-          "type": "producto",
-          "settings": {
-            "producto": "gafas-de-sol-vector-negro-marron-2x1"
-          }
-        },
-        "producto_LQMgHw": {
-          "type": "producto",
-          "settings": {
-            "producto": "valtier-pantalones-cortos-elegantes"
-          }
-        }
-      },
-      "block_order": [
-        "producto_M6qLVP",
-        "producto_jgaJmn",
-        "producto_KzVjEb",
-        "producto_LQMgHw"
-      ],
       "name": "Combina tu look",
       "settings": {
         "eyebrow": "TAMBIÉN TE PUEDE INTERESAR",
@@ -251,6 +219,11 @@
         "* {padding-top: 0px !important;}"
       ],
       "name": "Garantías",
+      "settings": {}
+    },
+    "resenas_clientes_vela": {
+      "type": "resenas-clientes",
+      "name": "Reseñas de clientes",
       "settings": {}
     },
     "related-products": {
@@ -324,6 +297,7 @@
     "rich_text_zH8Ky6",
     "garantias_AkQQfV",
     "related-products",
+    "resenas_clientes_vela",
     "faq_vela_YhBhPV"
   ]
 }
