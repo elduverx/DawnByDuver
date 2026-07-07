@@ -474,7 +474,7 @@
         {%- endfor -%}
       {%- endcapture -%}
 {%- if upsell_items_html != blank -%}
-  <div class="vela-upsell">
+  <div class="vela-upsell" id="VelaUpsellContainer">
     <p class="vela-upsell__title">También te puede gustar</p>
     <div class="vela-upsell__slider-wrapper">
       <button class="vela-upsell__arrow vela-upsell__arrow--prev" onclick="velaUpsellPrev()">&#8249;</button>
@@ -486,31 +486,56 @@
   </div>
 
   <script>
-    var velaUpsellIndex = 0;
-    var velaUpsellItems = null;
-
+  (function () {
     function velaGetItems() {
-      if (!velaUpsellItems) {
-        velaUpsellItems = document.querySelectorAll('.vela-upsell-item');
+      return document.querySelectorAll('#VelaUpsellContainer .vela-upsell-item');
+    }
+
+    function velaGetVisibleIndex(items) {
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].style.display !== 'none') return i;
       }
-      return velaUpsellItems;
+      return 0;
     }
 
-    function velaUpsellNext() {
+    window.velaUpsellNext = function () {
       var items = velaGetItems();
-      items[velaUpsellIndex].style.display = 'none';
-      velaUpsellIndex = (velaUpsellIndex + 1) % items.length;
-      items[velaUpsellIndex].style.display = 'flex';
-    }
+      if (!items.length) return;
+      var idx = velaGetVisibleIndex(items);
+      items[idx].style.display = 'none';
+      idx = (idx + 1) % items.length;
+      items[idx].style.display = 'flex';
+    };
 
-    function velaUpsellPrev() {
+    window.velaUpsellPrev = function () {
       var items = velaGetItems();
-      items[velaUpsellIndex].style.display = 'none';
-      velaUpsellIndex = (velaUpsellIndex - 1 + items.length) % items.length;
-      items[velaUpsellIndex].style.display = 'flex';
-    }
+      if (!items.length) return;
+      var idx = velaGetVisibleIndex(items);
+      items[idx].style.display = 'none';
+      idx = (idx - 1 + items.length) % items.length;
+      items[idx].style.display = 'flex';
+    };
 
-    function velaAddToCart(btn) {
+    function velaRefrescarUpsell(callback) {
+      fetch('/?section_id=cart-drawer')
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, 'text/html');
+          var newUpsell = doc.querySelector('#VelaUpsellContainer');
+          var currentUpsell = document.querySelector('#VelaUpsellContainer');
+          if (newUpsell && currentUpsell) {
+            currentUpsell.outerHTML = newUpsell.outerHTML;
+          }
+          if (typeof callback === 'function') callback();
+        })
+        .catch(function () {
+          if (typeof callback === 'function') callback();
+        });
+    }
+    window.velaRefrescarUpsell = velaRefrescarUpsell;
+
+    window.velaAddToCart = function (btn) {
       var form = btn.closest('.vela-upsell-item__form');
       var select = form.querySelector('.vela-upsell-select');
       var variantId = select.value;
@@ -521,13 +546,11 @@
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: parseInt(variantId), quantity: 1 })
       })
-      .then(function(r) { return r.json(); })
-      .then(function() {
-        btn.textContent = '✓';
-        btn.disabled = false;
+      .then(function (r) { return r.json(); })
+      .then(function () {
         fetch('/?section_id=cart-drawer')
-          .then(function(r) { return r.text(); })
-          .then(function(html) {
+          .then(function (r) { return r.text(); })
+          .then(function (html) {
             var parser = new DOMParser();
             var doc = parser.parseFromString(html, 'text/html');
             var newDrawer = doc.querySelector('#CartDrawer-CartItems');
@@ -550,14 +573,31 @@
             if (newHeading && currentHeading) {
               currentHeading.innerHTML = newHeading.innerHTML;
             }
-            setTimeout(function() { btn.textContent = 'Añadir'; }, 500);
+            var newUpsell = doc.querySelector('#VelaUpsellContainer');
+            var currentUpsell = document.querySelector('#VelaUpsellContainer');
+            if (newUpsell && currentUpsell) {
+              currentUpsell.outerHTML = newUpsell.outerHTML;
+            }
           });
       })
-      .catch(function() {
+      .catch(function () {
         btn.textContent = 'Error';
         btn.disabled = false;
       });
-    }
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var CartDrawerClass = customElements.get('cart-drawer');
+      if (CartDrawerClass && CartDrawerClass.prototype.open && !CartDrawerClass.prototype.__velaPatched) {
+        var originalOpen = CartDrawerClass.prototype.open;
+        CartDrawerClass.prototype.open = function () {
+          velaRefrescarUpsell();
+          return originalOpen.apply(this, arguments);
+        };
+        CartDrawerClass.prototype.__velaPatched = true;
+      }
+    });
+  })();
   </script>
 {%- endif -%}
       <div class="drawer__footer">
