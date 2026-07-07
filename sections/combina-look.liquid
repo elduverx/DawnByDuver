@@ -74,28 +74,60 @@
   <p class="combina-eyebrow">{{ section.settings.eyebrow }}</p>
   <h2 class="combina-titulo">{{ section.settings.titulo }}</h2>
   <div class="combina-grid">
-    {%- for block in section.blocks -%}
-      {%- assign prod = block.settings.producto -%}
-      {%- if prod != blank -%}
-        <div class="combina-card">
-          <a href="{{ prod.url }}">
-            {%- if prod.featured_image != blank -%}
-              <img src="{{ prod.featured_image | image_url: width: 600 }}" alt="{{ prod.title }}">
-            {%- else -%}
-              <div style="width:100%;aspect-ratio:3/4;background:#f3f3f3;"></div>
+    {%- liquid
+      assign tags_downcase = product.tags | join: ',' | downcase
+      assign es_mujer = false
+      assign es_gafas = false
+      if tags_downcase contains 'mujer'
+        assign es_mujer = true
+      endif
+      if tags_downcase contains 'gafas'
+        assign es_gafas = true
+      endif
+
+      if es_mujer and es_gafas
+        assign target_handle = 'gafas-de-sol-mujer'
+      elsif es_mujer
+        assign target_handle = 'mujer'
+      elsif es_gafas
+        assign target_handle = 'gafas-de-sol'
+      else
+        assign target_handle = 'hombre'
+      endif
+
+      assign target_collection = collections[target_handle]
+      assign shown = 0
+    -%}
+    {%- for related in target_collection.products limit: 50 -%}
+      {%- assign related_tags = related.tags | join: ',' | downcase -%}
+      {%- if related.id == product.id -%}
+        {%- continue -%}
+      {%- endif -%}
+      {%- if es_gafas == false and related_tags contains 'gafas' -%}
+        {%- continue -%}
+      {%- endif -%}
+      {%- if shown >= 4 -%}
+        {%- break -%}
+      {%- endif -%}
+      <div class="combina-card">
+        <a href="{{ related.url }}">
+          {%- if related.featured_image != blank -%}
+            <img src="{{ related.featured_image | image_url: width: 600 }}" alt="{{ related.title }}">
+          {%- else -%}
+            <div style="width:100%;aspect-ratio:3/4;background:#f3f3f3;"></div>
+          {%- endif -%}
+        </a>
+        <div class="combina-card-info">
+          <p class="combina-card-titulo">{{ related.title }}</p>
+          <div class="combina-precios">
+            {%- if related.compare_at_price > related.price -%}
+              <span class="combina-card-precio-original">{{ related.compare_at_price | money }}</span>
             {%- endif -%}
-          </a>
-          <div class="combina-card-info">
-            <p class="combina-card-titulo">{{ prod.title }}</p>
-            <div class="combina-precios">
-              {%- if prod.compare_at_price > prod.price -%}
-                <span class="combina-card-precio-original">{{ prod.compare_at_price | money }}</span>
-              {%- endif -%}
-              <span class="combina-card-precio">{{ prod.price | money }}</span>
-            </div>
+            <span class="combina-card-precio">{{ related.price | money }}</span>
           </div>
         </div>
-      {%- endif -%}
+      </div>
+      {%- assign shown = shown | plus: 1 -%}
     {%- endfor -%}
   </div>
   <div class="combina-btn-wrapper">
@@ -132,28 +164,9 @@
       "default": "/collections/all"
     }
   ],
-  "blocks": [
-    {
-      "type": "producto",
-      "name": "Producto",
-      "settings": [
-        {
-          "type": "product",
-          "id": "producto",
-          "label": "Producto"
-        }
-      ]
-    }
-  ],
   "presets": [
     {
-      "name": "Combina tu look",
-      "blocks": [
-        { "type": "producto" },
-        { "type": "producto" },
-        { "type": "producto" },
-        { "type": "producto" }
-      ]
+      "name": "Combina tu look"
     }
   ]
 }
