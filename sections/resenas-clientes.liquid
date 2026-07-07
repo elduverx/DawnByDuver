@@ -1,0 +1,167 @@
+{%- style -%}
+  .resenas-clientes {
+    padding: 60px 0;
+    background: #ffffff;
+  }
+  .resenas-clientes__titulo {
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #121212;
+    margin: 0 0 40px 0;
+  }
+  .resenas-clientes__lista {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .resena-item {
+    padding: 24px 0;
+    border-top: 1px solid #e5e7eb;
+  }
+  .resena-item:first-child {
+    border-top: none;
+  }
+  .resena-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .resena-item__nombre {
+    font-family: 'Assistant', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #121212;
+  }
+  .resena-item__fecha {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.2rem;
+    color: #9ca3af;
+  }
+  .resena-item__estrellas {
+    color: #f0a500;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .resena-item__texto {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: #333333;
+    margin: 0;
+  }
+  .resenas-clientes__botones {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 32px;
+  }
+  .resenas-btn {
+    font-family: 'Assistant', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
+  }
+  .resenas-btn--primary {
+    background: #121212;
+    color: #ffffff;
+  }
+  .resenas-btn--primary:hover {
+    background: #333333;
+  }
+  .resenas-btn--secundario {
+    background: #e5e7eb;
+    color: #121212;
+  }
+  .resenas-btn--secundario:hover {
+    background: #d1d5db;
+  }
+  @media screen and (max-width: 749px) {
+    .resenas-clientes { padding: 40px 0; }
+    .resena-item__header { flex-direction: column; align-items: flex-start; gap: 2px; }
+  }
+  .resena-item--oculta {
+    display: none;
+  }
+{%- endstyle -%}
+
+<div class="resenas-clientes">
+  <div class="page-width">
+    <h2 class="resenas-clientes__titulo">Opiniones de clientes de Vela Madrid</h2>
+    <div class="resenas-clientes__lista" id="ResenasLista">
+      <div class="resena-item"><div class="resena-item__header"><span class="resena-item__nombre">Alejandro</span><span class="resena-item__fecha">01/06/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">El envío llegó incluso antes de lo previsto y la calidad de la tela superó mis expectativas.</p></div>
+      <div class="resena-item"><div class="resena-item__header"><span class="resena-item__nombre">Laura</span><span class="resena-item__fecha">28/05/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Me encanta el estilo que manejan, es muy fácil combinar las prendas entre sí.</p></div>
+      <div class="resena-item"><div class="resena-item__header"><span class="resena-item__nombre">Sergio</span><span class="resena-item__fecha">19/05/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Tuve una duda con la talla y el equipo de atención al cliente me respondió rapidísimo.</p></div>
+      <div class="resena-item"><div class="resena-item__header"><span class="resena-item__nombre">Marta</span><span class="resena-item__fecha">07/05/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Ya es la segunda vez que compro y siempre quedo muy contenta con la calidad.</p></div>
+      <div class="resena-item"><div class="resena-item__header"><span class="resena-item__nombre">Carlos</span><span class="resena-item__fecha">24/04/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">El proceso de devolución fue sencillísimo, sin complicaciones de ningún tipo.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Ana</span><span class="resena-item__fecha">12/04/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Las prendas se ven exactamente igual que en las fotos, nada de sorpresas.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Javier</span><span class="resena-item__fecha">30/03/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Compré un conjunto para un evento y recibí un montón de cumplidos.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Elena</span><span class="resena-item__fecha">18/03/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">La atención al cliente fue muy amable cuando pregunté por el estado de mi pedido.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">David</span><span class="resena-item__fecha">05/03/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">El acabado de las costuras es excelente, se nota que cuidan los detalles.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Pablo</span><span class="resena-item__fecha">21/02/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Pedí una talla más grande por si acaso y menos mal, la guía de tallas es muy precisa.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Cristina</span><span class="resena-item__fecha">09/02/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Repetiré seguro, la relación calidad-precio es difícil de superar.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Diego</span><span class="resena-item__fecha">28/01/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">El paquete llegó perfectamente protegido y con un empaquetado muy cuidado.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Miguel</span><span class="resena-item__fecha">16/01/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Me sorprendió lo rápido que llegó el pedido, en menos de 48 horas ya lo tenía en casa.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Beatriz</span><span class="resena-item__fecha">04/01/2026</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Las telas son frescas y cómodas, ideales para el verano.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Raúl</span><span class="resena-item__fecha">27/12/2025</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Tenía dudas sobre el color pero coincide perfectamente con la imagen de la web.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Nuria</span><span class="resena-item__fecha">19/12/2025</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">El servicio de seguimiento del pedido es muy claro, siempre sabía en qué punto estaba.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Daniel</span><span class="resena-item__fecha">14/12/2025</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Compré varias prendas a la vez y todas tienen un acabado impecable.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Andrés</span><span class="resena-item__fecha">12/12/2025</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">La verdad es que no esperaba tanta calidad por ese precio.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Rocío</span><span class="resena-item__fecha">11/12/2025</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">Muy buena experiencia de principio a fin, desde la compra hasta la entrega.</p></div>
+      <div class="resena-item resena-item--oculta"><div class="resena-item__header"><span class="resena-item__nombre">Fernando</span><span class="resena-item__fecha">10/12/2025</span></div><div class="resena-item__estrellas">★★★★★</div><p class="resena-item__texto">El diseño es muy actual, encuentro looks nuevos cada vez que entro en la web.</p></div>
+    </div>
+    <div class="resenas-clientes__botones">
+      <button type="button" id="ResenasCargarMas" class="resenas-btn resenas-btn--primary">Cargar más</button>
+      <button type="button" id="ResenasMostrarMenos" class="resenas-btn resenas-btn--secundario" style="display:none;">Mostrar menos</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var visibleCount = 5;
+  var pasoIncremento = 5;
+  var contenedor = document.getElementById('ResenasLista');
+  if (!contenedor) return;
+  var items = contenedor.querySelectorAll('.resena-item');
+  var btnMas = document.getElementById('ResenasCargarMas');
+  var btnMenos = document.getElementById('ResenasMostrarMenos');
+
+  function render() {
+    items.forEach(function (item, i) {
+      item.style.display = i < visibleCount ? '' : 'none';
+    });
+    btnMenos.style.display = visibleCount > 5 ? 'inline-block' : 'none';
+    btnMas.style.display = visibleCount >= items.length ? 'none' : 'inline-block';
+  }
+
+  btnMas.addEventListener('click', function () {
+    visibleCount = Math.min(visibleCount + pasoIncremento, items.length);
+    render();
+  });
+
+  btnMenos.addEventListener('click', function () {
+    visibleCount = 5;
+    render();
+    contenedor.closest('.resenas-clientes').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  render();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Reseñas de clientes",
+  "tag": "section",
+  "class": "section",
+  "presets": [{ "name": "Reseñas de clientes" }]
+}
+{% endschema %}
