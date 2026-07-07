@@ -1246,6 +1246,12 @@ document.addEventListener("click", function(event) {
   }
 }, true);
 </script>
+<!-- AJUSTE: ocultar la flechita del desplegable en HOMBRE/MUJER (páginas interiores) -->
+<style>
+.header-wrapper:not(.header-wrapper--homepage) header-menu summary svg {
+  display: none !important;
+}
+</style>
 <!-- AJUSTE DESKTOP: HOMBRE/MUJER se despliegan con el ratón y navegan al hacer clic (solo desktop, páginas interiores) -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
