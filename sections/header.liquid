@@ -1246,3 +1246,29 @@ document.addEventListener("click", function(event) {
   }
 }, true);
 </script>
+<!-- AJUSTE DESKTOP: HOMBRE/MUJER se despliegan con el ratón y navegan al hacer clic (solo desktop, páginas interiores) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (!window.matchMedia('(min-width: 990px)').matches) return;
+
+  document.querySelectorAll('.header-wrapper:not(.header-wrapper--homepage) header-menu').forEach(function (menu) {
+    var details = menu.querySelector('details');
+    var summary = menu.querySelector('summary');
+    if (!details || !summary) return;
+
+    menu.addEventListener('mouseenter', function () {
+      details.setAttribute('open', '');
+    });
+    menu.addEventListener('mouseleave', function () {
+      details.removeAttribute('open');
+    });
+
+    summary.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (summary.dataset.url) {
+        window.location.href = summary.dataset.url;
+      }
+    });
+  });
+});
+</script>
