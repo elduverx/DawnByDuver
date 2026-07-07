@@ -5969,3 +5969,20 @@ cart-drawer.is-empty [class*="close"]::after {
   .collection-hero__title { margin-top: 5rem !important; }
   .main-page-title { margin-top: 5rem !important; }
 }
+/* === VELA: Uniformar tarjeta de upsell en el carrito (evita que el selector largo empuje el botón) === */
+.vela-upsell-item__form {
+  flex-wrap: nowrap !important;
+}
+
+.vela-upsell-select {
+  max-width: 100px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  flex-shrink: 1 !important;
+}
+
+.vela-upsell-add {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+}
