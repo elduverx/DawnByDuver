@@ -136,7 +136,7 @@
 
   function render() {
     items.forEach(function (item, i) {
-      item.style.display = i < visibleCount ? '' : 'none';
+      item.style.display = i < visibleCount ? 'block' : 'none';
     });
     btnMenos.style.display = visibleCount > 5 ? 'inline-block' : 'none';
     btnMas.style.display = visibleCount >= items.length ? 'none' : 'inline-block';
