@@ -569,6 +569,31 @@
   })();
   </script>
 {%- endif -%}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof subscribe !== 'function' || typeof PUB_SUB_EVENTS === 'undefined') return;
+    if (window.__velaCartUpdateSubscribed) return;
+    window.__velaCartUpdateSubscribed = true;
+
+    subscribe(PUB_SUB_EVENTS.cartUpdate, function () {
+      fetch('/?section_id=cart-drawer')
+        .then(function (r) { return r.text(); })
+        .then(function (html) {
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, 'text/html');
+          var newUpsell = doc.querySelector('#VelaUpsellContainer');
+          var currentUpsell = document.querySelector('#VelaUpsellContainer');
+          if (newUpsell && currentUpsell) {
+            currentUpsell.outerHTML = newUpsell.outerHTML;
+          } else if (newUpsell && !currentUpsell) {
+            var footer = document.querySelector('.drawer__footer');
+            if (footer) footer.insertAdjacentElement('beforebegin', newUpsell);
+          }
+        })
+        .catch(function () {});
+    });
+  });
+</script>
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
           <details id="Details-CartDrawer">
