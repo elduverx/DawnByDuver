@@ -93,6 +93,14 @@
     "clientes_comunidad_P7VGmC": {
       "type": "clientes-comunidad",
       "blocks": {
+        "cliente_7Bd7D9": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.png",
+            "nombre": "Sonia C.",
+            "ciudad": "Valencia"
+          }
+        },
         "cliente_LqF9cL": {
           "type": "cliente",
           "settings": {
@@ -133,14 +141,6 @@
             "ciudad": "Madrid"
           }
         },
-        "cliente_CCF6kx": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.png",
-            "nombre": "Darío A.",
-            "ciudad": "Ávila"
-          }
-        },
         "cliente_GJQVjg": {
           "type": "cliente",
           "settings": {
@@ -148,16 +148,25 @@
             "nombre": "María G.",
             "ciudad": "Sevilla"
           }
+        },
+        "cliente_CCF6kx": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.png",
+            "nombre": "Darío A.",
+            "ciudad": "Ávila"
+          }
         }
       },
       "block_order": [
+        "cliente_7Bd7D9",
         "cliente_LqF9cL",
         "cliente_HYxrTi",
         "cliente_L4yRqD",
         "cliente_mDUC9K",
         "cliente_rfypcq",
-        "cliente_CCF6kx",
-        "cliente_GJQVjg"
+        "cliente_GJQVjg",
+        "cliente_CCF6kx"
       ],
       "name": "Clientes comunidad",
       "settings": {
