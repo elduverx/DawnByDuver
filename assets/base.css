@@ -5463,11 +5463,14 @@ summary.header__icon--menu {
 @media screen and (max-width: 749px) {
     .rich-text,
     .rich-text__wrapper,
+    .isolate:has(> .rich-text),
     [class*="rich-text"] {
         max-width: 96% !important;
         width: 96% !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .rich-text__text,
