@@ -4345,7 +4345,7 @@ html body .faq-vela p {
 @media screen and (max-width: 749px) {
   .vela-discount-box .vela-discount-box__number,
   .vela-discount-box p.vela-discount-box__number {
-    font-size: 2.6rem !important;
+    font-size: 2.9rem !important;
     line-height: 1.1 !important;
   }
 }
@@ -5472,31 +5472,31 @@ summary.header__icon--menu {
 
     .rich-text__text,
     [class*="rich-text"] p {
-        font-size: 1.05rem !important;
+        font-size: 1.15rem !important;
         line-height: 1.5 !important;
     }
 
     [class*="rich-text"] h2 {
-        font-size: 2rem !important;
+        font-size: 2.2rem !important;
         letter-spacing: 0.01rem !important;
         line-height: 1.25 !important;
     }
 
     [class*="rich-text"] .rich-text__caption {
-        font-size: 1rem !important;
+        font-size: 1.05rem !important;
     }
 
     .vela-discount-box {
-        padding: 14px 16px !important;
+        padding: 16px 20px !important;
         margin: 14px auto !important;
     }
 
     .vela-discount-box__label {
-        font-size: 9px !important;
+        font-size: 10px !important;
     }
 
     .vela-discount-box__sub {
-        font-size: 11px !important;
+        font-size: 12px !important;
     }
 }
 .cart-drawer .cart-item {
