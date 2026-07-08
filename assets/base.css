@@ -5484,6 +5484,7 @@ summary.header__icon--menu {
     }
 
     .vela-discount-box {
+        width: 90% !important;
         padding: 16px 20px !important;
         margin: 14px auto !important;
     }
