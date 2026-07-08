@@ -4345,8 +4345,8 @@ html body .faq-vela p {
 @media screen and (max-width: 749px) {
   .vela-discount-box .vela-discount-box__number,
   .vela-discount-box p.vela-discount-box__number {
-    font-size: 4rem !important;
-    line-height: 1.2 !important;
+    font-size: 3.2rem !important;
+    line-height: 1.15 !important;
   }
 }
 /* Reducir el tamaño del título del producto globalmente */
@@ -5459,50 +5459,36 @@ summary.header__icon--menu {
         margin-top: 10px !important;
     }
 }
-/* --- AUMENTAR TAMAÑO Y EXTENSIÓN AL MÁXIMO EN MÓVIL --- */
+/* --- ÚLTIMA OPORTUNIDAD: versión compacta en móvil (como competencia) --- */
 @media screen and (max-width: 749px) {
-    /* 1. Fuerza a la sección a expandirse a los extremos de la pantalla */
     .rich-text,
     .rich-text__wrapper,
     [class*="rich-text"] {
-        max-width: 100% !important;
-        width: 100% !important;
-        padding-left: 5px !important;
-        padding-right: 5px !important;
+        max-width: 90% !important;
+        width: 90% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 
-    /* 2. Tamaño de letra del cuerpo del texto mucho más grande */
-    .rich-text__text, 
+    .rich-text__text,
     [class*="rich-text"] p {
-        font-size: 1.8rem !important; /* Letra grande, robusta y clara */
-        line-height: 1.6 !important;
-    }
-
-    /* Título principal ("ÚLTIMA OPORTUNIDAD") gigante */
-    [class*="rich-text"] h2 {
-        font-size: 3.4rem !important;
-        letter-spacing: 0.1rem !important;
-    }
-
-    /* Subtítulos pequeños ("VELA MADRID") */
-    [class*="rich-text"] .rich-text__caption {
         font-size: 1.4rem !important;
+        line-height: 1.5 !important;
     }
 
-    /* 3. Tarjeta del 50% súper extensa y espaciosa */
-    .rich-text div[style*="background"],
-    [class*="rich-text"] .color-background-1,
-    .rich-text__blocks + div {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 40px 25px !important; /* Más relleno para que se vea imponente */
+    [class*="rich-text"] h2 {
+        font-size: 2.4rem !important;
+        letter-spacing: 0.02rem !important;
+        line-height: 1.25 !important;
     }
 
-    /* El número "50%" enorme */
-    [class*="rich-text"] h3,
-    [class*="rich-text"] .h1 {
-        font-size: 5.5rem !important; /* Protagonismo absoluto */
-        font-weight: bold !important;
+    [class*="rich-text"] .rich-text__caption {
+        font-size: 1.1rem !important;
+    }
+
+    .vela-discount-box {
+        padding: 18px 24px !important;
+        margin: 16px auto !important;
     }
 }
 .cart-drawer .cart-item {
