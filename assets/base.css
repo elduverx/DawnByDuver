@@ -5979,3 +5979,9 @@ cart-drawer.is-empty [class*="close"]::after {
   flex-shrink: 0 !important;
   white-space: nowrap !important;
 }
+/* === VELA: Imágenes más pequeñas en "Hecho para todos" (solo móvil) === */
+@media screen and (max-width: 749px) {
+  .multicolumn-card--overlay .media {
+    aspect-ratio: 1/1 !important;
+  }
+}
