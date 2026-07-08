@@ -132,6 +132,14 @@
             "nombre": "María G.",
             "ciudad": "Madrid"
           }
+        },
+        "cliente_CCF6kx": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.png",
+            "nombre": "Darío A.",
+            "ciudad": "Ávila"
+          }
         }
       },
       "block_order": [
@@ -139,7 +147,8 @@
         "cliente_HYxrTi",
         "cliente_L4yRqD",
         "cliente_mDUC9K",
-        "cliente_rfypcq"
+        "cliente_rfypcq",
+        "cliente_CCF6kx"
       ],
       "name": "Clientes comunidad",
       "settings": {
