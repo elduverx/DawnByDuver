@@ -93,6 +93,14 @@
     "clientes_comunidad_P7VGmC": {
       "type": "clientes-comunidad",
       "blocks": {
+        "cliente_zH3hCR": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.png",
+            "nombre": "Carmen L.",
+            "ciudad": "Málaga"
+          }
+        },
         "cliente_7Bd7D9": {
           "type": "cliente",
           "settings": {
@@ -159,6 +167,7 @@
         }
       },
       "block_order": [
+        "cliente_zH3hCR",
         "cliente_7Bd7D9",
         "cliente_LqF9cL",
         "cliente_HYxrTi",
