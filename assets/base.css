@@ -5469,12 +5469,12 @@ summary.header__icon--menu {
 
     .rich-text__text,
     [class*="rich-text"] p {
-        font-size: 1.15rem !important;
+        font-size: 1.3rem !important;
         line-height: 1.5 !important;
     }
 
     [class*="rich-text"] h2 {
-        font-size: 2.2rem !important;
+        font-size: 2.4rem !important;
         letter-spacing: 0.01rem !important;
         line-height: 1.25 !important;
     }
