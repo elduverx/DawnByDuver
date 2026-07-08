@@ -4345,8 +4345,8 @@ html body .faq-vela p {
 @media screen and (max-width: 749px) {
   .vela-discount-box .vela-discount-box__number,
   .vela-discount-box p.vela-discount-box__number {
-    font-size: 3.2rem !important;
-    line-height: 1.15 !important;
+    font-size: 2.6rem !important;
+    line-height: 1.1 !important;
   }
 }
 /* Reducir el tamaño del título del producto globalmente */
