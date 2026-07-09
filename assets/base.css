@@ -5974,8 +5974,8 @@ cart-drawer.is-empty [class*="close"]::after {
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
   flex-shrink: 1 !important;
+  min-width: 0 !important;
 }
-
 .vela-upsell-add {
   flex-shrink: 0 !important;
   white-space: nowrap !important;
