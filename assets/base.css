@@ -5086,7 +5086,7 @@ shop-follow-button,
   }
 
   /* 5. EL DESPLEGABLE DE PRODUCTOS SE ADAPTA: Baja en consonancia con la barra */
-  .predictive-search, 
+  .predictive-search--header, 
   #predictive-search-results,
   .search-modal__content .predictive-search {
     display: block !important;
