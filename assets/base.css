@@ -5675,6 +5675,7 @@ summary.header__icon--menu {
 
 .vela-upsell-item__info {
   flex: 1;
+  min-width: 0;
 }
 
 .vela-upsell-item__title {
