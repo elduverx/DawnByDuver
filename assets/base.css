@@ -5014,7 +5014,7 @@ shop-follow-button,
   }
 
   /* 5. EL DESPLEGABLE DE PRODUCTOS: Conserva su fondo blanco nítido para leer bien */
-  .predictive-search, 
+  .predictive-search--header, 
   #predictive-search-results,
   .search-modal__content .predictive-search {
     display: block !important;
