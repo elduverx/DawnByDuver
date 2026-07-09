@@ -91,7 +91,7 @@
         {%- endif -%}
       </div>
      {%- liquid
-      if id contains 'Summary' or id contains 'Card' or template.name == 'collection' or template.name == 'index'
+      if id contains 'Summary' or id contains 'Card' or template.name == 'collection' or template.name == 'index' or template.name == 'search'
         assign es_ficha_principal = false
       else
         assign es_ficha_principal = true
