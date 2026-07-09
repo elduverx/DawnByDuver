@@ -5987,3 +5987,18 @@ cart-drawer.is-empty [class*="close"]::after {
     aspect-ratio: 1/1 !important;
   }
 }
+/* === VELA: Fix upsell carrito SOLO DESKTOP === */
+@media screen and (min-width: 990px) {
+  .vela-upsell-select {
+    width: 100px !important;
+  }
+
+  .vela-upsell-item__prices {
+    gap: 10px !important;
+  }
+
+  .vela-upsell-item__price {
+    color: #000000 !important;
+    font-weight: 700 !important;
+  }
+}
