@@ -5748,6 +5748,7 @@ summary.header__icon--menu {
   justify-content: center;
   padding: 0;
   line-height: 1;
+  touch-action: manipulation;
 }
 .vela-upsell {
   padding: 12px;
