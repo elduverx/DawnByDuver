@@ -127,15 +127,15 @@
   }
 </style>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (!window.matchMedia('(max-width: 749px)').matches) return;
+  document.addEventListener('click', function (e) {
+    if (window.innerWidth > 749) return;
 
-    document.querySelectorAll('.header__icon--search.header__icon--summary').forEach(function (icon) {
-      icon.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        window.location.href = "{{ routes.search_url }}";
-      });
-    });
-  });
+    var icon = e.target.closest('.header__icon--search.header__icon--summary');
+    if (!icon) return;
+
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    e.stopPropagation();
+    window.location.href = "{{ routes.search_url }}";
+  }, true);
 </script>
