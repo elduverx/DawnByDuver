@@ -1171,8 +1171,8 @@
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+    min-width: 0 !important;
   }
-
   .vela-upsell-item__title {
     font-size: 1.05rem !important;
     font-weight: 700 !important;
@@ -1184,7 +1184,7 @@
   }
 
   .vela-upsell-item__prices {
-    gap: 6px !important;
+    gap: 10px !important;
     margin-bottom: 6px !important;
   }
 
@@ -1194,6 +1194,8 @@
 
   .vela-upsell-item__price {
     font-size: 1.1rem !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
   }
 
   .vela-upsell-select {
@@ -1201,6 +1203,12 @@
     font-size: 1rem !important;
     padding: 2px 6px !important;
     border: 1px solid #ccc !important;
+    width: 100px !important;
+    min-width: 0 !important;
+    max-width: 100px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
   }
 
   .vela-upsell-add {
