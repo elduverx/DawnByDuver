@@ -783,6 +783,14 @@
   }
 }
 </style>
+<!-- AJUSTE MOBILE: ocultar SEGUIMIENTO/CONTACTO/SOBRE NOSOTROS en la home, solo aparecen en desktop -->
+<style>
+@media screen and (max-width: 749px) {
+  .header-wrapper--homepage .header__icons {
+    display: none !important;
+  }
+}
+</style>
 <!-- AJUSTE DESKTOP: bajar el logo de la home 20px, solo en desktop (>=990px), solo en home -->
 <style>
 @media screen and (min-width: 990px) {
