@@ -75,19 +75,31 @@
   <h2 class="combina-titulo">{{ section.settings.titulo }}</h2>
   <div class="combina-grid">
     {%- liquid
-      assign tags_downcase = product.tags | join: ',' | downcase
-      assign es_mujer = false
-      if tags_downcase contains 'mujer'
-        assign es_mujer = true
-      endif
+      assign es_lino_arena = false
+      for coleccion_producto in product.collections
+        if coleccion_producto.handle == 'conjuntos-lino-arena'
+          assign es_lino_arena = true
+        endif
+      endfor
 
-      if es_mujer
-        assign target_handle = 'mujer'
+      if es_lino_arena
+        assign target_collection = collections['conjuntos-lino-arena']
       else
-        assign target_handle = 'hombre'
+        assign tags_downcase = product.tags | join: ',' | downcase
+        assign es_mujer = false
+        if tags_downcase contains 'mujer'
+          assign es_mujer = true
+        endif
+
+        if es_mujer
+          assign target_handle = 'mujer'
+        else
+          assign target_handle = 'hombre'
+        endif
+
+        assign target_collection = collections[target_handle]
       endif
 
-      assign target_collection = collections[target_handle]
       assign shown = 0
     -%}
     {%- for related in target_collection.products limit: 50 -%}
