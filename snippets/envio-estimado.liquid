@@ -1,3 +1,17 @@
+{%- assign es_lino_arena = false -%}
+{%- for coleccion in product.collections -%}
+  {%- if coleccion.handle == 'conjuntos-lino-arena' -%}
+    {%- assign es_lino_arena = true -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if es_lino_arena -%}
+<div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 16px; padding: 18px 22px; border-radius: 14px; background-color: #fdf1ef; border: 1px solid #f4d9d3; font-family: 'Assistant', sans-serif;">
+  <span style="font-size: 1.5rem; line-height: 1; flex-shrink: 0;">📣</span>
+  <p style="margin: 0; font-size: 1.3rem; line-height: 1.5; color: #7a2e22;">
+    <strong>AVISO IMPORTANTE:</strong> Debido a la alta demanda, el stock se está agotando rápidamente. Si aún puede hacer clic en <strong>"Agregar al carrito"</strong>, el artículo todavía está disponible.
+  </p>
+</div>
+{%- endif -%}
 {%- assign mes_num = 'now' | date: '%-m' | plus: 0 -%}
 {%- assign mes_manana_num = 'now' | date: '%s' | plus: 86400 | date: '%-m' | plus: 0 -%}
 {%- assign mes_enviado_num = 'now' | date: '%s' | plus: 172800 | date: '%-m' | plus: 0 -%}
