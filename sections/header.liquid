@@ -229,7 +229,7 @@
     </a>
     {%- if request.page_type == 'index' -%}
 <div class="header__icons" style="justify-content: flex-end; gap: 2rem; text-transform: uppercase;">
-  <a href="/pages/seguimiento" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Seguimiento</a>
+  <a href="/apps/parcelpanel" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Seguimiento</a>
   <a href="/pages/contacto" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Contacto</a>
   <a href="/pages/sobre-nosotros" style="color: #ffffff; text-decoration: none; font-size: 1.3rem; letter-spacing: 0.1rem;">Sobre nosotros</a>
 </div>
@@ -240,7 +240,7 @@
     .header__right-links { display: none !important; }
   </style>
   <div class="header__right-links" style="display: flex; align-items: center; gap: 2rem; text-transform: uppercase;">
-    <a href="/pages/seguimiento" class="header__menu-item link link--text focus-inset" style="color: rgb(var(--color-foreground)); text-decoration: none; font-size: 1.3rem;">Seguimiento</a>
+    <a href="/apps/parcelpanel" class="header__menu-item link link--text focus-inset" style="color: rgb(var(--color-foreground)); text-decoration: none; font-size: 1.3rem;">Seguimiento</a>
     <a href="/pages/contacto" class="header__menu-item link link--text focus-inset" style="color: rgb(var(--color-foreground)); text-decoration: none; font-size: 1.3rem;">Contacto</a>
     <a href="/pages/sobre-nosotros" class="header__menu-item link link--text focus-inset" style="color: rgb(var(--color-foreground)); text-decoration: none; font-size: 1.3rem;">Sobre nosotros</a>
   </div>
@@ -269,9 +269,9 @@
      {% comment %}{% render 'header-search', input_id: 'Search-In-Modal' %}{% endcomment %}
 <div style="display: flex; align-items: center; margin-right: 0; gap: 0.5rem;" class="small-hide">
   {%- if request.page_type == 'index' -%}
-    <a href="/pages/seguimiento" class="header__menu-item list-menu__item link link--text focus-inset" style="color: #ffffff; text-transform: uppercase; padding: 1.2rem 2rem; font-size: inherit; letter-spacing: inherit; font-family: inherit;">Seguimiento</a>
+    <a href="/apps/parcelpanel" class="header__menu-item list-menu__item link link--text focus-inset" style="color: #ffffff; text-transform: uppercase; padding: 1.2rem 2rem; font-size: inherit; letter-spacing: inherit; font-family: inherit;">Seguimiento</a>
   {%- else -%}
-   <a href="/pages/seguimiento" class="header__menu-item list-menu__item link link--text focus-inset" style="color: #000000; text-transform: uppercase; padding: 1.2rem 2rem; font-size: 1.3rem; letter-spacing: 0.1rem; font-family: inherit; font-weight: 400;">Seguimiento</a>
+   <a href="/apps/parcelpanel" class="header__menu-item list-menu__item link link--text focus-inset" style="color: #000000; text-transform: uppercase; padding: 1.2rem 2rem; font-size: 1.3rem; letter-spacing: 0.1rem; font-family: inherit; font-weight: 400;">Seguimiento</a>
   {%- endif -%}
 </div>
       {%- for block in section.blocks -%}
@@ -286,7 +286,8 @@
           <circle cx="12" cy="7" r="4"/>
         </svg>
       </a>
-      <a href="/pages/seguimiento" class="vela-box-interior large-up-hide link focus-inset" style="background: transparent;">
+      <a href="/apps/parcelpanel" class="vela-box-interior large-up-hide link focus-inset" style="background: transparent;">
+
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="stroke: #1a1a1a !important; color: #1a1a1a !important;">
           <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" style="stroke: #1a1a1a !important;"/>
           <polyline points="3.27 6.96 12 12.01 20.73 6.96" style="stroke: #1a1a1a !important;"/>
@@ -905,7 +906,7 @@
     transform: translateY(-20px);
   }
 
-  .header-wrapper:not(.header-wrapper--homepage) .small-hide a[href="/pages/seguimiento"] {
+  .header-wrapper:not(.header-wrapper--homepage) .small-hide a[href="/apps/parcelpanel"] {
     transform: translateY(-20px);
     display: inline-block;
   }
