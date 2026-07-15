@@ -15,7 +15,31 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .vela-cart-total-prices {
+    display: flex;
+    align-items: baseline;
+    gap: 0.8rem;
+    justify-content: flex-end;
+  }
+
+  .vela-cart-total-compare {
+    color: rgba(var(--color-foreground), 0.6);
+    font-size: 1.4rem;
+  }
 {%- endstyle -%}
+
+{%- liquid
+  assign vela_cart_compare_total = 0
+  for item in cart.items
+    if item.variant.compare_at_price > item.variant.price
+      assign vela_line_compare = item.variant.compare_at_price | times: item.quantity
+      assign vela_cart_compare_total = vela_cart_compare_total | plus: vela_line_compare
+    else
+      assign vela_cart_compare_total = vela_cart_compare_total | plus: item.final_line_price
+    endif
+  endfor
+-%}
 
 <div
   class="gradient color-{{ section.settings.color_scheme }}{% if cart == empty %} is-empty{% endif %}"
