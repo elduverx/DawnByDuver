@@ -104,7 +104,14 @@
 
                 <div class="totals">
                   <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                  {%- if vela_cart_compare_total > cart.total_price -%}
+                    <div class="vela-cart-total-prices">
+                      <s class="vela-cart-total-compare">{{ vela_cart_compare_total | money_with_currency }}</s>
+                      <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                    </div>
+                  {%- else -%}
+                    <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                  {%- endif -%}
                 </div>
 
               </div>
