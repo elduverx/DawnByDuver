@@ -26,7 +26,7 @@
         "text_eirdCn": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>COMPRA 2 → 10% DE DESCUENTO ADICIONAL<br/>COMPRA 3 → 15% DE DESCUENTO ADICIONAL<br/>COMPRA 4 O MÁS → 25% DE DESCUENTO ADICIONAL</strong></p><p>Los descuentos se aplican automáticamente al finalizar la compra. Se pueden combinar artículos de diferentes colecciones.</p>"
+            "text": "<p><strong>COMPRA 2 → 10% DE DESCUENTO ADICIONAL<br/>COMPRA 3 → 15% DE DESCUENTO ADICIONAL<br/>COMPRA 4  → 20% DE DESCUENTO ADICIONAL</strong></p><p>Los descuentos se aplican automáticamente al finalizar la compra. Se pueden combinar artículos de diferentes colecciones.</p>"
           }
         }
       },
