@@ -15,31 +15,7 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  .vela-cart-total-prices {
-    display: flex;
-    align-items: baseline;
-    gap: 0.8rem;
-    justify-content: flex-end;
-  }
-
-  .vela-cart-total-compare {
-    color: rgba(var(--color-foreground), 0.6);
-    font-size: 1.4rem;
-  }
 {%- endstyle -%}
-
-{%- liquid
-  assign vela_cart_compare_total = 0
-  for item in cart.items
-    if item.variant.compare_at_price > item.variant.price
-      assign vela_line_compare = item.variant.compare_at_price | times: item.quantity
-      assign vela_cart_compare_total = vela_cart_compare_total | plus: vela_line_compare
-    else
-      assign vela_cart_compare_total = vela_cart_compare_total | plus: item.final_line_price
-    endif
-  endfor
--%}
 
 <div
   class="gradient color-{{ section.settings.color_scheme }}{% if cart == empty %} is-empty{% endif %}"
@@ -80,40 +56,52 @@
                       {%- endfor -%}
                     </ul>
                   {%- endif -%}
-
-                  {%- assign vela_has_line_discounts = false -%}
-                  {%- for item in cart.items -%}
-                    {%- if item.line_level_discount_allocations.size > 0 -%}
-                      {%- assign vela_has_line_discounts = true -%}
-                    {%- endif -%}
-                  {%- endfor -%}
-
-                  {%- if vela_has_line_discounts -%}
-                    <ul class="discounts list-unstyled vela-cart-summary-discount" role="list" aria-label="{{ 'customer.order.discount' | t }}">
-                      {%- for item in cart.items -%}
-                        {%- for discount in item.line_level_discount_allocations -%}
-                          <li class="discounts__discount discounts__discount--position">
-                            {{- 'icon-discount.svg' | inline_asset_content -}}
-                            {{ discount.discount_application.title | escape }}
-                          </li>
-                        {%- endfor -%}
-                      {%- endfor -%}
-                    </ul>
-                  {%- endif -%}
                 </div>
 
                 <div class="totals">
                   <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-                  {%- if vela_cart_compare_total > cart.total_price -%}
-                    <div class="vela-cart-total-prices">
-                      <s class="vela-cart-total-compare">{{ vela_cart_compare_total | money_with_currency }}</s>
-                      <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
-                    </div>
-                  {%- else -%}
-                    <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
-                  {%- endif -%}
+                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
                 </div>
 
+                <small class="tax-note caption-large rte">
+                  {%- if cart.duties_included and cart.taxes_included -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.duties_and_taxes_included_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.duties_and_taxes_included_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included == false and cart.taxes_included -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.taxes_included_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.taxes_included_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included and cart.taxes_included == false -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- elsif cart.duties_included == false and cart.taxes_included == false -%}
+                    {%- if shop.shipping_policy.body == blank -%}
+                      {{ 'sections.cart.taxes_at_checkout_shipping_at_checkout_without_policy' | t }}
+                    {%- else -%}
+                      {{
+                        'sections.cart.taxes_at_checkout_shipping_at_checkout_with_policy_html'
+                        | t: link: shop.shipping_policy.url
+                      }}
+                    {%- endif -%}
+                  {%- endif -%}
+                </small>
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
