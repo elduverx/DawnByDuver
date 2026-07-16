@@ -414,6 +414,9 @@
             if coleccion_producto.handle == 'conjuntos-mar-arena'
               assign has_lino_arena = true
             endif
+            if coleccion_producto.handle == 'sandalias-amalfi'
+              assign has_sandalias_amalfi = true
+            endif
           endfor
         endfor
 
@@ -435,6 +438,9 @@
         endif
         if has_lino_arena
           assign target_handles_str = 'conjuntos-mar-arena'
+        endif
+        if has_sandalias_amalfi
+          assign target_handles_str = 'sandalias-amalfi'
         endif
         assign target_handles = target_handles_str | split: ','
       -%}
