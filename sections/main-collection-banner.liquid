@@ -106,10 +106,10 @@
 <div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
-      {%- if section.settings.show_collection_image and collection.image and section.settings.kicker_text != blank and collection.handle != 'conjuntos' and collection.handle != 'conjuntos-lino-arena' and collection.handle != 'conjuntos-mar-arena' -%}
+      {%- if section.settings.show_collection_image and collection.image and section.settings.kicker_text != blank and collection.handle != 'conjuntos' and collection.handle != 'conjuntos-lino-arena' and collection.handle != 'conjuntos-mar-arena' and collection.handle != 'sandalias-amalfi' -%}
         <span class="collection-hero__kicker">{{ section.settings.kicker_text | escape }}</span>
       {%- endif -%}
-      {%- unless collection.handle == 'conjuntos' or collection.handle == 'conjuntos-lino-arena' or collection.handle == 'conjuntos-mar-arena' -%}
+      {%- unless collection.handle == 'conjuntos' or collection.handle == 'conjuntos-lino-arena' or collection.handle == 'conjuntos-mar-arena' or collection.handle == 'sandalias-amalfi' -%}
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
