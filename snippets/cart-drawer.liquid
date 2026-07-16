@@ -410,7 +410,7 @@
             endif
           endif
           for coleccion_producto in item.product.collections
-            if coleccion_producto.handle == 'conjuntos-lino-arena'
+            if coleccion_producto.handle == 'conjuntos-mar-arena'
               assign has_lino_arena = true
             endif
           endfor
@@ -433,7 +433,7 @@
           assign target_handles_str = 'hombre,mujer'
         endif
         if has_lino_arena
-          assign target_handles_str = 'conjuntos-lino-arena'
+          assign target_handles_str = 'conjuntos-mar-arena'
         endif
         assign target_handles = target_handles_str | split: ','
       -%}
