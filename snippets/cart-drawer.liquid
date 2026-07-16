@@ -393,6 +393,7 @@
         assign has_gafas_hombre = false
         assign has_gafas_mujer = false
         assign has_lino_arena = false
+        assign has_sandalias_amalfi = false
 
         for item in cart.items
           assign item_tags = item.product.tags | join: ',' | downcase
