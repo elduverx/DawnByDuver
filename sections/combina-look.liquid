@@ -76,14 +76,20 @@
   <div class="combina-grid">
     {%- liquid
       assign es_lino_arena = false
+      assign es_sandalias_amalfi = false
       for coleccion_producto in product.collections
         if coleccion_producto.handle == 'conjuntos-lino-arena'
           assign es_lino_arena = true
+        endif
+        if coleccion_producto.handle == 'sandalias-amalfi'
+          assign es_sandalias_amalfi = true
         endif
       endfor
 
       if es_lino_arena
         assign target_collection = collections['conjuntos-lino-arena']
+      elsif es_sandalias_amalfi
+        assign target_collection = collections['sandalias-amalfi']
       else
         assign tags_downcase = product.tags | join: ',' | downcase
         assign es_mujer = false
