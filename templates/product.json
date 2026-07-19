@@ -93,6 +93,14 @@
     "clientes_comunidad_P7VGmC": {
       "type": "clientes-comunidad",
       "blocks": {
+        "cliente_x9674E": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
+            "nombre": "María G.",
+            "ciudad": "Galicia"
+          }
+        },
         "cliente_bBXmmP": {
           "type": "cliente",
           "settings": {
@@ -175,6 +183,7 @@
         }
       },
       "block_order": [
+        "cliente_x9674E",
         "cliente_bBXmmP",
         "cliente_zH3hCR",
         "cliente_7Bd7D9",
