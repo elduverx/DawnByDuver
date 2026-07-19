@@ -4,6 +4,9 @@
     {%- assign es_lino_arena = true -%}
   {%- endif -%}
 {%- endfor -%}
+{%- if product.handle == 'ortensia-vestido-largo-rayado' -%}
+  {%- assign es_lino_arena = true -%}
+{%- endif -%}
 {%- assign mes_num = 'now' | date: '%-m' | plus: 0 -%}
 {%- assign mes_manana_num = 'now' | date: '%s' | plus: 86400 | date: '%-m' | plus: 0 -%}
 {%- assign mes_enviado_num = 'now' | date: '%s' | plus: 172800 | date: '%-m' | plus: 0 -%}
