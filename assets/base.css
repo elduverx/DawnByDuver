@@ -6002,3 +6002,6 @@ cart-drawer.is-empty [class*="close"]::after {
     font-weight: 700 !important;
   }
 }
+.product-form__input--pill input.disabled + label {
+  display: none !important;
+}
