@@ -521,7 +521,7 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
-                {%- if product.handle == 'sandalias-dorelia' -%}
+                {%- if product.handle == 'sandalias-dorelia' or product.handle == 'sandalias-celestina' -%}
                   <div class="vela-notice-fabricacion">
                     <span class="vela-notice-fabricacion__icon">
                       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
