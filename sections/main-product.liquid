@@ -521,7 +521,13 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
-                {%- if product.handle == 'sandalias-dorelia' or product.handle == 'sandalias-celestina' -%}
+                {%- assign es_bajo_pedido = false -%}
+                {%- for coleccion in product.collections -%}
+                  {%- if coleccion.handle == 'sandalias-amalfi' -%}
+                    {%- assign es_bajo_pedido = true -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- if es_bajo_pedido -%}
                   <div class="vela-notice-fabricacion">
                     <span class="vela-notice-fabricacion__icon">
                       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
