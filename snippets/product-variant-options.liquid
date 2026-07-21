@@ -18,6 +18,10 @@
 {% endcomment %}
 {%- liquid
   assign product_form_id = 'product-form-' | append: section.id
+  assign option_name_down_override = option.name | downcase
+  if option_name_down_override == 'talla' or option_name_down_override == 'tamaño' or option_name_down_override == 'tamano' or option_name_down_override == 'size'
+    assign picker_type = 'button'
+  endif
 -%}
 
 {%- for value in option.values -%}
