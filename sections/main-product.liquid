@@ -263,19 +263,6 @@
                     <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                       {%- if block.settings.heading == 'DESCRIPCIÓN' -%}
   {{ product.metafields.custom.informacion_adicional | metafield_tag }}
-{%- elsif block.settings.heading == 'ENVÍO Y DEVOLUCIONES' -%}
-  {%- assign es_bajo_pedido = false -%}
-  {%- for coleccion in product.collections -%}
-    {%- if coleccion.handle == 'sandalias-amalfi' -%}
-      {%- assign es_bajo_pedido = true -%}
-    {%- endif -%}
-  {%- endfor -%}
-  {%- if es_bajo_pedido -%}
-    {{ block.settings.content | split: 'Devoluciones en 30 días' | first }}
-  {%- else -%}
-    {{ block.settings.content }}
-    {{ block.settings.page.content }}
-  {%- endif -%}
 {%- else -%}
   {{ block.settings.content }}
   {{ block.settings.page.content }}

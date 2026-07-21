@@ -183,20 +183,12 @@
     <span style="font-size: 1.4rem; color: #000000; font-weight: 400; letter-spacing: 0.3px;">Envío gratis</span>
   </div>
 
-  {%- assign es_bajo_pedido = false -%}
-  {%- for coleccion in product.collections -%}
-    {%- if coleccion.handle == 'sandalias-amalfi' -%}
-      {%- assign es_bajo_pedido = true -%}
-    {%- endif -%}
-  {%- endfor -%}
-  {%- unless es_bajo_pedido -%}
   <div style="display: flex; align-items: center; gap: 10px;">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
     </svg>
     <span style="font-size: 1.4rem; color: #000000; font-weight: 400; letter-spacing: 0.3px;">Devolución sin complicaciones en 30 días</span>
   </div>
-  {%- endunless -%}
   <div style="display: flex; align-items: center; gap: 10px;">
     <svg width="20" height="14" viewBox="0 0 20 14" style="flex-shrink: 0; border-radius: 2px;">
       <rect width="20" height="14" fill="#AA151B"/>
