@@ -207,7 +207,7 @@
       "name": "Combina tu look",
       "settings": {
         "eyebrow": "TAMBIÉN TE PUEDE INTERESAR",
-        "titulo": "COMBINA TU LOOK",
+        "titulo": "COMPRA MÁS Y AHORRA MÁS (SOLO HOY)",
         "texto_boton": "Ver todo",
         "url_ver_todo": "shopify://collections/all"
       }
@@ -346,8 +346,8 @@
   },
   "order": [
     "main",
-    "clientes_comunidad_P7VGmC",
     "combina_look_heaitB",
+    "clientes_comunidad_P7VGmC",
     "rich_text_zH8Ky6",
     "garantias_AkQQfV",
     "related-products",
