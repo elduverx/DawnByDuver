@@ -55,7 +55,6 @@ block: block,
 picker_type: picker_type
 %}
 {%- assign name_downcase = option.name | downcase -%}
-{%- unless es_amalfi -%}
 {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
 <modal-opener data-modal="#TablaTallasModal-{{ section.id }}">
   <button type="button" class="size-chart-link" aria-haspopup="dialog" style="display: block; margin-top: 12px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer; background: none; border: none; padding: 0;">
@@ -63,7 +62,6 @@ picker_type: picker_type
   </button>
 </modal-opener>
 {%- endif -%}
-{%- endunless -%}
 </fieldset>
       {%- else -%}
         <div class="product-form__input product-form__input--dropdown">
