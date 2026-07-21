@@ -534,26 +534,7 @@
               {%- when 'variant_picker' -%}
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
-                {%- assign es_bajo_pedido = false -%}
-                {%- for coleccion in product.collections -%}
-                  {%- if coleccion.handle == 'sandalias-amalfi' -%}
-                    {%- assign es_bajo_pedido = true -%}
-                  {%- endif -%}
-                {%- endfor -%}
-                {%- if es_bajo_pedido -%}
-                  <div class="vela-notice-fabricacion">
-                    <span class="vela-notice-fabricacion__icon">
-                      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="9"/>
-                        <path d="M12 7v5l3.5 2"/>
-                      </svg>
-                    </span>
-                    <p>
-                      <strong>Fabricación bajo pedido —</strong>
-                      Este modelo se elabora especialmente para ti. Producción: 3-5 días antes del envío. Por esta razón, este producto no admite cambios ni devoluciones una vez realizado el pedido.
-                    </p>
-                  </div>
-                {%- endif -%}
+                {%- when 'buy_buttons' -%}
                 {%- render 'buy-buttons',
                   block: block,
                   product: product,
