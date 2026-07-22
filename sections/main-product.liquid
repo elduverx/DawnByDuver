@@ -551,14 +551,6 @@
                 {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
               {%- when 'buy_buttons' -%}
                 {%- when 'buy_buttons' -%}
-                {%- if product.handle == 'mia-edicion-dia-a-dia' -%}
-                  <div class="vela-notice-stock">
-                    <span class="vela-notice-stock__icon" aria-hidden="true">📣</span>
-                    <p>
-                      <strong>AVISO IMPORTANTE:</strong> Debido a la alta demanda, el stock se está agotando rápidamente. Si aún puede hacer clic en <strong>"Agregar al carrito"</strong>, el artículo todavía está disponible.
-                    </p>
-                  </div>
-                {%- endif -%}
                 {%- render 'buy-buttons',
                   block: block,
                   product: product,
@@ -568,6 +560,14 @@
                 -%}
                 {% render 'metodos-pago' %}
                 {% render 'envio-estimado' %}
+                {%- if product.handle == 'mia-edicion-dia-a-dia' -%}
+                  <div class="vela-notice-stock">
+                    <span class="vela-notice-stock__icon" aria-hidden="true">📣</span>
+                    <p>
+                      <strong>AVISO IMPORTANTE:</strong> Debido a la alta demanda, el stock se está agotando rápidamente. Si aún puede hacer clic en <strong>"Agregar al carrito"</strong>, el artículo todavía está disponible.
+                    </p>
+                  </div>
+                {%- endif -%}
                 <script>
     (function() {
       const meses = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
