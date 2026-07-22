@@ -91,10 +91,17 @@
       elsif es_sandalias_amalfi
         assign target_collection = collections['sandalias-amalfi']
       else
-        assign tags_downcase = product.tags | join: ',' | downcase
         assign es_mujer = false
-        if tags_downcase contains 'mujer'
-          assign es_mujer = true
+        for coleccion_check in product.collections
+          if coleccion_check.handle == 'mujer'
+            assign es_mujer = true
+          endif
+        endfor
+        if es_mujer == false
+          assign tags_downcase = product.tags | join: ',' | downcase
+          if tags_downcase contains 'mujer' or tags_downcase contains 'women'
+            assign es_mujer = true
+          endif
         endif
 
         if es_mujer
