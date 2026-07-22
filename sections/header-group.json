@@ -28,6 +28,13 @@
             "link": ""
           }
         },
+        "announcement_txAgV3": {
+          "type": "announcement",
+          "settings": {
+            "text": "+15 000 CLIENTES CONTENTOS",
+            "link": ""
+          }
+        },
         "announcement_N349Qa": {
           "type": "announcement",
           "settings": {
@@ -46,6 +53,7 @@
       "block_order": [
         "announcement-bar-0",
         "announcement_Q4fMKa",
+        "announcement_txAgV3",
         "announcement_N349Qa",
         "announcement_FFT7Fr"
       ],
