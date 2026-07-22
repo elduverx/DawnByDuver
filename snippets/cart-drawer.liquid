@@ -397,16 +397,34 @@
 
         for item in cart.items
           assign item_tags = item.product.tags | join: ',' | downcase
+          assign item_is_mujer = false
+          assign item_is_hombre = false
+          for coleccion_item in item.product.collections
+            if coleccion_item.handle == 'mujer'
+              assign item_is_mujer = true
+            endif
+            if coleccion_item.handle == 'hombre'
+              assign item_is_hombre = true
+            endif
+          endfor
+          if item_is_mujer == false and item_is_hombre == false
+            if item_tags contains 'mujer' or item_tags contains 'women'
+              assign item_is_mujer = true
+            elsif item_tags contains 'hombre'
+              assign item_is_hombre = true
+            endif
+          endif
+
           if item_tags contains 'gafas'
-            if item_tags contains 'mujer'
+            if item_is_mujer
               assign has_gafas_mujer = true
             else
               assign has_gafas_hombre = true
             endif
           else
-            if item_tags contains 'mujer'
+            if item_is_mujer
               assign has_mujer_ropa = true
-            elsif item_tags contains 'hombre'
+            elsif item_is_hombre
               assign has_hombre_ropa = true
             endif
           endif
