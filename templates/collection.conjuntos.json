@@ -20,6 +20,29 @@
         "color_scheme": "scheme-1"
       }
     },
+    "rich_text_QFFXYK": {
+      "type": "rich-text",
+      "blocks": {
+        "text_eirdCn": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>COMPRA 2 → 10% DE DESCUENTO ADICIONAL<br/>COMPRA 3 → 15% DE DESCUENTO ADICIONAL<br/>COMPRA 4  → 20% DE DESCUENTO ADICIONAL</strong></p><p>Los descuentos se aplican automáticamente al finalizar la compra. Se pueden combinar artículos de diferentes colecciones.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_eirdCn"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "product-grid": {
       "type": "main-collection-product-grid",
       "custom_css": [],
@@ -44,6 +67,7 @@
   },
   "order": [
     "banner",
+    "rich_text_QFFXYK",
     "product-grid"
   ]
 }
