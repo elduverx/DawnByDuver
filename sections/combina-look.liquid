@@ -77,6 +77,7 @@
     {%- liquid
       assign es_lino_arena = false
       assign es_sandalias_amalfi = false
+      assign es_conjuntos = false
       for coleccion_producto in product.collections
         if coleccion_producto.handle == 'conjuntos-mar-arena'
           assign es_lino_arena = true
@@ -84,12 +85,17 @@
         if coleccion_producto.handle == 'sandalias-amalfi'
           assign es_sandalias_amalfi = true
         endif
+        if coleccion_producto.handle == 'conjuntos'
+          assign es_conjuntos = true
+        endif
       endfor
 
       if es_lino_arena
         assign target_collection = collections['conjuntos-mar-arena']
       elsif es_sandalias_amalfi
         assign target_collection = collections['sandalias-amalfi']
+      elsif es_conjuntos
+        assign target_collection = collections['conjuntos']
       else
         assign es_mujer = false
         for coleccion_check in product.collections
