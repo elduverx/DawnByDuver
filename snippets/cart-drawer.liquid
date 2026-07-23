@@ -394,6 +394,7 @@
         assign has_gafas_mujer = false
         assign has_lino_arena = false
         assign has_sandalias_amalfi = false
+        assign has_conjuntos = false
 
         for item in cart.items
           assign item_tags = item.product.tags | join: ',' | downcase
@@ -435,6 +436,9 @@
             if coleccion_producto.handle == 'sandalias-amalfi'
               assign has_sandalias_amalfi = true
             endif
+            if coleccion_producto.handle == 'conjuntos'
+              assign has_conjuntos = true
+            endif
           endfor
         endfor
 
@@ -459,6 +463,9 @@
         endif
         if has_sandalias_amalfi
           assign target_handles_str = 'sandalias-amalfi'
+        endif
+        if has_conjuntos
+          assign target_handles_str = 'conjuntos'
         endif
         assign target_handles = target_handles_str | split: ','
       -%}
