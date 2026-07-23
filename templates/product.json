@@ -90,9 +90,27 @@
         "padding_bottom": 12
       }
     },
+    "combina_look_heaitB": {
+      "type": "combina-look",
+      "name": "Combina tu look",
+      "settings": {
+        "eyebrow": "TAMBIÉN TE PUEDE INTERESAR",
+        "titulo": "COMPRA MÁS Y AHORRA MÁS (SOLO HOY)",
+        "texto_boton": "Ver todo",
+        "url_ver_todo": "shopify://collections/all"
+      }
+    },
     "clientes_comunidad_P7VGmC": {
       "type": "clientes-comunidad",
       "blocks": {
+        "cliente_gcBJDm": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
+            "nombre": "María G.",
+            "ciudad": "Madrid"
+          }
+        },
         "cliente_x9674E": {
           "type": "cliente",
           "settings": {
@@ -183,6 +201,7 @@
         }
       },
       "block_order": [
+        "cliente_gcBJDm",
         "cliente_x9674E",
         "cliente_bBXmmP",
         "cliente_zH3hCR",
@@ -200,16 +219,6 @@
         "eyebrow": "VELA MADRID",
         "titulo": "Clientes de nuestra comunidad",
         "subtitulo": "Las prendas cobran vida cuando las llevan personas reales. Si quieres aparecer aquí, escríbenos a"
-      }
-    },
-    "combina_look_heaitB": {
-      "type": "combina-look",
-      "name": "Combina tu look",
-      "settings": {
-        "eyebrow": "TAMBIÉN TE PUEDE INTERESAR",
-        "titulo": "COMPRA MÁS Y AHORRA MÁS (SOLO HOY)",
-        "texto_boton": "Ver todo",
-        "url_ver_todo": "shopify://collections/all"
       }
     },
     "rich_text_zH8Ky6": {
