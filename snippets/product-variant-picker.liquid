@@ -116,10 +116,17 @@ picker_type: picker_type
     </script>
   </variant-selects>
 {%- endunless -%}
+{%- if product.handle == 'isabelle-conjunto-de-3-piezas' -%}
+<p style="margin-top: 10px; font-size: 1.3rem; color: #121212; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
+  <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #e05c4b; border-radius: 50%;"></span>
+  <span>Solo quedan 4 en stock.</span>
+</p>
+{%- else -%}
 <p style="margin-top: 10px; font-size: 1.3rem; color: #121212; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
   <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #e05c4b; border-radius: 50%;"></span>
   <span>En nuestro lanzamiento anterior se agotaron las existencias en solo 48 horas.</span>
 </p>
+{%- endif -%}
 <div style="display:none;">
   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
     (function(img){
