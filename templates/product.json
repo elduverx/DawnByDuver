@@ -119,6 +119,14 @@
             "ciudad": "Galicia"
           }
         },
+        "cliente_LqF9cL": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
+            "nombre": "Carolina M.",
+            "ciudad": "Murcia"
+          }
+        },
         "cliente_bBXmmP": {
           "type": "cliente",
           "settings": {
@@ -141,14 +149,6 @@
             "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.png",
             "nombre": "Sonia C.",
             "ciudad": "Valencia"
-          }
-        },
-        "cliente_LqF9cL": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
-            "nombre": "Carolina M.",
-            "ciudad": "Murcia"
           }
         },
         "cliente_HYxrTi": {
@@ -203,10 +203,10 @@
       "block_order": [
         "cliente_gcBJDm",
         "cliente_x9674E",
+        "cliente_LqF9cL",
         "cliente_bBXmmP",
         "cliente_zH3hCR",
         "cliente_7Bd7D9",
-        "cliente_LqF9cL",
         "cliente_HYxrTi",
         "cliente_L4yRqD",
         "cliente_mDUC9K",
