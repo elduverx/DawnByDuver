@@ -103,6 +103,14 @@
     "clientes_comunidad_P7VGmC": {
       "type": "clientes-comunidad",
       "blocks": {
+        "cliente_UTmzjm": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
+            "nombre": "Amparo C.",
+            "ciudad": "Valencia"
+          }
+        },
         "cliente_gcBJDm": {
           "type": "cliente",
           "settings": {
@@ -201,6 +209,7 @@
         }
       },
       "block_order": [
+        "cliente_UTmzjm",
         "cliente_gcBJDm",
         "cliente_LqF9cL",
         "cliente_x9674E",
