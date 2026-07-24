@@ -16,8 +16,49 @@
         "show_collection_description": false,
         "show_collection_image": true,
         "kicker_text": "HOMBRE",
-        "mobile_image": "shopify://shop_images/ChatGPT_Image_1_jul_2026_21_09_33.png",
         "color_scheme": "scheme-1"
+      }
+    },
+    "rich_text_intro": {
+      "type": "rich-text",
+      "blocks": {
+        "text_intro": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Llegó el verano que llevabas esperando todo el año.<br/>Conjuntos frescos, cómodos y llenos de personalidad para disfrutar cada momento sin pensar en nada más.</p><p>Porque a esta edad ya sabes lo que quieres: sentirte bien, verte bien y vivir el verano a tu manera.<br/>Sin prisas, sin excusas. Solo tú, el sol y la actitud de siempre.</p>"
+          }
+        }
+      },
+      "block_order": ["text_intro"],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_descuento": {
+      "type": "rich-text",
+      "blocks": {
+        "text_eirdCn": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>COMPRA 2 → 10% DE DESCUENTO ADICIONAL<br/>COMPRA 3 → 15% DE DESCUENTO ADICIONAL<br/>COMPRA 4  → 20% DE DESCUENTO ADICIONAL</strong></p><p>Los descuentos se aplican automáticamente al finalizar la compra. Se pueden combinar artículos de diferentes colecciones.</p>"
+          }
+        }
+      },
+      "block_order": ["text_eirdCn"],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "product-grid": {
@@ -42,8 +83,5 @@
       }
     }
   },
-  "order": [
-    "banner",
-    "product-grid"
-  ]
+  "order": ["banner", "rich_text_intro", "rich_text_descuento", "product-grid"]
 }
