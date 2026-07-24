@@ -78,6 +78,7 @@
       assign es_lino_arena = false
       assign es_sandalias_amalfi = false
       assign es_conjuntos = false
+      assign es_costa_vela = false
       for coleccion_producto in product.collections
         if coleccion_producto.handle == 'conjuntos-mar-arena'
           assign es_lino_arena = true
@@ -88,6 +89,9 @@
         if coleccion_producto.handle == 'conjuntos'
           assign es_conjuntos = true
         endif
+        if coleccion_producto.handle == 'conjuntos-costa-vela'
+          assign es_costa_vela = true
+        endif
       endfor
 
       if es_lino_arena
@@ -96,6 +100,8 @@
         assign target_collection = collections['sandalias-amalfi']
       elsif es_conjuntos
         assign target_collection = collections['conjuntos']
+      elsif es_costa_vela
+        assign target_collection = collections['conjuntos-costa-vela']
       else
         assign es_mujer = false
         for coleccion_check in product.collections
