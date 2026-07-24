@@ -21,6 +21,7 @@
     },
     "rich_text_intro": {
       "type": "rich-text",
+      "custom_css": ["hr { display: none; }"],
       "blocks": {
         "text_intro": {
           "type": "text",
