@@ -395,6 +395,7 @@
         assign has_lino_arena = false
         assign has_sandalias_amalfi = false
         assign has_conjuntos = false
+        assign has_costa_vela = false
 
         for item in cart.items
           assign item_tags = item.product.tags | join: ',' | downcase
@@ -439,6 +440,9 @@
             if coleccion_producto.handle == 'conjuntos'
               assign has_conjuntos = true
             endif
+            if coleccion_producto.handle == 'conjuntos-costa-vela'
+              assign has_costa_vela = true
+            endif
           endfor
         endfor
 
@@ -466,6 +470,9 @@
         endif
         if has_conjuntos
           assign target_handles_str = 'conjuntos'
+        endif
+        if has_costa_vela
+          assign target_handles_str = 'conjuntos-costa-vela'
         endif
         assign target_handles = target_handles_str | split: ','
       -%}
