@@ -14,6 +14,12 @@
     {%- assign es_amalfi = true -%}
   {%- endif -%}
 {%- endfor -%}
+{%- assign es_costa_vela = false -%}
+{%- for coleccion in product.collections -%}
+  {%- if coleccion.handle == 'conjuntos-costa-vela' -%}
+    {%- assign es_costa_vela = true -%}
+  {%- endif -%}
+{%- endfor -%}
 {%- unless product.has_only_default_variant -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
@@ -124,7 +130,11 @@ picker_type: picker_type
   {%- when 'laura-conjunto-flor-de-lavanda', 'luna-conjunto-paisley-costero', 'elena-conjunto-pop-al-amanecer', 'calystria-set-wild-grace' -%}
     {%- assign texto_urgencia = 'Solo quedan 2 en stock.' -%}
   {%- else -%}
-    {%- assign texto_urgencia = 'En nuestro lanzamiento anterior se agotaron las existencias en solo 48 horas.' -%}
+    {%- if es_costa_vela -%}
+      {%- assign texto_urgencia = 'Casi agotado.' -%}
+    {%- else -%}
+      {%- assign texto_urgencia = 'En nuestro lanzamiento anterior se agotaron las existencias en solo 48 horas.' -%}
+    {%- endif -%}
 {%- endcase -%}
 <p style="margin-top: 10px; font-size: 1.3rem; color: #121212; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
   <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #e05c4b; border-radius: 50%;"></span>
