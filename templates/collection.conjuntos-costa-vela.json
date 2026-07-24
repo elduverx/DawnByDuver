@@ -47,7 +47,7 @@
         "text_eirdCn": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>COMPRA 2 → 10% DE DESCUENTO ADICIONAL<br/>COMPRA 3 → 15% DE DESCUENTO ADICIONAL<br/>COMPRA 4  → 20% DE DESCUENTO ADICIONAL</strong></p><p>Los descuentos se aplican automáticamente al finalizar la compra. Se pueden combinar artículos de diferentes colecciones.</p>"
+            "text": "<p>Por eso queremos darte esta oferta exclusiva solo hoy: <strong>50% + extra por cantidad</strong>.</p><p><strong>COMPRA 2 → 10% DE DESCUENTO ADICIONAL<br/>COMPRA 3 → 15% DE DESCUENTO ADICIONAL<br/>COMPRA 4  → 20% DE DESCUENTO ADICIONAL</strong></p><p>Los descuentos se aplican automáticamente al finalizar la compra. Se pueden combinar artículos de diferentes colecciones.</p>"
           }
         }
       },
