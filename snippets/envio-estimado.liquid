@@ -1,6 +1,6 @@
 {%- assign es_lino_arena = false -%}
 {%- for coleccion in product.collections -%}
-  {%- if coleccion.handle == 'conjuntos-lino-arena' or coleccion.handle == 'conjuntos-mar-arena' or coleccion.handle == 'sandalias-amalfi' or coleccion.handle == 'conjuntos' or coleccion.handle == 'conjuntos-costa-vela' -%}
+  {%- if coleccion.handle == 'conjuntos-lino-arena' or coleccion.handle == 'conjuntos-mar-arena' or coleccion.handle == 'sandalias-amalfi' or coleccion.handle == 'conjuntos' -%}
     {%- assign es_lino_arena = true -%}
   {%- endif -%}
 {%- endfor -%}
@@ -58,6 +58,20 @@
   <span style="font-size: 1.5rem; line-height: 1; flex-shrink: 0;">📣</span>
   <p style="margin: 0; font-size: 1.3rem; line-height: 1.5; color: #7a2e22;">
     <strong>AVISO IMPORTANTE:</strong> Debido a la alta demanda, el stock se está agotando rápidamente. Si aún puede hacer clic en <strong>"Agregar al carrito"</strong>, el artículo todavía está disponible.
+  </p>
+</div>
+{%- endif -%}
+
+{%- assign es_costa_vela = false -%}
+{%- for coleccion in product.collections -%}
+  {%- if coleccion.handle == 'conjuntos-costa-vela' -%}
+    {%- assign es_costa_vela = true -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if es_costa_vela -%}
+<div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; padding: 18px 22px; border-radius: 14px; background-color: #fdf1ef; border: 1px solid #f4d9d3; font-family: 'Assistant', sans-serif;">
+  <p style="margin: 0; font-size: 1.3rem; line-height: 1.5; color: #7a2e22;">
+    <strong>¿QUÉ NOS HACE ÚNICOS?</strong> Hechos a mano en ediciones limitadas. Diseñados para brindar confianza, comodidad y realzar la belleza natural. Debido a la alta demanda durante nuestra liquidación por mudanza, solo quedan algunos artículos disponibles. Si aún puede hacer clic en <strong>"Agregar al carrito"</strong>, el producto todavía está disponible.
   </p>
 </div>
 {%- endif -%}
