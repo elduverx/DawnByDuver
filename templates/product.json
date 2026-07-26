@@ -103,6 +103,14 @@
     "clientes_comunidad_P7VGmC": {
       "type": "clientes-comunidad",
       "blocks": {
+        "cliente_wNtBUp": {
+          "type": "cliente",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
+            "nombre": "Rocío L.",
+            "ciudad": "Madrid"
+          }
+        },
         "cliente_UTmzjm": {
           "type": "cliente",
           "settings": {
@@ -209,6 +217,7 @@
         }
       },
       "block_order": [
+        "cliente_wNtBUp",
         "cliente_UTmzjm",
         "cliente_gcBJDm",
         "cliente_LqF9cL",
