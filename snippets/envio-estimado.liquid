@@ -62,6 +62,16 @@
 </div>
 {%- endif -%}
 
+{%- if product.handle == 'sophia-conjunto-combinacion-esencial' -%}
+<div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; padding: 18px 22px; border-radius: 14px; background-color: #fdf1ef; border: 1px solid #f4d9d3; font-family: 'Assistant', sans-serif;">
+  <span style="font-size: 1.5rem; line-height: 1; flex-shrink: 0;">✨</span>
+  <p style="margin: 0; font-size: 1.3rem; line-height: 1.5; color: #7a2e22;">
+    <strong>FIN DE LA COLECCIÓN ✨</strong><br>
+    Nuestros modelos más populares se retiran definitivamente de la colección. Aprovecha hasta un 50% de descuento antes de que se agoten. Mientras el botón <strong>"Añadir al carrito"</strong> esté visible, tu talla aún está disponible.
+  </p>
+</div>
+{%- endif -%}
+
 {%- assign es_costa_vela = false -%}
 {%- for coleccion in product.collections -%}
   {%- if coleccion.handle == 'conjuntos-costa-vela' -%}
