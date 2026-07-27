@@ -12,44 +12,15 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
+        "title": { "type": "title", "settings": {} },
         "caption": {
           "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
-          }
+          "settings": { "text": "{{ product.metafields.descriptors.subtitle.value }}", "text_style": "subtitle" }
         },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button",
-            "swatch_shape": "none"
-          }
-        },
-        "buy_buttons_ndCrai": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "DESCRIPCIÓN",
-            "icon": "none",
-            "content": "",
-            "page": ""
-          }
-        },
+        "price": { "type": "price", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": { "picker_type": "button", "swatch_shape": "none" } },
+        "buy_buttons_ndCrai": { "type": "buy_buttons", "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true } },
+        "collapsible-row-2": { "type": "collapsible_tab", "settings": { "heading": "DESCRIPCIÓN", "icon": "none", "content": "", "page": "" } },
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
@@ -60,15 +31,7 @@
           }
         }
       },
-      "block_order": [
-        "title",
-        "caption",
-        "price",
-        "variant_picker",
-        "buy_buttons_ndCrai",
-        "collapsible-row-2",
-        "collapsible-row-3"
-      ],
+      "block_order": ["title", "caption", "price", "variant_picker", "buy_buttons_ndCrai", "collapsible-row-2", "collapsible-row-3"],
       "custom_css": [
         "/* --- ENCAJE PERFECTO BAJO LÍNEA SEPARADORA --- */:host,.product {padding-top: 55px !important; /* Reduce el espacio para que la foto suba hasta rozar la línea */}",
         ".product.page-width {max-width: 1300px !important; padding-left: 4rem !important; padding-right: 4rem !important; margin: 0 auto !important;}",
@@ -100,285 +63,61 @@
         "url_ver_todo": "shopify://collections/all"
       }
     },
-    "clientes_comunidad_P7VGmC": {
-      "type": "clientes-comunidad",
+    "resenas_fotos_clientes_robe_lina": {
+      "type": "resenas-fotos-clientes",
       "blocks": {
-        "cliente_wNtBUp": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
-            "nombre": "Rocío L.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_UTmzjm": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
-            "nombre": "Amparo C.",
-            "ciudad": "Valencia"
-          }
-        },
-        "cliente_gcBJDm": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
-            "nombre": "Lola M.",
-            "ciudad": "Barcelona"
-          }
-        },
-        "cliente_LqF9cL": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
-            "nombre": "Carolina M.",
-            "ciudad": "Murcia"
-          }
-        },
-        "cliente_x9674E": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
-            "nombre": "Elena F.",
-            "ciudad": "Galicia"
-          }
-        },
-        "cliente_bBXmmP": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_12_jul_2026_09_18_37.png",
-            "nombre": "Mireya P.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_zH3hCR": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.png",
-            "nombre": "Carmen L.",
-            "ciudad": "Málaga"
-          }
-        },
-        "cliente_7Bd7D9": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.png",
-            "nombre": "Sonia C.",
-            "ciudad": "Valencia"
-          }
-        },
-        "cliente_HYxrTi": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_28_35.png",
-            "nombre": "Carlos V.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_L4yRqD": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.png",
-            "nombre": "Amparo G.",
-            "ciudad": "Valencia"
-          }
-        },
-        "cliente_mDUC9K": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_44_18.png",
-            "nombre": "Mario P.",
-            "ciudad": "Barcelona"
-          }
-        },
-        "cliente_rfypcq": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_40_22.png",
-            "nombre": "María G.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_GJQVjg": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_00_11.png",
-            "nombre": "Lorena M.",
-            "ciudad": "Sevilla"
-          }
-        },
-        "cliente_CCF6kx": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.png",
-            "nombre": "Darío A.",
-            "ciudad": "Ávila"
-          }
-        }
+        "resena_1": { "type": "resena", "settings": { "texto": "Estoy encantada con mi compra. El conjunto es ligero, cómodo y aporta un toque de elegancia natural al instante. Perfecto para el verano.", "nombre": "Claire M.", "estrellas": 4, "verificado": true } },
+        "resena_2": { "type": "resena", "settings": { "texto": "Un vestido cómodo, ligero y con un corte impecable. Perfecto para combinar con sandalias en verano.", "nombre": "Valérie B.", "estrellas": 5, "verificado": true } },
+        "resena_3": { "type": "resena", "settings": { "texto": "Otro pedido muy bueno. Soy un cliente fiel y nunca me decepcionan.", "nombre": "Christine F.", "estrellas": 4, "verificado": true } },
+        "resena_4": { "type": "resena", "settings": { "texto": "Me puse este vestido durante mis vacaciones y fue muy agradable de llevar. Ligero, cómodo y elegante. Ideal para las noches de verano.", "nombre": "Inés D.", "estrellas": 5, "verificado": true } }
       },
-      "block_order": [
-        "cliente_wNtBUp",
-        "cliente_UTmzjm",
-        "cliente_gcBJDm",
-        "cliente_LqF9cL",
-        "cliente_x9674E",
-        "cliente_bBXmmP",
-        "cliente_zH3hCR",
-        "cliente_7Bd7D9",
-        "cliente_HYxrTi",
-        "cliente_L4yRqD",
-        "cliente_mDUC9K",
-        "cliente_rfypcq",
-        "cliente_GJQVjg",
-        "cliente_CCF6kx"
-      ],
-      "name": "Clientes comunidad",
+      "block_order": ["resena_1", "resena_2", "resena_3", "resena_4"],
+      "name": "Reseñas con fotos",
       "settings": {
-        "eyebrow": "VELA MADRID",
-        "titulo": "Clientes de nuestra comunidad",
-        "subtitulo": "Las prendas cobran vida cuando las llevan personas reales. Si quieres aparecer aquí, escríbenos a"
+        "titulo": "Lo que dicen nuestros clientes",
+        "subtitulo": "Más de 5.000 mujeres satisfechas",
+        "valoracion_texto": "4.8/5 - Reseñas verificadas",
+        "color_estrellas": "#16a34a"
       }
     },
     "rich_text_zH8Ky6": {
       "type": "rich-text",
       "blocks": {
-        "caption_FxrE8g": {
-          "type": "caption",
-          "settings": {
-            "caption": "VELA MADRID",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading_nzERWn": {
-          "type": "heading",
-          "settings": {
-            "heading": "ÚLTIMA OPORTUNIDAD",
-            "heading_size": "h2"
-          }
-        },
-        "text_7VAp87": {
-          "type": "text",
-          "settings": {
-            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
-          }
-        },
-        "discount_box_jwymXf": {
-          "type": "discount_box",
-          "settings": {}
-        },
-        "text_gw79bY": {
-          "type": "text",
-          "settings": {
-            "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
-          }
-        }
+        "caption_FxrE8g": { "type": "caption", "settings": { "caption": "VELA MADRID", "text_style": "caption-with-letter-spacing", "text_size": "medium" } },
+        "heading_nzERWn": { "type": "heading", "settings": { "heading": "ÚLTIMA OPORTUNIDAD", "heading_size": "h2" } },
+        "text_7VAp87": { "type": "text", "settings": { "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>" } },
+        "discount_box_jwymXf": { "type": "discount_box", "settings": {} },
+        "text_gw79bY": { "type": "text", "settings": { "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>" } }
       },
-      "block_order": [
-        "caption_FxrE8g",
-        "heading_nzERWn",
-        "text_7VAp87",
-        "discount_box_jwymXf",
-        "text_gw79bY"
-      ],
-      "custom_css": [
-        ".rich-text__wrapper p {color: #444 !important;}"
-      ],
+      "block_order": ["caption_FxrE8g", "heading_nzERWn", "text_7VAp87", "discount_box_jwymXf", "text_gw79bY"],
+      "custom_css": [".rich-text__wrapper p {color: #444 !important;}"],
       "name": "t:sections.rich-text.presets.name",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "",
-        "full_width": false,
-        "padding_top": 60,
-        "padding_bottom": 0
-      }
+      "settings": { "desktop_content_position": "center", "content_alignment": "center", "color_scheme": "", "full_width": false, "padding_top": 60, "padding_bottom": 0 }
     },
-    "garantias_AkQQfV": {
-      "type": "garantias",
-      "custom_css": [
-        "* {padding-top: 0px !important;}"
-      ],
-      "name": "Garantías",
-      "settings": {}
-    },
+    "garantias_AkQQfV": { "type": "garantias", "custom_css": ["* {padding-top: 0px !important;}"], "name": "Garantías", "settings": {} },
     "related-products": {
       "type": "related-products",
       "disabled": true,
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
+        "heading": "You may also like", "heading_size": "h2", "products_to_show": 4, "columns_desktop": 4, "columns_mobile": "2",
+        "color_scheme": "scheme-1", "image_ratio": "square", "image_shape": "default", "show_secondary_image": true,
+        "show_vendor": false, "show_rating": false, "padding_top": 36, "padding_bottom": 28
       }
     },
-    "resenas_clientes_vela": {
-      "type": "resenas-clientes",
-      "name": "Reseñas de clientes",
-      "settings": {}
-    },
+    "resenas_clientes_vela": { "type": "resenas-clientes", "name": "Reseñas de clientes", "settings": {} },
     "faq_vela_YhBhPV": {
       "type": "faq-vela",
       "blocks": {
-        "pregunta_f47GGL": {
-          "type": "pregunta",
-          "settings": {
-            "pregunta": "¿Puedo devolver mi pedido?",
-            "respuesta": "<p>Sí. Dispones de 30 días desde la recepción para solicitar un cambio o devolución. Queremos que compres con total tranquilidad y sin riesgos.</p>"
-          }
-        },
-        "pregunta_TWqRdx": {
-          "type": "pregunta",
-          "settings": {
-            "pregunta": "¿El pago es seguro?",
-            "respuesta": "<p>Todos los pagos se procesan mediante conexión SSL cifrada. Tu información está completamente protegida y nunca compartimos datos bancarios.</p>"
-          }
-        },
-        "pregunta_RRM6Ni": {
-          "type": "pregunta",
-          "settings": {
-            "pregunta": "¿Cómo tallan las prendas?",
-            "respuesta": "<p>Nuestras prendas tallan de forma estándar. Puedes consultar la guía de tallas en cada producto para asegurarte de elegir la medida perfecta.</p>"
-          }
-        },
-        "pregunta_naFrgL": {
-          "type": "pregunta",
-          "settings": {
-            "pregunta": "¿Dónde se fabrican los productos?",
-            "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br><br></p>"
-          }
-        }
+        "pregunta_f47GGL": { "type": "pregunta", "settings": { "pregunta": "¿Puedo devolver mi pedido?", "respuesta": "<p>Sí. Dispones de 30 días desde la recepción para solicitar un cambio o devolución. Queremos que compres con total tranquilidad y sin riesgos.</p>" } },
+        "pregunta_TWqRdx": { "type": "pregunta", "settings": { "pregunta": "¿El pago es seguro?", "respuesta": "<p>Todos los pagos se procesan mediante conexión SSL cifrada. Tu información está completamente protegida y nunca compartimos datos bancarios.</p>" } },
+        "pregunta_RRM6Ni": { "type": "pregunta", "settings": { "pregunta": "¿Cómo tallan las prendas?", "respuesta": "<p>Nuestras prendas tallan de forma estándar. Puedes consultar la guía de tallas en cada producto para asegurarte de elegir la medida perfecta.</p>" } },
+        "pregunta_naFrgL": { "type": "pregunta", "settings": { "pregunta": "¿Dónde se fabrican los productos?", "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br><br></p>" } }
       },
-      "block_order": [
-        "pregunta_f47GGL",
-        "pregunta_TWqRdx",
-        "pregunta_RRM6Ni",
-        "pregunta_naFrgL"
-      ],
+      "block_order": ["pregunta_f47GGL", "pregunta_TWqRdx", "pregunta_RRM6Ni", "pregunta_naFrgL"],
       "custom_css": [],
       "name": "FAQ",
-      "settings": {
-        "titulo": "Preguntas Frecuentes"
-      }
+      "settings": { "titulo": "Preguntas Frecuentes" }
     }
   },
-  "order": [
-    "main",
-    "combina_look_heaitB",
-    "clientes_comunidad_P7VGmC",
-    "rich_text_zH8Ky6",
-    "garantias_AkQQfV",
-    "related-products",
-    "resenas_clientes_vela",
-    "faq_vela_YhBhPV"
-  ]
+  "order": ["main", "combina_look_heaitB", "resenas_fotos_clientes_robe_lina", "rich_text_zH8Ky6", "garantias_AkQQfV", "related-products", "resenas_clientes_vela", "faq_vela_YhBhPV"]
 }
