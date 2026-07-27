@@ -38,7 +38,6 @@
   .rfc-star--vacio path { fill: #d1d5db; }
 
   .rfc-slider-wrapper {
-    position: relative;
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 40px;
@@ -50,8 +49,8 @@
     scroll-behavior: smooth;
   }
   .rfc-card {
-    min-width: calc(25% - 15px);
     flex: 0 0 auto;
+    width: calc(25% - 15px);
     text-align: left;
     border: 1px solid #ececec;
     border-radius: 4px;
@@ -111,37 +110,38 @@
     color: #121212;
     margin: 0;
   }
+  .rfc-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+  }
   .rfc-btn {
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
     background: #ffffff;
-    border: 1px solid #e5e7eb;
-    width: 36px;
-    height: 36px;
+    border: 1px solid #d1d5db;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 2;
-    font-size: 1.4rem;
-    color: #000;
-    border-radius: 50%;
+    font-size: 1.3rem;
+    color: #6b7280;
     touch-action: manipulation;
   }
-  .rfc-btn--prev { left: 0px; }
-  .rfc-btn--next { right: 0px; }
+  .rfc-btn:hover {
+    background: #f9fafb;
+  }
 
   @media screen and (max-width: 989px) {
-    .rfc-card { min-width: calc(50% - 10px); }
+    .rfc-card { width: calc(50% - 10px); }
   }
   @media screen and (max-width: 599px) {
-    .rfc-card { min-width: 85%; }
+    .rfc-card { width: 85%; }
     .rfc-section { padding: 40px 0; }
     .rfc-slider-wrapper { padding: 0 24px; }
-    .rfc-btn { width: 30px; height: 30px; font-size: 1.2rem; }
-    .rfc-btn--prev { left: -6px; }
-    .rfc-btn--next { right: -6px; }
   }
 {%- endstyle -%}
 
@@ -161,7 +161,6 @@
   </div>
 
   <div class="rfc-slider-wrapper">
-    <button class="rfc-btn rfc-btn--prev" onclick="rfcMoverSlider('{{ section.id }}', -1)" aria-label="Anterior">&#8249;</button>
     <div class="rfc-grid" id="rfcSlider-{{ section.id }}">
       {%- for block in section.blocks -%}
         <div class="rfc-card" {{ block.shopify_attributes }}>
@@ -187,7 +186,11 @@
         </div>
       {%- endfor -%}
     </div>
-    <button class="rfc-btn rfc-btn--next" onclick="rfcMoverSlider('{{ section.id }}', 1)" aria-label="Siguiente">&#8250;</button>
+
+    <div class="rfc-nav">
+      <button class="rfc-btn" onclick="rfcMoverSlider('{{ section.id }}', -1)" aria-label="Anterior">&#8249;</button>
+      <button class="rfc-btn" onclick="rfcMoverSlider('{{ section.id }}', 1)" aria-label="Siguiente">&#8250;</button>
+    </div>
   </div>
 </div>
 
