@@ -103,13 +103,43 @@
     "resenas_fotos_clientes_robe_lina": {
       "type": "resenas-fotos-clientes",
       "blocks": {
+        "resena_iG4xFj": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_27_27.png",
+            "texto": "El vestido es tal como aparece en la fotografía y puesto queda muy bien, no se queda pegado al cuerpo. Es de ese tipo de vestidos que sirven para diferentes ocasiones. La tela es de algodón, con lo que resulta fresquito para esta época del año.",
+            "nombre": "Paula J.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_YpRUbU": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_17_48.png",
+            "texto": "Me gusta mucho es el segundo que me compro, de diferente color claro.",
+            "nombre": "Lorena A.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_6wbfet": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_06_04.png",
+            "texto": "Me encanta, es muy fresquito ahora para la calor que está haciendo. Lo recomiendo.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
         "resena_1": {
           "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/Captura_de_pantalla_2026-07-27_a_las_18.36.56.png",
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_10_27.png",
             "texto": "Estoy encantada con mi compra. El conjunto es ligero, cómodo y aporta un toque de elegancia natural al instante. Perfecto para el verano.",
             "nombre": "Carmen M.",
-            "estrellas": 4,
+            "estrellas": 5,
             "verificado": true
           }
         },
@@ -126,8 +156,8 @@
         "resena_3": {
           "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/Captura_de_pantalla_2026-07-27_a_las_18.28.11.png",
-            "texto": "Otro pedido muy bueno. Soy un cliente fiel y nunca me decepcionan.",
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_13_28.png",
+            "texto": "Otro pedido muy bueno. Soy una cliente fiel y nunca me decepcionan.",
             "nombre": "Cristina F.",
             "estrellas": 4,
             "verificado": true
@@ -145,6 +175,9 @@
         }
       },
       "block_order": [
+        "resena_iG4xFj",
+        "resena_YpRUbU",
+        "resena_6wbfet",
         "resena_1",
         "resena_2",
         "resena_3",
