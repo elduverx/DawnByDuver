@@ -37,21 +37,28 @@
   .rfc-star--lleno path { fill: var(--rfc-star-color, #16a34a); }
   .rfc-star--vacio path { fill: #d1d5db; }
 
-  .rfc-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+  .rfc-slider-wrapper {
+    position: relative;
     max-width: 1300px;
     margin: 0 auto;
     padding: 0 40px;
   }
+  .rfc-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
   .rfc-card {
+    min-width: calc(25% - 15px);
+    flex: 0 0 auto;
     text-align: left;
     border: 1px solid #ececec;
     border-radius: 4px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
   }
   .rfc-card__imagen {
     width: 100%;
@@ -104,13 +111,37 @@
     color: #121212;
     margin: 0;
   }
+  .rfc-btn {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 1.4rem;
+    color: #000;
+    border-radius: 50%;
+    touch-action: manipulation;
+  }
+  .rfc-btn--prev { left: 0px; }
+  .rfc-btn--next { right: 0px; }
 
   @media screen and (max-width: 989px) {
-    .rfc-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+    .rfc-card { min-width: calc(50% - 10px); }
   }
   @media screen and (max-width: 599px) {
-    .rfc-grid { grid-template-columns: 1fr; }
+    .rfc-card { min-width: 85%; }
     .rfc-section { padding: 40px 0; }
+    .rfc-slider-wrapper { padding: 0 24px; }
+    .rfc-btn { width: 30px; height: 30px; font-size: 1.2rem; }
+    .rfc-btn--prev { left: -6px; }
+    .rfc-btn--next { right: -6px; }
   }
 {%- endstyle -%}
 
@@ -129,32 +160,50 @@
     <span class="rfc-estrellas-badge">{{ estrella_llena }}{{ estrella_llena }}{{ estrella_llena }}{{ estrella_llena }}{{ estrella_llena }}</span>
   </div>
 
-  <div class="rfc-grid">
-    {%- for block in section.blocks -%}
-      <div class="rfc-card" {{ block.shopify_attributes }}>
-        <div class="rfc-card__imagen">
-          {%- if block.settings.imagen != blank -%}
-            <img src="{{ block.settings.imagen | image_url: width: 600 }}" alt="{{ block.settings.nombre }}" loading="lazy">
-          {%- endif -%}
-        </div>
-        <div class="rfc-card__contenido">
-          <p class="rfc-card__texto">{{ block.settings.texto }}</p>
-          <div class="rfc-card__fila-inferior">
-            <div class="rfc-card__estrellas">
-              {%- for i in (1..5) -%}
-                {%- if i <= block.settings.estrellas -%}{{ estrella_llena }}{%- else -%}{{ estrella_vacia }}{%- endif -%}
-              {%- endfor -%}
-            </div>
-            {%- if block.settings.verificado -%}
-              <span class="rfc-card__badge">Verificado</span>
+  <div class="rfc-slider-wrapper">
+    <button class="rfc-btn rfc-btn--prev" onclick="rfcMoverSlider('{{ section.id }}', -1)" aria-label="Anterior">&#8249;</button>
+    <div class="rfc-grid" id="rfcSlider-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="rfc-card" {{ block.shopify_attributes }}>
+          <div class="rfc-card__imagen">
+            {%- if block.settings.imagen != blank -%}
+              <img src="{{ block.settings.imagen | image_url: width: 600 }}" alt="{{ block.settings.nombre }}" loading="lazy">
             {%- endif -%}
           </div>
-          <p class="rfc-card__nombre">{{ block.settings.nombre }}</p>
+          <div class="rfc-card__contenido">
+            <p class="rfc-card__texto">{{ block.settings.texto }}</p>
+            <div class="rfc-card__fila-inferior">
+              <div class="rfc-card__estrellas">
+                {%- for i in (1..5) -%}
+                  {%- if i <= block.settings.estrellas -%}{{ estrella_llena }}{%- else -%}{{ estrella_vacia }}{%- endif -%}
+                {%- endfor -%}
+              </div>
+              {%- if block.settings.verificado -%}
+                <span class="rfc-card__badge">Verificado</span>
+              {%- endif -%}
+            </div>
+            <p class="rfc-card__nombre">{{ block.settings.nombre }}</p>
+          </div>
         </div>
-      </div>
-    {%- endfor -%}
+      {%- endfor -%}
+    </div>
+    <button class="rfc-btn rfc-btn--next" onclick="rfcMoverSlider('{{ section.id }}', 1)" aria-label="Siguiente">&#8250;</button>
   </div>
 </div>
+
+<script>
+  function rfcMoverSlider(sectionId, dir) {
+    var slider = document.getElementById('rfcSlider-' + sectionId);
+    if (!slider) return;
+    var card = slider.querySelector('.rfc-card');
+    if (!card) return;
+    var gap = 20;
+    var cardWidth = card.offsetWidth + gap;
+    var maxScroll = slider.scrollWidth - slider.clientWidth;
+    var newScroll = slider.scrollLeft + (dir * cardWidth);
+    slider.scrollLeft = Math.max(0, Math.min(newScroll, maxScroll));
+  }
+</script>
 
 {% schema %}
 {
