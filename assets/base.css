@@ -6005,3 +6005,10 @@ cart-drawer.is-empty [class*="close"]::after {
 .product-form__input--pill input.disabled + label {
   display: none !important;
 }
+/* Subtítulo del banner de home en blanco sólido para mejor legibilidad */
+.banner__text.subtitle {
+  color: #ffffff !important;
+}
+.vela-cincuenta {
+  font-size: 1.2em;
+}
