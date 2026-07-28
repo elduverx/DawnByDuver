@@ -15,8 +15,8 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Nuestro mayor descuento hasta la fecha: 50%",
-            "text_style": "body"
+            "text": "<strong>REBAJAS VERANO -50% EN TODA LA WEB</strong>",
+            "text_style": "subtitle"
           }
         },
         "button": {
