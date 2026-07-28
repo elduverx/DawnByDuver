@@ -15,7 +15,9 @@
         "title": {
           "type": "title",
           "settings": {
-            "foto_cliente_1": "shopify://shop_images/Captura3.png"
+            "foto_cliente_1": "shopify://shop_images/Captura3.png",
+            "foto_cliente_2": "shopify://shop_images/Captura2.png",
+            "foto_cliente_3": "shopify://shop_images/Captura1_5455319a-8377-414b-8cd6-b283144d81da.png"
           }
         },
         "caption": {
