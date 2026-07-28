@@ -14,7 +14,9 @@
       "blocks": {
         "title": {
           "type": "title",
-          "settings": {}
+          "settings": {
+            "foto_cliente_1": "shopify://shop_images/Captura3.png"
+          }
         },
         "caption": {
           "type": "text",
