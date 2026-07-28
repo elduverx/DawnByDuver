@@ -196,13 +196,33 @@
             "link_label": "DESCUBRIR",
             "link": "shopify://collections/gafas-de-sol-mujer"
           }
+        },
+        "collection_9xwrcU": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_28_jul_2026_23_01_23.png",
+            "title": "Sandalias Amalfi",
+            "link_label": "DESCUBRIR",
+            "link": "shopify://collections/sandalias-amalfi"
+          }
+        },
+        "collection_Xw9rwi": {
+          "type": "collection",
+          "settings": {
+            "image": "shopify://shop_images/Captura_de_pantalla_2026-07-28_a_las_23.02.55.png",
+            "title": "Conjuntos Cóctel & Costa",
+            "link_label": "DESCUBRIR",
+            "link": "shopify://collections/conjuntos-costa-vela"
+          }
         }
       },
       "block_order": [
         "collection_Jg3E6H",
         "collection_3RQxbP",
         "collection_4WLEUJ",
-        "collection_rFjK3T"
+        "collection_rFjK3T",
+        "collection_9xwrcU",
+        "collection_Xw9rwi"
       ],
       "custom_css": [],
       "settings": {
