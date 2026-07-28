@@ -12,10 +12,17 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
+        "heading_wyxeKj": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>REBAJAS VERANO</strong>",
+            "heading_size": "h1"
+          }
+        },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<strong>REBAJAS VERANO -50% EN TODA LA WEB</strong>",
+            "text": "<strong>-50% EN TODA LA WEB</strong>",
             "text_style": "subtitle"
           }
         },
@@ -32,6 +39,7 @@
         }
       },
       "block_order": [
+        "heading_wyxeKj",
         "text",
         "button"
       ],
