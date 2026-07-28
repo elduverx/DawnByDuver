@@ -147,16 +147,6 @@
             "verificado": true
           }
         },
-        "resena_2": {
-          "type": "resena",
-          "settings": {
-            "imagen": "shopify://shop_images/Captura_de_pantalla_2026-07-27_a_las_18.25.58.png",
-            "texto": "Un vestido cómodo, ligero y con un corte impecable. Perfecto para combinar con sandalias en verano.",
-            "nombre": "Valeria B.",
-            "estrellas": 5,
-            "verificado": true
-          }
-        },
         "resena_3": {
           "type": "resena",
           "settings": {
@@ -164,6 +154,16 @@
             "texto": "Otro pedido muy bueno. Soy una cliente fiel y nunca me decepcionan.",
             "nombre": "Cristina F.",
             "estrellas": 4,
+            "verificado": true
+          }
+        },
+        "resena_2": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/Captura_de_pantalla_2026-07-27_a_las_18.25.58.png",
+            "texto": "Un vestido cómodo, ligero y con un corte impecable. Perfecto para combinar con sandalias en verano.",
+            "nombre": "Valeria B.",
+            "estrellas": 5,
             "verificado": true
           }
         },
@@ -183,8 +183,8 @@
         "resena_YpRUbU",
         "resena_6wbfet",
         "resena_1",
-        "resena_2",
         "resena_3",
+        "resena_2",
         "resena_4"
       ],
       "name": "Reseñas con fotos",
