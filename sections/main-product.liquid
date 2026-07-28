@@ -259,9 +259,15 @@
                 {%- elsif es_sandalias_amalfi -%}
                   <div class="vela-trust-row">
                     <div class="vela-trust-avatars">
-                      <img src="{{ 'ChatGPT_Image_27_jul_2026_19_27_27.png' | file_img_url: '100x100' }}" alt="" loading="lazy" width="28" height="28">
-                      <img src="{{ 'ChatGPT_Image_27_jul_2026_19_17_48.png' | file_img_url: '100x100' }}" alt="" loading="lazy" width="28" height="28">
-                      <img src="{{ 'ChatGPT_Image_27_jul_2026_19_06_04.png' | file_img_url: '100x100' }}" alt="" loading="lazy" width="28" height="28">
+                      {%- if block.settings.foto_cliente_1 != blank -%}
+                        <img src="{{ block.settings.foto_cliente_1 | image_url: width: 80 }}" alt="" loading="lazy" width="28" height="28">
+                      {%- endif -%}
+                      {%- if block.settings.foto_cliente_2 != blank -%}
+                        <img src="{{ block.settings.foto_cliente_2 | image_url: width: 80 }}" alt="" loading="lazy" width="28" height="28">
+                      {%- endif -%}
+                      {%- if block.settings.foto_cliente_3 != blank -%}
+                        <img src="{{ block.settings.foto_cliente_3 | image_url: width: 80 }}" alt="" loading="lazy" width="28" height="28">
+                      {%- endif -%}
                       <span class="vela-trust-check" aria-hidden="true">
                         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
