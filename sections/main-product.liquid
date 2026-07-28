@@ -228,6 +228,14 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
+                {%- liquid
+                  assign es_sandalias_amalfi = false
+                  for coll in product.collections
+                    if coll.handle == 'sandalias-amalfi'
+                      assign es_sandalias_amalfi = true
+                    endif
+                  endfor
+                -%}
                 {%- if product.handle == 'robe-lina-la-elegancia-natural-en-el-dia-a-dia' -%}
                   <div class="vela-trust-row">
                     <div class="vela-trust-avatars">
@@ -247,6 +255,20 @@
                       </span>
                     </div>
                     <span class="vela-trust-text">+15k clientes ya confían en <strong>Vela Madrid</strong></span>
+                  </div>
+                {%- elsif es_sandalias_amalfi -%}
+                  <div class="vela-trust-row">
+                    <div class="vela-trust-avatars">
+                      <img src="{{ 'ChatGPT_Image_27_jul_2026_19_27_27.png' | file_img_url: '100x100' }}" alt="" loading="lazy" width="28" height="28">
+                      <img src="{{ 'ChatGPT_Image_27_jul_2026_19_17_48.png' | file_img_url: '100x100' }}" alt="" loading="lazy" width="28" height="28">
+                      <img src="{{ 'ChatGPT_Image_27_jul_2026_19_06_04.png' | file_img_url: '100x100' }}" alt="" loading="lazy" width="28" height="28">
+                      <span class="vela-trust-check" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </span>
+                    </div>
+                    <span class="vela-trust-text">+15k clientas ya confían en <strong>Vela Madrid</strong></span>
                   </div>
                 {%- endif -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
