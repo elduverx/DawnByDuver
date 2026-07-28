@@ -103,6 +103,67 @@
     .vela-notice-stock strong {
       color: #5C211D;
     }
+
+    .vela-trust-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .vela-trust-avatars {
+      display: flex;
+    }
+
+    .vela-trust-avatars span {
+      width: 2.8rem;
+      height: 2.8rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+      border: 2px solid #fff;
+      margin-left: -0.8rem;
+    }
+
+    .vela-trust-avatars span:first-child {
+      margin-left: 0;
+    }
+
+    .vela-trust-avatars span:nth-child(1) { background: #C9A15A; }
+    .vela-trust-avatars span:nth-child(2) { background: #2B2B2B; }
+    .vela-trust-avatars span:nth-child(3) { background: #7A6A46; }
+    .vela-trust-avatars span:nth-child(4) { background: #A85751; }
+
+    .vela-trust-text {
+      font-size: 1.3rem;
+      color: #2B2B2B;
+    }
+
+    .vela-trust-text strong {
+      color: #1A1A1A;
+    }
+
+    .vela-trust-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0.4rem 0 1rem 0;
+    }
+
+    .vela-trust-stars {
+      color: #C9A15A;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+    }
+
+    .vela-trust-rating-text {
+      font-size: 1.3rem;
+      color: #444;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
@@ -163,6 +224,17 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
+                {%- if product.handle == 'robe-lina-la-elegancia-natural-en-el-dia-a-dia' -%}
+                  <div class="vela-trust-row">
+                    <div class="vela-trust-avatars">
+                      <span>M</span>
+                      <span>A</span>
+                      <span>L</span>
+                      <span>C</span>
+                    </div>
+                    <span class="vela-trust-text">+15k clientes ya confían en <strong>Vela Madrid</strong></span>
+                  </div>
+                {%- endif -%}
                 <div class="product__title" {{ block.shopify_attributes }}>
                   <h1>{{ product.title | escape }}</h1>
                   <a href="{{ product.url }}" class="product__title">
@@ -171,6 +243,12 @@
                     </h2>
                   </a>
                 </div>
+                {%- if product.handle == 'robe-lina-la-elegancia-natural-en-el-dia-a-dia' -%}
+                  <div class="vela-trust-rating">
+                    <span class="vela-trust-stars" aria-hidden="true">★★★★★</span>
+                    <span class="vela-trust-rating-text">4.8/5.0 (1232+ reseñas)</span>
+                  </div>
+                {%- endif -%}
               {%- when 'price' -%}
                 <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                   {%- render 'price',
