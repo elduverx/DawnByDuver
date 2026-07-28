@@ -6009,3 +6009,6 @@ cart-drawer.is-empty [class*="close"]::after {
 .banner__text.subtitle {
   color: #ffffff !important;
 }
+.banner__text.subtitle::first-line {
+  font-size: 1.4em;
+}
