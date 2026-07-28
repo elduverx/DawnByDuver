@@ -6010,5 +6010,5 @@ cart-drawer.is-empty [class*="close"]::after {
   color: #ffffff !important;
 }
 .banner__text.subtitle::first-line {
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
