@@ -45,10 +45,10 @@
   .rfc-grid {
     display: flex;
     gap: 20px;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    touch-action: pan-y;
   }
   .rfc-grid::-webkit-scrollbar {
     display: none;
@@ -211,6 +211,40 @@
     var newScroll = slider.scrollLeft + (dir * cardWidth);
     slider.scrollLeft = Math.max(0, Math.min(newScroll, maxScroll));
   }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var sliders = document.querySelectorAll('.rfc-grid');
+    sliders.forEach(function (slider) {
+      var startX = 0;
+      var startY = 0;
+      var swiping = false;
+      var handled = false;
+      var sectionId = slider.id.replace('rfcSlider-', '');
+
+      slider.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        swiping = true;
+        handled = false;
+      }, { passive: true });
+
+      slider.addEventListener('touchmove', function (e) {
+        if (!swiping || handled) return;
+        var diffX = e.touches[0].clientX - startX;
+        var diffY = e.touches[0].clientY - startY;
+
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
+          e.preventDefault();
+          handled = true;
+          rfcMoverSlider(sectionId, diffX > 0 ? 1 : -1);
+        }
+      }, { passive: false });
+
+      slider.addEventListener('touchend', function () {
+        swiping = false;
+      });
+    });
+  });
 </script>
 
 {% schema %}
