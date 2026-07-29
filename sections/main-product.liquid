@@ -233,14 +233,6 @@
                   {{- block.settings.text -}}
                 </p>
               {%- when 'title' -%}
-                {%- liquid
-                  assign es_sandalias_amalfi = false
-                  for coll in product.collections
-                    if coll.handle == 'sandalias-amalfi'
-                      assign es_sandalias_amalfi = true
-                    endif
-                  endfor
-                -%}
                 {%- if product.handle == 'robe-lina-la-elegancia-natural-en-el-dia-a-dia' -%}
                   <div class="vela-trust-row">
                     <div class="vela-trust-avatars">
@@ -261,7 +253,7 @@
                     </div>
                     <span class="vela-trust-text">Paula J. y +15k clientes ya confían en <strong>Vela Madrid</strong></span>
                   </div>
-                {%- elsif es_sandalias_amalfi -%}
+                {%- else -%}
                   <div class="vela-trust-rating">
                     <span class="vela-trust-stars" aria-hidden="true">★★★★★</span>
                     <span class="vela-trust-rating-text">4.8/5.0 (1232+ reseñas)</span>
