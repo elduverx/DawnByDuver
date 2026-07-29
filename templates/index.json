@@ -214,6 +214,86 @@
         "padding_bottom": 40
       }
     },
+    "resenas_fotos_clientes_fkgTJd": {
+      "type": "resenas-fotos-clientes",
+      "blocks": {
+        "resena_HTWcFx": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
+            "texto": "La calidad está muy bien y el color es exactamente el que esperaba. He recibido varios cumplidos desde que me lo puse.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_AijEpb": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_12_jul_2026_09_18_37.png",
+            "texto": "Muy contenta con la compra. El diseño es precioso y sienta muy bien. El envío tardó un poco más de lo esperado, pero mereció la pena.",
+            "nombre": "María G.",
+            "estrellas": 4,
+            "verificado": true
+          }
+        },
+        "resena_mftyM9": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_27_27.png",
+            "texto": "Estoy encantada con mi compra, la calidad superó mis expectativas.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_qFWdpm": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
+            "texto": "Todo perfecto. El pedido llegó correctamente, la talla coincide y la prenda queda muy favorecedora. Muy buena experiencia con Vela Madrid.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_kFL63T": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
+            "texto": "Compra totalmente recomendable. La prenda es cómoda, no transparenta y tiene una caída muy bonita. Sin duda compraré de nuevo.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_ey6yrq": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
+            "texto": "Me encanta cómo queda. Es una prenda cómoda, favorecedora y perfecta tanto para diario como para una ocasión un poco más especial.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        }
+      },
+      "block_order": [
+        "resena_HTWcFx",
+        "resena_AijEpb",
+        "resena_mftyM9",
+        "resena_qFWdpm",
+        "resena_kFL63T",
+        "resena_ey6yrq"
+      ],
+      "name": "Reseñas con fotos",
+      "settings": {
+        "titulo": "¿Que dicen nuestros clientes?",
+        "subtitulo": "Más de 15.000 clientes satisfechos",
+        "valoracion_texto": "Excelente 4.8/5",
+        "color_estrellas": "#F8C41B"
+      }
+    },
     "editorial_banner_g9Wq7H": {
       "type": "editorial-banner",
       "name": "Banner editorial",
@@ -232,6 +312,7 @@
     "philosophy",
     "categories",
     "featured_collection",
+    "resenas_fotos_clientes_fkgTJd",
     "editorial_banner_g9Wq7H",
     "garantias_FMf9m7"
   ]
