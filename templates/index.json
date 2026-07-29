@@ -71,7 +71,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "ÚLTIMA OPORTUNIDAD",
+            "heading": "<strong>ÚLTIMA OPORTUNIDAD</strong>",
             "heading_size": "h2"
           }
         },
@@ -161,40 +161,22 @@
     "featured_collection": {
       "type": "featured-collection",
       "blocks": {
-        "collection_Jg3E6H": {
-          "type": "collection",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_jul_2026_19_33_18.png",
-            "title": "Gafas de sol Hombre",
-            "link_label": "DESCUBRIR",
-            "link": "shopify://collections/gafas-de-sol"
-          }
-        },
         "collection_3RQxbP": {
           "type": "collection",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_7_jul_2026_18_57_16_647f7757-7df9-49fe-b3a4-138b1e700329.png",
-            "title": "Conjuntos",
+            "title": "Conjuntos Verano",
             "link_label": "DESCUBRIR",
             "link": "shopify://collections/conjuntos"
           }
         },
-        "collection_4WLEUJ": {
+        "collection_Xw9rwi": {
           "type": "collection",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_7_jul_2026_19_21_10.png",
-            "title": "Camisas",
+            "image": "shopify://shop_images/Captura_de_pantalla_2026-07-28_a_las_23.32.19.png",
+            "title": "Conjuntos Cóctel & Costa",
             "link_label": "DESCUBRIR",
-            "link": "shopify://collections/camisas"
-          }
-        },
-        "collection_rFjK3T": {
-          "type": "collection",
-          "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_6_jul_2026_19_24_23.png",
-            "title": "Gafas de sol Mujer",
-            "link_label": "DESCUBRIR",
-            "link": "shopify://collections/gafas-de-sol-mujer"
+            "link": "shopify://collections/conjuntos-costa-vela"
           }
         },
         "collection_9xwrcU": {
@@ -206,28 +188,26 @@
             "link": "shopify://collections/sandalias-amalfi"
           }
         },
-        "collection_Xw9rwi": {
+        "collection_rFjK3T": {
           "type": "collection",
           "settings": {
-            "image": "shopify://shop_images/Captura_de_pantalla_2026-07-28_a_las_23.32.19.png",
-            "title": "Conjuntos Cóctel & Costa",
+            "image": "shopify://shop_images/ChatGPT_Image_6_jul_2026_19_24_23.png",
+            "title": "Gafas de sol",
             "link_label": "DESCUBRIR",
-            "link": "shopify://collections/conjuntos-costa-vela"
+            "link": "shopify://collections/gafas-de-sol-mujer"
           }
         }
       },
       "block_order": [
-        "collection_Jg3E6H",
         "collection_3RQxbP",
-        "collection_4WLEUJ",
-        "collection_rFjK3T",
+        "collection_Xw9rwi",
         "collection_9xwrcU",
-        "collection_Xw9rwi"
+        "collection_rFjK3T"
       ],
       "custom_css": [],
       "settings": {
         "eyebrow": "SELECCIÓN",
-        "title": "COLECCIONES DESTACADAS",
+        "title": "COLECCIONES DESTACADAS MUJER",
         "subtitle": "Descubre las categorías más queridas de nuestra tienda.",
         "color_scheme": "scheme-1",
         "padding_top": 40,
