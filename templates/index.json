@@ -217,12 +217,92 @@
     "resenas_fotos_clientes_fkgTJd": {
       "type": "resenas-fotos-clientes",
       "blocks": {
+        "resena_BFLBWV": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_00_11.webp",
+            "texto": "Me ha gustado muchísimo. Es una prenda muy versátil y queda igual de bien con sandalias que con un calzado más arreglado.",
+            "nombre": "Lorena M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_dmVVPe": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.webp",
+            "texto": "Muy contenta con la compra. Es cómoda, tiene buena caída y el tejido se siente agradable sobre la piel.",
+            "nombre": "Carmen L.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
         "resena_HTWcFx": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
             "texto": "La calidad está muy bien y el color es exactamente el que esperaba. He recibido varios cumplidos desde que me lo puse.",
             "nombre": "Lola M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_ghQMKJ": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_40_22.webp",
+            "texto": "Muy satisfecha. La he lavado varias veces y mantiene perfectamente la forma y el color. La recomiendo.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_LPprJJ": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_44_18.webp",
+            "texto": "Me ha gustado especialmente el tejido, ya que resulta ligero y no da demasiado calor. Muy buena compra.",
+            "nombre": "Mario P.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_EVra7f": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.webp",
+            "texto": "Me ha gustado mucho la calidad del tejido y cómo se adapta al cuerpo. Es cómoda y no aprieta en ninguna zona.",
+            "nombre": "Amparo G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_hjMTkV": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.webp",
+            "texto": "Pantalón cómodo y práctico. La talla es la habitual y queda muy bien.",
+            "nombre": "Darío A.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_ek8imC": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_28_35.webp",
+            "texto": "Todo perfecto. El color coincide con el de la web, la talla es correcta y la prenda sienta muy bien.",
+            "nombre": "Carlos V.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_JwymPa": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.webp",
+            "texto": "Compré una unidad para probar y me ha gustado tanto que seguramente pediré otro color. Muy satisfecha con la compra.",
+            "nombre": "Sonia C.",
             "estrellas": 5,
             "verificado": true
           }
@@ -234,6 +314,16 @@
             "texto": "Muy contenta con la compra. El diseño es precioso y sienta muy bien. El envío tardó un poco más de lo esperado, pero mereció la pena.",
             "nombre": "Mireya P.",
             "estrellas": 4,
+            "verificado": true
+          }
+        },
+        "resena_7Mzaaf": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
+            "texto": "Estoy muy contenta con mi pedido. El color es precioso, la talla corresponde y la prenda resulta muy cómoda durante todo el día.",
+            "nombre": "Carolina M.",
+            "estrellas": 5,
             "verificado": true
           }
         },
@@ -279,8 +369,17 @@
         }
       },
       "block_order": [
+        "resena_BFLBWV",
+        "resena_dmVVPe",
         "resena_HTWcFx",
+        "resena_ghQMKJ",
+        "resena_LPprJJ",
+        "resena_EVra7f",
+        "resena_hjMTkV",
+        "resena_ek8imC",
+        "resena_JwymPa",
         "resena_AijEpb",
+        "resena_7Mzaaf",
         "resena_mftyM9",
         "resena_qFWdpm",
         "resena_kFL63T",
@@ -291,7 +390,7 @@
         "titulo": "¿Que dicen nuestros clientes?",
         "subtitulo": "Más de 15.000 clientes satisfechos",
         "valoracion_texto": "Excelente 4.8/5",
-        "color_estrellas": "#F8C41B"
+        "color_estrellas": "#f8c41b"
       }
     },
     "editorial_banner_g9Wq7H": {
