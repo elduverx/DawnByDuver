@@ -1,6 +1,10 @@
 /*
  * ------------------------------------------------------------
  * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
 {
@@ -23,18 +27,32 @@
             "text_style": "subtitle"
           }
         },
-        "price": { "type": "price", "settings": {} },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
         "variant_picker": {
           "type": "variant_picker",
-          "settings": { "picker_type": "button", "swatch_shape": "none" }
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "none"
+          }
         },
         "buy_buttons_ndCrai": {
           "type": "buy_buttons",
-          "settings": { "show_dynamic_checkout": true, "show_gift_card_recipient": true }
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
-          "settings": { "heading": "DESCRIPCIÓN", "icon": "none", "content": "", "page": "" }
+          "settings": {
+            "heading": "DESCRIPCIÓN",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
@@ -46,11 +64,19 @@
           }
         }
       },
-      "block_order": ["title", "caption", "price", "variant_picker", "buy_buttons_ndCrai", "collapsible-row-2", "collapsible-row-3"],
+      "block_order": [
+        "title",
+        "caption",
+        "price",
+        "variant_picker",
+        "buy_buttons_ndCrai",
+        "collapsible-row-2",
+        "collapsible-row-3"
+      ],
       "custom_css": [
         "/* --- ENCAJE PERFECTO BAJO LÍNEA SEPARADORA --- */:host,.product {padding-top: 55px !important;}",
         ".product.page-width {max-width: 1300px !important; padding-left: 4rem !important; padding-right: 4rem !important; margin: 0 auto !important;}",
-        " /* Ajuste automático para pantallas móviles */@media screen and (max-width: 749px) {:host, .product {padding-top: 10px !important;} .product.page-width {padding-left: 2rem !important; padding-right: 2rem !important; }}"
+        " /* Ajuste automático para pantallas móviles */@media screen and (max-width: 749px) {:host, .product {padding-top: 10px !important; } .product.page-width {padding-left: 2rem !important; padding-right: 2rem !important; }}"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -80,14 +106,66 @@
     },
     "resenas_fotos_sophie": {
       "type": "resenas-fotos-clientes",
-      "name": "Reseñas con fotos",
       "blocks": {
-        "resena_1": { "type": "resena", "settings": { "imagen": "", "texto": "", "nombre": "", "estrellas": 5, "verificado": true } },
-        "resena_2": { "type": "resena", "settings": { "imagen": "", "texto": "", "nombre": "", "estrellas": 5, "verificado": true } },
-        "resena_3": { "type": "resena", "settings": { "imagen": "", "texto": "", "nombre": "", "estrellas": 5, "verificado": true } },
-        "resena_4": { "type": "resena", "settings": { "imagen": "", "texto": "", "nombre": "", "estrellas": 5, "verificado": true } }
+        "resena_JhJNqY": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_30_jul_2026_12_08_00.png",
+            "texto": "Me sorprendió la calidad. Son ligeras, fáciles de combinar y el cierre ajusta muy bien al pie. Repetiré seguro.",
+            "nombre": "Carmen R.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_1": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_30_jul_2026_11_40_38.png",
+            "texto": "Son comodísimas. Las estrené para pasar toda la tarde caminando y no me hicieron ninguna rozadura. Además quedan muy bonitas con vestidos y vaqueros.",
+            "nombre": "Pilar M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_2": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_30_jul_2026_11_44_04.png",
+            "texto": "El diseño me encanta y son muy cómodas para el día a día. Solo eché de menos que hubiera algún color más, por lo demás muy buena compra.",
+            "nombre": "Nuria C.",
+            "estrellas": 4,
+            "verificado": true
+          }
+        },
+        "resena_3": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_30_jul_2026_11_55_27.png",
+            "texto": "Más de lo esperado, este es  mi primer zapato favorito que compré en línea este año. En primer lugar, es ligero y la altura es apropiada. Luego el Velcro, que se puede ajustar dependiendo de lo apretado que lo quieras, ideal si para los pies gordos. Me ha gustado mucho el color.",
+            "nombre": "Mº Dolores J.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_4": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_30_jul_2026_12_05_10.png",
+            "texto": "Llevaba tiempo buscando unas sandalias así. Son estables, no resbalan y puedo llevarlas durante horas sin cansarme.",
+            "nombre": "",
+            "estrellas": 5,
+            "verificado": true
+          }
+        }
       },
-      "block_order": ["resena_1", "resena_2", "resena_3", "resena_4"],
+      "block_order": [
+        "resena_JhJNqY",
+        "resena_1",
+        "resena_2",
+        "resena_3",
+        "resena_4"
+      ],
+      "name": "Reseñas con fotos",
       "settings": {
         "titulo": "¿Qué dicen nuestros clientes?",
         "subtitulo": "",
@@ -98,20 +176,63 @@
     "rich_text_zH8Ky6": {
       "type": "rich-text",
       "blocks": {
-        "caption_FxrE8g": { "type": "caption", "settings": { "caption": "VELA MADRID", "text_style": "caption-with-letter-spacing", "text_size": "medium" } },
-        "heading_nzERWn": { "type": "heading", "settings": { "heading": "<strong>ÚLTIMA OPORTUNIDAD</strong>", "heading_size": "h2" } },
-        "text_7VAp87": { "type": "text", "settings": { "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>" } },
-        "discount_box_jwymXf": { "type": "discount_box", "settings": {} },
-        "text_gw79bY": { "type": "text", "settings": { "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>" } }
+        "caption_FxrE8g": {
+          "type": "caption",
+          "settings": {
+            "caption": "VELA MADRID",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_nzERWn": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>ÚLTIMA OPORTUNIDAD</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_7VAp87": {
+          "type": "text",
+          "settings": {
+            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
+          }
+        },
+        "discount_box_jwymXf": {
+          "type": "discount_box",
+          "settings": {}
+        },
+        "text_gw79bY": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
+          }
+        }
       },
-      "block_order": ["caption_FxrE8g", "heading_nzERWn", "text_7VAp87", "discount_box_jwymXf", "text_gw79bY"],
-      "custom_css": [".rich-text__wrapper p {color: #444 !important;}"],
+      "block_order": [
+        "caption_FxrE8g",
+        "heading_nzERWn",
+        "text_7VAp87",
+        "discount_box_jwymXf",
+        "text_gw79bY"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper p {color: #444 !important;}"
+      ],
       "name": "t:sections.rich-text.presets.name",
-      "settings": { "desktop_content_position": "center", "content_alignment": "center", "color_scheme": "", "full_width": false, "padding_top": 60, "padding_bottom": 0 }
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
     },
     "garantias_AkQQfV": {
       "type": "garantias",
-      "custom_css": ["* {padding-top: 0px !important;}"],
+      "custom_css": [
+        "* {padding-top: 0px !important;}"
+      ],
       "name": "Garantías",
       "settings": {}
     },
@@ -119,9 +240,19 @@
       "type": "related-products",
       "disabled": true,
       "settings": {
-        "heading": "You may also like", "heading_size": "h2", "products_to_show": 4, "columns_desktop": 4,
-        "columns_mobile": "2", "color_scheme": "scheme-1", "image_ratio": "square", "image_shape": "default",
-        "show_secondary_image": true, "show_vendor": false, "show_rating": false, "padding_top": 36, "padding_bottom": 28
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
       }
     },
     "resenas_clientes_vela": {
@@ -132,16 +263,56 @@
     "faq_vela_YhBhPV": {
       "type": "faq-vela",
       "blocks": {
-        "pregunta_f47GGL": { "type": "pregunta", "settings": { "pregunta": "¿Puedo devolver mi pedido?", "respuesta": "<p>Sí. Dispones de 30 días desde la recepción para solicitar un cambio o devolución. Queremos que compres con total tranquilidad y sin riesgos.</p>" } },
-        "pregunta_TWqRdx": { "type": "pregunta", "settings": { "pregunta": "¿El pago es seguro?", "respuesta": "<p>Todos los pagos se procesan mediante conexión SSL cifrada. Tu información está completamente protegida y nunca compartimos datos bancarios.</p>" } },
-        "pregunta_RRM6Ni": { "type": "pregunta", "settings": { "pregunta": "¿Cómo tallan las prendas?", "respuesta": "<p>Nuestras prendas tallan de forma estándar. Puedes consultar la guía de tallas en cada producto para asegurarte de elegir la medida perfecta.</p>" } },
-        "pregunta_naFrgL": { "type": "pregunta", "settings": { "pregunta": "¿Dónde se fabrican los productos?", "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br><br></p>" } }
+        "pregunta_f47GGL": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Puedo devolver mi pedido?",
+            "respuesta": "<p>Sí. Dispones de 30 días desde la recepción para solicitar un cambio o devolución. Queremos que compres con total tranquilidad y sin riesgos.</p>"
+          }
+        },
+        "pregunta_TWqRdx": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿El pago es seguro?",
+            "respuesta": "<p>Todos los pagos se procesan mediante conexión SSL cifrada. Tu información está completamente protegida y nunca compartimos datos bancarios.</p>"
+          }
+        },
+        "pregunta_RRM6Ni": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cómo tallan las prendas?",
+            "respuesta": "<p>Nuestras prendas tallan de forma estándar. Puedes consultar la guía de tallas en cada producto para asegurarte de elegir la medida perfecta.</p>"
+          }
+        },
+        "pregunta_naFrgL": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Dónde se fabrican los productos?",
+            "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br><br></p>"
+          }
+        }
       },
-      "block_order": ["pregunta_f47GGL", "pregunta_TWqRdx", "pregunta_RRM6Ni", "pregunta_naFrgL"],
+      "block_order": [
+        "pregunta_f47GGL",
+        "pregunta_TWqRdx",
+        "pregunta_RRM6Ni",
+        "pregunta_naFrgL"
+      ],
       "custom_css": [],
       "name": "FAQ",
-      "settings": { "titulo": "Preguntas Frecuentes" }
+      "settings": {
+        "titulo": "Preguntas Frecuentes"
+      }
     }
   },
-  "order": ["main", "combina_look_heaitB", "resenas_fotos_sophie", "rich_text_zH8Ky6", "garantias_AkQQfV", "related-products", "resenas_clientes_vela", "faq_vela_YhBhPV"]
+  "order": [
+    "main",
+    "combina_look_heaitB",
+    "resenas_fotos_sophie",
+    "rich_text_zH8Ky6",
+    "garantias_AkQQfV",
+    "related-products",
+    "resenas_clientes_vela",
+    "faq_vela_YhBhPV"
+  ]
 }
