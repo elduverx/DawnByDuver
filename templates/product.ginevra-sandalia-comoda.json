@@ -104,143 +104,183 @@
         "url_ver_todo": "shopify://collections/all"
       }
     },
-    "clientes_comunidad_P7VGmC": {
-      "type": "clientes-comunidad",
+    "resenas_fotos_clientes_ginevra": {
+      "type": "resenas-fotos-clientes",
       "blocks": {
-        "cliente_wNtBUp": {
-          "type": "cliente",
+        "resena_BFLBWV": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
-            "nombre": "Rocío L.",
-            "ciudad": "Madrid"
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_00_11.webp",
+            "texto": "Me ha gustado muchísimo. Es una prenda muy versátil y queda igual de bien con sandalias que con un calzado más arreglado.",
+            "nombre": "Lorena M.",
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_UTmzjm": {
-          "type": "cliente",
+        "resena_dmVVPe": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
-            "nombre": "Amparo C.",
-            "ciudad": "Valencia"
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.webp",
+            "texto": "Muy contenta con la compra. Es cómoda, tiene buena caída y el tejido se siente agradable sobre la piel.",
+            "nombre": "Carmen L.",
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_gcBJDm": {
-          "type": "cliente",
+        "resena_HTWcFx": {
+          "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
+            "texto": "La calidad está muy bien y el color es exactamente el que esperaba. He recibido varios cumplidos desde que me lo puse.",
             "nombre": "Lola M.",
-            "ciudad": "Barcelona"
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_LqF9cL": {
-          "type": "cliente",
+        "resena_ghQMKJ": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
-            "nombre": "Carolina M.",
-            "ciudad": "Murcia"
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_40_22.webp",
+            "texto": "Muy satisfecha. La he lavado varias veces y mantiene perfectamente la forma y el color. La recomiendo.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_x9674E": {
-          "type": "cliente",
+        "resena_LPprJJ": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
-            "nombre": "Elena F.",
-            "ciudad": "Galicia"
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_44_18.webp",
+            "texto": "Me ha gustado especialmente el tejido, ya que resulta ligero y no da demasiado calor. Muy buena compra.",
+            "nombre": "Mario P.",
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_bBXmmP": {
-          "type": "cliente",
+        "resena_EVra7f": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.webp",
+            "texto": "Me ha gustado mucho la calidad del tejido y cómo se adapta al cuerpo. Es cómoda y no aprieta en ninguna zona.",
+            "nombre": "Amparo G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_hjMTkV": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.webp",
+            "texto": "Pantalón cómodo y práctico. La talla es la habitual y queda muy bien.",
+            "nombre": "Darío A.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_ek8imC": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_28_35.webp",
+            "texto": "Todo perfecto. El color coincide con el de la web, la talla es correcta y la prenda sienta muy bien.",
+            "nombre": "Carlos V.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_JwymPa": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.webp",
+            "texto": "Compré una unidad para probar y me ha gustado tanto que seguramente pediré otro color. Muy satisfecha con la compra.",
+            "nombre": "Sonia C.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_AijEpb": {
+          "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_12_jul_2026_09_18_37.png",
+            "texto": "Muy contenta con la compra. El diseño es precioso y sienta muy bien. El envío tardó un poco más de lo esperado, pero mereció la pena.",
             "nombre": "Mireya P.",
-            "ciudad": "Madrid"
+            "estrellas": 4,
+            "verificado": true
           }
         },
-        "cliente_zH3hCR": {
-          "type": "cliente",
+        "resena_7Mzaaf": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.png",
-            "nombre": "Carmen L.",
-            "ciudad": "Málaga"
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
+            "texto": "Estoy muy contenta con mi pedido. El color es precioso, la talla corresponde y la prenda resulta muy cómoda durante todo el día.",
+            "nombre": "Carolina M.",
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_7Bd7D9": {
-          "type": "cliente",
+        "resena_mftyM9": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.png",
-            "nombre": "Sonia C.",
-            "ciudad": "Valencia"
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_27_27.png",
+            "texto": "Estoy encantada con mi compra, la calidad superó mis expectativas.",
+            "nombre": "Paula J.",
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_HYxrTi": {
-          "type": "cliente",
+        "resena_qFWdpm": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_28_35.png",
-            "nombre": "Carlos V.",
-            "ciudad": "Madrid"
+            "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
+            "texto": "Todo perfecto. El pedido llegó correctamente, la talla coincide y la prenda queda muy favorecedora. Muy buena experiencia con Vela Madrid.",
+            "nombre": "Rocío L.",
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_L4yRqD": {
-          "type": "cliente",
+        "resena_kFL63T": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.png",
-            "nombre": "Amparo G.",
-            "ciudad": "Valencia"
+            "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
+            "texto": "Compra totalmente recomendable. La prenda es cómoda, no transparenta y tiene una caída muy bonita. Sin duda compraré de nuevo.",
+            "nombre": "Amparo C.",
+            "estrellas": 5,
+            "verificado": true
           }
         },
-        "cliente_mDUC9K": {
-          "type": "cliente",
+        "resena_ey6yrq": {
+          "type": "resena",
           "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_44_18.png",
-            "nombre": "Mario P.",
-            "ciudad": "Barcelona"
-          }
-        },
-        "cliente_rfypcq": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_40_22.png",
-            "nombre": "María G.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_GJQVjg": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_00_11.png",
-            "nombre": "Lorena M.",
-            "ciudad": "Sevilla"
-          }
-        },
-        "cliente_CCF6kx": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.png",
-            "nombre": "Darío A.",
-            "ciudad": "Ávila"
+            "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
+            "texto": "Me encanta cómo queda. Es una prenda cómoda, favorecedora y perfecta tanto para diario como para una ocasión un poco más especial.",
+            "nombre": "Elena F.",
+            "estrellas": 5,
+            "verificado": true
           }
         }
       },
       "block_order": [
-        "cliente_wNtBUp",
-        "cliente_UTmzjm",
-        "cliente_gcBJDm",
-        "cliente_LqF9cL",
-        "cliente_x9674E",
-        "cliente_bBXmmP",
-        "cliente_zH3hCR",
-        "cliente_7Bd7D9",
-        "cliente_HYxrTi",
-        "cliente_L4yRqD",
-        "cliente_mDUC9K",
-        "cliente_rfypcq",
-        "cliente_GJQVjg",
-        "cliente_CCF6kx"
+        "resena_BFLBWV",
+        "resena_dmVVPe",
+        "resena_HTWcFx",
+        "resena_ghQMKJ",
+        "resena_LPprJJ",
+        "resena_EVra7f",
+        "resena_hjMTkV",
+        "resena_ek8imC",
+        "resena_JwymPa",
+        "resena_AijEpb",
+        "resena_7Mzaaf",
+        "resena_mftyM9",
+        "resena_qFWdpm",
+        "resena_kFL63T",
+        "resena_ey6yrq"
       ],
-      "name": "Clientes comunidad",
+      "name": "Reseñas con fotos",
       "settings": {
-        "eyebrow": "VELA MADRID",
-        "titulo": "Clientes de nuestra comunidad",
-        "subtitulo": "Las prendas cobran vida cuando las llevan personas reales. Si quieres aparecer aquí, escríbenos a"
+        "titulo": "¿Que dicen nuestros clientes?",
+        "subtitulo": "Más de 15.000 clientes satisfechos",
+        "valoracion_texto": "Excelente 4.8/5",
+        "color_estrellas": "#f8c41b"
       }
     },
     "rich_text_zH8Ky6": {
@@ -378,7 +418,7 @@
   "order": [
     "main",
     "combina_look_heaitB",
-    "clientes_comunidad_P7VGmC",
+    "resenas_fotos_clientes_ginevra",
     "rich_text_zH8Ky6",
     "garantias_AkQQfV",
     "related-products",
