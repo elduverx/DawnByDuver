@@ -104,144 +104,10 @@
         "url_ver_todo": "shopify://collections/all"
       }
     },
-    "clientes_comunidad_P7VGmC": {
-      "type": "clientes-comunidad",
-      "blocks": {
-        "cliente_wNtBUp": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
-            "nombre": "Rocío L.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_UTmzjm": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
-            "nombre": "Amparo C.",
-            "ciudad": "Valencia"
-          }
-        },
-        "cliente_gcBJDm": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
-            "nombre": "Lola M.",
-            "ciudad": "Barcelona"
-          }
-        },
-        "cliente_LqF9cL": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
-            "nombre": "Carolina M.",
-            "ciudad": "Murcia"
-          }
-        },
-        "cliente_x9674E": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
-            "nombre": "Elena F.",
-            "ciudad": "Galicia"
-          }
-        },
-        "cliente_bBXmmP": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_12_jul_2026_09_18_37.png",
-            "nombre": "Mireya P.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_zH3hCR": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.png",
-            "nombre": "Carmen L.",
-            "ciudad": "Málaga"
-          }
-        },
-        "cliente_7Bd7D9": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.png",
-            "nombre": "Sonia C.",
-            "ciudad": "Valencia"
-          }
-        },
-        "cliente_HYxrTi": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_28_35.png",
-            "nombre": "Carlos V.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_L4yRqD": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.png",
-            "nombre": "Amparo G.",
-            "ciudad": "Valencia"
-          }
-        },
-        "cliente_mDUC9K": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_44_18.png",
-            "nombre": "Mario P.",
-            "ciudad": "Barcelona"
-          }
-        },
-        "cliente_rfypcq": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_40_22.png",
-            "nombre": "María G.",
-            "ciudad": "Madrid"
-          }
-        },
-        "cliente_GJQVjg": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_00_11.png",
-            "nombre": "Lorena M.",
-            "ciudad": "Sevilla"
-          }
-        },
-        "cliente_CCF6kx": {
-          "type": "cliente",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.png",
-            "nombre": "Darío A.",
-            "ciudad": "Ávila"
-          }
-        }
-      },
-      "block_order": [
-        "cliente_wNtBUp",
-        "cliente_UTmzjm",
-        "cliente_gcBJDm",
-        "cliente_LqF9cL",
-        "cliente_x9674E",
-        "cliente_bBXmmP",
-        "cliente_zH3hCR",
-        "cliente_7Bd7D9",
-        "cliente_HYxrTi",
-        "cliente_L4yRqD",
-        "cliente_mDUC9K",
-        "cliente_rfypcq",
-        "cliente_GJQVjg",
-        "cliente_CCF6kx"
-      ],
-      "name": "Clientes comunidad",
-      "settings": {
-        "eyebrow": "VELA MADRID",
-        "titulo": "Clientes de nuestra comunidad",
-        "subtitulo": "Las prendas cobran vida cuando las llevan personas reales. Si quieres aparecer aquí, escríbenos a"
-      }
+    "resenas_clientes_top": {
+      "type": "resenas-clientes",
+      "name": "Reseñas de clientes",
+      "settings": {}
     },
     "rich_text_zH8Ky6": {
       "type": "rich-text",
@@ -325,11 +191,6 @@
         "padding_bottom": 28
       }
     },
-    "resenas_clientes_vela": {
-      "type": "resenas-clientes",
-      "name": "Reseñas de clientes",
-      "settings": {}
-    },
     "faq_vela_YhBhPV": {
       "type": "faq-vela",
       "blocks": {
@@ -378,11 +239,10 @@
   "order": [
     "main",
     "combina_look_heaitB",
-    "clientes_comunidad_P7VGmC",
+    "resenas_clientes_top",
     "rich_text_zH8Ky6",
     "garantias_AkQQfV",
     "related-products",
-    "resenas_clientes_vela",
     "faq_vela_YhBhPV"
   ]
 }
