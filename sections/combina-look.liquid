@@ -106,6 +106,8 @@
         assign target_collection = collections['conjuntos']
       elsif es_costa_vela
         assign target_collection = collections['conjuntos-costa-vela']
+      elsif es_vestidos_elegantes
+        assign target_collection = collections['vestidos-elegantes']
       else
         assign es_mujer = false
         for coleccion_check in product.collections
