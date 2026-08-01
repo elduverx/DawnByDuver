@@ -107,6 +107,16 @@
     "resenas_fotos_clientes_top": {
       "type": "resenas-fotos-clientes",
       "blocks": {
+        "resena_QfTqXA": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_1_ago_2026_18_04_15.png",
+            "texto": "La verdad que me ha encantado el vestido con estos volantes, me dijeron que me quedaba muy bien. Volveré a comprar sin duda.",
+            "nombre": "Monica C.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
         "resena_BFLBWV": {
           "type": "resena",
           "settings": {
@@ -259,6 +269,7 @@
         }
       },
       "block_order": [
+        "resena_QfTqXA",
         "resena_BFLBWV",
         "resena_dmVVPe",
         "resena_HTWcFx",
@@ -365,6 +376,11 @@
         "padding_bottom": 28
       }
     },
+    "resenas_clientes_vela": {
+      "type": "resenas-clientes",
+      "name": "Reseñas de clientes",
+      "settings": {}
+    },
     "faq_vela_YhBhPV": {
       "type": "faq-vela",
       "blocks": {
@@ -408,11 +424,6 @@
       "settings": {
         "titulo": "Preguntas Frecuentes"
       }
-    },
-    "resenas_clientes_vela": {
-      "type": "resenas-clientes",
-      "name": "Reseñas de clientes",
-      "settings": {}
     }
   },
   "order": [
