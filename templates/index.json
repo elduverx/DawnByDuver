@@ -282,42 +282,12 @@
             "verificado": true
           }
         },
-        "resena_LPprJJ": {
-          "type": "resena",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_44_18.webp",
-            "texto": "Me ha gustado especialmente el tejido, ya que resulta ligero y no da demasiado calor. Muy buena compra.",
-            "nombre": "Mario P.",
-            "estrellas": 5,
-            "verificado": true
-          }
-        },
         "resena_EVra7f": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.webp",
             "texto": "Me ha gustado mucho la calidad del tejido y cómo se adapta al cuerpo. Es cómoda y no aprieta en ninguna zona.",
             "nombre": "Amparo G.",
-            "estrellas": 5,
-            "verificado": true
-          }
-        },
-        "resena_hjMTkV": {
-          "type": "resena",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.webp",
-            "texto": "Pantalón cómodo y práctico. La talla es la habitual y queda muy bien.",
-            "nombre": "Darío A.",
-            "estrellas": 5,
-            "verificado": true
-          }
-        },
-        "resena_ek8imC": {
-          "type": "resena",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_28_35.webp",
-            "texto": "Todo perfecto. El color coincide con el de la web, la talla es correcta y la prenda sienta muy bien.",
-            "nombre": "Carlos V.",
             "estrellas": 5,
             "verificado": true
           }
@@ -398,10 +368,7 @@
         "resena_dmVVPe",
         "resena_HTWcFx",
         "resena_ghQMKJ",
-        "resena_LPprJJ",
         "resena_EVra7f",
-        "resena_hjMTkV",
-        "resena_ek8imC",
         "resena_JwymPa",
         "resena_AijEpb",
         "resena_7Mzaaf",
