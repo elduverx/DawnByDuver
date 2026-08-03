@@ -170,6 +170,17 @@
         "padding_bottom": 0
       }
     },
+    "colecciones_tabs_VEpcGX": {
+      "type": "colecciones-tabs",
+      "name": "Colecciones con pestañas",
+      "settings": {
+        "collection_1": "vestidos-elegantes",
+        "collection_2": "conjuntos-mar-arena",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "blocks": {
@@ -216,6 +227,7 @@
         "collection_9xwrcU",
         "collection_qTHzkm"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "eyebrow": "SELECCIÓN",
@@ -423,6 +435,7 @@
     "philosophy",
     "categories",
     "colecciones_tabs_pPRzBT",
+    "colecciones_tabs_VEpcGX",
     "featured_collection",
     "resenas_fotos_clientes_fkgTJd",
     "editorial_banner_g9Wq7H",
