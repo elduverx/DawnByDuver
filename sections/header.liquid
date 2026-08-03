@@ -600,6 +600,21 @@
 {% endschema %}
 <style>
 @media screen and (max-width: 749px) {
+  .header-wrapper {
+    background: rgb(var(--color-background)) !important;
+    position: static !important;
+  }
+
+  .header-wrapper .header__menu-item,
+  .header-wrapper .header__menu-item a,
+  .header-wrapper .header__menu-item span,
+  .header-wrapper .header__icon,
+  .header-wrapper .header__icon svg {
+    color: #1a1a1a !important;
+    fill: none !important;
+    stroke: #1a1a1a !important;
+  }
+
   .header__search {
     position: absolute !important;
     left: 25px !important;
