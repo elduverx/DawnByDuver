@@ -159,6 +159,17 @@
         "padding_bottom": 40
       }
     },
+    "colecciones_tabs_pPRzBT": {
+      "type": "colecciones-tabs",
+      "name": "Colecciones con pestañas",
+      "settings": {
+        "collection_1": "sandalias-amalfi",
+        "collection_2": "conjuntos-costa-vela",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "blocks": {
@@ -411,6 +422,7 @@
     "image_banner",
     "philosophy",
     "categories",
+    "colecciones_tabs_pPRzBT",
     "featured_collection",
     "resenas_fotos_clientes_fkgTJd",
     "editorial_banner_g9Wq7H",
