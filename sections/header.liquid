@@ -1333,4 +1333,52 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+<!-- AJUSTE DESKTOP: cabecera de la HOME sólida, con logo a la izquierda, igual que páginas interiores -->
+<style>
+@media screen and (min-width: 990px) {
+  .header-wrapper--homepage {
+    position: static !important;
+    background: rgb(var(--color-background)) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .header-wrapper--homepage .header__heading-logo-wrapper {
+    display: block !important;
+  }
+
+  .header-wrapper--homepage .header__menu-item,
+  .header-wrapper--homepage .header__menu-item a,
+  .header-wrapper--homepage .header__menu-item span,
+  .header-wrapper--homepage .list-menu__item,
+  .header-wrapper--homepage .list-menu__item--link,
+  .header-wrapper--homepage .header__icon,
+  .header-wrapper--homepage .header__icon svg,
+  .header-wrapper--homepage .header__icons a {
+    color: #1a1a1a !important;
+    fill: none !important;
+    stroke: #1a1a1a !important;
+  }
+
+  .header-wrapper--homepage .header--middle-center:not(.drawer-menu) {
+    grid-template-columns: auto auto 1fr !important;
+    grid-template-areas: 'heading navigation icons' !important;
+  }
+
+  .header-wrapper--homepage .header__inline-menu {
+    display: flex !important;
+    justify-content: flex-start !important;
+    margin-left: 3rem !important;
+  }
+
+  .header-wrapper--homepage .header__inline-menu .list-menu--inline {
+    justify-content: flex-start !important;
+    width: auto !important;
+  }
+
+  .header-wrapper--homepage .header__icons {
+    justify-content: flex-end !important;
+    margin-left: auto !important;
+  }
+}
+</style>
 </script>
