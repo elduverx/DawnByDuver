@@ -1295,3 +1295,67 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 }
 </style>
+
+<!-- CABECERA ÚNICA MÓVIL (max-width 749px) — la home usa exactamente el mismo aspecto que las páginas interiores -->
+<style>
+@media screen and (max-width: 749px) {
+  .header-wrapper--homepage {
+    background: rgb(var(--color-background)) !important;
+    position: static !important;
+  }
+
+  .header-wrapper--homepage .vela-logo-mobile {
+    display: none !important;
+  }
+
+  .header-wrapper--homepage .header__heading-logo-wrapper {
+    display: inline-flex !important;
+  }
+
+  .header-wrapper--homepage .header__heading-logo-wrapper img,
+  .header-wrapper--homepage .header__heading-link img {
+    height: 75px !important;
+    max-height: 75px !important;
+    width: auto !important;
+    max-width: 200px !important;
+    object-fit: contain !important;
+  }
+
+  .header-wrapper--homepage .header__heading-link,
+  .header-wrapper--homepage .header__heading-logo,
+  .header-wrapper--homepage .header__heading {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 15px !important;
+    height: 75px !important;
+    width: auto !important;
+  }
+
+  .header-wrapper--homepage .header,
+  .header-wrapper--homepage.header-wrapper {
+    padding-bottom: 15px !important;
+    height: auto !important;
+  }
+
+  .header-wrapper--homepage .header__icons {
+    display: flex !important;
+  }
+
+  .header-wrapper--homepage .header__icon--menu,
+  .header-wrapper--homepage .header__icon span.icon-hamburger,
+  .header-wrapper--homepage summary.header__icon--menu {
+    position: static !important;
+    top: auto !important;
+  }
+
+  .header-wrapper--homepage .header__search,
+  .header-wrapper--homepage details-modal.header__search {
+    position: absolute !important;
+    left: 25px !important;
+    right: auto !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+}
+</style>
