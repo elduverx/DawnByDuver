@@ -843,50 +843,7 @@
   }
 }
 </style>
-<!-- AJUSTE DESKTOP: mostrar el icono de cuenta/login entre SEGUIMIENTO y el carrito, en páginas interiores -->
-<style>
-@media screen and (min-width: 990px) {
-  .header-wrapper:not(.header-wrapper--homepage) a.header__icon.large-up-hide {
-    display: flex !important;
-    order: 2;
-  }
 
-  .header-wrapper:not(.header-wrapper--homepage) a.large-up-hide[href*="cart"] {
-    order: 3;
-  }
-
-  .header-wrapper:not(.header-wrapper--homepage) #cart-icon-bubble {
-    order: 4;
-  }
-}
-</style>
-<style>
-@media screen and (min-width: 990px) {
-  .header-wrapper:not(.header-wrapper--homepage) a.header__icon.large-up-hide {
-    display: flex !important;
-    align-items: center;
-    transform: translateX(0px) translateY(-20px);
-    margin-left: -4rem;
-  }
-
-  .header-wrapper:not(.header-wrapper--homepage) .vela-box-interior + svg {
-    transform: translate(30px, -10px);
-  }
-
-  .header-wrapper:not(.header-wrapper--homepage) .header__heading-logo-wrapper {
-    transform: translateY(2px) !important;
-  }
-
-  .header-wrapper:not(.header-wrapper--homepage) .header__inline-menu {
-    transform: translateY(-20px);
-  }
-
-  .header-wrapper:not(.header-wrapper--homepage) .small-hide a[href="/apps/parcelpanel"] {
-    transform: translateY(-20px);
-    display: inline-block;
-  }
-}
-</style>
 <!-- AJUSTE DESKTOP: bajar el contenido de la página de producto (imagen + info) para que no choque con el header -->
 <style>
 @media screen and (min-width: 990px) {
