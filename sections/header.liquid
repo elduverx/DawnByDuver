@@ -600,10 +600,7 @@
 {% endschema %}
 <style>
 @media screen and (max-width: 749px) {
-  /* ==========================================
-     1. LUPA (Para páginas interiores)
-     ========================================== */
-  body:not(.template-index) .header__search {
+  .header__search {
     position: absolute !important;
     left: 25px !important;
     right: auto !important;
@@ -611,124 +608,41 @@
     transform: translateY(-50%) !important;
   }
 
-  /* ==========================================
-     2. TAMAÑO DE LOS LOGOS (Para toda la web)
-     ========================================== */
-  body:not(.template-index) .header__heading-logo img,
-  body:not(.template-index) .header__heading-link img,
-  .template-index .vela-logo-mobile img,
-  .vela-logo-mobile img {
-    height: 75px !important; 
+  .header__heading-logo img,
+  .header__heading-link img {
+    height: 75px !important;
     max-height: 75px !important;
     width: auto !important;
     max-width: 200px !important;
     object-fit: contain !important;
   }
 
-  /* ==========================================
-     3. AJUSTE DE POSICIÓN EN PÁGINAS INTERIORES
-     ========================================== */
-  body:not(.template-index) .header__heading-link,
-  body:not(.template-index) .header__heading-logo,
-  body:not(.template-index) .header__heading {
+  .header__heading-link,
+  .header__heading-logo,
+  .header__heading {
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;
-    margin-top: 15px !important; 
+    margin-top: 15px !important;
     height: 75px !important;
     width: auto !important;
   }
 
-  body:not(.template-index) .header,
-  body:not(.template-index) .header-wrapper,
-  body:not(.template-index) .site-header {
-    padding-bottom: 15px !important; 
+  .header,
+  .header-wrapper,
+  .site-header {
+    padding-bottom: 15px !important;
     height: auto !important;
   }
 
-  /* ==========================================
-     4. CORRECCIÓN: SUBIR LOGO EN LA HOME PAGE 
-     ========================================== */
-  /* Hemos cambiado -26px por -42px para obligarlo a subir y alinearse */
-  .template-index .vela-logo-mobile,
   .vela-logo-mobile {
-    margin-top: -42px !important; 
-    margin-bottom: 0 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-}
-</style>
-<style>
-@media screen and (max-width: 749px) {
-  /* ESCUDO EXCLUSIVO HOME PAGE: Liberar el logo del contenedor Flexbox */
-  .template-index .vela-logo-mobile {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-205%) !important; /* El -85% lo empuja hacia arriba con fuerza */
-    margin: 0 !important;
-    display: block !important;
-  }
-}
-</style>
-<style>
-@media screen and (max-width: 749px) {
-  /* MODIFICACIÓN INVISIBILIZADORA AGRESIVA */
-  div.header-wrapper--homepage::after,
-  .header-wrapper--homepage::after,
-  body.template-index .header-wrapper::after {
-    background-color: rgba(0,0,0,0) !important;
-    background: transparent !important;
-    color: transparent !important;
-    top: -9999px !important; /* Lo mandamos arriba del todo fuera de la pantalla */
-    opacity: 0 !important;
-    height: 0px !important;
     display: none !important;
   }
 }
 </style>
-<style>
-@media screen and (max-width: 749px) {
-  /* 1. MANTENEMOS LA LÍNEA BORRADA */
-  div.header-wrapper--homepage::after,
-  .header-wrapper--homepage::after,
-  body.template-index .header-wrapper::after {
-    background-color: rgba(0,0,0,0) !important;
-    background: transparent !important;
-    color: transparent !important;
-    top: -9999px !important;
-    opacity: 0 !important;
-    height: 0px !important;
-    display: none !important;
-  }
 
-  /* 2. LA HAMBURGUESA SE QUEDA CLAVADA COMO YA TE GUSTABA */
-  .header-wrapper--homepage .header__icon--menu,
-  .header-wrapper--homepage .header__icon span.icon-hamburger,
-  .header-wrapper--homepage summary.header__icon--menu {
-    position: relative !important;
-    top: -6px !important; 
-  }
-@media screen and (max-width: 749px) {
-  /* CONTROL EXCLUSIVO PARA LA LUPA EN LA HOME */
-  .header-wrapper--homepage .header__search,
-  .header-wrapper--homepage details-modal.header__search {
-    position: relative !important;
-    top: 15px !important;    /* Controla la altura (arriba/abajo) */
-    left: -15px !important; /* Controla el desplazamiento a la izquierda */
-  }
-}
-</style>
-<!-- AJUSTE MOBILE: ocultar SEGUIMIENTO/CONTACTO/SOBRE NOSOTROS en la home, solo aparecen en desktop -->
-<style>
-@media screen and (max-width: 749px) {
-  .header-wrapper--homepage .header__icons {
-    display: none !important;
-  }
-}
-</style>
+
+
 <!-- AJUSTE DESKTOP: bajar el logo de la home 20px, solo en desktop (>=990px), solo en home -->
 <style>
 @media screen and (min-width: 990px) {
@@ -1296,66 +1210,3 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 </style>
 
-<!-- CABECERA ÚNICA MÓVIL (max-width 749px) — la home usa exactamente el mismo aspecto que las páginas interiores -->
-<style>
-@media screen and (max-width: 749px) {
-  .header-wrapper--homepage {
-    background: rgb(var(--color-background)) !important;
-    position: static !important;
-  }
-
-  .header-wrapper--homepage .vela-logo-mobile {
-    display: none !important;
-  }
-
-  .header-wrapper--homepage .header__heading-logo-wrapper {
-    display: inline-flex !important;
-  }
-
-  .header-wrapper--homepage .header__heading-logo-wrapper img,
-  .header-wrapper--homepage .header__heading-link img {
-    height: 75px !important;
-    max-height: 75px !important;
-    width: auto !important;
-    max-width: 200px !important;
-    object-fit: contain !important;
-  }
-
-  .header-wrapper--homepage .header__heading-link,
-  .header-wrapper--homepage .header__heading-logo,
-  .header-wrapper--homepage .header__heading {
-    display: inline-flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-top: 15px !important;
-    height: 75px !important;
-    width: auto !important;
-  }
-
-  .header-wrapper--homepage .header,
-  .header-wrapper--homepage.header-wrapper {
-    padding-bottom: 15px !important;
-    height: auto !important;
-  }
-
-  .header-wrapper--homepage .header__icons {
-    display: flex !important;
-  }
-
-  .header-wrapper--homepage .header__icon--menu,
-  .header-wrapper--homepage .header__icon span.icon-hamburger,
-  .header-wrapper--homepage summary.header__icon--menu {
-    position: static !important;
-    top: auto !important;
-  }
-
-  .header-wrapper--homepage .header__search,
-  .header-wrapper--homepage details-modal.header__search {
-    position: absolute !important;
-    left: 25px !important;
-    right: auto !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-  }
-}
-</style>
