@@ -1334,7 +1334,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
-<!-- AJUSTE DESKTOP: cabecera de la HOME sólida, con logo a la izquierda, igual que páginas interiores -->
+<!-- AJUSTE DESKTOP ÚNICAMENTE (min-width 990px) — no afecta a móvil en absoluto -->
 <style>
 @media screen and (min-width: 990px) {
   .header-wrapper--homepage {
@@ -1353,18 +1353,20 @@ document.addEventListener("DOMContentLoaded", function () {
   .header-wrapper--homepage .list-menu__item,
   .header-wrapper--homepage .list-menu__item--link,
   .header-wrapper--homepage .header__icon,
-  .header-wrapper--homepage .header__icon svg,
-  .header-wrapper--homepage .header__icons a {
+  .header-wrapper--homepage .header__icon svg {
     color: #1a1a1a !important;
     fill: none !important;
     stroke: #1a1a1a !important;
   }
 
   .header-wrapper--homepage .header--middle-center:not(.drawer-menu) {
+    display: flex !important;
+    align-items: center !important;
     position: relative !important;
   }
 
   .header-wrapper--homepage .header__heading {
+    order: 1 !important;
     justify-self: start !important;
   }
 
@@ -1377,25 +1379,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   .header-wrapper--homepage .header > .header__search {
-    position: absolute !important;
-    right: 9.8rem !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+    order: 2 !important;
+    margin-left: auto !important;
+    position: static !important;
   }
 
   .header-wrapper--homepage .header > a.header__icon:not(.large-up-hide):not(#cart-icon-bubble) {
-    position: absolute !important;
-    right: 4.9rem !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+    order: 3 !important;
+    position: static !important;
+    margin-left: 1.6rem !important;
   }
 
-  .header-wrapper--homepage #cart-icon-bubble {
-    position: absolute !important;
-    right: 0 !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+  .header-wrapper--homepage .header > #cart-icon-bubble {
+    order: 4 !important;
+    position: static !important;
+    margin-left: 1.6rem !important;
   }
+
   .header-wrapper--homepage .vela-logo-mobile {
     display: none !important;
   }
