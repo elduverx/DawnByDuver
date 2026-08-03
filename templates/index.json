@@ -166,8 +166,8 @@
         "collection_1": "sandalias-amalfi",
         "collection_2": "conjuntos-costa-vela",
         "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "featured_collection": {
