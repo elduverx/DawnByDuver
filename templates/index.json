@@ -87,6 +87,7 @@
         },
         "text_yNreBd": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
           }
