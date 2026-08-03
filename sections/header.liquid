@@ -225,6 +225,13 @@
       </svg>
     </a>
     <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble"></a>
+    {%- if request.page_type == 'index' -%}
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon link focus-inset" rel="nofollow">
+        <span class="svg-wrapper">
+          {{- 'icon-account.svg' | inline_asset_content -}}
+        </span>
+      </a>
+    {%- endif -%}
     <a href="{{ routes.cart_url }}" class="large-up-hide vela-carrito" style="background: transparent !important; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;transform: translateX(-15px);">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="9" cy="21" r="1"/>
@@ -1354,26 +1361,34 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   .header-wrapper--homepage .header--middle-center:not(.drawer-menu) {
-    grid-template-columns: auto auto 1fr !important;
+    grid-template-columns: 1fr auto 1fr !important;
     grid-template-areas: 'heading navigation icons' !important;
+  }
+
+  .header-wrapper--homepage .header__heading {
+    justify-self: start !important;
   }
 
   .header-wrapper--homepage .header__inline-menu {
     display: flex !important;
-    justify-content: flex-start !important;
-    margin-left: 3rem !important;
+    justify-content: center !important;
+    justify-self: center !important;
+    margin-left: 0 !important;
   }
 
   .header-wrapper--homepage .header__inline-menu .list-menu--inline {
-    justify-content: flex-start !important;
+    justify-content: center !important;
     width: auto !important;
   }
 
   .header-wrapper--homepage .header__icons {
     justify-content: flex-end !important;
-    margin-left: auto !important;
+    justify-self: end !important;
+    margin-left: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.6rem !important;
   }
-
   .header-wrapper--homepage .vela-logo-mobile {
     display: none !important;
   }
