@@ -139,6 +139,7 @@
         "men",
         "women"
       ],
+      "disabled": true,
       "custom_css": [
         ".multicolumn-list {gap: 0px !important;}",
         ".multicolumn-list__item {padding: 0px !important; border: none !important;}",
