@@ -1,0 +1,214 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .vela-collections-tabs-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .vela-collections-tabs-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .vela-tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 3.2rem;
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+    margin-bottom: 3.2rem;
+  }
+
+  .vela-tabs-nav button {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    padding: 0 0 1.6rem;
+    cursor: pointer;
+    color: rgba(var(--color-foreground), 0.45);
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .vela-tabs-nav button.is-active {
+    color: rgb(var(--color-foreground));
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .vela-tabs-panel {
+    display: none;
+  }
+
+  .vela-tabs-panel.is-active {
+    display: block;
+  }
+
+  .vela-tabs-viewall {
+    text-align: center;
+    margin-top: 3.2rem;
+  }
+{%- endstyle -%}
+
+<div
+  class="vela-collections-tabs-{{ section.id }} color-{{ section.settings.color_scheme }} gradient page-width"
+  data-section-id="{{ section.id }}"
+>
+  <div class="vela-tabs-nav" role="tablist">
+    {%- if section.settings.collection_1 != blank -%}
+      <button
+        type="button"
+        class="is-active"
+        data-tab-target="vela-tab-1-{{ section.id }}"
+        data-collection-url="{{ section.settings.collection_1.url }}"
+      >
+        {{ section.settings.collection_1.title }}
+      </button>
+    {%- endif -%}
+    {%- if section.settings.collection_2 != blank -%}
+      <button
+        type="button"
+        data-tab-target="vela-tab-2-{{ section.id }}"
+        data-collection-url="{{ section.settings.collection_2.url }}"
+      >
+        {{ section.settings.collection_2.title }}
+      </button>
+    {%- endif -%}
+  </div>
+
+  {%- if section.settings.collection_1 != blank -%}
+    <div class="vela-tabs-panel is-active" id="vela-tab-1-{{ section.id }}">
+      <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop" role="list">
+        {%- assign skip_card_product_styles = false -%}
+        {%- for product in section.settings.collection_1.products limit: 4 -%}
+          <li class="grid__item">
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: 'portrait',
+              show_secondary_image: false,
+              lazy_load: true,
+              skip_styles: skip_card_product_styles,
+              section_id: section.id
+            %}
+          </li>
+          {%- assign skip_card_product_styles = true -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.collection_2 != blank -%}
+    <div class="vela-tabs-panel" id="vela-tab-2-{{ section.id }}">
+      <ul class="grid product-grid grid--2-col-tablet-down grid--4-col-desktop" role="list">
+        {%- assign skip_card_product_styles = false -%}
+        {%- for product in section.settings.collection_2.products limit: 4 -%}
+          <li class="grid__item">
+            {% render 'card-product',
+              card_product: product,
+              media_aspect_ratio: 'portrait',
+              show_secondary_image: false,
+              lazy_load: true,
+              skip_styles: skip_card_product_styles,
+              section_id: section.id
+            %}
+          </li>
+          {%- assign skip_card_product_styles = true -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  <div class="vela-tabs-viewall">
+    
+      href="{{ section.settings.collection_1.url | default: section.settings.collection_2.url }}"
+      class="button button--secondary"
+      data-viewall-link
+    >
+      Ver todo
+    </a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-section-id="{{ section.id }}"]');
+    if (!root) return;
+    var buttons = root.querySelectorAll('.vela-tabs-nav button');
+    var panels = root.querySelectorAll('.vela-tabs-panel');
+    var viewAllLink = root.querySelector('[data-viewall-link]');
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) {
+          b.classList.remove('is-active');
+        });
+        panels.forEach(function (p) {
+          p.classList.remove('is-active');
+        });
+        btn.classList.add('is-active');
+        var target = document.getElementById(btn.getAttribute('data-tab-target'));
+        if (target) target.classList.add('is-active');
+        if (viewAllLink) viewAllLink.setAttribute('href', btn.getAttribute('data-collection-url'));
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Colecciones con pestañas",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Colección 1"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Colección 2"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Colecciones con pestañas"
+    }
+  ]
+}
+{% endschema %}
