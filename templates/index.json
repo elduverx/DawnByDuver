@@ -182,6 +182,13 @@
         "padding_bottom": 60
       }
     },
+    "editorial_banner_g9Wq7H": {
+      "type": "editorial-banner",
+      "name": "Banner editorial",
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_17_jun_2026_21_23_45.png"
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "blocks": {
@@ -385,13 +392,6 @@
         "color_estrellas": "#f8c41b"
       }
     },
-    "editorial_banner_g9Wq7H": {
-      "type": "editorial-banner",
-      "name": "Banner editorial",
-      "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_17_jun_2026_21_23_45.png"
-      }
-    },
     "garantias_FMf9m7": {
       "type": "garantias",
       "name": "Garantías",
@@ -404,9 +404,9 @@
     "categories",
     "colecciones_tabs_VEpcGX",
     "colecciones_tabs_pPRzBT",
+    "editorial_banner_g9Wq7H",
     "featured_collection",
     "resenas_fotos_clientes_fkgTJd",
-    "editorial_banner_g9Wq7H",
     "garantias_FMf9m7"
   ]
 }
