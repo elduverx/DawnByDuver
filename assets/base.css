@@ -6007,3 +6007,7 @@ cart-drawer.is-empty [class*="close"]::after {
     max-width: 100% !important;
   }
 }
+.rich-text__text {
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+}
