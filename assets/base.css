@@ -5953,13 +5953,3 @@ cart-drawer.is-empty [class*="close"]::after {
 .vela-cincuenta {
   font-size: 1.2em;
 }
-/* Separador del anuncio igual al del header */
-[id*="announcement_bar_jyECQW"] .utility-bar {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-  box-shadow: none !important;
-}
-
-[id*="announcement_bar_jyECQW"]::after {
-  display: none !important;
-  content: none !important;
-}
