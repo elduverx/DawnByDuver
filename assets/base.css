@@ -2347,7 +2347,7 @@ input[type='checkbox'] {
 }
 
 .header-wrapper--border-bottom {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-bottom: none;
 }
 
 .header {
@@ -5201,7 +5201,7 @@ shop-follow-button,
 }
 @media screen and (max-width: 749px) {
   .header-wrapper, .header {
-    border-bottom: 1px solid #e5e5e5 !important;
+    border-bottom: none !important;
     box-shadow: none !important;
   }
 }
