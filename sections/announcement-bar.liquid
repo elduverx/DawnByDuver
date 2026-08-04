@@ -8,7 +8,7 @@
     endif
   endfor
 -%}
-{%- if es_barra_descuento -%}
+{%- unless es_barra_descuento -%}
 <style>
   #shopify-section-{{ section.id }} .announcement-bar__message {
     font-size: 1.5rem !important;
@@ -19,7 +19,7 @@
     padding-bottom: 1.2rem !important;
   }
 </style>
-{%- endif -%}
+{%- endunless -%}
 
 {%- liquid
   assign social_icons = true
