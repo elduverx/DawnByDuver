@@ -5953,3 +5953,8 @@ cart-drawer.is-empty [class*="close"]::after {
 .vela-cincuenta {
   font-size: 1.2em;
 }
+/* Línea inferior en el anuncio de descuentos */
+[id$="__announcement_bar_jyECQW"] .utility-bar {
+  border-bottom: 1px solid #d4d4d4 !important;
+  box-shadow: 0 1px 0 #d4d4d4 !important;
+}
