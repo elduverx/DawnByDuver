@@ -8,15 +8,24 @@
     box-shadow: none !important;
   }
 
-  .banner--large:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content,
-  #Banner-{{ section.id }}.banner--large .banner__content {
+  #Banner-{{ section.id }}.banner--large {
+    display: block !important;
+    height: 24rem !important;
     min-height: 24rem !important;
+    max-height: 24rem !important;
+    overflow: hidden !important;
   }
 
-  .banner--large.banner--mobile-bottom:not(.banner--adapt) .banner__media,
-  .banner--large.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) > .banner__media,
+  #Banner-{{ section.id }}.banner--large .banner__content {
+    height: 24rem !important;
+    min-height: 24rem !important;
+    max-height: 24rem !important;
+    overflow: hidden !important;
+  }
+
   #Banner-{{ section.id }}.banner--large .banner__media {
     height: 24rem !important;
+    position: absolute !important;
   }
 }
 </style>
