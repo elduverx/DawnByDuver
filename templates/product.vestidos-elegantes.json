@@ -159,10 +159,10 @@
         "padding_bottom": 60
       }
     },
-    "resenas_fotos_clientes_top": {
+    "resenas_fotos_clientes_7qLRPe": {
       "type": "resenas-fotos-clientes",
       "blocks": {
-        "resena_QfTqXA": {
+        "resena_hQCjTL": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_1_ago_2026_18_04_15.png",
@@ -172,7 +172,7 @@
             "verificado": true
           }
         },
-        "resena_BFLBWV": {
+        "resena_qcg8VJ": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_00_11.webp",
@@ -182,7 +182,7 @@
             "verificado": true
           }
         },
-        "resena_dmVVPe": {
+        "resena_7f6jKb": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.webp",
@@ -192,7 +192,7 @@
             "verificado": true
           }
         },
-        "resena_HTWcFx": {
+        "resena_qQ3tNC": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
@@ -202,7 +202,7 @@
             "verificado": true
           }
         },
-        "resena_ghQMKJ": {
+        "resena_wbby6z": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_40_22.webp",
@@ -212,17 +212,7 @@
             "verificado": true
           }
         },
-        "resena_LPprJJ": {
-          "type": "resena",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_44_18.webp",
-            "texto": "Me ha gustado especialmente el tejido, ya que resulta ligero y no da demasiado calor. Muy buena compra.",
-            "nombre": "Mario P.",
-            "estrellas": 5,
-            "verificado": true
-          }
-        },
-        "resena_EVra7f": {
+        "resena_X4dtr8": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.webp",
@@ -232,27 +222,7 @@
             "verificado": true
           }
         },
-        "resena_hjMTkV": {
-          "type": "resena",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.webp",
-            "texto": "Pantalón cómodo y práctico. La talla es la habitual y queda muy bien.",
-            "nombre": "Darío A.",
-            "estrellas": 5,
-            "verificado": true
-          }
-        },
-        "resena_ek8imC": {
-          "type": "resena",
-          "settings": {
-            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_28_35.webp",
-            "texto": "Todo perfecto. El color coincide con el de la web, la talla es correcta y la prenda sienta muy bien.",
-            "nombre": "Carlos V.",
-            "estrellas": 5,
-            "verificado": true
-          }
-        },
-        "resena_JwymPa": {
+        "resena_ziFYnj": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.webp",
@@ -262,7 +232,7 @@
             "verificado": true
           }
         },
-        "resena_AijEpb": {
+        "resena_eU3HyT": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_12_jul_2026_09_18_37.png",
@@ -272,7 +242,7 @@
             "verificado": true
           }
         },
-        "resena_7Mzaaf": {
+        "resena_VpM8Ag": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
@@ -282,7 +252,7 @@
             "verificado": true
           }
         },
-        "resena_mftyM9": {
+        "resena_4McH9d": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_27_27.png",
@@ -292,7 +262,7 @@
             "verificado": true
           }
         },
-        "resena_qFWdpm": {
+        "resena_XJeqwX": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
@@ -302,7 +272,7 @@
             "verificado": true
           }
         },
-        "resena_kFL63T": {
+        "resena_zDti7a": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
@@ -312,7 +282,7 @@
             "verificado": true
           }
         },
-        "resena_ey6yrq": {
+        "resena_hGCtnm": {
           "type": "resena",
           "settings": {
             "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
@@ -324,22 +294,19 @@
         }
       },
       "block_order": [
-        "resena_QfTqXA",
-        "resena_BFLBWV",
-        "resena_dmVVPe",
-        "resena_HTWcFx",
-        "resena_ghQMKJ",
-        "resena_LPprJJ",
-        "resena_EVra7f",
-        "resena_hjMTkV",
-        "resena_ek8imC",
-        "resena_JwymPa",
-        "resena_AijEpb",
-        "resena_7Mzaaf",
-        "resena_mftyM9",
-        "resena_qFWdpm",
-        "resena_kFL63T",
-        "resena_ey6yrq"
+        "resena_hQCjTL",
+        "resena_qcg8VJ",
+        "resena_7f6jKb",
+        "resena_qQ3tNC",
+        "resena_wbby6z",
+        "resena_X4dtr8",
+        "resena_ziFYnj",
+        "resena_eU3HyT",
+        "resena_VpM8Ag",
+        "resena_4McH9d",
+        "resena_XJeqwX",
+        "resena_zDti7a",
+        "resena_hGCtnm"
       ],
       "name": "Reseñas con fotos",
       "settings": {
@@ -461,7 +428,7 @@
     "main",
     "combina_look_heaitB",
     "rich_text_UDE7dL",
-    "resenas_fotos_clientes_top",
+    "resenas_fotos_clientes_7qLRPe",
     "image_with_text_CtWL6D",
     "garantias_AkQQfV",
     "related-products",
