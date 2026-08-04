@@ -185,8 +185,40 @@
         "padding_bottom": 60
       }
     },
+    "image_with_text_GHAQFY": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_NkGTAH": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>23 años... y este es solo el comienzo.</strong></p><p>Hace tiempo abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Ella fue mi inspiración para crear Velaria.</p><p>Desde entonces, ustedes se han convertido en parte de esta familia. Para celebrar estos 23 años juntas, quiero agradecerles con un <strong>50% de descuento</strong> en productos seleccionados.</p><p>Muy pronto, cuando nuestra comunidad crezca aún más, abriremos nuestra primera tienda física.</p><p>Gracias por caminar junto a nosotras en este sueño.</p><p>Con cariño,<br/><strong>Velaria</strong> 💛</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_NkGTAH"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_4_ago_2026_12_07_22.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "editorial_banner_g9Wq7H": {
       "type": "editorial-banner",
+      "disabled": true,
       "name": "Banner editorial",
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_17_jun_2026_21_23_45.png"
@@ -407,6 +439,7 @@
     "categories",
     "colecciones_tabs_VEpcGX",
     "colecciones_tabs_pPRzBT",
+    "image_with_text_GHAQFY",
     "editorial_banner_g9Wq7H",
     "featured_collection",
     "resenas_fotos_clientes_fkgTJd",
