@@ -5222,51 +5222,7 @@ shop-follow-button,
     padding-top: 0px !important;
   }
 }
-@media screen and (max-width: 749px) {
-  /* BAJAR ICONOS DE LA CABECERA MANTENIENDO EL LOGO ESTÁTICO */
-  .header__heading-link, 
-  .header__heading {
-    margin-bottom: 0 !important; /* Mantiene el logo en su sitio */
-  }
 
-  .header__icon,
-  .header__search,
-  .header__menu-item,
-  a[class*="header__icon"] {
-    transform: translateY(8px) !important; /* Empuja los iconos hacia abajo en línea recta */
-  }
-}
-@media screen and (max-width: 749px) {
-  /* AGARRAMOS EL DIBUJO DE LA CAJITA Y LO MOVEMOS DESDE EL TECHO */
-  .header__icons a[href*="apps"] svg,
-  .header__icons a:nth-last-child(2) svg,
-  .header__icons .icon-box,
-  .header__icons [class*="box"] svg {
-    position: relative !important;
-    top: 9px !important; /* Ajusta este número para bajar la cajita */
-  }
-
-  /* REFUERZO TOTAL PARA EL CARRITO */
-  .header__icons a[href*="cart"] svg,
-  .header__icons a:nth-last-child(1) svg,
-  .header__icon--cart svg,
-  #cart-icon-bubble svg,
-  .header__icons [class*="cart"] svg,
-  #cart-icon-bubble,
-  .header__icon--cart {
-    position: relative !important;
-    top: 10px !important; /* Pon aquí el mismo número que a la cajita para alinearlos */
-  }
-}
-@media screen and (max-width: 749px) {
-  /* CONTROL ABSOLUTO Y EXCLUSIVO PARA EL CARRITO */
-  div.header__icons + svg,
-  header > svg,
-  svg[viewBox="0 0 24 24"]:has(+ span.visually-hidden) {
-    position: relative !important;
-    top: 10px !important; /* Ajusta este número para alinearlo con la cajita */
-  }
-}
 @media screen and (max-width: 749px) {
   /* ELIMINAR EL COLOR DE LA LÍNEA EN LA HOME */
   .header-wrapper--homepage::after,
