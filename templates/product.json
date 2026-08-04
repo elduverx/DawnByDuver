@@ -236,6 +236,7 @@
         "cliente_GJQVjg",
         "cliente_CCF6kx"
       ],
+      "disabled": true,
       "name": "Clientes comunidad",
       "settings": {
         "eyebrow": "VELA MADRID",
@@ -243,59 +244,247 @@
         "subtitulo": "Las prendas cobran vida cuando las llevan personas reales. Si quieres aparecer aquí, escríbenos a"
       }
     },
-    "rich_text_zH8Ky6": {
+    "rich_text_3F6WKP": {
       "type": "rich-text",
       "blocks": {
-        "caption_FxrE8g": {
+        "caption_Jbhziz": {
           "type": "caption",
           "settings": {
-            "caption": "VELA MADRID",
+            "caption": "CASA VELARIA",
             "text_style": "caption-with-letter-spacing",
             "text_size": "medium"
           }
         },
-        "heading_nzERWn": {
+        "heading_McLNM7": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>ÚLTIMA OPORTUNIDAD</strong>",
+            "heading": "<strong>OFERTA ANIVERSARIO</strong>",
             "heading_size": "h2"
           }
         },
-        "text_7VAp87": {
+        "text_DAMFcR": {
           "type": "text",
           "settings": {
-            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
+            "text": "<p>En Casa Velaria estamos de aniversario y queremos celebrarlo contigo.</p><p>Desde el primer día, nuestro propósito ha sido ofrecerte prendas con personalidad, estilo y ese toque especial que te hace sentir única. Hoy queremos agradecerte por acompañarnos, confiar en nosotros y ser parte de este camino.</p><p>Por eso, solo por hoy, disfruta de un <strong>50% de descuento</strong> en toda la tienda. Sin excepciones.</p><p>Esta celebración también es tuya. Aprovecha nuestra oferta de aniversario antes de que termine el día y encuentra tus prendas favoritas a mitad de precio.</p>"
           }
         },
-        "discount_box_jwymXf": {
+        "discount_box_PfmqWB": {
           "type": "discount_box",
           "settings": {}
         },
-        "text_gw79bY": {
+        "text_DeGLpd": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
           }
         }
       },
       "block_order": [
-        "caption_FxrE8g",
-        "heading_nzERWn",
-        "text_7VAp87",
-        "discount_box_jwymXf",
-        "text_gw79bY"
+        "caption_Jbhziz",
+        "heading_McLNM7",
+        "text_DAMFcR",
+        "discount_box_PfmqWB",
+        "text_DeGLpd"
       ],
       "custom_css": [
         ".rich-text__wrapper p {color: #444 !important;}"
       ],
-      "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "full_width": false,
         "padding_top": 60,
-        "padding_bottom": 0
+        "padding_bottom": 60
+      }
+    },
+    "resenas_fotos_clientes_3Mpxi7": {
+      "type": "resenas-fotos-clientes",
+      "blocks": {
+        "resena_WmBBKh": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_1_ago_2026_18_04_15.png",
+            "texto": "La verdad que me ha encantado el vestido con estos volantes, me dijeron que me quedaba muy bien. Volveré a comprar sin duda.",
+            "nombre": "Monica C.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_ca63cE": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_00_11.webp",
+            "texto": "Me ha gustado muchísimo. Es una prenda muy versátil y queda igual de bien con sandalias que con un calzado más arreglado.",
+            "nombre": "Lorena M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_KYzywC": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.webp",
+            "texto": "Muy contenta con la compra. Es cómoda, tiene buena caída y el tejido se siente agradable sobre la piel.",
+            "nombre": "Carmen L.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_8QcRfp": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
+            "texto": "La calidad está muy bien y el color es exactamente el que esperaba. He recibido varios cumplidos desde que me lo puse.",
+            "nombre": "Lola M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_dkd44F": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_40_22.webp",
+            "texto": "Muy satisfecha. La he lavado varias veces y mantiene perfectamente la forma y el color. La recomiendo.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_6hk97A": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.webp",
+            "texto": "Me ha gustado mucho la calidad del tejido y cómo se adapta al cuerpo. Es cómoda y no aprieta en ninguna zona.",
+            "nombre": "Amparo G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_JRhkMh": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.webp",
+            "texto": "Compré una unidad para probar y me ha gustado tanto que seguramente pediré otro color. Muy satisfecha con la compra.",
+            "nombre": "Sonia C.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_jhbtGY": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_12_jul_2026_09_18_37.png",
+            "texto": "Muy contenta con la compra. El diseño es precioso y sienta muy bien. El envío tardó un poco más de lo esperado, pero mereció la pena.",
+            "nombre": "Mireya P.",
+            "estrellas": 4,
+            "verificado": true
+          }
+        },
+        "resena_M7mMUH": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
+            "texto": "Estoy muy contenta con mi pedido. El color es precioso, la talla corresponde y la prenda resulta muy cómoda durante todo el día.",
+            "nombre": "Carolina M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_MKyMVN": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_27_27.png",
+            "texto": "Estoy encantada con mi compra, la calidad superó mis expectativas.",
+            "nombre": "Paula J.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_peAckt": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
+            "texto": "Todo perfecto. El pedido llegó correctamente, la talla coincide y la prenda queda muy favorecedora. Muy buena experiencia con Vela Madrid.",
+            "nombre": "Rocío L.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_fHyRJd": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
+            "texto": "Compra totalmente recomendable. La prenda es cómoda, no transparenta y tiene una caída muy bonita. Sin duda compraré de nuevo.",
+            "nombre": "Amparo C.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_MYGUAt": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
+            "texto": "Me encanta cómo queda. Es una prenda cómoda, favorecedora y perfecta tanto para diario como para una ocasión un poco más especial.",
+            "nombre": "Elena F.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        }
+      },
+      "block_order": [
+        "resena_WmBBKh",
+        "resena_ca63cE",
+        "resena_KYzywC",
+        "resena_8QcRfp",
+        "resena_dkd44F",
+        "resena_6hk97A",
+        "resena_JRhkMh",
+        "resena_jhbtGY",
+        "resena_M7mMUH",
+        "resena_MKyMVN",
+        "resena_peAckt",
+        "resena_fHyRJd",
+        "resena_MYGUAt"
+      ],
+      "name": "Reseñas con fotos",
+      "settings": {
+        "titulo": "¿Que dicen nuestras clientes?",
+        "subtitulo": "Más de 15.000 clientes satisfechos",
+        "valoracion_texto": "Excelente 4.8/5",
+        "color_estrellas": "#f8c41b"
+      }
+    },
+    "image_with_text_Cm7jEP": {
+      "type": "image-with-text",
+      "blocks": {
+        "text_UUdQ4U": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>23 años... y este es solo el comienzo.</strong></p><p>Hace tiempo abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Ella fue mi inspiración para crear Velaria.</p><p>Desde entonces, ustedes se han convertido en parte de esta familia. Para celebrar estos 23 años juntas, quiero agradecerles con un <strong>50% de descuento</strong> en productos seleccionados.</p><p>Muy pronto, cuando nuestra comunidad crezca aún más, abriremos nuestra primera tienda física.</p><p>Gracias por caminar junto a nosotras en este sueño.</p><p>Con cariño,<br/><strong>Velaria</strong> 💛</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_UUdQ4U"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/ChatGPT_Image_4_ago_2026_12_07_22.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "garantias_AkQQfV": {
@@ -379,7 +568,9 @@
     "main",
     "combina_look_heaitB",
     "clientes_comunidad_P7VGmC",
-    "rich_text_zH8Ky6",
+    "rich_text_3F6WKP",
+    "resenas_fotos_clientes_3Mpxi7",
+    "image_with_text_Cm7jEP",
     "garantias_AkQQfV",
     "related-products",
     "resenas_clientes_vela",
