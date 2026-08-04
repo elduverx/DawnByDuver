@@ -5991,3 +5991,19 @@ cart-drawer.is-empty [class*="close"]::after {
   border: none !important;
   box-shadow: none !important;
 }
+@media screen and (max-width: 749px) {
+  .rich-text__wrapper {
+    width: 100% !important;
+  }
+
+  .rich-text__blocks {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .rich-text__text {
+    max-width: 100% !important;
+  }
+}
