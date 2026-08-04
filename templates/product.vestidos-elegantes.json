@@ -104,6 +104,61 @@
         "url_ver_todo": "shopify://collections/all"
       }
     },
+    "rich_text_UDE7dL": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_VHRqXm": {
+          "type": "caption",
+          "settings": {
+            "caption": "CASA VELARIA",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "heading_E7E79Y": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>OFERTA ANIVERSARIO</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_6FXX8W": {
+          "type": "text",
+          "settings": {
+            "text": "<p>En Casa Velaria estamos de aniversario y queremos celebrarlo contigo.</p><p>Desde el primer día, nuestro propósito ha sido ofrecerte prendas con personalidad, estilo y ese toque especial que te hace sentir única. Hoy queremos agradecerte por acompañarnos, confiar en nosotros y ser parte de este camino.</p><p>Por eso, solo por hoy, disfruta de un <strong>50% de descuento</strong> en toda la tienda. Sin excepciones.</p><p>Esta celebración también es tuya. Aprovecha nuestra oferta de aniversario antes de que termine el día y encuentra tus prendas favoritas a mitad de precio.</p>"
+          }
+        },
+        "discount_box_bJ8mXp": {
+          "type": "discount_box",
+          "settings": {}
+        },
+        "text_hf3iAf": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "caption_VHRqXm",
+        "heading_E7E79Y",
+        "text_6FXX8W",
+        "discount_box_bJ8mXp",
+        "text_hf3iAf"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper p {color: #444 !important;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
     "resenas_fotos_clientes_top": {
       "type": "resenas-fotos-clientes",
       "blocks": {
@@ -294,59 +349,35 @@
         "color_estrellas": "#f8c41b"
       }
     },
-    "rich_text_UDE7dL": {
-      "type": "rich-text",
+    "image_with_text_CtWL6D": {
+      "type": "image-with-text",
       "blocks": {
-        "caption_VHRqXm": {
-          "type": "caption",
-          "settings": {
-            "caption": "CASA VELARIA",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading_E7E79Y": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>OFERTA ANIVERSARIO</strong>",
-            "heading_size": "h2"
-          }
-        },
-        "text_6FXX8W": {
+        "text_pYyjnt": {
           "type": "text",
           "settings": {
-            "text": "<p>En Casa Velaria estamos de aniversario y queremos celebrarlo contigo.</p><p>Desde el primer día, nuestro propósito ha sido ofrecerte prendas con personalidad, estilo y ese toque especial que te hace sentir única. Hoy queremos agradecerte por acompañarnos, confiar en nosotros y ser parte de este camino.</p><p>Por eso, solo por hoy, disfruta de un <strong>50% de descuento</strong> en toda la tienda. Sin excepciones.</p><p>Esta celebración también es tuya. Aprovecha nuestra oferta de aniversario antes de que termine el día y encuentra tus prendas favoritas a mitad de precio.</p>"
-          }
-        },
-        "discount_box_bJ8mXp": {
-          "type": "discount_box",
-          "settings": {}
-        },
-        "text_hf3iAf": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
+            "text": "<p><strong>23 años... y este es solo el comienzo.</strong></p><p>Hace tiempo abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Ella fue mi inspiración para crear Velaria.</p><p>Desde entonces, ustedes se han convertido en parte de esta familia. Para celebrar estos 23 años juntas, quiero agradecerles con un <strong>50% de descuento</strong> en productos seleccionados.</p><p>Muy pronto, cuando nuestra comunidad crezca aún más, abriremos nuestra primera tienda física.</p><p>Gracias por caminar junto a nosotras en este sueño.</p><p>Con cariño,<br/><strong>Velaria</strong> 💛</p>",
+            "text_style": "body"
           }
         }
       },
       "block_order": [
-        "caption_VHRqXm",
-        "heading_E7E79Y",
-        "text_6FXX8W",
-        "discount_box_bJ8mXp",
-        "text_hf3iAf"
+        "text_pYyjnt"
       ],
-      "custom_css": [
-        ".rich-text__wrapper p {color: #444 !important;}"
-      ],
+      "name": "t:sections.image-with-text.presets.name",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 0,
-        "padding_bottom": 60
+        "image": "shopify://shop_images/ChatGPT_Image_4_ago_2026_12_07_22.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "garantias_AkQQfV": {
@@ -429,8 +460,9 @@
   "order": [
     "main",
     "combina_look_heaitB",
-    "resenas_fotos_clientes_top",
     "rich_text_UDE7dL",
+    "resenas_fotos_clientes_top",
+    "image_with_text_CtWL6D",
     "garantias_AkQQfV",
     "related-products",
     "resenas_clientes_vela",
