@@ -294,59 +294,59 @@
         "color_estrellas": "#f8c41b"
       }
     },
-    "rich_text_zH8Ky6": {
+    "rich_text_UDE7dL": {
       "type": "rich-text",
       "blocks": {
-        "caption_FxrE8g": {
+        "caption_VHRqXm": {
           "type": "caption",
           "settings": {
-            "caption": "VELA MADRID",
+            "caption": "CASA VELARIA",
             "text_style": "caption-with-letter-spacing",
             "text_size": "medium"
           }
         },
-        "heading_nzERWn": {
+        "heading_E7E79Y": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>ÚLTIMA OPORTUNIDAD</strong>",
+            "heading": "<strong>OFERTA ANIVERSARIO</strong>",
             "heading_size": "h2"
           }
         },
-        "text_7VAp87": {
+        "text_6FXX8W": {
           "type": "text",
           "settings": {
-            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
+            "text": "<p>En Casa Velaria estamos de aniversario y queremos celebrarlo contigo.</p><p>Desde el primer día, nuestro propósito ha sido ofrecerte prendas con personalidad, estilo y ese toque especial que te hace sentir única. Hoy queremos agradecerte por acompañarnos, confiar en nosotros y ser parte de este camino.</p><p>Por eso, solo por hoy, disfruta de un <strong>50% de descuento</strong> en toda la tienda. Sin excepciones.</p><p>Esta celebración también es tuya. Aprovecha nuestra oferta de aniversario antes de que termine el día y encuentra tus prendas favoritas a mitad de precio.</p>"
           }
         },
-        "discount_box_jwymXf": {
+        "discount_box_bJ8mXp": {
           "type": "discount_box",
           "settings": {}
         },
-        "text_gw79bY": {
+        "text_hf3iAf": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
           }
         }
       },
       "block_order": [
-        "caption_FxrE8g",
-        "heading_nzERWn",
-        "text_7VAp87",
-        "discount_box_jwymXf",
-        "text_gw79bY"
+        "caption_VHRqXm",
+        "heading_E7E79Y",
+        "text_6FXX8W",
+        "discount_box_bJ8mXp",
+        "text_hf3iAf"
       ],
       "custom_css": [
         ".rich-text__wrapper p {color: #444 !important;}"
       ],
-      "name": "t:sections.rich-text.presets.name",
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "full_width": false,
-        "padding_top": 60,
-        "padding_bottom": 0
+        "padding_top": 0,
+        "padding_bottom": 60
       }
     },
     "garantias_AkQQfV": {
@@ -430,7 +430,7 @@
     "main",
     "combina_look_heaitB",
     "resenas_fotos_clientes_top",
-    "rich_text_zH8Ky6",
+    "rich_text_UDE7dL",
     "garantias_AkQQfV",
     "related-products",
     "resenas_clientes_vela",
