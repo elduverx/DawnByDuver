@@ -5953,3 +5953,25 @@ cart-drawer.is-empty [class*="close"]::after {
 .vela-cincuenta {
   font-size: 1.2em;
 }
+/* Separador definitivo de la barra de descuentos */
+[id*="announcement_bar_jyECQW"],
+[id*="announcement_bar_jyECQW"] .utility-bar,
+[id*="announcement_bar_jyECQW"] .utility-bar__grid,
+[id*="announcement_bar_jyECQW"] .announcement-bar,
+[id*="announcement_bar_jyECQW"] .announcement-bar-slider {
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}
+
+[id*="announcement_bar_jyECQW"]::before,
+[id*="announcement_bar_jyECQW"]::after,
+[id*="announcement_bar_jyECQW"] .utility-bar::before,
+[id*="announcement_bar_jyECQW"] .utility-bar::after {
+  content: none !important;
+  display: none !important;
+}
+
+[id*="announcement_bar_jyECQW"] {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
