@@ -5953,27 +5953,24 @@ cart-drawer.is-empty [class*="close"]::after {
 .vela-cincuenta {
   font-size: 1.2em;
 }
-/* Separador de la barra de descuentos a todo el ancho */
+/* Separador único de la barra de descuentos */
 [id$="__announcement_bar_jyECQW"] {
-  position: relative !important;
-  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
   box-shadow: none !important;
 }
 
-[id$="__announcement_bar_jyECQW"]::after {
-  content: "" !important;
-  position: absolute !important;
-  left: 50% !important;
-  bottom: 0 !important;
-  width: 100vw !important;
-  height: 1px !important;
-  transform: translateX(-50%) !important;
-  background: rgba(0, 0, 0, 0.1) !important;
-  display: block !important;
-  pointer-events: none !important;
+/* Quitar cualquier segunda línea */
+[id$="__announcement_bar_jyECQW"]::before,
+[id$="__announcement_bar_jyECQW"]::after,
+[id$="__announcement_bar_jyECQW"] .utility-bar::before,
+[id$="__announcement_bar_jyECQW"] .utility-bar::after,
+[id$="__announcement_bar_jyECQW"] .utility-bar__grid::before,
+[id$="__announcement_bar_jyECQW"] .utility-bar__grid::after {
+  content: none !important;
+  display: none !important;
 }
 
-/* Eliminar líneas interiores cortas */
+/* Quitar bordes internos */
 [id$="__announcement_bar_jyECQW"] .utility-bar,
 [id$="__announcement_bar_jyECQW"] .utility-bar__grid,
 [id$="__announcement_bar_jyECQW"] .announcement-bar,
