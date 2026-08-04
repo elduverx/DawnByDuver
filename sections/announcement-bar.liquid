@@ -1,15 +1,25 @@
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign es_barra_descuento = false
+  for block in section.blocks
+    if block.settings.text contains 'DESCUENTO'
+      assign es_barra_descuento = true
+    endif
+  endfor
+-%}
+{%- if es_barra_descuento -%}
 <style>
-.announcement-bar__message {
-  font-size: 1.5rem !important;
-}
+  #shopify-section-{{ section.id }} .announcement-bar__message {
+    font-size: 1.5rem !important;
+  }
 
-.utility-bar {
-  padding-top: 1.2rem !important;
-  padding-bottom: 1.2rem !important;
-}
+  #shopify-section-{{ section.id }} .utility-bar {
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+  }
 </style>
+{%- endif -%}
 
 {%- liquid
   assign social_icons = true
