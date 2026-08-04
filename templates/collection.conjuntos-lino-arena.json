@@ -15,7 +15,7 @@
       "settings": {
         "show_collection_description": false,
         "show_collection_image": true,
-        "kicker_text": "HOMBRE",
+        "kicker_text": "",
         "mobile_image": "shopify://shop_images/ChatGPT_Image_16_jul_2026_11_53_31.png",
         "color_scheme": "scheme-1"
       }
