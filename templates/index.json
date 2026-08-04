@@ -419,9 +419,200 @@
         "resena_kFL63T",
         "resena_ey6yrq"
       ],
+      "disabled": true,
       "name": "Reseñas con fotos",
       "settings": {
         "titulo": "¿Que dicen nuestras clientas?",
+        "subtitulo": "Más de 15.000 clientes satisfechos",
+        "valoracion_texto": "Excelente 4.8/5",
+        "color_estrellas": "#f8c41b"
+      }
+    },
+    "resenas_fotos_clientes_6GQbzg": {
+      "type": "resenas-fotos-clientes",
+      "blocks": {
+        "resena_rLP3CN": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_1_ago_2026_18_04_15.png",
+            "texto": "La verdad que me ha encantado el vestido con estos volantes, me dijeron que me quedaba muy bien. Volveré a comprar sin duda.",
+            "nombre": "Monica C.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_fHJ4R7": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_00_11.webp",
+            "texto": "Me ha gustado muchísimo. Es una prenda muy versátil y queda igual de bien con sandalias que con un calzado más arreglado.",
+            "nombre": "Lorena M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_ADi3k6": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_14_31.webp",
+            "texto": "Muy contenta con la compra. Es cómoda, tiene buena caída y el tejido se siente agradable sobre la piel.",
+            "nombre": "Carmen L.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_7NtaRN": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_23_jul_2026_12_42_13.png",
+            "texto": "La calidad está muy bien y el color es exactamente el que esperaba. He recibido varios cumplidos desde que me lo puse.",
+            "nombre": "Lola M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_DhNWVi": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_40_22.webp",
+            "texto": "Muy satisfecha. La he lavado varias veces y mantiene perfectamente la forma y el color. La recomiendo.",
+            "nombre": "María G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_bbnga9": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_44_18.webp",
+            "texto": "Me ha gustado especialmente el tejido, ya que resulta ligero y no da demasiado calor. Muy buena compra.",
+            "nombre": "Mario P.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_WXmDWX": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_33_59.webp",
+            "texto": "Me ha gustado mucho la calidad del tejido y cómo se adapta al cuerpo. Es cómoda y no aprieta en ninguna zona.",
+            "nombre": "Amparo G.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_tdWgHW": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_50_38.webp",
+            "texto": "Pantalón cómodo y práctico. La talla es la habitual y queda muy bien.",
+            "nombre": "Darío A.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_WtmUmT": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_28_35.webp",
+            "texto": "Todo perfecto. El color coincide con el de la web, la talla es correcta y la prenda sienta muy bien.",
+            "nombre": "Carlos V.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_X6TmAg": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_15_06_22.webp",
+            "texto": "Compré una unidad para probar y me ha gustado tanto que seguramente pediré otro color. Muy satisfecha con la compra.",
+            "nombre": "Sonia C.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_NyyfpT": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_12_jul_2026_09_18_37.png",
+            "texto": "Muy contenta con la compra. El diseño es precioso y sienta muy bien. El envío tardó un poco más de lo esperado, pero mereció la pena.",
+            "nombre": "Mireya P.",
+            "estrellas": 4,
+            "verificado": true
+          }
+        },
+        "resena_7LEF7X": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_8_jul_2026_14_17_28.png",
+            "texto": "Estoy muy contenta con mi pedido. El color es precioso, la talla corresponde y la prenda resulta muy cómoda durante todo el día.",
+            "nombre": "Carolina M.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_jap83t": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_27_jul_2026_19_27_27.png",
+            "texto": "Estoy encantada con mi compra, la calidad superó mis expectativas.",
+            "nombre": "Paula J.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_LJgCpx": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_26_jul_2026_23_15_01.png",
+            "texto": "Todo perfecto. El pedido llegó correctamente, la talla coincide y la prenda queda muy favorecedora. Muy buena experiencia con Vela Madrid.",
+            "nombre": "Rocío L.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_RN983N": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/18248df8-b8e8-4fc3-9466-3a196f825865.png",
+            "texto": "Compra totalmente recomendable. La prenda es cómoda, no transparenta y tiene una caída muy bonita. Sin duda compraré de nuevo.",
+            "nombre": "Amparo C.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
+        "resena_9Wecxb": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_20_jul_2026_00_35_16.png",
+            "texto": "Me encanta cómo queda. Es una prenda cómoda, favorecedora y perfecta tanto para diario como para una ocasión un poco más especial.",
+            "nombre": "Elena F.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        }
+      },
+      "block_order": [
+        "resena_rLP3CN",
+        "resena_fHJ4R7",
+        "resena_ADi3k6",
+        "resena_7NtaRN",
+        "resena_DhNWVi",
+        "resena_bbnga9",
+        "resena_WXmDWX",
+        "resena_tdWgHW",
+        "resena_WtmUmT",
+        "resena_X6TmAg",
+        "resena_NyyfpT",
+        "resena_7LEF7X",
+        "resena_jap83t",
+        "resena_LJgCpx",
+        "resena_RN983N",
+        "resena_9Wecxb"
+      ],
+      "name": "Reseñas con fotos",
+      "settings": {
+        "titulo": "¿Que dicen nuestros clientes?",
         "subtitulo": "Más de 15.000 clientes satisfechos",
         "valoracion_texto": "Excelente 4.8/5",
         "color_estrellas": "#f8c41b"
@@ -443,6 +634,7 @@
     "editorial_banner_g9Wq7H",
     "featured_collection",
     "resenas_fotos_clientes_fkgTJd",
+    "resenas_fotos_clientes_6GQbzg",
     "garantias_FMf9m7"
   ]
 }
