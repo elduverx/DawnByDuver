@@ -1,7 +1,15 @@
 <style>
-  /* Separa todo el formulario del encabezado negro */
-  .contact {
-    margin-top: 6rem !important;
+  /* Separa todo el formulario del encabezado negro (solo escritorio) */
+  @media screen and (min-width: 750px) {
+    .contact {
+      margin-top: 6rem !important;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .contact {
+      margin-top: 0 !important;
+    }
   }
 
   /* Estilo premium limpio para el título de contacto */
