@@ -551,7 +551,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "optional_company_label": "DNI/RUC/RUT/RFC/NIT"
+        "optional_company_label": "DNI/RUC/RUT/RFC/NIT",
+        "company_label": "DNI/RUC/RUT/RFC/NIT"
       }
     }
   }
