@@ -64,7 +64,7 @@
         "caption_PhV8Kc": {
           "type": "caption",
           "settings": {
-            "caption": "VELA MADRID",
+            "caption": "CASA VELARIA",
             "text_style": "caption-with-letter-spacing",
             "text_size": "medium"
           }
@@ -72,14 +72,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>ÚLTIMA OPORTUNIDAD</strong>",
+            "heading": "<strong>OFERTA ANIVERSARIO</strong>",
             "heading_size": "h2"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>En Vela Madrid creemos que el estilo no es un privilegio, es una elección. Desde el primer día hemos trabajado para traerte prendas con personalidad.</p><p>Este verano queremos celebrarlo contigo. Y llega el último día para hacerlo: <strong>toda la web con un 50% de descuento.</strong> Sin excepciones.</p><p>Cada pieza cobra sentido gracias a personas como tú. Gracias por elegirnos, por tu apoyo constante y por compartir este proyecto con nosotros. Queremos devolverte una parte de ese cariño con este pequeño gesto.</p><p>   </p><p></p>"
+            "text": "<p>En Casa Velaria estamos de aniversario y queremos celebrarlo contigo.</p><p>Desde el primer día, nuestro propósito ha sido ofrecerte prendas con personalidad, estilo y ese toque especial que te hace sentir única. Hoy queremos agradecerte por acompañarnos, confiar en nosotros y ser parte de este camino.</p><p>Por eso, solo por hoy, disfruta de un <strong>50% de descuento</strong> en toda la tienda. Sin excepciones.</p><p>Esta celebración también es tuya. Aprovecha nuestra oferta de aniversario antes de que termine el día y encuentra tus prendas favoritas a mitad de precio.</p>"
           }
         },
         "discount_box_CQmTq4": {
