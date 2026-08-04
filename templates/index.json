@@ -216,6 +216,17 @@
         "padding_bottom": 36
       }
     },
+    "colecciones_tabs_URpK4H": {
+      "type": "colecciones-tabs",
+      "name": "Colecciones con pestañas",
+      "settings": {
+        "collection_1": "vestidos-bohemios",
+        "collection_2": "mujer",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 28
+      }
+    },
     "editorial_banner_g9Wq7H": {
       "type": "editorial-banner",
       "disabled": true,
@@ -631,6 +642,7 @@
     "colecciones_tabs_VEpcGX",
     "colecciones_tabs_pPRzBT",
     "image_with_text_GHAQFY",
+    "colecciones_tabs_URpK4H",
     "editorial_banner_g9Wq7H",
     "featured_collection",
     "resenas_fotos_clientes_fkgTJd",
