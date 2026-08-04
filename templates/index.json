@@ -14,6 +14,7 @@
       "blocks": {
         "heading_wyxeKj": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "<strong>PROMOCIÓN ANIVERSARIO</strong>",
             "heading_size": "h2"
@@ -21,6 +22,7 @@
         },
         "text": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<strong>-50% EN TODA LA WEB</strong>",
             "text_style": "subtitle"
@@ -387,7 +389,7 @@
       ],
       "name": "Reseñas con fotos",
       "settings": {
-        "titulo": "¿Que dicen nuestros clientas?",
+        "titulo": "¿Que dicen nuestras clientas?",
         "subtitulo": "Más de 15.000 clientes satisfechos",
         "valoracion_texto": "Excelente 4.8/5",
         "color_estrellas": "#f8c41b"
