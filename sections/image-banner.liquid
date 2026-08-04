@@ -8,6 +8,7 @@
     box-shadow: none !important;
   }
 
+  {%- if section.id contains 'image_banner' -%}
   #Banner-{{ section.id }}.banner--large {
     display: block !important;
     height: 34rem !important;
@@ -27,6 +28,7 @@
     height: 34rem !important;
     position: absolute !important;
   }
+  {%- endif -%}
 }
 </style>
 
