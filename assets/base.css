@@ -5993,21 +5993,23 @@ cart-drawer.is-empty [class*="close"]::after {
 }
 
 @media screen and (max-width: 749px) {
-  .rich-text__wrapper {
-    width: 100% !important;
+  .template-index .image-with-text {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     max-width: 100% !important;
   }
 
-  .rich-text__blocks {
-    width: 100% !important;
-    max-width: 100% !important;
+  .template-index .image-with-text__content {
     padding-left: 12px !important;
     padding-right: 12px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 
-  .rich-text__text {
+  .template-index .image-with-text__text-item {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .template-index .image-with-text__text {
     width: 100% !important;
     max-width: 100% !important;
   }
