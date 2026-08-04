@@ -5953,29 +5953,13 @@ cart-drawer.is-empty [class*="close"]::after {
 .vela-cincuenta {
   font-size: 1.2em;
 }
-/* Línea separadora bajo el anuncio de descuentos */
-[id*="announcement_bar_jyECQW"] {
-  position: relative !important;
-  border-bottom: none !important;
+/* Separador del anuncio igual al del header */
+[id*="announcement_bar_jyECQW"] .utility-bar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: none !important;
 }
 
 [id*="announcement_bar_jyECQW"]::after {
-  content: "" !important;
-  display: block !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100% !important;
-  height: 1px !important;
-  background-color: #c8c8c8 !important;
-  z-index: 999 !important;
-  pointer-events: none !important;
-}
-
-@media screen and (max-width: 749px) {
-  [id*="announcement_bar_jyECQW"]::after {
-    height: 2px !important;
-    background-color: #bcbcbc !important;
-  }
+  display: none !important;
+  content: none !important;
 }
