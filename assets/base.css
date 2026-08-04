@@ -5200,24 +5200,9 @@ shop-follow-button,
   }
 }
 @media screen and (max-width: 749px) {
-  /* 1. LIMPIAMOS BORDES VIEJOS POR SI ACASO */
   .header-wrapper, .header {
-    border-bottom: none !important;
+    border-bottom: 1px solid #e5e5e5 !important;
     box-shadow: none !important;
-  }
-
-  /* 2. CREAMOS UNA LÍNEA FLOTANTE ARTIFICIAL (EXCLUYENDO LA HOME) */
-  body:not(.template-index) .header-wrapper::after {
-    content: "" !important;
-    display: block !important;
-    width: 100% !important;
-    height: 1px !important;
-    background-color: #e5e5e5 !important; /* El color gris de la línea */
-    position: absolute !important;
-    left: 0 !important;
-    
-    /* CONTROL DE ALTURA: Aquí es donde la tiramos hacia abajo */
-    top: 70px !important; /* Sube o baja este número para mover la línea a tu gusto */
   }
 }
 @media screen and (max-width: 749px) {
