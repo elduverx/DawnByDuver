@@ -590,7 +590,7 @@
       ],
       "name": "Reseñas con fotos",
       "settings": {
-        "titulo": "¿Que dicen nuestros clientes?",
+        "titulo": "¿Que dicen nuestras clientes?",
         "subtitulo": "Más de 15.000 clientes satisfechos",
         "valoracion_texto": "Excelente 4.8/5",
         "color_estrellas": "#f8c41b"
