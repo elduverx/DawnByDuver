@@ -292,6 +292,17 @@
         "padding_bottom": 40
       }
     },
+    "colecciones_tabs_pEHjwx": {
+      "type": "colecciones-tabs",
+      "name": "Colecciones con pestañas",
+      "settings": {
+        "collection_1": "mujer",
+        "collection_2": "cinturones",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 60
+      }
+    },
     "resenas_fotos_clientes_fkgTJd": {
       "type": "resenas-fotos-clientes",
       "blocks": {
@@ -612,6 +623,7 @@
     "colecciones_tabs_VEpcGX",
     "editorial_banner_g9Wq7H",
     "featured_collection",
+    "colecciones_tabs_pEHjwx",
     "resenas_fotos_clientes_fkgTJd",
     "resenas_fotos_clientes_6GQbzg",
     "garantias_FMf9m7"
