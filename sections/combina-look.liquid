@@ -81,6 +81,7 @@
       assign es_costa_vela = false
       assign es_vestidos_elegantes = false
       assign es_vestidos_bohemios = false
+      assign es_conjuntos_salvia = false
       for coleccion_producto in product.collections
         if coleccion_producto.handle == 'conjuntos-mar-arena'
           assign es_lino_arena = true
@@ -100,6 +101,9 @@
         if coleccion_producto.handle == 'vestidos-bohemios'
           assign es_vestidos_bohemios = true
         endif
+        if coleccion_producto.handle == 'conjuntos-salvia'
+          assign es_conjuntos_salvia = true
+        endif
       endfor
 
       if es_lino_arena
@@ -114,6 +118,8 @@
         assign target_collection = collections['vestidos-elegantes']
       elsif es_vestidos_bohemios
         assign target_collection = collections['vestidos-bohemios']
+      elsif es_conjuntos_salvia
+        assign target_collection = collections['conjuntos-salvia']
       else
         assign es_mujer = false
         for coleccion_check in product.collections
