@@ -397,6 +397,7 @@
         assign has_conjuntos = false
         assign has_costa_vela = false
         assign has_vestidos_elegantes = false
+        assign has_vestidos_bohemios = false
 
         for item in cart.items
           assign item_tags = item.product.tags | join: ',' | downcase
