@@ -482,6 +482,9 @@
         if has_vestidos_elegantes
           assign target_handles_str = 'vestidos-elegantes'
         endif
+        if has_vestidos_bohemios
+          assign target_handles_str = 'vestidos-bohemios'
+        endif
         assign target_handles = target_handles_str | split: ','
       -%}
       {%- capture upsell_items_html -%}
