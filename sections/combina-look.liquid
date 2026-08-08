@@ -124,6 +124,8 @@
         assign target_collection = collections['vestidos-bohemios']
       elsif es_conjuntos_salvia
         assign target_collection = collections['conjuntos-salvia']
+      elsif es_trajes_bano
+        assign target_collection = collections['trajes-de-bano']
       else
         assign es_mujer = false
         for coleccion_check in product.collections
