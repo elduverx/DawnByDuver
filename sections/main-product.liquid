@@ -768,7 +768,7 @@
                           </summary>
                         {%- endif -%}
                         <slideshow-component class="slider-mobile-gutter">
-                          {%- assign number_of_slides = recommendations.products_count
+                          {%- assign number_of_slides = recommendations_count
                             | plus: 0.0
                             | divided_by: block.settings.products_per_page
                             | ceil
