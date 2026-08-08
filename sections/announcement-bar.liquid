@@ -57,15 +57,31 @@
       <script>
         (function () {
           function pad(n) { return n < 10 ? '0' + n : '' + n; }
+          function segundosDelDiaEnMexico() {
+            var ahora = new Date();
+            var formatter = new Intl.DateTimeFormat('en-US', {
+              timeZone: 'America/Mexico_City',
+              hour12: false,
+              hour: '2-digit',
+              minute: '2-digit',
+              second: '2-digit'
+            });
+            var h = 0, m = 0, s = 0;
+            formatter.formatToParts(ahora).forEach(function (p) {
+              if (p.type === 'hour') h = parseInt(p.value, 10);
+              if (p.type === 'minute') m = parseInt(p.value, 10);
+              if (p.type === 'second') s = parseInt(p.value, 10);
+            });
+            if (h === 24) h = 0;
+            return (h * 3600) + (m * 60) + s;
+          }
           function actualizarContador() {
             var el = document.getElementById('vela-countdown-{{ section.id }}');
             if (!el) return;
-            var ahora = new Date();
-            var medianoche = new Date(ahora.getFullYear(), ahora.getMonth(), ahora.getDate() + 1, 0, 0, 0);
-            var restante = medianoche - ahora;
-            var horas = Math.floor(restante / 3600000);
-            var minutos = Math.floor((restante % 3600000) / 60000);
-            var segundos = Math.floor((restante % 60000) / 1000);
+            var restanteSegundos = 86400 - segundosDelDiaEnMexico();
+            var horas = Math.floor(restanteSegundos / 3600);
+            var minutos = Math.floor((restanteSegundos % 3600) / 60);
+            var segundos = restanteSegundos % 60;
             el.textContent = pad(horas) + ':' + pad(minutos) + ':' + pad(segundos);
           }
           actualizarContador();
