@@ -720,13 +720,29 @@
                   </div>
                 {%- endif -%}
               {%- when 'complementary' -%}
+                {%- assign es_trajes_bano = false -%}
+                {%- for coll in product.collections -%}
+                  {%- if coll.handle == 'trajes-de-bano' -%}
+                    {%- assign es_trajes_bano = true -%}
+                  {%- endif -%}
+                {%- endfor -%}
+                {%- if es_trajes_bano -%}
+                  {%- assign recommendations_list = collections['trajes-de-bano'].products | reject: 'id', product.id -%}
+                  {%- assign recommendations_performed = true -%}
+                  {%- assign recommendations_count = recommendations_list.size -%}
+                {%- else -%}
+                  {%- assign recommendations_list = recommendations.products -%}
+                  {%- assign recommendations_performed = recommendations.performed -%}
+                  {%- assign recommendations_count = recommendations.products_count -%}
+                {%- endif -%}
                 <product-recommendations
                   class="complementary-products quick-add-hidden{% if block.settings.make_collapsible_row %} is-accordion{% endif %}{% if block.settings.enable_quick_add %} complementary-products-contains-quick-add{% endif %}"
                   data-url="{{ routes.product_recommendations_url }}?limit={{ block.settings.product_list_limit }}&intent=complementary"
                   data-section-id="{{ section.id }}"
                   data-product-id="{{ product.id }}"
+                  {% if es_trajes_bano %}data-vela-no-fetch="true"{% endif %}
                 >
-                  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+                  {%- if recommendations_performed and recommendations_count > 0 -%}
                     <aside
                       aria-label="{{ 'accessibility.complementary_products' | t }}"
                       {{ block.shopify_attributes -}}
