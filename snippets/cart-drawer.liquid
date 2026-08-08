@@ -399,6 +399,7 @@
         assign has_vestidos_elegantes = false
         assign has_vestidos_bohemios = false
         assign has_conjuntos_salvia = false
+        assign has_trajes_bano = false
 
         for item in cart.items
           assign item_tags = item.product.tags | join: ',' | downcase
@@ -455,6 +456,9 @@
             if coleccion_producto.handle == 'conjuntos-salvia'
               assign has_conjuntos_salvia = true
             endif
+            if coleccion_producto.handle == 'trajes-de-bano'
+              assign has_trajes_bano = true
+            endif
           endfor
         endfor
 
@@ -494,6 +498,9 @@
         endif
         if has_conjuntos_salvia
           assign target_handles_str = 'conjuntos-salvia'
+        endif
+        if has_trajes_bano
+          assign target_handles_str = 'trajes-de-bano'
         endif
         assign target_handles = target_handles_str | split: ','
       -%}
