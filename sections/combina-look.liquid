@@ -82,6 +82,7 @@
       assign es_vestidos_elegantes = false
       assign es_vestidos_bohemios = false
       assign es_conjuntos_salvia = false
+      assign es_trajes_bano = false
       for coleccion_producto in product.collections
         if coleccion_producto.handle == 'conjuntos-mar-arena'
           assign es_lino_arena = true
@@ -103,6 +104,9 @@
         endif
         if coleccion_producto.handle == 'conjuntos-salvia'
           assign es_conjuntos_salvia = true
+        endif
+        if coleccion_producto.handle == 'trajes-de-bano'
+          assign es_trajes_bano = true
         endif
       endfor
 
