@@ -178,8 +178,8 @@
       "type": "colecciones-tabs",
       "name": "Colecciones con pestañas",
       "settings": {
-        "collection_1": "sandalias-amalfi",
-        "collection_2": "conjuntos-costa-vela",
+        "collection_1": "conjuntos-mar-arena",
+        "collection_2": "sandalias-amalfi",
         "color_scheme": "",
         "padding_top": 64,
         "padding_bottom": 60
