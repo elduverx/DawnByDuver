@@ -90,6 +90,9 @@
           <p class="announcement-bar__message h5">
             <span>{{ section.blocks.first.settings.text
               | escape
+              | replace: '-10% DE DESCUENTO', '<span style="color:#7A1F2B;">-10% DE DESCUENTO</span>'
+              | replace: '-15% DE DESCUENTO', '<span style="color:#7A1F2B;">-15% DE DESCUENTO</span>'
+              | replace: '-20% DE DESCUENTO', '<span style="color:#7A1F2B;">-20% DE DESCUENTO</span>'
               | replace: '-10% DESCUENTO', '<span style="color:#7A1F2B;">-10% DESCUENTO</span>'
               | replace: '-15% DESCUENTO', '<span style="color:#7A1F2B;">-15% DESCUENTO</span>'
               | replace: '-20% DESCUENTO', '<span style="color:#7A1F2B;">-20% DESCUENTO</span>'
@@ -155,6 +158,9 @@
                     <p class="announcement-bar__message h5">
                       <span>{{ block.settings.text
                         | escape
+                        | replace: '-10% DE DESCUENTO', '<span style="color:#7A1F2B;">-10% DE DESCUENTO</span>'
+                        | replace: '-15% DE DESCUENTO', '<span style="color:#7A1F2B;">-15% DE DESCUENTO</span>'
+                        | replace: '-20% DE DESCUENTO', '<span style="color:#7A1F2B;">-20% DE DESCUENTO</span>'
                         | replace: '-10% DESCUENTO', '<span style="color:#7A1F2B;">-10% DESCUENTO</span>'
                         | replace: '-15% DESCUENTO', '<span style="color:#7A1F2B;">-15% DESCUENTO</span>'
                         | replace: '-20% DESCUENTO', '<span style="color:#7A1F2B;">-20% DESCUENTO</span>'
