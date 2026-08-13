@@ -7,15 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 {%- style -%}
-  @media screen and (max-width: 749px) {
-    .collection-hero--with-image .collection-hero__inner {
-      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
-    }
-  }
-
   .collection-hero.collection-hero--with-image {
+    position: relative;
     padding: 0 !important;
-    overflow: visible !important;
+    overflow: hidden !important;
+    height: 34rem;
+    min-height: 34rem;
+    max-height: 34rem;
   }
 
   @media screen and (max-width: 749px) {
@@ -28,24 +26,18 @@
       margin-top: 0 !important;
     }
   }
-  .collection-hero--with-image .collection-hero__inner {
-    position: relative;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
 
   .collection-hero--with-image .collection-hero__image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100% !important;
-    flex-basis: 100% !important;
+    height: 100% !important;
     margin: 0 !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    height: 34rem !important;
-    min-height: 34rem !important;
-    max-height: 34rem !important;
-    overflow: hidden !important;
+    z-index: 1;
   }
 
   .collection-hero--with-image .collection-hero__image-container img {
@@ -53,6 +45,15 @@
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  .collection-hero--with-image .collection-hero__inner {
+    position: relative;
+    z-index: 2;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 100%;
   }
 
   .collection-hero--with-image .collection-hero__text-wrapper {
@@ -88,8 +89,10 @@
   }
 
   @media screen and (min-width: 750px) {
-    .collection-hero--with-image .collection-hero__image-container {
+    .collection-hero.collection-hero--with-image {
+      height: 72rem;
       min-height: 72rem;
+      max-height: 72rem;
     }
 
     .collection-hero--with-image .collection-hero__text-wrapper {
@@ -109,6 +112,33 @@
 {%- endstyle -%}
 
 <div class="collection-hero collection-hero--with-image color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-hero__image-container media gradient">
+    <picture>
+      <source
+        media="(max-width: 749px)"
+        srcset="
+          {%- if banner_mobile_image.width >= 375 -%}{{ banner_mobile_image | image_url: width: 375 }} 375w,{%- endif -%}
+          {%- if banner_mobile_image.width >= 750 -%}{{ banner_mobile_image | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if banner_mobile_image.width >= 1125 -%}{{ banner_mobile_image | image_url: width: 1125 }} 1125w,{%- endif -%}
+          {{ banner_mobile_image | image_url }} {{ banner_mobile_image.width }}w
+        "
+      >
+      <img
+        srcset="
+          {%- if banner_desktop_image.width >= 750 -%}{{ banner_desktop_image | image_url: width: 750 }} 750w,{%- endif -%}
+          {%- if banner_desktop_image.width >= 1070 -%}{{ banner_desktop_image | image_url: width: 1070 }} 1070w,{%- endif -%}
+          {%- if banner_desktop_image.width >= 1500 -%}{{ banner_desktop_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+          {%- if banner_desktop_image.width >= 2000 -%}{{ banner_desktop_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+          {{ banner_desktop_image | image_url }} {{ banner_desktop_image.width }}w
+        "
+        sizes="100vw"
+        src="{{ banner_desktop_image | image_url: width: 1500 }}"
+        alt="{{ collection.title | escape }}"
+        width="{{ banner_desktop_image.width }}"
+        height="{{ banner_desktop_image.height }}"
+      >
+    </picture>
+  </div>
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
       {%- if section.settings.kicker_text != blank -%}
@@ -122,34 +152,6 @@
       {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>
       {%- endif -%}
-    </div>
-
-    <div class="collection-hero__image-container media gradient">
-      <picture>
-        <source
-          media="(max-width: 749px)"
-          srcset="
-            {%- if banner_mobile_image.width >= 375 -%}{{ banner_mobile_image | image_url: width: 375 }} 375w,{%- endif -%}
-            {%- if banner_mobile_image.width >= 750 -%}{{ banner_mobile_image | image_url: width: 750 }} 750w,{%- endif -%}
-            {%- if banner_mobile_image.width >= 1125 -%}{{ banner_mobile_image | image_url: width: 1125 }} 1125w,{%- endif -%}
-            {{ banner_mobile_image | image_url }} {{ banner_mobile_image.width }}w
-          "
-        >
-        <img
-          srcset="
-            {%- if banner_desktop_image.width >= 750 -%}{{ banner_desktop_image | image_url: width: 750 }} 750w,{%- endif -%}
-            {%- if banner_desktop_image.width >= 1070 -%}{{ banner_desktop_image | image_url: width: 1070 }} 1070w,{%- endif -%}
-            {%- if banner_desktop_image.width >= 1500 -%}{{ banner_desktop_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-            {%- if banner_desktop_image.width >= 2000 -%}{{ banner_desktop_image | image_url: width: 2000 }} 2000w,{%- endif -%}
-            {{ banner_desktop_image | image_url }} {{ banner_desktop_image.width }}w
-          "
-          sizes="100vw"
-          src="{{ banner_desktop_image | image_url: width: 1500 }}"
-          alt="{{ collection.title | escape }}"
-          width="{{ banner_desktop_image.width }}"
-          height="{{ banner_desktop_image.height }}"
-        >
-      </picture>
     </div>
   </div>
 </div>
