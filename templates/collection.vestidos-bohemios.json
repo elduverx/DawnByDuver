@@ -21,6 +21,7 @@
     },
     "rich_text_descuento": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "text_descuento": {
           "type": "text",
