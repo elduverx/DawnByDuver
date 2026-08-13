@@ -115,17 +115,6 @@
         "padding_bottom": 60
       }
     },
-    "colecciones_tabs_URpK4H": {
-      "type": "colecciones-tabs",
-      "name": "Colecciones con pestañas",
-      "settings": {
-        "collection_1": "vestidos-bohemios",
-        "collection_2": "conjuntos-salvia",
-        "color_scheme": "",
-        "padding_top": 44,
-        "padding_bottom": 28
-      }
-    },
     "categories": {
       "type": "multicolumn",
       "blocks": {
@@ -178,11 +167,22 @@
       "type": "colecciones-tabs",
       "name": "Colecciones con pestañas",
       "settings": {
-        "collection_1": "conjuntos-mar-arena",
+        "collection_1": "vestidos-aniversario",
         "collection_2": "sandalias-amalfi",
         "color_scheme": "",
         "padding_top": 64,
         "padding_bottom": 60
+      }
+    },
+    "colecciones_tabs_URpK4H": {
+      "type": "colecciones-tabs",
+      "name": "Colecciones con pestañas",
+      "settings": {
+        "collection_1": "vestidos-bohemios",
+        "collection_2": "conjuntos-salvia",
+        "color_scheme": "",
+        "padding_top": 44,
+        "padding_bottom": 28
       }
     },
     "image_with_text_GHAQFY": {
@@ -616,9 +616,9 @@
   "order": [
     "image_banner",
     "philosophy",
-    "colecciones_tabs_URpK4H",
     "categories",
     "colecciones_tabs_pPRzBT",
+    "colecciones_tabs_URpK4H",
     "image_with_text_GHAQFY",
     "colecciones_tabs_VEpcGX",
     "editorial_banner_g9Wq7H",
