@@ -20,7 +20,7 @@
     {%- assign es_costa_vela = true -%}
   {%- endif -%}
 {%- endfor -%}
-{%- assign resto_stock = product.id | modulo: 4 -%}
+{%- assign resto_stock = product.id | times: 2654435761 | modulo: 4 -%}
 {%- case product.handle -%}
   {%- when 'isabelle-conjunto-de-3-piezas', 'elvira-conjunto-prado-fresco', 'zaida-conjunto-safari-de-lujo', 'elarisse-set-di-grazia-monocromatica', 'rosa-conjunto-riviera-a-rayas', 'valeria-conjunto-boho-en-capas' -%}
     {%- assign texto_urgencia = 'Solo quedan 4 en stock.' -%}
