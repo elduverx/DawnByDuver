@@ -554,7 +554,10 @@
         "optional_company_label": "DNI/RUC/RUT/RFC/NIT",
         "company_label": "DNI/RUC/RUT/RFC/NIT",
         "email_or_phone_label": "Correo electrónico",
-        "email_or_phone_placeholder": "Correo electrónico"
+        "email_or_phone_placeholder": "Correo electrónico",
+        "optional_zip_code_label": "Código postal",
+        "optional_postal_code_label": "Código postal",
+        "optional_postcode_label": "Código postal"
       }
     }
   }
