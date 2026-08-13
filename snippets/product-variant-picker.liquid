@@ -88,11 +88,13 @@ picker_type: picker_type
 %}
 {%- assign name_downcase = option.name | downcase -%}
 {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
+  {%- if product.metafields.custom.tabla_tallas.value != blank -%}
 <modal-opener data-modal="#TablaTallasModal-{{ section.id }}">
   <button type="button" class="size-chart-link" aria-haspopup="dialog" style="display: block; margin-top: 12px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer; background: none; border: none; padding: 0;">
     Ver tabla de tallas
   </button>
 </modal-opener>
+  {%- endif -%}
 {%- endif -%}
 </fieldset>
       {%- else -%}
@@ -101,6 +103,7 @@ picker_type: picker_type
             <span>{{ option.name }}</span>
             {%- assign name_downcase = option.name | downcase -%}
             {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
+              {%- if product.metafields.custom.tabla_tallas.value != blank -%}
               <modal-opener data-modal="#TablaTallasModal-{{ section.id }}">
                 <button type="button" class="size-chart-link" aria-haspopup="dialog" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer; background: none; border: none; padding: 0;">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(-45deg);">
@@ -111,6 +114,7 @@ picker_type: picker_type
                   Tabla de tallas
                 </button>
               </modal-opener>
+              {%- endif -%}
             {%- endif -%}
           </label>
           <div class="select">
