@@ -20,7 +20,7 @@
     {%- assign es_costa_vela = true -%}
   {%- endif -%}
 {%- endfor -%}
-{%- assign resto_stock = product.id | times: 2654435761 | modulo: 4 -%}
+{%- assign resto_stock = product.id | modulo: 7 -%}
 {%- case product.handle -%}
   {%- when 'isabelle-conjunto-de-3-piezas', 'elvira-conjunto-prado-fresco', 'zaida-conjunto-safari-de-lujo', 'elarisse-set-di-grazia-monocromatica', 'rosa-conjunto-riviera-a-rayas', 'valeria-conjunto-boho-en-capas' -%}
     {%- assign texto_urgencia = 'Solo quedan 4 en stock.' -%}
@@ -32,11 +32,11 @@
     {%- assign texto_urgencia = 'Últimas unidades en stock' -%}
   {%- else -%}
     {%- case resto_stock -%}
-      {%- when 0 -%}
+      {%- when 0 or 4 -%}
         {%- assign texto_urgencia = 'Solo quedan 4 en stock.' -%}
-      {%- when 1 -%}
+      {%- when 1 or 5 -%}
         {%- assign texto_urgencia = 'Solo quedan 6 en stock.' -%}
-      {%- when 2 -%}
+      {%- when 2 or 6 -%}
         {%- assign texto_urgencia = 'Solo quedan 2 en stock.' -%}
       {%- else -%}
         {%- assign texto_urgencia = 'Últimas unidades en stock' -%}
