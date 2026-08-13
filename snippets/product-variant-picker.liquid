@@ -76,10 +76,14 @@
 </p>
 {%- if color_option -%}
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('change', function(e) {
+  var wrap = e.target.closest('[data-option-name]');
+  if (!wrap) return;
+  var optName = (wrap.getAttribute('data-option-name') || '').toLowerCase();
+  if (optName.indexOf('color') === -1) return;
+
   var p = document.getElementById('Urgencia-{{ section.id }}');
-  var span = document.getElementById('UrgenciaTexto-{{ section.id }}');
-  if (!p || !span) return;
+  if (!p) return;
   var mapRaw = p.getAttribute('data-urgencia-map');
   if (!mapRaw) return;
   var map = {};
@@ -87,18 +91,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var parts = pair.split(':::');
     if (parts.length === 2) map[parts[0]] = parts[1];
   });
-  var container = document.getElementById('variant-selects-{{ section.id }}');
-  if (!container) return;
-  container.addEventListener('change', function(e) {
-    var wrap = e.target.closest('[data-option-name]');
-    if (!wrap) return;
-    var optName = (wrap.getAttribute('data-option-name') || '').toLowerCase();
-    if (optName.indexOf('color') === -1) return;
-    var value = e.target.value;
-    if (value && map[value]) {
+  var value = e.target.value;
+
+  function aplicarTexto() {
+    var span = document.getElementById('UrgenciaTexto-{{ section.id }}');
+    if (span && value && map[value]) {
       span.textContent = map[value];
     }
-  });
+  }
+  aplicarTexto();
+  setTimeout(aplicarTexto, 400);
+  setTimeout(aplicarTexto, 900);
 });
 </script>
 {%- endif -%}
