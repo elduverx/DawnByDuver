@@ -183,8 +183,8 @@
       {%- assign shown = shown | plus: 1 -%}
     {%- endfor -%}
   </div>
-  <div class="combina-btn-wrapper">
-    <a href="{{ section.settings.url_ver_todo }}" class="combina-btn">{{ section.settings.texto_boton }}</a>
+ <div class="combina-btn-wrapper">
+    <a href="{{ target_collection.url | default: section.settings.url_ver_todo }}" class="combina-btn">{{ section.settings.texto_boton }}</a>
   </div>
 </div>
 
