@@ -76,7 +76,7 @@
 </p>
 {%- if color_option -%}
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   var p = document.getElementById('Urgencia-{{ section.id }}');
   var span = document.getElementById('UrgenciaTexto-{{ section.id }}');
   if (!p || !span) return;
@@ -99,7 +99,7 @@
       span.textContent = map[value];
     }
   });
-})();
+});
 </script>
 {%- endif -%}
 {%- unless product.has_only_default_variant -%}
