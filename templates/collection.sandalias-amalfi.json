@@ -22,6 +22,7 @@
     },
     "rich_text_QFFXYK": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "text_eirdCn": {
           "type": "text",
