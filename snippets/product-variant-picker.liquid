@@ -42,10 +42,66 @@
         {%- assign texto_urgencia = 'Últimas unidades en stock' -%}
     {%- endcase -%}
 {%- endcase -%}
-<p style="margin-top: 0; margin-bottom: 12px; font-size: 1.3rem; font-weight: 600; color: #c0392b; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
+{%- assign urgencia_textos = 'Solo quedan 4 en stock.|Solo quedan 6 en stock.|Solo quedan 2 en stock.|Últimas unidades en stock' | split: '|' -%}
+{%- assign base_index = 0 -%}
+{%- for t in urgencia_textos -%}
+  {%- if t == texto_urgencia -%}
+    {%- assign base_index = forloop.index0 -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign color_option = null -%}
+{%- for option in product.options_with_values -%}
+  {%- assign option_name_downcase_color = option.name | downcase -%}
+  {%- if option_name_downcase_color contains 'color' -%}
+    {%- assign color_option = option -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign urgencia_map = '' -%}
+{%- if color_option -%}
+  {%- for value in color_option.values -%}
+    {%- assign idx = base_index | plus: forloop.index0 | modulo: 4 -%}
+    {%- assign texto_color = urgencia_textos[idx] -%}
+    {%- assign entry = value | append: ':::' | append: texto_color -%}
+    {%- if forloop.first -%}
+      {%- assign urgencia_map = entry -%}
+    {%- else -%}
+      {%- assign urgencia_map = urgencia_map | append: '||' | append: entry -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+<p id="Urgencia-{{ section.id }}" data-urgencia-map="{{ urgencia_map | escape }}" style="margin-top: 0; margin-bottom: 12px; font-size: 1.3rem; font-weight: 600; color: #c0392b; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
   <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #c0392b; border-radius: 50%;"></span>
-  <span>{{ texto_urgencia }}</span>
+  <span id="UrgenciaTexto-{{ section.id }}">{{ texto_urgencia }}</span>
 </p>
+{%- if color_option -%}
+<script>
+(function() {
+  var p = document.getElementById('Urgencia-{{ section.id }}');
+  var span = document.getElementById('UrgenciaTexto-{{ section.id }}');
+  if (!p || !span) return;
+  var mapRaw = p.getAttribute('data-urgencia-map');
+  if (!mapRaw) return;
+  var map = {};
+  mapRaw.split('||').forEach(function(pair) {
+    var parts = pair.split(':::');
+    if (parts.length === 2) map[parts[0]] = parts[1];
+  });
+  var container = document.getElementById('variant-selects-{{ section.id }}');
+  if (!container) return;
+  container.addEventListener('change', function(e) {
+    var wrap = e.target.closest('[data-option-name]');
+    if (!wrap) return;
+    var optName = (wrap.getAttribute('data-option-name') || '').toLowerCase();
+    if (optName.indexOf('color') === -1) return;
+    var value = e.target.value;
+    if (value && map[value]) {
+      span.textContent = map[value];
+    }
+  });
+})();
+</script>
+{%- endif -%}
 {%- unless product.has_only_default_variant -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
@@ -66,7 +122,7 @@
         endif
       -%}
       {%- if picker_type == 'swatch' -%}
-        <fieldset class="js product-form__input product-form__input--swatch">
+        <fieldset class="js product-form__input product-form__input--swatch" data-option-name="{{ option.name | escape }}">
          <legend class="form__label">{{ option.name }}</legend>
           {% render 'product-variant-options',
             product: product,
@@ -76,7 +132,7 @@
           %}
         </fieldset>
     {%- elsif picker_type == 'button' or picker_type == 'dropdown' -%}
-<fieldset class="js product-form__input product-form__input--pill">
+<fieldset class="js product-form__input product-form__input--pill" data-option-name="{{ option.name | escape }}">
 <legend class="form__label">
   <span>{{ option.name }}: <span class="selected-option-{{ forloop.index }}">{{ option.selected_value }}</span></span>
 </legend>
@@ -98,7 +154,7 @@ picker_type: picker_type
 {%- endif -%}
 </fieldset>
       {%- else -%}
-        <div class="product-form__input product-form__input--dropdown">
+        <div class="product-form__input product-form__input--dropdown" data-option-name="{{ option.name | escape }}">
           <label class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
             <span>{{ option.name }}</span>
             {%- assign name_downcase = option.name | downcase -%}
