@@ -22,6 +22,7 @@
     },
     "rich_text_intro": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "text_intro": {
           "type": "text",
@@ -48,6 +49,7 @@
     },
     "rich_text_descuento": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "text_eirdCn": {
           "type": "text",
