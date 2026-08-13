@@ -75,78 +75,18 @@
   <h2 class="combina-titulo">{{ section.settings.titulo }}</h2>
   <div class="combina-grid">
     {%- liquid
-      assign es_lino_arena = false
-      assign es_sandalias_amalfi = false
-      assign es_conjuntos = false
-      assign es_costa_vela = false
-      assign es_vestidos_elegantes = false
-      assign es_vestidos_bohemios = false
-      assign es_conjuntos_salvia = false
-      assign es_trajes_bano = false
+      assign colecciones_genericas = 'mujer,hombre,todos,frontpage,novedades-hombre,novedades-mujer,productos-con-descuento-por-cantidad,vestidos,conjuntos' | split: ','
+      assign target_collection = blank
       for coleccion_producto in product.collections
-        if coleccion_producto.handle == 'conjuntos-mar-arena'
-          assign es_lino_arena = true
-        endif
-        if coleccion_producto.handle == 'sandalias-amalfi'
-          assign es_sandalias_amalfi = true
-        endif
-        if coleccion_producto.handle == 'conjuntos'
-          assign es_conjuntos = true
-        endif
-        if coleccion_producto.handle == 'conjuntos-costa-vela'
-          assign es_costa_vela = true
-        endif
-        if coleccion_producto.handle == 'vestidos-elegantes'
-          assign es_vestidos_elegantes = true
-        endif
-        if coleccion_producto.handle == 'vestidos-bohemios'
-          assign es_vestidos_bohemios = true
-        endif
-        if coleccion_producto.handle == 'conjuntos-salvia'
-          assign es_conjuntos_salvia = true
-        endif
-        if coleccion_producto.handle == 'trajes-de-bano'
-          assign es_trajes_bano = true
+        if target_collection == blank
+          unless colecciones_genericas contains coleccion_producto.handle
+            assign target_collection = coleccion_producto
+          endunless
         endif
       endfor
 
-      if es_lino_arena
-        assign target_collection = collections['conjuntos-mar-arena']
-      elsif es_sandalias_amalfi
-        assign target_collection = collections['sandalias-amalfi']
-      elsif es_conjuntos
-        assign target_collection = collections['conjuntos']
-      elsif es_costa_vela
-        assign target_collection = collections['conjuntos-costa-vela']
-      elsif es_vestidos_elegantes
-        assign target_collection = collections['vestidos-elegantes']
-      elsif es_vestidos_bohemios
-        assign target_collection = collections['vestidos-bohemios']
-      elsif es_conjuntos_salvia
-        assign target_collection = collections['conjuntos-salvia']
-      elsif es_trajes_bano
-        assign target_collection = collections['trajes-de-bano']
-      else
-        assign es_mujer = false
-        for coleccion_check in product.collections
-          if coleccion_check.handle == 'mujer'
-            assign es_mujer = true
-          endif
-        endfor
-        if es_mujer == false
-          assign tags_downcase = product.tags | join: ',' | downcase
-          if tags_downcase contains 'mujer' or tags_downcase contains 'women'
-            assign es_mujer = true
-          endif
-        endif
-
-        if es_mujer
-          assign target_handle = 'mujer'
-        else
-          assign target_handle = 'hombre'
-        endif
-
-        assign target_collection = collections[target_handle]
+      if target_collection == blank
+        assign target_collection = collections['mujer']
       endif
 
       assign shown = 0
