@@ -4,7 +4,7 @@
     {%- assign es_lino_arena = true -%}
   {%- endif -%}
 {%- endfor -%}
-{%- if product.handle == 'ortensia-vestido-largo-rayado' -%}
+{%- if product.handle == 'ortensia-vestido-largo-rayado' or product.handle == 'mia-edicion-dia-a-dia' or product.handle == 'isabelle-conjunto-de-3-piezas' or product.handle == 'lili-zapatillas-loafer-modernas' or product.handle == 'solfi-sandalias-abiertas-y-antideslizantes' or product.handle == 'robe-lina-la-elegancia-natural-en-el-dia-a-dia' or product.handle == 'sophie-sandalias-confort-ajustables' or product.handle == 'ginevra-zapatilla-comoda-mujer' or product.handle == 'iria™-vestido-ligero-y-vaporoso-con-corte-favorecedor' -%}
   {%- assign es_lino_arena = true -%}
 {%- endif -%}
 {%- assign mes_num = 'now' | date: '%-m' | plus: 0 -%}
@@ -44,23 +44,6 @@
   </div>
 </div>
 
-{%- if es_lino_arena -%}
-<div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; padding: 18px 22px; border-radius: 14px; background-color: #fdf1ef; border: 1px solid #f4d9d3; font-family: 'Assistant', sans-serif;">
-  <span style="font-size: 1.5rem; line-height: 1; flex-shrink: 0;">📣</span>
-  <p style="margin: 0; font-size: 1.3rem; line-height: 1.5; color: #7a2e22;">
-    <strong>AVISO IMPORTANTE:</strong> Debido a la alta demanda, el stock se está agotando rápidamente. Si aún puede hacer clic en <strong>"Agregar al carrito"</strong>, el artículo todavía está disponible.
-  </p>
-</div>
-{%- endif -%}
-
-{%- if product.handle == 'mia-edicion-dia-a-dia' or product.handle == 'isabelle-conjunto-de-3-piezas' or product.handle == 'lili-zapatillas-loafer-modernas' or product.handle == 'solfi-sandalias-abiertas-y-antideslizantes' or product.handle == 'robe-lina-la-elegancia-natural-en-el-dia-a-dia' or product.handle == 'sophie-sandalias-confort-ajustables' or product.handle == 'ginevra-zapatilla-comoda-mujer' or product.handle == 'iria™-vestido-ligero-y-vaporoso-con-corte-favorecedor' -%}
-<div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; padding: 18px 22px; border-radius: 14px; background-color: #fdf1ef; border: 1px solid #f4d9d3; font-family: 'Assistant', sans-serif;">
-  <span style="font-size: 1.5rem; line-height: 1; flex-shrink: 0;">📣</span>
-  <p style="margin: 0; font-size: 1.3rem; line-height: 1.5; color: #7a2e22;">
-    <strong>AVISO IMPORTANTE:</strong> Debido a la alta demanda, el stock se está agotando rápidamente. Si aún puede hacer clic en <strong>"Agregar al carrito"</strong>, el artículo todavía está disponible.
-  </p>
-</div>
-{%- endif -%}
 
 {%- if product.handle == 'sophia-conjunto-combinacion-esencial' -%}
 <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; padding: 18px 22px; border-radius: 14px; background-color: #fdf1ef; border: 1px solid #f4d9d3; font-family: 'Assistant', sans-serif;">
@@ -87,6 +70,9 @@
 {%- endif -%}
 
 <div style="margin-top: 20px; padding: 20px; border: 2px solid #e05c4b; background-color: #fdf5f4; font-family: 'Assistant', sans-serif;">
+  {%- if es_lino_arena -%}
+  <p style="font-size: 1.3rem; font-weight: 600; line-height: 1.5; color: #7a2e22; text-align: center; margin: 0 0 16px 0;">Por nuestro Descuento de Aniversario, la demanda se ha disparado y el stock se está agotando muy rápido. Si aún puedes hacer clic en "Agregar al carrito", el artículo sigue disponible.</p>
+  {%- endif -%}
   <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #e05c4b; text-align: center; margin: 0 0 8px 0;">PROMOCIÓN ACTIVA SOLO HOY ⏰</p>
   <h3 style="font-size: 2rem; font-weight: 400; text-align: center; margin: 0 0 8px 0; font-family: Georgia, serif; text-transform: none;">Descuento por cantidad en toda la web</h3>
   <p style="font-size: 1.3rem; color: #6b7280; text-align: center; margin: 0 0 20px 0;">Combina tus productos y ahorra más en tu pedido</p>
