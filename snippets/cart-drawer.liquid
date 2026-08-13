@@ -388,120 +388,40 @@
         </form>
       </cart-drawer-items>
       {%- liquid
-        assign has_mujer_ropa = false
-        assign has_hombre_ropa = false
-        assign has_gafas_hombre = false
-        assign has_gafas_mujer = false
-        assign has_lino_arena = false
-        assign has_sandalias_amalfi = false
-        assign has_conjuntos = false
-        assign has_costa_vela = false
-        assign has_vestidos_elegantes = false
-        assign has_vestidos_bohemios = false
-        assign has_conjuntos_salvia = false
-        assign has_trajes_bano = false
+        assign colecciones_genericas = 'mujer,hombre,todos,frontpage,novedades-hombre,novedades-mujer,productos-con-descuento-por-cantidad,vestidos,conjuntos' | split: ','
+        assign target_handles_str = ''
 
         for item in cart.items
           assign item_tags = item.product.tags | join: ',' | downcase
-          assign item_is_mujer = false
-          assign item_is_hombre = false
+          assign item_target_handle = ''
+
           for coleccion_item in item.product.collections
-            if coleccion_item.handle == 'mujer'
-              assign item_is_mujer = true
-            endif
-            if coleccion_item.handle == 'hombre'
-              assign item_is_hombre = true
+            if item_target_handle == ''
+              unless colecciones_genericas contains coleccion_item.handle
+                assign item_target_handle = coleccion_item.handle
+              endunless
             endif
           endfor
-          if item_is_mujer == false and item_is_hombre == false
-            if item_tags contains 'mujer' or item_tags contains 'women'
-              assign item_is_mujer = true
-            elsif item_tags contains 'hombre'
-              assign item_is_hombre = true
+
+          if item_target_handle == ''
+            if item_tags contains 'gafas'
+              assign item_target_handle = 'gafas-de-sol-mujer'
+            else
+              assign item_target_handle = 'mujer'
             endif
           endif
 
-          if item_tags contains 'gafas'
-            if item_is_mujer
-              assign has_gafas_mujer = true
-            else
-              assign has_gafas_hombre = true
-            endif
-          else
-            if item_is_mujer
-              assign has_mujer_ropa = true
-            elsif item_is_hombre
-              assign has_hombre_ropa = true
-            endif
-          endif
-          for coleccion_producto in item.product.collections
-            if coleccion_producto.handle == 'conjuntos-mar-arena'
-              assign has_lino_arena = true
-            endif
-            if coleccion_producto.handle == 'sandalias-amalfi'
-              assign has_sandalias_amalfi = true
-            endif
-            if coleccion_producto.handle == 'conjuntos'
-              assign has_conjuntos = true
-            endif
-            if coleccion_producto.handle == 'conjuntos-costa-vela'
-              assign has_costa_vela = true
-            endif
-            if coleccion_producto.handle == 'vestidos-elegantes'
-              assign has_vestidos_elegantes = true
-            endif
-            if coleccion_producto.handle == 'vestidos-bohemios'
-              assign has_vestidos_bohemios = true
-            endif
-            if coleccion_producto.handle == 'conjuntos-salvia'
-              assign has_conjuntos_salvia = true
-            endif
-            if coleccion_producto.handle == 'trajes-de-bano'
-              assign has_trajes_bano = true
-            endif
-          endfor
+          assign needle = ',' | append: item_target_handle | append: ','
+          assign haystack = ',' | append: target_handles_str
+          unless haystack contains needle
+            assign target_handles_str = target_handles_str | append: item_target_handle | append: ','
+          endunless
         endfor
 
-        assign target_handles_str = ''
-        if has_mujer_ropa
-          assign target_handles_str = target_handles_str | append: 'mujer,'
-        endif
-        if has_hombre_ropa
-          assign target_handles_str = target_handles_str | append: 'hombre,'
-        endif
-        if has_gafas_mujer
-          assign target_handles_str = target_handles_str | append: 'gafas-de-sol-mujer,'
-        endif
-        if has_gafas_hombre
-          assign target_handles_str = target_handles_str | append: 'gafas-de-sol,'
-        endif
         if target_handles_str == ''
-          assign target_handles_str = 'hombre,mujer'
+          assign target_handles_str = 'mujer'
         endif
-        if has_lino_arena
-          assign target_handles_str = 'conjuntos-mar-arena'
-        endif
-        if has_sandalias_amalfi
-          assign target_handles_str = 'sandalias-amalfi'
-        endif
-        if has_conjuntos
-          assign target_handles_str = 'conjuntos'
-        endif
-        if has_costa_vela
-          assign target_handles_str = 'conjuntos-costa-vela'
-        endif
-        if has_vestidos_elegantes
-          assign target_handles_str = 'vestidos-elegantes'
-        endif
-        if has_vestidos_bohemios
-          assign target_handles_str = 'vestidos-bohemios'
-        endif
-        if has_conjuntos_salvia
-          assign target_handles_str = 'conjuntos-salvia'
-        endif
-        if has_trajes_bano
-          assign target_handles_str = 'trajes-de-bano'
-        endif
+
         assign target_handles = target_handles_str | split: ','
       -%}
       {%- capture upsell_items_html -%}
