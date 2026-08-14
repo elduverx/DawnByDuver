@@ -1,12 +1,3 @@
-{%- assign es_lino_arena = false -%}
-{%- for coleccion in product.collections -%}
-  {%- if coleccion.handle == 'conjuntos-lino-arena' or coleccion.handle == 'conjuntos-mar-arena' or coleccion.handle == 'sandalias-amalfi' or coleccion.handle == 'conjuntos' or coleccion.handle == 'vestidos-elegantes' or coleccion.handle == 'vestidos-bohemios' or coleccion.handle == 'conjuntos-salvia' -%}
-    {%- assign es_lino_arena = true -%}
-  {%- endif -%}
-{%- endfor -%}
-{%- if product.handle == 'ortensia-vestido-largo-rayado' or product.handle == 'mia-edicion-dia-a-dia' or product.handle == 'isabelle-conjunto-de-3-piezas' or product.handle == 'lili-zapatillas-loafer-modernas' or product.handle == 'solfi-sandalias-abiertas-y-antideslizantes' or product.handle == 'robe-lina-la-elegancia-natural-en-el-dia-a-dia' or product.handle == 'sophie-sandalias-confort-ajustables' or product.handle == 'ginevra-zapatilla-comoda-mujer' or product.handle == 'iria™-vestido-ligero-y-vaporoso-con-corte-favorecedor' -%}
-  {%- assign es_lino_arena = true -%}
-{%- endif -%}
 {%- assign mes_num = 'now' | date: '%-m' | plus: 0 -%}
 {%- assign mes_manana_num = 'now' | date: '%s' | plus: 86400 | date: '%-m' | plus: 0 -%}
 {%- assign mes_enviado_num = 'now' | date: '%s' | plus: 172800 | date: '%-m' | plus: 0 -%}
@@ -70,9 +61,7 @@
 {%- endif -%}
 
 <div style="margin-top: 20px; padding: 20px; border: 2px solid #e05c4b; background-color: #fdf5f4; font-family: 'Assistant', sans-serif;">
-  {%- if es_lino_arena -%}
   <p style="font-size: 1.3rem; font-weight: 600; line-height: 1.5; color: #7a2e22; text-align: center; margin: 0 0 16px 0;"><strong>AVISO IMPORTANTE:</strong> Por nuestro Descuento de Aniversario, la demanda se ha disparado y el stock se está agotando muy rápido. Si aún puedes hacer clic en "Agregar al carrito", el artículo sigue disponible.</p>
-  {%- endif -%}
   <p style="font-size: 1.5rem; letter-spacing: 0.15em; color: #e05c4b; text-align: center; margin: 0 0 8px 0;">PROMOCIÓN ACTIVA SOLO HOY ⏰</p>
   <h3 style="font-size: 2rem; font-weight: 400; text-align: center; margin: 0 0 8px 0; font-family: Georgia, serif; text-transform: none;">Descuento por cantidad en toda la web</h3>
   <p style="font-size: 1.3rem; color: #6b7280; text-align: center; margin: 0 0 20px 0;">Combina tus productos y ahorra más en tu pedido</p>
