@@ -168,7 +168,7 @@
       "name": "Colecciones con pestañas",
       "settings": {
         "collection_1": "vestidos-aniversario",
-        "collection_2": "sandalias-amalfi",
+        "collection_2": "esencia-de-verano",
         "color_scheme": "",
         "padding_top": 64,
         "padding_bottom": 60
@@ -298,6 +298,17 @@
       "settings": {
         "collection_1": "trajes-de-bano",
         "collection_2": "mujer",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 60
+      }
+    },
+    "colecciones_tabs_rEaAKG": {
+      "type": "colecciones-tabs",
+      "name": "Colecciones con pestañas",
+      "settings": {
+        "collection_1": "conjuntos-mar-arena",
+        "collection_2": "sandalias-amalfi",
         "color_scheme": "",
         "padding_top": 64,
         "padding_bottom": 60
@@ -624,6 +635,7 @@
     "editorial_banner_g9Wq7H",
     "featured_collection",
     "colecciones_tabs_pEHjwx",
+    "colecciones_tabs_rEaAKG",
     "resenas_fotos_clientes_fkgTJd",
     "resenas_fotos_clientes_6GQbzg",
     "garantias_FMf9m7"
