@@ -220,8 +220,8 @@
       "type": "colecciones-tabs",
       "name": "Colecciones con pestañas",
       "settings": {
-        "collection_1": "vestidos-elegantes",
-        "collection_2": "conjuntos-costa-vela",
+        "collection_1": "vestidos-bohemios",
+        "collection_2": "vestidos-elegantes",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 28
