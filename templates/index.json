@@ -167,8 +167,8 @@
       "type": "colecciones-tabs",
       "name": "Colecciones con pestañas",
       "settings": {
-        "collection_1": "vestidos-aniversario",
-        "collection_2": "esencia-de-verano",
+        "collection_1": "esencia-de-verano",
+        "collection_2": "conjuntos-atelier",
         "color_scheme": "",
         "padding_top": 64,
         "padding_bottom": 60
@@ -178,7 +178,7 @@
       "type": "colecciones-tabs",
       "name": "Colecciones con pestañas",
       "settings": {
-        "collection_1": "vestidos-bohemios",
+        "collection_1": "vestidos-aniversario",
         "collection_2": "conjuntos-salvia",
         "color_scheme": "",
         "padding_top": 44,
