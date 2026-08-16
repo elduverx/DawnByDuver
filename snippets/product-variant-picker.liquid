@@ -22,6 +22,8 @@
 {%- endfor -%}
 {%- assign resto_stock = product.id | modulo: 7 -%}
 {%- case product.handle -%}
+  {%- when 'mono-casa-velaria-dias-de-verano' -%}
+    {%- assign texto_urgencia = 'Sin stock' -%}
   {%- when 'isabelle-conjunto-de-3-piezas', 'elvira-conjunto-prado-fresco', 'zaida-conjunto-safari-de-lujo', 'elarisse-set-di-grazia-monocromatica', 'rosa-conjunto-riviera-a-rayas', 'valeria-conjunto-boho-en-capas' -%}
     {%- assign texto_urgencia = 'Solo quedan 4 en stock.' -%}
   {%- when 'victoria-conjunto-musa-moderna', 'aurora-conjunto-flor-de-cielo', 'celeste-conjunto-puro-lujo', 'elisa-conjunto-botanico' -%}
