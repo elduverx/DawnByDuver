@@ -221,15 +221,17 @@ picker_type: picker_type
     (function(img){
       var container = img.closest('variant-radios') || img.closest('variant-selects') || document.querySelector('variant-radios') || document.querySelector('variant-selects');
       if (container) {
-        var checkedInput = container.querySelector('input[type=&quot;radio&quot;]:checked');
-        if (checkedInput) {
-          var labels = container.querySelectorAll('.form__label') || document.querySelectorAll('.form__label');
-          labels.forEach(function(label) {
-            if (label.textContent.includes('Color') || label.textContent.includes('color')) {
-              label.textContent = 'Color: ' + checkedInput.value;
-            }
-          });
-        }
+        var fieldsets = container.querySelectorAll('[data-option-name]');
+        fieldsets.forEach(function(fieldset) {
+          var optName = (fieldset.getAttribute('data-option-name') || '').toLowerCase();
+          if (optName.indexOf('color') === -1) return;
+          var checkedInput = fieldset.querySelector('input[type=&quot;radio&quot;]:checked');
+          if (!checkedInput) return;
+          var label = fieldset.querySelector('.form__label');
+          if (label) {
+            label.textContent = 'Color: ' + checkedInput.value;
+          }
+        });
       }
       img.remove();
     })(this);
