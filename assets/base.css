@@ -5944,13 +5944,22 @@ cart-drawer.is-empty [class*="close"]::after {
   }
 }
 .product-form__input--pill input.disabled + label {
+  display: none !important;
+}
+
+fieldset[data-option-name*="Talla" i] input.disabled + label,
+fieldset[data-option-name*="Tama" i] input.disabled + label,
+fieldset[data-option-name*="Size" i] input.disabled + label {
+  display: inline-block !important;
   opacity: 0.4 !important;
   cursor: not-allowed !important;
   position: relative !important;
   overflow: hidden !important;
 }
 
-.product-form__input--pill input.disabled + label::after {
+fieldset[data-option-name*="Talla" i] input.disabled + label::after,
+fieldset[data-option-name*="Tama" i] input.disabled + label::after,
+fieldset[data-option-name*="Size" i] input.disabled + label::after {
   content: '' !important;
   position: absolute !important;
   top: 50% !important;
