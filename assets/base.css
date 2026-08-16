@@ -5953,22 +5953,6 @@ fieldset[data-option-name*="Size" i] input.disabled + label {
   display: inline-block !important;
   opacity: 0.4 !important;
   cursor: not-allowed !important;
-  position: relative !important;
-  overflow: hidden !important;
-}
-
-fieldset[data-option-name*="Talla" i] input.disabled + label::after,
-fieldset[data-option-name*="Tama" i] input.disabled + label::after,
-fieldset[data-option-name*="Size" i] input.disabled + label::after {
-  content: '' !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: -10% !important;
-  width: 120% !important;
-  height: 1px !important;
-  background: rgba(0, 0, 0, 0.6) !important;
-  transform: translateY(-50%) rotate(-12deg) !important;
-  pointer-events: none !important;
 }
 /* Subtítulo del banner de home en blanco sólido para mejor legibilidad */
 .banner__text.subtitle {
