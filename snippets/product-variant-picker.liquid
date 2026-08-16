@@ -52,12 +52,14 @@
   {%- endif -%}
 {%- endfor -%}
 {%- assign color_option = null -%}
+{%- unless product.handle == 'mono-casa-velaria-dias-de-verano' -%}
 {%- for option in product.options_with_values -%}
   {%- assign option_name_downcase_color = option.name | downcase -%}
   {%- if option_name_downcase_color contains 'color' -%}
     {%- assign color_option = option -%}
   {%- endif -%}
 {%- endfor -%}
+{%- endunless -%}
 {%- assign urgencia_map = '' -%}
 {%- if color_option -%}
   {%- for value in color_option.values -%}
