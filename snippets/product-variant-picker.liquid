@@ -237,6 +237,7 @@ picker_type: picker_type
 <script>
 (function() {
   var coloresSinStock = ['Negro', 'Azul Marino'];
+  var aplicando = false;
   function colorSeleccionadoActual() {
     var color = null;
     document.querySelectorAll('[data-option-name]').forEach(function(fs) {
@@ -250,15 +251,20 @@ picker_type: picker_type
     return color;
   }
   function forzarTexto() {
+    if (aplicando) return;
     var color = colorSeleccionadoActual();
     var span = document.querySelector('[id^="UrgenciaTexto-"]');
-    if (span && color && coloresSinStock.indexOf(color) !== -1) {
+    if (span && color && coloresSinStock.indexOf(color) !== -1 && span.textContent !== 'Sin stock') {
+      aplicando = true;
       span.textContent = 'Sin stock';
+      setTimeout(function() { aplicando = false; }, 50);
     }
   }
   document.addEventListener('change', forzarTexto);
   var contenedor = document.querySelector('.product__info-container') || document.body;
-  new MutationObserver(forzarTexto).observe(contenedor, { childList: true, subtree: true });
+  new MutationObserver(function() {
+    if (!aplicando) forzarTexto();
+  }).observe(contenedor, { childList: true, subtree: true });
   forzarTexto();
 })();
 </script>
