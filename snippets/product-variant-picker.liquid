@@ -233,7 +233,36 @@ picker_type: picker_type
     </script>
   </variant-selects>
 {%- endunless -%}
-
+{%- if product.handle == 'eloise-conjunto-de-camiseta-sin-mangas-y-pantalones-anchos-de-algodon-y-lino-de-estilo-minimalista-para-mujer' -%}
+<script>
+(function() {
+  var coloresSinStock = ['Negro', 'Azul Marino'];
+  function colorSeleccionadoActual() {
+    var color = null;
+    document.querySelectorAll('[data-option-name]').forEach(function(fs) {
+      var name = (fs.getAttribute('data-option-name') || '').toLowerCase();
+      if (name.indexOf('color') === -1) return;
+      var checked = fs.querySelector('input:checked');
+      if (checked) color = checked.value;
+      var select = fs.querySelector('select');
+      if (select) color = select.value;
+    });
+    return color;
+  }
+  function forzarTexto() {
+    var color = colorSeleccionadoActual();
+    var span = document.querySelector('[id^="UrgenciaTexto-"]');
+    if (span && color && coloresSinStock.indexOf(color) !== -1) {
+      span.textContent = 'Sin stock';
+    }
+  }
+  document.addEventListener('change', forzarTexto);
+  var contenedor = document.querySelector('.product__info-container') || document.body;
+  new MutationObserver(forzarTexto).observe(contenedor, { childList: true, subtree: true });
+  forzarTexto();
+})();
+</script>
+{%- endif -%}
 <div style="display:none;">
   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
     (function(img){
