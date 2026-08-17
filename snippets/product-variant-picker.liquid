@@ -92,6 +92,21 @@
     {%- assign texto_urgencia = 'Sin stock' -%}
   {%- endif -%}
 {%- endif -%}
+{%- if product.handle == 'mono-velaria-dias-de-primavera' -%}
+  {%- assign texto_urgencia = 'Sin stock' -%}
+  {%- assign urgencia_map_partes = urgencia_map | split: '||' -%}
+  {%- assign urgencia_map_nuevo = '' -%}
+  {%- for parte in urgencia_map_partes -%}
+    {%- assign valor_color = parte | split: ':::' | first -%}
+    {%- assign parte = valor_color | append: ':::' | append: 'Sin stock' -%}
+    {%- if forloop.first -%}
+      {%- assign urgencia_map_nuevo = parte -%}
+    {%- else -%}
+      {%- assign urgencia_map_nuevo = urgencia_map_nuevo | append: '||' | append: parte -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign urgencia_map = urgencia_map_nuevo -%}
+{%- endif -%}
 <p id="Urgencia-{{ section.id }}" data-urgencia-map="{{ urgencia_map | escape }}" style="margin-top: 0; margin-bottom: 12px; font-size: 1.3rem; font-weight: 600; color: #c0392b; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
   <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #c0392b; border-radius: 50%;"></span>
   <span id="UrgenciaTexto-{{ section.id }}">{{ texto_urgencia }}</span>
@@ -255,6 +270,28 @@ picker_type: picker_type
     var color = colorSeleccionadoActual();
     var span = document.querySelector('[id^="UrgenciaTexto-"]');
     if (span && color && coloresSinStock.indexOf(color) !== -1 && span.textContent !== 'Sin stock') {
+      aplicando = true;
+      span.textContent = 'Sin stock';
+      setTimeout(function() { aplicando = false; }, 50);
+    }
+  }
+  document.addEventListener('change', forzarTexto);
+  var contenedor = document.querySelector('.product__info-container') || document.body;
+  new MutationObserver(function() {
+    if (!aplicando) forzarTexto();
+  }).observe(contenedor, { childList: true, subtree: true });
+  forzarTexto();
+})();
+</script>
+{%- endif -%}
+{%- if product.handle == 'mono-velaria-dias-de-primavera' -%}
+<script>
+(function() {
+  var aplicando = false;
+  function forzarTexto() {
+    if (aplicando) return;
+    var span = document.querySelector('[id^="UrgenciaTexto-"]');
+    if (span && span.textContent !== 'Sin stock') {
       aplicando = true;
       span.textContent = 'Sin stock';
       setTimeout(function() { aplicando = false; }, 50);
