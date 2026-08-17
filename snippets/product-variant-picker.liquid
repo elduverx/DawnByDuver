@@ -73,7 +73,25 @@
     {%- endif -%}
   {%- endfor -%}
 {%- endif -%}
-
+{%- if product.handle == 'eloise-conjunto-de-camiseta-sin-mangas-y-pantalones-anchos-de-algodon-y-lino-de-estilo-minimalista-para-mujer' -%}
+  {%- assign urgencia_map_partes = urgencia_map | split: '||' -%}
+  {%- assign urgencia_map_nuevo = '' -%}
+  {%- for parte in urgencia_map_partes -%}
+    {%- assign valor_color = parte | split: ':::' | first -%}
+    {%- if valor_color == 'Negro' or valor_color == 'Azul Marino' -%}
+      {%- assign parte = valor_color | append: ':::' | append: 'Sin stock' -%}
+    {%- endif -%}
+    {%- if forloop.first -%}
+      {%- assign urgencia_map_nuevo = parte -%}
+    {%- else -%}
+      {%- assign urgencia_map_nuevo = urgencia_map_nuevo | append: '||' | append: parte -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign urgencia_map = urgencia_map_nuevo -%}
+  {%- if color_option.selected_value == 'Negro' or color_option.selected_value == 'Azul Marino' -%}
+    {%- assign texto_urgencia = 'Sin stock' -%}
+  {%- endif -%}
+{%- endif -%}
 <p id="Urgencia-{{ section.id }}" data-urgencia-map="{{ urgencia_map | escape }}" style="margin-top: 0; margin-bottom: 12px; font-size: 1.3rem; font-weight: 600; color: #c0392b; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
   <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #c0392b; border-radius: 50%;"></span>
   <span id="UrgenciaTexto-{{ section.id }}">{{ texto_urgencia }}</span>
