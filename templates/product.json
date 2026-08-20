@@ -532,22 +532,36 @@
         "pregunta_TWqRdx": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿El pago es seguro?",
-            "respuesta": "<p>Todos los pagos se procesan mediante conexión SSL cifrada. Tu información está completamente protegida y nunca compartimos datos bancarios.</p>"
+            "pregunta": "¿Ofrecen envío gratuito?",
+            "respuesta": "Sí. Como pequeño gesto por nuestro aniversario, el envío es gratuito en todos los pedidos, sin importe mínimo. Verás todos los costes claramente antes de confirmar, y no habrá sorpresas ni costes ocultos al pagar."
           }
         },
         "pregunta_RRM6Ni": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Cómo tallan las prendas?",
-            "respuesta": "<p>Nuestras prendas tallan de forma estándar. Puedes consultar la guía de tallas en cada producto para asegurarte de elegir la medida perfecta.</p>"
+            "pregunta": "¿Cuánto tarda en llegar mi pedido?",
+            "respuesta": "Preparamos cada pedido con mucho cuidado. Normalmente lo tenemos listo en 1 o 2 días laborables y en cuanto sale por la puerta recibirás un correo con el número de seguimiento para saber dónde está en todo momento. La entrega suele tardar entre 7 y 12 días laborables."
           }
         },
         "pregunta_naFrgL": {
           "type": "pregunta",
           "settings": {
-            "pregunta": "¿Dónde se fabrican los productos?",
-            "respuesta": "<p>Trabajamos con talleres especializados y materiales seleccionados para garantizar calidad, comodidad y durabilidad en cada prenda.<br><br></p>"
+            "pregunta": "¿Se aceptan devoluciones?",
+            "respuesta": "Por supuesto. Todas las compras realizadas durante esta oferta de aniversario continuarán teniendo la posibilidad de ser devueltas durante 30 días desde que recibas tu pedido, sin complicaciones y de forma tan sencilla como siempre lo ha sido a lo largo de estos 23 años.\n\nContáctanos por email y te ayudaremos: contacto@casavelaria.com"
+          }
+        },
+        "pregunta_B3GWhP": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Puedo seguir mi pedido?",
+            "respuesta": "Sí. En cuanto tu pedido sale de Casa Velaria recibirás un correo con el número de seguimiento y un enlace para ver dónde está tu paquete en cada momento. Si tienes cualquier duda escríbenos y te ayudamos."
+          }
+        },
+        "pregunta_iPGb4B": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Repondrán el stock después de la oferta de aniversario?",
+            "respuesta": "No. Esta es nuestra colección de aniversario: lo que ves es lo que hay. Cuando se agote, estas condiciones no volverán a repetirse. Por eso, cada prenda que llega a tu hogar es realmente parte de nuestra celebración."
           }
         }
       },
@@ -555,7 +569,9 @@
         "pregunta_f47GGL",
         "pregunta_TWqRdx",
         "pregunta_RRM6Ni",
-        "pregunta_naFrgL"
+        "pregunta_naFrgL",
+        "pregunta_B3GWhP",
+        "pregunta_iPGb4B"
       ],
       "custom_css": [],
       "name": "FAQ",
