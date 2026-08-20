@@ -1,60 +1,129 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
   .faq-vela {
     padding: 60px 20px;
     max-width: 800px;
     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
   }
   .faq-vela__titulo {
-    font-family: Georgia, serif;
-    font-size: 3rem; /* Tamaño original para ordenador */
-    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
     color: #121212;
-  }
-  
-  /* CAMBIO AQUÍ: Regla exclusiva para móviles (pantallas menores de 750px) */
-  @media screen and (max-width: 749px) {
-    .faq-vela__titulo {
-      font-size: 2rem; /* Tamaño reducido para móvil */
-      margin-bottom: 25px; /* Reducimos también un poco el espacio de abajo en móvil */
-    }
   }
 
   .faq-vela__item {
-    border-bottom: 1px solid #e5e7eb;
+    border: 1px solid #1a1a1a;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
   }
   .faq-vela__pregunta {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    gap: 14px;
+    padding: 18px 20px;
     cursor: pointer;
-    font-family: 'Assistant', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #121212;
     list-style: none;
     user-select: none;
   }
   .faq-vela__pregunta::-webkit-details-marker { display: none; }
-  .faq-vela__icono {
-    font-size: 2rem;
-    font-weight: 300;
-    line-height: 1;
+
+  .faq-vela__check {
     flex-shrink: 0;
-    transition: transform 0.3s ease;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #1a1a1a;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .faq-vela__check svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .faq-vela__texto {
+    flex: 1;
+  }
+
+  .faq-vela__icono {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    transition: transform 0.25s ease;
   }
   details[open] .faq-vela__icono {
-    transform: rotate(45deg);
+    transform: rotate(180deg);
   }
+
   .faq-vela__respuesta,
   .faq-vela__respuesta p {
-    font-family: 'Assistant', sans-serif;
-    font-size: 1.4rem !important;
-    color: #6b7280;
-    padding: 0 0 20px 0;
-    line-height: 1.7;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem !important;
+    color: #555555;
+    padding: 0 20px 20px 54px;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .faq-vela__footer {
+    text-align: center;
+    margin-top: 36px;
+  }
+  .faq-vela__footer-texto {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #333333;
+    margin: 0 0 18px 0;
+  }
+  .faq-vela__footer-texto a {
+    color: #333333;
+    text-decoration: underline;
+  }
+  .faq-vela__boton {
+    display: inline-block;
+    background: #121212;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 6px;
+  }
+  .faq-vela__boton:hover {
+    background: #2a2a2a;
+  }
+
+  @media screen and (max-width: 749px) {
+    .faq-vela__titulo {
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+    .faq-vela__pregunta {
+      font-size: 1.05rem;
+      padding: 16px;
+    }
+    .faq-vela__respuesta,
+    .faq-vela__respuesta p {
+      padding: 0 16px 16px 46px;
+    }
   }
 </style>
 
@@ -64,12 +133,31 @@
   {%- for block in section.blocks -%}
     <details class="faq-vela__item">
       <summary class="faq-vela__pregunta">
-        <span>{{ block.settings.pregunta }}</span>
-        <span class="faq-vela__icono">+</span>
+        <span class="faq-vela__check">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12l5 5L20 6" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="faq-vela__texto">{{ block.settings.pregunta }}</span>
+        <svg class="faq-vela__icono" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9l6 6 6-6" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </summary>
       <p class="faq-vela__respuesta">{{ block.settings.respuesta }}</p>
     </details>
   {%- endfor -%}
+
+  <div class="faq-vela__footer">
+    <p class="faq-vela__footer-texto">
+      {{ section.settings.footer_texto }}
+      {%- if section.settings.footer_email != blank -%}
+        <a href="mailto:{{ section.settings.footer_email }}">{{ section.settings.footer_email }}</a>
+      {%- endif -%}
+    </p>
+    {%- if section.settings.boton_texto != blank -%}
+      <a href="{{ section.settings.boton_link }}" class="faq-vela__boton">{{ section.settings.boton_texto }}</a>
+    {%- endif -%}
+  </div>
 </div>
 
 {% schema %}
@@ -81,6 +169,30 @@
       "id": "titulo",
       "label": "Título",
       "default": "Preguntas Frecuentes"
+    },
+    {
+      "type": "text",
+      "id": "footer_texto",
+      "label": "Texto inferior",
+      "default": "¿Tienes más preguntas? Escríbenos a"
+    },
+    {
+      "type": "text",
+      "id": "footer_email",
+      "label": "Email de contacto",
+      "default": "info@casavelaria.com"
+    },
+    {
+      "type": "text",
+      "id": "boton_texto",
+      "label": "Texto del botón",
+      "default": "Soporte"
+    },
+    {
+      "type": "url",
+      "id": "boton_link",
+      "label": "Enlace del botón",
+      "info": "Por defecto: /pages/contacto"
     }
   ],
   "blocks": [
