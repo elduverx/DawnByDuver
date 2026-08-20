@@ -99,6 +99,15 @@
         "padding_bottom": 28
       }
     },
+    "vela_imagen_texto_BDggLT": {
+      "type": "vela-imagen-texto",
+      "name": "Imagen y Texto",
+      "settings": {
+        "image": "shopify://shop_images/Captura_de_pantalla_2026-08-20_a_las_13.02.23.png",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "image_with_text_GHAQFY": {
       "type": "image-with-text",
       "blocks": {
@@ -113,6 +122,7 @@
       "block_order": [
         "text_NkGTAH"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_4_ago_2026_12_07_22.png",
@@ -545,6 +555,7 @@
     "categories",
     "colecciones_tabs_pPRzBT",
     "colecciones_tabs_URpK4H",
+    "vela_imagen_texto_BDggLT",
     "image_with_text_GHAQFY",
     "colecciones_tabs_VEpcGX",
     "editorial_banner_g9Wq7H",
