@@ -40,9 +40,9 @@
   .rfc-star--vacio path { fill: #d1d5db; }
 
   .rfc-slider-wrapper {
-    max-width: 1300px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 24px;
   }
   .rfc-grid {
     display: flex;
@@ -52,13 +52,20 @@
     scrollbar-width: none;
     touch-action: pan-y;
     scroll-snap-type: x mandatory;
+    cursor: grab;
+    user-select: none;
+  }
+  .rfc-grid.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    scroll-snap-type: none;
   }
   .rfc-grid::-webkit-scrollbar {
     display: none;
   }
   .rfc-card {
     flex: 0 0 auto;
-    width: calc(25% - 15px);
+    width: min(320px, 78vw);
     text-align: center;
     border: none;
     border-radius: 14px;
@@ -143,13 +150,9 @@
     background: #121212;
   }
 
-  @media screen and (max-width: 989px) {
-    .rfc-card { width: calc(50% - 10px); }
-  }
   @media screen and (max-width: 599px) {
-    .rfc-card { width: 80%; }
     .rfc-section { padding: 40px 0; }
-    .rfc-slider-wrapper { padding: 0 24px; }
+    .rfc-slider-wrapper { padding: 0 20px; }
   }
 {%- endstyle -%}
 
@@ -243,6 +246,48 @@
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(updateActiveDot, 100);
     }, { passive: true });
+
+    // Arrastre con ratón (desktop)
+    var isDown = false;
+    var startX = 0;
+    var startScrollLeft = 0;
+    var dragMoved = false;
+
+    slider.addEventListener('mousedown', function (e) {
+      isDown = true;
+      dragMoved = false;
+      slider.classList.add('is-dragging');
+      startX = e.pageX - slider.offsetLeft;
+      startScrollLeft = slider.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', function () {
+      if (!isDown) return;
+      isDown = false;
+      slider.classList.remove('is-dragging');
+    });
+
+    slider.addEventListener('mouseleave', function () {
+      if (!isDown) return;
+      isDown = false;
+      slider.classList.remove('is-dragging');
+    });
+
+    slider.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      dragMoved = true;
+      var x = e.pageX - slider.offsetLeft;
+      var walk = x - startX;
+      slider.scrollLeft = startScrollLeft - walk;
+    });
+
+    slider.addEventListener('click', function (e) {
+      if (dragMoved) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
   })();
 </script>
 
