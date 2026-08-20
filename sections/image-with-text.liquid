@@ -1,4 +1,7 @@
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -21,13 +24,20 @@
   }
 
   #ImageWithText--{{ section.id }} .rte {
-    line-height: 1.6;
+    line-height: normal;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    letter-spacing: normal;
+    color: rgb(26, 26, 26);
   }
 
   #ImageWithText--{{ section.id }} .rte p {
     margin-top: 0;
     margin-bottom: 1.1rem;
     font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: rgb(26, 26, 26);
   }
 
   #ImageWithText--{{ section.id }} .rte p:first-child {
@@ -38,6 +48,24 @@
   #ImageWithText--{{ section.id }} .rte p:last-child {
     margin-top: 1.4rem;
     margin-bottom: 0;
+  }
+
+  .section-{{ section.id }}-padding .image-with-text__grid {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding .image-with-text__grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      column-gap: 16px;
+      row-gap: 16px;
+    }
   }
 
   @media screen and (min-width: 990px) {
