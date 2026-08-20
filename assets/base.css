@@ -6031,11 +6031,26 @@ fieldset[data-option-name*="Size" i] input.disabled + label {
     max-width: 100% !important;
   }
 }
-/* === VELA: Tallas más pequeñas en la ficha de producto === */
+/* === VELA: Tallas iguales que el competidor === */
+fieldset[data-option-name*="alla" i],
+fieldset[data-option-name*="ize" i] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  column-gap: 5px !important;
+  row-gap: 5px !important;
+  margin-top: 14px !important;
+  margin-bottom: 14px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: rgb(0, 0, 0) !important;
+}
+
 fieldset[data-option-name*="alla" i] .product-form__input--pill input[type='radio'] + label,
 fieldset[data-option-name*="alla" i] input[type='radio'] + label,
 fieldset[data-option-name*="ize" i] input[type='radio'] + label {
-  padding: 0.6rem 1.2rem !important;
-  font-size: 1.1rem !important;
-  margin: 0.5rem 0.4rem 0.2rem 0 !important;
+  padding: 0.5rem 1.2rem !important;
+  font-size: 1.4rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  margin: 0 !important;
 }
