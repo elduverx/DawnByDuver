@@ -1,0 +1,75 @@
+{%- liquid
+  assign excluded_handles = 'productos-con-descuento-por-cantidad' | split: ','
+-%}
+
+{%- style -%}
+  #VelaColeccionesScroll-{{ section.id }} {
+    display: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    #VelaColeccionesScroll-{{ section.id }} {
+      display: block;
+      background: #f5f5f5;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    #VelaColeccionesScroll-{{ section.id }}::-webkit-scrollbar {
+      display: none;
+    }
+
+    #VelaColeccionesScroll-{{ section.id }} .vela-colecciones-scroll__track {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 1.2rem;
+    }
+
+    #VelaColeccionesScroll-{{ section.id }} .vela-colecciones-scroll__item {
+      display: inline-flex;
+      align-items: center;
+      padding: 1.1rem 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      color: #1a1a1a;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    #VelaColeccionesScroll-{{ section.id }} .vela-colecciones-scroll__divider {
+      width: 1px;
+      height: 1.4rem;
+      background: #d0d0d0;
+      flex-shrink: 0;
+    }
+  }
+{%- endstyle -%}
+
+<div id="VelaColeccionesScroll-{{ section.id }}" class="vela-colecciones-scroll">
+  <div class="vela-colecciones-scroll__track">
+    {%- assign first = true -%}
+    {%- for collection in collections -%}
+      {%- unless excluded_handles contains collection.handle or collection.handle == 'frontpage' or collection.products_count == 0 -%}
+        {%- unless first -%}<span class="vela-colecciones-scroll__divider"></span>{%- endunless -%}
+        <a href="{{ collection.url }}" class="vela-colecciones-scroll__item">{{ collection.title }}</a>
+        {%- assign first = false -%}
+      {%- endunless -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Colecciones Scroll",
+  "presets": [
+    {
+      "name": "Colecciones Scroll"
+    }
+  ]
+}
+{% endschema %}
