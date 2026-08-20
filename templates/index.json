@@ -25,65 +25,6 @@
         "padding_bottom": 52
       }
     },
-    "philosophy": {
-      "type": "rich-text",
-      "blocks": {
-        "caption_PhV8Kc": {
-          "type": "caption",
-          "disabled": true,
-          "settings": {
-            "caption": "CASA VELARIA",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "<strong>OFERTA ANIVERSARIO</strong>",
-            "heading_size": "h2"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<h6><strong>23 años juntas. Este es nuestro regalo para ti.</strong></h6><p>Hace 23 años abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Valentina creció aquí, entre telas y espejos, y vosotras os convertisteis en algo más que clientas: en familia.</p><p>Hoy cumplimos 23 años, y queremos celebrarlo contigo. <strong>Por eso, solo por hoy, disfruta de un 50% de descuento en toda la tienda.</strong> Es nuestro regalo, como agradecimiento por tantos años a tu lado.</p><p>Gracias por caminar junto a nosotras en este sueño.</p><p>Con cariño,<br/><br/>— Rosa ❤️</p>"
-          }
-        },
-        "discount_box_CQmTq4": {
-          "type": "discount_box",
-          "disabled": true,
-          "settings": {}
-        },
-        "text_yNreBd": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "caption_PhV8Kc",
-        "heading",
-        "text",
-        "discount_box_CQmTq4",
-        "text_yNreBd"
-      ],
-      "disabled": true,
-      "custom_css": [
-        ".rich-text__wrapper p {color: #444 !important;}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 0,
-        "padding_bottom": 60
-      }
-    },
     "categories": {
       "type": "multicolumn",
       "blocks": {
@@ -596,7 +537,6 @@
   "order": [
     "image_banner",
     "vela_historia_aniversario_cR8Dht",
-    "philosophy",
     "categories",
     "colecciones_tabs_pPRzBT",
     "colecciones_tabs_URpK4H",
