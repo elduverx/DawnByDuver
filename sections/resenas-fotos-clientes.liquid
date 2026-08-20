@@ -238,7 +238,7 @@
       dot.className = 'rfc-dot' + (i === 0 ? ' is-active' : '');
       dot.setAttribute('aria-label', 'Ir a reseña ' + (i + 1));
       dot.addEventListener('click', function () {
-        stopAutoplay();
+        pauseAutoplayTemporarily();
         card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
       });
       dotsWrap.appendChild(dot);
@@ -279,7 +279,7 @@
     slider.addEventListener('mousedown', function (e) {
       isDown = true;
       dragMoved = false;
-      stopAutoplay();
+      pauseAutoplayTemporarily();
       slider.classList.add('is-dragging');
       startX = e.pageX - slider.offsetLeft;
       startScrollLeft = slider.scrollLeft;
