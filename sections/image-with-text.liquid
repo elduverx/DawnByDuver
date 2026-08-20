@@ -12,6 +12,40 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {%- if section.id == 'image_with_text_GHAQFY' -%}
+  #ImageWithText--{{ section.id }} {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #ImageWithText--{{ section.id }} .rte {
+    line-height: 1.6;
+  }
+
+  #ImageWithText--{{ section.id }} .rte p {
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+    font-weight: 400;
+  }
+
+  #ImageWithText--{{ section.id }} .rte p:first-child {
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+  }
+
+  #ImageWithText--{{ section.id }} .rte p:last-child {
+    margin-top: 1.4rem;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 990px) {
+    #ImageWithText--{{ section.id }} {
+      max-width: 74rem;
+    }
+  }
+  {%- endif -%}
 {%- endstyle -%}
 
 {%- liquid
