@@ -226,6 +226,7 @@
       dot.className = 'rfc-dot' + (i === 0 ? ' is-active' : '');
       dot.setAttribute('aria-label', 'Ir a reseña ' + (i + 1));
       dot.addEventListener('click', function () {
+        stopAutoplay();
         card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
       });
       dotsWrap.appendChild(dot);
@@ -248,6 +249,7 @@
       dots.forEach(function (dot, i) {
         dot.classList.toggle('is-active', i === closestIndex);
       });
+      return closestIndex;
     }
 
     var scrollTimeout;
@@ -265,6 +267,7 @@
     slider.addEventListener('mousedown', function (e) {
       isDown = true;
       dragMoved = false;
+      stopAutoplay();
       slider.classList.add('is-dragging');
       startX = e.pageX - slider.offsetLeft;
       startScrollLeft = slider.scrollLeft;
@@ -298,6 +301,8 @@
       }
     }, true);
 
+    slider.addEventListener('touchstart', stopAutoplay, { passive: true });
+
     // Bloquea el arrastre nativo de imágenes (el "fantasma" al hacer drag)
     slider.querySelectorAll('img').forEach(function (img) {
       img.addEventListener('dragstart', function (e) {
@@ -305,16 +310,43 @@
       });
     });
 
-    // Empieza centrado en la reseña del medio
-    var middleIndex = Math.floor(cards.length / 2);
-    var middleCard = cards[middleIndex];
-    if (middleCard) {
+    function centerOnMiddleCard() {
+      var middleIndex = Math.floor(cards.length / 2);
+      var middleCard = cards[middleIndex];
+      if (!middleCard) return;
       var sliderRect = slider.getBoundingClientRect();
       var cardRect = middleCard.getBoundingClientRect();
       var offset = (cardRect.left - sliderRect.left) - (sliderRect.width / 2) + (cardRect.width / 2);
       slider.scrollLeft = slider.scrollLeft + offset;
       updateActiveDot();
     }
+
+    // Avance automático cada 3 segundos
+    var autoplayTimer = null;
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayTimer = setInterval(function () {
+        var card = cards[0];
+        var gap = 20;
+        var step = card.offsetWidth + gap;
+        var maxScroll = slider.scrollWidth - slider.clientWidth;
+        var next = slider.scrollLeft + step;
+        slider.scrollLeft = next > maxScroll ? 0 : next;
+      }, 3000);
+    }
+    function stopAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    }
+
+    // Espera a que todo (incluidas las imágenes) esté cargado antes de centrar,
+    // para que el cálculo de posiciones sea exacto también en móvil.
+    window.addEventListener('load', function () {
+      centerOnMiddleCard();
+      startAutoplay();
+    });
   })();
 </script>
 
