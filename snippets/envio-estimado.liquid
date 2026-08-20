@@ -8,15 +8,12 @@
 {%- assign manana_nombre_dia = dias_semana[manana_weekday_num] -%}
 {%- assign manana_nombre_mes = meses_largo[manana_mes_index] -%}
 
-<div style="margin-top: 16px; padding: 16px; background-color: #f5f5f5; border-radius: 12px;">
-  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: #121212; margin-bottom: 12px;">
-    <span aria-hidden="true">&bull;</span>
-    <span>Envío <strong>{{ manana_nombre_dia }}, {{ manana_dia }} de {{ manana_nombre_mes }}</strong></span>
-    <strong style="margin-left: 8px;">Envío Gratuito</strong>
-  </div>
-  {% render 'metodos-pago' %}
+<div style="margin-top: 16px; padding: 16px; background-color: #f5f5f5; border-radius: 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: #121212;">
+  <span aria-hidden="true">&bull;</span>
+  <span>Envío <strong>{{ manana_nombre_dia }}, {{ manana_dia }} de {{ manana_nombre_mes }}</strong></span>
+  <strong style="margin-left: 8px;">Envío Gratuito</strong>
 </div>
-
+{% render 'metodos-pago' %}
 
 {%- if product.handle == 'sophia-conjunto-combinacion-esencial' -%}
 <div style="display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; padding: 18px 22px; border-radius: 14px; background-color: #fdf1ef; border: 1px solid #f4d9d3; font-family: 'Assistant', sans-serif;">
