@@ -31,18 +31,25 @@
     .card__media {
       position: relative !important;
     }
+    .card__inner.ratio {
+      aspect-ratio: 1793 / 2151 !important;
+    }
+    .card__inner.ratio::before {
+      content: none !important;
+      padding-top: 0 !important;
+    }
     .vela-badge-esquina {
       position: absolute;
-      top: 8px;
-      right: 8px;
+      top: 0;
+      right: 0;
       z-index: 3;
-      background-color: #000000;
+      background-color: #1A1A1A;
       color: #ffffff;
       font-family: 'Montserrat', sans-serif;
-      font-size: 11px;
+      font-size: 1.6rem;
       font-weight: 700;
-      line-height: 17.6px;
-      padding: 3px 6px;
+      padding: 0.8rem 1.3rem;
+      line-height: 1;
     }
   </style>
 {%- endunless -%}
@@ -163,7 +170,7 @@
           {%- assign color_option_index = nil -%}
           {%- for option in card_product.options -%}
             {%- assign option_downcase = option | downcase -%}
-            {%- if option_downcase == 'color' or option_downcase == 'color' or option_downcase == 'colour' or option_downcase == 'colore' -%}
+            {%- if option_downcase contains 'color' or option_downcase contains 'colour' or option_downcase contains 'colore' -%}
               {%- assign color_option_index = forloop.index0 -%}
             {%- endif -%}
           {%- endfor -%}
