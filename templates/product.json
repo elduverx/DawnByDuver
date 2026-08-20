@@ -108,8 +108,8 @@
       "type": "combina-look",
       "name": "Combina tu look",
       "settings": {
-        "eyebrow": "TAMBIÉN TE PUEDE INTERESAR",
-        "titulo": "COMBINA Y AHORRA UN 20% ADICIONAL",
+        "eyebrow": "",
+        "titulo": "COMBINA Y AHORRA",
         "texto_boton": "Ver todo",
         "url_ver_todo": "shopify://collections/all"
       }
