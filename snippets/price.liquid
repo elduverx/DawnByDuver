@@ -131,7 +131,7 @@
         .price__badge-sale { display: none !important; }
       </style>
     {%- else -%}
-      <div class="price__sale" style="display: flex; align-items: center; gap: 6px;">
+      <div class="price__sale" style="display: flex; align-items: center; justify-content: flex-start; gap: 4px; text-align: left;">
         {%- if compare_at_price > price -%}
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
             <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
