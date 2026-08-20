@@ -5,25 +5,27 @@
     text-align: center;
   }
   .rfc-header__titulo {
-    font-family: Georgia, serif;
-    font-weight: 400;
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-family: var(--font-heading-family), sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
     color: #121212;
-    margin: 0 0 14px 0;
-  }
-  .rfc-header__subtitulo {
-    font-size: 1.4rem;
-    color: #333333;
-    margin: 0 0 6px 0;
+    margin: 0 0 16px 0;
   }
   .rfc-header__valoracion {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    font-size: 1.4rem;
-    color: #333333;
-    margin-bottom: 40px;
+    gap: 10px;
+    font-size: 1.5rem;
+    color: #222222;
+    margin-bottom: 6px;
+  }
+  .rfc-header__subtitulo {
+    font-size: 1.3rem;
+    color: #666666;
+    margin: 0 0 40px 0;
   }
   .rfc-estrellas-badge {
     display: inline-flex;
@@ -31,10 +33,10 @@
   }
   .rfc-estrellas-badge svg,
   .rfc-card__estrellas svg {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
   }
-  .rfc-star--lleno path { fill: var(--rfc-star-color, #16a34a); }
+  .rfc-star--lleno path { fill: var(--rfc-star-color, #f6c343); }
   .rfc-star--vacio path { fill: #d1d5db; }
 
   .rfc-slider-wrapper {
@@ -45,10 +47,11 @@
   .rfc-grid {
     display: flex;
     gap: 20px;
-    overflow-x: hidden;
+    overflow-x: auto;
     scroll-behavior: smooth;
     scrollbar-width: none;
     touch-action: pan-y;
+    scroll-snap-type: x mandatory;
   }
   .rfc-grid::-webkit-scrollbar {
     display: none;
@@ -56,19 +59,21 @@
   .rfc-card {
     flex: 0 0 auto;
     width: calc(25% - 15px);
-    text-align: left;
-    border: 1px solid #ececec;
-    border-radius: 4px;
+    text-align: center;
+    border: none;
+    border-radius: 14px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
+    scroll-snap-align: start;
   }
   .rfc-card__imagen {
     width: 100%;
-    aspect-ratio: 3/4;
+    aspect-ratio: 4/5;
     overflow: hidden;
     background: #f3f3f3;
+    border-radius: 14px;
   }
   .rfc-card__imagen img {
     width: 100%;
@@ -77,34 +82,36 @@
     display: block;
   }
   .rfc-card__contenido {
-    padding: 16px;
+    padding: 16px 8px;
     flex: 1;
     display: flex;
     flex-direction: column;
-  }
-  .rfc-card__texto {
-    font-size: 1.35rem;
-    line-height: 1.5;
-    color: #222222;
-    margin: 0 0 16px 0;
-    flex: 1;
+    align-items: center;
   }
   .rfc-card__estrellas {
     display: flex;
     gap: 2px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+  }
+  .rfc-card__texto {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #333333;
+    margin: 0 0 12px 0;
+    flex: 1;
   }
   .rfc-card__fila-inferior {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     flex-wrap: wrap;
   }
   .rfc-card__badge {
     background: #f0fdf4;
     color: #15803d;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
     padding: 2px 8px;
     border-radius: 3px;
@@ -115,36 +122,32 @@
     color: #121212;
     margin: 0;
   }
-  .rfc-nav {
+
+  .rfc-dots {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
     margin-top: 28px;
   }
-  .rfc-btn {
-    background: #ffffff;
-    border: 1px solid #d1d5db;
-    width: 34px;
-    height: 34px;
+  .rfc-dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #d1d5db;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    font-size: 1.3rem;
-    color: #6b7280;
-    touch-action: manipulation;
   }
-  .rfc-btn:hover {
-    background: #f9fafb;
+  .rfc-dot.is-active {
+    background: #121212;
   }
 
   @media screen and (max-width: 989px) {
     .rfc-card { width: calc(50% - 10px); }
   }
   @media screen and (max-width: 599px) {
-    .rfc-card { width: 85%; }
+    .rfc-card { width: 80%; }
     .rfc-section { padding: 40px 0; }
     .rfc-slider-wrapper { padding: 0 24px; }
   }
@@ -159,11 +162,11 @@
 
 <div class="rfc-section" style="--rfc-star-color: {{ section.settings.color_estrellas }};">
   <h2 class="rfc-header__titulo">{{ section.settings.titulo }}</h2>
-  <p class="rfc-header__subtitulo">{{ section.settings.subtitulo }}</p>
   <div class="rfc-header__valoracion">
     <span>{{ section.settings.valoracion_texto }}</span>
     <span class="rfc-estrellas-badge">{{ estrella_llena }}{{ estrella_llena }}{{ estrella_llena }}{{ estrella_llena }}{{ estrella_llena }}</span>
   </div>
+  <p class="rfc-header__subtitulo">{{ section.settings.subtitulo }}</p>
 
   <div class="rfc-slider-wrapper">
     <div class="rfc-grid" id="rfcSlider-{{ section.id }}">
@@ -175,13 +178,13 @@
             {%- endif -%}
           </div>
           <div class="rfc-card__contenido">
+            <div class="rfc-card__estrellas">
+              {%- for i in (1..5) -%}
+                {%- if i <= block.settings.estrellas -%}{{ estrella_llena }}{%- else -%}{{ estrella_vacia }}{%- endif -%}
+              {%- endfor -%}
+            </div>
             <p class="rfc-card__texto">{{ block.settings.texto }}</p>
             <div class="rfc-card__fila-inferior">
-              <div class="rfc-card__estrellas">
-                {%- for i in (1..5) -%}
-                  {%- if i <= block.settings.estrellas -%}{{ estrella_llena }}{%- else -%}{{ estrella_vacia }}{%- endif -%}
-                {%- endfor -%}
-              </div>
               {%- if block.settings.verificado -%}
                 <span class="rfc-card__badge">Verificado</span>
               {%- endif -%}
@@ -192,59 +195,55 @@
       {%- endfor -%}
     </div>
 
-    <div class="rfc-nav">
-      <button class="rfc-btn" onclick="rfcMoverSlider('{{ section.id }}', -1)" aria-label="Anterior">&#8249;</button>
-      <button class="rfc-btn" onclick="rfcMoverSlider('{{ section.id }}', 1)" aria-label="Siguiente">&#8250;</button>
-    </div>
+    <div class="rfc-dots" id="rfcDots-{{ section.id }}"></div>
   </div>
 </div>
 
 <script>
-  function rfcMoverSlider(sectionId, dir) {
+  (function () {
+    var sectionId = '{{ section.id }}';
     var slider = document.getElementById('rfcSlider-' + sectionId);
-    if (!slider) return;
-    var card = slider.querySelector('.rfc-card');
-    if (!card) return;
-    var gap = 20;
-    var cardWidth = card.offsetWidth + gap;
-    var maxScroll = slider.scrollWidth - slider.clientWidth;
-    var newScroll = slider.scrollLeft + (dir * cardWidth);
-    slider.scrollLeft = Math.max(0, Math.min(newScroll, maxScroll));
-  }
+    var dotsWrap = document.getElementById('rfcDots-' + sectionId);
+    if (!slider || !dotsWrap) return;
 
-  document.addEventListener('DOMContentLoaded', function () {
-    var sliders = document.querySelectorAll('.rfc-grid');
-    sliders.forEach(function (slider) {
-      var startX = 0;
-      var startY = 0;
-      var swiping = false;
-      var handled = false;
-      var sectionId = slider.id.replace('rfcSlider-', '');
+    var cards = Array.prototype.slice.call(slider.querySelectorAll('.rfc-card'));
+    if (!cards.length) return;
 
-      slider.addEventListener('touchstart', function (e) {
-        startX = e.touches[0].clientX;
-        startY = e.touches[0].clientY;
-        swiping = true;
-        handled = false;
-      }, { passive: true });
-
-      slider.addEventListener('touchmove', function (e) {
-        if (!swiping || handled) return;
-        var diffX = e.touches[0].clientX - startX;
-        var diffY = e.touches[0].clientY - startY;
-
-        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 30) {
-          e.preventDefault();
-          handled = true;
-          rfcMoverSlider(sectionId, diffX < 0 ? 1 : -1);
-        }
-      }, { passive: false });
-
-      slider.addEventListener('touchend', function () {
-        swiping = false;
+    cards.forEach(function (card, i) {
+      var dot = document.createElement('button');
+      dot.className = 'rfc-dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', 'Ir a reseña ' + (i + 1));
+      dot.addEventListener('click', function () {
+        card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
       });
+      dotsWrap.appendChild(dot);
     });
-  });
+
+    var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.rfc-dot'));
+
+    function updateActiveDot() {
+      var sliderRect = slider.getBoundingClientRect();
+      var closestIndex = 0;
+      var closestDistance = Infinity;
+      cards.forEach(function (card, i) {
+        var rect = card.getBoundingClientRect();
+        var distance = Math.abs(rect.left - sliderRect.left);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = i;
+        }
+      });
+      dots.forEach(function (dot, i) {
+        dot.classList.toggle('is-active', i === closestIndex);
+      });
+    }
+
+    var scrollTimeout;
+    slider.addEventListener('scroll', function () {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(updateActiveDot, 100);
+    }, { passive: true });
+  })();
 </script>
 
 {% schema %}
@@ -257,25 +256,25 @@
       "type": "text",
       "id": "titulo",
       "label": "Título",
-      "default": "Lo que dicen nuestros clientes"
-    },
-    {
-      "type": "text",
-      "id": "subtitulo",
-      "label": "Subtítulo",
-      "default": "Más de 5.000 mujeres satisfechas"
+      "default": "¿Qué dicen nuestras clientas?"
     },
     {
       "type": "text",
       "id": "valoracion_texto",
       "label": "Texto de valoración",
-      "default": "4.8/5 - Reseñas verificadas"
+      "default": "Excelente 4.8/5"
+    },
+    {
+      "type": "text",
+      "id": "subtitulo",
+      "label": "Subtítulo (número de reseñas)",
+      "default": "Más de 5.261 reseñas"
     },
     {
       "type": "color",
       "id": "color_estrellas",
       "label": "Color de las estrellas",
-      "default": "#16a34a"
+      "default": "#f6c343"
     }
   ],
   "blocks": [
