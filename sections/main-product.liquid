@@ -267,6 +267,29 @@
       height: auto !important;
       display: block;
     }
+
+    /* === VELA: Estilo de los desplegables (acordeón) === */
+    #MainProduct-{{ section.id }} .product__accordion summary {
+      display: flex !important;
+      align-items: center !important;
+      cursor: pointer !important;
+      background-color: transparent !important;
+      border: none !important;
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+      position: relative !important;
+    }
+
+    #MainProduct-{{ section.id }} .product__accordion summary .accordion__title,
+    #MainProduct-{{ section.id }} .product__accordion .summary__title {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      line-height: 15.6px !important;
+      letter-spacing: normal !important;
+      color: rgb(0, 0, 0) !important;
+      text-transform: none !important;
+    }
   {%- endstyle -%}
 
   <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
