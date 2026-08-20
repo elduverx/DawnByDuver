@@ -108,6 +108,25 @@
   }
 </style>
 
+{%- liquid
+  assign colecciones_genericas = 'mujer,hombre,todos,frontpage,novedades-hombre,novedades-mujer,productos-con-descuento-por-cantidad,vestidos' | split: ','
+  assign target_collection = blank
+  for coleccion_producto in product.collections
+    if target_collection == blank
+      unless colecciones_genericas contains coleccion_producto.handle
+        assign target_collection = coleccion_producto
+      endunless
+    endif
+  endfor
+
+  if target_collection == blank
+    assign target_collection = product.collections.first
+  endif
+
+  if target_collection == blank
+    assign target_collection = collections['mujer']
+  endif
+-%}
 <div class="combina-section">
   <p class="combina-eyebrow">{{ section.settings.eyebrow }}</p>
   <div class="combina-header">
@@ -116,24 +135,6 @@
   </div>
   <div class="combina-grid">
     {%- liquid
-      assign colecciones_genericas = 'mujer,hombre,todos,frontpage,novedades-hombre,novedades-mujer,productos-con-descuento-por-cantidad,vestidos' | split: ','
-      assign target_collection = blank
-      for coleccion_producto in product.collections
-        if target_collection == blank
-          unless colecciones_genericas contains coleccion_producto.handle
-            assign target_collection = coleccion_producto
-          endunless
-        endif
-      endfor
-
-      if target_collection == blank
-        assign target_collection = product.collections.first
-      endif
-
-      if target_collection == blank
-        assign target_collection = collections['mujer']
-      endif
-
       assign shown = 0
     -%}
     {%- for related in target_collection.products limit: 50 -%}
