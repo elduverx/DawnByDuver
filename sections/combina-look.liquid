@@ -116,7 +116,7 @@
   </div>
   <div class="combina-grid">
     {%- liquid
-      assign colecciones_genericas = 'mujer,hombre,todos,frontpage,novedades-hombre,novedades-mujer,productos-con-descuento-por-cantidad,vestidos,conjuntos' | split: ','
+      assign colecciones_genericas = 'mujer,hombre,todos,frontpage,novedades-hombre,novedades-mujer,productos-con-descuento-por-cantidad,vestidos' | split: ','
       assign target_collection = blank
       for coleccion_producto in product.collections
         if target_collection == blank
@@ -125,6 +125,10 @@
           endunless
         endif
       endfor
+
+      if target_collection == blank
+        assign target_collection = product.collections.first
+      endif
 
       if target_collection == blank
         assign target_collection = collections['mujer']
