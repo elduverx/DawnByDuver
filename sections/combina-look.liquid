@@ -12,19 +12,53 @@
     margin-bottom: 8px;
     text-transform: uppercase;
   }
-  .combina-titulo {
-    font-size: 3rem;
-    font-weight: 400;
-    font-family: Georgia, serif;
-    margin-bottom: 40px;
-    color: #121212;
-    text-transform: none;
+  .combina-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom: 24px;
   }
+  .combina-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: #121212;
+    text-transform: uppercase;
+  }
+  .combina-btn-header {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .combina-btn-header:hover { background: #333333; color: #ffffff; }
   .combina-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 12px;
     margin-bottom: 40px;
+  }
+  @media screen and (max-width: 749px) {
+    .combina-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 8px;
+    }
+    .combina-card {
+      flex: 0 0 calc(50% - 4px);
+      scroll-snap-align: start;
+    }
   }
   .combina-card { text-align: left; }
   .combina-card a { display: block; overflow: hidden; }
@@ -42,7 +76,8 @@
     font-size: 1.2rem;
     color: #121212;
     margin: 0 0 6px 0;
-    font-weight: 400;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
   }
   .combina-precios { display: flex; align-items: center; gap: 8px; }
   .combina-card-precio-original {
@@ -50,7 +85,7 @@
     color: #9ca3af;
     text-decoration: line-through;
   }
-  .combina-card-precio { font-size: 1.3rem; font-weight: 600; color: #121212; }
+  .combina-card-precio { font-size: 1.3rem; font-weight: 700; color: #C0392B; }
   .combina-btn-wrapper { margin-top: 20px; }
   .combina-btn {
     display: inline-block;
@@ -65,14 +100,17 @@
   .combina-btn:hover { background: #333333; color: #ffffff; }
   @media screen and (max-width: 749px) {
     .combina-section { padding: 40px 16px; }
-    .combina-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .combina-titulo { font-size: 2.2rem; }
+    .combina-titulo { font-size: 1.6rem; }
+    .combina-btn-header { padding: 8px 16px; font-size: 1rem; }
   }
 </style>
 
 <div class="combina-section">
   <p class="combina-eyebrow">{{ section.settings.eyebrow }}</p>
-  <h2 class="combina-titulo">{{ section.settings.titulo }}</h2>
+  <div class="combina-header">
+    <h2 class="combina-titulo">{{ section.settings.titulo }}</h2>
+    <a href="{{ target_collection.url | default: section.settings.url_ver_todo }}" class="combina-btn-header">{{ section.settings.texto_boton }}</a>
+  </div>
   <div class="combina-grid">
     {%- liquid
       assign colecciones_genericas = 'mujer,hombre,todos,frontpage,novedades-hombre,novedades-mujer,productos-con-descuento-por-cantidad,vestidos,conjuntos' | split: ','
@@ -122,9 +160,6 @@
       </div>
       {%- assign shown = shown | plus: 1 -%}
     {%- endfor -%}
-  </div>
- <div class="combina-btn-wrapper">
-    <a href="{{ target_collection.url | default: section.settings.url_ver_todo }}" class="combina-btn">{{ section.settings.texto_boton }}</a>
   </div>
 </div>
 
