@@ -313,7 +313,7 @@
       }
     }, true);
 
-    slider.addEventListener('touchstart', stopAutoplay, { passive: true });
+    slider.addEventListener('touchstart', pauseAutoplayTemporarily, { passive: true });
 
     // Bloquea el arrastre nativo de imágenes (el "fantasma" al hacer drag)
     slider.querySelectorAll('img').forEach(function (img) {
@@ -335,6 +335,7 @@
 
     // Avance automático cada 3 segundos
     var autoplayTimer = null;
+    var resumeTimer = null;
     function startAutoplay() {
       stopAutoplay();
       autoplayTimer = setInterval(function () {
@@ -351,6 +352,11 @@
         clearInterval(autoplayTimer);
         autoplayTimer = null;
       }
+    }
+    function pauseAutoplayTemporarily() {
+      stopAutoplay();
+      clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(startAutoplay, 4000);
     }
 
     // Espera a que todo (incluidas las imágenes) esté cargado antes de centrar,
