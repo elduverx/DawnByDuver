@@ -1147,7 +1147,7 @@
           }
         </style>
         <div class="product-popup-modal__content-info">
-          <h1 class="h2">Tabla de tallas</h1>
+          <h1 class="h2" style="font-family: 'Montserrat', sans-serif;">{{ product.title | escape }}</h1>
           {%- if product.metafields.custom.tabla_tallas.value != blank -%}
             <img
               src="{{ product.metafields.custom.tabla_tallas.value | image_url: width: 500 }}"
