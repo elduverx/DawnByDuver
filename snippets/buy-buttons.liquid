@@ -70,6 +70,13 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+
+          {%- if product.selected_or_first_available_variant.inventory_management == 'shopify' and product.selected_or_first_available_variant.inventory_quantity > 0 and product.selected_or_first_available_variant.inventory_quantity <= 10 -%}
+            <p style="text-align: center; color: #C0392B; font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; margin: 0 0 10px;" id="StockNotice-{{ section_id }}">
+              Solo quedan {{ product.selected_or_first_available_variant.inventory_quantity }} en stock.
+            </p>
+          {%- endif -%}
+
           <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
