@@ -3654,9 +3654,10 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5 {
   text-transform: uppercase !important;
   text-align: center !important;
   color: rgb(26, 26, 26) !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  width: 100% !important;
 }
 
 .card-wrapper .card__inner {
