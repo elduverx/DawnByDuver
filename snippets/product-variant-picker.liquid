@@ -157,6 +157,16 @@ picker_type: picker_type
   </button>
 </modal-opener>
   {%- endif -%}
+  <div style="margin-top: 16px; margin-bottom: 16px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 400; color: rgb(0, 0, 0); line-height: normal;">
+    <div style="height: 3px; background: #e0e0e0; border-radius: 2px; position: relative; margin-bottom: 8px;">
+      <div style="position: absolute; left: 35%; width: 30%; height: 100%; background: #1a1a1a; border-radius: 2px;"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+      <span>Pequeño</span>
+      <span>Fiel a la talla</span>
+      <span>Grande</span>
+    </div>
+  </div>
   <p id="Urgencia-{{ section.id }}" data-urgencia-map="{{ urgencia_map | escape }}" style="margin-top: 12px; margin-bottom: 0; font-size: 1.3rem; font-weight: 600; color: #c0392b; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
     <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #c0392b; border-radius: 50%;"></span>
     <span id="UrgenciaTexto-{{ section.id }}">{{ texto_urgencia }}</span>
