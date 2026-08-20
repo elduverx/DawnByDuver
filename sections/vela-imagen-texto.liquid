@@ -1,0 +1,124 @@
+{%- style -%}
+  #VelaImagenTexto-{{ section.id }} {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: rgb(26, 26, 26);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: {{ section.settings.padding_top }}px 15px {{ section.settings.padding_bottom }}px;
+  }
+
+  #VelaImagenTexto-{{ section.id }} .vela-it__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+
+  #VelaImagenTexto-{{ section.id }} .vela-it__media {
+    width: 100%;
+  }
+
+  #VelaImagenTexto-{{ section.id }} .vela-it__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #VelaImagenTexto-{{ section.id }} .vela-it__text {
+    width: 100%;
+    text-align: left;
+  }
+
+  #VelaImagenTexto-{{ section.id }} .vela-it__text p {
+    margin-top: 0;
+    margin-bottom: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: rgb(26, 26, 26);
+  }
+
+  #VelaImagenTexto-{{ section.id }} .vela-it__text p:first-child {
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    #VelaImagenTexto-{{ section.id }} .vela-it__grid {
+      flex-direction: row;
+      align-items: flex-start;
+      column-gap: 3rem;
+    }
+
+    #VelaImagenTexto-{{ section.id }} .vela-it__media,
+    #VelaImagenTexto-{{ section.id }} .vela-it__text {
+      width: 50%;
+    }
+  }
+{%- endstyle -%}
+
+<div id="VelaImagenTexto-{{ section.id }}">
+  <div class="vela-it__grid">
+    {%- if section.settings.image != blank -%}
+      <div class="vela-it__media">
+        <img
+          src="{{ section.settings.image | image_url: width: 1500 }}"
+          srcset="{{ section.settings.image | image_url: width: 750 }} 750w, {{ section.settings.image | image_url: width: 1500 }} 1500w"
+          sizes="(min-width: 750px) 50vw, 100vw"
+          alt="{{ section.settings.image.alt | escape }}"
+          width="{{ section.settings.image.width }}"
+          height="{{ section.settings.image.height }}"
+          loading="lazy"
+        >
+      </div>
+    {%- endif -%}
+    <div class="vela-it__text">
+      <p>23 años... y este es solo el comienzo.</p>
+      <p>Hace 23 años abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Ella fue mi inspiración para crear Velaria, y desde el primer día vosotras os convertisteis en algo más que clientas: en familia.</p>
+      <p>Valentina creció aquí, entre telas y espejos, viendo crecer también este sueño convertido hoy en Casa Velaria. Para celebrar estos 23 años juntas, quiero agradeceros de la única forma que sé hacerlo bien: con un <strong>50% de descuento</strong> en productos seleccionados, como pequeño gesto de cariño en un día tan especial para nosotras.</p>
+      <p>Muy pronto, cuando nuestra comunidad crezca aún más, abriremos nuestra primera tienda física. Hasta entonces, seguimos creciendo gracias a cada una de vosotras.</p>
+      <p>Gracias por caminar junto a nosotras en este sueño.</p>
+      <p>Con todo mi cariño,<br><strong>Rosa</strong> 💛</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Imagen y Texto",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Imagen"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding superior",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding inferior",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imagen y Texto"
+    }
+  ]
+}
+{% endschema %}
