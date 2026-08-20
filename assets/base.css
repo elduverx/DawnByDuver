@@ -6050,12 +6050,12 @@ fieldset[data-option-name*="alla" i] .product-form__input--pill input[type='radi
 fieldset[data-option-name*="alla" i] input[type='radio'] + label,
 fieldset[data-option-name*="ize" i] input[type='radio'] + label {
   padding: 0 !important;
-  font-size: 1.25rem !important;
+  font-size: 1.15rem !important;
   font-family: 'Montserrat', sans-serif !important;
   margin: 0 !important;
-  width: 3.6rem !important;
-  height: 3.6rem !important;
-  min-width: 3.6rem !important;
+  width: 3.2rem !important;
+  height: 3.2rem !important;
+  min-width: 3.2rem !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
