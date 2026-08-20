@@ -289,6 +289,32 @@
       color: rgb(26, 26, 26) !important;
     }
 
+    #MainProduct-{{ section.id }} .vela-complementary-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      width: 100%;
+    }
+
+    #MainProduct-{{ section.id }} .vela-complementary-viewall {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    #MainProduct-{{ section.id }} .complementary-products .price-item--sale,
+    #MainProduct-{{ section.id }} .complementary-products .price-item {
+      color: #C0392B !important;
+    }
+
     /* === VELA: Estilo de los desplegables (acordeón) === */
     #MainProduct-{{ section.id }} .product__accordion summary {
       display: flex !important;
@@ -879,6 +905,7 @@
                   >
                 {%- endif -%}
                   {%- if recommendations_performed and recommendations_count > 0 -%}
+                    {%- assign vela_products_per_page = 2 -%}
                     <aside
                       aria-label="{{ 'accessibility.complementary_products' | t }}"
                       {{ block.shopify_attributes -}}
@@ -891,13 +918,14 @@
                           <details id="Details-{{ block.id }}-{{ section.id }}" open>
                             <summary>
                         {%- endif %}
-                        <div class="summary__title">
+                        <div class="summary__title vela-complementary-header">
                           {%- if block.settings.make_collapsible_row -%}
                             {% render 'icon-accordion', icon: block.settings.icon %}
                             <h2 class="h4 accordion__title">{{ block.settings.block_heading }}</h2>
                           {%- else -%}
                             <h2 class="h3 accordion__title">{{ block.settings.block_heading }}</h2>
                           {%- endif -%}
+                          <a href="{{ product.collections.first.url | default: routes.all_products_collection_url }}" class="vela-complementary-viewall">Ver todo</a>
                         </div>
                         {%- if block.settings.make_collapsible_row -%}
                           {{- 'icon-caret.svg' | inline_asset_content -}}
@@ -906,7 +934,7 @@
                         <slideshow-component class="slider-mobile-gutter">
                           {%- assign number_of_slides = recommendations_count
                             | plus: 0.0
-                            | divided_by: block.settings.products_per_page
+                            | divided_by: vela_products_per_page
                             | ceil
                           -%}
                           <div
@@ -931,7 +959,7 @@
                               >
                                 <ul class="list-unstyled" role="list">
                                   {%- for product in recommendations_list
-                                    limit: block.settings.products_per_page
+                                    limit: vela_products_per_page
                                     offset: continue
                                   -%}
                                     <li>
