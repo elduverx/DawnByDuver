@@ -104,8 +104,8 @@
       "name": "Imagen y Texto",
       "settings": {
         "image": "shopify://shop_images/Captura_de_pantalla_2026-08-20_a_las_13.02.23.png",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "image_with_text_GHAQFY": {
