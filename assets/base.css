@@ -6022,3 +6022,13 @@ fieldset[data-option-name*="Size" i] input.disabled + label {
     max-width: 100% !important;
   }
 }
+/* === VELA: Banner home móvil - altura según la imagen real (sin hueco) === */
+@media screen and (max-width: 749px) {
+  #Banner-image_banner.banner,
+  #Banner-image_banner .banner__media,
+  #Banner-image_banner .banner__media--mobile,
+  #Banner-image_banner .banner__media--desktop {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+}
