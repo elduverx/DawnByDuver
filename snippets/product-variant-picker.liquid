@@ -139,8 +139,18 @@
         </fieldset>
     {%- elsif picker_type == 'button' or picker_type == 'dropdown' -%}
 <fieldset class="js product-form__input product-form__input--pill" data-option-name="{{ option.name | escape }}">
-<legend class="form__label">
+{%- assign name_downcase = option.name | downcase -%}
+<legend class="form__label" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
   <span><strong style="font-weight: 500; color: #333333;">{{ option.name }}:</strong> <span class="selected-option-{{ forloop.index }}" style="font-weight: 400;">{{ option.selected_value }}</span></span>
+  {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
+    {%- if product.metafields.custom.tabla_tallas.value != blank -%}
+    <modal-opener data-modal="#TablaTallasModal-{{ section.id }}">
+      <button type="button" class="size-chart-link" aria-haspopup="dialog" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer; background: none; border: none; padding: 0; white-space: nowrap;">
+        <span aria-hidden="true">📏</span> Guía de tallas
+      </button>
+    </modal-opener>
+    {%- endif -%}
+  {%- endif -%}
 </legend>
 {% render 'product-variant-options',
 product: product,
@@ -148,16 +158,8 @@ option: option,
 block: block,
 picker_type: picker_type
 %}
-{%- assign name_downcase = option.name | downcase -%}
 {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
-  {%- if product.metafields.custom.tabla_tallas.value != blank -%}
-<modal-opener data-modal="#TablaTallasModal-{{ section.id }}">
-  <button type="button" class="size-chart-link" aria-haspopup="dialog" style="display: block; margin-top: 12px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer; background: none; border: none; padding: 0;">
-    Ver tabla de tallas
-  </button>
-</modal-opener>
-  {%- endif -%}
-  <div style="flex: 1 0 100%; width: 100%; margin-top: 16px; margin-bottom: 16px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 400; color: rgb(0, 0, 0); line-height: normal;">
+  <div style="flex: 1 0 100%; width: 100%; margin-top: 8px; margin-bottom: 16px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 400; color: rgb(0, 0, 0); line-height: normal;">
     <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 8px;">
       <div style="flex: 1 1 0; min-height: 2px !important; height: 2px !important; background: #d9d5c9 !important; border-radius: 2px; display: block; line-height: 0; font-size: 0; overflow: hidden;"></div>
       <div style="flex: 1 1 0; min-height: 2px !important; height: 2px !important; background: #d9d5c9 !important; border-radius: 2px; display: block; line-height: 0; font-size: 0; overflow: hidden;"></div>
