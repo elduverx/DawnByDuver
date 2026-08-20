@@ -17,6 +17,10 @@
         "color_scheme": "scheme-4"
       }
     },
+    "colecciones_scroll_vela": {
+      "type": "vela-colecciones-scroll",
+      "settings": {}
+    },
     "vela_historia_aniversario_cR8Dht": {
       "type": "vela-historia-aniversario",
       "name": "Historia Aniversario",
@@ -536,6 +540,7 @@
   },
   "order": [
     "image_banner",
+    "colecciones_scroll_vela",
     "vela_historia_aniversario_cR8Dht",
     "categories",
     "colecciones_tabs_pPRzBT",
