@@ -229,6 +229,7 @@
     },
     "colecciones_tabs_rEaAKG": {
       "type": "colecciones-tabs",
+      "disabled": true,
       "name": "Colecciones con pestañas",
       "settings": {
         "collection_1": "conjuntos-salvia",
@@ -542,11 +543,6 @@
         "color_estrellas": "#f8c41b"
       }
     },
-    "garantias_FMf9m7": {
-      "type": "garantias",
-      "name": "Garantías",
-      "settings": {}
-    },
     "faq_vela_4ixKRc": {
       "type": "faq-vela",
       "blocks": {
@@ -610,6 +606,11 @@
         "boton_texto": "Soporte",
         "boton_link": "shopify://pages/contacto"
       }
+    },
+    "garantias_FMf9m7": {
+      "type": "garantias",
+      "name": "Garantías",
+      "settings": {}
     }
   },
   "order": [
