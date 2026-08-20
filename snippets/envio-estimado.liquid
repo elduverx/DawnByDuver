@@ -1,38 +1,17 @@
-{%- assign mes_num = 'now' | date: '%-m' | plus: 0 -%}
-{%- assign mes_manana_num = 'now' | date: '%s' | plus: 86400 | date: '%-m' | plus: 0 -%}
-{%- assign mes_enviado_num = 'now' | date: '%s' | plus: 172800 | date: '%-m' | plus: 0 -%}
-{%- assign dia_hoy = 'now' | date: '%-d' -%}
-{%- assign dia_manana = 'now' | date: '%s' | plus: 86400 | date: '%-d' -%}
-{%- assign dia_enviado = 'now' | date: '%s' | plus: 172800 | date: '%-d' -%}
-{%- assign meses = 'Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic' | split: ',' -%}
-{%- assign idx_hoy = mes_num | minus: 1 -%}
-{%- assign idx_manana = mes_manana_num | minus: 1 -%}
-{%- assign idx_enviado = mes_enviado_num | minus: 1 -%}
-{%- assign mes_hoy = meses[idx_hoy] -%}
-{%- assign mes_manana = meses[idx_manana] -%}
-{%- assign mes_enviado = meses[idx_enviado] -%}
+{%- assign dias_semana = 'Domingo,Lunes,Martes,Miércoles,Jueves,Viernes,Sábado' | split: ',' -%}
+{%- assign meses_largo = 'Enero,Febrero,Marzo,Abril,Mayo,Junio,Julio,Agosto,Septiembre,Octubre,Noviembre,Diciembre' | split: ',' -%}
+{%- assign manana_epoch = 'now' | date: '%s' | plus: 86400 -%}
+{%- assign manana_weekday_num = manana_epoch | date: '%w' | plus: 0 -%}
+{%- assign manana_mes_num = manana_epoch | date: '%-m' | plus: 0 -%}
+{%- assign manana_dia = manana_epoch | date: '%-d' -%}
+{%- assign manana_mes_index = manana_mes_num | minus: 1 -%}
+{%- assign manana_nombre_dia = dias_semana[manana_weekday_num] -%}
+{%- assign manana_nombre_mes = meses_largo[manana_mes_index] -%}
 
-<div style="margin-top: 16px; padding: 20px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
-  <svg width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="xMidYMid meet">
-    <line x1="50" y1="10" x2="250" y2="10" stroke="#121212" stroke-width="1.5"/>
-    <circle cx="50" cy="10" r="5" fill="white" stroke="#121212" stroke-width="1.5"/>
-    <circle cx="150" cy="10" r="5" fill="white" stroke="#121212" stroke-width="1.5"/>
-    <circle cx="250" cy="10" r="5" fill="white" stroke="#121212" stroke-width="1.5"/>
-  </svg>
-  <div style="display: flex; justify-content: space-between; text-align: center; margin-top: 8px;">
-    <div style="flex: 1;">
-      <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">COMPRADO</p>
-      <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;">{{ dia_hoy }} {{ mes_hoy }}</p>
-    </div>
-    <div style="flex: 1;">
-      <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">PROCESADO</p>
-      <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;">{{ dia_hoy }} {{ mes_hoy }} / {{ dia_manana }} {{ mes_manana }}</p>
-    </div>
-    <div style="flex: 1;">
-      <p style="font-size: 1.1rem; letter-spacing: 0.15em; color: #121212; margin: 0 0 4px 0;">ENVIADO</p>
-      <p style="font-size: 1.3rem; font-weight: 600; color: #121212; margin: 0;">{{ dia_enviado }} {{ mes_enviado }}</p>
-    </div>
-  </div>
+<div style="margin-top: 16px; padding: 16px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: #121212;">
+  <span aria-hidden="true">&bull;</span>
+  <span>Envío <strong>{{ manana_nombre_dia }}, {{ manana_dia }} de {{ manana_nombre_mes }}</strong></span>
+  <strong style="margin-left: 8px;">Envío Gratuito</strong>
 </div>
 
 
