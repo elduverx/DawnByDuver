@@ -6032,3 +6032,13 @@ fieldset[data-option-name*="Size" i] input.disabled + label {
     min-height: 0 !important;
   }
 }
+/* === VELA: Elimina el hueco fantasma del banner home en móvil === */
+@media screen and (max-width: 749px) {
+  #Banner-image_banner::before,
+  #Banner-image_banner .banner__media::before,
+  #Banner-image_banner .banner__content::before {
+    content: none !important;
+    display: none !important;
+    padding-bottom: 0 !important;
+  }
+}
