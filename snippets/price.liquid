@@ -105,24 +105,24 @@
         </style>
       {%- endunless -%}
       {%- assign color_precio = '#C0392B' -%}
-      <div class="price__sale" style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 10px !important;">
+      <div class="price__sale" style="display: flex !important; flex-direction: row !important; align-items: center !important; gap: 8px !important;">
         {%- if compare_at_price > price -%}
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
             <span style="display: flex; align-items: center;">
-              <s class="price-item price-item--regular" style="color: #999999 !important; font-size: 1.5rem !important; margin: 0 !important;">
+              <s class="price-item price-item--regular" style="color: #999999 !important; font-size: 1.3rem !important; margin: 0 !important;">
                 {{ compare_at_price | money }}
               </s>
             </span>
           {%- endunless -%}
         {%- endif -%}
 
-        <span class="price-item price-item--sale" style="color: {{ color_precio }} !important; font-size: 2.4rem !important; font-weight: 700 !important; margin: 0 !important;">
+        <span class="price-item price-item--sale" style="color: {{ color_precio }} !important; font-size: 1.9rem !important; font-weight: 700 !important; margin: 0 !important;">
           {{ money_price }}
         </span>
 
         {%- if compare_at_price > price -%}
           {%- assign porcentaje = compare_at_price | minus: price | times: 100.0 | divided_by: compare_at_price | round -%}
-          <span class="badge" style="background-color: #1A1A1A !important; color: #ffffff !important; border: none !important; padding: 4px 8px !important; border-radius: 4px !important; font-size: 1.3rem !important; font-weight: bold !important; text-transform: none !important; letter-spacing: 0 !important; margin: 0 !important;">
+          <span class="badge" style="background-color: #1A1A1A !important; color: #ffffff !important; border: none !important; padding: 3px 7px !important; border-radius: 4px !important; font-size: 1.1rem !important; font-weight: bold !important; text-transform: none !important; letter-spacing: 0 !important; margin: 0 !important;">
             Ahorra {{ porcentaje }}%
           </span>
         {%- endif -%}
