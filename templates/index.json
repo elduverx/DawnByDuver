@@ -11,41 +11,6 @@
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "blocks": {
-        "heading_wyxeKj": {
-          "type": "heading",
-          "disabled": true,
-          "settings": {
-            "heading": "<strong>PROMOCIÓN ANIVERSARIO</strong>",
-            "heading_size": "h2"
-          }
-        },
-        "text": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<strong>-50% EN TODA LA WEB</strong>",
-            "text_style": "subtitle"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "disabled": true,
-          "settings": {
-            "button_label_1": "HOMBRE",
-            "button_link_1": "shopify://collections/hombre",
-            "button_style_secondary_1": true,
-            "button_label_2": "MUJER",
-            "button_link_2": "shopify://collections/mujer",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "heading_wyxeKj",
-        "text",
-        "button"
-      ],
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_20_ago_2026_11_19_36.png",
         "image_overlay_opacity": 0,
@@ -65,6 +30,7 @@
       "blocks": {
         "caption_PhV8Kc": {
           "type": "caption",
+          "disabled": true,
           "settings": {
             "caption": "CASA VELARIA",
             "text_style": "caption-with-letter-spacing",
@@ -73,6 +39,7 @@
         },
         "heading": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "<strong>OFERTA ANIVERSARIO</strong>",
             "heading_size": "h2"
@@ -86,6 +53,7 @@
         },
         "discount_box_CQmTq4": {
           "type": "discount_box",
+          "disabled": true,
           "settings": {}
         },
         "text_yNreBd": {
