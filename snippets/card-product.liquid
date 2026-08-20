@@ -154,14 +154,6 @@
               >
                 {{- 'products.product.sold_out' | t -}}
               </span>
-            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-              {%- assign porcentaje_tarjeta = card_product.compare_at_price | minus: card_product.price | times: 100.0 | divided_by: card_product.compare_at_price | round -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--top-right color-{{ settings.sale_badge_color_scheme }}"
-              >
-                -{{ porcentaje_tarjeta }}%
-              </span>
             {%- endif -%}
           </div>
         </div>
@@ -609,14 +601,6 @@
               class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
             >
               {{- 'products.product.sold_out' | t -}}
-            </span>
-          {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-            {%- assign porcentaje_tarjeta = card_product.compare_at_price | minus: card_product.price | times: 100.0 | divided_by: card_product.compare_at_price | round -%}
-            <span
-              id="Badge-{{ section_id }}-{{ card_product.id }}"
-              class="badge badge--top-right color-{{ settings.sale_badge_color_scheme }}"
-            >
-              -{{ porcentaje_tarjeta }}%
             </span>
           {%- endif -%}
         </div>
