@@ -14,15 +14,7 @@
       "settings": {
         "image": "shopify://shop_images/ChatGPT_Image_20_ago_2026_11_19_36.png",
         "image_overlay_opacity": 0,
-        "image_height": "adapt",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-4",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
-        "show_text_below": false
+        "color_scheme": "scheme-4"
       }
     },
     "philosophy": {
@@ -48,7 +40,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>En Casa Velaria estamos de aniversario y queremos celebrarlo contigo.</p><p>Desde el primer día, nuestro propósito ha sido ofrecerte prendas con personalidad, estilo y ese toque especial que te hace sentir única. Hoy queremos agradecerte por acompañarnos, confiar en nosotros y ser parte de este camino.</p><p>Por eso, solo por hoy, disfruta de un <strong>50% de descuento</strong> en toda la tienda. Sin excepciones.</p><p>Esta celebración también es tuya. Aprovecha nuestra oferta de aniversario antes de que termine el día y encuentra tus prendas favoritas a mitad de precio.</p>"
+            "text": "<p><strong>23 años juntas. Este es nuestro regalo para ti.</strong></p><p>Hace 23 años abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Valentina creció aquí, entre telas y espejos, y vosotras os convertisteis en algo más que clientas: en familia.</p><p>Hoy cumplimos 23 años, y queremos celebrarlo contigo. <strong>Por eso, solo por hoy, disfruta de un 50% de descuento en toda la tienda.</strong> Es nuestro regalo, como agradecimiento por tantos años a tu lado.</p><p>Gracias por caminar junto a nosotras en este sueño.</p><p>Con cariño,<br/><br/>— Rosa ❤️</p>"
           }
         },
         "discount_box_CQmTq4": {
