@@ -87,6 +87,9 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
   }
   .rfc-card__contenido {
     padding: 16px 8px;
@@ -177,7 +180,7 @@
         <div class="rfc-card" {{ block.shopify_attributes }}>
           <div class="rfc-card__imagen">
             {%- if block.settings.imagen != blank -%}
-              <img src="{{ block.settings.imagen | image_url: width: 600 }}" alt="{{ block.settings.nombre }}" loading="lazy">
+              <img src="{{ block.settings.imagen | image_url: width: 600 }}" alt="{{ block.settings.nombre }}" loading="lazy" draggable="false">
             {%- endif -%}
           </div>
           <div class="rfc-card__contenido">
@@ -288,6 +291,24 @@
         e.stopPropagation();
       }
     }, true);
+
+    // Bloquea el arrastre nativo de imágenes (el "fantasma" al hacer drag)
+    slider.querySelectorAll('img').forEach(function (img) {
+      img.addEventListener('dragstart', function (e) {
+        e.preventDefault();
+      });
+    });
+
+    // Empieza centrado en la reseña del medio
+    var middleIndex = Math.floor(cards.length / 2);
+    var middleCard = cards[middleIndex];
+    if (middleCard) {
+      var sliderRect = slider.getBoundingClientRect();
+      var cardRect = middleCard.getBoundingClientRect();
+      var offset = (cardRect.left - sliderRect.left) - (sliderRect.width / 2) + (cardRect.width / 2);
+      slider.scrollLeft = slider.scrollLeft + offset;
+      updateActiveDot();
+    }
   })();
 </script>
 
