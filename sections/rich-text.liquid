@@ -19,7 +19,7 @@
     }
   }
 
-  {%- if section.id == 'philosophy' -%}
+  {%- if section.id contains 'philosophy' -%}
   #shopify-section-{{ section.id }} .rich-text__wrapper {
     max-width: 64rem;
   }
