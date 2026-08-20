@@ -107,41 +107,6 @@
   {%- endfor -%}
   {%- assign urgencia_map = urgencia_map_nuevo -%}
 {%- endif -%}
-<p id="Urgencia-{{ section.id }}" data-urgencia-map="{{ urgencia_map | escape }}" style="margin-top: 0; margin-bottom: 12px; font-size: 1.3rem; font-weight: 600; color: #c0392b; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
-  <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #c0392b; border-radius: 50%;"></span>
-  <span id="UrgenciaTexto-{{ section.id }}">{{ texto_urgencia }}</span>
-</p>
-{%- if color_option -%}
-<script>
-document.addEventListener('change', function(e) {
-  var wrap = e.target.closest('[data-option-name]');
-  if (!wrap) return;
-  var optName = (wrap.getAttribute('data-option-name') || '').toLowerCase();
-  if (optName.indexOf('color') === -1) return;
-
-  var p = document.getElementById('Urgencia-{{ section.id }}');
-  if (!p) return;
-  var mapRaw = p.getAttribute('data-urgencia-map');
-  if (!mapRaw) return;
-  var map = {};
-  mapRaw.split('||').forEach(function(pair) {
-    var parts = pair.split(':::');
-    if (parts.length === 2) map[parts[0]] = parts[1];
-  });
-  var value = e.target.value;
-
-  function aplicarTexto() {
-    var span = document.getElementById('UrgenciaTexto-{{ section.id }}');
-    if (span && value && map[value]) {
-      span.textContent = map[value];
-    }
-  }
-  aplicarTexto();
-  setTimeout(aplicarTexto, 400);
-  setTimeout(aplicarTexto, 900);
-});
-</script>
-{%- endif -%}
 {%- unless product.has_only_default_variant -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
@@ -190,6 +155,41 @@ picker_type: picker_type
     Ver tabla de tallas
   </button>
 </modal-opener>
+  {%- endif -%}
+  <p id="Urgencia-{{ section.id }}" data-urgencia-map="{{ urgencia_map | escape }}" style="margin-top: 12px; margin-bottom: 0; font-size: 1.3rem; font-weight: 600; color: #c0392b; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
+    <span class="punto-urgencia" style="width: 8px; height: 8px; min-width: 8px; background: #c0392b; border-radius: 50%;"></span>
+    <span id="UrgenciaTexto-{{ section.id }}">{{ texto_urgencia }}</span>
+  </p>
+  {%- if color_option -%}
+  <script>
+  document.addEventListener('change', function(e) {
+    var wrap = e.target.closest('[data-option-name]');
+    if (!wrap) return;
+    var optName = (wrap.getAttribute('data-option-name') || '').toLowerCase();
+    if (optName.indexOf('color') === -1) return;
+
+    var p = document.getElementById('Urgencia-{{ section.id }}');
+    if (!p) return;
+    var mapRaw = p.getAttribute('data-urgencia-map');
+    if (!mapRaw) return;
+    var map = {};
+    mapRaw.split('||').forEach(function(pair) {
+      var parts = pair.split(':::');
+      if (parts.length === 2) map[parts[0]] = parts[1];
+    });
+    var value = e.target.value;
+
+    function aplicarTexto() {
+      var span = document.getElementById('UrgenciaTexto-{{ section.id }}');
+      if (span && value && map[value]) {
+        span.textContent = map[value];
+      }
+    }
+    aplicarTexto();
+    setTimeout(aplicarTexto, 400);
+    setTimeout(aplicarTexto, 900);
+  });
+  </script>
   {%- endif -%}
 {%- endif -%}
 </fieldset>
