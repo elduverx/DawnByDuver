@@ -6031,3 +6031,11 @@ fieldset[data-option-name*="Size" i] input.disabled + label {
     max-width: 100% !important;
   }
 }
+/* === VELA: Tallas más pequeñas en la ficha de producto === */
+fieldset[data-option-name*="alla" i] .product-form__input--pill input[type='radio'] + label,
+fieldset[data-option-name*="alla" i] input[type='radio'] + label,
+fieldset[data-option-name*="ize" i] input[type='radio'] + label {
+  padding: 0.6rem 1.2rem !important;
+  font-size: 1.1rem !important;
+  margin: 0.5rem 0.4rem 0.2rem 0 !important;
+}
