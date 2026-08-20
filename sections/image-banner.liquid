@@ -56,6 +56,34 @@
 {%- endif -%}
 
 {%- style -%}
+  #Banner-image_banner::before,
+  #Banner-image_banner .banner__media::before,
+  #Banner-image_banner .banner__content::before {
+    content: none !important;
+    display: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  #Banner-image_banner .banner__media {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #Banner-image_banner .banner__media img,
+  #Banner-image_banner .banner__media picture {
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    display: block !important;
+    object-fit: contain;
+  }
+{%- endstyle -%}
+
+{%- style -%}
   #Banner-{{ section.id }}::after {
     opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
   }
