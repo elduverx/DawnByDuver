@@ -209,7 +209,10 @@
     }
 
     .product__description-fija {
-      display: grid;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
       font-size: 12px;
       font-weight: 400;
@@ -217,6 +220,13 @@
       letter-spacing: normal;
       color: rgb(68, 68, 68);
       text-align: left;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .product__description-fija * {
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     /* === VELA: Tablas responsive dentro de la descripción === */
