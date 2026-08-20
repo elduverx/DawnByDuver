@@ -30,21 +30,15 @@
     #VelaColeccionesScroll-{{ section.id }} .vela-colecciones-scroll__item {
       display: inline-flex;
       align-items: center;
-      padding: 1.1rem 1.2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
+      padding: 1.2rem 1.6rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.05rem;
+      letter-spacing: 0.03rem;
       color: #1a1a1a;
       text-decoration: none;
       white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    #VelaColeccionesScroll-{{ section.id }} .vela-colecciones-scroll__divider {
-      width: 1px;
-      height: 1.4rem;
-      background: #d0d0d0;
       flex-shrink: 0;
     }
   }
@@ -52,12 +46,9 @@
 
 <div id="VelaColeccionesScroll-{{ section.id }}" class="vela-colecciones-scroll">
   <div class="vela-colecciones-scroll__track">
-    {%- assign first = true -%}
     {%- for collection in collections -%}
       {%- unless excluded_handles contains collection.handle or collection.handle == 'frontpage' or collection.products_count == 0 -%}
-        {%- unless first -%}<span class="vela-colecciones-scroll__divider"></span>{%- endunless -%}
         <a href="{{ collection.url }}" class="vela-colecciones-scroll__item">{{ collection.title }}</a>
-        {%- assign first = false -%}
       {%- endunless -%}
     {%- endfor -%}
   </div>
