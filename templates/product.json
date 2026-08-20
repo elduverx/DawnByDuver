@@ -57,9 +57,18 @@
         "collapsible-row-3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "ENVÍO Y DEVOLUCIONES",
+            "heading": "Calidad y tallas",
             "icon": "none",
-            "content": "<p><strong>Envío gratuito</strong></p><p>Ofrecemos envío gratuito en todos los pedidos para que disfrutes de tu compra sin costes adicionales.</p><p><strong>Seguimiento incluido</strong></p><p>Recibirás un número de seguimiento para que puedas controlar tu envío en todo momento con total tranquilidad.</p><p><strong>Devoluciones en 30 días</strong></p><p>Si no estás completamente satisfecho con tu compra, puedes solicitar un cambio o devolución dentro de los 30 días posteriores a la recepción. Queremos que compres con confianza y sin preocupaciones.</p>",
+            "content": "<p>Para nosotras, la calidad y la satisfacción de nuestras clientas son esenciales. Solo ofrecemos prendas de la más alta calidad porque creemos que mereces lo mejor. Cada prenda está cuidadosamente seleccionada para cumplir con nuestros altos estándares: tejidos naturales, costuras cuidadas y prendas pensadas para durar.</p><p><strong>Sobre las tallas:</strong> sabemos que cada cuerpo es diferente. Si estás entre dos tallas, te aconsejamos elegir la talla más grande para un mejor confort. ¿Tienes dudas? Consulta nuestra guía de tallas o escríbenos, te ayudaremos personalmente a elegir bien.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_q3BkTQ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Compra Segura con Garantía de 30 Días",
+            "icon": "none",
+            "content": "<p>Queremos que compres con confianza, sin riesgos. Si una prenda no es como esperabas, dispones de <strong>30 días desde la recepción</strong> para devolverla, incluso durante nuestro periodo de cierre.</p><p>Para realizar una devolución, simplemente contáctanos por correo electrónico a <strong>contacto@casavelaria.com </strong>Te responderemos rápidamente y te acompañaremos personalmente en cada paso, para que todo sea lo más sencillo y claro posible para ti.</p>",
             "page": ""
           }
         }
@@ -71,7 +80,8 @@
         "variant_picker",
         "buy_buttons_ndCrai",
         "collapsible-row-2",
-        "collapsible-row-3"
+        "collapsible-row-3",
+        "collapsible_tab_q3BkTQ"
       ],
       "custom_css": [
         "/* --- ENCAJE PERFECTO BAJO LÍNEA SEPARADORA --- */:host,.product {padding-top: 55px !important; /* Reduce el espacio para que la foto suba hasta rozar la línea */}",
