@@ -407,9 +407,6 @@
               {%- when 'collapsible_tab' -%}
                 {%- if block.settings.heading == 'DESCRIPCIÓN' -%}
                   <div class="product__description-fija quick-add-hidden" {{ block.shopify_attributes }} style="margin-top: 20px;">
-                    <h2 class="h4" style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin: 0 0 10px;">
-                      {{ block.settings.heading | default: block.settings.page.title | escape }}
-                    </h2>
                     <div class="rte" style="font-family: 'Montserrat', sans-serif;">
                       {%- if product.metafields.custom.informacion_adicional.value != blank -%}
                         {{ product.metafields.custom.informacion_adicional | metafield_tag }}
