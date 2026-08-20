@@ -11,9 +11,6 @@
     position: relative;
     padding: 0 !important;
     overflow: hidden !important;
-    height: 34rem;
-    min-height: 34rem;
-    max-height: 34rem;
   }
 
   @media screen and (max-width: 749px) {
@@ -28,11 +25,9 @@
   }
 
   .collection-hero--with-image .collection-hero__image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     margin: 0 !important;
     border: none !important;
     border-radius: 0 !important;
@@ -42,8 +37,8 @@
 
   .collection-hero--with-image .collection-hero__image-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     display: block;
   }
 
@@ -89,12 +84,6 @@
   }
 
   @media screen and (min-width: 750px) {
-    .collection-hero.collection-hero--with-image {
-      height: 72rem;
-      min-height: 72rem;
-      max-height: 72rem;
-    }
-
     .collection-hero--with-image .collection-hero__text-wrapper {
       left: 3rem;
       bottom: 2.5rem;
