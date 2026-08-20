@@ -380,8 +380,8 @@
       "name": "Reseñas con fotos",
       "settings": {
         "titulo": "¿Que dicen nuestras clientas?",
-        "subtitulo": "Más de 15.000 clientes satisfechos",
         "valoracion_texto": "Excelente 4.8/5",
+        "subtitulo": "Más de 15.000 clientes satisfechos",
         "color_estrellas": "#f8c41b"
       }
     },
@@ -537,8 +537,8 @@
       "name": "Reseñas con fotos",
       "settings": {
         "titulo": "¿Que dicen nuestras clientas?",
-        "subtitulo": "Más de 15.000 clientes satisfechos",
         "valoracion_texto": "Excelente 4.8/5",
+        "subtitulo": "Más de 15.000 clientes satisfechos",
         "color_estrellas": "#f8c41b"
       }
     },
@@ -546,6 +546,70 @@
       "type": "garantias",
       "name": "Garantías",
       "settings": {}
+    },
+    "faq_vela_4ixKRc": {
+      "type": "faq-vela",
+      "blocks": {
+        "pregunta_rYP4ck": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Donde puedo contactar con vosotras?",
+            "respuesta": "Atendemos personalmente todos los mensajes durante este último período. Puedes escribirnos a contacto@casavelaria.com o a través de nuestra página de contacto, y te responderemos en menos de 24 horas."
+          }
+        },
+        "pregunta_RqU6bn": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Ofrecen envío gratuito?",
+            "respuesta": "Sí. Como pequeño gesto por nuestro aniversario, el envío es gratuito en todos los pedidos, sin importe mínimo. Verás todos los costes claramente antes de confirmar, y no habrá sorpresas ni costes ocultos al pagar."
+          }
+        },
+        "pregunta_KmHeLC": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Cuánto tarda en llegar mi pedido?",
+            "respuesta": "Preparamos cada pedido con mucho cuidado. Normalmente lo tenemos listo en 1 o 2 días laborables y en cuanto sale por la puerta recibirás un correo con el número de seguimiento para saber dónde está en todo momento. La entrega suele tardar entre 7 y 12 días laborables."
+          }
+        },
+        "pregunta_dHe8hC": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Se aceptan devoluciones?",
+            "respuesta": "Por supuesto. Todas las compras realizadas durante esta oferta de aniversario continuarán teniendo la posibilidad de ser devueltas durante 30 días desde que recibas tu pedido, sin complicaciones y de forma tan sencilla como siempre lo ha sido a lo largo de estos 23 años.\n\nContáctanos por email y te ayudaremos: contacto@casavelaria.com"
+          }
+        },
+        "pregunta_EdrfCx": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Puedo seguir mi pedido?",
+            "respuesta": "Sí. En cuanto tu pedido sale de Casa Velaria recibirás un correo con el número de seguimiento y un enlace para ver dónde está tu paquete en cada momento. Si tienes cualquier duda escríbenos y te ayudamos."
+          }
+        },
+        "pregunta_9UjjKX": {
+          "type": "pregunta",
+          "settings": {
+            "pregunta": "¿Repondrán el stock después de la oferta de aniversario?",
+            "respuesta": "No. Esta es nuestra colección de aniversario: lo que ves es lo que hay. Cuando se agote, estas condiciones no volverán a repetirse. Por eso, cada prenda que llega a tu hogar es realmente parte de nuestra celebración."
+          }
+        }
+      },
+      "block_order": [
+        "pregunta_rYP4ck",
+        "pregunta_RqU6bn",
+        "pregunta_KmHeLC",
+        "pregunta_dHe8hC",
+        "pregunta_EdrfCx",
+        "pregunta_9UjjKX"
+      ],
+      "custom_css": [],
+      "name": "FAQ",
+      "settings": {
+        "titulo": "Preguntas Frecuentes",
+        "footer_texto": "¿Tienes más preguntas? Escríbenos a",
+        "footer_email": "contacto@casavelaria.com",
+        "boton_texto": "Soporte",
+        "boton_link": "shopify://pages/contacto"
+      }
     }
   },
   "order": [
@@ -564,6 +628,7 @@
     "colecciones_tabs_rEaAKG",
     "resenas_fotos_clientes_fkgTJd",
     "resenas_fotos_clientes_6GQbzg",
+    "faq_vela_4ixKRc",
     "garantias_FMf9m7"
   ]
 }
