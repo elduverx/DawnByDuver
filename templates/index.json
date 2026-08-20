@@ -601,7 +601,7 @@
       "name": "FAQ",
       "settings": {
         "titulo": "Preguntas Frecuentes",
-        "footer_texto": "¿Tienes más preguntas? Escríbenos a",
+        "footer_texto": "¿Tienes más preguntas? Pincha aquí abajo o escríbenos a",
         "footer_email": "contacto@casavelaria.com",
         "boton_texto": "Soporte",
         "boton_link": "shopify://pages/contacto"
