@@ -1109,10 +1109,29 @@
           {{- 'icon-close.svg' | inline_asset_content -}}
         </button>
         <style>
+          .size-chart-modal.product-popup-modal[open] {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .size-chart-modal .product-popup-modal__content {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            margin: 0;
+            height: auto;
+            width: auto;
+            max-width: 90vw;
+            max-height: 85vh;
+            padding: 2rem 2.5rem;
+            overflow: auto;
+          }
           .size-chart-modal .product-popup-modal__content-info {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding-right: 0;
           }
           .size-chart-modal .product-popup-modal__content-info img {
             max-width: 260px !important;
