@@ -6049,8 +6049,11 @@ fieldset[data-option-name*="ize" i] {
 fieldset[data-option-name*="alla" i] .product-form__input--pill input[type='radio'] + label,
 fieldset[data-option-name*="alla" i] input[type='radio'] + label,
 fieldset[data-option-name*="ize" i] input[type='radio'] + label {
-  padding: 0.5rem 1.2rem !important;
+  padding: 0.5rem 0 !important;
   font-size: 1.4rem !important;
   font-family: 'Montserrat', sans-serif !important;
   margin: 0 !important;
+  min-width: 4.2rem !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
 }
