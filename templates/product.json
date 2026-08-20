@@ -451,8 +451,8 @@
       "name": "Reseñas con fotos",
       "settings": {
         "titulo": "¿Que dicen nuestras clientas?",
-        "subtitulo": "Más de 15.000 clientes satisfechos",
         "valoracion_texto": "Excelente 4.8/5",
+        "subtitulo": "Más de 15.000 clientes satisfechos",
         "color_estrellas": "#f8c41b"
       }
     },
@@ -560,7 +560,11 @@
       "custom_css": [],
       "name": "FAQ",
       "settings": {
-        "titulo": "Preguntas Frecuentes"
+        "titulo": "Preguntas Frecuentes",
+        "footer_texto": "¿Tienes más preguntas? Escríbenos a",
+        "footer_email": "contacto@casavelaria.com",
+        "boton_texto": "Soporte",
+        "boton_link": "shopify://pages/contacto"
       }
     }
   },
