@@ -244,61 +244,6 @@
         "subtitulo": "Las prendas cobran vida cuando las llevan personas reales. Si quieres aparecer aquí, escríbenos a"
       }
     },
-    "rich_text_3F6WKP": {
-      "type": "rich-text",
-      "blocks": {
-        "caption_Jbhziz": {
-          "type": "caption",
-          "settings": {
-            "caption": "CASA VELARIA",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "heading_McLNM7": {
-          "type": "heading",
-          "settings": {
-            "heading": "<strong>OFERTA ANIVERSARIO</strong>",
-            "heading_size": "h2"
-          }
-        },
-        "text_DAMFcR": {
-          "type": "text",
-          "settings": {
-            "text": "<p>En Casa Velaria estamos de aniversario y queremos celebrarlo contigo.</p><p>Desde el primer día, nuestro propósito ha sido ofrecerte prendas con personalidad, estilo y ese toque especial que te hace sentir única. Hoy queremos agradecerte por acompañarnos, confiar en nosotros y ser parte de este camino.</p><p>Por eso, solo por hoy, disfruta de un <strong>50% de descuento</strong> en toda la tienda. Sin excepciones.</p><p>Esta celebración también es tuya. Aprovecha nuestra oferta de aniversario antes de que termine el día y encuentra tus prendas favoritas a mitad de precio.</p>"
-          }
-        },
-        "discount_box_PfmqWB": {
-          "type": "discount_box",
-          "settings": {}
-        },
-        "text_DeGLpd": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p><em>Con estilo, <br/></em>Vela Madrid.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "caption_Jbhziz",
-        "heading_McLNM7",
-        "text_DAMFcR",
-        "discount_box_PfmqWB",
-        "text_DeGLpd"
-      ],
-      "custom_css": [
-        ".rich-text__wrapper p {color: #444 !important;}"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
     "resenas_fotos_clientes_3Mpxi7": {
       "type": "resenas-fotos-clientes",
       "blocks": {
@@ -465,33 +410,6 @@
         "padding_bottom": 64
       }
     },
-    "garantias_AkQQfV": {
-      "type": "garantias",
-      "custom_css": [
-        "* {padding-top: 0px !important;}"
-      ],
-      "name": "Garantías",
-      "settings": {}
-    },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
-    },
     "faq_vela_YhBhPV": {
       "type": "faq-vela",
       "blocks": {
@@ -555,13 +473,39 @@
         "boton_texto": "Soporte",
         "boton_link": "shopify://pages/contacto"
       }
+    },
+    "garantias_AkQQfV": {
+      "type": "garantias",
+      "custom_css": [
+        "* {padding-top: 0px !important;}"
+      ],
+      "name": "Garantías",
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
     }
   },
   "order": [
     "main",
     "combina_look_heaitB",
     "clientes_comunidad_P7VGmC",
-    "rich_text_3F6WKP",
     "resenas_fotos_clientes_3Mpxi7",
     "vela_imagen_texto_KJ4Yq7",
     "faq_vela_YhBhPV",
