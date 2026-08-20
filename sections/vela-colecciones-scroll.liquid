@@ -2,6 +2,10 @@
   assign excluded_handles = 'productos-con-descuento-por-cantidad' | split: ','
 -%}
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
 {%- style -%}
   #VelaColeccionesScroll-{{ section.id }} {
     display: none;
@@ -30,13 +34,13 @@
     #VelaColeccionesScroll-{{ section.id }} .vela-colecciones-scroll__item {
       display: inline-flex;
       align-items: center;
-      padding: 1.2rem 1.6rem;
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.2rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.03rem;
-      color: #1a1a1a;
+      padding: 7px 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12.25px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: normal;
+      color: #000000;
       text-decoration: none;
       white-space: nowrap;
       flex-shrink: 0;
