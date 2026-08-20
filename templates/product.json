@@ -456,35 +456,13 @@
         "color_estrellas": "#f8c41b"
       }
     },
-    "image_with_text_Cm7jEP": {
-      "type": "image-with-text",
-      "blocks": {
-        "text_UUdQ4U": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>23 años... y este es solo el comienzo.</strong></p><p>Hace tiempo abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Ella fue mi inspiración para crear Velaria.</p><p>Desde entonces, ustedes se han convertido en parte de esta familia. Para celebrar estos 23 años juntas, quiero agradecerles con un <strong>50% de descuento</strong> en productos seleccionados.</p><p>Muy pronto, cuando nuestra comunidad crezca aún más, abriremos nuestra primera tienda física.</p><p>Gracias por caminar junto a nosotras en este sueño.</p><p>Con cariño,<br/><strong>Velaria</strong> 💛</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "text_UUdQ4U"
-      ],
-      "name": "t:sections.image-with-text.presets.name",
+    "vela_imagen_texto_KJ4Yq7": {
+      "type": "vela-imagen-texto",
+      "name": "Imagen y Texto",
       "settings": {
-        "image": "shopify://shop_images/ChatGPT_Image_4_ago_2026_12_07_22.png",
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "image_behavior": "none",
-        "content_layout": "no-overlap",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "mobile_content_alignment": "left",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "image": "shopify://shop_images/Captura_de_pantalla_2026-08-20_a_las_13.02.23.png",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "garantias_AkQQfV": {
@@ -513,11 +491,6 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "resenas_clientes_vela": {
-      "type": "resenas-clientes",
-      "name": "Reseñas de clientes",
-      "settings": {}
     },
     "faq_vela_YhBhPV": {
       "type": "faq-vela",
@@ -590,10 +563,9 @@
     "clientes_comunidad_P7VGmC",
     "rich_text_3F6WKP",
     "resenas_fotos_clientes_3Mpxi7",
-    "image_with_text_Cm7jEP",
+    "vela_imagen_texto_KJ4Yq7",
+    "faq_vela_YhBhPV",
     "garantias_AkQQfV",
-    "related-products",
-    "resenas_clientes_vela",
-    "faq_vela_YhBhPV"
+    "related-products"
   ]
 }
