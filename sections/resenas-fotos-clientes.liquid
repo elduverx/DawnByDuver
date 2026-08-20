@@ -230,10 +230,11 @@
     var dotsWrap = document.getElementById('rfcDots-' + sectionId);
     if (!slider || !dotsWrap) return;
 
-    var cards = Array.prototype.slice.call(slider.querySelectorAll('.rfc-card'));
-    if (!cards.length) return;
+    var originalCards = Array.prototype.slice.call(slider.querySelectorAll('.rfc-card'));
+    if (!originalCards.length) return;
 
-    cards.forEach(function (card, i) {
+    // Puntos de paginación: uno por cada reseña ORIGINAL (no por los clones)
+    originalCards.forEach(function (card, i) {
       var dot = document.createElement('button');
       dot.className = 'rfc-dot' + (i === 0 ? ' is-active' : '');
       dot.setAttribute('aria-label', 'Ir a reseña ' + (i + 1));
@@ -243,14 +244,31 @@
       });
       dotsWrap.appendChild(dot);
     });
-
     var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.rfc-dot'));
+
+    // Clona el set completo de reseñas y lo añade a continuación,
+    // para que siempre haya "más" contenido esperando a la derecha.
+    originalCards.forEach(function (card) {
+      var clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      slider.appendChild(clone);
+      var img = clone.querySelector('img');
+      if (img) img.setAttribute('draggable', 'false');
+    });
+
+    var loopWidth = 0;
+    function measureLoopWidth() {
+      // Distancia entre el inicio de la primera tarjeta original y el inicio de su clon
+      var firstOriginal = originalCards[0];
+      var firstClone = slider.children[originalCards.length];
+      loopWidth = firstClone.offsetLeft - firstOriginal.offsetLeft;
+    }
 
     function updateActiveDot() {
       var sliderRect = slider.getBoundingClientRect();
       var closestIndex = 0;
       var closestDistance = Infinity;
-      cards.forEach(function (card, i) {
+      originalCards.forEach(function (card, i) {
         var rect = card.getBoundingClientRect();
         var distance = Math.abs(rect.left - sliderRect.left);
         if (distance < closestDistance) {
@@ -261,11 +279,23 @@
       dots.forEach(function (dot, i) {
         dot.classList.toggle('is-active', i === closestIndex);
       });
-      return closestIndex;
+    }
+
+    // Si el scroll entra en la zona de los clones, lo devolvemos
+    // instantáneamente (sin animación) a la posición equivalente real.
+    function checkInfiniteLoop() {
+      if (loopWidth <= 0) return;
+      if (slider.scrollLeft >= loopWidth) {
+        slider.style.scrollBehavior = 'auto';
+        slider.scrollLeft = slider.scrollLeft - loopWidth;
+        void slider.offsetWidth;
+        slider.style.scrollBehavior = '';
+      }
     }
 
     var scrollTimeout;
     slider.addEventListener('scroll', function () {
+      checkInfiniteLoop();
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(updateActiveDot, 100);
     }, { passive: true });
@@ -323,8 +353,8 @@
     });
 
     function centerOnMiddleCard() {
-      var middleIndex = Math.floor(cards.length / 2);
-      var middleCard = cards[middleIndex];
+      var middleIndex = Math.floor(originalCards.length / 2);
+      var middleCard = originalCards[middleIndex];
       if (!middleCard) return;
       var sliderRect = slider.getBoundingClientRect();
       var cardRect = middleCard.getBoundingClientRect();
@@ -333,18 +363,17 @@
       updateActiveDot();
     }
 
-    // Avance automático cada 3 segundos
+    // Avance automático cada 3 segundos: siempre suma, nunca resetea de golpe.
+    // El bucle infinito real lo gestiona checkInfiniteLoop() por scroll.
     var autoplayTimer = null;
     var resumeTimer = null;
     function startAutoplay() {
       stopAutoplay();
       autoplayTimer = setInterval(function () {
-        var card = cards[0];
+        var card = originalCards[0];
         var gap = 20;
         var step = card.offsetWidth + gap;
-        var maxScroll = slider.scrollWidth - slider.clientWidth;
-        var next = slider.scrollLeft + step;
-        slider.scrollLeft = next > maxScroll ? 0 : next;
+        slider.scrollLeft = slider.scrollLeft + step;
       }, 3000);
     }
     function stopAutoplay() {
@@ -359,9 +388,10 @@
       resumeTimer = setTimeout(startAutoplay, 4000);
     }
 
-    // Espera a que todo (incluidas las imágenes) esté cargado antes de centrar,
+    // Espera a que todo (incluidas las imágenes) esté cargado antes de medir y centrar,
     // para que el cálculo de posiciones sea exacto también en móvil.
     window.addEventListener('load', function () {
+      measureLoopWidth();
       centerOnMiddleCard();
       startAutoplay();
     });
