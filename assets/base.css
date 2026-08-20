@@ -6022,29 +6022,3 @@ fieldset[data-option-name*="Size" i] input.disabled + label {
     max-width: 100% !important;
   }
 }
-/* === VELA: Banner home con el MISMO formato que las colecciones === */
-#Banner-image_banner .banner__media {
-  position: relative !important;
-  height: auto !important;
-  min-height: 0 !important;
-  top: auto !important;
-  left: auto !important;
-}
-
-#Banner-image_banner .banner__media img,
-#Banner-image_banner .banner__media picture {
-  position: static !important;
-  width: 100% !important;
-  height: auto !important;
-  max-width: 100% !important;
-  object-fit: contain;
-  display: block !important;
-}
-
-#Banner-image_banner::before,
-#Banner-image_banner .banner__media::before,
-#Banner-image_banner .banner__content::before {
-  content: none !important;
-  display: none !important;
-  padding-bottom: 0 !important;
-}
