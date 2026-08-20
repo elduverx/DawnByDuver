@@ -6062,3 +6062,7 @@ fieldset[data-option-name*="ize" i] input[type='radio'] + label {
   text-align: center !important;
   box-sizing: border-box !important;
 }
+/* === VELA: Etiqueta de oferta pegada a la esquina superior derecha === */
+.card__badge.top.right {
+  margin: 0 !important;
+}
