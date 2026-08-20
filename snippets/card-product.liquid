@@ -28,17 +28,21 @@
   {{ 'quick-order-list.css' | asset_url | stylesheet_tag }}
   {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
   <style>
-    .card-wrapper {
+    .card__media {
       position: relative !important;
     }
-    .card__badge.top.right {
-      position: absolute !important;
-      top: -0.8rem !important;
-      right: -0.8rem !important;
-      left: auto !important;
-      bottom: auto !important;
-      margin: 0 !important;
+    .vela-badge-esquina {
+      position: absolute;
+      top: 0;
+      right: 0;
       z-index: 3;
+      background-color: #1A1A1A;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 0.5rem 0.9rem;
+      line-height: 1;
     }
   </style>
 {%- endunless -%}
