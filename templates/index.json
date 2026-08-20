@@ -19,6 +19,7 @@
     },
     "philosophy": {
       "type": "rich-text",
+      "disabled": true,
       "blocks": {
         "caption_PhV8Kc": {
           "type": "caption",
@@ -143,6 +144,13 @@
         "color_scheme": "",
         "padding_top": 44,
         "padding_bottom": 28
+      }
+    },
+    "historia_aniversario": {
+      "type": "vela-historia-aniversario",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "image_with_text_GHAQFY": {
@@ -586,6 +594,7 @@
   },
   "order": [
     "image_banner",
+    "historia_aniversario",
     "philosophy",
     "categories",
     "colecciones_tabs_pPRzBT",
