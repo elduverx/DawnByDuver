@@ -17,9 +17,16 @@
         "color_scheme": "scheme-4"
       }
     },
+    "vela_historia_aniversario_cR8Dht": {
+      "type": "vela-historia-aniversario",
+      "name": "Historia Aniversario",
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "philosophy": {
       "type": "rich-text",
-      "disabled": true,
       "blocks": {
         "caption_PhV8Kc": {
           "type": "caption",
@@ -41,7 +48,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>23 años juntas. Este es nuestro regalo para ti.</strong></p><p>Hace 23 años abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Valentina creció aquí, entre telas y espejos, y vosotras os convertisteis en algo más que clientas: en familia.</p><p>Hoy cumplimos 23 años, y queremos celebrarlo contigo. <strong>Por eso, solo por hoy, disfruta de un 50% de descuento en toda la tienda.</strong> Es nuestro regalo, como agradecimiento por tantos años a tu lado.</p><p>Gracias por caminar junto a nosotras en este sueño.</p><p>Con cariño,<br/><br/>— Rosa ❤️</p>"
+            "text": "<h6><strong>23 años juntas. Este es nuestro regalo para ti.</strong></h6><p>Hace 23 años abrí este pequeño espacio con mi hija Valentina recién nacida en brazos. Valentina creció aquí, entre telas y espejos, y vosotras os convertisteis en algo más que clientas: en familia.</p><p>Hoy cumplimos 23 años, y queremos celebrarlo contigo. <strong>Por eso, solo por hoy, disfruta de un 50% de descuento en toda la tienda.</strong> Es nuestro regalo, como agradecimiento por tantos años a tu lado.</p><p>Gracias por caminar junto a nosotras en este sueño.</p><p>Con cariño,<br/><br/>— Rosa ❤️</p>"
           }
         },
         "discount_box_CQmTq4": {
@@ -64,6 +71,7 @@
         "discount_box_CQmTq4",
         "text_yNreBd"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text__wrapper p {color: #444 !important;}"
       ],
@@ -144,13 +152,6 @@
         "color_scheme": "",
         "padding_top": 44,
         "padding_bottom": 28
-      }
-    },
-    "historia_aniversario": {
-      "type": "vela-historia-aniversario",
-      "settings": {
-        "padding_top": 40,
-        "padding_bottom": 52
       }
     },
     "image_with_text_GHAQFY": {
@@ -594,7 +595,7 @@
   },
   "order": [
     "image_banner",
-    "historia_aniversario",
+    "vela_historia_aniversario_cR8Dht",
     "philosophy",
     "categories",
     "colecciones_tabs_pPRzBT",
