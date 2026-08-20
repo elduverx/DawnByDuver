@@ -405,31 +405,38 @@
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
-                <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
-                  <details id="Details-{{ block.id }}-{{ section.id }}">
-                    <summary>
-                      <div class="summary__title">
-                        {% render 'icon-accordion', icon: block.settings.icon %}
-                        <h2 class="h4 accordion__title inline-richtext">
-                          {{ block.settings.heading | default: block.settings.page.title | escape }}
-                        </h2>
-                      </div>
-                      {{- 'icon-caret.svg' | inline_asset_content -}}
-                    </summary>
-                    <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
-                      {%- if block.settings.heading == 'DESCRIPCIÓN' -%}
-  {%- if product.metafields.custom.informacion_adicional.value != blank -%}
-    {{ product.metafields.custom.informacion_adicional | metafield_tag }}
-  {%- else -%}
-    {{ product.description }}
-  {%- endif -%}
-{%- else -%}
-  {{ block.settings.content }}
-  {{ block.settings.page.content }}
-{%- endif -%}
+                {%- if block.settings.heading == 'DESCRIPCIÓN' -%}
+                  <div class="product__description-fija quick-add-hidden" {{ block.shopify_attributes }} style="margin-top: 20px;">
+                    <h2 class="h4" style="font-family: 'Montserrat', sans-serif; font-weight: 700; margin: 0 0 10px;">
+                      {{ block.settings.heading | default: block.settings.page.title | escape }}
+                    </h2>
+                    <div class="rte" style="font-family: 'Montserrat', sans-serif;">
+                      {%- if product.metafields.custom.informacion_adicional.value != blank -%}
+                        {{ product.metafields.custom.informacion_adicional | metafield_tag }}
+                      {%- else -%}
+                        {{ product.description }}
+                      {%- endif -%}
                     </div>
-                  </details>
-                </div>
+                  </div>
+                {%- else -%}
+                  <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
+                    <details id="Details-{{ block.id }}-{{ section.id }}">
+                      <summary>
+                        <div class="summary__title">
+                          {% render 'icon-accordion', icon: block.settings.icon %}
+                          <h2 class="h4 accordion__title inline-richtext">
+                            {{ block.settings.heading | default: block.settings.page.title | escape }}
+                          </h2>
+                        </div>
+                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                      </summary>
+                      <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                        {{ block.settings.content }}
+                        {{ block.settings.page.content }}
+                      </div>
+                    </details>
+                  </div>
+                {%- endif -%}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
