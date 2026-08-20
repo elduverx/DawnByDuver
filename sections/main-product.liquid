@@ -1108,10 +1108,15 @@
         >
           {{- 'icon-close.svg' | inline_asset_content -}}
         </button>
-        <div class="product-popup-modal__content-info" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="product-popup-modal__content-info" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
           <h1 class="h2">Tabla de tallas</h1>
           {%- if product.metafields.custom.tabla_tallas.value != blank -%}
-            {{ product.metafields.custom.tabla_tallas.value | image_url: width: 500 | image_tag: loading: 'lazy', alt: 'Tabla de tallas', style: 'max-width: 100%; width: auto; height: auto; margin: 0 auto; display: block;' }}
+            <img
+              src="{{ product.metafields.custom.tabla_tallas.value | image_url: width: 500 }}"
+              alt="Tabla de tallas"
+              loading="lazy"
+              style="max-width: min(500px, 100%) !important; width: 100% !important; height: auto !important; margin: 0 auto !important; display: block !important; object-fit: contain !important;"
+            >
           {%- else -%}
             <p>Todavía no hemos subido la tabla de tallas de este producto.</p>
           {%- endif -%}
