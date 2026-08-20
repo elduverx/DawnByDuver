@@ -3646,9 +3646,13 @@ h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5 {
 
 /* Product Card Refinements */
 .card__heading {
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  letter-spacing: 0.05em;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  line-height: 26.4px !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .card-wrapper .card__inner {
