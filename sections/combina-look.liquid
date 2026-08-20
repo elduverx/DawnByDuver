@@ -112,7 +112,7 @@
   <p class="combina-eyebrow">{{ section.settings.eyebrow }}</p>
   <div class="combina-header">
     <h2 class="combina-titulo">{{ section.settings.titulo }}</h2>
-    <a href="{{ target_collection.url | default: section.settings.url_ver_todo }}" class="combina-btn-header">{{ section.settings.texto_boton }}</a>
+    <a href="{{ target_collection.url }}" class="combina-btn-header">{{ section.settings.texto_boton }}</a>
   </div>
   <div class="combina-grid">
     {%- liquid
