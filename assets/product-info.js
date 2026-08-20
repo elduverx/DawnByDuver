@@ -125,8 +125,11 @@ if (!customElements.get('product-info')) {
             callback(html);
           })
           .then(() => {
-            // set focus to last clicked option value
+            // set focus to last clicked option value, without letting the browser scroll to it
+            const scrollPosition = window.scrollY;
             document.querySelector(`#${targetId}`)?.focus({ preventScroll: true });
+            window.scrollTo(0, scrollPosition);
+            requestAnimationFrame(() => window.scrollTo(0, scrollPosition));
           })
           .catch((error) => {
             if (error.name === 'AbortError') {
