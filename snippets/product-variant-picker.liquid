@@ -146,7 +146,12 @@
     {%- if product.metafields.custom.tabla_tallas.value != blank -%}
     <modal-opener data-modal="#TablaTallasModal-{{ section.id }}">
       <button type="button" class="size-chart-link" aria-haspopup="dialog" style="display: inline-flex; align-items: center; gap: 5px; font-size: 1.3rem; color: #121212; text-decoration: underline; font-weight: 400; cursor: pointer; background: none; border: none; padding: 0; white-space: nowrap;">
-        <span aria-hidden="true">🧵</span> Guía de tallas
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="9" r="5"></circle>
+          <circle cx="12" cy="9" r="1.8"></circle>
+          <path d="M8.5 12.5 6 20l2.5-1 1-2 1.5 1.5 1-2.5"></path>
+        </svg>
+        Guía de tallas
       </button>
     </modal-opener>
     {%- endif -%}
