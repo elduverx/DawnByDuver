@@ -388,6 +388,24 @@
     >
   {%- endif -%}
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var vDesc = document.querySelector('.product__description-fija');
+      if (!vDesc) return;
+      vDesc.querySelectorAll('*').forEach(function (el) {
+        var s = window.getComputedStyle(el);
+        ['margin-top', 'margin-bottom', 'margin-left', 'margin-right'].forEach(function (prop) {
+          var val = parseFloat(s[prop]);
+          if (val < 0) {
+            el.style.setProperty(prop, '0px', 'important');
+          }
+        });
+        if (s.transform && s.transform !== 'none') {
+          el.style.setProperty('transform', 'none', 'important');
+        }
+      });
+    });
+  </script>
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
