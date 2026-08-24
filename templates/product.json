@@ -114,6 +114,15 @@
         "url_ver_todo": "shopify://collections/all"
       }
     },
+    "combina_look_joyas_1": {
+      "type": "combina-look-joyas",
+      "name": "Combina - Joyas",
+      "settings": {
+        "eyebrow": "",
+        "titulo": "COMBINA CON JOYAS",
+        "texto_boton": "Ver todo"
+      }
+    },
     "clientes_comunidad_P7VGmC": {
       "type": "clientes-comunidad",
       "blocks": {
@@ -515,6 +524,7 @@
   "order": [
     "main",
     "combina_look_heaitB",
+    "combina_look_joyas_1",
     "clientes_comunidad_P7VGmC",
     "resenas_fotos_clientes_3Mpxi7",
     "vela_imagen_texto_KJ4Yq7",
