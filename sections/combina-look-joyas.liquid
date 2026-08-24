@@ -1,0 +1,195 @@
+<style>
+  .combina-section {
+    padding: 36px 0 12px;
+    text-align: center;
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+  .combina-eyebrow {
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: #b8a898;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .combina-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .combina-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: #121212;
+    text-transform: uppercase;
+  }
+  .combina-btn-header {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .combina-btn-header:hover { background: #333333; color: #ffffff; }
+  .combina-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  @media screen and (max-width: 749px) {
+    .combina-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 8px;
+    }
+    .combina-card {
+      flex: 0 0 calc(50% - 4px);
+      scroll-snap-align: start;
+    }
+  }
+  .combina-card { text-align: left; }
+  .combina-card a { display: block; overflow: hidden; }
+  .combina-card img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .combina-card a:hover img { transform: scale(1.03); }
+  .combina-card-info { padding: 12px 0 0 0; }
+  .combina-card-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 13px;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: rgb(26, 26, 26);
+    margin: 0 0 6px 0;
+  }
+  .combina-precios { display: flex; align-items: center; gap: 8px; }
+  .combina-card-precio-original {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+  }
+  .combina-card-precio { font-size: 1.3rem; font-weight: 700; color: #C0392B; }
+  .combina-btn-wrapper { margin-top: 20px; }
+  .combina-btn {
+    display: inline-block;
+    background: #121212;
+    color: #ffffff;
+    padding: 16px 48px;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    font-family: 'Assistant', sans-serif;
+  }
+  .combina-btn:hover { background: #333333; color: #ffffff; }
+  @media screen and (max-width: 749px) {
+    .combina-section { padding: 40px 16px 12px; }
+    .combina-titulo { font-size: 1.6rem; }
+    .combina-btn-header { padding: 8px 16px; font-size: 1rem; }
+  }
+</style>
+
+{%- liquid
+  assign es_joyas = false
+  for coleccion_producto in product.collections
+    if coleccion_producto.handle == 'joyas'
+      assign es_joyas = true
+    endif
+  endfor
+  assign target_collection = collections['joyas']
+-%}
+{%- unless es_joyas -%}
+<div class="combina-section">
+  <p class="combina-eyebrow">{{ section.settings.eyebrow }}</p>
+  <div class="combina-header">
+    <h2 class="combina-titulo">{{ section.settings.titulo }}</h2>
+    <a href="{{ target_collection.url }}" class="combina-btn-header">{{ section.settings.texto_boton }}</a>
+  </div>
+  <div class="combina-grid">
+    {%- liquid
+      assign shown = 0
+    -%}
+    {%- for related in target_collection.products limit: 50 -%}
+      {%- assign related_tags = related.tags | join: ',' | downcase -%}
+      {%- if related.id == product.id -%}
+        {%- continue -%}
+      {%- endif -%}
+      {%- if related_tags contains 'gafas' -%}
+        {%- continue -%}
+      {%- endif -%}
+      {%- if shown >= 4 -%}
+        {%- break -%}
+      {%- endif -%}
+      <div class="combina-card">
+        <a href="{{ related.url }}">
+          {%- if related.featured_image != blank -%}
+            <img src="{{ related.featured_image | image_url: width: 600 }}" alt="{{ related.title }}">
+          {%- else -%}
+            <div style="width:100%;aspect-ratio:3/4;background:#f3f3f3;"></div>
+          {%- endif -%}
+        </a>
+        <div class="combina-card-info">
+          <p class="combina-card-titulo">{{ related.title }}</p>
+          <div class="combina-precios">
+            {%- if related.compare_at_price > related.price -%}
+              <span class="combina-card-precio-original">{{ related.compare_at_price | money }}</span>
+            {%- endif -%}
+            <span class="combina-card-precio">{{ related.price | money }}</span>
+          </div>
+        </div>
+      </div>
+      {%- assign shown = shown | plus: 1 -%}
+    {%- endfor -%}
+  </div>
+</div>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Combina - Joyas",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto superior",
+      "default": "TAMBIÉN TE PUEDE INTERESAR"
+    },
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Combina con joyas"
+    },
+    {
+      "type": "text",
+      "id": "texto_boton",
+      "label": "Texto botón",
+      "default": "Ver todo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Combina - Joyas"
+    }
+  ]
+}
+{% endschema %}
