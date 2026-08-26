@@ -212,6 +212,16 @@
                 }
               });
             }
+
+            if (!window.__velaCartTimerSubmitHooked) {
+              window.__velaCartTimerSubmitHooked = true;
+              document.addEventListener('submit', function (e) {
+                var form = e.target;
+                if (form && form.action && form.action.indexOf('/cart/add') !== -1) {
+                  startTimer(true);
+                }
+              }, true);
+            }
           }
 
           if (document.readyState === 'loading') {
