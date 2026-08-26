@@ -5782,7 +5782,7 @@ cart-drawer.is-empty .vela-upsell {
 }
 
 .cart-drawer .cart__ctas {
-  margin-top: 24px !important;
+  margin-top: 4px !important;
 }
 cart-drawer.is-empty .drawer__header {
   display: flex !important;
