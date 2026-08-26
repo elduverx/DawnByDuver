@@ -5481,13 +5481,13 @@ summary.header__icon--menu {
   width: 10% !important;
 }
 .cart-drawer .cart-item__media {
-  width: 80px !important;
-  min-width: 80px !important;
-  max-width: 80px !important;
+  width: 65px !important;
+  min-width: 65px !important;
+  max-width: 65px !important;
 }
 
 .cart-drawer .cart-item__image {
-  width: 80px !important;
+  width: 65px !important;
   height: auto !important;
 }
 .cart-drawer .cart-item {
