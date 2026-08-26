@@ -6075,3 +6075,7 @@ fieldset[data-option-name*="ize" i] input[type='radio'] + label {
 cart-drawer-items {
   min-height: 0;
 }
+.cart-drawer,
+.cart-drawer * {
+  font-family: 'Montserrat', sans-serif !important;
+}
