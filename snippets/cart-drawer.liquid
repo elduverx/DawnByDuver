@@ -36,6 +36,31 @@
     padding: 0 !important;
     margin-top: -4px !important;
   }
+
+  .cart-drawer .cart-item .discounts.list-unstyled {
+    display: block !important;
+    margin-top: 8px !important;
+    list-style: none !important;
+  }
+
+  .cart-drawer .cart-item .discounts__discount {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: #f0f0f0 !important;
+    color: #000 !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+
+  .cart-drawer .cart-item .discounts__discount svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
