@@ -5764,7 +5764,7 @@ cart-drawer.is-empty .vela-upsell {
   display: none !important;
 }
 .cart-drawer .drawer__footer {
-  background: #f5f5f5 !important;
+  background: #ffffff !important;
   padding: 16px !important;
   margin: 0 -2rem !important;
   width: calc(100% + 4rem) !important;
@@ -5772,7 +5772,7 @@ cart-drawer.is-empty .vela-upsell {
 }
 
 .cart-drawer .cart-drawer__footer {
-  background: #f5f5f5 !important;
+  background: #ffffff !important;
   margin: 0 !important;
   padding: 0 !important;
 }
