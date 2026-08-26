@@ -38,12 +38,12 @@
           <p style="text-align: center; padding: 4rem 2rem; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 0.1rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;">Tu carrito está vacío</p>
         </div>
       {%- endif -%}
-      <div class="drawer__header">
-        <a href="{{ routes.root_url }}" class="vela-cart-logo" style="display: flex; align-items: center;">
+      <div class="drawer__header" style="padding-bottom: 0;">
+        <a href="{{ routes.root_url }}" class="vela-cart-logo" style="display: flex; align-items: center; justify-content: center; height: 52px; overflow: hidden;">
           <img
             src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/ChatGPT_Image_4_ago_2026_12_47_47.png?v=1785840497"
-            alt="{{ shop.name }}"  
-            style="max-height: 48px; width: auto; display: block;"
+            alt="{{ shop.name }}"
+            style="height: 170px; width: auto; display: block; flex-shrink: 0;"
           >
         </a>
         <button
