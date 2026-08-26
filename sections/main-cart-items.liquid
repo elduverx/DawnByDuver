@@ -101,6 +101,20 @@
   #main-cart-items .quantity:after {
     border-radius: 10px !important;
   }
+
+  #main-cart-items .quantity.cart-quantity {
+    width: 9rem !important;
+    min-height: 3.2rem !important;
+  }
+
+  #main-cart-items .quantity.cart-quantity .quantity__button {
+    width: 2.8rem !important;
+  }
+
+  #main-cart-items .quantity.cart-quantity .quantity__input {
+    font-size: 1.3rem !important;
+    padding: 0 !important;
+  }
 </style>
 
 {%- unless settings.cart_type == 'drawer' -%}
