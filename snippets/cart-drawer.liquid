@@ -154,7 +154,7 @@
         (function () {
           var DURATION = 600;
           var STORAGE_KEY = 'velaCartTimerStart';
-          var timerEl, valueEl, intervalId;
+          var intervalId;
 
           function formatTime(sec) {
             var m = Math.floor(sec / 60);
@@ -162,18 +162,20 @@
             return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
           }
 
-          function hideTimer() {
-            if (timerEl) timerEl.style.display = 'none';
-            if (intervalId) clearInterval(intervalId);
-          }
-
           function tick() {
+            var timerEl = document.getElementById('VelaCartTimer');
+            var valueEl = document.getElementById('VelaCartTimerValue');
             var start = parseInt(sessionStorage.getItem(STORAGE_KEY), 10);
-            if (!start) { hideTimer(); return; }
+            if (!start) {
+              if (timerEl) timerEl.style.display = 'none';
+              if (intervalId) clearInterval(intervalId);
+              return;
+            }
             var remaining = DURATION - Math.floor((Date.now() - start) / 1000);
             if (remaining <= 0) {
               sessionStorage.removeItem(STORAGE_KEY);
-              hideTimer();
+              if (timerEl) timerEl.style.display = 'none';
+              if (intervalId) clearInterval(intervalId);
               return;
             }
             if (valueEl) valueEl.textContent = formatTime(remaining);
@@ -190,9 +192,7 @@
           }
 
           function init() {
-            timerEl = document.getElementById('VelaCartTimer');
-            valueEl = document.getElementById('VelaCartTimerValue');
-            if (!timerEl) return;
+            if (!document.getElementById('VelaCartTimer')) return;
 
             {% if cart != empty %}
               startTimer(false);
@@ -203,7 +203,13 @@
             if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined' && !window.__velaCartTimerSubscribed) {
               window.__velaCartTimerSubscribed = true;
               subscribe(PUB_SUB_EVENTS.cartUpdate, function () {
-                startTimer(true);
+                var hasItems = document.querySelectorAll('.cart-drawer .cart-item').length > 0;
+                if (hasItems) {
+                  startTimer(true);
+                } else {
+                  sessionStorage.removeItem(STORAGE_KEY);
+                  tick();
+                }
               });
             }
           }
