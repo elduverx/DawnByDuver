@@ -39,7 +39,13 @@
         </div>
       {%- endif -%}
       <div class="drawer__header">
-        <h2 class="drawer__heading"><strong>Carrito</strong> • {{ cart.item_count }}</h2>
+        <a href="{{ routes.root_url }}" class="vela-cart-logo" style="display: flex; align-items: center;">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1027/0500/4878/files/ChatGPT_Image_4_ago_2026_12_47_47.png?v=1785840497"
+            alt="{{ shop.name }}"
+            style="max-height: 40px; width: auto; display: block;"
+          >
+        </a>
         <button
           class="drawer__close"
           type="button"
@@ -51,6 +57,74 @@
           </span>
         </button>
       </div>
+      <div id="VelaCartTimer" class="vela-cart-timer" style="display: none; text-align: center; padding: 10px 16px; background: #f5f5f5; border-top: 1px solid #000; border-bottom: 1px solid #000; font-size: 1.4rem;">
+        ¡Tu cesta está reservada durante <span id="VelaCartTimerValue">10:00</span>!
+      </div>
+      <script>
+        (function () {
+          var DURATION = 600;
+          var STORAGE_KEY = 'velaCartTimerStart';
+          var timerEl, valueEl, intervalId;
+
+          function formatTime(sec) {
+            var m = Math.floor(sec / 60);
+            var s = sec % 60;
+            return (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+          }
+
+          function hideTimer() {
+            if (timerEl) timerEl.style.display = 'none';
+            if (intervalId) clearInterval(intervalId);
+          }
+
+          function tick() {
+            var start = parseInt(sessionStorage.getItem(STORAGE_KEY), 10);
+            if (!start) { hideTimer(); return; }
+            var remaining = DURATION - Math.floor((Date.now() - start) / 1000);
+            if (remaining <= 0) {
+              sessionStorage.removeItem(STORAGE_KEY);
+              hideTimer();
+              return;
+            }
+            if (valueEl) valueEl.textContent = formatTime(remaining);
+            if (timerEl) timerEl.style.display = 'block';
+          }
+
+          function startTimer(reset) {
+            if (reset || !sessionStorage.getItem(STORAGE_KEY)) {
+              sessionStorage.setItem(STORAGE_KEY, Date.now().toString());
+            }
+            tick();
+            if (intervalId) clearInterval(intervalId);
+            intervalId = setInterval(tick, 1000);
+          }
+
+          function init() {
+            timerEl = document.getElementById('VelaCartTimer');
+            valueEl = document.getElementById('VelaCartTimerValue');
+            if (!timerEl) return;
+
+            {% if cart != empty %}
+              startTimer(false);
+            {% else %}
+              sessionStorage.removeItem(STORAGE_KEY);
+            {% endif %}
+
+            if (typeof subscribe === 'function' && typeof PUB_SUB_EVENTS !== 'undefined' && !window.__velaCartTimerSubscribed) {
+              window.__velaCartTimerSubscribed = true;
+              subscribe(PUB_SUB_EVENTS.cartUpdate, function () {
+                startTimer(true);
+              });
+            }
+          }
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+          } else {
+            init();
+          }
+        })();
+      </script>
       <cart-drawer-items
         {% if cart == empty %}
           class=" is-empty"
@@ -387,190 +461,10 @@
           <div id="CartDrawer-CartErrors" role="alert"></div>
         </form>
       </cart-drawer-items>
-      {%- liquid
-        assign colecciones_genericas = 'mujer,hombre,todos,frontpage,novedades-hombre,novedades-mujer,productos-con-descuento-por-cantidad,vestidos,conjuntos' | split: ','
-        assign target_handles_str = ''
-
-        for item in cart.items
-          assign item_tags = item.product.tags | join: ',' | downcase
-          assign item_target_handle = ''
-
-          for coleccion_item in item.product.collections
-            if item_target_handle == ''
-              unless colecciones_genericas contains coleccion_item.handle
-                assign item_target_handle = coleccion_item.handle
-              endunless
-            endif
-          endfor
-
-          if item_target_handle == ''
-            if item_tags contains 'gafas'
-              assign item_target_handle = 'gafas-de-sol-mujer'
-            else
-              assign item_target_handle = 'mujer'
-            endif
-          endif
-
-          assign needle = ',' | append: item_target_handle | append: ','
-          assign haystack = ',' | append: target_handles_str
-          unless haystack contains needle
-            assign target_handles_str = target_handles_str | append: item_target_handle | append: ','
-          endunless
-        endfor
-
-        if target_handles_str == ''
-          assign target_handles_str = 'mujer'
-        endif
-
-        assign target_handles = target_handles_str | split: ','
-      -%}
-      {%- capture upsell_items_html -%}
-        {%- assign shown_ids = ',' -%}
-        {%- assign shown = 0 -%}
-        {%- for handle in target_handles -%}
-          {%- assign target_collection = collections[handle] -%}
-          {%- for product in target_collection.products limit: 50 -%}
-            {%- if shown >= 8 -%}
-              {%- break -%}
-            {%- endif -%}
-            {%- assign already_in_cart = false -%}
-            {%- for item in cart.items -%}
-              {%- if item.product.id == product.id -%}
-                {%- assign already_in_cart = true -%}
-              {%- endif -%}
-            {%- endfor -%}
-            {%- if already_in_cart -%}
-              {%- continue -%}
-            {%- endif -%}
-            {%- assign needle = ',' | append: product.id | append: ',' -%}
-            {%- if shown_ids contains needle -%}
-              {%- continue -%}
-            {%- endif -%}
-            <div class="vela-upsell-item" style="display: {% if shown == 0 %}flex{% else %}none{% endif %};">
-              <a href="{{ product.url }}" class="vela-upsell-item__img">
-                <img src="{{ product.featured_image | image_url: width: 200 }}" alt="{{ product.title | escape }}">
-              </a>
-              <div class="vela-upsell-item__info">
-                <p class="vela-upsell-item__title">{{ product.title | escape }}</p>
-                <div class="vela-upsell-item__prices">
-                  {%- if product.compare_at_price > product.price -%}
-                    <s class="vela-upsell-item__compare">{{ product.compare_at_price | money }}</s>
-                  {%- endif -%}
-                  <span class="vela-upsell-item__price">{{ product.price | money }}</span>
-                </div>
-                <div class="vela-upsell-item__form">
-                  <select class="vela-upsell-select" data-product-id="{{ product.id }}">
-                    {%- for variant in product.variants -%}
-                      <option value="{{ variant.id }}" {% unless variant.available %}disabled{% endunless %}>
-                        {{ variant.title }}
-                      </option>
-                    {%- endfor -%}
-                  </select>
-                  <button class="vela-upsell-add" onclick="velaAddToCart(this)">Añadir</button>
-                </div>
-              </div>
-            </div>
-            {%- assign shown_ids = shown_ids | append: product.id | append: ',' -%}
-            {%- assign shown = shown | plus: 1 -%}
-          {%- endfor -%}
-        {%- endfor -%}
-      {%- endcapture -%}
-{%- if upsell_items_html != blank -%}
-  <div class="vela-upsell{% if cart == empty %} vela-upsell--cart-empty{% endif %}" id="VelaUpsellContainer">
-    <p class="vela-upsell__title">También te puede gustar</p>
-    <div class="vela-upsell__slider-wrapper">
-      <button class="vela-upsell__arrow vela-upsell__arrow--prev" onclick="velaUpsellPrev()">&#8249;</button>
-      <div class="vela-upsell__track">
-        {{ upsell_items_html }}
+      <div class="vela-cart-trust" style="display: flex; align-items: center; justify-content: center; gap: 24px; padding: 14px 16px; font-size: 1.3rem;">
+        <span>Envío Gratis 🚚</span>
+        <span>🛡️ Garantía de 30 Días</span>
       </div>
-      <button class="vela-upsell__arrow vela-upsell__arrow--next" onclick="velaUpsellNext()">&#8250;</button>
-    </div>
-  </div>
-
-  <script>
-  (function () {
-    function velaGetItems() {
-      return document.querySelectorAll('#VelaUpsellContainer .vela-upsell-item');
-    }
-
-    function velaGetVisibleIndex(items) {
-      for (var i = 0; i < items.length; i++) {
-        if (items[i].style.display !== 'none') return i;
-      }
-      return 0;
-    }
-
-    window.velaUpsellNext = function () {
-      var items = velaGetItems();
-      if (!items.length) return;
-      var idx = velaGetVisibleIndex(items);
-      items[idx].style.display = 'none';
-      idx = (idx + 1) % items.length;
-      items[idx].style.display = 'flex';
-    };
-
-    window.velaUpsellPrev = function () {
-      var items = velaGetItems();
-      if (!items.length) return;
-      var idx = velaGetVisibleIndex(items);
-      items[idx].style.display = 'none';
-      idx = (idx - 1 + items.length) % items.length;
-      items[idx].style.display = 'flex';
-    };
-
-    window.velaAddToCart = function (btn) {
-      var form = btn.closest('.vela-upsell-item__form');
-      var select = form.querySelector('.vela-upsell-select');
-      var variantId = select.value;
-      btn.textContent = '...';
-      btn.disabled = true;
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: parseInt(variantId), quantity: 1 })
-      })
-      .then(function (r) { return r.json(); })
-      .then(function () {
-        fetch('/?section_id=cart-drawer')
-          .then(function (r) { return r.text(); })
-          .then(function (html) {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(html, 'text/html');
-            var newDrawer = doc.querySelector('#CartDrawer-CartItems');
-            var currentDrawer = document.querySelector('#CartDrawer-CartItems');
-            if (newDrawer && currentDrawer) {
-              currentDrawer.innerHTML = newDrawer.innerHTML;
-            }
-            var newCount = doc.querySelector('.cart-count-bubble');
-            var currentCount = document.querySelector('.cart-count-bubble');
-            if (newCount && currentCount) {
-              currentCount.innerHTML = newCount.innerHTML;
-            }
-            var newTotal = doc.querySelector('.totals__total-value');
-            var currentTotal = document.querySelector('.totals__total-value');
-            if (newTotal && currentTotal) {
-              currentTotal.innerHTML = newTotal.innerHTML;
-            }
-            var newHeading = doc.querySelector('.drawer__heading');
-            var currentHeading = document.querySelector('.drawer__heading');
-            if (newHeading && currentHeading) {
-              currentHeading.innerHTML = newHeading.innerHTML;
-            }
-            var newUpsell = doc.querySelector('#VelaUpsellContainer');
-            var currentUpsell = document.querySelector('#VelaUpsellContainer');
-            if (newUpsell && currentUpsell) {
-              currentUpsell.outerHTML = newUpsell.outerHTML;
-            }
-          });
-      })
-      .catch(function () {
-        btn.textContent = 'Error';
-        btn.disabled = false;
-      });
-    };
-  })();
-  </script>
-{%- endif -%}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (typeof subscribe !== 'function' || typeof PUB_SUB_EVENTS === 'undefined') return;
@@ -649,7 +543,7 @@
               disabled
             {% endif %}
           >
-            COMPRAR • {{ cart.total_price | money }}
+            FINALIZAR COMPRA • {{ cart.total_price | money }}
           </button>
         </div>
         {% render 'metodos-pago' %}
