@@ -21,6 +21,23 @@
 </style>
 {%- endunless -%}
 
+<style>
+  .vela-aniversario-bar {
+    white-space: nowrap !important;
+  }
+
+  .vela-aniversario-bar span {
+    white-space: nowrap !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .vela-aniversario-bar {
+      font-size: 1.05rem !important;
+      letter-spacing: 0.02rem !important;
+    }
+  }
+</style>
+
 {%- liquid
   assign social_icons = true
   if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -50,7 +67,7 @@
     {%- endif -%}
     {%- if section.id contains 'announcement-bar' -%}
       <div class="announcement-bar" role="region" aria-label="Cuenta atrás de ofertas">
-        <p class="announcement-bar__message h5">
+        <p class="announcement-bar__message h5 vela-aniversario-bar">
           <span>OFERTAS POR ANIVERSARIO TERMINAN EN: <strong id="vela-countdown-{{ section.id }}">00:00:00</strong></span>
         </p>
       </div>
