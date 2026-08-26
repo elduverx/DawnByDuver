@@ -74,12 +74,32 @@
 
   @media screen and (min-width: 750px) {
     .cart-drawer .quantity.cart-quantity {
-      transform: scale(0.8) !important;
-      transform-origin: left !important;
+      transform: none !important;
+      width: 9rem !important;
+      min-height: 3.2rem !important;
+    }
+
+    .cart-drawer .quantity.cart-quantity .quantity__button {
+      width: 2.8rem !important;
+    }
+
+    .cart-drawer .quantity.cart-quantity .quantity__input {
+      font-size: 1.3rem !important;
+      padding: 0 !important;
     }
 
     .cart-drawer .cart-item .discounts.list-unstyled {
-      margin-top: -6px !important;
+      margin-top: 6px !important;
+    }
+
+    .cart-drawer .cart-item .discounts__discount {
+      padding: 4px 10px !important;
+      font-size: 0.95rem !important;
+    }
+
+    .cart-drawer .cart-item .discounts__discount svg {
+      width: 12px !important;
+      height: 12px !important;
     }
   }
 </style>
