@@ -19,6 +19,76 @@
   }
 {%- endstyle -%}
 
+<style>
+  #main-cart-items .cart-item__image {
+    border-radius: 10px !important;
+  }
+
+  #main-cart-items .vela-cart-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 1.2rem;
+    color: #999;
+    margin-top: 0 !important;
+    margin-bottom: 4px;
+  }
+
+  #main-cart-items .vela-cart-prices {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin-bottom: 4px;
+  }
+
+  #main-cart-items .vela-cart-final {
+    font-weight: 700 !important;
+  }
+
+  #main-cart-items .vela-cart-savings {
+    color: #2e7d32;
+    font-size: 1.2rem;
+  }
+
+  #main-cart-items .cart-item__name {
+    line-height: 1.15 !important;
+  }
+
+  #main-cart-items .discounts.list-unstyled {
+    display: block !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+    list-style: none !important;
+  }
+
+  #main-cart-items .discounts__discount {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    background: #f0f0f0 !important;
+    color: #000 !important;
+    padding: 6px 14px !important;
+    border-radius: 0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+
+  #main-cart-items .discounts__discount svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  #main-cart-items .quantity,
+  #main-cart-items .quantity:before,
+  #main-cart-items .quantity:after {
+    border-radius: 10px !important;
+  }
+</style>
+
 {%- unless settings.cart_type == 'drawer' -%}
   <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 {%- endunless -%}
