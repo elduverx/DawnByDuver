@@ -6066,3 +6066,9 @@ fieldset[data-option-name*="ize" i] input[type='radio'] + label {
 .card__badge.top.right {
   margin: 0 !important;
 }
+@media screen and (max-width: 749px) {
+  cart-drawer .drawer__inner {
+    width: 100vw !important;
+    max-width: 100vw !important;
+  }
+}
