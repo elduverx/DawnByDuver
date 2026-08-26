@@ -482,7 +482,7 @@
                             {%- for discount in item.line_level_discount_allocations -%}
                               <li class="discounts__discount">
                                 {{- 'icon-discount.svg' | inline_asset_content -}}
-                                {{ discount.discount_application.title }}
+                                {{ discount.discount_application.title | replace: '%-', '% ' | replace: '  ', ' ' | prepend: '-' | escape }}
                               </li>
                             {%- endfor -%}
                           </ul>
