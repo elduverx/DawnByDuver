@@ -71,6 +71,17 @@
   .cart-drawer .vela-cart-final {
     font-weight: 700 !important;
   }
+
+  @media screen and (min-width: 750px) {
+    .cart-drawer .quantity.cart-quantity {
+      transform: scale(0.8) !important;
+      transform-origin: left !important;
+    }
+
+    .cart-drawer .cart-item .discounts.list-unstyled {
+      margin-top: -6px !important;
+    }
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
