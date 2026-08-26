@@ -531,15 +531,22 @@
         <div class="cart-drawer__footer" {{ block.shopify_attributes }}>
           <div>
             {%- if cart.cart_level_discount_applications.size > 0 -%}
-              <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
-                {%- for discount in cart.cart_level_discount_applications -%}
-                  <li class="discounts__discount discounts__discount--end">
+              <style>
+                .vela-cart-discount-pill svg {
+                  width: 14px;
+                  height: 14px;
+                }
+              </style>
+              {%- for discount in cart.cart_level_discount_applications -%}
+                <div class="vela-cart-discount-row" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; border-top: 1px solid rgba(0,0,0,0.1); font-size: 1.5rem;">
+                  <span>Descuentos</span>
+                  <span class="vela-cart-discount-pill" style="display: inline-flex; align-items: center; gap: 6px; background: #f0f0f0; color: #000; padding: 6px 14px; border-radius: 20px; font-size: 1.2rem; font-weight: 600; text-transform: uppercase; white-space: nowrap;">
                     {{- 'icon-discount.svg' | inline_asset_content -}}
                     {{ discount.title | escape }}
-                    (-{{ discount.total_allocated_amount | money }})
-                  </li>
-                {%- endfor -%}
-              </ul>
+                  </span>
+                  <span>-{{ discount.total_allocated_amount | money }}</span>
+                </div>
+              {%- endfor -%}
             {%- endif -%}
           </div>
         </div>
