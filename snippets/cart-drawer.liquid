@@ -61,6 +61,12 @@
     width: 14px !important;
     height: 14px !important;
   }
+
+  .cart-drawer .quantity,
+  .cart-drawer .quantity:before,
+  .cart-drawer .quantity:after {
+    border-radius: 10px !important;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
