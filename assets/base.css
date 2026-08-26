@@ -5489,6 +5489,7 @@ summary.header__icon--menu {
 .cart-drawer .cart-item__image {
   width: 65px !important;
   height: auto !important;
+  border-radius: 10px !important;
 }
 .cart-drawer .cart-item {
   padding-top: 12px !important;
@@ -5531,7 +5532,7 @@ summary.header__icon--menu {
   -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
-  font-size: 1.6rem !important;
+  font-size: 1.15rem !important;
 }
 .cart-drawer .drawer__inner {
   width: 95vw !important;
