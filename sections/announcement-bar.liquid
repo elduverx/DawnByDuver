@@ -37,12 +37,40 @@
       padding-bottom: 5px !important;
     }
 
+  {%- unless es_barra_descuento -%}
+<style>
+  .vela-aniversario-bar {
+    white-space: nowrap !important;
+  }
+
+  .vela-aniversario-bar span {
+    white-space: nowrap !important;
+  }
+
   @media screen and (max-width: 749px) {
-    .vela-aniversario-bar {
-      font-size: 0.9rem !important;
-      letter-spacing: 0.02rem !important;
+    #shopify-section-{{ section.id }} .utility-bar {
+      background: #000 !important;
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
+    }
+
+    #shopify-section-{{ section.id }} .vela-aniversario-bar {
+      color: #fff !important;
+      text-align: center !important;
+      font-size: 11px !important;
+      letter-spacing: 0.08em !important;
+      text-transform: uppercase !important;
+      font-weight: 600 !important;
+      font-family: 'Montserrat', sans-serif !important;
+    }
+
+    #shopify-section-{{ section.id }} .vela-aniversario-bar strong {
+      font-weight: 600 !important;
+      font-family: 'Montserrat', sans-serif !important;
     }
   }
+</style>
+{%- endunless -%}
   }
 </style>
 
