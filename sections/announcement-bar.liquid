@@ -32,13 +32,18 @@
 
   @media screen and (max-width: 749px) {
     #shopify-section-{{ section.id }} .vela-aniversario-bar {
-      font-size: 1.05rem !important;
-      letter-spacing: 0.02rem !important;
+      font-size: 1rem !important;
+      letter-spacing: 0 !important;
+      font-weight: 400 !important;
+    }
+
+    #shopify-section-{{ section.id }} .vela-aniversario-bar strong {
+      font-weight: 700 !important;
     }
 
     #shopify-section-{{ section.id }} .utility-bar {
-      padding-top: 0.6rem !important;
-      padding-bottom: 0.6rem !important;
+      padding-top: 0.4rem !important;
+      padding-bottom: 0.4rem !important;
     }
   }
 </style>
