@@ -107,6 +107,13 @@
   {%- endfor -%}
   {%- assign urgencia_map = urgencia_map_nuevo -%}
 {%- endif -%}
+{%- assign tiene_talla_o_size = false -%}
+{%- for option_check in product.options_with_values -%}
+  {%- assign option_name_check = option_check.name | downcase -%}
+  {%- if option_name_check contains 'talla' or option_name_check contains 'size' -%}
+    {%- assign tiene_talla_o_size = true -%}
+  {%- endif -%}
+{%- endfor -%}
 {%- unless product.has_only_default_variant -%}
   <variant-selects
     id="variant-selects-{{ section.id }}"
@@ -165,7 +172,14 @@ option: option,
 block: block,
 picker_type: picker_type
 %}
+{%- assign mostrar_urgencia = false -%}
 {%- if name_downcase contains 'talla' or name_downcase contains 'size' -%}
+  {%- assign mostrar_urgencia = true -%}
+{%- endif -%}
+{%- if tiene_talla_o_size == false and forloop.last -%}
+  {%- assign mostrar_urgencia = true -%}
+{%- endif -%}
+{%- if mostrar_urgencia -%}
   <div style="flex: 1 0 100%; width: 100%; margin-top: 8px; margin-bottom: 16px; font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 400; color: rgb(0, 0, 0); line-height: normal;">
     <div style="display: flex; align-items: center; gap: 5px; margin-bottom: 8px;">
       <div style="flex: 1 1 0; min-height: 2px !important; height: 2px !important; background: #d9d5c9 !important; border-radius: 2px; display: block; line-height: 0; font-size: 0; overflow: hidden;"></div>
