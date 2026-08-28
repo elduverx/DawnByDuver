@@ -1,6 +1,12 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{%- assign banner_desktop_image = images['ChatGPT_Image_20_ago_2026_11_15_22.png'] -%}
-{%- assign banner_mobile_image = images['ChatGPT_Image_20_ago_2026_11_15_22.png'] -%}
+{%- case collection.handle -%}
+  {%- when 'sandalias-amalfi' -%}
+    {%- assign banner_desktop_image = images['ChatGPT_Image_28_ago_2026_10_16_22.png'] -%}
+    {%- assign banner_mobile_image = images['ChatGPT_Image_28_ago_2026_10_16_22.png'] -%}
+  {%- else -%}
+    {%- assign banner_desktop_image = images['ChatGPT_Image_20_ago_2026_11_15_22.png'] -%}
+    {%- assign banner_mobile_image = images['ChatGPT_Image_20_ago_2026_11_15_22.png'] -%}
+{%- endcase -%}
 {{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
