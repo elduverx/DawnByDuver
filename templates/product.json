@@ -9,6 +9,11 @@
  */
 {
   "sections": {
+    "vela_colecciones_scroll_product": {
+      "type": "vela-colecciones-scroll",
+      "name": "Colecciones Scroll",
+      "settings": {}
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -522,6 +527,7 @@
     }
   },
   "order": [
+    "vela_colecciones_scroll_product",
     "main",
     "combina_look_heaitB",
     "combina_look_joyas_1",
