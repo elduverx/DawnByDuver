@@ -112,31 +112,15 @@
     }
   }
 
-  .cart-drawer .cart-item__old-price {
-    color: #999 !important;
-    opacity: 1 !important;
-    font-size: 1.2rem !important;
+  .cart-drawer .cart-item__quantity-wrapper.quantity-popover-wrapper {
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
   }
 
-  .cart-drawer .cart-item__totals .price.price--end {
+  .cart-drawer .vela-cart-final {
     color: #c0392b !important;
     font-weight: 700 !important;
-    font-size: 1.3rem !important;
-  }
-
-  @media screen and (max-width: 749px) {
-    .cart-drawer .cart-item__quantity {
-      grid-column: 2 / 4 !important;
-      grid-row: 2 !important;
-    }
-
-    .cart-drawer .cart-item__totals {
-      grid-column: 4 / 5 !important;
-      grid-row: 2 !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      padding-top: 0 !important;
-    }
   }
 </style>
 
@@ -441,6 +425,16 @@
                                   </button>
                                 </quantity-input>
                               </div>
+                              {%- if item.variant.compare_at_price > item.variant.price -%}
+                                <div class="vela-cart-prices">
+                                  <s class="vela-cart-compare">{{- item.variant.compare_at_price | money -}}</s>
+                                  <span class="vela-cart-final">{{ item.variant.price | money }}</span>
+                                </div>
+                              {%- else -%}
+                                <div class="vela-cart-prices">
+                                  <span class="vela-cart-final">{{ item.variant.price | money }}</span>
+                                </div>
+                              {%- endif -%}
                               <cart-remove-button
                                 id="CartDrawer-Remove-{{ item.index | plus: 1 }}"
                                 data-index="{{ item.index | plus: 1 }}"
