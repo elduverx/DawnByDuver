@@ -136,6 +136,13 @@
   .cart-drawer .cart-item {
     grid-template-columns: 70px 1fr !important;
   }
+
+  .cart-drawer .cart-item__image {
+    width: 65px !important;
+    height: 65px !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+  }
 </style>
 
 <cart-drawer class="drawer{% if cart == empty %} is-empty{% endif %}">
