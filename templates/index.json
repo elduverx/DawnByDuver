@@ -77,6 +77,17 @@
         "padding_bottom": 40
       }
     },
+    "colecciones_tabs_pEHjwx": {
+      "type": "colecciones-tabs",
+      "name": "Colecciones con pestañas",
+      "settings": {
+        "collection_1": "edicion-estrella",
+        "collection_2": "esencia-de-verano",
+        "color_scheme": "",
+        "padding_top": 64,
+        "padding_bottom": 60
+      }
+    },
     "colecciones_tabs_pPRzBT": {
       "type": "colecciones-tabs",
       "name": "Colecciones con pestañas",
@@ -86,17 +97,6 @@
         "color_scheme": "",
         "padding_top": 64,
         "padding_bottom": 60
-      }
-    },
-    "colecciones_tabs_URpK4H": {
-      "type": "colecciones-tabs",
-      "name": "Colecciones con pestañas",
-      "settings": {
-        "collection_1": "vestidos-aniversario",
-        "collection_2": "esencia-de-verano",
-        "color_scheme": "",
-        "padding_top": 44,
-        "padding_bottom": 28
       }
     },
     "vela_imagen_texto_BDggLT": {
@@ -145,7 +145,7 @@
       "name": "Colecciones con pestañas",
       "settings": {
         "collection_1": "sandalias-amalfi",
-        "collection_2": "vestidos-elegantes",
+        "collection_2": "conjuntos-brillantes",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 28
@@ -216,15 +216,15 @@
         "padding_bottom": 40
       }
     },
-    "colecciones_tabs_pEHjwx": {
+    "colecciones_tabs_URpK4H": {
       "type": "colecciones-tabs",
       "name": "Colecciones con pestañas",
       "settings": {
-        "collection_1": "edicion-estrella",
+        "collection_1": "vestidos-aniversario",
         "collection_2": "conjuntos-salvia",
         "color_scheme": "",
-        "padding_top": 64,
-        "padding_bottom": 60
+        "padding_top": 44,
+        "padding_bottom": 28
       }
     },
     "colecciones_tabs_rEaAKG": {
@@ -618,14 +618,14 @@
     "colecciones_scroll_vela",
     "vela_historia_aniversario_cR8Dht",
     "categories",
+    "colecciones_tabs_pEHjwx",
     "colecciones_tabs_pPRzBT",
-    "colecciones_tabs_URpK4H",
     "vela_imagen_texto_BDggLT",
     "image_with_text_GHAQFY",
     "colecciones_tabs_VEpcGX",
     "editorial_banner_g9Wq7H",
     "featured_collection",
-    "colecciones_tabs_pEHjwx",
+    "colecciones_tabs_URpK4H",
     "colecciones_tabs_rEaAKG",
     "resenas_fotos_clientes_fkgTJd",
     "resenas_fotos_clientes_6GQbzg",
