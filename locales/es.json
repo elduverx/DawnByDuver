@@ -558,6 +558,9 @@
         "optional_zip_code_label": "Código postal",
         "optional_postal_code_label": "Código postal",
         "optional_postcode_label": "Código postal"
+      },
+      "field_errors": {
+        "address_company_blank": "Introduce un número de documento de identidad"
       }
     }
   }
