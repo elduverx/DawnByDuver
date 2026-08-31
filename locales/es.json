@@ -551,8 +551,8 @@
   "shopify": {
     "checkout": {
       "contact": {
-        "optional_company_label": "Número de documento de identidad*",
-        "company_label": "Número de documento de identidad*",
+        "optional_company_label": "Número de identificación*",
+        "company_label": "Número de identificación*",
         "email_or_phone_label": "Correo electrónico",
         "email_or_phone_placeholder": "Correo electrónico",
         "optional_zip_code_label": "Código postal",
