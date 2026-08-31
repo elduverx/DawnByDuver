@@ -560,7 +560,7 @@
         "optional_postcode_label": "Código postal"
       },
       "field_errors": {
-        "address_company_blank": "Introduce tu DNI, RUT, RUC, CURP, cédula u otro documento de identidad valido."
+        "address_company_blank": "Introduce tu DNI, RUT, RUC, CURP, cédula u otro documento de identidad válido."
       }
     }
   }
