@@ -92,6 +92,25 @@
     {%- assign texto_urgencia = 'Sin stock' -%}
   {%- endif -%}
 {%- endif -%}
+{%- if product.handle == 'emanuela-bolso-bandolera' -%}
+  {%- assign urgencia_map_partes = urgencia_map | split: '||' -%}
+  {%- assign urgencia_map_nuevo = '' -%}
+  {%- for parte in urgencia_map_partes -%}
+    {%- assign valor_color = parte | split: ':::' | first -%}
+    {%- if valor_color == 'Marfil' or valor_color == 'Gris Perla' -%}
+      {%- assign parte = valor_color | append: ':::' | append: 'Sin stock' -%}
+    {%- endif -%}
+    {%- if forloop.first -%}
+      {%- assign urgencia_map_nuevo = parte -%}
+    {%- else -%}
+      {%- assign urgencia_map_nuevo = urgencia_map_nuevo | append: '||' | append: parte -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign urgencia_map = urgencia_map_nuevo -%}
+  {%- if color_option.selected_value == 'Marfil' or color_option.selected_value == 'Gris Perla' -%}
+    {%- assign texto_urgencia = 'Sin stock' -%}
+  {%- endif -%}
+{%- endif -%}
 {%- if product.handle == 'mono-velaria-dias-de-primavera' -%}
   {%- assign texto_urgencia = 'Sin stock' -%}
   {%- assign urgencia_map_partes = urgencia_map | split: '||' -%}
@@ -360,6 +379,42 @@ picker_type: picker_type
     if (aplicando) return;
     var span = document.querySelector('[id^="UrgenciaTexto-"]');
     if (span && span.textContent !== 'Sin stock') {
+      aplicando = true;
+      span.textContent = 'Sin stock';
+      setTimeout(function() { aplicando = false; }, 50);
+    }
+  }
+  document.addEventListener('change', forzarTexto);
+  var contenedor = document.querySelector('.product__info-container') || document.body;
+  new MutationObserver(function() {
+    if (!aplicando) forzarTexto();
+  }).observe(contenedor, { childList: true, subtree: true });
+  forzarTexto();
+})();
+</script>
+{%- endif -%}
+{%- if product.handle == 'emanuela-bolso-bandolera' -%}
+<script>
+(function() {
+  var coloresSinStock = ['Marfil', 'Gris Perla'];
+  var aplicando = false;
+  function colorSeleccionadoActual() {
+    var color = null;
+    document.querySelectorAll('[data-option-name]').forEach(function(fs) {
+      var name = (fs.getAttribute('data-option-name') || '').toLowerCase();
+      if (name.indexOf('color') === -1) return;
+      var checked = fs.querySelector('input:checked');
+      if (checked) color = checked.value;
+      var select = fs.querySelector('select');
+      if (select) color = select.value;
+    });
+    return color;
+  }
+  function forzarTexto() {
+    if (aplicando) return;
+    var color = colorSeleccionadoActual();
+    var span = document.querySelector('[id^="UrgenciaTexto-"]');
+    if (span && color && coloresSinStock.indexOf(color) !== -1 && span.textContent !== 'Sin stock') {
       aplicando = true;
       span.textContent = 'Sin stock';
       setTimeout(function() { aplicando = false; }, 50);
