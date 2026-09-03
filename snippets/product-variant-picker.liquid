@@ -393,42 +393,6 @@ picker_type: picker_type
 })();
 </script>
 {%- endif -%}
-{%- if product.handle == 'emanuela-bolso-bandolera' -%}
-<script>
-(function() {
-  var coloresSinStock = ['Marfil', 'Gris Perla'];
-  var aplicando = false;
-  function colorSeleccionadoActual() {
-    var color = null;
-    document.querySelectorAll('[data-option-name]').forEach(function(fs) {
-      var name = (fs.getAttribute('data-option-name') || '').toLowerCase();
-      if (name.indexOf('color') === -1) return;
-      var checked = fs.querySelector('input:checked');
-      if (checked) color = checked.value;
-      var select = fs.querySelector('select');
-      if (select) color = select.value;
-    });
-    return color;
-  }
-  function forzarTexto() {
-    if (aplicando) return;
-    var color = colorSeleccionadoActual();
-    var span = document.querySelector('[id^="UrgenciaTexto-"]');
-    if (span && color && coloresSinStock.indexOf(color) !== -1 && span.textContent !== 'Sin stock') {
-      aplicando = true;
-      span.textContent = 'Sin stock';
-      setTimeout(function() { aplicando = false; }, 50);
-    }
-  }
-  document.addEventListener('change', forzarTexto);
-  var contenedor = document.querySelector('.product__info-container') || document.body;
-  new MutationObserver(function() {
-    if (!aplicando) forzarTexto();
-  }).observe(contenedor, { childList: true, subtree: true });
-  forzarTexto();
-})();
-</script>
-{%- endif -%}
 <div style="display:none;">
   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
     (function(img){
