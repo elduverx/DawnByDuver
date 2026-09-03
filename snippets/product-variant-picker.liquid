@@ -21,6 +21,7 @@
   {%- endif -%}
 {%- endfor -%}
 {%- assign resto_stock = product.id | modulo: 7 -%}
+{%- assign variante_disponible = product.selected_or_first_available_variant.available -%}
 {%- case product.handle -%}
   {%- when 'mono-casa-velaria-dias-de-verano' -%}
     {%- assign texto_urgencia = 'Sin stock' -%}
@@ -240,6 +241,7 @@ picker_type: picker_type
       background: #c0392b;
     }
   </style>
+  {%- if variante_disponible -%}
   <p id="Urgencia-{{ section.id }}" data-urgencia-map="{{ urgencia_map | escape }}" style="margin-top: 12px; margin-bottom: 0; font-size: 1.3rem; font-weight: 600; color: #c0392b; display: flex; align-items: center; gap: 8px; line-height: 1.4;">
     <span class="punto-urgencia-wrapper">
       <span class="punto-urgencia-halo"></span>
@@ -277,6 +279,7 @@ picker_type: picker_type
     setTimeout(aplicarTexto, 900);
   });
   </script>
+  {%- endif -%}
   {%- endif -%}
 {%- endif -%}
 </fieldset>
