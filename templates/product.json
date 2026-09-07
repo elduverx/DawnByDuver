@@ -341,6 +341,16 @@
             "verificado": true
           }
         },
+        "resena_wtQ8xW": {
+          "type": "resena",
+          "settings": {
+            "imagen": "shopify://shop_images/ChatGPT_Image_7_sept_2026_22_45_35.png",
+            "texto": "Compré este vestido para una celebración y superó totalmente mis expectativas. La tela de lino y algodón se siente fresca y de calidad, nada que ver con las fotos de otras tiendas donde luego llega una tela barata. El detalle de los botones florales en el pecho le da un toque muy elegante y original, y las flores en los puños son una pasada, se notan hechas a mano.\n\nEl corte es holgado pero favorecedor, ideal para el verano. Me quedó perfecto con la talla que suelo usar. Lo he combinado con sandalias planas para el día y con unos tacones para la noche, y funciona genial en ambos looks.\n\nLlegó bien empaquetado y antes de lo previsto. Sin duda voy a comprar más prendas de esta tienda. ¡Totalmente recomendado! 🤍",
+            "nombre": "Candela A.",
+            "estrellas": 5,
+            "verificado": true
+          }
+        },
         "resena_jhbtGY": {
           "type": "resena",
           "settings": {
@@ -410,6 +420,7 @@
         "resena_dkd44F",
         "resena_6hk97A",
         "resena_JRhkMh",
+        "resena_wtQ8xW",
         "resena_jhbtGY",
         "resena_M7mMUH",
         "resena_MKyMVN",
