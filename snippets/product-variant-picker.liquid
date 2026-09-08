@@ -400,43 +400,75 @@ picker_type: picker_type
 <script>
 (function() {
   var aplicando = false;
-  function disenoSeleccionado() {
+  var coloresPermitidosHombre = ['Oro', 'Negro'];
+
+  function valorSeleccionado(patron) {
     var valor = null;
     document.querySelectorAll('[data-option-name]').forEach(function(fs) {
       var name = (fs.getAttribute('data-option-name') || '').toLowerCase();
-      if (name.indexOf('dise') === -1) return;
+      if (name.indexOf(patron) === -1) return;
       var checked = fs.querySelector('input:checked');
       if (checked) valor = checked.value;
     });
     return valor;
   }
+
   function aplicarFiltro() {
     if (aplicando) return;
-    var diseno = disenoSeleccionado();
+    var diseno = valorSeleccionado('dise');
+
     document.querySelectorAll('[data-option-name]').forEach(function(fs) {
       var name = (fs.getAttribute('data-option-name') || '').toLowerCase();
-      if (name.indexOf('mascota') === -1) return;
-      var gatoInput = fs.querySelector('input[value="Gato"]');
-      if (!gatoInput) return;
-      var gatoLabel = fs.querySelector('label[for="' + gatoInput.id + '"]');
-      if (diseno === 'Hombre') {
-        gatoInput.style.display = 'none';
-        if (gatoLabel) gatoLabel.style.display = 'none';
-        if (gatoInput.checked) {
-          var perroInput = fs.querySelector('input[value="Perro"]');
-          if (perroInput) {
-            aplicando = true;
-            perroInput.checked = true;
-            perroInput.dispatchEvent(new Event('change', { bubbles: true }));
-            setTimeout(function() { aplicando = false; }, 50);
+
+      if (name.indexOf('mascota') !== -1) {
+        var gatoInput = fs.querySelector('input[value="Gato"]');
+        if (gatoInput) {
+          var gatoLabel = fs.querySelector('label[for="' + gatoInput.id + '"]');
+          if (diseno === 'Hombre') {
+            gatoInput.style.display = 'none';
+            if (gatoLabel) gatoLabel.style.display = 'none';
+            if (gatoInput.checked) {
+              var perroInput = fs.querySelector('input[value="Perro"]');
+              if (perroInput) {
+                aplicando = true;
+                perroInput.checked = true;
+                perroInput.dispatchEvent(new Event('change', { bubbles: true }));
+                setTimeout(function() { aplicando = false; }, 50);
+              }
+            }
+          } else {
+            gatoInput.style.display = '';
+            if (gatoLabel) gatoLabel.style.display = '';
           }
         }
-      } else {
-        gatoInput.style.display = '';
-        if (gatoLabel) gatoLabel.style.display = '';
+      }
+
+      if (name.indexOf('color') !== -1) {
+        var necesitaCambio = false;
+        var primerPermitido = null;
+        fs.querySelectorAll('input[type="radio"]').forEach(function(input) {
+          var label = fs.querySelector('label[for="' + input.id + '"]');
+          var permitido = diseno !== 'Hombre' || coloresPermitidosHombre.indexOf(input.value) !== -1;
+          if (permitido && !primerPermitido) primerPermitido = input;
+          if (permitido) {
+            input.style.display = '';
+            if (label) label.style.display = '';
+          } else {
+            input.style.display = 'none';
+            if (label) label.style.display = 'none';
+            if (input.checked) necesitaCambio = true;
+          }
+        });
+        if (necesitaCambio && primerPermitido) {
+          aplicando = true;
+          primerPermitido.checked = true;
+          primerPermitido.dispatchEvent(new Event('change', { bubbles: true }));
+          setTimeout(function() { aplicando = false; }, 50);
+        }
       }
     });
   }
+
   document.addEventListener('change', aplicarFiltro);
   var contenedor = document.querySelector('.product__info-container') || document.body;
   new MutationObserver(function() {
