@@ -402,6 +402,7 @@ picker_type: picker_type
   var aplicando = false;
   var coloresPermitidosHombre = ['Oro', 'Negro'];
   var coloresPermitidosGato = ['Oro', 'Oro Rosa'];
+  var coloresPermitidosPerro = ['Oro', 'Negro', 'Oro Total', 'Plata'];
 
   function valorSeleccionado(patron) {
     var valor = null;
@@ -457,7 +458,7 @@ picker_type: picker_type
           } else if (mascota === 'Gato') {
             permitido = coloresPermitidosGato.indexOf(input.value) !== -1;
           } else {
-            permitido = true;
+            permitido = coloresPermitidosPerro.indexOf(input.value) !== -1;
           }
           if (permitido && !primerPermitido) primerPermitido = input;
           if (permitido) {
