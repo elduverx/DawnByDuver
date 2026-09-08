@@ -439,6 +439,7 @@ picker_type: picker_type
           } else {
             gatoInput.style.display = '';
             if (gatoLabel) gatoLabel.style.display = '';
+            gatoInput.classList.remove('disabled');
           }
         }
       }
@@ -453,6 +454,7 @@ picker_type: picker_type
           if (permitido) {
             input.style.display = '';
             if (label) label.style.display = '';
+            input.classList.remove('disabled');
           } else {
             input.style.display = 'none';
             if (label) label.style.display = 'none';
