@@ -114,7 +114,7 @@
     for="{{ input_id }}"
     data-color-title="{{ value | escape }}"
     style="
-      {% if automatic_variant_image and option_name_down != 'talla' and option_name_down != 'size' %}
+            {% if automatic_variant_image and option_name_down != 'talla' and option_name_down != 'size' and option_name_down != 'diseño' and option_name_down != 'mascota' %}
         background-image: url('{{ automatic_variant_image }}') !important;
         background-size: cover !important;
         background-position: center !important;
