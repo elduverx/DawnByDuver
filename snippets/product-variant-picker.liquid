@@ -401,6 +401,7 @@ picker_type: picker_type
 (function() {
   var aplicando = false;
   var coloresPermitidosHombre = ['Oro', 'Negro'];
+  var coloresPermitidosGato = ['Oro', 'Oro Rosa'];
 
   function valorSeleccionado(patron) {
     var valor = null;
@@ -416,6 +417,7 @@ picker_type: picker_type
   function aplicarFiltro() {
     if (aplicando) return;
     var diseno = valorSeleccionado('dise');
+    var mascota = valorSeleccionado('mascota');
 
     document.querySelectorAll('[data-option-name]').forEach(function(fs) {
       var name = (fs.getAttribute('data-option-name') || '').toLowerCase();
@@ -449,7 +451,14 @@ picker_type: picker_type
         var primerPermitido = null;
         fs.querySelectorAll('input[type="radio"]').forEach(function(input) {
           var label = fs.querySelector('label[for="' + input.id + '"]');
-          var permitido = diseno !== 'Hombre' || coloresPermitidosHombre.indexOf(input.value) !== -1;
+          var permitido;
+          if (diseno === 'Hombre') {
+            permitido = coloresPermitidosHombre.indexOf(input.value) !== -1;
+          } else if (mascota === 'Gato') {
+            permitido = coloresPermitidosGato.indexOf(input.value) !== -1;
+          } else {
+            permitido = true;
+          }
           if (permitido && !primerPermitido) primerPermitido = input;
           if (permitido) {
             input.style.display = '';
