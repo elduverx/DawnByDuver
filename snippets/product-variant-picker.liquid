@@ -396,6 +396,56 @@ picker_type: picker_type
 })();
 </script>
 {%- endif -%}
+{%- if product.handle == 'collar-abrazo-eterno' -%}
+<script>
+(function() {
+  var aplicando = false;
+  function disenoSeleccionado() {
+    var valor = null;
+    document.querySelectorAll('[data-option-name]').forEach(function(fs) {
+      var name = (fs.getAttribute('data-option-name') || '').toLowerCase();
+      if (name.indexOf('dise') === -1) return;
+      var checked = fs.querySelector('input:checked');
+      if (checked) valor = checked.value;
+    });
+    return valor;
+  }
+  function aplicarFiltro() {
+    if (aplicando) return;
+    var diseno = disenoSeleccionado();
+    document.querySelectorAll('[data-option-name]').forEach(function(fs) {
+      var name = (fs.getAttribute('data-option-name') || '').toLowerCase();
+      if (name.indexOf('mascota') === -1) return;
+      var gatoInput = fs.querySelector('input[value="Gato"]');
+      if (!gatoInput) return;
+      var gatoLabel = fs.querySelector('label[for="' + gatoInput.id + '"]');
+      if (diseno === 'Hombre') {
+        gatoInput.style.display = 'none';
+        if (gatoLabel) gatoLabel.style.display = 'none';
+        if (gatoInput.checked) {
+          var perroInput = fs.querySelector('input[value="Perro"]');
+          if (perroInput) {
+            aplicando = true;
+            perroInput.checked = true;
+            perroInput.dispatchEvent(new Event('change', { bubbles: true }));
+            setTimeout(function() { aplicando = false; }, 50);
+          }
+        }
+      } else {
+        gatoInput.style.display = '';
+        if (gatoLabel) gatoLabel.style.display = '';
+      }
+    });
+  }
+  document.addEventListener('change', aplicarFiltro);
+  var contenedor = document.querySelector('.product__info-container') || document.body;
+  new MutationObserver(function() {
+    if (!aplicando) aplicarFiltro();
+  }).observe(contenedor, { childList: true, subtree: true });
+  aplicarFiltro();
+})();
+</script>
+{%- endif -%}
 <div style="display:none;">
   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onload="
     (function(img){
