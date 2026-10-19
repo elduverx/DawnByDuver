@@ -10,6 +10,10 @@
   CONFIGURACIÓN: edita solo este bloque.
   - Imágenes: sube los archivos en Contenido > Archivos, copia la URL y pégala aquí.
     Si una imagen queda vacía, se muestra un recuadro gris de aviso.
+  - Autora: autora_foto = URL de la foto de María Fernanda (súbela en Contenido > Archivos).
+    autora_pieza = la pieza que compró, tal como ella la nombra (ej: 'la pulsera Roots').
+    autora_tiempo = cuánto la usa, SOLO si es verdad y ella lo confirma (ej: 'la uso desde hace dos meses').
+    Si dejas pieza o tiempo vacíos, esas frases no aparecen. Ella debe leer y aprobar todo el texto antes de publicar.
   - Reseñas: escribe SOLO reseñas reales de clientas. Si el texto queda vacío, la reseña no se muestra.
   - Galería: URLs de fotos reales de clientas separadas por comas (sin espacios). Si queda vacía, no se muestra.
 {%- endcomment -%}
@@ -26,6 +30,11 @@
 {%- assign img_9 = 'https://cdn.shopify.com/s/files/1/1027/0500/4878/files/hf_20260423_081624_8bab2718-cad2-40e3-b534-30e9e744f85f.png?width=1200' -%}
 {%- assign img_10 = 'https://cdn.shopify.com/s/files/1/1027/0500/4878/files/hf_20260423_051542_65bba04a-b8f2-4e1b-bde0-5ebd9b5c6a6c.png?width=1200' -%}
 {%- assign img_cierre = 'https://cdn.shopify.com/s/files/1/1027/0500/4878/files/hf_20260331_100925_17e50aa2-a712-4639-8010-c881482d37a1.png?width=1200' -%}
+
+{%- assign autora_nombre = 'María Fernanda' -%}
+{%- assign autora_foto = '' -%}
+{%- assign autora_pieza = '' -%}
+{%- assign autora_tiempo = '' -%}
 
 {%- assign review_1_text = '' -%}
 {%- assign review_1_name = '' -%}
@@ -47,7 +56,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
-  <title>10 razones para elegir joyas de cobre puro hechas a mano | Casa Velaria</title>
+  <title>10 razones para elegir joyas de cobre puro hechas a mano | La historia de María Fernanda</title>
   <meta name="description" content="Conoce 10 razones por las que las joyas de cobre artesanal están conquistando a las mujeres de Latinoamérica. Colección COBRE ARTESANAL de Casa Velaria.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,7 +121,9 @@
       border-bottom: 1px solid var(--copper-line);
       margin: 0 0 28px;
     }
-    .hero-img { margin: 0 0 28px; }
+    .author-photo { margin: 0 0 14px; }
+    .author-photo img, .author-photo .ph { width: 100%; max-width: 420px; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
+    .hero-img { margin: 28px 0 28px; }
     .hero-img img, .ph { border-radius: 4px; width: 100%; }
 
     .ph {
@@ -271,19 +282,26 @@
       <div class="wrap">
         <h1>10 razones por las que las joyas de cobre puro hechas a mano están conquistando a las mujeres de Latinoamérica</h1>
         <p class="dek">Miles de años de historia en una colección que mantiene viva la tradición.</p>
-        <p class="byline">Por el equipo de Casa Velaria</p>
+        <figure class="author-photo">
+          {%- if autora_foto != blank -%}
+            <img src="{{ autora_foto }}" alt="{{ autora_nombre }}, clienta de Casa Velaria" width="840" height="840" fetchpriority="high">
+          {%- else -%}
+            <div class="ph">Foto de la autora · cuadrada, mínimo 840 × 840 px</div>
+          {%- endif -%}
+        </figure>
+        <p class="byline">Por {{ autora_nombre }}, clienta de Casa Velaria</p>
+
+        <p>Hay materiales que pasan de moda y desaparecen. Y hay otros que nunca se fueron.</p>
+        <p>El cobre acompaña a la humanidad desde hace miles de años. Fue uno de los primeros metales que el ser humano aprendió a trabajar, y con él se hicieron herramientas, utensilios y joyas. <strong>En Latinoamérica, además, el cobre es parte de nuestra identidad:</strong> desde los martillados artesanales de Santa Clara del Cobre, en México, hasta la minería de Chile y la metalurgia andina del Perú.</p>
+        <p>Me llamo {{ autora_nombre }}{% if autora_pieza != blank %} y tengo {{ autora_pieza }} de Casa Velaria{% if autora_tiempo != blank %}, {{ autora_tiempo }}{% endif %}{% endif %}. Quise escribir esta lista para contarte lo que me gusta del cobre y por qué creo que vale la pena conocer esta colección: joyas de cobre hechas a mano, con carácter y distintas a la bisutería de siempre. <strong>Estas son mis 10 razones.</strong></p>
 
         <figure class="hero-img">
           {%- if img_hero != blank -%}
-            <img src="{{ img_hero }}" alt="Joyas de cobre artesanal de Casa Velaria" width="1200" height="800" fetchpriority="high">
+            <img src="{{ img_hero }}" alt="Joyas de cobre artesanal de Casa Velaria" width="1200" height="800" loading="lazy">
           {%- else -%}
             <div class="ph">Imagen principal · 1200 × 800 px</div>
           {%- endif -%}
         </figure>
-
-        <p>Hay materiales que pasan de moda y desaparecen. Y hay otros que nunca se fueron.</p>
-        <p>El cobre acompaña a la humanidad desde hace miles de años. Fue uno de los primeros metales que el ser humano aprendió a trabajar, y con él se hicieron herramientas, utensilios y joyas. <strong>En Latinoamérica, además, el cobre es parte de nuestra identidad:</strong> desde los martillados artesanales de Santa Clara del Cobre, en México, hasta la minería de Chile y la metalurgia andina del Perú.</p>
-        <p>En Casa Velaria reunimos una colección de joyas de cobre hechas a mano, pensada para mujeres que buscan piezas con carácter, que duren y que se sientan distintas a la bisutería de siempre. <strong>Estas son las 10 razones por las que creemos que vale la pena conocerla.</strong></p>
       </div>
     </header>
 
@@ -297,7 +315,7 @@
         <p class="num"><span>01</span><span>La tradición</span></p>
         <h2>Un metal con miles de años de historia <em>que sigue vigente</em></h2>
         <p>Los egipcios, los romanos y las culturas andinas ya trabajaban el cobre para fabricar adornos y objetos de uso diario. Hoy, millones de personas lo siguen eligiendo por lo mismo que entonces: es un material noble, cálido y con carácter.</p>
-        <p>Llevar cobre en la muñeca o en los dedos es una costumbre popular que se transmite entre generaciones. <strong>Nosotros la vemos como lo que es: una forma muy bonita de llevar la historia puesta.</strong></p>
+        <p>Llevar cobre en la muñeca o en los dedos es una costumbre popular que se transmite entre generaciones. <strong>Yo la veo como lo que es: una forma muy bonita de llevar la historia puesta.</strong></p>
       </section>
 
       <!-- 02 -->
@@ -308,7 +326,7 @@
         <p class="num"><span>02</span><span>La sensación</span></p>
         <h2>Se siente diferente desde el primer día</h2>
         <p>El cobre sólido tiene un peso y una calidez al tacto que la bisutería ligera no tiene. Toma la temperatura de tu piel y se siente como una joya de verdad, no como un accesorio desechable.</p>
-        <p><strong>Una aclaración honesta:</strong> nuestras piezas son joyas, no un tratamiento. No prometemos efectos en la salud. Lo que sí podemos contarte es cómo se ven, cómo se sienten y de qué están hechas.</p>
+        <p><strong>Una aclaración honesta:</strong> estas piezas son joyas, no un tratamiento. Yo no te prometo ningún efecto en la salud. Lo que sí puedo contarte es cómo se ven, cómo se sienten y de qué están hechas.</p>
         <a class="link-cta" href="{{ url_coleccion }}">→ Conoce las piezas de la colección</a>
       </section>
 
@@ -381,7 +399,7 @@
         <p class="num"><span>07</span><span>Lo que casi nadie te cuenta</span></p>
         <h2>La mayoría de las joyas “de cobre” que ves online <em>no son de cobre</em></h2>
         <p>En cualquier marketplace encuentras pulseras “de cobre” a precios muy bajos. Muchas son de zinc, latón o acero con una capa finísima de color cobre. Se ven bien en la foto, pero cuando esa capa se gasta, se acabó.</p>
-        <p><strong>Nuestras piezas son de cobre sólido, de principio a fin: sin chapa y sin recubrimiento.</strong></p>
+        <p><strong>Las piezas de Casa Velaria son de cobre sólido, de principio a fin: sin chapa y sin recubrimiento.</strong></p>
 
         <div class="table-scroll">
           <table class="compare">
@@ -408,14 +426,14 @@
         </figure>
         <p class="num"><span>08</span><span>La garantía</span></p>
         <h2>Incluye la garantía de la prueba del imán por {{ dias_garantia }} días</h2>
-        <p>Hay una prueba muy sencilla para descartar que una joya tenga una base de acero o hierro: <strong>acércale un imán.</strong> El cobre sólido no reacciona. Si tu pieza se pega, no es lo que te prometimos.</p>
+        <p>Hay una prueba muy sencilla para descartar que una joya tenga una base de acero o hierro: <strong>acércale un imán.</strong> El cobre sólido no reacciona. Si tu pieza se pega, no es lo que Casa Velaria promete.</p>
 
         <div class="guarantee">
           <p>La garantía de la prueba del imán</p>
-          <h3>Si el imán se pega, te devolvemos tu dinero y te quedas con la pieza.</h3>
+          <h3>Si el imán se pega, Casa Velaria te devuelve tu dinero y te quedas con la pieza.</h3>
         </div>
 
-        <p>Cuando recibas tu pedido, haz la prueba. Si algo no está bien, escríbenos a <a href="mailto:{{ email_contacto }}">{{ email_contacto }}</a> y lo resolvemos.</p>
+        <p>Cuando recibas tu pedido, haz la prueba. Si algo no está bien, escribe a <a href="mailto:{{ email_contacto }}">{{ email_contacto }}</a> y Casa Velaria lo resuelve.</p>
         <a class="link-cta" href="{{ url_coleccion }}">→ Aprovecha la garantía de la prueba del imán</a>
       </section>
 
@@ -426,7 +444,7 @@
         </figure>
         <p class="num"><span>09</span><span>Hecho a mano</span></p>
         <h2>Cada pieza es artesanal, y eso se nota</h2>
-        <p>Cada pieza de esta colección se trabaja y se termina a mano. Por eso dos piezas del mismo modelo pueden tener pequeñas diferencias de martillado o de acabado: no son defectos, son la huella de quien las hizo.</p>
+        <p>Casa Velaria trabaja y termina a mano cada pieza de esta colección. Por eso dos piezas del mismo modelo pueden tener pequeñas diferencias de martillado o de acabado: no son defectos, son la huella de quien las hizo.</p>
         <p><strong>Se nota en el peso, en el tacto y en los detalles.</strong></p>
         {%- if review_3_text != blank -%}
           <blockquote class="review">“{{ review_3_text }}”<cite>{{ review_3_name }}</cite></blockquote>
@@ -460,15 +478,15 @@
           <li>Pago seguro</li>
           <li>Envíos a México, Perú, Puerto Rico, Colombia y Chile</li>
         </ul>
-        <p class="signoff">“Esperamos que encuentres la pieza que va con tu historia.”</p>
-        <p class="signoff-name">Equipo Casa Velaria</p>
+        <p class="signoff">“Espero que encuentres la pieza que va con tu historia.”</p>
+        <p class="signoff-name">{{ autora_nombre }}</p>
       </div>
     </section>
   </main>
 
   <footer class="foot">
     <div class="wrap">
-      <p>Las joyas de cobre de Casa Velaria son artículos de joyería y no sustituyen ningún tratamiento médico. Las opiniones de clientas reflejan experiencias personales.</p>
+      <p>{{ autora_nombre }} es clienta de Casa Velaria y autorizó la publicación de su foto y de este texto. Las joyas de cobre de Casa Velaria son artículos de joyería y no sustituyen ningún tratamiento médico. Las opiniones de clientas reflejan experiencias personales.</p>
       <p>
         {%- if shop.privacy_policy.url != blank -%}<a href="{{ shop.privacy_policy.url }}">Política de privacidad</a>{%- endif -%}
         {%- if shop.refund_policy.url != blank -%}<a href="{{ shop.refund_policy.url }}">Política de reembolso</a>{%- endif -%}
