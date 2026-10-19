@@ -121,8 +121,9 @@
       border-bottom: 1px solid var(--copper-line);
       margin: 0 0 28px;
     }
-    .author-photo { margin: 0 0 14px; }
-    .author-photo img, .author-photo .ph { width: 100%; max-width: 420px; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
+    .author-photo { margin: 0 0 14px; display: flex; justify-content: center; }
+    .author-photo img, .author-photo .ph { width: 180px; height: 180px; max-width: 100%; aspect-ratio: 1; object-fit: cover; object-position: 50% 35%; border-radius: 50%; }
+    .author-photo + .byline { text-align: center; }
     .hero-img { margin: 28px 0 28px; }
     .hero-img img, .ph { border-radius: 4px; width: 100%; }
 
