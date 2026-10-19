@@ -111,7 +111,7 @@
 {%- liquid
   assign es_joyas = false
   for coleccion_producto in product.collections
-    if coleccion_producto.handle == 'joyas'
+    if coleccion_producto.handle == 'joyas' or coleccion_producto.handle == 'cobre-artesanal'
       assign es_joyas = true
     endif
   endfor
