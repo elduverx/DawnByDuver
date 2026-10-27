@@ -58,6 +58,7 @@
 {%- style -%}
   body .utility-bar:has(.vela-aniversario-bar) { display: none !important; }
 {%- endstyle -%}
+<div id="vh-{{ section.id }}" class="vh" data-end="{{ section.settings.end_date | escape }}">
   {%- if section.settings.image != blank -%}
     <div class="vh__bg">
       <picture>
