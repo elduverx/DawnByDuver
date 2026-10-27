@@ -9,15 +9,17 @@
  */
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
-      "custom_css": [],
+    "halloween-hero": {
+      "type": "halloween-hero",
       "settings": {
-        "show_collection_description": false,
-        "show_collection_image": true,
-        "kicker_text": "",
-        "mobile_image": "shopify://shop_images/ChatGPT_Image_1_jul_2026_21_09_33.png",
-        "color_scheme": "scheme-1"
+        "overlay": 55,
+        "kicker": "HALLOWEEN",
+        "heading": "Oferta de Halloween",
+        "subheading": "Vestidos boutique con descuento especial. Solo hasta que termine la cuenta atrás.",
+        "code": "",
+        "end_date": "2026-10-31T23:59:00",
+        "expired_text": "La oferta de Halloween ha terminado.",
+        "button_label": "Ver vestidos"
       }
     },
     "product-grid": {
@@ -48,7 +50,7 @@
     }
   },
   "order": [
-    "banner",
+    "halloween-hero",
     "product-grid",
     "garantias_bxKi9q"
   ]
