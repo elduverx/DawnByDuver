@@ -1,0 +1,101 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+{%- style -%}
+  #vh-{{ section.id }} { position: relative; overflow: hidden; color: #fff; text-align: center; font-family: 'Montserrat', sans-serif; background: radial-gradient(circle at 50% 0%, #3a1c08 0%, #14110f 70%); }
+  #vh-{{ section.id }} .vh__bg { position: absolute; inset: 0; }
+  #vh-{{ section.id }} .vh__bg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #vh-{{ section.id }} .vh__bg::after { content: ""; position: absolute; inset: 0; background: rgba(20, 17, 15, {{ section.settings.overlay | divided_by: 100.0 }}); }
+  #vh-{{ section.id }} .vh__inner { position: relative; z-index: 2; max-width: 80rem; margin: 0 auto; padding: 4rem 2rem 4.4rem; }
+  #vh-{{ section.id }} .vh__kicker { display: block; margin: 0 0 1rem; color: #ff8a2b; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; }
+  #vh-{{ section.id }} .vh__title { margin: 0 0 1.2rem; color: #fff; font-family: 'Playfair Display', Georgia, serif; font-size: 3.2rem; font-weight: 500; line-height: 1.15; }
+  #vh-{{ section.id }} .vh__sub { margin: 0 auto 2.4rem; max-width: 52rem; font-size: 1.5rem; line-height: 1.6; color: rgba(255,255,255,0.9); }
+  #vh-{{ section.id }} .vh__code { display: inline-block; margin: 0 0 2.4rem; padding: 0.8rem 1.8rem; border: 2px dashed #ff8a2b; border-radius: 6px; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.12em; color: #ff8a2b; }
+  #vh-{{ section.id }} .vh__count { display: flex; justify-content: center; gap: 1rem; margin: 0 0 2.8rem; }
+  #vh-{{ section.id }} .vh__unit { min-width: 6.4rem; padding: 1.2rem 0.8rem; border: 1px solid rgba(255,138,43,0.6); border-radius: 8px; background: rgba(0,0,0,0.4); }
+  #vh-{{ section.id }} .vh__num { display: block; font-size: 3rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+  #vh-{{ section.id }} .vh__lbl { display: block; margin-top: 0.6rem; font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
+  #vh-{{ section.id }} .vh__ended { margin: 0 0 2.8rem; font-size: 1.5rem; font-weight: 600; }
+  #vh-{{ section.id }} .vh__btn { display: inline-block; padding: 1.4rem 3.2rem; border-radius: 4px; background: #ff8a2b; color: #14110f; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
+  @media screen and (min-width: 750px) {
+    #vh-{{ section.id }} .vh__inner { padding: 6rem 3rem 6.4rem; }
+    #vh-{{ section.id }} .vh__title { font-size: 4.6rem; }
+    #vh-{{ section.id }} .vh__unit { min-width: 8.4rem; padding: 1.6rem 1rem; }
+    #vh-{{ section.id }} .vh__num { font-size: 4rem; }
+  }
+{%- endstyle -%}
+
+<div id="vh-{{ section.id }}" class="vh" data-end="{{ section.settings.end_date | escape }}">
+  {%- if section.settings.image != blank -%}
+    <div class="vh__bg">
+      <picture>
+        {%- if section.settings.mobile_image != blank -%}
+          <source media="(max-width: 749px)" srcset="{{ section.settings.mobile_image | image_url: width: 750 }}">
+        {%- endif -%}
+        <img src="{{ section.settings.image | image_url: width: 1500 }}" alt="{{ section.settings.heading | escape }}" width="{{ section.settings.image.width }}" height="{{ section.settings.image.height }}">
+      </picture>
+    </div>
+  {%- endif -%}
+
+  <div class="vh__inner">
+    {%- if section.settings.kicker != blank -%}<span class="vh__kicker">{{ section.settings.kicker | escape }}</span>{%- endif -%}
+    <h1 class="vh__title">{{ section.settings.heading | escape }}</h1>
+    {%- if section.settings.subheading != blank -%}<p class="vh__sub">{{ section.settings.subheading | escape }}</p>{%- endif -%}
+    {%- if section.settings.code != blank -%}<div class="vh__code">CÓDIGO: {{ section.settings.code | escape }}</div>{%- endif -%}
+
+    <div class="vh__count" data-count>
+      <div class="vh__unit"><span class="vh__num" data-d>00</span><span class="vh__lbl">Días</span></div>
+      <div class="vh__unit"><span class="vh__num" data-h>00</span><span class="vh__lbl">Horas</span></div>
+      <div class="vh__unit"><span class="vh__num" data-m>00</span><span class="vh__lbl">Min</span></div>
+      <div class="vh__unit"><span class="vh__num" data-s>00</span><span class="vh__lbl">Seg</span></div>
+    </div>
+    <p class="vh__ended" data-ended hidden>{{ section.settings.expired_text | escape }}</p>
+
+    {%- if section.settings.button_label != blank -%}
+      <a class="vh__btn" href="#ProductGridContainer">{{ section.settings.button_label | escape }}</a>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+  (function () {
+    var root = document.getElementById('vh-{{ section.id }}');
+    if (!root) return;
+    var end = new Date(root.getAttribute('data-end')).getTime();
+    var box = root.querySelector('[data-count]');
+    var ended = root.querySelector('[data-ended]');
+    var d = root.querySelector('[data-d]'), h = root.querySelector('[data-h]'),
+        m = root.querySelector('[data-m]'), s = root.querySelector('[data-s]');
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+    if (isNaN(end)) { box.hidden = true; return; }
+    var timer = setInterval(tick, 1000);
+    function tick() {
+      var diff = end - Date.now();
+      if (diff <= 0) { box.hidden = true; ended.hidden = false; clearInterval(timer); return; }
+      d.textContent = pad(Math.floor(diff / 86400000));
+      h.textContent = pad(Math.floor(diff / 3600000) % 24);
+      m.textContent = pad(Math.floor(diff / 60000) % 60);
+      s.textContent = pad(Math.floor(diff / 1000) % 60);
+    }
+    tick();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Halloween hero",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Imagen de fondo (escritorio)" },
+    { "type": "image_picker", "id": "mobile_image", "label": "Imagen de fondo (móvil, opcional)" },
+    { "type": "range", "id": "overlay", "min": 0, "max": 90, "step": 5, "unit": "%", "label": "Oscurecer imagen", "default": 55 },
+    { "type": "text", "id": "kicker", "label": "Texto pequeño", "default": "HALLOWEEN" },
+    { "type": "text", "id": "heading", "label": "Título", "default": "Oferta de Halloween" },
+    { "type": "textarea", "id": "subheading", "label": "Subtítulo", "default": "Vestidos boutique con descuento especial. Solo hasta que termine la cuenta atrás." },
+    { "type": "text", "id": "code", "label": "Código de descuento (déjalo vacío para ocultarlo)" },
+    { "type": "text", "id": "end_date", "label": "Fin de la oferta", "default": "2026-10-31T23:59:00+01:00", "info": "Formato AAAA-MM-DDTHH:MM:SS+01:00 (hora de España en invierno)" },
+    { "type": "text", "id": "expired_text", "label": "Texto al terminar", "default": "La oferta de Halloween ha terminado." },
+    { "type": "text", "id": "button_label", "label": "Texto del botón", "default": "Ver vestidos" }
+  ]
+}
+{% endschema %}
