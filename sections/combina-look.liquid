@@ -127,6 +127,13 @@
     assign target_collection = collections['mujer']
   endif
 -%}
+
+{%- assign es_halloween = false -%}
+{%- if request.path contains '/collections/vestidos-halloween/' -%}
+  {%- assign es_halloween = true -%}
+  {%- assign target_collection = collections['vestidos-halloween'] -%}
+{%- endif -%}
+
 <div class="combina-section">
   <p class="combina-eyebrow">{{ section.settings.eyebrow }}</p>
   <div class="combina-header">
@@ -149,7 +156,7 @@
         {%- break -%}
       {%- endif -%}
       <div class="combina-card">
-        <a href="{{ related.url }}">
+                <a href="{% if es_halloween %}{{ related.url | within: target_collection }}{% else %}{{ related.url }}{% endif %}">
           {%- if related.featured_image != blank -%}
             <img src="{{ related.featured_image | image_url: width: 600 }}" alt="{{ related.title }}">
           {%- else -%}
