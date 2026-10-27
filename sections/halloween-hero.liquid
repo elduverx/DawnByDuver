@@ -114,6 +114,24 @@
   })();
 </script>
 
+<script>
+  (function () {
+    var base = '/collections/vestidos-halloween';
+    function enlazar() {
+      document.querySelectorAll('#product-grid a[href*="/products/"]').forEach(function (a) {
+        var h = a.getAttribute('href');
+        if (!h || h.indexOf('/collections/') !== -1) return;
+        a.setAttribute('href', h.replace(/^(https?:\/\/[^\/]+)?\/products\//, function (m, dom) {
+          return (dom || '') + base + '/products/';
+        }));
+      });
+    }
+    document.addEventListener('DOMContentLoaded', enlazar);
+    enlazar();
+    new MutationObserver(enlazar).observe(document.body, { childList: true, subtree: true });
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Halloween hero",
